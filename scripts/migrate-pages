@@ -1,0 +1,672 @@
+#!/usr/bin/env python3
+"""
+migrate-pages — Single script for wiki page migration workflow.
+
+BFS-crawls reachable pages from CSV seeds, creates branches from main with
+only those pages, moves files to destinations, updates :doc: links (intersphinx
+for cross-repo), and stages changes.
+
+The wiki-migration branch is never modified — it's the source of truth.
+
+Usage:
+  ./scripts/migrate-pages scripts/moves.csv --branch hdl-docs [--dry-run] [--verbose]
+"""
+
+import argparse
+import importlib.machinery
+import importlib.util
+import json
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_DIR = SCRIPT_DIR.parent  # documentation/
+WORKSPACE = REPO_DIR.parent   # doc-migration/
+RST_DIR = REPO_DIR / "docs" / "wiki-migration"
+CACHE_PATH = SCRIPT_DIR / "repo-cache.json"
+
+# Import start-migration from doc-migration/scripts/
+_sm_path = WORKSPACE / "scripts" / "start-migration"
+_loader = importlib.machinery.SourceFileLoader("start_migration", str(_sm_path))
+_spec = importlib.util.spec_from_file_location(
+    "start_migration", str(_sm_path), loader=_loader
+)
+_sm = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_sm)
+
+# Patch RST_DIR so crawl() looks at the right place
+_sm.RST_DIR = RST_DIR
+
+crawl = _sm.crawl
+extract_doc_refs = _sm.extract_doc_refs
+normalize_page = _sm.normalize_page
+load_claimed = _sm.load_claimed
+
+# Regex for :doc: references — captures optional display text, path, and
+# handles both :doc:`path` and :doc:`Text <path>` forms
+DOC_REF_RE = re.compile(r':doc:`([^`<]*<)?(/wiki-migration/[^`>]+)(>)?`')
+
+# Repo pathname lookup from adi_doctools lut.py
+try:
+    from adi_doctools.lut import repos as _lut_repos
+    LUT_REPOS = {name: repo['pathname'] for name, repo in _lut_repos.items()}
+except ImportError:
+    LUT_REPOS = {
+        'documentation': 'docs',
+        'hdl': 'docs',
+        'linux': 'docs',
+        'no-OS': 'doc/sphinx/source',
+        'pyadi-iio': 'doc/source',
+        'scopy': 'docs',
+        'libiio': 'doc',
+        'precision-converters-firmware': 'doc/sphinx',
+    }
+
+# Valid intersphinx repo names from conf.py
+INTERSPHINX_REPOS = {
+    'doctools', 'hdl', 'pyadi-iio', 'adi-kuiper-gen', 'scopy',
+    'linux', 'no-OS', 'precision-converters-firmware',
+}
+
+
+def find_repo_root(path: Path) -> Path | None:
+    """Walk upward from path looking for .git/ directory."""
+    p = path.resolve()
+    for parent in [p] + list(p.parents):
+        if (parent / ".git").exists():
+            return parent
+    return None
+
+
+def git_in(repo_root: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess:
+    """Run git command in a specific repo."""
+    return subprocess.run(
+        ["git", *args],
+        cwd=repo_root,
+        capture_output=True,
+        text=True,
+        check=check,
+    )
+
+
+def resolve_destination(dest_path: Path, cache: dict) -> tuple[str, str, str]:
+    """Resolve a destination path to (repo_name, doc_root, doc_relative_path).
+
+    Returns:
+        repo_name: directory name of the repo root
+        doc_root: pathname from lut.py (e.g. 'docs', 'doc/sphinx/source')
+        doc_relative_path: path relative to doc_root, without .rst
+    """
+    dest_abs = dest_path.resolve()
+    dest_str = str(dest_abs)
+
+    # Check cache first
+    if dest_str in cache:
+        entry = cache[dest_str]
+        return entry['repo'], entry['doc_root'], entry['doc_rel']
+
+    repo_root = find_repo_root(dest_abs)
+    if repo_root is None:
+        print(f"  WARNING: No git repo found for {dest_abs}")
+        # Best-effort: assume parent directories
+        repo_name = dest_abs.parts[-3] if len(dest_abs.parts) >= 3 else "unknown"
+        doc_root = "docs"
+        doc_rel = dest_abs.stem
+    else:
+        repo_name = repo_root.name
+        doc_root = LUT_REPOS.get(repo_name, 'docs')
+        doc_root_path = repo_root / doc_root
+
+        if dest_abs.is_relative_to(doc_root_path):
+            doc_rel = dest_abs.relative_to(doc_root_path).with_suffix("").as_posix()
+        else:
+            # Fallback: relative to repo root
+            doc_rel = dest_abs.relative_to(repo_root).with_suffix("").as_posix()
+            print(f"  WARNING: {dest_abs} is not under {doc_root_path}, "
+                  f"using repo-relative path: {doc_rel}")
+
+    cache[dest_str] = {'repo': repo_name, 'doc_root': doc_root, 'doc_rel': doc_rel}
+    return repo_name, doc_root, doc_rel
+
+
+def parse_csv(csv_path: Path) -> list[tuple[Path, Path]]:
+    """Parse CSV file returning list of (source, destination) path pairs.
+
+    Paths can be absolute or relative (resolved against CWD).
+    """
+    moves = []
+    with open(csv_path) as f:
+        for lineno, line in enumerate(f, 1):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            parts = [p.strip() for p in line.split(',')]
+            if len(parts) != 2:
+                print(f"  ERROR: Line {lineno}: expected 2 columns, got {len(parts)}")
+                sys.exit(1)
+            src = Path(parts[0]).resolve()
+            dst = Path(parts[1]).resolve()
+            moves.append((src, dst))
+    return moves
+
+
+def validate_sources(moves: list[tuple[Path, Path]]) -> bool:
+    """Validate all source paths exist and are under wiki-migration/."""
+    ok = True
+    for src, _ in moves:
+        if not src.exists():
+            print(f"  ERROR: Source not found: {src}")
+            ok = False
+        elif not str(src.resolve()).startswith(str(RST_DIR.resolve())):
+            print(f"  ERROR: Source not under wiki-migration/: {src}")
+            ok = False
+        elif src.suffix != '.rst':
+            print(f"  ERROR: Source is not .rst: {src}")
+            ok = False
+    return ok
+
+
+def build_move_map(
+    moves: list[tuple[Path, Path]], cache: dict
+) -> dict[str, tuple[str, str, Path, Path]]:
+    """Build mapping from old doc path to (new_doc_path, repo_name, src_abs, dst_abs).
+
+    Key: old doc path (e.g. 'wiki-migration/resources/fpga/docs/build')
+    Value: (new_doc_path, repo_name, source_abs_path, dest_abs_path)
+    """
+    move_map = {}
+    for src, dst in moves:
+        # Old doc path: relative to documentation/docs/, without .rst
+        old_doc = src.resolve().relative_to(
+            REPO_DIR.resolve() / "docs"
+        ).with_suffix("").as_posix()
+
+        repo_name, doc_root, doc_rel = resolve_destination(dst, cache)
+        move_map[old_doc] = (doc_rel, repo_name, src.resolve(), dst.resolve())
+
+    return move_map
+
+
+def update_doc_ref(
+    match: re.Match,
+    move_map: dict[str, tuple[str, str, Path, Path]],
+    current_repo: str,
+    verbose: bool,
+    file_path: str,
+) -> str:
+    """Replace a single :doc: reference if the target was moved."""
+    prefix = match.group(1) or ""   # 'Text <' or ''
+    path = match.group(2)           # '/wiki-migration/old/path'
+    suffix = match.group(3) or ""   # '>' or ''
+
+    # Normalize to doc path
+    doc_path = path.lstrip("/")     # 'wiki-migration/old/path'
+
+    if doc_path not in move_map:
+        return match.group(0)  # Not moved, leave as-is
+
+    new_doc_path, target_repo, _, _ = move_map[doc_path]
+
+    if target_repo == current_repo:
+        # Same repo — simple :doc: reference
+        new_ref = f"/{new_doc_path}"
+    else:
+        # Cross-repo — intersphinx
+        new_ref = f"{target_repo}:{new_doc_path}"
+
+    result = f":doc:`{prefix}{new_ref}{suffix}`"
+    if verbose:
+        print(f"    {file_path}: {match.group(0)} -> {result}")
+    return result
+
+
+def update_toctree_entry(
+    line: str,
+    move_map: dict[str, tuple[str, str, Path, Path]],
+    current_repo: str,
+    verbose: bool,
+    file_path: str,
+) -> str:
+    """Update a toctree entry if it references a moved page."""
+    stripped = line.strip()
+    if not stripped or stripped.startswith(':') or stripped.startswith('..'):
+        return line
+
+    # Toctree entries are paths like /wiki-migration/path or wiki-migration/path
+    path = stripped.lstrip('/')
+    if not path.startswith('wiki-migration/'):
+        return line
+
+    if path not in move_map:
+        return line
+
+    new_doc_path, target_repo, _, _ = move_map[path]
+    indent = line[:len(line) - len(line.lstrip())]
+
+    if target_repo == current_repo:
+        new_entry = f"/{new_doc_path}"
+    else:
+        # Cross-repo toctree entries aren't standard; comment out with note
+        if verbose:
+            print(f"    {file_path}: toctree cross-repo move, commenting out: {stripped}")
+        return f"{indent}   .. moved to {target_repo}:{new_doc_path}\n"
+
+    if verbose:
+        print(f"    {file_path}: toctree {stripped} -> {new_entry}")
+    return f"{indent}{new_entry}\n"
+
+
+def update_links_in_file(
+    rst_path: Path,
+    move_map: dict[str, tuple[str, str, Path, Path]],
+    current_repo: str,
+    verbose: bool,
+) -> int:
+    """Update :doc: links and toctree entries in a single RST file.
+
+    Returns number of replacements made.
+    """
+    text = rst_path.read_text(errors="replace")
+    file_rel = str(rst_path)
+    count = 0
+
+    # Update :doc: references
+    def replacer(m):
+        nonlocal count
+        result = update_doc_ref(m, move_map, current_repo, verbose, file_rel)
+        if result != m.group(0):
+            count += 1
+        return result
+
+    new_text = DOC_REF_RE.sub(replacer, text)
+
+    # Update toctree entries
+    in_toctree = False
+    lines = new_text.split('\n')
+    new_lines = []
+    for line in lines:
+        if '.. toctree::' in line:
+            in_toctree = True
+            new_lines.append(line)
+            continue
+
+        if in_toctree:
+            # Toctree ends at a non-indented, non-empty line
+            if line.strip() and not line.startswith(' ') and not line.startswith('\t'):
+                in_toctree = False
+                new_lines.append(line)
+                continue
+
+            if line.strip() and not line.strip().startswith(':'):
+                old_line = line + '\n'
+                updated = update_toctree_entry(
+                    old_line, move_map, current_repo, verbose, file_rel
+                )
+                if updated != old_line:
+                    count += 1
+                new_lines.append(updated.rstrip('\n'))
+                continue
+
+        new_lines.append(line)
+
+    new_text = '\n'.join(new_lines)
+
+    if count > 0:
+        rst_path.write_text(new_text)
+    return count
+
+
+def update_links_in_moved_files(
+    move_map: dict[str, tuple[str, str, Path, Path]],
+    verbose: bool,
+) -> int:
+    """Update links inside files that were moved cross-repo.
+
+    For pages moved to another repo:
+    - Refs to pages still in documentation get :doc:`documentation:wiki-migration/path`
+    - Refs to pages that also moved to the SAME repo get local :doc:`/path`
+    - Refs to pages that moved to a DIFFERENT repo get :doc:`repo:path`
+    """
+    total = 0
+    for old_doc, (new_doc, target_repo, _, dst_abs) in move_map.items():
+        if target_repo == 'documentation':
+            continue  # Same repo, already handled
+
+        if not dst_abs.exists():
+            continue
+
+        text = dst_abs.read_text(errors="replace")
+        count = 0
+
+        def cross_replacer(m):
+            nonlocal count
+            prefix = m.group(1) or ""
+            path = m.group(2).lstrip("/")  # wiki-migration/x/y
+            suffix = m.group(3) or ""
+
+            if path in move_map:
+                moved_to_path, moved_to_repo, _, _ = move_map[path]
+                if moved_to_repo == target_repo:
+                    # Same target repo — local ref
+                    new_ref = f"/{moved_to_path}"
+                else:
+                    # Different repo — intersphinx
+                    new_ref = f"{moved_to_repo}:{moved_to_path}"
+            else:
+                # Still in documentation repo's wiki-migration/
+                new_ref = f"documentation:{path}"
+
+            result = f":doc:`{prefix}{new_ref}{suffix}`"
+            if result != m.group(0):
+                count += 1
+                if verbose:
+                    print(f"    {dst_abs}: {m.group(0)} -> {result}")
+            return result
+
+        new_text = DOC_REF_RE.sub(cross_replacer, text)
+        if count > 0:
+            dst_abs.write_text(new_text)
+            total += count
+
+    return total
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Migrate wiki pages: crawl, branch, move, update links."
+    )
+    parser.add_argument(
+        "csv_file",
+        type=Path,
+        help="CSV mapping file (source, destination)",
+    )
+    parser.add_argument(
+        "--branch",
+        required=True,
+        help="Branch suffix — creates wiki_migration/<NAME>",
+    )
+    parser.add_argument(
+        "--claimed",
+        nargs="*",
+        default=[],
+        help="Manifest JSON(s) from prior runs (overlapping pages skip)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Preview all changes, modify nothing",
+    )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Show every link update",
+    )
+    parser.add_argument(
+        "--base",
+        default="main",
+        help="Base branch to create migration branch from (default: main)",
+    )
+    args = parser.parse_args()
+
+    branch_name = f"wiki_migration/{args.branch}"
+    base_branch = args.base
+    dry_run = args.dry_run
+    verbose = args.verbose
+
+    # ── Phase 1: Parse & Validate ──────────────────────────────────────
+    print("Phase 1: Parse & Validate")
+    print("─" * 40)
+
+    # Parse CSV and load cache BEFORE switching branches
+    # (these files may not exist on wiki-migration)
+    if not args.csv_file.is_file():
+        print(f"ERROR: CSV file not found: {args.csv_file}")
+        sys.exit(1)
+
+    moves = parse_csv(args.csv_file)
+    if not moves:
+        print("ERROR: No moves found in CSV")
+        sys.exit(1)
+
+    print(f"  {len(moves)} move(s) parsed from {args.csv_file}")
+
+    cache = {}
+    if CACHE_PATH.is_file():
+        cache = json.loads(CACHE_PATH.read_text())
+
+    # Switch to wiki-migration so source files are on disk for validation/crawl
+    current = git_in(REPO_DIR, "branch", "--show-current").stdout.strip()
+    if current != "wiki-migration":
+        print(f"  Switching to wiki-migration (was on {current})")
+        git_in(REPO_DIR, "stash", check=False)
+        git_in(REPO_DIR, "checkout", "wiki-migration")
+
+    if not validate_sources(moves):
+        sys.exit(1)
+
+    # Resolve all destinations
+    repos_involved = set()
+    for _, dst in moves:
+        repo_name, doc_root, doc_rel = resolve_destination(dst, cache)
+        repos_involved.add((repo_name, find_repo_root(dst)))
+        print(f"  {dst.name} -> {repo_name}:{doc_rel}")
+
+    # Build move map
+    move_map = build_move_map(moves, cache)
+    print(f"  {len(move_map)} move(s) validated")
+    print()
+
+    # ── Phase 2: BFS Crawl ─────────────────────────────────────────────
+    print("Phase 2: BFS Crawl")
+    print("─" * 40)
+
+    # Extract seed pages from CSV sources
+    seeds = []
+    for src, _ in moves:
+        # Make relative to wiki-migration dir directly to get bare page path
+        page = src.resolve().relative_to(
+            RST_DIR.resolve()
+        ).with_suffix("").as_posix()
+        seeds.append(page)
+
+    # Load claimed pages
+    claimed = load_claimed(args.claimed)
+
+    print(f"  Seeds: {len(seeds)}")
+    for s in seeds:
+        print(f"    {s}")
+
+    reachable = crawl(seeds, claimed)
+    print(f"  Reachable: {len(reachable)} pages")
+    print()
+
+    # ── Phase 3: Branch Setup ──────────────────────────────────────────
+    print("Phase 3: Branch Setup")
+    print("─" * 40)
+
+    if dry_run:
+        print("  (dry-run: skipping git operations)")
+        print()
+    else:
+        # ── Documentation repo ──
+        print(f"  Documentation repo: {REPO_DIR}")
+        git_in(REPO_DIR, "fetch")
+
+        # Check if branch exists
+        branch_check = git_in(
+            REPO_DIR, "rev-parse", "--verify", branch_name, check=False
+        )
+        if branch_check.returncode == 0:
+            # Branch exists — check it out
+            git_in(REPO_DIR, "checkout", branch_name)
+            print(f"    Checked out existing branch: {branch_name}")
+        else:
+            # Create from main
+            git_in(REPO_DIR, "checkout", "-b", branch_name, base_branch)
+            print(f"    Created branch: {branch_name} (from {base_branch})")
+
+        # Checkout reachable .rst files from wiki-migration branch
+        rst_paths = [f"docs/wiki-migration/{p}.rst" for p in sorted(reachable)]
+        batch_size = 200
+        for i in range(0, len(rst_paths), batch_size):
+            batch = rst_paths[i:i + batch_size]
+            git_in(REPO_DIR, "checkout", "wiki-migration", "--", *batch)
+        print(f"    Checked out {len(rst_paths)} files from wiki-migration")
+
+        # Generate index.rst with glob toctree
+        index_path = RST_DIR / "index.rst"
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        index_path.write_text(
+            "Wiki Migration\n"
+            "==============\n"
+            "\n"
+            "Pages migrated from wiki.analog.com.\n"
+            "\n"
+            ".. toctree::\n"
+            "   :maxdepth: 1\n"
+            "   :glob:\n"
+            "\n"
+            "   **\n"
+        )
+
+        git_in(REPO_DIR, "add", "docs/wiki-migration/")
+
+        # ── Target repos ──
+        for repo_name, repo_root in repos_involved:
+            if repo_name == 'documentation' or repo_root is None:
+                continue
+            print(f"  Target repo: {repo_name} ({repo_root})")
+            git_in(repo_root, "fetch")
+
+            branch_check = git_in(
+                repo_root, "rev-parse", "--verify", branch_name, check=False
+            )
+            if branch_check.returncode == 0:
+                git_in(repo_root, "checkout", branch_name)
+                print(f"    Checked out existing branch: {branch_name}")
+            else:
+                git_in(repo_root, "checkout", "-b", branch_name, "main")
+                print(f"    Created branch: {branch_name} (from main)")
+
+        print()
+
+    # ── Phase 4: Move Files & Update Links ─────────────────────────────
+    print("Phase 4: Move Files & Update Links")
+    print("─" * 40)
+
+    moved_count = 0
+    link_count = 0
+    cross_link_count = 0
+    target_repos_touched = set()
+
+    # Move files
+    for old_doc, (new_doc, target_repo, src_abs, dst_abs) in move_map.items():
+        if dry_run:
+            if target_repo == 'documentation':
+                print(f"  [same-repo] git mv {src_abs.name} -> {dst_abs}")
+            else:
+                print(f"  [cross-repo] {src_abs.name} -> {target_repo}:{dst_abs}")
+            moved_count += 1
+            continue
+
+        # Skip if destination already exists (previous run)
+        if dst_abs.exists():
+            print(f"  [skip] {dst_abs.name} already at destination")
+            # Still remove the source copy if it exists (re-checked out from wiki-migration)
+            if src_abs.exists():
+                src_rel = src_abs.relative_to(REPO_DIR.resolve())
+                git_in(REPO_DIR, "rm", "-f", str(src_rel), check=False)
+            moved_count += 1
+            continue
+
+        # Ensure destination directory exists
+        dst_abs.parent.mkdir(parents=True, exist_ok=True)
+
+        if target_repo == 'documentation':
+            # Same repo: git mv
+            src_rel = src_abs.relative_to(REPO_DIR.resolve())
+            dst_rel = dst_abs.relative_to(REPO_DIR.resolve())
+            git_in(REPO_DIR, "mv", str(src_rel), str(dst_rel))
+            print(f"  [same-repo] git mv {src_rel} -> {dst_rel}")
+        else:
+            # Cross-repo: copy to target + git rm from documentation
+            shutil.copy2(src_abs, dst_abs)
+            src_rel = src_abs.relative_to(REPO_DIR.resolve())
+            git_in(REPO_DIR, "rm", "-f", str(src_rel))
+            repo_root = find_repo_root(dst_abs)
+            if repo_root:
+                dst_rel = dst_abs.relative_to(repo_root)
+                git_in(repo_root, "add", str(dst_rel))
+                target_repos_touched.add((target_repo, repo_root))
+            print(f"  [cross-repo] {src_rel} -> {target_repo}:{dst_abs.relative_to(repo_root) if repo_root else dst_abs}")
+
+        moved_count += 1
+
+    print(f"  {moved_count} file(s) moved")
+
+    # Update :doc: links in all wiki-migration/ RST files
+    print("  Updating :doc: links in wiki-migration/ ...")
+    if not dry_run:
+        for rst_file in sorted(RST_DIR.rglob("*.rst")):
+            n = update_links_in_file(rst_file, move_map, 'documentation', verbose)
+            link_count += n
+
+    # Update :doc: links in moved pages (that went to other repos)
+    print("  Updating :doc: links in moved pages (cross-repo) ...")
+    if not dry_run:
+        cross_link_count = update_links_in_moved_files(move_map, verbose)
+
+    # Also update links in same-repo moved files
+    if not dry_run:
+        for old_doc, (new_doc, target_repo, _, dst_abs) in move_map.items():
+            if target_repo == 'documentation' and dst_abs.exists():
+                n = update_links_in_file(
+                    dst_abs, move_map, 'documentation', verbose
+                )
+                link_count += n
+
+    print(f"  {link_count} link(s) updated in wiki-migration/")
+    print(f"  {cross_link_count} link(s) updated in cross-repo moved files")
+    print()
+
+    # ── Phase 5: Stage ─────────────────────────────────────────────────
+    print("Phase 5: Stage")
+    print("─" * 40)
+
+    if dry_run:
+        print("  (dry-run: nothing to stage)")
+    else:
+        # Stage all changes in documentation repo
+        git_in(REPO_DIR, "add", "docs/")
+        print(f"  Staged changes in documentation/")
+
+        # Stage in target repos
+        for repo_name, repo_root in target_repos_touched:
+            git_in(repo_root, "add", "-A")
+            print(f"  Staged changes in {repo_name}/")
+
+        # Save repo cache
+        CACHE_PATH.write_text(json.dumps(cache, indent=2) + "\n")
+        print(f"  Saved repo cache: {CACHE_PATH.relative_to(REPO_DIR)}")
+
+    # ── Summary ────────────────────────────────────────────────────────
+    print()
+    print("Summary")
+    print("═" * 40)
+    print(f"  Branch:        {branch_name}")
+    print(f"  Pages crawled: {len(reachable)}")
+    print(f"  Pages moved:   {moved_count}")
+    print(f"  Links updated: {link_count + cross_link_count}")
+    repo_names = sorted({r for r, _ in repos_involved})
+    print(f"  Repos:         {', '.join(repo_names)}")
+    if dry_run:
+        print(f"  Status:        DRY RUN (no changes made)")
+    else:
+        print(f"  Status:        Changes staged, NOT committed")
+
+
+if __name__ == "__main__":
+    main()

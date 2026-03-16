@@ -1,0 +1,11 @@
+# migrate-pages CSV format
+# Each line: source path, destination path
+# Paths can be absolute or relative (resolved from CWD)
+# Source must be under documentation/docs/wiki-migration/
+# Destination can be in any git repo under the workspace
+#
+# Same-repo move (stays in documentation/):
+# documentation/docs/wiki-migration/resources/eval/user-guides/ad-fmcdaq2-ebz.rst, documentation/docs/eval/ad-fmcdaq2-ebz.rst
+#
+# Cross-repo move (to hdl/):
+# documentation/docs/wiki-migration/resources/fpga/docs/build.rst, hdl/docs/user_guide/build.rst
