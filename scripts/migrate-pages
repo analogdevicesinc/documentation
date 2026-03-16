@@ -566,8 +566,14 @@ def main():
         # ── Documentation repo ──
         print(f"  Documentation repo: {REPO_DIR}")
 
-        # Clean index and stash dirty changes before switching branches
-        git_in(REPO_DIR, "reset", check=False)
+        # Clear unmerged index entries from previous runs, if any
+        unmerged = git_in(
+            REPO_DIR, "ls-files", "--unmerged", check=False
+        )
+        if unmerged.stdout.strip():
+            print("  WARNING: clearing unmerged index entries from a previous run")
+            git_in(REPO_DIR, "reset", check=False)
+
         git_in(REPO_DIR, "stash", check=False)
 
         git_in(REPO_DIR, "fetch")
