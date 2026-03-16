@@ -727,6 +727,7 @@ def main():
             print(f"  Staged changes in {repo_name}/")
 
         # Save repo cache
+        CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
         CACHE_PATH.write_text(json.dumps(cache, indent=2) + "\n")
         print(f"  Saved repo cache: {CACHE_PATH.relative_to(REPO_DIR)}")
 
