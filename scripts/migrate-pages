@@ -21,11 +21,10 @@ import sys
 from collections import deque
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-REPO_DIR = SCRIPT_DIR.parent  # documentation/
-WORKSPACE = REPO_DIR.parent   # doc-migration/
-RST_DIR = REPO_DIR / "docs" / "wiki-migration"
-CACHE_PATH = SCRIPT_DIR / "repo-cache.json"
+# Set in main() after parsing CSV — derived from source paths, not script location
+REPO_DIR = None   # documentation repo root
+RST_DIR = None    # documentation/docs/wiki-migration/
+CACHE_PATH = None # documentation/scripts/repo-cache.json
 
 CRAWL_DOC_REF_RE = re.compile(r':doc:`(?:[^`<]*<)?(/wiki-migration/[^`>]+)>?`')
 
@@ -503,7 +502,18 @@ def main():
         print("ERROR: No moves found in CSV")
         sys.exit(1)
 
+    # Derive documentation repo paths from the first source in the CSV
+    global REPO_DIR, RST_DIR, CACHE_PATH
+    first_src = moves[0][0]
+    REPO_DIR = find_repo_root(first_src)
+    if REPO_DIR is None:
+        print(f"ERROR: Cannot find git repo for source: {first_src}")
+        sys.exit(1)
+    RST_DIR = REPO_DIR / "docs" / "wiki-migration"
+    CACHE_PATH = REPO_DIR / "scripts" / "repo-cache.json"
+
     print(f"  {len(moves)} move(s) parsed from {args.csv_file}")
+    print(f"  Documentation repo: {REPO_DIR}")
 
     cache = {}
     if CACHE_PATH.is_file():
