@@ -133,14 +133,35 @@ def find_repo_root(path: Path) -> Path | None:
 
 
 def git_in(repo_root: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess:
-    """Run git command in a specific repo."""
-    return subprocess.run(
+    """Run git command in a specific repo. Prints stderr on failure."""
+    result = subprocess.run(
         ["git", *args],
         cwd=repo_root,
         capture_output=True,
         text=True,
-        check=check,
+        check=False,
     )
+    if result.returncode != 0 and check:
+        print(f"  ERROR: git {' '.join(args)}")
+        if result.stderr.strip():
+            print(f"    {result.stderr.strip()}")
+        sys.exit(1)
+    return result
+
+
+def resolve_base_branch(repo_root: Path, base: str) -> str:
+    """Resolve a base branch name, falling back to origin/<base> if needed."""
+    # Try local branch first
+    r = git_in(repo_root, "rev-parse", "--verify", base, check=False)
+    if r.returncode == 0:
+        return base
+    # Try origin/<base>
+    remote = f"origin/{base}"
+    r = git_in(repo_root, "rev-parse", "--verify", remote, check=False)
+    if r.returncode == 0:
+        return remote
+    print(f"  ERROR: Base branch '{base}' not found (tried '{base}' and '{remote}')")
+    sys.exit(1)
 
 
 def resolve_destination(dest_path: Path, cache: dict) -> tuple[str, str, str]:
@@ -555,9 +576,10 @@ def main():
             git_in(REPO_DIR, "checkout", branch_name)
             print(f"    Checked out existing branch: {branch_name}")
         else:
-            # Create from main
-            git_in(REPO_DIR, "checkout", "-b", branch_name, base_branch)
-            print(f"    Created branch: {branch_name} (from {base_branch})")
+            # Create from base
+            resolved_base = resolve_base_branch(REPO_DIR, base_branch)
+            git_in(REPO_DIR, "checkout", "-b", branch_name, resolved_base)
+            print(f"    Created branch: {branch_name} (from {resolved_base})")
 
         # Checkout reachable .rst files from wiki-migration branch
         rst_paths = [f"docs/wiki-migration/{p}.rst" for p in sorted(reachable)]
@@ -599,8 +621,9 @@ def main():
                 git_in(repo_root, "checkout", branch_name)
                 print(f"    Checked out existing branch: {branch_name}")
             else:
-                git_in(repo_root, "checkout", "-b", branch_name, "main")
-                print(f"    Created branch: {branch_name} (from main)")
+                resolved = resolve_base_branch(repo_root, "main")
+                git_in(repo_root, "checkout", "-b", branch_name, resolved)
+                print(f"    Created branch: {branch_name} (from {resolved})")
 
         print()
 
