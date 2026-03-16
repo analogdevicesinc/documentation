@@ -13,13 +13,12 @@ Usage:
 """
 
 import argparse
-import importlib.machinery
-import importlib.util
 import json
 import re
 import shutil
 import subprocess
 import sys
+from collections import deque
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -28,22 +27,74 @@ WORKSPACE = REPO_DIR.parent   # doc-migration/
 RST_DIR = REPO_DIR / "docs" / "wiki-migration"
 CACHE_PATH = SCRIPT_DIR / "repo-cache.json"
 
-# Import start-migration from doc-migration/scripts/
-_sm_path = WORKSPACE / "scripts" / "start-migration"
-_loader = importlib.machinery.SourceFileLoader("start_migration", str(_sm_path))
-_spec = importlib.util.spec_from_file_location(
-    "start_migration", str(_sm_path), loader=_loader
-)
-_sm = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(_sm)
+CRAWL_DOC_REF_RE = re.compile(r':doc:`(?:[^`<]*<)?(/wiki-migration/[^`>]+)>?`')
 
-# Patch RST_DIR so crawl() looks at the right place
-_sm.RST_DIR = RST_DIR
 
-crawl = _sm.crawl
-extract_doc_refs = _sm.extract_doc_refs
-normalize_page = _sm.normalize_page
-load_claimed = _sm.load_claimed
+def normalize_page(page: str) -> str:
+    """Normalize a page argument to a relative path without prefix or suffix."""
+    page = page.strip()
+    for prefix in ("docs/wiki-migration/", "/wiki-migration/"):
+        if page.startswith(prefix):
+            page = page[len(prefix):]
+    if page.endswith(".rst"):
+        page = page[:-4]
+    return page
+
+
+def extract_doc_refs(text: str) -> list[str]:
+    """Extract wiki-migration :doc: targets from RST text."""
+    refs = []
+    for match in CRAWL_DOC_REF_RE.finditer(text):
+        target = match.group(1)
+        target = target.removeprefix("/wiki-migration/")
+        target = target.split("#")[0]
+        if target:
+            refs.append(target)
+    return refs
+
+
+def crawl(seeds: list[str], claimed: set[str]) -> set[str]:
+    """BFS from seed pages following :doc: links. Returns set of page paths."""
+    queue = deque(seeds)
+    visited: set[str] = set()
+
+    while queue:
+        page = queue.popleft()
+        if page in visited:
+            continue
+        if page in claimed:
+            print(f"  WARNING: '{page}' is claimed by another manifest, skipping")
+            continue
+
+        rst_file = RST_DIR / (page + ".rst")
+        if not rst_file.is_file():
+            print(f"  WARNING: '{page}' not found ({rst_file}), skipping")
+            continue
+
+        visited.add(page)
+        text = rst_file.read_text(errors="replace")
+        for target in extract_doc_refs(text):
+            if target not in visited:
+                queue.append(target)
+
+    return visited
+
+
+def load_claimed(manifest_paths: list[str]) -> set[str]:
+    """Load claimed pages from manifest JSON files."""
+    claimed: set[str] = set()
+    for path in manifest_paths:
+        p = Path(path)
+        if not p.is_file():
+            print(f"WARNING: manifest '{path}' not found, skipping")
+            continue
+        data = json.loads(p.read_text())
+        for entry in data.get("pages", []):
+            page = entry["file"] if isinstance(entry, dict) else entry
+            if page.endswith(".rst"):
+                page = page[:-4]
+            claimed.add(page)
+    return claimed
 
 # Regex for :doc: references — captures optional display text, path, and
 # handles both :doc:`path` and :doc:`Text <path>` forms
