@@ -565,6 +565,10 @@ def main():
     else:
         # ── Documentation repo ──
         print(f"  Documentation repo: {REPO_DIR}")
+
+        # Stash any dirty changes before switching branches
+        git_in(REPO_DIR, "stash", check=False)
+
         git_in(REPO_DIR, "fetch")
 
         # Check if branch exists
