@@ -4,7 +4,9 @@ Migrating Wiki Pages
 Steps
 -----
 
-1. Create ``moves.csv`` anywhere — add one line per page to move::
+0. Copy scripts folder outside of a git repository.
+
+1. Edit ``moves.csv`` in the copied folder — add one line per page to move::
 
       source path, destination path
 
@@ -13,9 +15,10 @@ Steps
    Destination can be in any repo (``hdl/``, ``no-OS/``,
    ``documentation/``, etc.). Lines starting with ``#`` are comments.
 
-2. Run the script from any directory::
+2. Run the script::
 
-      /path/to/documentation/scripts/migrate-pages moves.csv --branch <NAME>
+      migrate-pages moves.csv --branch <NAME-OF-PROJECT>
+			(for example, the NAME-OF-PROJECT can be AD9009.... something related to the documentation content)
 
    Use ``--dry-run`` first to preview. Add ``--verbose`` to see every link
    update. The script finds the documentation repo from the CSV source paths.
@@ -23,6 +26,12 @@ Steps
 3. Review the changes:
 
    The script creates two branches on the documentation repo:
+
+	``wiki_migration/<NAME>_REMAINING-PAGES`` — checks out the reachable
+  pages that are **not** being moved, generates an ``index.rst`` with a
+  glob toctree, updates ``:doc:`` links to point to the moved pages' new
+  locations, and commits.
+	- ``wiki_migration/<NAME>_MOVING`` — checks out only the pages being moved.
 
    - ``wiki_migration/<NAME>_REMAINING-PAGES`` — already committed
    - ``wiki_migration/<NAME>_MOVING`` — staged, not committed
