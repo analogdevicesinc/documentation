@@ -6,10 +6,14 @@ BFS-crawls reachable pages from CSV seeds, creates branches from main with
 only those pages, moves files to destinations, updates :doc: links (intersphinx
 for cross-repo), and stages changes.
 
+Creates two branches:
+- wiki_migration/<NAME>_REMAINING-PAGES: reachable pages that stay in wiki-migration/
+- wiki_migration/<NAME>_MOVING: pages moved to their destinations
+
 The wiki-migration branch is never modified — it's the source of truth.
 
 Usage:
-  ./scripts/migrate-pages scripts/moves.csv --branch hdl-docs [--dry-run] [--verbose]
+  ./scripts/migrate-pages moves.csv --branch hdl-docs [--dry-run] [--verbose]
 """
 
 import argparse
@@ -456,7 +460,7 @@ def main():
     parser.add_argument(
         "--branch",
         required=True,
-        help="Branch suffix — creates wiki_migration/<NAME>",
+        help="Branch suffix — creates wiki_migration/<NAME>_MOVING and _REMAINING-PAGES",
     )
     parser.add_argument(
         "--claimed",
@@ -481,7 +485,8 @@ def main():
     )
     args = parser.parse_args()
 
-    branch_name = f"wiki_migration/{args.branch}"
+    moving_branch = f"wiki_migration/{args.branch}_MOVING"
+    remaining_branch = f"wiki_migration/{args.branch}_REMAINING-PAGES"
     base_branch = args.base
     dry_run = args.dry_run
     verbose = args.verbose
@@ -562,17 +567,28 @@ def main():
 
     reachable = crawl(seeds, claimed)
     print(f"  Reachable: {len(reachable)} pages")
+
+    # Compute which pages are being moved vs staying
+    moved_page_paths = set()
+    for old_doc in move_map:
+        moved_page_paths.add(old_doc.removeprefix("wiki-migration/"))
+    remaining_pages = reachable - moved_page_paths
+    print(f"  Moving:    {len(moved_page_paths)} pages")
+    print(f"  Remaining: {len(remaining_pages)} pages")
     print()
+
+    remaining_link_count = 0
 
     # ── Phase 3: Branch Setup ──────────────────────────────────────────
     print("Phase 3: Branch Setup")
     print("─" * 40)
 
     if dry_run:
-        print("  (dry-run: skipping git operations)")
+        print(f"  (dry-run: skipping git operations)")
+        print(f"  Would create: {remaining_branch} ({len(remaining_pages)} pages)")
+        print(f"  Would create: {moving_branch} ({len(moved_page_paths)} pages)")
         print()
     else:
-        # ── Documentation repo ──
         print(f"  Documentation repo: {REPO_DIR}")
 
         # Clear unmerged index entries from previous runs, if any
@@ -584,30 +600,31 @@ def main():
             git_in(REPO_DIR, "reset", check=False)
 
         git_in(REPO_DIR, "stash", check=False)
-
         git_in(REPO_DIR, "fetch")
 
-        # Check if branch exists
+        # ── _REMAINING-PAGES branch ──
+        print(f"\n  Setting up: {remaining_branch}")
         branch_check = git_in(
-            REPO_DIR, "rev-parse", "--verify", branch_name, check=False
+            REPO_DIR, "rev-parse", "--verify", remaining_branch, check=False
         )
         if branch_check.returncode == 0:
-            # Branch exists — check it out
-            git_in(REPO_DIR, "checkout", branch_name)
-            print(f"    Checked out existing branch: {branch_name}")
+            git_in(REPO_DIR, "checkout", remaining_branch)
+            print(f"    Checked out existing branch")
         else:
-            # Create from base
             resolved_base = resolve_base_branch(REPO_DIR, base_branch)
-            git_in(REPO_DIR, "checkout", "-b", branch_name, resolved_base)
-            print(f"    Created branch: {branch_name} (from {resolved_base})")
+            git_in(REPO_DIR, "checkout", "-b", remaining_branch, resolved_base)
+            print(f"    Created branch (from {resolved_base})")
 
-        # Checkout reachable .rst files from wiki-migration branch
-        rst_paths = [f"docs/wiki-migration/{p}.rst" for p in sorted(reachable)]
-        batch_size = 200
-        for i in range(0, len(rst_paths), batch_size):
-            batch = rst_paths[i:i + batch_size]
-            git_in(REPO_DIR, "checkout", "wiki-migration", "--", *batch)
-        print(f"    Checked out {len(rst_paths)} files from wiki-migration")
+        # Checkout remaining files from wiki-migration
+        if remaining_pages:
+            remaining_rst_paths = [
+                f"docs/wiki-migration/{p}.rst" for p in sorted(remaining_pages)
+            ]
+            batch_size = 200
+            for i in range(0, len(remaining_rst_paths), batch_size):
+                batch = remaining_rst_paths[i:i + batch_size]
+                git_in(REPO_DIR, "checkout", "wiki-migration", "--", *batch)
+            print(f"    Checked out {len(remaining_rst_paths)} files from wiki-migration")
 
         # Generate index.rst with glob toctree
         index_path = RST_DIR / "index.rst"
@@ -625,7 +642,46 @@ def main():
             "   **\n"
         )
 
+        # Update :doc: links in remaining pages
+        print("    Updating :doc: links in remaining pages ...")
+        for rst_file in sorted(RST_DIR.rglob("*.rst")):
+            n = update_links_in_file(rst_file, move_map, 'documentation', verbose)
+            remaining_link_count += n
+        print(f"    {remaining_link_count} link(s) updated")
+
+        # Stage and commit
         git_in(REPO_DIR, "add", "docs/wiki-migration/")
+        diff_check = git_in(REPO_DIR, "diff", "--cached", "--quiet", check=False)
+        if diff_check.returncode != 0:
+            git_in(REPO_DIR, "commit", "-m",
+                   f"add remaining wiki-migration pages for {args.branch}")
+            print("    Committed")
+        else:
+            print("    No changes to commit (already up to date)")
+
+        # ── _MOVING branch ──
+        print(f"\n  Setting up: {moving_branch}")
+        branch_check = git_in(
+            REPO_DIR, "rev-parse", "--verify", moving_branch, check=False
+        )
+        if branch_check.returncode == 0:
+            git_in(REPO_DIR, "checkout", moving_branch)
+            print(f"    Checked out existing branch")
+        else:
+            resolved_base = resolve_base_branch(REPO_DIR, base_branch)
+            git_in(REPO_DIR, "checkout", "-b", moving_branch, resolved_base)
+            print(f"    Created branch (from {resolved_base})")
+
+        # Checkout moved pages from wiki-migration (so we can move them)
+        if moved_page_paths:
+            moved_rst_paths = [
+                f"docs/wiki-migration/{p}.rst" for p in sorted(moved_page_paths)
+            ]
+            batch_size = 200
+            for i in range(0, len(moved_rst_paths), batch_size):
+                batch = moved_rst_paths[i:i + batch_size]
+                git_in(REPO_DIR, "checkout", "wiki-migration", "--", *batch)
+            print(f"    Checked out {len(moved_rst_paths)} files from wiki-migration")
 
         # ── Target repos ──
         for repo_name, repo_root in repos_involved:
@@ -635,15 +691,15 @@ def main():
             git_in(repo_root, "fetch")
 
             branch_check = git_in(
-                repo_root, "rev-parse", "--verify", branch_name, check=False
+                repo_root, "rev-parse", "--verify", moving_branch, check=False
             )
             if branch_check.returncode == 0:
-                git_in(repo_root, "checkout", branch_name)
-                print(f"    Checked out existing branch: {branch_name}")
+                git_in(repo_root, "checkout", moving_branch)
+                print(f"    Checked out existing branch")
             else:
                 resolved = resolve_base_branch(repo_root, "main")
-                git_in(repo_root, "checkout", "-b", branch_name, resolved)
-                print(f"    Created branch: {branch_name} (from {resolved})")
+                git_in(repo_root, "checkout", "-b", moving_branch, resolved)
+                print(f"    Created branch (from {resolved})")
 
         print()
 
@@ -656,7 +712,7 @@ def main():
     cross_link_count = 0
     target_repos_touched = set()
 
-    # Move files
+    # Move files (on _MOVING branch)
     for old_doc, (new_doc, target_repo, src_abs, dst_abs) in move_map.items():
         if dry_run:
             if target_repo == 'documentation':
@@ -701,19 +757,12 @@ def main():
 
     print(f"  {moved_count} file(s) moved")
 
-    # Update :doc: links in all wiki-migration/ RST files
-    print("  Updating :doc: links in wiki-migration/ ...")
-    if not dry_run:
-        for rst_file in sorted(RST_DIR.rglob("*.rst")):
-            n = update_links_in_file(rst_file, move_map, 'documentation', verbose)
-            link_count += n
-
-    # Update :doc: links in moved pages (that went to other repos)
+    # Update :doc: links in moved pages (cross-repo)
     print("  Updating :doc: links in moved pages (cross-repo) ...")
     if not dry_run:
         cross_link_count = update_links_in_moved_files(move_map, verbose)
 
-    # Also update links in same-repo moved files
+    # Update links in same-repo moved files
     if not dry_run:
         for old_doc, (new_doc, target_repo, _, dst_abs) in move_map.items():
             if target_repo == 'documentation' and dst_abs.exists():
@@ -722,7 +771,7 @@ def main():
                 )
                 link_count += n
 
-    print(f"  {link_count} link(s) updated in wiki-migration/")
+    print(f"  {link_count} link(s) updated in same-repo moved files")
     print(f"  {cross_link_count} link(s) updated in cross-repo moved files")
     print()
 
@@ -733,9 +782,9 @@ def main():
     if dry_run:
         print("  (dry-run: nothing to stage)")
     else:
-        # Stage all changes in documentation repo
+        # Stage all changes in documentation repo (_MOVING branch)
         git_in(REPO_DIR, "add", "docs/")
-        print(f"  Staged changes in documentation/")
+        print(f"  Staged changes in documentation/ ({moving_branch})")
 
         # Stage in target repos
         for repo_name, repo_root in target_repos_touched:
@@ -745,22 +794,25 @@ def main():
         # Save repo cache
         CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
         CACHE_PATH.write_text(json.dumps(cache, indent=2) + "\n")
-        print(f"  Saved repo cache: {CACHE_PATH.relative_to(REPO_DIR)}")
 
     # ── Summary ────────────────────────────────────────────────────────
     print()
     print("Summary")
     print("═" * 40)
-    print(f"  Branch:        {branch_name}")
+    print(f"  Branches:")
+    print(f"    {remaining_branch} ({len(remaining_pages)} pages, committed)")
+    print(f"    {moving_branch} ({len(moved_page_paths)} pages, staged)")
     print(f"  Pages crawled: {len(reachable)}")
     print(f"  Pages moved:   {moved_count}")
-    print(f"  Links updated: {link_count + cross_link_count}")
+    total_links = remaining_link_count + link_count + cross_link_count
+    print(f"  Links updated: {total_links}")
     repo_names = sorted({r for r, _ in repos_involved})
     print(f"  Repos:         {', '.join(repo_names)}")
     if dry_run:
         print(f"  Status:        DRY RUN (no changes made)")
     else:
-        print(f"  Status:        Changes staged, NOT committed")
+        print(f"  Status:        Review & commit {moving_branch}")
+        print(f"                 {remaining_branch} already committed")
 
 
 if __name__ == "__main__":
