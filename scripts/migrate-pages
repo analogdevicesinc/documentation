@@ -594,9 +594,12 @@ def main():
         for k in children:
             children[k].sort()
 
+        line_no = [0]  # mutable counter for nested function
+
         def write_tree(f, node: str, prefix: str = "", is_last: bool = True):
+            line_no[0] += 1
             connector = "└── " if is_last else "├── "
-            f.write(f"{prefix}{connector}{node}\n")
+            f.write(f"{line_no[0]:4d} [{levels[node]}] {prefix}{connector}{node}\n")
             kids = children.get(node, [])
             for i, child in enumerate(kids):
                 extension = "    " if is_last else "│   "
@@ -605,8 +608,8 @@ def main():
         with open(args.crawl_list, "w") as f:
             roots = children.get(None, [])
             for i, root in enumerate(roots):
-                # Print root without connector
-                f.write(f"{root}\n")
+                line_no[0] += 1
+                f.write(f"{line_no[0]:4d} [{levels[root]}] {root}\n")
                 kids = children.get(root, [])
                 for j, child in enumerate(kids):
                     write_tree(f, child, "", j == len(kids) - 1)
