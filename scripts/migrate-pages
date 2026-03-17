@@ -599,7 +599,7 @@ def main():
         def write_tree(f, node: str, prefix: str = "", is_last: bool = True):
             line_no[0] += 1
             connector = "└── " if is_last else "├── "
-            f.write(f"{line_no[0]:4d} [{levels[node]}] {prefix}{connector}{node}\n")
+            f.write(f"{line_no[0]:4d} [{levels[node]:2d}] {prefix}{connector}{node}\n")
             kids = children.get(node, [])
             for i, child in enumerate(kids):
                 extension = "    " if is_last else "│   "
@@ -609,7 +609,7 @@ def main():
             roots = children.get(None, [])
             for i, root in enumerate(roots):
                 line_no[0] += 1
-                f.write(f"{line_no[0]:4d} [{levels[root]}] {root}\n")
+                f.write(f"{line_no[0]:4d} [{levels[root]:2d}] {root}\n")
                 kids = children.get(root, [])
                 for j, child in enumerate(kids):
                     write_tree(f, child, "", j == len(kids) - 1)
