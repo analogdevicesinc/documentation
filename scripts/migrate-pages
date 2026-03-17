@@ -596,12 +596,25 @@ def main():
 
         line_no = [0]  # mutable counter for nested function
 
+        # Pre-compute descendant counts
+        desc_count: dict[str, int] = {}
+        def count_descendants(node: str) -> int:
+            kids = children.get(node, [])
+            total = len(kids)
+            for k in kids:
+                total += count_descendants(k)
+            desc_count[node] = total
+            return total
+        for root in children.get(None, []):
+            count_descendants(root)
+
         def write_tree(f, node: str, prefix: str = "", is_last: bool = True):
             line_no[0] += 1
             connector = "└── " if is_last else "├── "
-            kids = children.get(node, [])
-            suffix = f"  ({len(kids)})" if kids else ""
+            cnt = desc_count.get(node, 0)
+            suffix = f"  ({cnt})" if cnt else ""
             f.write(f"{line_no[0]:4d} [{levels[node]:2d}] {prefix}{connector}{node}{suffix}\n")
+            kids = children.get(node, [])
             for i, child in enumerate(kids):
                 extension = "    " if is_last else "│   "
                 write_tree(f, child, prefix + extension, i == len(kids) - 1)
@@ -610,11 +623,12 @@ def main():
             roots = children.get(None, [])
             for i, root in enumerate(roots):
                 line_no[0] += 1
-                kids = children.get(root, [])
-                suffix = f"  ({len(kids)})" if kids else ""
+                cnt = desc_count.get(root, 0)
+                suffix = f"  ({cnt})" if cnt else ""
                 f.write(f"{line_no[0]:4d} [{levels[root]:2d}] {root}{suffix}\n")
-                for j, child in enumerate(kids):
-                    write_tree(f, child, "", j == len(kids) - 1)
+                root_kids = children.get(root, [])
+                for j, child in enumerate(root_kids):
+                    write_tree(f, child, "", j == len(root_kids) - 1)
 
         print(f"  Saved crawl list to {args.crawl_list}")
         sys.exit(0)
