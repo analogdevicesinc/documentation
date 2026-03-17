@@ -1,112 +1,7 @@
 AD7156 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-Supported Devices
-=================
-
--  :adi:`AD7156`
-
-Evaluation Boards
-=================
-
--  `PmodCDC1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-CDC1>`_
-
-Overview
-========
-
-The :adi:`AD7156` delivers a complete signal processing solution for capacitive sensors, featuring an ultralow power converter with fast response time.
-
-The :adi:`AD7156` uses an Analog Devices, Inc., capacitance-to-digital converter (CDC) technology, which combines features important for interfacing to real sensors, such as high input sensitivity and high tolerance of both input parasitic ground capacitance and leakage current.
-
-The integrated adaptive threshold algorithm compensates for any variations in
-the sensor capacitance due to environmental factors like humidity and
-temperature or due to changes in the dielectric material over time.
-
-By default, the :adi:`AD7156` operates in standalone mode using the fixed power-up settings and indicates detection on two digital outputs. Alternatively, the :adi:`AD7156` can be interfaced to a micro-controller via the serial interface, the internal registers can be programmed with user-defined settings, and the data and status can be read from the part.
-
-The :adi:`AD7156` operates with a 1.8 V to 3.6 V power supply. It is specified over the temperature range of −40°C to +85°C.
-
-Applications
-------------
-
--  Buttons and switches
--  Proximity sensing
--  Contactless switching
--  Position detection
--  Level detection
--  Portable products
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad7156_pmod_cdc1.jpg
-   :align: center
-
-The goal of this project (Microcontroller No-OS) is to be able to provide
-reference projects for lower end processors, which can't run Linux, or aren't
-running a specific operating system, to help those customers using
-microcontrollers with ADI parts. Here you can find a generic driver which can be
-used as a base for any microcontroller platform and also specific drivers for
-different microcontroller platforms.
-
-Driver Description
-==================
-
-The driver contains two parts:
-
--  The driver for the AD7156 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the
-   desired type of processor and communication protocol have to be implemented.
-   This driver implements the communication with the device and hides the actual
-   details of the communication protocol to the ADI driver. The Communication
-   Driver has a standard interface, so the AD7156 driver can be used exactly as
-   it is provided.
-
-There are three functions which are called by the AD7156 driver:
-
--  I2C_Init() – initializes the communication peripheral.
--  I2C_Write() – writes data to the device.
--  I2C_Read() – reads data from the device.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
-   :align: center
-
-.. container:: centeralign
-
-   I2C driver architecture
-
-The following functions are implemented in this version of AD7156 driver:
-
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| Function                                                                                                             | Description                                                                                                             |
-+======================================================================================================================+=========================================================================================================================+
-| void AD7156_GetRegisterValue(unsigned char\* pReadData, unsigned char registerAddress, unsigned char bytesNumber)    | Performs a burst read of a specified number of registers.                                                               |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetRegisterValue(unsigned short registerValue, unsigned char registerAddress, unsigned char bytesNumber) | Writes data into one or two registers.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| char AD7156_Init(void)                                                                                               | Initializes the communication peripheral and checks if the device is present.                                           |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_Reset(void)                                                                                              | Resets the device.                                                                                                      |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetPowerMode(unsigned char pwrMode)                                                                      | Sets the converter mode of operation.                                                                                   |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_ChannelState(unsigned char channel, unsigned char enableConv)                                            | Enables or disables conversion on the selected channel.                                                                 |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetRange(unsigned channel, unsigned char range)                                                          | Sets the input range of the specified channel.                                                                          |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| float AD7156_GetRange(unsigned channel)                                                                              | Reads the range bits from the device and returns the range in pF.                                                       |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetThresholdMode(unsigned char thrMode, unsigned char thrFixed)                                          | Selects the threshold mode of operation.                                                                                |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetThreshold(unsigned char channel, float pFthr)                                                         | Writes to the threshold register when threshold fixed mode is enabled.                                                  |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void AD7156_SetSensitivity(unsigned char channel, float pFsensitivity)                                               | Writes a value(pF) to the sensitivity register. This functions should be used when adaptive threshold mode is selected. |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| unsigned short AD7156_ReadChannelData(unsigned char channel)                                                         | Reads a 12-bit sample from the selected channel.                                                                        |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| unsigned short AD7156_WaitReadChannelData(unsigned char channel)                                                     | Waits for a finished CDC conversion and reads a 12-bit sample from the selected channel.                                |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| float AD7156_ReadChannelCapacitance(unsigned char channel)                                                           | Reads a sample the selected channel and converts the data to picofarads(pF).                                            |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| float AD7156_WaitReadChannelCapacitance(unsigned char channel)                                                       | Waits for a finished CDC conversion the selected channel, reads a sample and converts the data to picofarads(pF).       |
-+----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+.. include:: ../ad7156.rst
 
 **HW Platform(s):**
 
@@ -222,45 +117,7 @@ connected to processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
-   :align: center
-
--  After the project is created, all the downloaded source files have to be
-   copied in the project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
-   :align: center
+.. include:: pic32_software_design.rst
 
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
@@ -326,54 +183,12 @@ processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
-   :align: center
-
--  After the project is created, the source files have to be copied in the
-   project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
-   :align: center
+.. include:: dspic33_software_design.rst
 
 More information
 ================
 
--  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
--  Example questions:
-
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+.. include:: ../more-information.rst
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

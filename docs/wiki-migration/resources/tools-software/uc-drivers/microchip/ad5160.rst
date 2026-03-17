@@ -1,75 +1,7 @@
 AD5160 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-Supported Devices
-=================
-
--  :adi:`AD5160`
-
-Evaluation Boards
-=================
-
--  `PmodDPOT <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-DPOT>`_
-
-Overview
-========
-
-The :adi:`AD5160` provides a compact 2.9 mm × 3 mm packaged solution for 256-position adjustment applications. These devices perform the same electronic adjustment function as mechanical potentiometers or variable resistors but with enhanced resolution, solid-state reliability, and superior low temperature coefficient performance.
-
-The wiper settings are controllable through an SPI-compatible digital interface.
-The resistance between the wiper and either end point of the fixed resistor
-varies linearly with respect to the digital code transferred into the RDAC
-latch.
-
-Operating from a 2.7 V to 5.5 V power supply and consuming less than 5 μA allows
-for usage in portable battery-operated applications.
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad5160_pmod_dpot.jpg
-   :align: center
-
-The goal of this project (Microcontroller No-OS) is to be able to provide
-reference projects for lower end processors, which can't run Linux, or aren't
-running a specific operating system, to help those customers using
-microcontrollers with ADI parts. Here you can find a generic driver which can be
-used as a base for any microcontroller platform and also specific drivers for
-different microcontroller platforms.
-
-Driver Description
-==================
-
-The driver contains two parts:
-
--  The driver for the AD5160 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the
-   desired type of processor and communication protocol have to be implemented.
-   This driver implements the communication with the device and hides the actual
-   details of the communication protocol to the ADI driver.
-
-The Communication Driver has a standard interface, so the AD5160 driver can be
-used exactly as it is provided.
-
-There are three functions which are called by the AD5160 driver:
-
--  SPI_Init() – initializes the communication peripheral.
--  SPI_Write() – writes data to the device.
--  SPI_Read() – reads data from the device.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/renesas/spi_architecture.png
-   :align: center
-
-.. container:: centeralign
-
-   SPI driver architecture
-
-The following functions are implemented in this version of AD5160 driver:
-
-+--------------------------------------+-----------------------------------------------+
-| Function                             | Description                                   |
-+======================================+===============================================+
-| char AD5160_Init(void)               | Initializes the SPI communication peripheral. |
-+--------------------------------------+-----------------------------------------------+
-| void AD5160_Set(unsigned char value) | Writes data to AD5160.                        |
-+--------------------------------------+-----------------------------------------------+
+.. include:: ../ad5160.rst
 
 **HW Platform(s):**
 
@@ -156,45 +88,7 @@ connected to processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
-   :align: center
-
--  After the project is created, all the downloaded source files have to be
-   copied in the project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
-   :align: center
+.. include:: pic32_software_design.rst
 
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
@@ -254,45 +148,7 @@ processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
-   :align: center
-
--  After the project is created, the source files have to be copied in the
-   project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
-   :align: center
+.. include:: dspic33_software_design.rst
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
@@ -352,37 +208,12 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
--  Unzip the downloaded file in the libraries folder.
--  Run the **MPIDE** environment.
--  You should see the new library under **Sketch->Import Library**, under **Contributed**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_1.png
-   :align: center
-
--  Also you should see under **File->Examples** the demo project for the ADI library.
--  Select the ADIDriver example.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_2.png
-   :align: center
-
--  Select the **Cerebot MX3cK** board from **Tools->Board**.
--  Select the corresponding Serial Communication Port from **Tools->Serial Port**
--  The project is ready to be uploaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
-   :align: center
+.. include:: arduino_software_design.rst
 
 More information
 ================
 
--  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
--  Example questions:
-
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+.. include:: ../more-information.rst
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

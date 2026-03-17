@@ -1,91 +1,7 @@
 ADP5589 - No-OS Driver for Microchip Microcontroller Platforms
 ==============================================================
 
-Supported Devices
-=================
-
--  :adi:`ADP5589`
-
-Evaluation Boards
-=================
-
--  `PmodIOXP <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-IOXP>`_
-
-Overview
-========
-
-The :adi:`ADP5589` is a 19 channel GPIO (General Purpose Input/Output) port expander with built-in keypad matrix decoder, programmable logic, reset logic, and PWM generator. The IC is capable of handling QWERTY size keyboards and GPIO expansion. I/O expander ICs are used in portable devices (phones, remote controls, & cameras) and non-portable applications (healthcare, industrial & instrumentation). I/O expanders can be used to increase the number of I/Os available to a processor or to reduce the number of I/Os required through interface connectors for front panel designs.
-
-The :adi:`ADP5589` handles all key scanning and decoding and can flag the main processor via an interrupt line that new key events have occurred. GPI changes and logic changes can also be tracked as events via the FIFO, eliminating the need to monitor different registers for event changes. The :adi:`ADP5589` is equipped with a FIFO to store up to 16 events. Events can be read back by the processor via an I2C-compatible interface.
-
-The :adi:`ADP5589` frees up the main processor from having to monitor the keypad, thereby reducing power consumption and/or increasing processor bandwidth for performing other functions. The programmable logic functions allow common logic requirements to be integrated as part of the GPIO expander, saving board area and cost. Reference software Linux driver is available.
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/adp5589_pmod_ioxp.jpg
-   :align: center
-
-The goal of this project (Microcontroller No-OS) is to be able to provide
-reference projects for lower end processors, which can't run Linux, or aren't
-running a specific operating system, to help those customers using
-microcontrollers with ADI parts. Here you can find a generic driver which can be
-used as a base for any microcontroller platform and also specific drivers for
-different microcontroller platforms.
-
-Driver Description
-==================
-
-The driver contains two parts:
-
--  The driver for the ADP5589 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the
-   desired type of processor and communication protocol have to be implemented.
-   This driver implements the communication with the device and hides the actual
-   details of the communication protocol to the ADI driver.
-
-The Communication Driver has a standard interface, so the ADP5589 driver can be
-used exactly as it is provided.
-
-There are three functions which are called by the ADP5589 driver:
-
--  I2C_Init() – initializes the communication peripheral.
--  I2C_Write() – writes data to the device.
--  I2C_Read() – reads data from the device.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/i2c_architecture.png
-   :align: center
-
-.. container:: centeralign
-
-   I2C driver architecture
-
-The implementation of these three functions depends on the used microcontroller.
-
-The following functions are implemented in this version of ADP5589 driver:
-
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Function                                                                                            | Description                                                                         |
-+=====================================================================================================+=====================================================================================+
-| void ADP5589_SetRegisterValue(unsigned char registerAddress, unsigned char registerValue)           | Writes data into a register.                                                        |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| unsigned char ADP5589_GetRegisterValue(unsigned char registerAddress)                               | Reads the value of a register.                                                      |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| char ADP5589_Init(void)                                                                             | Initializes the communication peripheral and checks if the ADP5589 part is present. |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_InitPwm(void)                                                                          | Initializes the PWM generator in continuous mode.                                   |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_SetPwm(unsigned short pwmOffTime, unsigned short pwmOnTime)                            | Sets the PWM On and Off times.                                                      |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_GpioDirection(unsigned char reg, unsigned char val)                                    | Sets the direction of the pins.                                                     |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| unsigned char ADP5589_GetPinState(unsigned char reg)                                                | Reads the state of the pins.                                                        |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_SetPinState(unsigned char reg, unsigned char state)                                    | Sets the state of the pins.                                                         |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_InitKey(unsigned char pmodPort)                                                        | Initializes keyboard decoder.                                                       |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| unsigned char ADP5589_KeyDecode(unsigned char reg, unsigned char eventType, unsigned char pmodPort) | Decodes the key pressed on the Pmod-KYPD.                                           |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| void ADP5589_KeyLock(unsigned char firstEvent, unsigned char secondEvent, unsigned char pmodPort)   | Locks the ADP5589 and requests Password for unlock.                                 |
-+-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+.. include:: ../adp5589.rst
 
 **HW Platform(s):**
 
@@ -172,45 +88,7 @@ connected to processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
-   :align: center
-
--  After the project is created, all the downloaded source files have to be
-   copied in the project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
-   :align: center
+.. include:: pic32_software_design.rst
 
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
@@ -265,54 +143,12 @@ processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
-   :align: center
-
--  After the project is created, the source files have to be copied in the
-   project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
-   :align: center
+.. include:: dspic33_software_design.rst
 
 More information
 ================
 
--  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
--  Example questions:
-
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+.. include:: ../more-information.rst
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

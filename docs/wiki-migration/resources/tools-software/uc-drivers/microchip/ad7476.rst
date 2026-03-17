@@ -1,97 +1,7 @@
 AD74xx - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-Supported Devices
-=================
-
--  :adi:`AD7466`
--  :adi:`AD7467`
--  :adi:`AD7468`
--  :adi:`AD7475`
--  :adi:`AD7476`
--  :adi:`AD7476A`
--  :adi:`AD7477`
--  :adi:`AD7477A`
--  :adi:`AD7478`
--  :adi:`AD7478A`
--  :adi:`AD7495`
-
-Evaluation Boards
-=================
-
--  `PmodAD1 <http://www.digilentinc.com/Products/Detail.cfm?Prod=PMOD-AD1>`_
--  :adi:`EVAL-AD7466`
--  :adi:`EVAL-AD7476A`
-
-Reference Circuits
-==================
-
--  :adi:`CN0178`
-
-Overview
-========
-
-The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` are, respectively, 12-bit, 10-bit, and 8-bit, high speed, low power, successive approximation ADCs. The parts operate from a single 2.35 V to 5.25 V power supply and feature throughput rates up to 1 MSPS. Each part contains a low noise, wide bandwidth track-and-hold amplifier that can handle input frequencies in excess of 6 MHz.
-
-The conversion process and data acquisition are controlled using CS the serial
-clock, allowing the devices to interface with microprocessors or DSPs. The input
-signal is sampled on the falling edge of CS and the conversion is initiated at
-this point. There are no pipeline delays associated with these parts.
-
-The :adi:`AD7476`/:adi:`AD7477`/:adi:`AD7478` use advanced design techniques to achieve very low power dissipation at high throughput rates. The reference for the parts is taken internally from VDD. This allows the widest dynamic input range to the ADC. Thus, the analog input range for the parts are 0 V to VDD. The conversion rate is determined by the SCLK.
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad7476_pmod_ad1.jpg
-   :align: center
-
-The goal of this project (Microcontroller No-OS) is to be able to provide
-reference projects for lower end processors, which can't run Linux, or aren't
-running a specific operating system, to help those customers using
-microcontrollers with ADI parts. Here you can find a generic driver which can be
-used as a base for any microcontroller platform and also specific drivers for
-different microcontroller platforms.
-
-Driver Description
-==================
-
-The driver contains two parts:
-
--  The driver for the AD74xx part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the
-   desired type of processor and communication protocol have to be implemented.
-   This driver implements the communication with the device and hides the actual
-   details of the communication protocol to the ADI driver.
-
-The Communication Driver has a standard interface, so the AD74xx driver can be
-used exactly as it is provided.
-
-There are three functions which are called by the AD74xx driver:
-
--  SPI_Init() – initializes the communication peripheral.
--  SPI_Write() – writes data to the device.
--  SPI_Read() – reads data from the device.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
-
-.. container:: centeralign
-
-   SPI driver architecture
-
-The following functions are implemented in this version of AD74xx driver:
-
-+------------------------------------------------------------------+--------------------------------------------------+
-| Function                                                         | Description                                      |
-+==================================================================+==================================================+
-| char AD74xx_Init(char partNumber)                                | Initializes the device.                          |
-+------------------------------------------------------------------+--------------------------------------------------+
-| void AD74xx_PowerDown(void)                                      | Powers down the device.                          |
-+------------------------------------------------------------------+--------------------------------------------------+
-| void AD74xx_PowerUp(void)                                        | Powers up the device by performing a dummy read. |
-+------------------------------------------------------------------+--------------------------------------------------+
-| unsigned short AD74xx_GetRegisterValue(void)                     | Reads the conversion value.                      |
-+------------------------------------------------------------------+--------------------------------------------------+
-| float AD74xx_ConvertToVolts(unsigned short rawValue, float vRef) | Converts a raw sample to volts.                  |
-+------------------------------------------------------------------+--------------------------------------------------+
+.. include:: ../ad7476.rst
 
 **HW Platform(s):**
 
@@ -190,45 +100,7 @@ connected to processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
-   :align: center
-
--  After the project is created, all the downloaded source files have to be
-   copied in the project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
-   :align: center
+.. include:: pic32_software_design.rst
 
 Digilent Cerebot MC7 Quick Start Guide
 ======================================
@@ -284,45 +156,7 @@ processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MC7** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **dsPIC33FJ128MC706A** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC16** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_4.png
-   :align: center
-
--  After the project is created, the source files have to be copied in the
-   project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/dspic33_software_design_6.png
-   :align: center
+.. include:: dspic33_software_design.rst
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
@@ -378,37 +212,12 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
--  Unzip the downloaded file in the libraries folder.
--  Run the **MPIDE** environment.
--  You should see the new library under **Sketch->Import Library**, under **Contributed**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_1.png
-   :align: center
-
--  Also you should see under **File->Examples** the demo project for the ADI library.
--  Select the ADIDriver example.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_2.png
-   :align: center
-
--  Select the **Cerebot MX3cK** board from **Tools->Board**.
--  Select the corresponding Serial Communication Port from **Tools->Serial Port**
--  The project is ready to be uploaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
-   :align: center
+.. include:: arduino_software_design.rst
 
 More information
 ================
 
--  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
--  Example questions:
-
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+.. include:: ../more-information.rst
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_dspic33.png

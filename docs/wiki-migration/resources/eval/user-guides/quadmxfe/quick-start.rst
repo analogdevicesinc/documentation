@@ -586,16 +586,7 @@ Useful IIO commands
    :align: center
    :width: 400
 
-IIO Command Line Tools
-======================
-
-There are a few command line tools that are included with the libIIO.
-
--  :doc:`iio_info </wiki-migration/resources/tools-software/linux-software/libiio/iio_info>` : dump the IIO attributes
--  :doc:`iio_attr </wiki-migration/resources/tools-software/linux-software/libiio/iio_attr>` : read and write IIO attributes
--  :doc:`iio_readdev </wiki-migration/resources/tools-software/linux-software/libiio/iio_readdev>` : read an IIO buffer device
--  :doc:`iio_writedev </wiki-migration/resources/tools-software/linux-software/libiio/iio_writedev>` : write an IIO buffer device
--  :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` : read or write SPI or I2C registers in an IIO device (useful to debug drivers)
+.. include:: ../../../tools-software/linux-software/libiio/cmd_line.rst
 
 .. important::
 
@@ -606,7 +597,7 @@ When using remote backend please install libiio for your platform.
 -  https://github.com/analogdevicesinc/libiio/releases
 
 Windows Example
----------------
+^^^^^^^^^^^^^^^
 
 -  Download and install: https://github.com/analogdevicesinc/libiio/releases/download/v0.18/libiio-0.18.g4e22517-Windows-setup.exe
 -  Open windows command prompt: cmd
@@ -642,7 +633,7 @@ The names of the iio devices can be obtained using ``iio_attr`` command.
    
 
 Further information
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 Further information about libiio and it's usage can be found here: **Weblinks**:
 

@@ -1,95 +1,7 @@
 AD7780 - No-OS Driver for Microchip Microcontroller Platforms
 =============================================================
 
-Supported Devices
-=================
-
--  :adi:`AD7780`
-
-Evaluation Boards
-=================
-
--  PmodAD3
-
-Overview
-========
-
-The :adi:`AD7780` is a complete low power front-end solution for bridge sensor products, including weigh scales, strain gages, and pressure sensors. It contains a precision, low power, 24-bit sigma-delta (Σ-Δ) ADC; an on-chip, low noise programmable gain amplifier (PGA); and an on-chip oscillator.
-
-Consuming only 330 μA, the :adi:`AD7780` is particularly suitable for portable or battery-operated products where very low power is required. The :adi:`AD7780` also has a power-down mode that allows the user to switch off the power to the bridge sensor and power down the :adi:`AD7780` when not converting, thus increasing the battery life of the product.
-
-For ease of use, all the features of the :adi:`AD7780` are controlled by dedicated pins. Each time a data read occurs, eight status bits are appended to the 24-bit conversion. These status bits contain a pattern sequence that can be used to confirm the validity of the serial transfer.
-
-The on-chip PGA has a gain of 1 or 128, supporting a full-scale differential
-input of ±5 V or ±39 mV. The device has two filter response options. The filter
-response at the 16.7 Hz update rate provides superior dynamic performance. The
-settling time is 120 ms at this update rate. At the 10 Hz update rate, the
-filter response provides greater than −45 dB of stop-band attenuation. In load
-cell applications, this stop-band rejection is useful to reject low frequency
-mechanical vibrations of the load cell. The settling time is 300 ms at this
-update rate. Simultaneous 50 Hz/60 Hz rejection occurs at both the 10 Hz and
-16.7 Hz update rates.
-
-The :adi:`AD7780` operates with a power supply from 2.7 V to 5.25 V. It is available in a narrow body, 14-lead SOIC package and a 16-lead TSSOP package.
-
-Applications
-------------
-
--  Weigh scales
--  Pressure Measurement
--  Industrial Process Control
--  Portable instrumentation
-
-.. image:: https://wiki.analog.com/_media/resources/pmods/ad7780_pmod_ad3.jpg
-   :align: center
-
-The goal of this project (Microcontroller No-OS) is to be able to provide
-reference projects for lower end processors, which can't run Linux, or aren't
-running a specific operating system, to help those customers using
-microcontrollers with ADI parts. Here you can find a generic driver which can be
-used as a base for any microcontroller platform and also specific drivers for
-different microcontroller platforms.
-
-Driver Description
-==================
-
-The driver contains two parts:
-
--  The driver for the AD7780 part, which may be used, without modifications, with any microcontroller.
--  The Communication Driver, where the specific communication functions for the
-   desired type of processor and communication protocol have to be implemented.
-   This driver implements the communication with the device and hides the actual
-   details of the communication protocol to the ADI driver.
-
-The Communication Driver has a standard interface, so the AD7780 driver can be
-used exactly as it is provided.
-
-There are three functions which are called by the AD7780 driver:
-
--  SPI_Init() – initializes the communication peripheral.
--  SPI_Write() – writes data to the device.
--  SPI_Read() – reads data from the device.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/spi_architecture.png
-   :align: center
-
-.. container:: centeralign
-
-   SPI driver architecture
-
-The following functions are implemented in this version of AD7780 driver:
-
-+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| Function                                                                               | Description                                                                   |
-+========================================================================================+===============================================================================+
-| char AD7780_Init(void)                                                                 | Initializes the communication peripheral and checks if the device is present. |
-+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| char AD7780_WaitRdyGoLow(void)                                                         | Waits for DOUT/RDY pin to go low.                                             |
-+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| long AD7780_ReadSample(unsigned char\* pStatus)                                        | Reads a 24-bit sample from the ADC.                                           |
-+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-| float AD7780_ConvertToVoltage(unsigned long rawSample, float vRef, unsigned char gain) | Converts the 24-bit raw value to volts.                                       |
-+----------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+.. include:: ../ad7780.rst
 
 **HW Platform(s):**
 
@@ -208,45 +120,7 @@ connected to processor’s UART peripheral.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a software application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Run the **MPLAB X** integrated development environment.
--  Choose to create a new project.
--  In the **Choose Project** window select **Microchip Embedded** category, **Standalone Project** and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_0.png
-   :align: center
-
--  In the **Select Device** window choose **PIC32MX320F128H** device and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_1.png
-   :align: center
-
--  In the **Select Tool** window select the desired hardware tool and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_2.png
-   :align: center
-
--  In the **Select Compiler** window chose the **XC32** compiler and press **Next**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_3.png
-   :align: center
-
--  In the **Select Project Name and Folder** window choose a name and a location for the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_4.png
-   :align: center
-
--  After the project is created, all the downloaded source files have to be
-   copied in the project folder and included in the project.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_5.png
-   :align: center
-
--  The project is ready to be built and downloaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pic32_software_design_6.png
-   :align: center
+.. include:: pic32_software_design.rst
 
 Digilent Cerebot MX3cK Quick Start Guide - chipKIT Project
 ==========================================================
@@ -312,37 +186,12 @@ The following image shows a list of commands in the serial monitor.
 Software Project Setup
 ----------------------
 
-This section presents the steps for developing a chipKIT application that will run on the **Digilent Cerebot MX3cK** development board for controlling and monitoring the operation of the **ADI** part.
-
--  Under your **Sketchbook** directory create a folder called "Libraries"; this folder may already exist.
--  Unzip the downloaded file in the libraries folder.
--  Run the **MPIDE** environment.
--  You should see the new library under **Sketch->Import Library**, under **Contributed**.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_1.png
-   :align: center
-
--  Also you should see under **File->Examples** the demo project for the ADI library.
--  Select the ADIDriver example.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_2.png
-   :align: center
-
--  Select the **Cerebot MX3cK** board from **Tools->Board**.
--  Select the corresponding Serial Communication Port from **Tools->Serial Port**
--  The project is ready to be uploaded on the development board.
-
-.. image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/arduino_software_design_3.png
-   :align: center
+.. include:: arduino_software_design.rst
 
 More information
 ================
 
--  :ez:`ask questions about the Microcontroller no-OS Drivers <community/linux-device-drivers/microcontroller-no-os-drivers>`
--  Example questions:
-
-.. image:: https://wiki.analog.com/_media/rss>http///ez.analog.com/community/feeds/allcontent/atom
-   :alt: //ez.analog.com/community/feeds/allcontent/atom
+.. include:: ../more-information.rst
 
 .. |image1| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/pmod_ad3_pic32.jpg
 .. |image2| image:: https://wiki.analog.com/_media/resources/tools-software/uc-drivers/microchip/terminal_pic32.png
