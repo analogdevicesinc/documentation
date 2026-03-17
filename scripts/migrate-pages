@@ -56,13 +56,17 @@ def extract_doc_refs(text: str) -> list[str]:
     return refs
 
 
-def crawl(seeds: list[str], claimed: set[str]) -> set[str]:
-    """BFS from seed pages following :doc: links. Returns set of page paths."""
-    queue = deque(seeds)
+def crawl(seeds: list[str], claimed: set[str]) -> tuple[set[str], dict[str, int]]:
+    """BFS from seed pages following :doc: links.
+
+    Returns (visited set, levels dict mapping page -> BFS depth).
+    """
+    queue = deque((s, 0) for s in seeds)
     visited: set[str] = set()
+    levels: dict[str, int] = {}
 
     while queue:
-        page = queue.popleft()
+        page, level = queue.popleft()
         if page in visited:
             continue
         if page in claimed:
@@ -75,12 +79,13 @@ def crawl(seeds: list[str], claimed: set[str]) -> set[str]:
             continue
 
         visited.add(page)
+        levels[page] = level
         text = rst_file.read_text(errors="replace")
         for target in extract_doc_refs(text):
             if target not in visited:
-                queue.append(target)
+                queue.append((target, level + 1))
 
-    return visited
+    return visited, levels
 
 
 def load_claimed(manifest_paths: list[str]) -> set[str]:
@@ -459,7 +464,6 @@ def main():
     )
     parser.add_argument(
         "--branch",
-        required=True,
         help="Branch suffix — creates wiki_migration/<NAME>_MOVING and _REMAINING-PAGES",
     )
     parser.add_argument(
@@ -483,10 +487,19 @@ def main():
         default="main",
         help="Base branch to create migration branch from (default: main)",
     )
+    parser.add_argument(
+        "--crawl-list",
+        type=Path,
+        metavar="FILE",
+        help="Save crawled pages with BFS levels to FILE and exit",
+    )
     args = parser.parse_args()
 
-    moving_branch = f"wiki_migration/{args.branch}_MOVING"
-    remaining_branch = f"wiki_migration/{args.branch}_REMAINING-PAGES"
+    if not args.crawl_list and not args.branch:
+        parser.error("--branch is required unless --crawl-list is used")
+
+    moving_branch = f"wiki_migration/{args.branch}_MOVING" if args.branch else None
+    remaining_branch = f"wiki_migration/{args.branch}_REMAINING-PAGES" if args.branch else None
     base_branch = args.base
     dry_run = args.dry_run
     verbose = args.verbose
@@ -565,8 +578,16 @@ def main():
     for s in seeds:
         print(f"    {s}")
 
-    reachable = crawl(seeds, claimed)
+    reachable, levels = crawl(seeds, claimed)
     print(f"  Reachable: {len(reachable)} pages")
+
+    # Save crawl list if requested
+    if args.crawl_list:
+        with open(args.crawl_list, "w") as f:
+            for page in sorted(levels, key=lambda p: (levels[p], p)):
+                f.write(f"{levels[page]} {page}\n")
+        print(f"  Saved crawl list to {args.crawl_list}")
+        sys.exit(0)
 
     # Compute which pages are being moved vs staying
     moved_page_paths = set()
