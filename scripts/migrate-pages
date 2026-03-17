@@ -44,8 +44,58 @@ def normalize_page(page: str) -> str:
     return page
 
 
+SKIP_SECTIONS: list[str] = []
+
+def _strip_sections(text: str) -> str:
+    """Remove content under headings listed in SKIP_SECTIONS (case-insensitive).
+
+    Detects RST section headings (title line followed by underline of =, -, ~, ^, ")
+    and removes everything from the matching heading to the next heading at the same
+    or higher level.
+    """
+    if not SKIP_SECTIONS:
+        return text
+    lines = text.split("\n")
+    skip_titles = [s.lower() for s in SKIP_SECTIONS]
+    # Map underline char to a level (lower = higher priority)
+    adornment_rank = {"=": 0, "-": 1, "~": 2, "^": 3, '"': 4}
+    result: list[str] = []
+    skipping = False
+    skip_level = 999
+    i = 0
+    while i < len(lines):
+        # Check if this line + next form a section heading
+        is_heading = False
+        heading_level = 999
+        if (i + 1 < len(lines)
+                and lines[i].strip()
+                and lines[i + 1].strip()
+                and len(set(lines[i + 1].strip())) == 1
+                and lines[i + 1].strip()[0] in adornment_rank
+                and len(lines[i + 1].strip()) >= len(lines[i].strip())):
+            is_heading = True
+            heading_level = adornment_rank.get(lines[i + 1].strip()[0], 5)
+            title = lines[i].strip().lower()
+
+        if is_heading:
+            if skipping:
+                if heading_level <= skip_level:
+                    skipping = False  # reached same/higher level heading
+            if not skipping and title in skip_titles:
+                skipping = True
+                skip_level = heading_level
+                i += 2  # skip heading + underline
+                continue
+
+        if not skipping:
+            result.append(lines[i])
+        i += 1
+    return "\n".join(result)
+
+
 def extract_doc_refs(text: str) -> list[str]:
     """Extract wiki-migration :doc: targets from RST text."""
+    text = _strip_sections(text)
     refs = []
     for match in CRAWL_DOC_REF_RE.finditer(text):
         target = match.group(1)
@@ -497,10 +547,20 @@ def main():
         metavar="FILE",
         help="Save crawled pages with BFS levels to FILE and exit",
     )
+    parser.add_argument(
+        "--skip-sections",
+        nargs="*",
+        default=[],
+        metavar="TITLE",
+        help="Section headings to ignore during BFS crawl (case-insensitive)",
+    )
     args = parser.parse_args()
 
     if not args.crawl_list and not args.branch:
         parser.error("--branch is required unless --crawl-list is used")
+
+    global SKIP_SECTIONS
+    SKIP_SECTIONS = args.skip_sections
 
     moving_branch = f"wiki_migration/{args.branch}_MOVING" if args.branch else None
     remaining_branch = f"wiki_migration/{args.branch}_REMAINING-PAGES" if args.branch else None
