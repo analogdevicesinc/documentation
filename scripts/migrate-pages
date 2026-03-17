@@ -56,17 +56,20 @@ def extract_doc_refs(text: str) -> list[str]:
     return refs
 
 
-def crawl(seeds: list[str], claimed: set[str]) -> tuple[set[str], dict[str, int]]:
+def crawl(seeds: list[str], claimed: set[str]) -> tuple[set[str], dict[str, int], dict[str, str | None]]:
     """BFS from seed pages following :doc: links.
 
-    Returns (visited set, levels dict mapping page -> BFS depth).
+    Returns (visited set, levels dict, parent dict).
+    - levels: page -> BFS depth
+    - parent: page -> parent page (None for seeds)
     """
-    queue = deque((s, 0) for s in seeds)
+    queue = deque((s, 0, None) for s in seeds)
     visited: set[str] = set()
     levels: dict[str, int] = {}
+    parent: dict[str, str | None] = {}
 
     while queue:
-        page, level = queue.popleft()
+        page, level, par = queue.popleft()
         if page in visited:
             continue
         if page in claimed:
@@ -80,12 +83,13 @@ def crawl(seeds: list[str], claimed: set[str]) -> tuple[set[str], dict[str, int]
 
         visited.add(page)
         levels[page] = level
+        parent[page] = par
         text = rst_file.read_text(errors="replace")
         for target in extract_doc_refs(text):
             if target not in visited:
-                queue.append((target, level + 1))
+                queue.append((target, level + 1, page))
 
-    return visited, levels
+    return visited, levels, parent
 
 
 def load_claimed(manifest_paths: list[str]) -> set[str]:
@@ -578,14 +582,35 @@ def main():
     for s in seeds:
         print(f"    {s}")
 
-    reachable, levels = crawl(seeds, claimed)
+    reachable, levels, parent = crawl(seeds, claimed)
     print(f"  Reachable: {len(reachable)} pages")
 
     # Save crawl list if requested
     if args.crawl_list:
+        # Build tree: parent -> sorted children
+        children: dict[str | None, list[str]] = {}
+        for page, par in parent.items():
+            children.setdefault(par, []).append(page)
+        for k in children:
+            children[k].sort()
+
+        def write_tree(f, node: str, prefix: str = "", is_last: bool = True):
+            connector = "└── " if is_last else "├── "
+            f.write(f"{prefix}{connector}{node}\n")
+            kids = children.get(node, [])
+            for i, child in enumerate(kids):
+                extension = "    " if is_last else "│   "
+                write_tree(f, child, prefix + extension, i == len(kids) - 1)
+
         with open(args.crawl_list, "w") as f:
-            for page in sorted(levels, key=lambda p: (levels[p], p)):
-                f.write(f"{levels[page]} {page}\n")
+            roots = children.get(None, [])
+            for i, root in enumerate(roots):
+                # Print root without connector
+                f.write(f"{root}\n")
+                kids = children.get(root, [])
+                for j, child in enumerate(kids):
+                    write_tree(f, child, "", j == len(kids) - 1)
+
         print(f"  Saved crawl list to {args.crawl_list}")
         sys.exit(0)
 
