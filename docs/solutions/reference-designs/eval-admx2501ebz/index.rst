@@ -31,12 +31,9 @@ The **AD-IMP2501DBZ-SL** is a high-performance, impedance analyzer module.
 - Operates from a single 5V supply
 - UART interface
   :red:`(additional BLE 5.2, USB, and SPI hardware support capable)`
-
-::
-
-   *Meets patient leakage requirements for IEC 60601-1*
-   * 6 display mode formats in SI units
-   * Command line, Graphical user interface, and Python API for easy system evaluation and data collection
+- Meets patient leakage requirements for IEC 60601-1*
+- 6 display mode formats in SI units
+- Command line, Graphical user interface, and Python API for easy system evaluation and data collection
 
 *\*Current hardware implementation is dependent on voltage drive levels. The
 hardware can be modified to limit the current depending on application
@@ -159,8 +156,6 @@ Follow these steps to start evaluating the AD-IMP2501DBZ-SL:
 
 These steps are explained in detail in the following sections.
 
---------------
-
 Hardware User Guide
 -------------------
 
@@ -183,38 +178,40 @@ Required Equipment
 #. USB C Cable
 #. PC
 
-- *USB drivers and terminal emulator required. Please see Software User Guide
-  for instructions to download and install on your PC if not already installed.*
+   USB drivers and terminal emulator required. Please see
+   :ref:`eval-admx2501ebz software-user-guide` for instructions to download and
+   install on your PC if not already installed.
+
+.. _eval-admx2501ebz optional-equipment:
 
 Optional Equipment
 ^^^^^^^^^^^^^^^^^^
 
 #. Programming equipment for Firmware Updates
 
--
-  :adi:`MAX32625PICO2 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max32625pico2.html#eb-overview>`
-  with ribbon cable
+   - :adi:`MAX32625PICO2 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max32625pico2.html#eb-overview>`
+     with ribbon cable
 
 #. Impedance measurement accessories. Available from various test and
    measurement manufacturers, for example:
 
-- `Keysight's Impedance Measurement Accessories <https://www.keysight.com/en/pc-1000002552%3Aepsg%3Apgr/lcr-meter-impedance-measurement-product-accessories>`__
-- `B+K Precision TL89S1 SMD Test Fixture <https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183>`__
-- `B+K Precision TL89F1 4-Terminal Test Fixture for leaded components <https://www.digikey.com/en/products/detail/b-k-precision/TL89F2/6618989>`__
-- `SMA Male Pin to BNC Jack <https://www.digikey.com/en/products/detail/pomona-electronics/4290/678700>`__
+   - `Keysight's Impedance Measurement Accessories <https://www.keysight.com/en/pc-1000002552%3Aepsg%3Apgr/lcr-meter-impedance-measurement-product-accessories>`__
+   - `B+K Precision TL89S1 SMD Test Fixture <https://www.digikey.com/en/products/detail/b-k-precision/TL89S1/7915183>`__
+   - `B+K Precision TL89F1 4-Terminal Test Fixture for leaded components <https://www.digikey.com/en/products/detail/b-k-precision/TL89F2/6618989>`__
+   - `SMA Male Pin to BNC Jack <https://www.digikey.com/en/products/detail/pomona-electronics/4290/678700>`__
 
 #. Calibration Standards and Accessories
 
-- `IET Labs <https://www.ietlabs.com/>`__ (former General Radio products)
-- `Keysight 42090A Open Termination <https://www.keysight.com/en/pd-1000003831%3Aepsg%3Apro-pn-42090A/open-termination-4-terminal-pair>`__
-- `Keysight 42091A Short Termination <https://www.keysight.com/en/pd-1000003830%3Aepsg%3Apro-pn-42091A/short-termination-4-terminal-pair>`__
-- `Keysight 42030A Four Terminal Pair Standard Resistor Set <https://www.keysight.com/en/pd-1000003832%3Aepsg%3Apro-pn-42030A/four-terminal-pair-standard-resistor-set>`__
-- `Keysight 16380A Standard Air Capacitor Set (1pF to 1000pF) <https://www.keysight.com/en/pd-1000003834%3Aepsg%3Apro-pn-16380A/standard-air-capacitor-set-1pf-to-1000pf>`__
-- `Keysight 16380C Capacitance Standard Set (0.01uF to 10uF) <https://www.keysight.com/en/pd-1000003833%3Aepsg%3Apro-pn-16380C/capacitance-standard-set-001uf-to-10uf>`__
+   - `IET Labs <https://www.ietlabs.com/>`__ (former General Radio products)
+   - `Keysight 42090A Open Termination <https://www.keysight.com/en/pd-1000003831%3Aepsg%3Apro-pn-42090A/open-termination-4-terminal-pair>`__
+   - `Keysight 42091A Short Termination <https://www.keysight.com/en/pd-1000003830%3Aepsg%3Apro-pn-42091A/short-termination-4-terminal-pair>`__
+   - `Keysight 42030A Four Terminal Pair Standard Resistor Set <https://www.keysight.com/en/pd-1000003832%3Aepsg%3Apro-pn-42030A/four-terminal-pair-standard-resistor-set>`__
+   - `Keysight 16380A Standard Air Capacitor Set (1pF to 1000pF) <https://www.keysight.com/en/pd-1000003834%3Aepsg%3Apro-pn-16380A/standard-air-capacitor-set-1pf-to-1000pf>`__
+   - `Keysight 16380C Capacitance Standard Set (0.01uF to 10uF) <https://www.keysight.com/en/pd-1000003833%3Aepsg%3Apro-pn-16380C/capacitance-standard-set-001uf-to-10uf>`__
 
 #. LCR Meter for verification
 
-- `Keysight E4980A Precision LCR Meter <https://www.keysight.com/en/pd-715495-pn-E4980A/precision-lcr-meter-20-hz-to-2-mhz>`__
+   - `Keysight E4980A Precision LCR Meter <https://www.keysight.com/en/pd-715495-pn-E4980A/precision-lcr-meter-20-hz-to-2-mhz>`__
 
 EVAL-ADMX2001EBZ Terminal Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -411,10 +408,8 @@ General Setup
 The following figure shows the basic connections required for evaluating the
 ADMX2501B.
 
-.. note::
-
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_hardware_setup.png
-      :width: 800px
+.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_hardware_setup.png
+   :width: 800px
 
 - Insert the AD-IMP2501DBZ-SL module into the AD-IMP2501EBZ-SL board in the
   location shown above. Use the small white triangle on both the module and the
@@ -582,31 +577,31 @@ ADMX2501B.
      - Not Installed
      - 10k ohms
    * -
-     - :::
+     -
      - 1k ohms
    * -
-     - :::
+     -
      - 100 ohms
    * -
-     - :::
+     -
      - 10 ohms
    * -
-     - :::
+     -
      - 0 ohms
    * - P22
      - Not Installed
      - 10k ohms
    * -
-     - :::
+     -
      - 1k ohms
    * -
-     - :::
+     -
      - 100 ohms
    * -
-     - :::
+     -
      - 10 ohms
    * -
-     - :::
+     -
      - 0 ohms
    * - P8
      - Not Installed
@@ -638,6 +633,8 @@ ADMX2501B.
 - An LED on the top side of the AD-IMP2501DBZ-SL should turn on, blink twice,
   and turn off. It should now only turn on when data is being processed.
 
+.. _eval-admx2501ebz software-user-guide:
+
 Software User Guide
 -------------------
 
@@ -657,7 +654,7 @@ Some drivers and peripheral software is required for operation. Instructions on
 how to download and install all necessary software or firmware is provided
 below.
 
---------------
+.. _eval-admx2501ebz usb-driver-installation:
 
 USB Driver Installation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -687,8 +684,6 @@ USB Driver Installation
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/device_manager_com_port.png
    :width: 600px
 
---------------
-
 Embedded Software Update
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -696,6 +691,8 @@ If during development it becomes necessary to load new firmware onto the
 AD-IMP2501DBZ-SL, follow these steps using the
 :adi:`MAX32625PICO2 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max32625pico2.html#eb-overview>`
 ``PICO`` Board
+
+.. _eval-admx2501ebz request-fw-sw:
 
 Request and Download New Firmware or Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -726,8 +723,6 @@ firmware, but the process is the same for requesting software:
 - Then select the green ``Download`` button. This will download a zipped folder
   containing a .hex file that can be flashed onto the AD-IMP2501DBZ-SL.
 
---------------
-
 Connect the PICO board
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -740,8 +735,6 @@ DAPLINK drive has been found by your PC. See below circled in red.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/daplink_drive.png
    :width: 400px
-
---------------
 
 Flash the ADI Provided Firmware File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -777,8 +770,6 @@ successful. If a failure has occurred, power cycle both the PICO board and the
 AD-IMP2501DBZ-SL by removing the USB cables and then reconnecting them both.
 Attempt the download process again until successful.
 
---------------
-
 Application Software
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -795,7 +786,7 @@ for custom scripting. This script is offered for users who want to implement
 post processing of their data in real time or create their own visual
 representation of the impedance data.
 
---------------
+.. _eval-admx2501ebz ad-imp2501dbz-sl-available-commands:
 
 AD-IMP2501DBZ-SL Available Commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -953,15 +944,11 @@ prompt the user for a new input.
    system. This will not change the configuration after the module comes back
    online.
 
---------------
-
 Command Line
 ^^^^^^^^^^^^
 
 For command line operation and explanation of the system API, please continue
 here.
-
---------------
 
 Terminal Emulator Installation
 ''''''''''''''''''''''''''''''
@@ -984,15 +971,12 @@ instructions.
    manipulate the cursor position. If the ANSI Escape Codes are not supported,
    the terminal may not work properly. TeraTerm supports these characters.
 
---------------
-
 Opening a Session via Teraterm
 ''''''''''''''''''''''''''''''
 
-Verify the COM Port that your system is connected to in the PC"s Device Manager.
-Check the
-:dokuwiki:`USB Driver Installation <eval-admx2501ebz#usb_driver_installation>`
-instructions if needed.
+Verify the COM Port that your system is connected to in the PC"s Device
+Manager. Check the :ref:`eval-admx2501ebz usb-driver-installation` instructions
+if needed.
 
 If multiple ports are in use and you are unsure which is connected to the
 AD-IMP2501DBZ-SL board simply remove the USB from the computer and when the
@@ -1031,15 +1015,13 @@ Verify the board is communicating properly by checking the following:
 Note that closing the TeraTerm window does not reset the AD-IMP2501DBZ-SL
 settings from the last session.
 
---------------
-
 Using the "help" Functionality in the Command-Line Interface
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 The ``help`` command will display all the commands available to the user from
 the command-line interface (CLI). Use this command while operating for a quick
-refresher. See the *AD-IMP2501DBZ-SL Available Commands* section for more
-details on each command.
+refresher. See the :ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
+section for more details on each command.
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_help_command_page1.png
    :width: 700px
@@ -1047,7 +1029,12 @@ details on each command.
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_help_command_page2.png
    :width: 700px
 
---------------
+.. _eval-admx2501ebz calibration-procedure:
+
+Calibration Procedure
+'''''''''''''''''''''
+
+TBD…
 
 Performing Basic Measurements via Command Line
 ''''''''''''''''''''''''''''''''''''''''''''''
@@ -1059,9 +1046,8 @@ impedance measurements.
 
    The measurements reported by the module may not be accurate unless it has
    been calibrated. For detailed instructions on how to calibrate the module,
-   please refer to the
-   :dokuwiki:`Calibration Procedure <eval-admx2501ebz#calibration_procedure>`
-   section in this user guide.
+   please refer to the :ref:`eval-admx2501ebz calibration-procedure` section
+   in this user guide.
 
 By default, the module is set to perform single-point impedance measurements in
 rectangular coordinates with a 300mV peak-to-peak signal (magnitude = 300) at
@@ -1083,8 +1069,7 @@ The AC magnitude can be configured anywhere between approximately 10mV pk-pk and
 across the DUT will be be dependent on the DUT impedance, due to the onboard
 100Ω source resistance (for current limiting and patient protection, can be
 modified for different applications); see
-:dokuwiki:`Selecting a Measurement Range <eval-admx2501ebz#selecting_a_measurement_range>`
-for details.
+:ref:`eval-admx2501ebz selecting-a-measurement-range` for details.
 
 .. tip::
 
@@ -1162,14 +1147,10 @@ To plot the acquired data in Microsoft Excel, follow the steps below:
 #. Open the file with Excel
 #. Select the data to plot and insert a scatter plot to visualize the data
 
---------------
-
 Graphical User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 TBD…
-
---------------
 
 Python Script
 ^^^^^^^^^^^^^
@@ -1184,9 +1165,8 @@ accesses the Serial port directly, and calling the library functions will
 execute the same commands that are normally typed into the terminal emulator.
 
 This Python library and project are currently accessible by request. Follow the
-instructions in the
-:dokuwiki:`Request and Download Firmware/Software <eval-admx2501ebz#request_and_download_new_firmware_or_software>`
-section but request the Python Application Software for the AD-IMP2501DBZ-SL.
+instructions in the :ref:`eval-admx2501ebz request-fw-sw` section but request
+the Python Application Software for the AD-IMP2501DBZ-SL.
 
 The Python script download includes an example measurement sweep script, which
 shows how to set up the Serial port, configure measurements and begin collecting
@@ -1195,16 +1175,12 @@ Python functions in the library, but not all. These functions perform a certain
 degree of error checking but is not complete. This library is for evaluation
 purposes only and is meant to be a starting point for a user to develop further.
 
---------------
-
 Operation
 ~~~~~~~~~
 
 The sections below are filled with examples and techniques on the system
 operation, mostly using the command line interface. The goal here is to show how
 different parameters may affect measurement results.
-
---------------
 
 Measurement Display Modes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1249,6 +1225,8 @@ ohms.
      - Admittance in magnitude and phase in radians
      - Y, rad
      - Siemens, Radians
+
+.. _eval-admx2501ebz selecting-a-measurement-range:
 
 Selecting a Measurement Range
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1331,15 +1309,18 @@ current to flow. Electrical components such as resistors, capacitors and
 inductors have a direct relationship between their value and the expected
 impedance (Z):
 
-Z = X = -1/(2πfC) for capacitors Z = X = 2πfL for inductors Z = R for resistors
+| Z = X = -1/(2πfC) for capacitors
+| Z = X = 2πfL for inductors
+| Z = R for resistors
 
 Where f is the frequency of the signal; C, L, and R are the component values in
 Farads, Henries and Ohms respectively. R represents resistance and X reactance.
 
 For admittance (Y):
 
-Y = B = 2πfC for capacitors Y = B = -1/(2πfL) for inductors Y = G = 1/R for
-resistors
+| Y = B = 2πfC for capacitors
+| Y = B = -1/(2πfL) for inductors
+| Y = G = 1/R for resistors
 
 Where f is the frequency of the signal; C, L, and R are the component values in
 Farads, Henries and Ohms respectively. G represents conductivity and B
@@ -1354,7 +1335,8 @@ resistive element. The total impedance or admittance magnitude can be obtained
 by calculating the square-root of the sum of squares (RSS) of the two components
 or
 
-%% \|Z\| = sqrt(R*R + X*X)%% %% \|Y\| = sqrt(G*G + B*B)%%
+| \|Z\| = sqrt(R*R + X*X)
+| \|Y\| = sqrt(G*G + B*B)
 
 To determine the best measurement range for measurement, it is necessary to
 estimate the impedance or admittance of the device under test at the frequency
@@ -1379,8 +1361,6 @@ However, depending on the DUT, it may not always be possible to estimate the
 properties, which is why the experimental and testing method utilizing the
 ``autogain`` feature is also recommended.
 
---------------
-
 Reducing Measurement Noise
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1398,8 +1378,6 @@ is small in comparison to the total impedance magnitude. The default is set to
    continues to increases. This threshold of limited return will depend on the
    application.
 
---------------
-
 Improving Measurement Precision
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -1415,12 +1393,10 @@ To test surface-mount components, fixtures like the
 or the
 `Keysight 16034G <https://www.keysight.com/en/pd-1000000474%3Aepsg%3Apro-pn-16034G/smd-test-fixture>`__
 are good examples. For a full list of recommended accessories, please refer to
-the :dokuwiki:`Optional Equipment <eval-admx2501ebz#optional_equipment>` section
+the :ref:`eval-admx2501ebz optional-equipment` section
 at the beginning of this user guide. These fixtures are not possible for all
 applications and some systems will require relative precision versus absolute
 precision.
-
---------------
 
 Performing Frequency Sweeps
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1477,8 +1453,6 @@ Perform an 11-point logarithmic frequency sweep from 1kHz to 1MHz.
 
    When sweeping frequency, the first value printed will be the frequency value
    instead of index, followed by the measurement in the display format selected.
-
---------------
 
 Optimizing Measurement Timing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1618,8 +1592,6 @@ delay time between these trigger events.
    0, 1.025001e+02, -1.355432e-01
    1, 1.024866e+02, -1.084897e-01
    2, 1.025063e+02, -1.583959e-01
-
---------------
 
 Optimizing Single Point Measurements
 ''''''''''''''''''''''''''''''''''''
@@ -2000,6 +1972,8 @@ again, the user will overwrite the result of the first calibration. Support for
 calibration over frequency is included and incorporates the entire 1Hz to 1.5MHz
 range.
 
+.. _eval-admx2501ebz calibration-steps:
+
 Calibration Steps
 '''''''''''''''''
 
@@ -2281,8 +2255,6 @@ default coefficients will be used even if calibration is turned on. Coefficients
 must be saved using ``calcommit``; otherwise, they will be lost if the system
 reboots or loses power.
 
---------------
-
 Compensation Procedure
 ''''''''''''''''''''''
 
@@ -2290,20 +2262,17 @@ Compensation is an additional measurement adjustment function designed to
 account for changes in the test fixture or application setup that were not
 present during calibration. This feature is useable, but it is also reasonable
 to recalibrate for each fixture/setup, and use the commands detailed in
-:dokuwiki:`Calibration Steps <eval-admx2501ebz#calibration_steps>` to save data
-for each config.
+:ref:`eval-admx2501ebz calibration-steps` to save data for each config.
 
 To configure compensation coefficients, run the same steps in the calibration
 procedure, but use the ``comp`` commands instead of the ``cal`` commands. Make
 sure the commands are run with the setup fully intact and all connections to the
 DUT in place. Refer to the help section on available commands for the specific
 list and associated names for compensation located at
-:dokuwiki:`Available Commands <eval-admx2501ebz#ad-imp2501dbz-sl_available_commands>`
+:ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
 
 .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_compensation.png
    :width: 600px
-
---------------
 
 Firmware Release Highlights
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
