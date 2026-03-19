@@ -64,7 +64,7 @@ Applications
 System Architecture
 ~~~~~~~~~~~~~~~~~~~
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-ad-imp2501-sl_block_diagram.png
+.. figure:: images/eval-ad-imp2501-sl_block_diagram.png
    :width: 600px
 
 Specifications
@@ -134,7 +134,7 @@ AD-IMP2501DBZ-SL Package Contents
 
 #. **AD-IMP2501DBZ-SL** Impedance Analyzer Measurement Module
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/ad-imp2501dbz-sl.png
+.. figure:: images/ad-imp2501dbz-sl.png
    :width: 300px
 
 .. important::
@@ -216,7 +216,7 @@ Optional Equipment
 EVAL-ADMX2001EBZ Terminal Description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/eval-admx2001ebz_diagram_3.png
+.. figure:: images/eval-admx2001ebz_diagram_3.png
    :width: 600px
 
 .. list-table::
@@ -266,7 +266,7 @@ EVAL-ADMX2001EBZ Terminal Description
 AD-IMP2501DBZ Pin Configuration and Descriptions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/ad-imp2501ebz-sl_pinout.png
+.. figure:: images/ad-imp2501ebz-sl_pinout.png
    :width: 600px
 
 .. list-table::
@@ -408,7 +408,7 @@ General Setup
 The following figure shows the basic connections required for evaluating the
 ADMX2501B.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_hardware_setup.png
+.. figure:: images/fishercat_hardware_setup.png
    :width: 800px
 
 - Insert the AD-IMP2501DBZ-SL module into the AD-IMP2501EBZ-SL board in the
@@ -421,7 +421,7 @@ ADMX2501B.
   communication. The second table is for EIS on board measurements. The third
   table is for EIS off board measurements.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_jumper_positions.png
+.. figure:: images/fishercat_jumper_positions.png
    :width: 600px
 
 - Verify jumpers are installed in the locations designated by the following
@@ -681,7 +681,7 @@ USB Driver Installation
   under ``Ports (COM & LPT)`` and that a serial port identifier has been
   assigned as shown below (the COM# may be different than shown here):
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/device_manager_com_port.png
+.. figure:: images/device_manager_com_port.png
    :width: 600px
 
 Embedded Software Update
@@ -710,14 +710,14 @@ firmware, but the process is the same for requesting software:
 - You will receive an email that looks like the below image once the request has
   been processed. Follow the URL at the bottom of the page:
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/adi_license.png
+.. figure:: images/adi_license.png
    :width: 600px
 
 - View the software license agreement by selecting the hyperlink ``software
   license agreement`` highlighted in blue, and hit the check box to indicate
   that you have read and agree to the terms outlined in the license.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/adi_sw_download.png
+.. figure:: images/adi_sw_download.png
    :width: 500px
 
 - Then select the green ``Download`` button. This will download a zipped folder
@@ -733,7 +733,7 @@ picture in the Hardware User Guide *General Setup section* for locating the
 proper header. Once connected, open a file explorer window and verify that a
 DAPLINK drive has been found by your PC. See below circled in red.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/daplink_drive.png
+.. figure:: images/daplink_drive.png
    :width: 400px
 
 Flash the ADI Provided Firmware File
@@ -747,7 +747,7 @@ corresponds to the numbered revision of the firmware file.
 Simply drag and drop the .hex file into the DAPLINK drive and a download screen
 should open and show the process.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fw_download.png
+.. figure:: images/fw_download.png
    :width: 400px
 
 After flashing, power cycle the AD-IMP2501DBZ-SL by removing the USB C cable
@@ -762,7 +762,7 @@ revision the board reports is the same as the firmware file that was flashed
    process may have failed. A good check is to re-open the explorer window and
    check the DAPLINK drive.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fw_fail.png
+.. figure:: images/fw_fail.png
    :width: 400px
 
 If a FAIL.TXT file exists, as shown in the image above, the FW flash was not
@@ -987,7 +987,7 @@ Continue with the system powered on via USB connection to the host PC, open the
 TeraTerm application and choose File -> New Connection, and choose the "Serial"
 radio button and select "OK".
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/teraterm_new_conn.png
+.. figure:: images/teraterm_new_conn.png
    :width: 400px
 
 Select the COM port identified earlier in the Device Manager. Click "OK". Then
@@ -995,7 +995,7 @@ choose the tab labeled "Setup" and select "Serial port…". Ensure that the COM
 port is set and the following are set accordingly, Speed = 115200, Data = 8
 bits, Parity = none, Stop bits = 1 bits, Flow control = None. Then select "OK"
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/teraterm_settings.png
+.. figure:: images/teraterm_settings.png
    :width: 500px
 
 Optionally, choose "Setup" -> "Save setup…". Save the file to the default
@@ -1023,10 +1023,10 @@ the command-line interface (CLI). Use this command while operating for a quick
 refresher. See the :ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
 section for more details on each command.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_help_command_page1.png
+.. figure:: images/fishercat_help_command_page1.png
    :width: 700px
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_help_command_page2.png
+.. figure:: images/fishercat_help_command_page2.png
    :width: 700px
 
 .. _eval-admx2501ebz calibration-procedure:
@@ -1057,7 +1057,7 @@ prompt and press ENTER.
 Type ``get`` and press ENTER to view the current default parameter settings in
 the terminal window.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_get_default.png
+.. figure:: images/fishercat_get_default.png
    :width: 600px
 
 Measurement settings are not always in their base SI form. Frequency is in Hz,
@@ -1344,7 +1344,7 @@ of measurement using the equations above. A simpler method to obtain an
 approximate value based on the expected capacitance or inductance value is
 through the reactance chart shown below.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/reactance_chart_labeled.jpg
+.. figure:: images/reactance_chart_labeled.jpg
    :width: 600px
 
 To find the approximate impedance or admittance value for a capacitor or
@@ -1494,7 +1494,7 @@ periods marked with blocks in light/dark green. If enabled, the DC offset will
 turn on during the tdelay blocks. The example measurement uses a 100 Ohm onboard
 resistor as the DUT.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/command_timing_diagram.png
+.. figure:: images/command_timing_diagram.png
    :width: 1000px
 
 Single Sample Measurement
@@ -1938,13 +1938,13 @@ be skipped in certain gain/load ranges where the current ADC would saturate.
 Open calibration may need to be skipped in gain/load ranges that the voltage ADC
 would saturate.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config.png
+.. figure:: images/open_short_load_config.png
    :width: 800px
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_open_short_load.png
+.. figure:: images/fishercat_open_short_load.png
    :width: 800px
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/open_short_load_config_photo.png
+.. figure:: images/open_short_load_config_photo.png
    :width: 800px
 
 .. tip::
@@ -2271,7 +2271,7 @@ DUT in place. Refer to the help section on available commands for the specific
 list and associated names for compensation located at
 :ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/admx/fishercat_compensation.png
+.. figure:: images/fishercat_compensation.png
    :width: 600px
 
 Firmware Release Highlights
