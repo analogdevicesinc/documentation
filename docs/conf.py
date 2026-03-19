@@ -41,6 +41,7 @@ interref_repos = [
     'linux',
     'no-OS',
     'precision-converters-firmware',
+    'PrecisionToolbox',
 ]
 
 # -- Options for HTML output --------------------------------------------------

@@ -9,12 +9,11 @@ Transceiver Toolbox
    for all details, see
    `the dedicated doc <https://analogdevicesinc.github.io/TransceiverToolbox/master>`__.
 
-Analog Devices Transceiver Toolbox For MATLAB and Simulink is a
-set of tools to model, interface, and target with ADI
-transceiver devices within MATLAB and Simulink. These are combined into single
-Toolbox which contains a set of Board Support Packages (BSP). The list of
-supported boards is provided
-:dokuwiki:`here <resources/eval/user-guides/matlab_bsp#supported_boards>`.
+Analog Devices Transceiver Toolbox For MATLAB and Simulink is a set of tools to
+model, interface, and target with ADI transceiver devices within MATLAB and
+Simulink. These are combined into a single Toolbox which contains a set of Board
+Support Packages (BSP). The list of supported boards is provided
+:ref:`below <transceiver-toolbox supported boards>`.
 
 Quick Start with Toolbox
 ------------------------
@@ -24,7 +23,7 @@ The current stable Toolbox can be downloaded from the
 Download the latest mltbx file then open that file within MATLAB. Opening the
 file will automatically install the Toolbox, adding the necessary components to
 your MATLAB path. The "Analog Devices, Inc. Transceiver Toolbox" will appear in
-your :mw:`Add-Ons Explore <help/matlab/matlab_env/manage-your-add-ons.html>`
+your :mw:`Add-Ons Explorer <help/matlab/matlab_env/manage-your-add-ons.html>`
 within MATLAB.
 
 .. admonition:: Download
@@ -32,10 +31,8 @@ within MATLAB.
    :git-TransceiverToolbox:`releases+`.
 
 To interface and stream data with hardware will require installation of
-:ref:`libiio`
-and one of two Hardware Support Packages from MathWorks. The libiio library can
-The libiio library can be obtained on :git-libiio:`/` page
-of the project.
+:ref:`libiio` and one of two Hardware Support Packages from MathWorks. The
+libiio library can be obtained from the :git-libiio:`/`.
 
 Libiio Installers
 ~~~~~~~~~~~~~~~~~
@@ -44,6 +41,11 @@ Libiio Installers
 
    Stable releases are available at :git-libiio:`releases+`.
 
+These support packages provide the necessary libIIO MATLAB bindings used by
+ADI's system objects. Starting in R2024a, the functionality of Communications
+Toolbox Support Package for Xilinx Zynq-Based Radio is included in SoC Blockset
+Support Package for AMD Devices.
+
 .. admonition:: Download
 
    | For releases after R2024a:
@@ -51,12 +53,6 @@ Libiio Installers
    | For Releases R2023b and before, either:
    | :mw:`Communications Toolbox Support Package for Xilinx Zynq-Based Radio <matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`
    | :mw:`Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio <help/supportpkg/plutoradio/index.html>`
-
-is required to use the streaming system objects or blocks. These support
-packages provide the necessary libIIO MATLAB bindings used by ADI's system
-objects. Starting in R2024a, the functionality of Communications Toolbox Support
-Package for Xilinx Zynq-Based Radio is included in SoC Blockset Support Package
-for AMD Devices.
 
 Toolbox Dependencies
 ~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +128,7 @@ Add the application libraries for AD936X based devices if desired
    ~/TransceiverToolbox
    $make -C CI/scripts add_libad9361
 
-To create a installable tlbx file run:
+To create an installable tlbx file run:
 
 .. shell::
 
@@ -161,7 +157,7 @@ Device Control and Data Streaming
 ---------------------------------
 
 Device interfaces which provide control and data streaming are implemented with
-MATLAB System Objects and Simulink Blocks. These System Objects can be access
+MATLAB System Objects and Simulink Blocks. These System Objects can be accessed
 under the "adi" namespace in MATLAB and are followed by their part number or
 board name and finally Tx or Rx:
 
@@ -202,13 +198,13 @@ To get more information on a given object run:
 
 ::
 
-   help adi.<Part of Board Name>.<Tx or Rx>
+   help adi.<Part or Board Name>.<Tx or Rx>
 
 or
 
 ::
 
-   doc adi.<Part of Board Name>.<Tx or Rx>
+   doc adi.<Part or Board Name>.<Tx or Rx>
 
 Common Attributes
 ~~~~~~~~~~~~~~~~~
@@ -279,7 +275,7 @@ platforms.
 
 The next step is to configure the interfaces between the IP and the reference
 design. Each target platform has a set of interface signals that are accessible
-in the *Target Platform Interfaces* drop down boxes form step 1.2 (Set Target
+in the *Target Platform Interfaces* drop down boxes from step 1.2 (Set Target
 Interface) of the HDL Workflow Advisor. The figure below shows an example of how
 to configure the target interface for a specific model.
 
@@ -389,8 +385,8 @@ Advisor. All the other settings of steps 2 and 3 of the HDL Workflow Advisor can
 be left in their default state and the project generation process can be started
 by running step 4.1 (Create Project). The result of this step is a Vivado
 project which has the custom IP core integrated into the Analog Devices HDL
-reference design. The bistream for the design can be generated either by running
-step 4.4 (Create bistream) or by compiling the generated Vivado Project directly
+reference design. The bitstream for the design can be generated either by running
+step 4.4 (Create bitstream) or by compiling the generated Vivado Project directly
 in Vivado. The project can be found in the *hdl_prj/vivado_ip_prj* folder.
 
 Further Reading
@@ -443,6 +439,8 @@ outside of ADI's transceiver toolbox:
 
 -  :mw:`help/simrf/ug/ad9361-models.html <help/simrf/ug/ad9361-models.html>`
 -  :mw:`help/simrf/ug/ad9371-models.html <help/simrf/ug/ad9371-models.html>`
+
+.. _transceiver-toolbox supported boards:
 
 Supported Boards
 ----------------
@@ -544,6 +542,11 @@ MATLAB or Simulink interface may not exist yet.
      - Yes
      - Yes
      - ADI (2018b)
+   - - Jupiter
+     -
+     - Yes
+     - No
+     - ADI (2020a)
    - - ADRV9009-ZU11EG
      -
      - Yes
