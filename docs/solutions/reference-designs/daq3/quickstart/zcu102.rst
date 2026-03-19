@@ -1,0 +1,178 @@
+AD-FMCDAQ3-EBZ Zynq UltraScale ZCU102 Quick Start Guide
+=======================================================
+
+|image1| This guide provides some quick instructions (still takes awhile to download, and set things up) on how to setup the AD-FMCDAQ3-EBZ on `ZCU102 <https://www.xilinx.com/ZCU102>`_
+
+Prerequisites
+-------------
+
+Required Hardware
+~~~~~~~~~~~~~~~~~
+
+-   `Xilinx ZCU102 <https://www.xilinx.com/ZCU102>`_ Rev 1.0 or later board
+-  :adi:`AD-FMCDAQ3-EBZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-fmcdaq3-ebz.html>` FMC board
+-  An 8GB SD card
+-  USB keyboard mouse and a Display Port compatible monitor
+-  Ethernet cable
+-  1 x Micro-USB cable
+
+Required Software
+~~~~~~~~~~~~~~~~~
+
+-  You need a Host PC (Windows or Linux)
+-  A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+-  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+
+Creating / Configuring the SD Card
+----------------------------------
+
+.. tip::
+
+   \ `Create SD Image for ZynqMP Boards. (it is a single image for all boards). <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_\
+
+In this case the root of 'BOOT' should contain:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   *''An Image file for ZynqMP (from zynqmp-common folder)''
+   *''A BOOT.BIN specific to your AD-FMCDAQ3-EBZ + ZCU102''
+   *''A system.dtb for ZynqMP specific to your AD-FMCDAQ3-EBZ + ZCU102''
+
+Setting up the hardware (ZCU102)
+--------------------------------
+
+You will need to:
+
+- Get the ` Xilinx ZCU102 <https://www.xilinx.com/ZCU102>`_
+
+|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-zcu102.jpg|
+
+- Insert the SD-CARD into the SD Card Interface Connector (J100)
+- Connect the AD-FMCDAQ3-EBZ FMC board to the FPGA carrier HPC0 FMC0 socket
+- Plug your Display Port monitor device into the Display Port Video Connector (P11)
+- Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/Micro-B Connector (J83)
+- Plug the Power Supply into 12V Power input connector (J52) (DO NOT turn the device on)
+- Set the jumpers of SW6 - which controls the Boot Mode: 1: **on**, 2: **off**, 3: **off**, 4: **off** as seen in the below picture|resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw6_zcu102.jpg|
+- Turn it on
+- Wait ~30 seconds for the “DONE” LED to turn green. This is near the SD Card
+  Interface Connector
+
+.. esd-warning::
+
+Booting the SD Card
+-------------------
+
+Local IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Ignore your PC, and now interact on the USB mouse/keyboard on the ZynqMP device
+   -You should see two screens:
+
+.. image:: ../images/print_daq3_iio_osc_zcu102.png
+   :alt: print_daq3_iio_osc_zcu102.png
+   :align: center
+   :width: 1000
+
+Remote IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+   -Disconnect the USB mouse/keyboard from the USB 2.0 ULPI Controller, w/Micro-B Connector (J83).
+   -Connect USB UART J83 (Micro USB) to your host PC.
+   -Plug your ethernet cable into the RJ45 ethernet connector(P12)
+   -Observe kernel and serial console messages on your UART terminal (use the first ttyUSB or COM port resisted)
+   -Run the ifconfig command on your UART terminal and get your board IP
+
+.. image:: ../images/zcu102_console_ifconfig.png
+   :alt: zcu102_console_ifconfig.png
+   :align: center
+   :width: 600
+
+::
+
+   -Open IIO Scope application and type ip:board_ip in the URI tab.
+
+.. image:: ../images/iio_scope_board_ip-zcu102.png
+   :alt: iio_scope_board_ip-zcu102.png
+   :align: center
+   :width: 600
+
+.. important::
+
+   Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
+
+   |image2|
+
+More Information
+----------------
+
+-  :doc:`AD-FMCDAQ3-EBZ User Guide </solutions/reference-designs/daq3/index>`
+-  :doc:`AD-FMCDAQ3-EBZ HDL Reference Design </solutions/reference-designs/daq3/reference_hdl>`
+
+Useful links
+------------
+
+-  `AD9081/AD9082/AD9988/AD9986 Quick Start Guides <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`_
+
+   -  `Zynq-7000 SoC ZC706 Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`_
+   -  `Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`_
+   -  `Virtex UltraScale+ VCU118 Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`_
+   -  `Versal ACAP VCK190 Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`_
+   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
+
+-  `AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`_
+
+   -  `ADI Reference Designs HDL User Guide <https://wiki.analog.com/resources/fpga/docs/hdl>`_
+   -  `Generic JESD204B block designs <https://wiki.analog.com/resources/fpga/docs/hdl/generic_jesd_bds>`_
+   -  `JESD204B High-Speed Serial Interface Support <https://wiki.analog.com/resources/fpga/peripherals/jesd204>`_
+
+-  `AD9081/AD9082/AD9988/AD9986 Linux Driver Support <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+
+::
+
+         - `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
+         - `HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/hmc7044>`_
+         - `AXI-DMAC DMA Controller Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/axi-dmac>`_
+         - `JESD204B Transmit Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`_
+           - `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_ 
+         - `JESD204B Receive Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`_
+           - `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_ 
+         - `JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_
+           - `JESD204 Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_
+         - `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_
+         - `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_
+   * `MATLAB Support <https://wiki.analog.com/resources/tools-software/hsx-toolbox>`_
+        * MATLAB support is provided through the `High Speed Converter Toolbox <https://wiki.analog.com/resources/tools-software/hsx-toolbox>`_
+   * `Python Support <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_
+        * PYTHON support is provided through the `Device Specific Python Interfaces For IIO Drivers <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_ 
+        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
+        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
+   * Product Datasheet
+       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
+       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
+       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
+       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
+   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
+   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
+
+Software support
+----------------
+
+-  `AD9081/AD9082/AD9988/AD9986 Linux Driver Support <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+
+.. |image1| image:: ../images/zcu102_fmcdaq3.jpg
+   :width: 500
+.. |image2| image:: ../images/shutdown.png
+   :width: 300
+
+.. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-sw6_zcu102.jpg| image:: ../images/sw6_zcu102.jpg
+.. |resources-eval-user-guides-ad-fmcdaq3-ebz-quickstart-zcu102.jpg| image:: ../images/zcu102.jpg
