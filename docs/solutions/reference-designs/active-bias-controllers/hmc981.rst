@@ -1,0 +1,11 @@
+HMC981 Configuration Calculator
+===============================
+
+This calculator can be used to calculate all of the external component values
+that are required to configure current settings, voltage ranges and alarm levels
+for HMC981
+
+`HMC981 Configuration Calculator <resources/hmc981.zip>`_
+
+.. image:: images/hmc981_configuration_calculator.png
+   :width: 600
