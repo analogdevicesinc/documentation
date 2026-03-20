@@ -3,6 +3,11 @@
 EVAL-CN0585-FMCZ
 ==================
 
+.. toctree::
+   :hidden:
+
+   power_tree
+
 Quad Channel, Low Latency, Data Acquisition and Signal Generation Module.
 
 The :adi:`EVAL-CN0585-FMCZ <CN0585>` Low Latency Development Kit (LLDK) board
