@@ -23,7 +23,7 @@ Available Rails
 
 The :adi:`CN0585` board has 13 different rails:
 
-.. image:: cn0585_available_rails.jpg
+.. image:: images/cn0585_available_rails.jpg
     :width: 800
 
 Some of these rails are exposed in the :ref:`eval-cn0585-fmcz` expansion

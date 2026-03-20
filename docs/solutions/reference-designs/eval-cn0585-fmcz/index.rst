@@ -17,7 +17,7 @@ Connector. Current revision of :adi:`EVAL-CN0585-FMCZ <CN0585>` is Rev B.
 :adi:`EVAL-CN0585-FMCZ <CN0585>`, :adi:`EVAL-CN0584-EBZ <CN0584>` and ZedBoard
 are connected together to build a development system setup as shown in Figure 1.
 
-.. figure:: setup_cn0585_diagram.png
+.. figure:: images/setup_cn0585_diagram.png
 
    CN0585 Development Platform Setup
 
@@ -38,17 +38,17 @@ output in <200ns from initial data written to the DAC.
 .. grid::
    :widths: 50 50
 
-   .. figure:: eval-cn0585-fmcz_top-web.jpg
+   .. figure:: images/eval-cn0585-fmcz_top-web.jpg
       :width: 400 px
 
       EVAL-CN0585-FMCZ Board (Top)
 
-   .. figure:: eval-cn0585-fmcz_bottom-web.jpg
+   .. figure:: images/eval-cn0585-fmcz_bottom-web.jpg
       :width: 400 px
 
       EVAL-CN0585-FMCZ Board (Bottom)
 
-.. figure:: cn0585.png
+.. figure:: images/cn0585.png
 
    EVAL-CN0585-FMCZ Simplified Block Diagram
 
@@ -116,7 +116,7 @@ capability for the power supply rails. The circuit consists of an
 :adi:`AD7291` 8-Channel, I2C, 12-Bit SAR ADC, and resistive dividers.
 Each power rail is connected to AD7291 by resistive dividers as shown in Figure 5.
 
-.. figure:: cn0585_voltage_monitoring.png
+.. figure:: images/cn0585_voltage_monitoring.png
 
    Power Supply Voltage Monitor Circuit
 
@@ -347,7 +347,7 @@ FMC LPC Connector Pinout for LLDK Board (Rev B)
 FMC LPC connector routes the data acquired by the ADAQ23876 to FPGA and
 transfers the data from FPGA to AD3552R DAC.
 
-.. figure:: connector_pinout_revb.png
+.. figure:: images/connector_pinout_revb.png
 
    FMC LPC Connector Pinout
 
@@ -384,7 +384,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0585-FMCZ Design & Integration Files <cn0585-designsupport.zip>`
+   :download:`EVAL-CN0585-FMCZ Design & Integration Files <files/cn0585-designsupport.zip>`
 
    - Schematics
    - PCB Layout
