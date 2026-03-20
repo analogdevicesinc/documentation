@@ -10,7 +10,7 @@ to program the bitstream, run a no-OS program or boot a Linux distribution.
 
 .. toctree::
 
-    On ZED <zed>
+   On ZED <zed>
 
 .. _ad7768 carriers:
 
