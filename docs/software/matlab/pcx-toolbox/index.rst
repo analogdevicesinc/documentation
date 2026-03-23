@@ -122,25 +122,25 @@ MATLAB System Objects and Simulink Blocks. These System Objects can be accessed
 under the "adi" namespace in MATLAB and are followed by their part number or
 board name and finally Tx or Rx:
 
-.. shell::
+.. code-block:: matlab
 
    adi.<Part or Board Name>.<Tx or Rx>
 
 To get a list of currently available objects with the BSP installed simply run:
 
-.. shell::
+.. code-block:: matlab
 
    help adi
 
 To get more information on a given object run:
 
-.. shell::
+.. code-block:: matlab
 
    help adi.<Part or Board Name>
 
 or
 
-.. shell::
+.. code-block:: matlab
 
    doc adi.<Part or Board Name>
 
@@ -166,7 +166,7 @@ Examples
 Examples for streaming data and targeting FPGAs are listed within the Toolbox
 documentation itself. To view run the following with MATLAB:
 
-.. shell::
+.. code-block:: matlab
 
    doc adi
 

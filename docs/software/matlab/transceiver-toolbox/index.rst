@@ -161,14 +161,14 @@ MATLAB System Objects and Simulink Blocks. These System Objects can be accessed
 under the "adi" namespace in MATLAB and are followed by their part number or
 board name and finally Tx or Rx:
 
-::
+.. code-block:: matlab
 
    adi.<Part or Board Name>.<Tx or Rx>
 
 For example, to instantiate an AD9361 object to control the Tx aspects of the
 transceiver it can be created as follows:
 
-::
+.. code-block:: matlab
 
    tx = adi.AD9361.Tx;
 
@@ -178,7 +178,7 @@ Therefore, it simply uses AD9680 and AD9144 objects under the hood. However, to
 interact with the more familiar DAQ2 interface naming the Rx side can be
 instantiated like above as:
 
-::
+.. code-block:: matlab
 
    rx = adi.DAQ2.Rx;
 
@@ -190,19 +190,19 @@ where object tests have the naming convention ``<Object>Tests.m``.
 
 To get a list of currently available objects with the BSP installed simply run:
 
-::
+.. code-block:: matlab
 
    help adi
 
 To get more information on a given object run:
 
-::
+.. code-block:: matlab
 
    help adi.<Part or Board Name>.<Tx or Rx>
 
 or
 
-::
+.. code-block:: matlab
 
    doc adi.<Part or Board Name>.<Tx or Rx>
 
@@ -564,7 +564,7 @@ Examples
 Examples for streaming data and targeting FPGAs are listed within the Toolbox
 documentation itself. To view run the following with MATLAB:
 
-::
+.. code-block:: matlab
 
    doc adi
 
