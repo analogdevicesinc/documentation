@@ -482,7 +482,7 @@ Equipment Needed
    .. figure:: max32670-sx-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
-:dokuwiki:`ADI Long Range Wireless Radio Software User Guide </resources/eval/user-guides/longrangewirelessradio/software>`.
+:ref:`ADI Long Range Wireless Radio Software User Guide <lora_software>`.
 
 Resources
 ---------
@@ -495,7 +495,7 @@ Resources
   MAX32670 MCU and SX1261 RF Transceiver <ad-max32sxwise-sl>`
 - :ref:`EV-STRUCTURAL-ARDZ Sensor for Structural Monitoring <ev-structural-ardz>`
 - :ref:`EV-FLOWMETER-ARDZ Sensor for Flow Rate Metering <ev-flowmeter-ardz>`
-- :dokuwiki:`EV-ADE9000-SHIELDZ Sensor for Electric Metering </resources/eval/user-guides/eval-ade9000shieldz/sensor_node/demo>`
+- :ref:`EV-ADE9000-SHIELDZ Sensor for Electric Metering <eval_ade9000shieldz eval>`
 
 Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
