@@ -1,5 +1,7 @@
-ADRV936x - Mechanical
-=====================
+.. _adrv9361z7035 mechanical:
+
+Mechanical
+==========
 
 The ADRV9361-Z7035 SDR 2X2 SOM uses a 20 layer PCB that measures 2.440” x 3.937”
 (62 mm x 100 mm). The 62mm x 100mm form factor is compatible with the DP10062
@@ -34,16 +36,11 @@ between the ADRV9361-Z7035 and the ADRV9364-Z7020.
 
    The Footprint is common between the two parts:
 
-   
-   
-   
    - `Mounting holes and physical dimensions <resources/08_038702d_conn_dim.pdf>`_
       * Carrier Card Connector Dimensions:
-   
+
         .. image:: images/carrier_connector_locations.jpg
            :alt: Connector Dimensions
-   
-   
 
 Pinout
 ------
@@ -53,8 +50,7 @@ Pinout
 
    The connector pinouts are a superset:
 
-   
    -  `ADRV9361-Z7035 Connector Pinout <resources/adrv9361-z7035_pinout_jx_1-4_.pdf>`_
    -  `ADRV9364-Z7020 Connector Pinout <resources/adrv9364-z7020_pinout_jx_1-4_.pdf>`_
    -  `Step File <resources/adrv9361-z7035_mechanical.zip>`_
-   
+

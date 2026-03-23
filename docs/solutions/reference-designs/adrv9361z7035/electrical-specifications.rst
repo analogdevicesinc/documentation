@@ -1,5 +1,7 @@
-ADRV9361-Z7035 User Guide - Electrical Specifications
-=====================================================
+.. _adrv9361z7035 electrical_specifications:
+
+User Guide - Electrical Specifications
+======================================
 
 Designing with the AD9361-Z7035 2X2 SOM requires an understanding of the system
 I/O that are available, how they are powered, and where the signals connect on
@@ -24,7 +26,8 @@ This is a -2 speed grade and low power (-L) binned device. All SOM memory and
 digital interfaces connect to Zynq through the Processing System (PS) or
 Programmable Logic (PL). The Analog Devices AD9361 connects through Zynq PL.
 
-Consult the Xilinx Zynq-7000 AP SoC Technical Reference Manual for more information:https://www.amd.com/content/dam/xilinx/support/documents/data_sheets/ds190-Zynq-7000-Overview.pdf
+Consult the Xilinx Zynq-7000 AP SoC Technical Reference Manual for more
+information: https://www.amd.com/content/dam/xilinx/support/documents/data_sheets/ds190-Zynq-7000-Overview.pdf
 
 .. image:: images/zynq-7000_ap_soc_block_diagram.png
    :alt: Zynq-7000 AP SoC Block Diagram
@@ -72,9 +75,13 @@ differential pairs.
 Maximum rate across the Zynq-AD9361 data interface is limited by AD9361 max data
 rate (122.88MSPS).
 
-The timing diagram below is included for illustration of the data interface. Consult the :adi:`AD9361 Reference Manual <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>` for more details.
+The timing diagram below is included for illustration of the data interface.
+Consult the :adi:`AD9361 Reference Manual <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+for more details.
 
-Analog Devices provides Zynq HDL source code and Linux drivers for the AD9361. Designers are encouraged to reuse them. More information can be found at their AD9361-Z7035 `Wiki Page <https://wiki.analog.com/resources/eval/user-guides/adrv936x_rfsom>`_.
+Analog Devices provides Zynq HDL source code and Linux drivers for the AD9361.
+Designers are encouraged to reuse them. More information can be found at their
+AD9361-Z7035 :ref:`page <adrv9361z7035>`.
 
 .. image:: images/ad9361_receive_data_path_lvds.png
    :alt: AD9361 Receive Data Path, LVDS
@@ -107,7 +114,11 @@ Speed of up to 1,066 MT/s for DDR3L is supported.
 
 The DDR3L interface uses 1.35V SSTL-compatible inputs by default.
 
-DDR3L termination is utilized on AD9361-Z7035 and configured for fly-by routing topology, as recommended in Xilinx `UG-933 <https://www.xilinx.com/support/documentation/user_guides/ug933-Zynq-7000-PCB.pdf>`_. Additionally the board trace lengths are matched, compensating for the XC7Z035- FBG676 internal package flight times, to meet the requirements listed in the Zynq-7000 AP SoC PCB Design and Pin Planning Guide `UG-933 <https://www.xilinx.com/support/documentation/user_guides/ug933-Zynq-7000-PCB.pdf>`_.
+DDR3L termination is utilized on AD9361-Z7035 and configured for fly-by routing
+topology, as recommended in Xilinx `UG-933 <https://www.xilinx.com/support/documentation/user_guides/ug933-Zynq-7000-PCB.pdf>`_.
+Additionally the board trace lengths are matched, compensating for the XC7Z035-
+FBG676 internal package flight times, to meet the requirements listed in the
+Zynq-7000 AP SoC PCB Design and Pin Planning Guide `UG-933 <https://www.xilinx.com/support/documentation/user_guides/ug933-Zynq-7000-PCB.pdf>`_.
 
 The Zynq digitally controlled impedance (DCI) reference resistors (VRP/VRN) are
 240Ω. The differential clock DDR3_CK pair is terminated with 80Ω. The DDR3-CKE0
@@ -170,13 +181,13 @@ non-volatile boot, application code, and data storage. It can be used to
 initialize the Zynq PS subsystem as well as configure the PL subsystem
 (bitstream). The relevant device attributes are as follows:
 
--  256Mbit
--  x1, x2, and x4 support
--  Speeds up to 108 MHz, supporting Zynq configuration rates @ 100 MHz
+- 256Mbit
+- x1, x2, and x4 support
+- Speeds up to 108 MHz, supporting Zynq configuration rates @ 100 MHz
 
    -  In Quad-SPI mode, this translates to 400Mb/s
 
--  Powered from 1.8V
+- Powered from 1.8V
 
 The SPI Flash connects to the Zynq PS QSPI interface. Booting from SPI Flash
 requires connection to specific pins in MIO Bank 0/500, specifically MIO[1:6,8]
@@ -262,7 +273,7 @@ is the only mode supported configuration.
 
 The micro SD Card connector is located at J3 on the SOM. If you are using the SD
 Card for a file system a Class 10 card or better is recommended. We use SanDisk
-and Delkin. Other vendor cards may work as well, however we’ve experienced
+and Delkin. Other vendor cards may work as well, however we've experienced
 issues with a few brands.
 
 USB 2.0 OTG
@@ -412,7 +423,15 @@ This section describes the various I/O available for use on the AD9361-Z7035 2X2
 SOM. Pin out details of the available I/O are included later in the Expansion
 Headers section.
 
-AD9361-Z7035 2X2 SOM features four 100-pin micro header receptacles (FCI, 61082-103400LF) for compact connection to carrier cards. The connector makes available 193 Zynq PL user SelectIO pins, 12 Zynq PS MIO pins, and 4 AD9361 GPO pins – a total of 209 available user I/O. In addition, four Zynq GTX gigabit serial transceiver ports are brought to the micro headers, each comprised of one TX and one RX lane and capable of speeds up to 6.6Gbps. Inputs for two GTX reference clocks are also available at the micro header. Finally, auxiliary data converters provide analog signal interface outside of the AD9361 primary RF path, as described later in the 'User Auxiliary ADC and DAC Interfaces' section.
+AD9361-Z7035 2X2 SOM features four 100-pin micro header receptacles (FCI,
+61082-103400LF) for compact connection to carrier cards. The connector makes
+available 193 Zynq PL user SelectIO pins, 12 Zynq PS MIO pins, and 4 AD9361 GPO
+pins - a total of 209 available user I/O. In addition, four Zynq GTX gigabit
+serial transceiver ports are brought to the micro headers, each comprised of one
+TX and one RX lane and capable of speeds up to 6.6Gbps. Inputs for two GTX
+reference clocks are also available at the micro header. Finally, auxiliary data
+converters provide analog signal interface outside of the AD9361 primary RF
+path, as described later in the 'User Auxiliary ADC and DAC Interfaces' section.
 
 AD9361 User Pins
 ~~~~~~~~~~~~~~~~
@@ -469,7 +488,12 @@ carrier card; supplied to the SOM through the JX micro header receptacles. This
 creates a highly flexible architecture for custom user functions and interfaces
 implemented in the Zynq Programmable Logic.
 
-All Zynq SelectIO pins can be configured as either Input or Output with voltage signaling standards compliant with their bank voltage. The bank voltages must be delivered by the mating carrier card and within the ranges specified in the table below. Consult the Xilinx 7 Series FPGAs SelectIO Resources User Guide `UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_) for information about supported I/O signaling standards.
+All Zynq SelectIO pins can be configured as either Input or Output with voltage
+signaling standards compliant with their bank voltage. The bank voltages must be
+delivered by the mating carrier card and within the ranges specified in the
+table below. Consult the Xilinx 7 Series FPGAs SelectIO Resources User Guide
+`UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_)
+for information about supported I/O signaling standards.
 
 The PL I/O pins are routed with matched lengths to each of the JX connectors.
 The matched pairs, denoted by an N/P suffix (e.g. IO_L01_13_JX2_P,
@@ -487,13 +511,13 @@ Zynq Bank 34 (Zynq pin H9) is shared with the Zynq “PUDC_B” signal.
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
 | Bank | Bank Voltage                | Type | Available Pins | Available as LVDS Pairs | Max DDR LVDS Rate |
 +======+=============================+======+================+=========================+===================+
-| 12   | Set by carrier (1.2 – 3.3V) | HR   | 50             | 24                      | 1250 Mbps         |
+| 12   | Set by carrier (1.2 - 3.3V) | HR   | 50             | 24                      | 1250 Mbps         |
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
-| 13   | Set by carrier (1.2 – 3.3V) | HR   | 48             | 23                      | 1250 Mbps         |
+| 13   | Set by carrier (1.2 - 3.3V) | HR   | 48             | 23                      | 1250 Mbps         |
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
-| 33   | Set by carrier (1.2 – 1.8V) | HP   | 50             | 24                      | 1400 Mbps         |
+| 33   | Set by carrier (1.2 - 1.8V) | HP   | 50             | 24                      | 1400 Mbps         |
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
-| 34   | Set by carrier (1.2 – 1.8V) | HP   | 45             | 22                      | 1400 Mbps         |
+| 34   | Set by carrier (1.2 - 1.8V) | HP   | 45             | 22                      | 1400 Mbps         |
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
 |      | Total                       |      | 193            | 94                      |                   |
 +------+-----------------------------+------+----------------+-------------------------+-------------------+
@@ -511,10 +535,11 @@ custom carrier card can support mixed I/O voltage interfaces to the Zynq PL.
 Note: The following are restrictions of the AD9361-Z7035 Zynq Z-7035 SelectIO
 banks:
 
--  Banks 33 and 34 are high performance (HP) I/O with support for I/O voltage from 1.2 to 1.8V.
--  Banks 12 and 13 are high range (HR) I/O with support for I/O voltage from 1.2V to 3.3V and Digitally Controlled Impedance (DCI).
--  All 4 banks support LVDS.
--  Consult the Xilinx 7 Series FPGAs SelectIO Resources User Guide `UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_ for more information.
+- Banks 33 and 34 are high performance (HP) I/O with support for I/O voltage from 1.2 to 1.8V.
+- Banks 12 and 13 are high range (HR) I/O with support for I/O voltage from 1.2V
+  to 3.3V and Digitally Controlled Impedance (DCI).
+- All 4 banks support LVDS.
+- Consult the Xilinx 7 Series FPGAs SelectIO Resources User Guide `UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_ for more information.
 
 It is recommended any custom interface is run through the Xilinx Vivado™ tool
 suite for a design rule check on place and route and timing closure in advance
@@ -558,7 +583,15 @@ More information on the AD9361 auxiliary data converters can be found :adi:`here
 Zynq SoC ADC
 ~~~~~~~~~~~~
 
-The Zynq SoC includes the Xilinx Analog-to-Digital Converter (XADC) which contains two 12-bit 1MSPS ADCs with separate track and hold amplifiers, an on-chip analog multiplexer (up to 17 external analog input channels supported), and on-chip thermal and supply sensors. The two ADCs can be configured to simultaneously sample two external-input analog channels. The track and hold amplifiers support a range of analog input signal types, including unipolar, bipolar, and differential. The analog inputs can support signal bandwidths of at least 500 KHz at sample rates of 1MSPS. More information on the XADC can be found in Xilinx document `UG480 <https://www.xilinx.com/support/documentation/user_guides/ug480_7Series_XADC.pdf>`_.
+The Zynq SoC includes the Xilinx Analog-to-Digital Converter (XADC) which
+contains two 12-bit 1MSPS ADCs with separate track and hold amplifiers, an
+on-chip analog multiplexer (up to 17 external analog input channels supported),
+and on-chip thermal and supply sensors. The two ADCs can be configured to
+simultaneously sample two external-input analog channels. The track and hold
+amplifiers support a range of analog input signal types, including unipolar,
+bipolar, and differential. The analog inputs can support signal bandwidths of at
+least 500 KHz at sample rates of 1MSPS. More information on the XADC can be
+found in Xilinx document `UG480 <https://www.xilinx.com/support/documentation/user_guides/ug480_7Series_XADC.pdf>`_.
 
 AD9361-Z7035 provides access to the primary XADC differential analog input on
 Zynq pins VP_0/VN_0, sampled by Zynq ADC_A. The differential pins are wired to
@@ -566,9 +599,9 @@ AD9361-Z7035 JX micro header receptacle pins JX3-1 (V_0_P) and JX3-3 (V_0_N).
 
 A Zynq internal multiplexer allows sampling of the following:
 
--  External analog signals at VP_0/VN_0 pins
--  Internal die temp sensor
--  External thermal diode connected to DXP_0/DXN_0 (SOM pin JX1-98, JX1-100)
+- External analog signals at VP_0/VN_0 pins
+- Internal die temp sensor
+- External thermal diode connected to DXP_0/DXN_0 (SOM pin JX1-98, JX1-100)
 
 Zynq Multi-Gigabit Transceivers (MGTs)
 --------------------------------------
@@ -672,7 +705,17 @@ AD9361-Z7035 2X2 uses the Microchip USB3320 Transceiver. The device receives a
 24.00MHz clock from a CMOS oscillator which may be powered down with the
 PS_MIO09_500_USB_CLK_PD signal, controlled by software on the Zynq PS.
 
-The USB3320 transceiver uses an internal PLL to generate a 60MHz clock for the ULPI interface to Zynq. If the 24MHz reference clock is stopped while 60MHz CLKOUT is running, the PLL will come out of lock and the frequency of the CLKOUT signal will decrease to the minimum allowed by the PLL design. This may cause the USB session to drop. Alternatively, the link controller (Zynq PS) can send a command to enter low power mode thereby disabling the USB3320 60MHz CLKOUT signal. 3.10.5 SDIO Clock The Zynq SoC provides an SDIO clock for the SD card interface. The SDIO clock frequency and output buffer can be controlled by software using the Zynq PS MIO registers. Consult the Xilinx Zynq-7000 `Technical Resource Manual (UG585) <https://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf>`_ for more information.
+The USB3320 transceiver uses an internal PLL to generate a 60MHz clock for the
+ULPI interface to Zynq. If the 24MHz reference clock is stopped while 60MHz
+CLKOUT is running, the PLL will come out of lock and the frequency of the CLKOUT
+signal will decrease to the minimum allowed by the PLL design. This may cause
+the USB session to drop. Alternatively, the link controller (Zynq PS) can send a
+command to enter low power mode thereby disabling the USB3320 60MHz CLKOUT
+signal. 3.10.5 SDIO Clock The Zynq SoC provides an SDIO clock for the SD card
+interface. The SDIO clock frequency and output buffer can be controlled by
+software using the Zynq PS MIO registers. Consult the Xilinx Zynq-7000
+`Technical Resource Manual (UG585) <https://www.xilinx.com/support/documentation/user_guides/ug585-Zynq-7000-TRM.pdf>`_
+for more information.
 
 Reset Sources
 -------------
@@ -680,7 +723,11 @@ Reset Sources
 AD9361 Reset
 ~~~~~~~~~~~~
 
-The AD9361 has a single asynchronous reset pin (RESETB) that is connected directly to the Zynq SoC on Bank 35 – pin H16. Asserting this signal to logic low resets the device and triggers the automatic initialization calibrations. This is managed by the AD9361 device driver, and should not be managed by the end user.
+The AD9361 has a single asynchronous reset pin (RESETB) that is connected
+directly to the Zynq SoC on Bank 35 - pin H16. Asserting this signal to logic
+low resets the device and triggers the automatic initialization calibrations.
+This is managed by the AD9361 device driver, and should not be managed by the
+end user.
 
 Zynq Power‐on Reset (PS_POR_B)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -720,9 +767,11 @@ turns on when the SOM is powered and turns off when the Zynq PL is configured.
 The signal is routed to the micro header receptacle JX1-8 (FPGA_DONE) for
 connection to the carrier card if needed for any additional startup logic.
 
-Important! Do not load the FPGA_DONE signal on your carrier. It is sampled
-internally by the Zynq device. Loading the signal may delay the signal rise/fall
-times and cause errors during startup.
+.. important::
+
+   Do not load the FPGA_DONE signal on your carrier. It is sampled
+   internally by the Zynq device. Loading the signal may delay the signal rise/fall
+   times and cause errors during startup.
 
 When mating the SOM to the AD9361-Z7035 FMC Carrier Card, a blue LED labeled
 “CFG DONE” will illuminate when configuration is complete.
@@ -834,10 +883,12 @@ are connected to U.FL miniature coaxial connectors. This creates a compact
 interface to external modules for amplification and antennae mating on a carrier
 card.
 
-Important! Take care when plugging and unplugging cables from the U.FL
-connectors to avoid damaging the surface mount connectors on the SOM. U.FL
-connectors were designed to connect to cables, not PCBs. It is not recommended
-to attempt a direct PCB-to-PCB mount with male connectors.
+.. important::
+
+   Take care when plugging and unplugging cables from the U.FL
+   connectors to avoid damaging the surface mount connectors on the SOM. U.FL
+   connectors were designed to connect to cables, not PCBs. It is not recommended
+   to attempt a direct PCB-to-PCB mount with male connectors.
 
 Plug insertion and extraction tools are recommended. An example from Hirose
 below. Details can be found in the Hirose catalog.
@@ -885,7 +936,12 @@ OTG, and SDIO ports of the AD9361-Z7035 SOM.
 Micro Header Pin Summary
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-All Zynq PS-MIO and PL SelectIO pins can be configured as either Input or Output with voltage signaling standards compliant with their bank voltage. The bank voltages must be delivered by the mating carrier card and within the ranges specified in the following tables. Consult the Xilinx 7 Series FPGAs SelectIO Resources User Guide `UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_ for information on supported I/O signaling standards.
+All Zynq PS-MIO and PL SelectIO pins can be configured as either Input or Output
+with voltage signaling standards compliant with their bank voltage. The bank
+voltages must be delivered by the mating carrier card and within the ranges
+specified in the following tables. Consult the Xilinx 7 Series FPGAs SelectIO
+Resources User Guide `UG471 <https://www.xilinx.com/support/documentation/user_guides/ug471_7Series_SelectIO.pdf>`_
+for information on supported I/O signaling standards.
 
 The connectors are FCI 0.8mm Bergstak®, 100 Position, Dual Row, BTB Vertical
 Receptacles (part # 61082-103400LF). These have variable stack heights from 5mm
@@ -945,9 +1001,9 @@ JX2 Pin Summary
 +---------------+----------------------------+-----------------------------+--------------------+
 | Bank 13 User  | I/O Zynq PL - Bank 13 (HR) | Set by carrier 1.2V to 3.3V | 48 (23 LVDS pairs) |
 +---------------+----------------------------+-----------------------------+--------------------+
-| SCL(1)        | Zynq PL – Bank 13 (HR)     | Set by carrier 1.2V to 3.3V | 2                  |
+| SCL(1)        | Zynq PL - Bank 13 (HR)     | Set by carrier 1.2V to 3.3V | 2                  |
 +---------------+----------------------------+-----------------------------+--------------------+
-| SDA(1)        | Zynq PL – Bank 13 (HR)     | Set by carrier 1.2V to 3.3V | 2                  |
+| SDA(1)        | Zynq PL - Bank 13 (HR)     | Set by carrier 1.2V to 3.3V | 2                  |
 +---------------+----------------------------+-----------------------------+--------------------+
 | INIT_B        | Zynq Bank 0                | 3.3V                        | 1                  |
 +---------------+----------------------------+-----------------------------+--------------------+
@@ -974,7 +1030,7 @@ JX3 Pin Summary
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
 | Signals            | Source                                | I/O Voltage                          | Pins               |
 +====================+=======================================+======================================+====================+
-| Bank 12 User I/O   | Zynq PL – Bank 12 (HR)                | Set by carrier 1.2V to 3.3V          | 32 (16 LVDS pairs) |
+| Bank 12 User I/O   | Zynq PL - Bank 12 (HR)                | Set by carrier 1.2V to 3.3V          | 32 (16 LVDS pairs) |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
 | MGTREFCLK1_P/N     | Zynq Bank 111/112 (1)                 | Set by carrier                       | 10                 |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
@@ -982,19 +1038,19 @@ JX3 Pin Summary
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
 | V0_N/P             | Zynq Bank 0                           | See Zynq datasheet                   | 2                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| SDIO_DATA_B1 [3:0] | Zynq PS – Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
+| SDIO_DATA_B1 [3:0] | Zynq PS - Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| SDIO_CLKB1         | Zynq PS – Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
+| SDIO_CLKB1         | Zynq PS - Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| SDIO_CMDB1         | Zynq PS – Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
+| SDIO_CMDB1         | Zynq PS - Bank 501                    | 3.3V thru SDIO expander / translator | 6                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| JX3_SD1_CDN Zynq   | PS – Bank 501                         | 1.8V thru Analog switch              | 1                  |
+| JX3_SD1_CDN Zynq   | PS - Bank 501                         | 1.8V thru Analog switch              | 1                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
 | ETH_PHY_LED [1:0]  | Marvell 88E1512 PHY                   | Open drain circuit                   | 2                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| ETHERNET MD [3:0]  | Zynq PS – Bank 501 (via Ethernet PHY) | Set by SOM Ethernet PHY              | 8                  |
+| ETHERNET MD [3:0]  | Zynq PS - Bank 501 (via Ethernet PHY) | Set by SOM Ethernet PHY              | 8                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
-| USB_OTG_P/N        | Zynq PS – Bank 501 (via USB PHY)      | Set by SOM USB PHY                   | 2                  |
+| USB_OTG_P/N        | Zynq PS - Bank 501 (via USB PHY)      | Set by SOM USB PHY                   | 2                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
 | USB_ID             | Carrier                               | 0 to 3.3V                            | 3                  |
 +--------------------+---------------------------------------+--------------------------------------+--------------------+
@@ -1021,11 +1077,11 @@ JX4 Pin Summary
 +-----------------------+------------------------+-----------------------------+--------------------+
 | Signals               | Source                 | I/O Voltage                 | Pins               |
 +=======================+========================+=============================+====================+
-| Bank 12 User I/O      | Zynq PL – Bank 12 (HR) | Set by carrier 1.2V to 3.3V | 4 (1 LVDS pair)    |
+| Bank 12 User I/O      | Zynq PL - Bank 12 (HR) | Set by carrier 1.2V to 3.3V | 4 (1 LVDS pair)    |
 +-----------------------+------------------------+-----------------------------+--------------------+
-| Bank 34 User I/O      | Zynq PL – Bank 34 (HP) | Set by carrier 1.2V to 1.8V | 44 (22 LVDS pairs) |
+| Bank 34 User I/O      | Zynq PL - Bank 34 (HP) | Set by carrier 1.2V to 1.8V | 44 (22 LVDS pairs) |
 +-----------------------+------------------------+-----------------------------+--------------------+
-| PUDC_B / User I/O (1) | Zynq PL – Bank 34 (HP) | Set by carrier 1.2V to 1.8V | 1                  |
+| PUDC_B / User I/O (1) | Zynq PL - Bank 34 (HP) | Set by carrier 1.2V to 1.8V | 1                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
 | AD9361 GPO [3:0]      | AD9361                 | 2.5V                        | 4                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
@@ -1035,9 +1091,9 @@ JX4 Pin Summary
 +-----------------------+------------------------+-----------------------------+--------------------+
 | AD9361_CLK            | AD9361                 | 1.3Vp-p                     | 1                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
-| PS_MIO [0,10:15]      | Zynq PS – Bank 500     | 1.8V                        | 7                  |
+| PS_MIO [0,10:15]      | Zynq PS - Bank 500     | 1.8V                        | 7                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
-| PS_MIO [46:49, 51]    | Zynq PS – Bank 501     | 1.8V                        | 5                  |
+| PS_MIO [46:49, 51]    | Zynq PS - Bank 501     | 1.8V                        | 5                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
 | VDDA_GPO_PWR          | AD9361                 | 2.5V                        | 1                  |
 +-----------------------+------------------------+-----------------------------+--------------------+
@@ -1055,21 +1111,38 @@ connect the AD9361-Z7035 SOM to a carrier card. The carrier card powers the SOM
 and accesses all user I/O and dedicated peripherals through these micro headers
 located on the bottom of the SOM.
 
-Important! AD9361-Z7035 is not pin compatible with standard PicoZed (non-SDR)
-carrier cards.
+.. important::
+
+   AD9361-Z7035 is not pin compatible with standard PicoZed (non-SDR)
+   carrier cards.
 
 The AD9361-Z7035 product website has the following time saving resources.
 
-• SOM schematic symbol • Zynq master constraints file for Vivado Design Suite (XDC)
+- SOM schematic symbol
+- Zynq master constraints file for Vivado Design Suite (XDC)
 
-Important! The following tables are for reference. In case of discrepancies, use
-the software generated files listed above.
+.. important::
 
-The signals names in the table below use the following nomenclature: • Zynq PL signals : IO_L##\_<BANK#>_JX#\_<N/P> o IO : Zynq Programmable Logic SelectIO input/output o L## : signal number within bank o BANK# : bank number o JX# : JX connector (1-4) o N/P : differential capable signal; otherwise single-ended
+   The following tables are for reference. In case of discrepancies, use
+   the software generated files listed above.
 
-• Zynq PS signals: PS_MIO##\_<BANK #>_JX# o PS : Zynq Processor Subsystem input/output o MIO : Zynq PS MIO assignment o JX# : JX connector (1-4)
+The signals names in the table below use the following nomenclature:
 
-• Other signals, such as USB_OTG_P, indicate connection to a dedicated peripheral interface on the SOM. In this case, a USB data signal that originates from the on-board USB2.0 PHY, which is controlled by the Zynq PS USB peripheral.
+- Zynq PL signals : IO_L##\_<BANK#>_JX#\_<N/P>
+
+  - IO : Zynq Programmable Logic SelectIO input/output
+  - L## : signal number within bank
+  - BANK# : bank number
+  - JX# : JX connector (1-4)
+  - N/P : differential capable signal; otherwise single-ended
+
+- Zynq PS signals: PS_MIO##\_<BANK #>_JX#
+
+  - PS : Zynq Processor Subsystem input/output
+  - MIO : Zynq PS MIO assignment
+  - JX# : JX connector (1-4)
+
+- Other signals, such as USB_OTG_P, indicate connection to a dedicated peripheral interface on the SOM. In this case, a USB data signal that originates from the on-board USB2.0 PHY, which is controlled by the Zynq PS USB peripheral.
 
 JX1 Connections
 
@@ -1513,17 +1586,12 @@ Power
 The AD9361-Z7035 2X2 SOM was designed to reduce power consumption at every
 angle. The major features of the power system are as follows:
 
-• The -2LI Xilinx Z-7035 is a low-power, mid-speed grade device that offers 40% lower static power and 10% lower dynamic power than a standard -2I device.
-
-• Low power DDR3L Micron SDRAM provides 15% or more power savings over standard DDR3 devices.
-
-• High efficiency voltage regulation with built-in sequencing and monitoring.
-
-• Voltage supplies for unused Zynq I/O banks may be powered down.
-
-• The Zynq SoC and AD9361 subsystems may be powered down to reach maximum power savings for some use cases. See the device datasheets and product websites for guidance and tutorials.
-
-• Peripheral clocks may be disabled to reduce power consumption.
+- The -2LI Xilinx Z-7035 is a low-power, mid-speed grade device that offers 40% lower static power and 10% lower dynamic power than a standard -2I device.
+- Low power DDR3L Micron SDRAM provides 15% or more power savings over standard DDR3 devices.
+- High efficiency voltage regulation with built-in sequencing and monitoring.
+- Voltage supplies for unused Zynq I/O banks may be powered down.
+- The Zynq SoC and AD9361 subsystems may be powered down to reach maximum power savings for some use cases. See the device datasheets and product websites for guidance and tutorials.
+- Peripheral clocks may be disabled to reduce power consumption.
 
 The following sections provide guidance for powering the SOM.
 
@@ -1557,25 +1625,27 @@ Supply Voltage Requirements
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
 | Voltage Input     | Nominal (V) | Range (V)     | SOM Pins                    | Notes                                           |
 +===================+=============+===============+=============================+=================================================+
-| VIN(1)            | 5.0         | 4.500 – 5.500 | JX1 [57:60] JX2 [12, 57:60] | Main SOM supply                                 |
+| VIN(1)            | 5.0         | 4.500 - 5.500 | JX1 [57:60] JX2 [12, 57:60] | Main SOM supply                                 |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_VCCO_12        | 1.8 – 3.3   | 1.140 – 3.465 | JX1 [78:80]                 | Zynq PL HR Bank 12 Optional (GND if unused)     |
+| JX_VCCO_12        | 1.8 - 3.3   | 1.140 - 3.465 | JX1 [78:80]                 | Zynq PL HR Bank 12 Optional (GND if unused)     |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_VCCO_13        | 1.8 – 3.3   | 1.140 – 3.465 | JX2 [98] JX3 [45:46]        | Zynq PL HR Bank 13 Optional (GND if unused)     |
+| JX_VCCO_13        | 1.8 - 3.3   | 1.140 - 3.465 | JX2 [98] JX3 [45:46]        | Zynq PL HR Bank 13 Optional (GND if unused)     |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_VCCO_33_34(4)  | 1.2 – 1.8   | 1.140 – 1.890 | JX2 [78:80]                 | Zynq PL HP Banks 33/34 Optional (GND if unused) |
+| JX_VCCO_33_34(4)  | 1.2 - 1.8   | 1.140 - 1.890 | JX2 [78:80]                 | Zynq PL HP Banks 33/34 Optional (GND if unused) |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_MGTAVTT(2,3,4) | 1.2         | 1.171 – 1.230 | JX3 [30, 32]                | Zynq MGT Bank 111/112 Optional (GND if unused)  |
+| JX_MGTAVTT(2,3,4) | 1.2         | 1.171 - 1.230 | JX3 [30, 32]                | Zynq MGT Bank 111/112 Optional (GND if unused)  |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_MGTAVCC(2,3,4) | 1.0         | 0.972 – 1.079 | JX3 [5,7,9,11]              | Zynq MGT Bank 111/112 Optional (GND if unused)  |
+| JX_MGTAVCC(2,3,4) | 1.0         | 0.972 - 1.079 | JX3 [5,7,9,11]              | Zynq MGT Bank 111/112 Optional (GND if unused)  |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
-| JX_MGTAVCC(2,3,4) | 1.05        | 0.972 – 1.079 | JX3 [5,7,9,11]              | For QPLL > 10.3123 GHz                          |
+| JX_MGTAVCC(2,3,4) | 1.05        | 0.972 - 1.079 | JX3 [5,7,9,11]              | For QPLL > 10.3123 GHz                          |
 +-------------------+-------------+---------------+-----------------------------+-------------------------------------------------+
 
--  VIN is the only required voltage, unused banks should be grounded on your carrier.
--  Xilinx recommends less 10mV peak-to-peak voltage from 10 kHz – 80 MHz on MGAVTT and MGAVCC supplies (Xilinx UG476). MGAVCC power consumption can be reduced when the Zynq internal PLL is operated below 10.3123GHz.
--  Rev A-C SOMs implement Zynq MGTs in Bank 111. Rev D and later SOMs use Bank 112.
--  Deviation from the Zynq datasheet recommended range is a result of the
+- VIN is the only required voltage, unused banks should be grounded on your carrier.
+- Xilinx recommends less 10mV peak-to-peak voltage from 10 kHz - 80 MHz on
+  MGAVTT and MGAVCC supplies (Xilinx UG476). MGAVCC power consumption can be
+  reduced when the Zynq internal PLL is operated below 10.3123GHz.
+- Rev A-C SOMs implement Zynq MGTs in Bank 111. Rev D and later SOMs use Bank 112.
+- Deviation from the Zynq datasheet recommended range is a result of the
    ADM1166 ADC precision.
 
 In addition, you can supply a higher voltage for the AD9361 GPO signals. By
@@ -1592,7 +1662,12 @@ order.
 Module Power Architecture
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Eight regulators reside on the AD9361-Z7035 SOM that provide a variety of voltage rails required for the Zynq SoC, the AD9361, and their supporting circuitry. These regulators are powered from the end user carrier card through the VIN pins on the SOM Micro Headers – either by direct connection to VIN or derived by cascaded regulators on the SOM. The image below shows a simplified view of the overall power scheme.
+Eight regulators reside on the AD9361-Z7035 SOM that provide a variety of
+voltage rails required for the Zynq SoC, the AD9361, and their supporting
+circuitry. These regulators are powered from the end user carrier card through
+the VIN pins on the SOM Micro Headers - either by direct connection to VIN or
+derived by cascaded regulators on the SOM. The image below shows a simplified
+view of the overall power scheme.
 
 .. image:: images/power_scheme.png
    :align: center
@@ -1628,11 +1703,22 @@ memory can be re-programmed. The image below provides a detailed timing diagram
 of the system voltage sequencing, but rest assured that the carrier may supply
 voltages to the SOM in any order.
 
-**Zynq Power Supply Sensors:** The Zynq SoC on-chip XADC includes a temperature sensor and power supply sensors that capture the voltage level of VCCINT, VCCAUX, VCCBRAM, VCCPINT, VCCPAUX, and VCCO_DDR. These values are captured in registers that may be read by the Zynq ARM processors. Please see `Xilinx UG480 <https://www.xilinx.com/support/documentation/user_guides/ug480_7Series_XADC.pdf>`_ for details.
+**Zynq Power Supply Sensors:** The Zynq SoC on-chip XADC includes a temperature
+sensor and power supply sensors that capture the voltage level of VCCINT,
+VCCAUX, VCCBRAM, VCCPINT, VCCPAUX, and VCCO_DDR. These values are captured in
+registers that may be read by the Zynq ARM processors. Please see `Xilinx UG480 <https://www.xilinx.com/support/documentation/user_guides/ug480_7Series_XADC.pdf>`_
+for details.
 
-**Power Good Signal:** The SOM provides a PG_MODULE signal to the JX micro headers for use on the carrier card to indicate when all of the SOM power supplies are on line. For example, this may be used to enable other power supply circuits on the carrier. The PG_MODULE signal has a 10kΩ pull-up to VIN on the SOM. When PG_MODULE is released by the ADM1166 (U7), a power good LED (D3) will illuminate on the SOM. .
+**Power Good Signal:** The SOM provides a PG_MODULE signal to the JX micro
+headers for use on the carrier card to indicate when all of the SOM power
+supplies are on line. For example, this may be used to enable other power supply
+circuits on the carrier. The PG_MODULE signal has a 10kΩ pull-up to VIN on the
+SOM. When PG_MODULE is released by the ADM1166 (U7), a power good LED (D3) will
+illuminate on the SOM. .
 
-**Power Good LED:** The SOM uses the PG_MODULE signal to illuminate a green LED (D3) to provide visual status information about the ADM1166 sequencer state machine.
+**Power Good LED:** The SOM uses the PG_MODULE signal to illuminate a green LED
+(D3) to provide visual status information about the ADM1166 sequencer state
+machine.
 
 Table 23 - Power Good LED Status
 
@@ -1642,9 +1728,16 @@ Power cycle the board to reset the ADM1166 state machine
 
     (1) Feature included on Rev D and later
 
-**Note:** The toggling feature for PG_MODULE was introduced with REV D modules. If the toggling behavior of PG_MODULE is undesirable in your system, the ADM1166 firmware may be modified to remove it.
+**Note:** The toggling feature for PG_MODULE was introduced with REV D modules.
+If the toggling behavior of PG_MODULE is undesirable in your system, the ADM1166
+firmware may be modified to remove it.
 
-**Power Enable Signal:** The carrier card can provide a PWR_ENABLE signal to the module (a so-called “C2M” signal). When the SOM observes that this signal is pulled low, the ADM1166 state machine will not enable any power supplies. Only VIN will be energized on the module, but no downstream regulators will be enabled until PWR_ENABLE is released. This signal has a 10kΩ pull-up to VIN on the SOM.
+**Power Enable Signal:** The carrier card can provide a PWR_ENABLE signal to the
+module (a so-called “C2M” signal). When the SOM observes that this signal is
+pulled low, the ADM1166 state machine will not enable any power supplies. Only
+VIN will be energized on the module, but no downstream regulators will be
+enabled until PWR_ENABLE is released. This signal has a 10kΩ pull-up to VIN on
+the SOM.
 
 .. image:: images/power_sequencing_diagram.png
    :width: 600
@@ -1662,9 +1755,17 @@ PS and its peripherals, and the Zynq PL logic utilization and frequency of
 operation. Xilinx provides a suite of software tools and documentation to help
 you evaluate the thermal and power supply requirements of the entire Zynq SoC.
 
-The **Xilinx Power Estimator** (XPE) is a spreadsheet-based tool that estimates the power consumption of your design. It accepts design information through simple design wizards, analyzes them, and provides a detailed power and thermal information. See `Xilinx UG440 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2015_4/ug440-xilinx-power-estimator.pdf>`_ for details and download the `XPE Tool <https://www.xilinx.com/products/technology/power.html>`_ here.
+The **Xilinx Power Estimator** (XPE) is a spreadsheet-based tool that estimates
+the power consumption of your design. It accepts design information through
+simple design wizards, analyzes them, and provides a detailed power and thermal
+information. See `Xilinx UG440 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2015_4/ug440-xilinx-power-estimator.pdf>`_
+for details and download the `XPE Tool <https://www.xilinx.com/products/technology/power.html>`_ here.
 
-The **Xilinx Vivado Design Suite power analysis** feature performs power estimation automatically based on your implemented design. In addition, it can use simulation results to more accurately estimate power based on your expected toggle rates. See `Xilinx UG907 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2015_4/ug907-vivado-power-analysis-optimization.pdf>`_ and `Xilinx UG997 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2013_2/ug997-vivado-power-analysis-optimization-tutorial.pdf>`_.
+The **Xilinx Vivado Design Suite power analysis** feature performs power
+estimation automatically based on your implemented design. In addition, it can
+use simulation results to more accurately estimate power based on your expected
+toggle rates. See `Xilinx UG907 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2015_4/ug907-vivado-power-analysis-optimization.pdf>`_
+and `Xilinx UG997 <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2013_2/ug997-vivado-power-analysis-optimization-tutorial.pdf>`_.
 
 The SOM power system was designed to supply sufficient power to the Zynq Z-7035
 SoC, the AD9361, and all on-board peripherals using demanding radio use case
