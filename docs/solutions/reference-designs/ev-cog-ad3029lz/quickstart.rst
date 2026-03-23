@@ -1,0 +1,107 @@
+MCU Cog Quick Start Guide [using CCES]
+======================================
+
+Setting up EV-COG-AD3029LZ is a three step process.
+
+-  IDE Setup
+-  Software Packs & Drivers Setup
+-  Running an Example Project
+
+IDE Setup
+---------
+
+-  Install Cross Core Embedded Studio
+
+   -  `CrossCore Embedded Studio 2.6.0 for Windows <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/ADI_CrossCoreEmbeddedStudio-Rel2.6.0.exe>`_
+   -  `CrossCore Embedded Studio 2.6.0 for Ubuntu Linux 14.04 x86 <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.6.0/adi-CrossCoreEmbeddedStudio-linux-x86-2.6.0.deb>`_
+
+-  License Installation
+
+   -  Start CCES and navigate to Help -> Manage Licenses.
+   -  Click New and enter the license key provided with the EV-COG-AD3029LZ box.
+   -  Follow the on-screen instructions to register and activate the license.
+
+Software Packs and Driver Setup
+-------------------------------
+
+-  Download the following packs for EV-COG-AD3029LZ
+
+   -  `ARM CMSIS Pack <https://keilpack.azureedge.net/pack/ARM.CMSIS.5.1.1.pack>`_
+   -  `Analog Devices ADuCM302x Device Support Pack <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.2.0.0.pack>`_
+   -  `Analog Devices EV-COG-AD3029LZ Off-Chip Drivers and Examples <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.1.0.0.pack>`_
+
+-  Start CrossCore Embedded Studio.
+-  Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
+-  Click Import Existing Packs icon |image1|.\ :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/tools/cces_guide>`.
+-  Select all the packs and import. This will install the packs. Ignore the warnings seen on the console window. In order to remove these warnings, additional packs needs to be installed which are available in the last section of this page.
+-  Please refer to this `link <https://os.mbed.com/handbook/Windows-serial-configuration>`_ to download and install mbed serial driver on PC.
+
+Running an Example Project
+--------------------------
+
+-  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a
+   yellow LED turn on by default.
+
+.. image:: images/img_2668.jpg
+   :align: center
+   :width: 200
+
+-  In CCES IDE, click CMSIS Pack Manager icon |image2|.
+-  Select EV-COG-AD3029LZ from the Boards tab on the Left panel. (see below image)
+-  Copy button_press example from the Examples tab on the Right panel.
+
+.. image:: images/pack_manager_example.jpg
+   :align: center
+
+-  Click C/C++ perspective icon
+
+.. image:: images/c_persp.jpg
+
+-  Under Project Explorer select button_press example, click build icon |image3|.
+-  Click on Debug icon |image4| once build is complete. Below are the Debug Configuration settings.
+
+.. image:: images/debug_config.png
+   :align: center
+   :width: 700
+
+-  Click ok on Hardware Breakpoint Limited and Semihosting Enabled window.\
+
+|image5|
+
+.. image:: images/hw_breakpoint.jpg
+   :width: 400
+
+-  Click run |image6| on the Debug perspective.
+-  Now press BTN1 or BTN2 on EV-COG-AD3029LZ and inspect corresponding LED.
+
+You are all set!
+
+Additional Packs
+================
+
+For Sensor based application with BLE connectivity please download and install
+below packages.
+
+- Download below packs
+  - ` Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/software/sensor>`
+  - `Analog Devices Bluetooth Low Energy Software <http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack>`_ - :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/software/connectivity>`
+   * Start CrossCore Embedded Studio.
+   * Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
+   * Install above downloaded packs by clicking Import Existing Packs icon  |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg|.
+   * Refer "Running Example Project" section as mentioned above to copy existing
+     sensor or BLE based application to workspace.
+
+| End Document
+
+:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
+
+.. |image1| image:: images/import_existing_packs_icon.jpg
+.. |image2| image:: images/pack_manager.jpg
+.. |image3| image:: images/build_icon.jpg
+.. |image4| image:: images/debug_icon.jpg
+.. |image5| image:: images/semihosting.jpg
+   :width: 400
+
+.. |image6| image:: images/run_icon.jpg
+
+.. |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg| image:: images/import_existing_packs_icon.jpg

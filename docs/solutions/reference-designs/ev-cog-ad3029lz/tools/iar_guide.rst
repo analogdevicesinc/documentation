@@ -1,0 +1,79 @@
+EV-COG-AD3029LZ with IAR Embedded Workbench for ARM
+===================================================
+
+First, install mBed windows serial driver from https://developer.mbed.org/handbook/Windows-serial-configuration
+
+IDE Setup
+---------
+
+-   Install IAR Embedded Workbench for ARM
+
+   -  Please visit https://www.iar.com/ to download IAR Embedded Workbench for ARM (version 8.20.1 or above)
+
+-   License Installation
+
+   -  Make sure valid license is installed for the corresponding version.
+
+Software Packs and Driver Setup
+-------------------------------
+
+-  Start IAR Embedded Workbench for ARM.
+-  Go to Project-> CMSIS-Pack-> Pack Installer.
+
+.. image:: ../images/cmsis_pack_install_1.png
+   :align: center
+   :width: 750
+
+-  In **'CMSIS Pack Manager'** window, Click Search for updates.
+-  Expand Analog Devices, then expand **ADuCM302x_DFP**. Right click on the latest version (for ex. 3.2.0) and click install.
+
+.. image:: ../images/1.png
+   :align: center
+   :width: 600
+
+-  After successful installation of **ADuCM302x_DFP**, repeat step 4 for **EV-COG-AD3029LZ_BSP**.
+-  After successful installation of **EV-COG-AD3029LZ_BSP**, expand ARM -> CMSIS and install the latest version (for ex. 5.4.0 ) available for ARM CMSIS Pack.
+
+Running an Example Project
+--------------------------
+
+-  Power the MCU Cog using a USB (micro-B) Cable. You should see a red LED and a
+   yellow LED turn on by default.
+
+.. image:: ../images/img_20171030_180904.jpg
+   :align: center
+   :width: 200
+
+-  In IAR IDE, go to Project-> Create New Project...
+
+.. image:: ../images/create_new_project_1.png
+   :align: center
+
+-  In **'Create New Project'** window, Select **'CMSIS Pack Example'** and click 'OK'.
+
+.. image:: ../images/example_run_1.png
+   :align: center
+
+-  Expand Analog Devices, select **ADuCM3029** and click 'Next'.
+
+.. image:: ../images/iar-aducm3029-cmsis-example-mcu-select1.png
+   :align: center
+   :width: 700
+
+-  Select **button_press** example and click 'Finish'.
+
+.. image:: ../images/iar-aducm3029-cmsis-example-buttonpress1.png
+   :align: center
+   :width: 700
+
+-  Save the project to the desired location.
+-  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
+-  Click on 'Run' icon |image2| to start the debug session.
+-  Now press BTN1 or BTN2 on EV-COG-AD3029LZ and inspect corresponding LED
+
+You are all set!
+
+:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/quickstart>`
+
+.. |image1| image:: ../images/debug_debug_button.png
+.. |image2| image:: ../images/run_button.png
