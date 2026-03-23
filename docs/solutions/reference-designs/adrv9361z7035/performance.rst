@@ -1,5 +1,7 @@
-ADRV9361-Z7035 - Performance
-============================
+.. _adrv9361z7035 performance:
+
+Performance
+===========
 
 Error Vector Magnitude (EVM)
 ----------------------------
@@ -18,14 +20,21 @@ IIO System Object
 Test Parameters
 ~~~~~~~~~~~~~~~
 
--  LTE10 (64-QAM) waveform (I & Q) generated from the MathWorks LTE System Toolbox.
--  This dataset is sent to the AD9361 via the Analog Devices IIO System Object in MATLAB and transmitted through the AD9361 TX signal chain, at various RF frequencies.
--  The AD9361 TX is connected to the AD9361 RX with U.FL-to-U.FL loopback cables on the SOM.
--  The AD9361 RX signal chain captures the AD9361 LTE 10 transmitted signal, and sends samples back to the IIO system object.
--  The IIO System object sends the received I & Q waveforms to the LTE toolbox, where analysis is done.
--  This analysis (EVM) is captured and stored, and the RF is changed, and the test continues.
--  The tests were performed from 70MHz – 6 GHz in 100MHz steps.
--  This test is nominal – test done at room temperature, in lab settings.
+- LTE10 (64-QAM) waveform (I & Q) generated from the MathWorks LTE System
+  Toolbox.
+- This dataset is sent to the AD9361 via the Analog Devices IIO System Object in
+  MATLAB and transmitted through the AD9361 TX signal chain, at various RF
+  frequencies.
+- The AD9361 TX is connected to the AD9361 RX with U.FL-to-U.FL loopback cables
+  on the SOM.
+- The AD9361 RX signal chain captures the AD9361 LTE 10 transmitted signal, and
+  sends samples back to the IIO system object.
+- The IIO System object sends the received I & Q waveforms to the LTE toolbox,
+  where analysis is done.
+- This analysis (EVM) is captured and stored, and the RF is changed, and the
+  test continues.
+- The tests were performed from 70MHz - 6 GHz in 100MHz steps.
+- This test is nominal - test done at room temperature, in lab settings.
 
 Results
 ~~~~~~~
@@ -33,12 +42,12 @@ Results
 All EVM measurements were under ~2.5%. This works out to about -32dB for the
 accumulation of RX and TX.
 
-The AD9361 datasheet specs are ~ −37.782 dB for TX and −37.462 dB for RX (or
+The AD9361 datasheet specs are ~ -37.782 dB for TX and -37.462 dB for RX (or
 about 1.4% each). It is an RMS sum, so we would expect about 1.86% (-34.6dB)
 based on the datasheet.
 
 The datasheet uses narrowband baluns, and derives some gain from this. Since
-this test is using the wideband baluns on ADRV9361−Z7035 SDR 2X2, that gain is
+this test is using the wideband baluns on ADRV9361-Z7035 SDR 2X2, that gain is
 not seen. Therefore we consider the SOM to perform close enough to the AD9361
 datasheet, with a difference of 0.6%.
 
@@ -50,12 +59,17 @@ datasheet, with a difference of 0.6%.
 Environmental
 -------------
 
-Information regarding environmental and mechanical testing is listed here. Emissions, Sinusoidal vibration, random vibration, shock, temperature etc. The ADRV9x63x RF SOM family is tested against various military (https://mil-std.org) and Information Technology Standards (NIST) using external vendors with the appropriate equipment. All details and results of such are maintained in the test reports below.
+Information regarding environmental and mechanical testing is listed here.
+Emissions, Sinusoidal vibration, random vibration, shock, temperature etc. The
+ADRV9x63x RF SOM family is tested against various military (https://mil-std.org)
+and Information Technology Standards (NIST) using external vendors with the
+appropriate equipment. All details and results of such are maintained in the
+test reports below.
 
 Emissions and Immunity
 ~~~~~~~~~~~~~~~~~~~~~~
 
--  `SOM2 Emissions and Immunity CE Mark Test Report <resources/analog_devices_picozed_sdr_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0.pdf>`_
+- `SOM2 Emissions and Immunity CE Mark Test Report <resources/analog_devices_picozed_sdr_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0.pdf>`_
 
    -  This report contains tests results for:
 
@@ -65,7 +79,8 @@ Emissions and Immunity
 Shock and Vibration
 ~~~~~~~~~~~~~~~~~~~
 
--  The `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_ contains the results for MIL-STD-202G testing:
+- The `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_
+  contains the results for MIL-STD-202G testing:
 
    -  Method 201A:
 
@@ -98,7 +113,8 @@ Shock and Vibration
 Temperature
 ~~~~~~~~~~~
 
-The report listed above `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_ also contains the results of MIL-STD-810G testing.
+The report listed above `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_
+also contains the results of MIL-STD-810G testing.
 
 The ADRV9361-Z7035 SDR 2X2 is rated for operation in the industrial temperature
 range (-40 to 85°C). Please take care to respect the individual device maximum

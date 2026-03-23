@@ -1,38 +1,51 @@
-ADRV9361-Z7035 Quick Start Guide
-================================
+.. _adrv9361z7035 quickstart:
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/adrv9361-z7035/:adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
-   :alt: :adi:`-/media/analog/en/evaluation-board-images/images/adrv9361-z7035-top-web.gif`
+Quick Start Guide
+=================
+
+.. image:: images/adrv9361-z7035-top-web.png
+   :alt: ADRV9361-Z7035 Board
    :align: right
    :width: 250
 
-This Quick start guide is to provide users with a simplified, concise set of instructions for setting up :adi:`ADRV9361-Z7035` on various SDR Module Carrier development boards. The :adi:`ADRV9361-Z7035` is a development kit from Analog Devices that consists of a hardware platform (ZC7035 board) and a software package (HDL design, Linux BSP, and no-OS drivers) for the ADRV9361-SOM system-on-module (SOM). See `Introduction to ADRV9361-Z7035 <https://wiki.analog.com/resources/eval/user-guides/adrv936x_rfsom/user-guide/introduction>`_ for further details.
+This Quick start guide is to provide users with a simplified, concise set of
+instructions for setting up :adi:`ADRV9361-Z7035` on various SDR Module Carrier
+development boards. The :adi:`ADRV9361-Z7035` is a development kit from Analog
+Devices that consists of a hardware platform (ZC7035 board) and a software
+package (HDL design, Linux BSP, and no-OS drivers) for the ADRV9361-SOM
+system-on-module (SOM). See :ref:`Introduction to ADRV9361-Z7035 <adrv9361z7035 introduction>`
+for further details.
 
 Carrier Support
 ---------------
 
-The ADRV9361-Z7035 supports all features on the :adi:`ADRV1CRR-FMC <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADRV1CRR-FMC.html>` carrier board. The ADRV9364-Z7020 supports a subset of features because the Zynq Z7020 has fewer available user I/Os. For the ADRV9364-Z7020 it is recommended to use the :adi:`ADRV1CRR-BOB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADRV1CRR-BOB.html>` carrier.
+The ADRV9361-Z7035 supports all features on the :adi:`ADRV1CRR-FMC <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADRV1CRR-FMC.html>`
+carrier board. The ADRV9364-Z7020 supports a subset of features because the Zynq
+Z7020 has fewer available user I/Os. For the ADRV9364-Z7020 it is recommended to
+use the :adi:`ADRV1CRR-BOB <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ADRV1CRR-BOB.html>`
+carrier.
 
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| ADRV1CRR-FMC                                                                                         | ADRV1CRR-BOB                                                                                       |
-+======================================================================================================+====================================================================================================+
-| |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif|`                 | |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif|`                 |
-+------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+
++----------------------+----------------------+
+| ADRV1CRR-FMC         | ADRV1CRR-BOB         |
++======================+======================+
+| |adrv1crr-fmc-image| | |adrv1crr-bob-image| |
++----------------------+----------------------+
 
 Required Software
 -----------------
 
--  SD Card 16GB (minimum size) imaged using the instructions here: `SDCARD for Zynq & Altera SoC Quick Start Guide <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_.
--  Copy next boot files from ``zynq-adrv9361-z7035-fmc`` directory directly on sdcard ``BOOT`` partition :
+- SD Card 16GB (minimum size) imaged using the instructions here: :ref:`SDCARD for Zynq & Altera SoC Quick Start Guide <kuiper>`.
+- Copy next boot files from ``zynq-adrv9361-z7035-fmc`` directory directly on
+  sdcard ``BOOT`` partition :
 
    -  ``BOOT.bin``
    -  ``devicetree.dtb``
 
--  Then copy image from ``zynq-common``:
+- Then copy image from ``zynq-common``:
 
    -  ``uImage``
 
--  A UART terminal (Putty/Tera Term/Minicom, etc.),
+- A UART terminal (Putty/Tera Term/Minicom, etc.),
 
    -  Set Speed/Baud rate to 115200 (8N1).
    -  For USB - UART driver missing issue, visit this link below:
@@ -42,25 +55,25 @@ Required Software
 Required Hardware
 -----------------
 
--  Xilinx `ADRV9361-Z7035 <https://www.xilinx.com/ADRV9361-Z7035>`_ board
--  :adi:`ADRV1CRR-FMC` board
--  Micro-USB 2.0 uart cable
--  Ethernet cable
--  Power supply connector
--  Laptop
--  OTG cable for USB keyboard, mouse and other peripherals (Optional)
--  HDMI compatible monitor (Optional)
+- Xilinx `ADRV9361-Z7035 <https://www.xilinx.com/ADRV9361-Z7035>`_ board
+- :adi:`ADRV1CRR-FMC` board
+- Micro-USB 2.0 uart cable
+- Ethernet cable
+- Power supply connector
+- Laptop
+- OTG cable for USB keyboard, mouse and other peripherals (Optional)
+- HDMI compatible monitor (Optional)
 
 Example Device Trees
 --------------------
 
-+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                            |
-+==========+=================================================================================================================================+
-| dtsi     | :git-linux:`arch/arm/boot/dts/zynq-adrv9361-z7035.dtsi`                                                                         |
-+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| dtsi     | :git-linux:`arch/arm/boot/dts/adi-fmcomms2.dtsi`                                                                                |
-+----------+---------------------------------------------------------------------------------------------------------------------------------+
++----------+---------------------------------------------------------------+
+| Function | File                                                          |
++==========+===============================================================+
+| dtsi     | :git-linux:`arch/arm/boot/dts/xilinx/zynq-adrv9361-z7035.dtsi`|
++----------+---------------------------------------------------------------+
+| dtsi     | :git-linux:`arch/arm/boot/dts/adi-fmcomms2.dtsi`              |
++----------+---------------------------------------------------------------+
 
 Testing
 =======
@@ -70,18 +83,20 @@ Testing
 .. image:: images/adrv9361-z7035-fmc-setup_quickstart.png
    :alt: adrv9361-z7035-fmc-setup_quickstart.png
 
--  Connect the :adi:`ADRV1CRR-FMC` FMC board to `ADRV9361-Z7035 <https://www.xilinx.com/ADRV9361-Z7035>`_ board socket.
--  Connect USB UART (Micro USB 2.0) to your host PC/laptop.
+- Connect the :adi:`ADRV1CRR-FMC` FMC board to `ADRV9361-Z7035
+  <https://www.xilinx.com/ADRV9361-Z7035>`_ board socket.
+- Connect USB UART (Micro USB 2.0) to your host PC/laptop.
 
    -  (Optional) Connect HDMI cable to monitor.
    -  (Optional) Connect OTG for keyboard, mouse and other peripherals.
 
--  Plug the Ethernet cable in *ETHERNET 1* port in the FMC board then connect to network.
--  Connect power supply connector.
--  Insert micro sdcard into `ADRV9361-Z7035 <https://www.xilinx.com/ADRV9361-Z7035>`_ sd slot.
--  Turn on the power switch on the fmc board.
--  Open Teraterm and select serial port for terminal messages.
--  Observe kernel and serial console messages on your terminal.
+- Plug the Ethernet cable in *ETHERNET 1* port in the FMC board then connect to
+  network.
+- Connect power supply connector.
+- Insert micro sdcard into `ADRV9361-Z7035 <https://www.xilinx.com/ADRV9361-Z7035>`_ sd slot.
+- Turn on the power switch on the fmc board.
+- Open Teraterm and select serial port for terminal messages.
+- Observe kernel and serial console messages on your terminal.
 
 Messages
 --------
@@ -132,7 +147,7 @@ Messages
          7754888 bytes read in 448 ms (16.5 MiB/s)
          reading devicetree.dtb
          28708 bytes read in 26 ms (1.1 MiB/s)
-          Unable to read file uramdisk.image.gz 
+          Unable to read file uramdisk.image.gz
          ## Booting kernel from Legacy Image at 03000000 ...
             Image Name:   Linux-5.15.0-175730-gcdaccc1f233
             Image Type:   ARM Linux Kernel Image (uncompressed)
@@ -637,8 +652,8 @@ Messages
 
 Login Information
 
--  user: analog
--  password: analog
+- user: analog
+- password: analog
 
 Show hardware sysid:
 
@@ -646,14 +661,11 @@ Show hardware sysid:
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
-   
+
       root@analog:~# dmesg | grep sysid
       [    1.595804] axi_sysid 45000000.axi-sysid-0: AXI System ID core version (1.01.a) found
       [    1.602488] axi_sysid 45000000.axi-sysid-0: [adrv9361z7035_ccfmc] on [lvds] git branch <master> git <d152ad1e9d6ab2f97167b76f9b9837748f385cdf> clean [2023-04-20 22:57:03] UTC
-   
 
 This command display or list all the errors from logs:
 
@@ -661,11 +673,9 @@ This command display or list all the errors from logs:
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# dmesg -l err
-   
 
 These devices should be present:
 
@@ -673,10 +683,8 @@ These devices should be present:
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
-   
+
       root@analog:~# iio_info | grep iio:device
               iio:device0: ad7291
               iio:device1: ad9361-phy
@@ -684,18 +692,20 @@ These devices should be present:
               iio:device3: ad9517-3
               iio:device4: cf-ad9361-dds-core-lpc (buffer capable)
               iio:device5: cf-ad9361-lpc (buffer capable)
-   
 
 IIO Oscilloscope Remote
 -----------------------
 
-Please see also here:`Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+Please see also here: :ref:`Oscilloscope <iio-oscilloscope>`
 
 The IIO Oscilloscope application can be used locally on Transceiver/Radio
 Boards. It has a feature of a graphical desktop environment remote using a
 network connection.
 
-When using the remote option, once you logged in to the Linux terminal you need to check the IP address of the using the **ifconfig** command to see if there was any address assigned by a DHCP server. If not, you need to manually set an address with ifconfig in the same address space your PC is using.
+When using the remote option, once you logged in to the Linux terminal you need
+to check the IP address of the using the **ifconfig** command to see if there
+was any address assigned by a DHCP server. If not, you need to manually set an
+address with ifconfig in the same address space your PC is using.
 
 Getting of IP address:
 
@@ -703,9 +713,8 @@ Getting of IP address:
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# ifconfig
       eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
               inet 192.168.10.110  netmask 255.255.255.0  broadcast 192.168.10.255
@@ -716,7 +725,7 @@ Getting of IP address:
               TX packets 22518  bytes 16552750 (15.7 MiB)
               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
               device interrupt 35  base 0xb000
-   
+
       eth1: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
               ether 4e:84:60:5e:ad:d4  txqueuelen 1000  (Ethernet)
               RX packets 0  bytes 0 (0.0 B)
@@ -724,7 +733,7 @@ Getting of IP address:
               TX packets 0  bytes 0 (0.0 B)
               TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
               device interrupt 36  base 0xc000
-   
+
       lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
               inet 127.0.0.1  netmask 255.0.0.0
               inet6 ::1  prefixlen 128  scopeid 0x10<host>
@@ -732,12 +741,9 @@ Getting of IP address:
               RX packets 75156  bytes 49190154 (46.9 MiB)
               RX errors 0  dropped 0  overruns 0  frame 0
               TX packets 75156  bytes 49190154 (46.9 MiB)
-   
 
 Once the IIO Osc application is launched goto Settings -> Connect and enter the
 IP address of the target in the popup window.
-
-   
 
 |osc_config.png|
 
@@ -778,23 +784,32 @@ These plugins enhance the capabilities of the IIO Oscilloscope tool and enable
 users to visualize and analyze the data from the ADRV9361 module in different
 ways. These provide a convenient and easy-to-use interface for configuring and
 controlling the module and performing various signal processing functions.
-ADRV9361 plugins:(formerly known as the FMComms2/3/4 Plugin)
+ADRV9361 plugins:(formerly known as the FMComms2/3/4 Plugin):
 
-check out: `ADRV936X Plugins <https://wiki.analog.com/resources/tools-software/linux-software/fmcomms2_plugin>`_ `ADRV936X Advanced Plugins <https://wiki.analog.com/resources/tools-software/linux-software/fmcomms2_advanced_plugin>`_
+- :ref:`ADRV936X Plugins <fmcomms2 software ad9361-plugin>`
+- :ref:`ADRV936X Advanced Plugins <fmcomms2 software ad9361-advanced-plugin>`
 
 Shut down
 ---------
 
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
+   Even thought this is Linux, this is a persistent file systems. Care should be
+   taken not to corrupt the file system -- please shut down things, don't just
+   turn off the power switch. Depending on your monitor, the standard power off
+   could be hiding. You can do this from the terminal as well with ``sudo
+   shutdown -h now``
 
    |image1|
 
-.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-fmc-angle-web.gif`
+.. |adrv1crr-fmc-image| image:: images/adrv1crr-fmc-angle-web.png
    :width: 250
-.. |:adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif|` image:: :adi:`-/media/analog/en/evaluation-board-images/images/adrv1crr-bob-top-web.gif`
+
+.. |adrv1crr-bob-image| image:: images/adrv1crr-bob-top-web.png
+   :width: 250
+
 .. |osc_config.png| image:: images/osc_config.png
    :width: 600
+
 .. |image1| image:: images/shutdown.png
    :width: 300
