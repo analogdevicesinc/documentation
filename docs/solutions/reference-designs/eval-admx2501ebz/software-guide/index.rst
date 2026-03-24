@@ -11,7 +11,7 @@ application. The number of parameters makes it impossible to show every
 combination, but the user will understand how each parameter affects the
 measurement data.
 
-The **AD-IMP2501DBZ-SL** comes with pre-loaded with embedded firmware and can be
+The **AD-IMP2501DBZ-SL** comes with pre-loaded embedded firmware and can be
 used out of the box. This firmware handles communication with the host PC,
 setting user specified parameters, initiating signal generation, processing
 impedance measurement data, and reporting that information back to the user.
@@ -67,6 +67,9 @@ Request and Download New Firmware or Software
 Follow these instruction for downloading software/firmware from Analog Device"s
 Secure Software Delivery (SSD) system. The example below is for requesting new
 firmware, but the process is the same for requesting software:
+
+Software/Firmware Request
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - A user must first make a myAnalog account by clicking ``Register with email``
   on my.analog.com. The email used to create an account will be needed in the
@@ -553,7 +556,7 @@ ohms.
 
 +-----------------------+-------------------------------------------------+---------+------------------+
 | Display Mode Number   | Mode Name                                       | Form    | SI Unit          |
-+=========================+===============================================+=========+==================+
++=======================+=================================================+=========+==================+
 | 0                     | Display Off                                     | N/A     | None             |
 +-----------------------+-------------------------------------------------+---------+------------------+
 | 1                     | Impedance in rectangular coordinates (default)  | R, X    | Ohms, Ohms       |
@@ -1005,7 +1008,7 @@ measurement to the same frequency under ideal parameters in the first few rows.
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 | 1          | 1         | 10     | 1               | R/X      | None      | Off       | 10.119    | NA           | NA             |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
-| 10000      | 1         | 1      |	10              |	R/X      | None      | Off       | 0.01345   | NA           | 0.009000       |
+| 10000      | 1         | 1      |	10              | R/X      | None      | Off       | 0.01345   | NA           | 0.009000       |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 | 1000       | 1         | 1      | 10              | R/X      | None      | Off       | 0.01393   | NA           | 0.009040       |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
