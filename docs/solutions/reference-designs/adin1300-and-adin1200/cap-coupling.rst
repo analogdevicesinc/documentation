@@ -4,7 +4,7 @@ ADIN1300 and ADIN1200 with Capacitive Coupling
 **ARCHITECTING A TRANSFORMERLESS PHYSICAL LAYER DEVICE USING ADIN1300/ADIN1200**
 
 Introduction
-============
+------------
 
 Ethernet applications typically use galvanic isolation in the form of magnetics
 between link partners. The isolation helps to protect against faults and
@@ -19,7 +19,7 @@ ADIN1200 Ethernet PHY with capacitive coupling and covers discussion on the
 typical circuit, recommended capacitor.
 
 ADIN1300 and ADIN1200 Ethernet PHY
-==================================
+----------------------------------
 
 The ADIN1300 and ADIN1200 are low power, low latency single-port Ethernet
 transceivers designed for industrial Ethernet applications. Both are compliant
@@ -31,7 +31,7 @@ The ADIN1300 and ADIN1200 support MII, RMII, and RGMII MAC interfaces. More
 information about ADIN300 and ADIN1200 is found in the product datasheets.
 
 Application Circuits
-====================
+--------------------
 
 Figure 1(a) shows a typical ADIN1300 (or ADIN1200) Ethernet PHY Media Dependent
 Interface Connection with magnetics for galvanic isolation. Figure 1(b) shows
@@ -49,14 +49,12 @@ For ADIN1200, two pairs of the MDI must all contain a capacitor, the same as the
 ADIN1300. Figure 2 shows the recommended circuit for capacitively coupled
 ADIN1200 circuit.
 
-|image1| //**Figure 2. Typical Ethernet application configuration for ADIN1200 with Magnetics (a) or Capacitive Coupling (b)**
+|image1|
 
-::
-
-   //
+**Figure 2. Typical Ethernet application configuration for ADIN1200 with Magnetics (a) or Capacitive Coupling (b)**
 
 Capacitor Selection
-===================
+-------------------
 
 Select the capacitors based on the following guidelines.
 
@@ -85,7 +83,7 @@ signal and there could be a deviation in signal rise/fall time, propagation
 delay, magnitude deviation that results in common-mode noise.
 
 ADIN1300 & ADIN1200 MDI Properties
-==================================
+----------------------------------
 
 The ADIN1300 and ADIN1200 PHY are voltage-driven PHYs on the MDI with 50 ohms
 (each pin) serial resistors. The proper common mode is half the supply voltage
@@ -95,16 +93,18 @@ pull-up or pull-down resistors for proper biasing, either with or without a
 transformer.
 
 Protection
-==========
+----------
 
 Place a TVS on the MDI lines of the ADIN1300 and ADIN1200 for protection against
 ESD, fast transients, and surges. The TVS is placed in between the
 ADIN1300/ADIN1200 MDI pins and blocking capacitors.
 
-|image4| // **Figure 3. TVS and Common Mode Choke Applied to ADIN1300/ADIN1200** //
+|image4|
+
+**Figure 3. TVS and Common Mode Choke Applied to ADIN1300/ADIN1200**
 
 Common Mode Noise
-=================
+-----------------
 
 When the capacitive coupling is used for configurations with cabling,
 common-mode noise could be induced, thus a filter is necessary to remove those
@@ -113,7 +113,7 @@ short connections, such as backplane applications, there should be little
 common-mode noise induced, so a choke is likely not required.
 
 Configurations
-==============
+--------------
 
 The most common application where capacitively coupled Ethernet PHYs are used is
 in backplane applications where a single cap can be used to isolate the two
@@ -180,7 +180,7 @@ distances, using longer ethernet cables, then it is highly recommended to add a
 common mode choke.
 
 Evaluation
-==========
+----------
 
 The ADIN1200 and ADIN1300 are capable of operating at all speeds with the capacitively coupled configuration in both forced and auto-negotiation modes. The driver architecture supports symmetrical transmission in all modes. Figure 7 to Figure 10 show typical signaling for transformer and capacitively coupled configurations measured at the cable. Evaluation under nominal supply and temperature conditions using the ADIN1300 capacitively coupled (local and remote) showed no packet loss, no CRCs errors and signal quality (MSE – mean square error) remained comparable to transformer arrangement over a range of cable lengths (2 m to 100 m). In industrial applications, where common mode noise may be significant as already discussed, a common mode choke is recommended where there are long cable lengths.
 
@@ -197,7 +197,7 @@ The ADIN1200 and ADIN1300 are capable of operating at all speeds with the capaci
 +-------------------------------------------------+-------------------------------------------------+
 
 EMC Simulation
-==============
+--------------
 
 Computing power, SPICE, electromagnetic field simulators, and CAD software have
 converged and reached a maturity point where a virtual lab is feasible.
@@ -223,19 +223,31 @@ EMC - radiated emissions
 -  If using a longer cable (> 2m) it is recommended that the customer add a
    discrete CMC to the interface.
 
-Figure 11 shows a block diagram representation of an EMC simulation schematic. This simulation investigates the robustness of the Ethernet physical interface to IEC 61000-4-4 Electrical Fast Transients (EFT). The EFT source is injected at 1kV and at 4kV. The TVS used is the SP4065-08ATG, with 4.4pF typical capacitance, and a 1A clamp voltage of 5.5V. Two meters of standard Cat5e is used in the simulation model. The EFT source is injected through a 100 pF capacitor to the Cat5e cable shield, at 0.5 meters from the Ethernet interface. The interface includes 33nF series capacitive isolation. |image13| // Figure 11. EMC simulation block diagram //
+Figure 11 shows a block diagram representation of an EMC simulation schematic. This simulation investigates the robustness of the Ethernet physical interface to IEC 61000-4-4 Electrical Fast Transients (EFT). The EFT source is injected at 1kV and at 4kV. The TVS used is the SP4065-08ATG, with 4.4pF typical capacitance, and a 1A clamp voltage of 5.5V. Two meters of standard Cat5e is used in the simulation model. The EFT source is injected through a 100 pF capacitor to the Cat5e cable shield, at 0.5 meters from the Ethernet interface. The interface includes 33nF series capacitive isolation.
+
+|image13|
+
+**Figure 11. EMC simulation block diagram**
 
 **Running this simulation without TVS** results in overvoltage on the Ethernet MDI pins. Figures 12 (for 1 kV EFT) and 13 (for 4 kV EFT) show that 100 to 400V overvoltage will be present on the Ethernet MDI pins.
 
-|image14| // **Figure 12. Running simulation without TVS and 1 kV EFT** //
+|image14|
 
-|image15| // **Figure 13. Running simulation without TVS and 4 kV EFT** //
+**Figure 12. Running simulation without TVS and 1 kV EFT**
+
+|image15|
+
+**Figure 13. Running simulation without TVS and 4 kV EFT**
 
 **Running this simulation with TVS** results in much better performance. Most of the EFT noise is shunted to ground using the TVS, as shown in Figures 14 and 15. The pin voltage is < 10V for very short time periods, unlikely to cause ADIN1300 damage. The ringing in some of the waveform edges is very high frequency, & very unlikely to be present in the real system.
 
-|image16| // **Figure 14. Running simulation with TVS and 1 kV EFT** //
+|image16|
 
-|image17| // **Figure 15. Running simulation with TVS and 4 kV EFT** //
+**Figure 14. Running simulation with TVS and 1 kV EFT**
+
+|image17|
+
+**Figure 15. Running simulation with TVS and 4 kV EFT**
 
 When adding the TVS to the Ethernet capacitive isolation architecture there is
 one additional question - is there any degradation in signal integrity? This can
@@ -251,7 +263,7 @@ effected.
 --------------
 
 Conclusion
-==========
+----------
 
 When architecting a physical layer circuit using capacitively coupled ADIN1300
 and ADIN1200, consider the cable length to be used. Any cable more than 1 meter

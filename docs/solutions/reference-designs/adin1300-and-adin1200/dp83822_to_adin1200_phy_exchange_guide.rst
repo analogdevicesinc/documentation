@@ -3,13 +3,13 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          **Overview**
 
-         
+
          This PHY exchange guide captures pertinent information to support
          migration from the TI DP83822 to the Analog Devices ADIN1200 Ethernet
          PHY. Both devices support MII, RMII and RGMII MAC interfaces from the
@@ -18,23 +18,23 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          edits to the schematic and board layout to achieve this exchange. The
          following sections detail the modifications at the schematic level
          required to migrate from DP83822 to the ADIN1200 device.
-         
+
          Hardware Changes By Function
-         
+
          **Power Supplies Overview**
 
-         
+
          The supply requirements are listed in Table 1. Both devices can operate
          from a minimum of one 3.3V power supply rail AVDD_3P3 (AVD), where the
          VDDIO rail is connected to 3.3V, alternatively the VDDIO rails can be
          run with a different supply voltage. The ADIN1200 has an on chip
          voltage regulator to generate the internal core supply rail and
          provided to a pin for decoupling purposes.
-         
+
          .. image:: images/dp83822_table1.png
             :align: center
             :width: 600
-         
+
          The ADIN1200 is robust to power supply sequencing and the power can be
          applied in any order. The ADIN1200 provides two pins for each supply
          rail, whereas the TI device provides one power supply pin for each
@@ -43,10 +43,10 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          each device differs as described in Table 2 {{
          :resources:eval:user-guides:adin1300-and-adin1200:dp83822_table2.png?direct&600
          \|
-         
+
          **RESET Operation**
 
-         
+
          An active low hardware reset pin, RESET_N is provided on Pin 6 of the
          ADIN1200 and pin 18 of the DP83822. The hardware strapping pins are
          read and updated at the de-assertion of reset for both devices. For the
@@ -56,33 +56,33 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          level shifting of the RESET_N signal applied to the ADIN1200 may be
          required to ensure the voltage level on the RESET_N pin is in excess of
          the minimum input high threshold level.
-         
+
          **Clocking**
 
-         
+
          A 25 MHz crystal or external clock source is used to provide the
          reference clock for both devices. In RMII mode, the ADIN1200 expects an
          external 50MHz REF_CLK provided to the XTAL_I/REF_CLK pin. In RMII
          master mode, the DP83822 (RMII mode) can provide a 50 MHz REF_CLK to
          the MAC device from the 25 MHz source. Alternatively, in RMII slave
          mode, provide an external 50 MHz both the PHY and MAC.
-         
+
          **Bias Resistor**
 
-         
+
          An external resistor, REXT (RBIAS) is required to bias internal
          reference circuitry for both DP83822 and ADIN1200. The ADIN1200
          requires a 3.01 kΩ resistor (1% tolerance, 100 ppm/°C temperature
          coefficient) connected to pin 10. The DP83822 uses a 4.87 kΩ on pin 16
          (RBIAS).
-         
+
          .. image:: images/dp83822_table3.png
             :align: center
             :width: 600
-         
+
          **Media Dependent Interface (MDI)**
 
-         
+
          The ADIN1200 has voltage mode line drivers with on-chip terminations so
          no external termination resistors are required and the center tap of
          the transformer does not require biasing to supply voltage. The
@@ -95,12 +95,12 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          diagram showing the additional termination resistors and the biasing of
          the center tap required for current mode PHYs. Note there may be
          additional decoupling and inductance used in practice.
-         
+
          |image1| **Figure 1 Isolation using Discrete Magnetics (Voltage Mode Driver) ADIN1200** |image2| **Figure 2 Simplified circuit for Current Mode Driver (DP83822)**
-         
+
          **MDIO/Management Interface**
 
-         
+
       Both devices can be hardware strapped to be used in an unmanaged
       configuration. Alternatively, they can provide SMI/MII access over the two
       wire MDIO interface. The MDIO pin (Management Data Open Drain
@@ -114,13 +114,13 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
       weak internal pullup, and in application circuit shows a 2.2kΩ connected
       to INTb, pin 8.
 
-   
+
    .. container:: half column
 
-         
+
          **LED Function**
 
-         
+
          Both devices support two LED pins. The ADIN1200 pins are LED_0 and
          LINK_ST. The LED_0 has programmability of LED functions, with different
          blinking operation possible through MDIO configuration, the default
@@ -130,10 +130,10 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          activity while LED1 can be configured to indicate 10 or 100M link
          speed. Both devices use these pins for Speed and Auto-Neg strapping
          purposes.
-         
+
          **LED Circuit**
 
-         
+
          The ADIN1200 LED_0 operates from the AVDD_3P3 voltage domain, therefore
          can support driving LEDs even when the MAC interface is running at the
          lower voltage of VDDIO= 1.8V. The default LED operation is on if the
@@ -147,12 +147,12 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          the strapping input is pulled low (MODE_0/MODE_1), the output will be
          configured as active high. This LED circuit should be configured
          accordingly.
-         
+
          |image3| Figure 2. LED_0 Hardware Configuration Pin Interaction
-         
+
          **Link Status, LINK_ST**
 
-         
+
          The ADIN1200 has a dedicated LINK_ST pin to provide information to the
          MAC on the status of the Link. By default, the LINK_ST pin goes high
          indicating the link is up and low to indicate the link is down. The
@@ -161,28 +161,28 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          it resides in the VDDIO voltage domain, therefore, when driving an LED
          in an integrated RJ45 jack where the PHY VDDIO is 1.8V, level shifting
          will be required.
-         
 
-   
+
+
 
 --------------
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          **MAC Interface**
 
-         
+
          Both PHYs support MII, RMII and RGMII MAC interface modes. The
          following sections describe specifically the interfaces for both
          devices.
-         
+
          **MII Interface**
 
-         
+
          The MII interface is the communication path between the PHY and MAC
          devices. The MII interface has a high pin count, with a total of 15
          pins for data transmission, reception and to signal errors or
@@ -195,16 +195,16 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          which pin the COL and CRS functions are provided on (option of
          redirecting to GP_CLK, LINK_ST or INT_N). This requires a register
          write over MDIO interface to reconfigure.
-         
+
          .. image:: images/dp38322_table_4_mii_mac_interface_mode_pin_comparison.png
-         
+
          **RMII Interface**
 
-         
+
          RMII is a reduced MII interface using fewer pins as shown in Table 5.
          The pin count for this interface is 8 pins.
 
-         
+
          |image4|
 
       RMII mode requires a 50MHz clock, REF_CLK. In RMII mode, the ADIN1200
@@ -213,13 +213,13 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
       Alternatively in slave mode, it can accept an external 50MHz clock from
       the MAC.
 
-   
+
    .. container:: half column
 
-         
+
          **RGMII Interface**
 
-         
+
          Both support an RGMII interface mode. The RGMII interface has a low pin
          count interface support for 10M, 100M and Gigabit operation with a
          total of 12 pins for data transmission, reception and to signal errors
@@ -227,36 +227,36 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          applications. These PHYs can support 10/100 M speeds over the RGMII
          interface.
 
-         
+
          |image5|
 
          **100BASE-FX**
 
-         
+
          The DP83822 “F” versions also support 100BASE-FX interface. The
          ADIN1200 does not support 100BASE-FX.
-         
+
          **Output Clocks**
 
-         
+
          The ADIN1200 can optionally provide a number of clock signals on the
          GP_CLK pin. This is configured via MDIO writes and the clocks available
          are a 125 MHz free running clock, 25 MHz clock and 25MHz/125 MHz
          recovered clock.
-         
 
-   
+
+
 
 --------------
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          Hardware Configuration
-         
+
          Both devices have a number of strapping options to enable managed or
          unmanaged configurations of the PHY function such as PHY address, mode
          of operation, Auto-Negotiation and MAC Interface. After power on, the
@@ -273,9 +273,9 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          operation after the device is brought out of reset. The ADIN1200 has
          internal pull downs on many of its strapping pins (not all), therefore
          it would be possible to minimize external strapping resistors.
-         
+
          |image6| Figure 4. ADIN1200 Hardware Strapping, 2 and 4 level strapping resistors |image7|
-         
+
          Strapping configurations are very specific to the device, consult the
          respective datasheets to determine the exact configuration for required
          use case. The DP83822 has internal pullup resistors of 50kΩ on COL,
@@ -283,15 +283,15 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          internal 9 kΩ pulldown resistors, therefore external strapping values
          differ depending on pin as shown in Table 8 and Table 9.
 
-         
+
          |image8|
 
    .. container:: half column
 
-         
+
          **Hardware Configuration of Speed**
 
-         
+
          For the ADIN1200, speed configuration is done using two pins, PHY_CFG0
          and PHY_CFG1. These pins do not have any internal pull resistors,
          therefore external strapping is required. Both pins support 4-level
@@ -302,25 +302,25 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          DP83822 uses pins RX_D0, RX_D3 and LED_0 to select speeds 10 or 100 M
          speeds, duplex and forced mode or auto-negotiation.
 
-         
+
          |image9|
 
          .. image:: images/ksz_table9.png
             :width: 600
-         
+
          **Hardware Configuration of Auto-MDIX**
 
-         
+
          Selection of Auto-MDIX for the ADIN1200 is done using one pin,
          (MDIX_MODE) with 4-level strapping. In the DP83822 Auto-MDI/MDI-X is
          enabled by default and set by the RX_ER strapping pin.
-         
+
          .. image:: images/ksz_table10.png
             :width: 600
-         
+
          **MAC Interface Selection**
 
-         
+
          The ADIN1200 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to
          provide user ability to select different MAC interfaces. These two pins
          have internal weak pull downs, therefore the default operation would be
@@ -329,10 +329,10 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          accordingly. The DP83822 MAC interface selection is chosen by selecting
          the appropriate configuration of RX_DV, RX_ER (for MII, RMII or RGMII
          mode) with combination of RX_ER, LED_1 and COL for 100BASE-FX mode.
-         
+
          **Hardware Configuration of PHY Address**
 
-         
+
          Both devices use two-level strapping, either pull high or low to
          configure the PHY address. The ADIN1200 provides four PHY address pins,
          allowing up to 16 unique addresses possible. The PHY address pins are
@@ -340,9 +340,9 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          ADIN1200 is 0x0000. The DP83822 provides five PHY address pins, capable
          of 32 unique addresses. The PHY Address pins are also on RX_Dx pins and
          COL. The default PHY address strapping for DP83822 is 0x0001.
-         
 
-   
+
+
 
 .. important::
 
@@ -354,22 +354,22 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          Package
-         
+
          Both the ADIN1200 and the DP83822 are available in a 32 lead QFN/LFCSP
          package of 5 mm x 5mm body size. The devices have different pinouts,
          therefore the ADIN1200 is not a drop-in replacement for the TI product.
          This requires edits to the schematic and board layout to achieve this
          exchange.
-         
+
          .. image:: images/dp83822_table14.png
             :align: center
             :width: 600
-         
+
          The underside of the LFCSP package for the ADIN1200 includes an exposed
          paddle which should be soldered directly to the board with an array of
          vias for thermal purposes. There are also two exposed stripes adjacent
@@ -378,42 +378,42 @@ PHY Exchange Guide, DP83822 to ADIN1200 10/100Mb
          supply rails in the device, therefore should not be tied to ground and
          there should be no routing or traces on the PCB layer directly
          underneath them.
-         
+
          Other Pinout Considerations
-         
+
          **Integrated MDI Termination**
 
-         
+
          The ADIN1200 is a voltage mode PHY, therefore includes integrated
          termination resistors on the MDI paths. The DP83822 is a current mode
          PHY, so requires external resistors for biasing and center tap of the
          transformer must be pulled to supply.
-         
 
-   
+
+
    .. container:: half column
 
-         
+
          Software Considerations
-         
+
          Both devices can be hardware strapped to be used in an unmanaged
          configuration. Alternatively, they can provide SMI/MII access over the
          MDIO interface. The KSZ8081 supports Clause 22 register access, while
          the ADIN1200 supports both Clause 22 and Clause 45 access. Registers
          0x0 to 0xF are common across all PHYs.
-         
+
          **Linux Driver**
 
-         
+
          The ADIN1200 has a Linux Driver available in the Linux mainline kernel. The ADIN1200 linux driver detail is captured here: `adin <https://wiki.analog.com/resources/tools-software/linux-drivers/net-phy/adin>`_
-         
+
          **Non Operating System Driver**
 
-         
-         The ADIN1200 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1200.html#product-requirement`
-         
 
-   
+         The ADIN1200 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1200.html#product-requirement`
+
+
+
 
 .. tip::
 

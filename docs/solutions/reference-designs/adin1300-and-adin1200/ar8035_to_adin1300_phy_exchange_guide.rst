@@ -3,13 +3,13 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          **Overview**
 
-         
+
          This PHY exchange guide captures pertinent information to support
          migration from the Qualcomm AR8035 to the Analog Devices ADIN1300
          Ethernet PHY. The ADIN1300 has compelling reasons for adoption versus
@@ -25,12 +25,12 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          comparison and a feature comparison table are included for easy
          reference. The ADIN1300 datasheet provides a detailed description of
          all functions of the device and should also be consulted for reference.
-         
+
          Hardware Changes By Function
-         
+
          **Power Supplies Overview**
 
-         
+
          The ADIN1300 requires a minimum of 2 power supply rails, where the
          VDDIO is connected to the same power supply voltage as the MAC or as
          the PHY analog supply AVDD_3P3 (AVDD33). The VDDIO supply rail powers
@@ -38,18 +38,18 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          3.3V. The AR8035 can operate off a single 3.3V supply with an internal
          switching regulator used to generate the 1.1V supply with an external
          inductor. The supply requirements are listed in Table 1.
-         
+
          .. image:: images/1_ar8035_overview_of_power_supply_rails_table1.png
-         
+
          The ADIN1300 is robust to power supply sequencing and the power can be
          applied in any order. Decoupling requirements for each device differ as
          described in Table 2
-         
+
          .. image:: images/2_decoupling_requirements_for_each_phy_table2.png
-         
+
          **RESET Operation**
 
-         
+
          Both devices have a RESET_N (RSTn) pin which initializes the device and
          latches the hardware pin configuration. To reset the ADIN1300 the
          RESET_N pin should be held low for >10 μs. Deglitch circuitry is
@@ -73,10 +73,10 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          generated internally after power is stable and for a reliable power on
          reset, reset low long enough (10ms) to ensure the clock is stable and
          clock-to-reset 1ms requirement is satisfied.
-         
+
          **Clocking**
 
-         
+
          A 25 MHz crystal or external clock source is used to provide the
          reference clock for both devices. A crystal can be connected to pins
          XTAL_I/XTAL_O (XTLI/XTLO), with both devices using the same external
@@ -84,37 +84,37 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          pin CLK_IN (XI). The AR8035 does not support the RMII MAC interface.
          The ADIN1300 does support RMII and requires an external 50 MHz REF_CLK
          on the XTAL_I/REF_CLK pin in RMII mode.
-         
+
          **Bias Resistor**
 
-         
+
          An external resistor is required to bias internal reference circuitry
          for both AR8035 and ADIN1300. The ADIN1300 requires a 3.01 kΩ resistor
          (1% tolerance, 100 ppm/°C temperature coefficient) connected to pin 10.
          The AR8035 uses an 2.37 kΩ (1%) on pin 7.
-         
+
          .. image:: images/ar8035_table3_bias_resistor_values.png
-         
+
          **Media Dependent Interface (MDI)**
 
-         
+
          The ADIN1300 has voltage mode line drivers with on-chip terminations so
          no external termination resistors are required. Both devices use
          voltage mode line drive for connection from the MDI_0:3_P/N (TRXP/N0:3)
          pins to the magnetics and RJ-45 line using the same external circuit.
          The recommended external circuit for the interface to the magnetics and
          RJ-45 is shown in Figure 1.
-         
-         .. image:: images/4_isolation_using_discrete_magnetics_figure1.png
-         
 
-   
+         .. image:: images/4_isolation_using_discrete_magnetics_figure1.png
+
+
+
    .. container:: half column
 
-         
+
          **MDIO/Management Interface**
 
-         
+
          Both devices support the IEEE management interface using the MDIO/MDC
          pins and require a pullup resistor on the MDIO pin (Management Data
          Open Drain Input/Output). The recommended value for ADIN1300 is a 1.5kΩ
@@ -122,20 +122,20 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          resistor connected to pin 39. Both devices provide an interrupt pin,
          INT_N (¯INT). This pin requires a 1.5 kΩ pull-up resistor to VDDIO. The
          AR8035 recommends 10kΩ pull-up resistors for their interrupt pin.
-         
+
          **LED Function**
 
-         
+
          The ADIN1300 support two LED pins on LED_0 and LINK_ST. The LED_0 has
          programmability of LED functions, with different blinking operation
          possible through MDIO configuration, the default mode is ON when Link
          is Up, blink if activity. The LINK_ST provides static information about
          Link up or down status. The AR8035 supports 3 LEDs pins 21, 22, 24.
          Both devices use these pins for strapping purposes.
-         
+
          **LED Circuit**
 
-         
+
          The ADIN1300 LED_0 operates from the AVDD_3P3 voltage domain, therefore
          can support driving LEDs even when the MAC interface is running at the
          lower voltage of 1.8V. The default LED operation is on if the Link is
@@ -149,12 +149,12 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          the strapping input is pulled low (MODE_0/MODE_1), the output will be
          configured as active high. This LED circuit should be configured
          accordingly.
-         
+
          .. image:: images/5_ar8035_led_0_hw_config_pin_interaction_figure2.png
-         
+
          **Link Status, LINK_ST**
 
-         
+
          The ADIN1300 has a dedicated LINK_ST pin to provide information to the
          MAC on the status of the Link. By default, the LINK_ST pin goes high
          indicating the link is up and low to indicate the link is down. The
@@ -163,29 +163,29 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          it resides in the VDDIO voltage domain, therefore, when driving an LED
          in an integrated RJ45 jack where the PHY VDDIO is 1.8V, level shifting
          will be required. This can be done using a FET.
-         
 
-   
+
+
 
 --------------
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          **MAC Interface**
 
-         
+
          The ADIN1300 supports RGMII, MII and RMII MAC interface modes. The
          following sections describe the RGMII, MII and RMII interfaces for both
          devices. The AR8035 only supports RGMII and does not support the MII or
          RMII interface.
-         
+
          **RGMII Interface**
 
-         
+
          The RGMII interface is the communication path between the PHY and MAC
          devices. The RGMII interface has a low pin count interface supports
          10M, 100M and Gigabit operation, with a total of 12 pins for data
@@ -195,12 +195,12 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          interface mode. Both devices support the internal delay on the clocks.
          By default, the ADIN1300 is configured in RGMII mode with a 2 ns delay
          on RXC and TXC.
-         
+
          .. image:: images/6_ar8035_rgmii_mac_interface_mode_pin_comparison_table4.png
-         
+
          **MII Interface**
 
-         
+
          The AR8035 does not support the MII interface. The MII interface is the
          communication path between the PHY and MAC devices. The MII interface
          has a high pin count, with a total of 15 pins for data transmission,
@@ -218,53 +218,53 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          the COL and CRS functions are provided on (option of redirecting to
          GP_CLK, LINK_ST or INT_N). This requires a register write over MDIO
          interface to reconfigure.
-         
 
-   
+
+
    .. container:: half column
 
-         
 
-   
+
+
       ..
 
    |image1|
 
          **RMII Interface**
 
-         
+
          The AR8035 does not support the RMII interface. RMII is a reduced MII
          interface using fewer pins as shown in Table 6. The pin count for this
          interface is 8 pins.
-         
+
          .. image:: images/8_ar8035_rmii_mac_interface_mode_pin_comparison_table6.png
-         
+
          In RMII mode, the ADIN1300 requires an external 50MHz clock applied to
          XTAL_I. This clock could come from the MAC.
-         
+
          **Output Clocks**
 
-         
+
          The ADIN1300 provides a 25 MHz output reference clock on the REF_CLK
          pin. This can be used a 25 MHz input reference clock for another PHY
          device. The ADIN1300 can optionally provide a number of clock signals
          on the GP_CLK pin. This is configured via MDIO writes and the clocks
          available are a 125 MHz free running clock, 25 MHz clock and 25 MHz/125
          MHz recovered clock.
-         
 
-   
+
+
 
 --------------
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          Hardware Configuration
-         
+
          Both devices have a number of strapping options to enable managed or
          unmanaged configurations of the PHY function such as PHY address, mode
          of operation, Auto-Negotiation and MAC Interface. After power on, the
@@ -281,16 +281,16 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          operation after the device is brought out of reset. The ADIN1300 has
          internal pull downs on many of its strapping pins (not all), therefore
          it would be possible to minimize external strapping resistors.
-         
+
          |image2| |image3|
-         
+
          Strapping configurations are very specific to the device, consult the
          respective datasheets to determine the exact configuration for required
          use case.
-         
+
          **Hardware Configuration of Speed**
 
-         
+
          For the ADIN1300, speed configuration is done using two pins, PHY_CFG0
          and PHY_CFG1. These pins do not have any internal pull resistors,
          therefore external strapping is required. Both pins support 4-level
@@ -298,43 +298,43 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          combinations, such as Auto-neg speeds shown in Table 8 or Forced modes
          shown in Table 9. Review the datasheet hardware configuration pin
          section for full detail on the possible settings using these pins.
-         
-         .. image:: images/11_auto_negotiated_speeds_table8.png
-         
 
-   
+         .. image:: images/11_auto_negotiated_speeds_table8.png
+
+
+
    .. container:: half column
 
-         
 
-   
+
+
       ..
 
    |image4|
 
          **Hardware Configuration of Auto-MDIX**
 
-         
+
          Selection of Auto-MDIX for the ADIN1300 is done using one pin,
          (MDIX_MODE) with 4-level strapping.
-         
+
          .. image:: images/13_auto_mdix_more_adin_1300_table10.png
-         
+
          **MAC Interface Selection**
 
-         
+
          The ADIN1300 uses two hardware pins, MACIF_SEL0 and MACIF_SEL1 to
          provide user ability to select different MAC interfaces. These two pins
          have internal weak pull downs, therefore the default operation would be
          RGMII with delays as shown in Table 11. To configure any other MAC
          interface mode, use 10kΩ pull up or pull down resistors to select
          accordingly.
-         
+
          .. image:: images/14_mac_interface_selection_adin_1300_table11.png
-         
+
          **Hardware Configuration of PHY Address**
 
-         
+
          The ADIN1300 has a default strapping providing a PHY address of 0x0000.
          The AR8035 has a default strapping providing a PHY address of 0x0004.
          The ADIN1300 uses two-level strapping for the four PHY address pins,
@@ -344,20 +344,20 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          for the PHY address pins, capable of 8 unique address. When configuring
          any strapping configurations, assess the default state of the MAC side,
          in case it conflicts with the hardware strapping implemented.
-         
 
-   
+
+
 
 --------------
 
 .. container:: group
 
-   
+
    .. container:: half column
 
-         
+
          Package
-         
+
          The ADIN1300 is available in a 40 lead LFCSP (6 mm x 6 mm footprint).
          The AR8035 is available in a 40 lead QFN (5 mm x 5 mm). Note the AR8035
          package has a 0.4 mm pin pitch, where the ADIN1300 uses a standard 0.5
@@ -365,9 +365,9 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          pinout, the ADIN1300 is not a drop-in replacement for the AR8035
          product. It will require a re-spin of schematic and board layout to
          achieve this exchange.
-         
+
          .. image:: images/15_package_comparison_table12.png
-         
+
          The underside of the LFCSP package for the ADIN1300 includes an exposed
          paddle which should be soldered directly to the board with an array of
          vias for thermal purposes. There are also two exposed stripes adjacent
@@ -376,76 +376,76 @@ PHY Exchange Guide, AR8035 to ADIN1300 Gb
          supply rails in the device, therefore should not be tied to ground and
          there should be no routing or traces on the PCB layer directly
          underneath them.
-         
+
          Other Pinout Considerations
-         
+
          **Integrated MDI Termination**
 
-         
+
          Both devices include integrated termination resistors on the MDI paths.
          These are voltage mode PHYs, no external resistors are required for
          biasing and no supply voltage is required at the center tap of the
          transformer.
-         
+
          **RGMII Drive/Termination resistors**
 
-         
+
          The ADIN1300 provides user with ability to adjust the RGMII drive
          current through the GE_RGMII_IO_CNTRL register.
-         
 
-   
+
+
    .. container:: half column
 
-         
+
          **MII**
 
-         
+
          The ADIN1300 supports MII MAC interface mode for 10/100M operation. The
          AR8035 does not support the MII interface.
-         
+
          **RMII**
 
-         
+
          The ADIN1300 supports RMII MAC interface mode for 10/100M operation.
          The AR8035 does not support the RMII interface.
-         
+
          **GMII**
 
-         
+
          The ADIN1300 and AR8035 do not support the GMII interface.
-         
+
          **SGMII**
 
-         
+
          The ADIN1300 and AR8035 do not support the SGMII interface.
-         
+
          **FIBER**
 
-         
+
          The ADIN1300 and AR8035 do not support fiber protocols.
-         
+
          Software Considerations
-         
+
          Both devices can be hardware strapped to be used in an unmanaged
          configuration. Alternatively, they can provide SMI/MII access over the
          MDIO interface. The AR8035 supports Clause 22 register access, while
          the ADIN1300 supports both Clause 22 and Clause 45 register access
          using both the 802.3 Clause 22 and Clause 45 management frame
          structures. Registers 0x0 to 0xF are common across all PHYs.
-         
+
          **Linux Driver**
 
-         
+
          The ADIN1300 has a Linux Driver available in the Linux mainline kernel. The ADIN1300 linux driver detail is captured here: `adin <https://wiki.analog.com/resources/tools-software/linux-drivers/net-phy/adin>`_
-         
+
          **Non Operating System Driver**
 
-         
-         The ADIN1300 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1300.html#product-requirement`
-         
 
-   
+         The ADIN1300 has a Non Operating System Driver available from the devices product page here: :adi:`en/products/adin1300.html#product-requirement`
+
+
+
 
 .. tip::
 
