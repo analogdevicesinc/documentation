@@ -305,10 +305,10 @@ ADMX2501B.
 +-------------------------+--------------------+------------------------------------+
 | P8                      | Not Installed      | User Selectable Load               |
 +-------------------------+--------------------+------------------------------------+
-| P12                     | Pins 1-2           | EIS HCUR SMA                       |
-|                         | Pins 5-6           | EIS HPOT SMA                       |
-|                         | Pins 9-10          | EIS LPOT SMA                       |
-|                         | Pins 13-14         | EIS LCUR SMA                       |
+| P12                     | Pins 1-2           | EIS HCUR SMA/Onboard               |
+|                         | Pins 5-6           | EIS HPOT SMA/Onboard               |
+|                         | Pins 9-10          | EIS LPOT SMA/Onboard               |
+|                         | Pins 13-14         | EIS LCUR SMA/Onboard               |
 +-------------------------+--------------------+------------------------------------+
 
 - For EIS off board measurements using the SMA connectors, install jumpers
@@ -346,10 +346,10 @@ ADMX2501B.
 +-------------------------+--------------------+------------------------------------+
 | P8                      | Not Installed      | User Selectable Load               |
 +-------------------------+--------------------+------------------------------------+
-| P12                     | Pins 1-2           | EIS HCUR SMA                       |
-|                         | Pins 5-6           | EIS HPOT SMA                       |
-|                         | Pins 9-10          | EIS LPOT SMA                       |
-|                         | Pins 13-14         | EIS LCUR SMA                       |
+| P12                     | Pins 1-2           | EIS HCUR SMA/Onboard               |
+|                         | Pins 5-6           | EIS HPOT SMA/Onboard               |
+|                         | Pins 9-10          | EIS LPOT SMA/Onboard               |
+|                         | Pins 13-14         | EIS LCUR SMA/Onboard               |
 +-------------------------+--------------------+------------------------------------+
 
 - For EIS off board measurements using the DIN connector, only change jumpers on
