@@ -1,6 +1,6 @@
 .. _ad_fmcadc7_ebz eval:
 
-AD-FMCADC7-EBZ
+AD-FMCADC7-EBZ (Obsolete)
 ===============================================================================
 
 12-Bit, 2500 MSPS, JESD204B, RF Data Acquisition FMC Board.

@@ -1,6 +1,6 @@
 .. _ad_fmcadc5_ebz eval:
 
-AD-FMCADC5-EBZ
+AD-FMCADC5-EBZ (Obsolete)
 ===============================================================================
 
 12-Bit, 5000 MSPS (Interleaved), JESD204B, RF Data Acquisition FMC Board.

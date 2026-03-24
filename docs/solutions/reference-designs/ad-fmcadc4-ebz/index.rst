@@ -1,6 +1,6 @@
 .. _ad_fmcadc4_ebz eval:
 
-AD-FMCADC4-EBZ
+AD-FMCADC4-EBZ (Obsolete)
 ===============================================================================
 
 14-Bit, 1000 MSPS, Quad-Channel, JESD204B, RF Data Acquisition FMC Board.
