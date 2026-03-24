@@ -70,3 +70,10 @@ Contents
 
    contributing/*
 
+   .. toctree::
+   :caption: Platforms
+   :maxdepth: 4
+   :glob:
+
+   platforms/*
+
