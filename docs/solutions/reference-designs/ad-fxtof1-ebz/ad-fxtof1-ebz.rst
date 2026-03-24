@@ -15,35 +15,15 @@ The :adi:`AD-FXTOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
    :align: right
    :width: 200
 
-+-----------------------------------------------------------------------+
+.. list-table:: Development kit contents
+   :header-rows: 0
 
-| Development kit contents                                              |
-
-+=======================================================================+
-
-| ToF module                                                            |
-
-+-----------------------------------------------------------------------+
-
-| Interposer board                                                      |
-
-+-----------------------------------------------------------------------+
-
-| 25 pins flex cable                                                    |
-
-+-----------------------------------------------------------------------+
-
-| 15 pins flex cable                                                    |
-
-+-----------------------------------------------------------------------+
-
-| Screws and standoffs to attach the interposer board to the ToF module |
-
-+-----------------------------------------------------------------------+
-
-| USB cable to supply 5V to the system                                  |
-
-+-----------------------------------------------------------------------+
+   * - ToF module
+   * - Interposer board
+   * - 25 pins flex cable
+   * - 15 pins flex cable
+   * - Screws and standoffs to attach the interposer board to the ToF module
+   * - USB cable to supply 5V to the system
 
 +---------------------------+-----------------------------------------------------------------------+
 | High level specification  |                                                                       |
@@ -76,23 +56,23 @@ The :adi:`AD-FXTOF1-EBZ <en/design-center/evaluation-hardware-and-software/evalu
 
    **ToF module resources:**
 
-   
+
    -  `Mechanical drawing & Pinout <resources/ad-fxtof1-ebz_mechanical_drawing.pdf>`_
    -  `ToF module 3D step model <resources/tofcam.zip>`_
    -  `High level BOM <images/ad-fxtof1-ebz_high_level_bom.xlsx>`_
-   
+
 
 .. admonition:: Download
    :class: download
 
    **Interposer board resources:**
 
-   
+
    -  `Schematics <resources/02-066110-01-a.pdf>`_
    -  `PCB Layout <resources/09-066110-01a.zip>`_
    -  `Bill of Materials <resources/05-066110-01-a.zip>`_
    -  `Allegro Project <resources/20-066110-01a.zip>`_
-   
+
 
 .. note::
 
@@ -113,11 +93,11 @@ The development kit can be connected to a number of processor boards for system 
 
    Getting the system up and running
 
-   
+
    -  :doc:`Raspberry Pi 3 & 4 User Guide </solutions/reference-designs/ad-fxtof1-ebz/ug_rpi>`
    -  :doc:`Nvidia Jetson Nano User Guide </solutions/reference-designs/ad-fxtof1-ebz/ug_jetson>`
    -  :doc:`Nvidia Xavier NX User Guide </solutions/reference-designs/ad-fxtof1-ebz/ug_xavier_nx>`
-   
+
 
 --------------
 
@@ -161,17 +141,13 @@ technologies like OpenCV and RoS.
 Videos
 ------
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>-cerh6roli8
-   :alt: youtube>-CErH6ROli8
+`AD-FXTOF1-EBZ Video 1 <https://www.youtube.com/watch?v=-CErH6ROli8>`_
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>g-9ufazxuck
-   :alt: youtube>G-9UfaZXUCk
+`AD-FXTOF1-EBZ Video 2 <https://www.youtube.com/watch?v=G-9UfaZXUCk>`_
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>_ew0qkqmuti
-   :alt: youtube>_ew0QKQMUtI
+`AD-FXTOF1-EBZ Video 3 <https://www.youtube.com/watch?v=_ew0QKQMUtI>`_
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/youtube>ury2uz0e5_o
-   :alt: youtube>uRY2UZ0E5_o
+`AD-FXTOF1-EBZ Video 4 <https://www.youtube.com/watch?v=uRY2UZ0E5_o>`_
 
 --------------
 
