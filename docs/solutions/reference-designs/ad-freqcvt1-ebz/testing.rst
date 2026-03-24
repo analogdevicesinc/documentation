@@ -13,7 +13,7 @@ checked to be within certain bounds.
 Creating an SD test card
 ------------------------
 
-First, write the latest available SD card image found at `kuiper-linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_ to a spare card and prepare the card to boot into Linux as detailed on that page for the target FMCOMMS and carrier boards. In this case copy the BOOT.BIN and devicetree.dtb files from the zynq-zc706-adv7511-ad9361-fmcomms2-3 folder into the base directory of the SD card's boot partition).
+First, write the latest available SD card image found at :external+kuiper:doc:`kuiper-linux <index>` to a spare card and prepare the card to boot into Linux as detailed on that page for the target FMCOMMS and carrier boards. In this case copy the BOOT.BIN and devicetree.dtb files from the zynq-zc706-adv7511-ad9361-fmcomms2-3 folder into the base directory of the SD card's boot partition).
 
 Then the card needs to be modified to run the tests automatically on boot. Test scripts are provided in `linux_image_ADI-scripts <https://github.com/analogdevicesinc/linux_image_ADI-scripts>`_ that automate initializing osc with the correct profile and environment.
 

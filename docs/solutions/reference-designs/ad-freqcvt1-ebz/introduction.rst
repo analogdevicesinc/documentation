@@ -9,7 +9,7 @@ For additional information or to purchase the AD-FREQCVT1-EBZ, visit:
 www.analog.com/AD-FREQCVT1-EBZ
 
 Features
-========
+--------
 
 -  Includes schematics, layout, BOM, Gerber files, HDL, Linux® drivers, IIO Oscilloscope...
 -  Add on to the FMCOMMS3/4/5 family
@@ -18,7 +18,7 @@ Features
    receive.
 
 Applications
-============
+------------
 
 -  Electronic test and measurement equipment
 -  General-purpose software radios
