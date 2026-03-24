@@ -10,16 +10,11 @@ EVAL-AD-IMP2501-SL
 OVERVIEW
 --------
 
-The EVAL-AD-IMP2501-SL is an impedance analyzer demonstrator and technology
-evaluation system comprised of both the AD-IMP2501DBZ-SL and the
-AD-IMP2501EBZ-SL boards. The AD-IMP2501EBZ-SL is the carrier board that allows
-for simplified host PC communication interfacing, varying electrical load
-connections, and easier setup/debug. The AD-IMP2501DBZ-SL is the electrical
-impedance spectroscopy module, capable of tetrapolar impedance measurements up
-to 250 impedance samples per second. It integrates AC waveform signal generation
-from 0V - 2.4V at 1Hz up to 1.5MHz, differential voltage measurement, current
-return measurement, and full impedance processing with an arm cortex M4
-microprocessor. All in a 400mm square PCB.
+The EVAL-AD-IMP2501-SL is an impedance analyzer demonstrator and technology evaluation system comprised of both the AD-IMP2501DBZ-SL and the AD-IMP2501EBZ-SL boards.
+
+The AD-IMP2501EBZ-SL is the carrier board that allows for simplified host PC communication interfacing, varying electrical load connections, and easier setup/debug.
+
+The AD-IMP2501DBZ-SL is the electrical impedance spectroscopy module, capable of tetrapolar impedance measurements up to 250 impedance samples per second. It integrates AC waveform signal generation from 0V - 2.4V at 1Hz up to 1.5MHz, differential voltage measurement, current return measurement, and full impedance processing with an arm cortex M4 microprocessor. All in a 400mm square PCB.
 
 .. figure:: eval-ad-imp2501-sl.png
    :width: 500px
@@ -78,25 +73,25 @@ Specifications
 
 TBD from the characterization table what we want to include here:
 
-+---------------------------+----------+----------+----------+----------+
-| Parameter                 |   Min    |   Typ    |   Max    |   Units  |
-+===========================+==========+==========+==========+==========+
-| Vin                       |   4.6    |   5      |   20     |   V      |
-+---------------------------+----------+----------+----------+----------+
-| Load Range                |          |          |          |   Ohms   |
-+---------------------------+----------+----------+----------+----------+
-| Relative Accuracy         |          |   0.2    |   0.05   |   %      |
-+---------------------------+----------+----------+----------+----------+
-| Iout                      |          |          |          |   mA     |
-+---------------------------+----------+----------+----------+----------+
-| Vout                      |   0.02   |          |   2.4    |   V      |
-+---------------------------+----------+----------+----------+----------+
-| Samples/s                 |          |          |   250    |          |
-+---------------------------+----------+----------+----------+----------+
-| Frequency Range           |   0.1    |          |   1500k  |   Hz     |
-+---------------------------+----------+----------+----------+----------+
-| DC Offset                 |   -2.5   |   0      |   +2.5   |   V      |
-+---------------------------+----------+----------+----------+----------+
++------------------------+----------+----------+----------+----------+
+| Parameter              |   Min    |   Typ    |   Max    |   Units  |
++========================+==========+==========+==========+==========+
+| Vin                    |   4.6    |   5      |   20     |   V      |
++------------------------+----------+----------+----------+----------+
+| Load Range             |          |          |          |   Ohms   |
++------------------------+----------+----------+----------+----------+
+| Relative Accuracy      |          |   0.2    |   0.05   |   %      |
++------------------------+----------+----------+----------+----------+
+| Iout                   |          |          |          |   mA     |
++------------------------+----------+----------+----------+----------+
+| Vout                   |   0.02   |          |   2.4    |   V      |
++------------------------+----------+----------+----------+----------+
+| Samples/s              |          |          |   250    |          |
++------------------------+----------+----------+----------+----------+
+| Frequency Range        |   0.1    |          |   1500k  |   Hz     |
++------------------------+----------+----------+----------+----------+
+| DC Offset              |   -2.5   |   0      |   +2.5   |   V      |
++------------------------+----------+----------+----------+----------+
 
 AD-IMP2501EBZ-SL Package Contents
 ---------------------------------

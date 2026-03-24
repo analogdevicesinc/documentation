@@ -7,8 +7,7 @@ Hardware User Guide
 
 The AD-IMP2501DBZ-SL and AD-IMP2501EBZ-SL are designed for evaluating impedance
 analysis technology in an application that requires a small form factor and wide
-frequency range. This platform is designed to get an impedance analysis
-evaluation set-up running quickly with only a provided USB cable and a computer.
+frequency range. This platform is designed to get an impedance analysis evaluation set-up running quickly with only a provided USB cable and a computer.
 This hardware guide will walk the user through the basic setup, the varying
 jumper configurations for different measurement modes, and how to interface with
 an external load that is more specific to his or her application.
@@ -365,5 +364,4 @@ ADMX2501B.
 +-------------------------+--------------------+------------------------------------+
 
 - Connect the USB C cable to P3 on AD-IMP2501EBZ-SL and the host PC.
-- An LED on the top side of the AD-IMP2501DBZ-SL should turn on, blink twice,
-  and turn off. It should now only turn on when data is being processed.
+- An LED on the top side of the AD-IMP2501DBZ-SL should turn on, blink twice, and turn off. It should now only turn on when data is being processed.
