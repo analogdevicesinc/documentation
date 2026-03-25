@@ -16,17 +16,13 @@ an infrared illumination source containing optics, laser diode driver and
 photodetector, a flash memory, and power regulators to generate local supply
 voltages.
 
-\*\* Product Page \*\**IMAGE OF CROSBY**
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/adtf3175_simplified.png
    :align: center
 
-For full block diagram please refer to datasheet
-
-- Link to ADSD3100 datasheet \* Link to NVM
+For full block diagram please refer to datasheet.
 
 NVM Contents
 ~~~~~~~~~~~~
@@ -48,7 +44,7 @@ Once the ADSD3100 on the module is configured, FSYNC can by provided to start
 the capture of data. The imager outputs data via MIPI (4-Lane upto 1.464 Gbps
 per lane).
 
-NXP i.IMX8M SOM + Carrier Board
+NXP i.MX8M SOM + Carrier Board
 -------------------------------
 
 An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A
@@ -65,7 +61,7 @@ Simplified Block Diagram
    :align: center
 
 NXP i.MX8M reference drivers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Custom V4L2 Camera Sensor Driver
 -  USB Video Driver (UVC)

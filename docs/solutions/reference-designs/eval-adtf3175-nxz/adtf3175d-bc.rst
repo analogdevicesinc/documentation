@@ -3,7 +3,11 @@ EVAL-ADTF3175-NXZ Block Diagram
 
 This page provides a high level overview of the `EVAL-ADTF3175D-NXZ <https://wiki.analog.com/resources/eval/user-guides/eval-adtf3175d-nxz>`_ evaluation platform. This system showcases the ADTF3175 ToF module as well as the ADSD3500 depth ISP.
 
-|image1| |image2|
+.. image:: images/pulsatrix_mp.png
+   :width: 400
+
+.. image:: images/pulsatrix_qmp.png
+   :width: 400
 
 ADTF3175
 --------
@@ -15,17 +19,13 @@ an infrared illumination source containing optics, laser diode driver and
 photodetector, a flash memory, and power regulators to generate local supply
 voltages.
 
-\*\* Product Page \*\**IMAGE OF CROSBY**
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: images/adtf3175_simplified.png
    :align: center
 
-For full block diagram please refer to datasheet
-
-- Link to ADSD3100 datasheet \* Link to NVM
+For full block diagram please refer to datasheet.
 
 NVM Contents
 ~~~~~~~~~~~~
@@ -55,8 +55,6 @@ and ADSD3030 ToF imagers into Radial Depth and Active Brightness (AB) frames.
 The ADSD3500 greatly lightens the load on the host processer and makes it
 simpler to implement applications at the edge.
 
-\*\* Product Page \*\**IMAGE OF ADSD3500**
-
 Simplified Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -64,9 +62,7 @@ Simplified Block Diagram
    :align: center
    :width: 300
 
-For full block diagram please refer to datasheet
-
-- Link to ADSD3500 datasheet
+For full block diagram please refer to datasheet.
 
 EVAL-ADTF3175D-NXZ Usecase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +79,7 @@ to process data. Data is provided to the NXP SOM at 1.5Gbps.
 
 Please visit the software guide to learn more about the ADSD3500 host commands.
 
-NXP i.IMX8M SOM + Carrier Board
+NXP i.MX8M SOM + Carrier Board
 -------------------------------
 
 An NXP i.MX8M SOM is used as the embedded devkit for this evaluation platform. A
@@ -101,7 +97,7 @@ Simplified Block Diagram
    :width: 400
 
 NXP i.MX8M reference drivers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Custom V4L2 Camera Sensor Driver
 -  USB Video Driver (UVC)
@@ -165,9 +161,3 @@ MP Mode: Received data is further processed from partial depth to radialDepth,
 XYZ, and confidence. AB is extracted.
 
 QMP Mode: Received data is extracted and radialDepth is converted to XYZ.
-
-.. |image1| image:: images/pulsatrix_mp.png
-   :width: 400
-
-.. |image2| image:: images/pulsatrix_qmp.png
-   :width: 400
