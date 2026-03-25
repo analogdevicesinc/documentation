@@ -2,7 +2,7 @@
 
 ## Overview
 
-```{image} ../../resources/pluto.png
+```{image} ../resources/pluto.png
 :alt: PlutoSDR Picture
 :width: 400px
 :align: right

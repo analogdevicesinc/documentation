@@ -6,7 +6,7 @@ Before implementing beamforming with the PlutoSDR, let’s briefly review the ph
 
 Beamforming is a signal processing technique used in antenna arrays to direct the reception or transmission of signals in specific directions. By adjusting the phase and amplitude of the signals at each antenna element, we can create constructive interference in the desired direction and destructive interference elsewhere.
 
-```{image} ../../../../../phaser/notebooks/beam_forming_tutorials/resources/phased_ani.gif
+```{image} resources/phased_ani.gif
 :alt: Phaser Picture
 :width: 700px
 :align: center

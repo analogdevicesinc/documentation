@@ -2,3 +2,4 @@ sphinx
 adi-doctools
 sphinxcontrib-mermaid
 myst-parser
+sphinx-design
