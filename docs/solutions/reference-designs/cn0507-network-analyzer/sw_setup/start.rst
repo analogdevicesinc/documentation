@@ -19,7 +19,7 @@ GUI
 
 -  Download the GUI zip archive from the CN-0507 product page.
 -  Extract the zip file to your PC.
--  Look inside the extracted files and launch the \*\* adi-vna-app.exe \*\*
+-  Look inside the extracted files and launch the **adi-vna-app.exe**
    executable.
 
 .. image:: ../images/exe.png

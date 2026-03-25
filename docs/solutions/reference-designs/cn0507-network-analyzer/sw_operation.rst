@@ -14,7 +14,7 @@ Connection
 After launching the software GUI. The connection window will be first shown. It
 lists all the available serial ports. To start using the GUI, choose the COM
 port of the EVAL-ADICUP3029 used. Have the baud rate set to the default, 115200,
-then click \*\* Connect \*\*. The connection window will automatically close
+then click **Connect**. The connection window will automatically close
 after a successful connection.
 
 |image2|
@@ -22,7 +22,7 @@ after a successful connection.
 Performing a Sweep
 ~~~~~~~~~~~~~~~~~~
 
-To perform a sweep, just click the \*\* Start Sweep \*\* button. With the
+To perform a sweep, just click the **Start Sweep** button. With the
 default sweep setting values, this is an example of an open sweep.
 
 |image3|
