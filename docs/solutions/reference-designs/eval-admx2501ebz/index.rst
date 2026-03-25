@@ -2,7 +2,7 @@
 
 .. _admx eval-admx2501ebz:
 
-EVAL-AD-IMP2501-SL
+AD-IMP2501-SL
 ==================
 
 1 Hz to 1.5 MHz impedance analysis evaluation and technology solution.
@@ -19,7 +19,7 @@ The AD-IMP2501DBZ-SL is the electrical impedance spectroscopy module, capable of
 .. figure:: eval-ad-imp2501-sl.png
    :width: 500px
 
-   EVAL-AD-IMP2501-SL
+   AD-IMP2501-SL
 
 Features
 --------
@@ -78,13 +78,13 @@ TBD from the characterization table what we want to include here:
 +========================+==========+==========+==========+==========+
 | Vin                    |   4.6    |   5      |   20     |   V      |
 +------------------------+----------+----------+----------+----------+
-| Load Range             |          |          |          |   Ohms   |
+| Load Range             |   0.1    |          |   500k   |   Ohms   |
 +------------------------+----------+----------+----------+----------+
-| Relative Accuracy      |          |   0.2    |   0.05   |   %      |
+| Relative Accuracy      |          |   0.2    |   0.015  |   %      |
 +------------------------+----------+----------+----------+----------+
 | Iout                   |          |          |          |   mA     |
 +------------------------+----------+----------+----------+----------+
-| Vout                   |   0.02   |          |   2.4    |   V      |
+| Vout                   |   0.01   |          |   2.4    |   V      |
 +------------------------+----------+----------+----------+----------+
 | Samples/s              |          |          |   250    |          |
 +------------------------+----------+----------+----------+----------+
