@@ -21,7 +21,8 @@ Schematic, PCB Layout, Bill of Materials
         are rated for an operating frequency between 
         10 MHz and 6 GHz.
 
-   :download:`AD-FMCOMMS3-EBZ Design & Integration Files <ad-fmcomms3-ebz-designsupport.zip>`
+   :download:`AD-FMCOMMS3-EBZ Design & Integration Files
+   <ad-fmcomms3-ebz-designsupport.zip>`
 
     - Schematics
     - PCB Layout

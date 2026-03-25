@@ -47,9 +47,11 @@ the difference.
 
 #. :adi:`Purchase <ad-fmcomms3-ebz#eb-buy>`
 
-#. :dokuwiki:`Introduction <resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
+#. :dokuwiki:`Introduction
+   <resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
 
-#. :dokuwiki:`FMCOMMS3 Hardware <resources/eval/user-guides/ad-fmcomms3-ebz/hardware>`:
+#. :dokuwiki:`FMCOMMS3 Hardware
+   <resources/eval/user-guides/ad-fmcomms3-ebz/hardware>`:
    
    This provides a brief description of the AD-FMCOMMS3-EBZ board by
    itself, and is a good reference for those who want to understand a
@@ -59,139 +61,191 @@ the difference.
 
    #. :dokuwiki:`Hardware <resources/eval/user-guides/ad-fmcomms3-ebz/hardware>`
       (including
-      :dokuwiki:`schematics <=resources/eval/user-guides/ad-fmcomms3-ebz/hardware#downloads>`)
+      :dokuwiki:`schematics
+      <=resources/eval/user-guides/ad-fmcomms3-ebz/hardware#downloads>`)
 
-   #. :dokuwiki:`Functional Overview & Specifications <resources/eval/user-guides/ad-fmcomms2-ebz/hardware/functional_overview>`
+   #. :dokuwiki:`Functional Overview & Specifications
+      <resources/eval/user-guides/ad-fmcomms2-ebz/hardware/functional_overview>`
 
-   #. :dokuwiki:`Characteristics & Performance <resources/eval/user-guides/ad-fmcomms3-ebz/hardware/card_specification>`
+   #. :dokuwiki:`Characteristics & Performance
+      <resources/eval/user-guides/ad-fmcomms3-ebz/hardware/card_specification>`
 
-   #. :dokuwiki:`Configuration options <resources/eval/user-guides/ad-fmcomms3-ebz/hardware/configuration_options>`
+   #. :dokuwiki:`Configuration options
+      <resources/eval/user-guides/ad-fmcomms3-ebz/hardware/configuration_options>`
 
-   #. :dokuwiki:`FCC or CE certification <resources/eval/user-guides/ad-fmcomms2-ebz/certification>`
+   #. :dokuwiki:`FCC or CE certification
+      <resources/eval/user-guides/ad-fmcomms2-ebz/certification>`
 
-   #. :dokuwiki:`Tuning the system <resources/eval/user-guides/ad-fmcomms2-ebz/hardware/tuning>`
+   #. :dokuwiki:`Tuning the system
+      <resources/eval/user-guides/ad-fmcomms2-ebz/hardware/tuning>`
 
-   #. :dokuwiki:`Production Testing Process <resources/eval/user-guides/ad-fmcomms2-ebz/testing>`
+   #. :dokuwiki:`Production Testing Process
+      <resources/eval/user-guides/ad-fmcomms2-ebz/testing>`
 
 #. Use the AD-FMCOMMS3-EBZ Board to better understand the AD9361
 
-   #. :dokuwiki:`What you need to get started <resources/eval/user-guides/ad-fmcomms2-ebz/prerequisites>`
+   #. :dokuwiki:`What you need to get started
+      <resources/eval/user-guides/ad-fmcomms2-ebz/prerequisites>`
 
-   #. :dokuwiki:`Quick Start Guides <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart>`
+   #. :dokuwiki:`Quick Start Guides
+      <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart>`
 
-      #. :dokuwiki:`Linux on ZC702, ZC706, ZED <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
+      #. :dokuwiki:`Linux on ZC702, ZC706, ZED
+         <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynq>`
 
-      #. :dokuwiki:`Linux on ZCU102 <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynqmp>`
+      #. :dokuwiki:`Linux on ZCU102
+         <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/zynqmp>`
 
-      #. :dokuwiki:`Linux on KC705, VC707 <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/microblaze>`
+      #. :dokuwiki:`Linux on KC705, VC707
+         <resources/eval/user-guides/ad-fmcomms2-ebz/quickstart/microblaze>`
 
-      #. :dokuwiki:`Configure a pre-existing SD-Card <resources/tools-software/linux-software/zynq_images#preparing_the_image>`
+      #. :dokuwiki:`Configure a pre-existing SD-Card
+         <resources/tools-software/linux-software/zynq_images#preparing_the_image>`
 
-      #. :dokuwiki:`Update the old card you received with your hardware <resources/tools-software/linux-software/zynq_images#staying_up_to_date>`
+      #. :dokuwiki:`Update the old card you received with your hardware
+         <resources/tools-software/linux-software/zynq_images#staying_up_to_date>`
 
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
 
-      #. :dokuwiki:`AD936X Control IIO Scope Plugin <resources/tools-software/linux-software/fmcomms2_plugin>`
+      #. :dokuwiki:`AD936X Control IIO Scope Plugin
+         <resources/tools-software/linux-software/fmcomms2_plugin>`
 
-      #. :dokuwiki:`AD936X Advanced Control IIO Scope Plugin <resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
+      #. :dokuwiki:`AD936X Advanced Control IIO Scope Plugin
+         <resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
 
-      #. :dokuwiki:`Command Line/Shell scripts <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
+      #. :dokuwiki:`Command Line/Shell scripts
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`
 
    #. Push custom data into/out of the AD-FMCOMMS3-EBZ
 
-      #. :dokuwiki:`Basic Data files and formats <resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>`
+      #. :dokuwiki:`Basic Data files and formats
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>`
 
-      #. :dokuwiki:`Create and analyze data files in MATLAB <resources/eval/user-guides/ad-fmcomms2-ebz/software/datafiles>`
+      #. :dokuwiki:`Create and analyze data files in MATLAB
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/datafiles>`
 
-      #. :dokuwiki:`Stream data into/out of MATLAB <resources/tools-software/transceiver-toolbox>`
+      #. :dokuwiki:`Stream data into/out of MATLAB
+         <resources/tools-software/transceiver-toolbox>`
 
-      #. :dokuwiki:`AD9361 libiio streaming example <resources/tools-software/linux-software/libiio#libiio_-_ad9361_iio_streaming_example>`
+      #. :dokuwiki:`AD9361 libiio streaming example
+         <resources/tools-software/linux-software/libiio#libiio_-_ad9361_iio_streaming_example>`
 
-      #. :dokuwiki:`Python Interfaces <resources/tools-software/linux-software/pyadi-iio>`
+      #. :dokuwiki:`Python Interfaces
+         <resources/tools-software/linux-software/pyadi-iio>`
 
 #. Design with the AD9361
 
-   #. :dokuwiki:`Understanding the AD9361 <resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`
+   #. :dokuwiki:`Understanding the AD9361
+      <resources/eval/user-guides/ad-fmcomms2-ebz/ad9361>`
 
       #. :adi:`AD9361 Product page <AD9361>`
 
-      #. :adi:`Full Datasheet and chip design package <hrfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html>`
+      #. :adi:`Full Datasheet and chip design package
+         <hrfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html>`
 
-      #. :dokuwiki:`MATLAB Filter Design Wizard for AD9361 <resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>`
+      #. :dokuwiki:`MATLAB Filter Design Wizard for AD9361
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/filters>`
 
    #. Simulation
 
-      #. :dokuwiki:`MathWorks SimRF Models of the AD9361 <resources/eval/user-guides/ad-fmcomms2-ebz/software/simrf>`
+      #. :dokuwiki:`MathWorks SimRF Models of the AD9361
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/simrf>`
 
-      #. :dokuwiki:`Installing RF Blockset Models for AD9361 <resources/eval/user-guides/ad-fmcomms2-ebz/software/rfblkset_mdls_install>`
+      #. :dokuwiki:`Installing RF Blockset Models for AD9361
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/rfblkset_mdls_install>`
 
-      #. :dokuwiki:`Running the AD9361 Receive Testbench <resources/eval/user-guides/ad-fmcomms2-ebz/software/rfblkset_mdls_run_testbench>`
+      #. :dokuwiki:`Running the AD9361 Receive Testbench
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/rfblkset_mdls_run_testbench>`
 
    #. Hardware in the Loop / How to design your own custom BaseBand
 
-      #. :dokuwiki:`Analog Devices Transceiver Toolbox for MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
+      #. :dokuwiki:`Analog Devices Transceiver Toolbox for MATLAB and Simulink
+         <resources/tools-software/transceiver-toolbox>`
 
       #. MATLAB/Simulink Examples
 
-         #. :dokuwiki:`Stream data into/out of MATLAB <resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
+         #. :dokuwiki:`Stream data into/out of MATLAB
+            <resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
 
-         #. :dokuwiki:`Beacon Frame Receiver Example <resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink#beacon_frame_receiver_example>`
+         #. :dokuwiki:`Beacon Frame Receiver Example
+            <resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink#beacon_frame_receiver_example>`
 
-         #. :dokuwiki:`QPSK Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/qpsk_example>`
+         #. :dokuwiki:`QPSK Transmit and Receive Example
+            <resources/tools-software/linux-software/libiio/clients/qpsk_example>`
 
-         #. :dokuwiki:`LTE Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/lte_example>`
+         #. :dokuwiki:`LTE Transmit and Receive Example
+            <resources/tools-software/linux-software/libiio/clients/lte_example>`
 
-         #. :dokuwiki:`ADS-B Airplane Tracking Example <resources/tools-software/linux-software/libiio/clients/adsb_example>`
+         #. :dokuwiki:`ADS-B Airplane Tracking Example
+            <resources/tools-software/linux-software/libiio/clients/adsb_example>`
 
-      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+      #. :dokuwiki:`GNU Radio
+         <resources/tools-software/linux-software/gnuradio>`
 
       #. :dokuwiki:`FM Radio/Tuner <resources/tools-software/fm-radio>`
          (listen to FM signals on the HDMI monitor)
 
-      #. :dokuwiki:`C example <resources/tools-software/linux-software/libiio#libiio_-_ad9361_iio_streaming_example>`
+      #. :dokuwiki:`C example
+         <resources/tools-software/linux-software/libiio#libiio_-_ad9361_iio_streaming_example>`
 
    #. Targeting
 
-      #. :dokuwiki:`Analog Devices BSP for MathWorks HDL Workflow Advisor (To be depreciated) <resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp>`
+      #. :dokuwiki:`Analog Devices BSP for MathWorks HDL Workflow Advisor (To be depreciated)
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/matlab_bsp>`
 
-      #. :dokuwiki:`Analog Devices Transceiver Toolbox for MATLAB and Simulink <resources/tools-software/transceiver-toolbox>`
+      #. :dokuwiki:`Analog Devices Transceiver Toolbox for MATLAB and Simulink
+         <resources/tools-software/transceiver-toolbox>`
 
    #. Complete Workflow
 
-      #. :dokuwiki:`ADS-B Airplane Tracking Tutorial <resources/eval/user-guides/picozed_sdr/tutorials/adsb>`
+      #. :dokuwiki:`ADS-B Airplane Tracking Tutorial
+         <resources/eval/user-guides/picozed_sdr/tutorials/adsb>`
 
-      #. :dokuwiki:`Frequency Hopping Controller <resources/eval/user-guides/adrv936x_rfsom/tutorials/frequency_hopping>`
+      #. :dokuwiki:`Frequency Hopping Controller
+         <resources/eval/user-guides/adrv936x_rfsom/tutorials/frequency_hopping>`
 
    #. Design a custom AD9361 based platform
 
-      #. :dokuwiki:`Linux software <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux>`
+      #. :dokuwiki:`Linux software
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux>`
 
-         #. :dokuwiki:`Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
+         #. :dokuwiki:`Linux Device Driver
+            <resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
 
-         #. :dokuwiki:`Build the demo on ZC702, ZC706, or ZED from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq>`
+         #. :dokuwiki:`Build the demo on ZC702, ZC706, or ZED from source
+            <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq>`
 
-         #. :dokuwiki:`Build ZynqMP/MPSoC Linux kernel and devicetrees from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
+         #. :dokuwiki:`Build ZynqMP/MPSoC Linux kernel and devicetrees from source
+            <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
 
-         #. :dokuwiki:`Build the demo on KC705 or VC707 for Microblaze from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/microblaze>`
+         #. :dokuwiki:`Build the demo on KC705 or VC707 for Microblaze from source
+            <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/microblaze>`
 
-         #. :dokuwiki:`Build the 2015_R2 Release Linux kernel from source <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_2015r2>`
+         #. :dokuwiki:`Build the 2015_R2 Release Linux kernel from source
+            <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_2015r2>`
 
-         #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+         #. :dokuwiki:`Customizing the devicetree on the target
+            <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
-      #. :dokuwiki:`No-OS Driver <resources/eval/user-guides/ad-fmcomms2-ebz/software/baremetal>`
+      #. :dokuwiki:`No-OS Driver
+         <resources/eval/user-guides/ad-fmcomms2-ebz/software/baremetal>`
 
-      #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/ad-fmcomms2-ebz/reference_hdl>`
+      #. :dokuwiki:`HDL Reference Design
+         <resources/eval/user-guides/ad-fmcomms2-ebz/reference_hdl>`
          which you must use in your FPGA.
 
-         #. :dokuwiki:`Digital Interface Timing Validation <resources/eval/user-guides/ad-fmcomms2-ebz/interface_timing_validation>`
+         #. :dokuwiki:`Digital Interface Timing Validation
+            <resources/eval/user-guides/ad-fmcomms2-ebz/interface_timing_validation>`
 
 #. Additional Documentation about SDR Signal Chains
 
-   #. :dokuwiki:`The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+   #. :dokuwiki:`The math behind the RF
+      <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 
-#. :dokuwiki:`Help and Support <resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
+#. :dokuwiki:`Help and Support
+   <resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`
 
 Warning
 -------

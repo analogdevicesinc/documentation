@@ -22,6 +22,7 @@ change the ``clock-frequency`` setting in the device tree.
 <source /arch/arm/boot/dts/adi-fmcomms2.dtsi:clocks{} c linux/master>
 
 To change the frequency follow 
-:dokuwiki:`this guide <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_2014r2#build_the_devicetree_fcmomms2345>`
+:dokuwiki:`this guide
+<resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_2014r2#build_the_devicetree_fcmomms2345>`
 on how to build the devicetree binary file (make sure you modify the
 ``clock-frequency`` attribute first.)

@@ -16,7 +16,8 @@ LO BW
 EVM
 ~~~
 
-The `error vector magnitude <https://en.wikipedia.org/wiki/Error_vector_magnitude>`__
+The `error vector magnitude
+<https://en.wikipedia.org/wiki/Error_vector_magnitude>`__
 or EVM (sometimes also called receive constellation error or RCE) is a
 measure used to quantify the performance of a digital radio transmitter
 or receiver.
@@ -125,7 +126,8 @@ Phase Noise
 Output power
 ~~~~~~~~~~~~
 
-`Transmitter power output <https://en.wikipedia.org/wiki/Transmitter%20power%20output>`__
+`Transmitter power output
+<https://en.wikipedia.org/wiki/Transmitter%20power%20output>`__
 
 Intermodulation Distortion
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,7 +155,8 @@ Noise floor
 Input sensitivity
 ~~~~~~~~~~~~~~~~~
 
-`Input sensitivity <https://en.wikipedia.org/wiki/Sensitivity_%28electronics%29>`__
+`Input sensitivity
+<https://en.wikipedia.org/wiki/Sensitivity_%28electronics%29>`__
 
 Dynamic range
 ~~~~~~~~~~~~~

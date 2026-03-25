@@ -1,5 +1,7 @@
-AD-FMCDAQ3-EBZ Bare Metal (no-OS) Guide
-=======================================
+.. _ad_fmcdaq3_ebz baremetal:
+
+AD-FMCDAQ3-EBZ Baremetal (no-OS) Guide
+======================================
 
 This guide provides some quick instructions on how to build and run the
 AD-FMCDAQ3-EBZ on most of the supported platforms. As of this writing, the
@@ -10,7 +12,7 @@ recent additions.
 Altera Platform(s)
 ------------------
 
--  `A10GX <https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html>`_
+- `Arria 10 GX FPGA Development Kit <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`__
 
 Xilinx Platform(s)
 ------------------
@@ -24,10 +26,11 @@ Downloads
 .. admonition:: Download
    :class: download
 
-   
-   -  HDL (hdl_2016_r2\* release) - https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r2/projects/daq3
-   -  no-OS (2016_R2\* release) - https://github.com/analogdevicesinc/no-OS/tree/2016_R2/fmcdaq3
-   
+   -  HDL (hdl_2016_r2\* release) -
+      https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r2/projects/daq3
+   -  no-OS (2016_R2\* release) -
+      https://github.com/analogdevicesinc/no-OS/tree/2016_R2/fmcdaq3
+
    Please check with the github pages for latest and previous releases and
    consult the release notes for more information.
 
@@ -42,11 +45,20 @@ support. The prerequisite to the building process is that you be able to run
 'quartus', 'vivado' and 'make' all from a shell (Cygwin or Linux). Now, building
 the HDL is as simple as running make on your desired carrier.
 
-::
+.. shell::
 
-   hdl/projects/daq3/a10gx> make MMU=0
-   hdl/projects/daq3/kcu105> make
-   hdl/projects/daq3/zc706> make
+   hdl/projects/daq3/a10gx
+   $make MMU=0
+
+.. shell::
+
+   hdl/projects/daq3/kcu105
+   $make
+
+.. shell::
+
+   hdl/projects/daq3/zc706
+   $make
 
 Please note that for Altera devices, it is important to set MMU=0. As Altera HAL
 do not support run-time MMU and the default bit files are intended for linux and
@@ -58,21 +70,39 @@ Building no-OS
 After you built the HDL, you may build the no-OS elf files using the same make
 flow.
 
-::
+.. shell::
 
-   no-OS/fmcdaq3/a10gx> make
-   no-OS/fmcdaq3/kcu105> make
-   no-OS/fmcdaq3/zc706> make
+   no-OS/fmcdaq3/a10gx
+   $make
+
+.. shell::
+
+   no-OS/fmcdaq3/kcu105
+   $make
+
+.. shell::
+
+   no-OS/fmcdaq3/zc706
+   $make
 
 The default flow assumes you have cloned (or downloaded) the sources under the
 same directory. If you have a different directory structure override the
 defaults using SOPCINFO-FILE or HDF-FILE variables.
 
-::
+.. shell::
 
-   no-OS/fmcdaq3/a10gx> make SOPCINFO-FILE=<your-directory/hdl/projects/daq3/a10gx/system_bd.sopcinfo>
-   no-OS/fmcdaq3/kcu105> make HDF-FILE=<your-directory/hdl/projects/daq3/kcu105/daq3_kcu105.sdk/system_top.hdf>
-   no-OS/fmcdaq3/zc706> make HDF-FILE=<your-directory/hdl/projects/daq3/zc706/daq3_zc706.sdk/system_top.hdf>
+   no-OS/fmcdaq3/a10gx
+   $make SOPCINFO-FILE=<your-directory/hdl/projects/daq3/a10gx/system_bd.sopcinfo>
+
+.. shell::
+
+   no-OS/fmcdaq3/kcu105
+   $make HDF-FILE=<your-directory/hdl/projects/daq3/kcu105/daq3_kcu105.sdk/system_top.hdf>
+
+.. shell::
+
+   no-OS/fmcdaq3/zc706
+   $make HDF-FILE=<your-directory/hdl/projects/daq3/zc706/daq3_zc706.sdk/system_top.hdf>
 
 Running no-OS
 ~~~~~~~~~~~~~
@@ -81,11 +111,20 @@ If your carrier is a Xilinx board, you will need to setup a UART terminal
 (115200). Altera carriers uses the nios2-terminal. Make the JTAG/UART
 connections as per your carrier instructions and run the software on hardware.
 
-::
+.. shell::
 
-   no-OS/fmcdaq3/a10gx> make run
-   no-OS/fmcdaq3/kcu105> make run
-   no-OS/fmcdaq3/zc706> make run
+   no-OS/fmcdaq3/a10gx
+   $make run
+
+.. shell::
+
+   no-OS/fmcdaq3/kcu105
+   $make run
+
+.. shell::
+
+   no-OS/fmcdaq3/zc706
+   $make run
 
 Using Eclipse GUI
 ~~~~~~~~~~~~~~~~~

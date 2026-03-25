@@ -1,3 +1,5 @@
+.. _ad_fmcdaq3_ebz hardware:
+
 AD-FMCDAQ3-EBZ Hardware
 =======================
 
@@ -19,14 +21,9 @@ the edge of the board) is 3.12 inches by 2.72 inches (or about 79mm x 69mm).
 Schematic, PCB Layout, Bill of Materials
 ----------------------------------------
 
-.. admonition:: Download
-   :class: download
+:adi:`AD-FMCDAQ3-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-fmcdaq3-ebz-designsupport.zip>`  are comprised of:
 
-   :adi:`AD-FMCDAQ3-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-fmcdaq3-ebz-designsupport.zip>`
-
-   
-   -  Schematic
-   -  PCB Layout
-   -  Bill of Materials
-   -  Allegro Project
-   
+-  Schematic
+-  PCB Layout
+-  Bill of Materials
+-  Allegro Project
