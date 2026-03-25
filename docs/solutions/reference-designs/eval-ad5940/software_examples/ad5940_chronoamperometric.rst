@@ -1,7 +1,8 @@
 AD5940_ChronoAmperometric
 =========================
 
-This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry put Chrono-amperometric measurements.
+This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry
+put Chrono-amperometric measurements.
 
 Overview
 --------
@@ -41,7 +42,8 @@ The following is a list of items required to carry out the measurement.
 Setting up the Hardware
 -----------------------
 
--  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
+-  Set switch S2 to USB Arduino function in order to view data over UART. The
+   UART baud rate is **230400**
 -  Set S5 to Wall/USB to power the board from the USB cable
 
 .. image:: ../images/img_20170612_144023_hdr.jpg
@@ -50,7 +52,8 @@ Setting up the Hardware
 
 -  Place the **EVAL-AD5940ELCZ** on top of the **EVAL-ADICUP3029**.
 -  Ensure jumper on JP10 and JP11 is on PIN2 and PIN4
--  Place jumper in position A on JP6 to connect 6.8K resistor in series with a 10uF capacitor between RE0 and SE0
+-  Place jumper in position A on JP6 to connect 6.8K resistor in series
+   with a 10uF capacitor between RE0 and SE0
 -  Plug in the micro USB cable into the (P10) USB port on the EVAL-ADICUP3029,
    and the other end into the PC or laptop.
 
@@ -66,9 +69,9 @@ The source code and include files for the project can be found on Git
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
-   
+
 
 Configuring the Software
 ------------------------

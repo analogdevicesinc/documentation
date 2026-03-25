@@ -4,7 +4,15 @@ High Speed TIA Calibration
 Overview
 --------
 
-The high speed TIA gain resistor is configurable from 50, 100, 200, 1k, 5k, 10k, 20k, 40k, 80k and 160kΩ. To calibrate the Rtia a precision RCAL resistor needs to be connected to RCAL0 and RCAL1 pins. Ideally the RCAL should be close in value to the Rtia to be calibrated and should have a tolerance <= 0.1%. The calibration process implements an impedance measurement where the magnitude of the impedance is the value of Rtia. A sine wave is applied through RCAL and the Rtia. The voltage drop across each is measured with a DFT calculated on each. Using ratiometric analysis the actual impedance of the Rtia is calculated by the following equation: \|Rtia \| = \|Vrcal|/\|Vrtia\|.
+The high speed TIA gain resistor is configurable from 50, 100, 200, 1k, 5k,
+10k, 20k, 40k, 80k and 160kΩ. To calibrate the Rtia a precision RCAL resistor
+needs to be connected to RCAL0 and RCAL1 pins. Ideally the RCAL should be
+close in value to the Rtia to be calibrated and should have a tolerance <=
+0.1%. The calibration process implements an impedance measurement where the
+magnitude of the impedance is the value of Rtia. A sine wave is applied
+through RCAL and the Rtia. The voltage drop across each is measured with a DFT
+calculated on each. Using ratiometric analysis the actual impedance of the
+Rtia is calculated by the following equation: |Rtia| = |Vrcal|/|Vrtia|.
 
 It is important to calibrate at the correct frequency. For example, if the
 measurement of the sensor requires an excitation signal of 50 kHz, the
@@ -24,10 +32,14 @@ The following are the steps involved for calibrating the HSTIA Gain resistor:
    :align: center
    :width: 600
 
--  Generate a sine wave with required frequency using the waveform generator, HSDAC and Excitation amplifier.
+-  Generate a sine wave with required frequency using the waveform generator,
+   HSDAC and Excitation amplifier.
 -  The signal path is highlighted in above image.
--  The P_Node and N_Node are connectted to the ADC mux and the DFT of the voltage is measured.
--  Then, maintaining the same excitation voltage, the HSTIA_P and HSTIA_N nodes are connected to the ADC mux. A DFT of the voltage is calculated again.
+-  The P_Node and N_Node are connected to the ADC mux and the DFT of the
+   voltage is measured.
+-  Then, maintaining the same excitation voltage, the HSTIA_P and HSTIA_N
+   nodes are connected to the ADC mux. A DFT of the voltage is calculated
+   again.
 -  The real and imaginary parts of the DFT results are used to calculate the
    value of the Rtia with the following equations:
 

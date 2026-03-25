@@ -37,11 +37,14 @@ AD5940_ADCPGACal() is used. It accepts one input argument of type
 ADCPGACal_Type. The members of this datatype and their function are as follows:
 
 -  SysClkFreq - defines the frequency of the system clock. Should be 16MHz
--  AdcClkFreq - defines the frequency of the ADC clock. Should be 16MHz or 32MHz.
+-  AdcClkFreq - defines the frequency of the ADC clock. Should be 16MHz or
+   32MHz.
 -  Vref1p82 - The voltage of the 1.82 reference. Measured on Vfref1P82 pin
--  Vref1p11 - The actual voltage of 1.11V ADC reference. Measured on VBIAS_CAP pin
+-  Vref1p11 - The actual voltage of 1.11V ADC reference. Measured on
+   VBIAS_CAP pin
 -  ADCSinc3Osr - Sinc3 Oversampling rate. Ideally 4.
--  ADCSinc2Osr - Sinc2 Oversampling rate. Should be a big value to remove noise from measurement
+-  ADCSinc2Osr - Sinc2 Oversampling rate. Should be a big value to remove
+   noise from measurement
 -  ADCPga - Selected PGA setting
 -  PGACalType - type of calibration. Offset, gain or both.
 -  TimeOut10us - Timeout for ADC measurement.

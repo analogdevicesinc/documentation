@@ -18,7 +18,7 @@ How to Install IAR
 ------------------
 
 Once the download has complete double click on the .exe file to begin the
-installation procedure. Then click on Install IAR Embedded Workbench® for ARM.\
+installation procedure. Then click on Install IAR Embedded Workbench® for ARM.
 
 |image1|
 
@@ -72,12 +72,13 @@ To edit and run example code in IAR Workbench follow these steps:
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
-   
+
 
 -  Navigate to the **examples** folder
--  Double click on ADICUP3029.eww file. This opens all the example projects in the IAR Workspace
+-  Double click on ADICUP3029.eww file. This opens all the example projects
+   in the IAR Workspace
 -  On first time opening the project, the IAR CMSIS pack manager will open with
    a screen like this
 
@@ -92,7 +93,8 @@ To edit and run example code in IAR Workbench follow these steps:
    :align: center
    :width: 600
 
--  Once installed exit the Pack Manager window and display the main IAR Workbench program.
+-  Once installed exit the Pack Manager window and display the main IAR
+   Workbench program.
 -  All the example projects are shown in the Workspace view
 
 .. image:: ../images/project_display.png
@@ -107,10 +109,16 @@ To edit and run example code in IAR Workbench follow these steps:
 
 -  Expand the project to see the structure. It is divided into 4 sub sections:
 
-   -  **AD5940Lib** - This conatins the AD5940.c source file which has all the AD5940 library functions. This file is common to all examples. The ADICUP3029Port.c file is located here also and contains port functions for the ADuCM3029 microcontroller.
-   -  **Application** - This sub section contains the application code and main.c file.
-   -  **CMSIS-Pack** - This pack contains the necessary files for the ADuCM3029 to function including the startup.c and system.c files
-   -  **Output** - This contains the c.out file. This file should not be changed.
+   -  **AD5940Lib** - This conatins the AD5940.c source file which has all
+      the AD5940 library functions. This file is common to all examples. The
+      ADICUP3029Port.c file is located here also and contains port functions
+      for the ADuCM3029 microcontroller.
+   -  **Application** - This sub section contains the application code and
+      main.c file.
+   -  **CMSIS-Pack** - This pack contains the necessary files for the
+      ADuCM3029 to function including the startup.c and system.c files
+   -  **Output** - This contains the c.out file. This file should not be
+      changed.
 
 .. image:: ../images/iar.png
    :align: center
@@ -118,7 +126,8 @@ To edit and run example code in IAR Workbench follow these steps:
 
 -  Double click on AD5940_ADCPolling.c to open the file in the editor.
 -  Modify code as required.
--  To compile and build the project go to Project->Rebuild All. IT may take a couple fo seconds to fully compile all the source code.
+-  To compile and build the project go to Project->Rebuild All. IT may take
+   a couple fo seconds to fully compile all the source code.
 -  To download the code to the evaluation boards first ensure the boards are
    connected to the PC or laptop. Then click on the green "Play" button on the
    top toolbar. Note, if the "play" button is greyed out cloise IAR Workbench
@@ -128,7 +137,8 @@ To edit and run example code in IAR Workbench follow these steps:
    :align: center
    :width: 600
 
--  To set breakpoints click to the left of the line of code. A red dot will appear as in above screenshot.
+-  To set breakpoints click to the left of the line of code. A red dot will
+   appear as in above screenshot.
 -  The code will be loaded onto the ADuCM3029 microcontroller. To begin
    executing press the blue "Go" button.
 

@@ -12,7 +12,10 @@ bio-electric measurements. These include:
 -  Electrocardiogram (ECG)
 -  Body Impedance Analysis (2-wire) (BIOZ-2Wire)
 
-The platform is an Arduino UNO form factorbase board. This section describes the key features of the board and how to set it up to take measurements. |image1|
+The platform is an Arduino UNO form factor base board. This section describes
+the key features of the board and how to set it up to take measurements.
+
+|image1|
 
 |image2|
 
@@ -81,7 +84,10 @@ USB Connector
 
 The Micro USB connector, P6, on the EVAL-AD5940BIOZ board serves 2 functions.
 
--  The provided ECG cables can be connected to a human body simulator which can be used to verify ECG, body composition etc. Note: The EVAL-AD5940BIOZ must never be connected to the human body while the board is connected to a PC or Laptop
+-  The provided ECG cables can be connected to a human body simulator which
+   can be used to verify ECG, body composition etc. Note: The EVAL-AD5940BIOZ
+   must never be connected to the human body while the board is connected to a
+   PC or Laptop
 -  The provided AD5940 Z Test board can also be connected to the Micro USB
    connecter. This board contains a number of banks of resistors and capacitors
    which can be used to model Body Impedance, Skin Impedance, Electrode
@@ -111,14 +117,14 @@ Schematics, PCB Layout, Bill of Materials
 .. admonition:: Download
    :class: download
 
-   
+
    EVAL-AD5940BIOZ Rev B Design Files
-   
+
    -  `Schematics <../resources/02_049988b_top.pdf>`_ (PDF)
    -  `PCB Layout (PDF) <../resources/08-049988-01-b.pdf>`_
    -  `Bill of Materials (Excel) <../images/eval-ad5940bioz_bom.xlsx>`_
    -  `Fabrication Files (zip) <../resources/eval-ad5940bioz_fabrication.zip>`_
-   
+
 
 .. |image1| image:: ../images/eval-ad5940bioz.jpg
    :width: 600

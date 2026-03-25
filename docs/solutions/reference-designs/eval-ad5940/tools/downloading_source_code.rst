@@ -13,7 +13,7 @@ are not available on the AD5941.
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
 
 Repository Structure
@@ -37,7 +37,8 @@ How to clone the AD5940 Git Repository
 To clone the AD5940 code repository
 
 -  Navigate to the link above and copy the URL.
--  Open Git bash or your preferred Git tool and change directory to where you want to save the files
--  Type in "git clone --recursive `ad5940-examples <https://github.com/analogdevicesinc/ad5940-examples>`_.git"
+-  Open Git bash or your preferred Git tool and change directory to where you
+   want to save the files
+-  Type in ``git clone --recursive`` `ad5940-examples <https://github.com/analogdevicesinc/ad5940-examples>`_ ``.git``
 -  This command copies the entire ad5940 module and sub-modules into the folder
 -  The source code should now be downloaded in the specified folder

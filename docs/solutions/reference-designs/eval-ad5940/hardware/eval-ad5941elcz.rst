@@ -148,14 +148,14 @@ Schematics, PCB Layout, Bill of Materials
 .. admonition:: Download
    :class: download
 
-   
+
    EVAL-AD5941ELCZ Rev A Design and Integration Files
-   
+
    -  `Schematics (PDF) <../resources/02-057011-01-a-1.pdf>`_
    -  `PCB Layout (PDF) <../resources/08-057011-01-a-1.pdf>`_
    -  `Bill of Materials (Excel) <../images/05-057011-01-a.xlsx>`_
    -  `Fabrication Files (zip) <../resources/09-057011-01a.zip>`_
-   
+
 
 .. |image1| image:: ../images/eval_ad5941_elcz.jpg
    :width: 600

@@ -1,7 +1,9 @@
 AD5940_SqrWveVoltammetry
 ========================
 
-This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry out a square wave voltammetry measurement. Note, the corresponding application example in the SDK is the AD5940_SqrWveVoltammetry project.
+This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry
+out a square wave voltammetry measurement. Note, the corresponding application
+example in the SDK is the AD5940_SqrWveVoltammetry project.
 
 Overview
 --------
@@ -39,7 +41,8 @@ The following is a list of items required to carry out the measurement.
 Setting up the Hardware
 -----------------------
 
--  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
+-  Set switch S2 to USB Arduino function in order to view data over UART. The
+   UART baud rate is **230400**
 -  Set S5 to Wall/USB to power the board from the USB cable
 
 .. image:: ../images/img_20170612_144023_hdr.jpg
@@ -61,14 +64,15 @@ Obtaining the Source Code
 
 The source code and include files for the project can be found on Git
 
-The source code and include files of the **AD5940_SqrWveVoltammetry** can be found in the SDK below:
+The source code and include files of the **AD5940_SqrWveVoltammetry** can be
+found in the SDK below:
 
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 SDK Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
-   
+
 
 Configuring the Software
 ------------------------

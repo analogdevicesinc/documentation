@@ -1,7 +1,8 @@
 AD5940_BIA
 ==========
 
-This demo will use **EVAL-ADICUP3029**, **EVAL_AD5940BIOZ** and **Impedance-Test** board to carry out BIA measurements.
+This demo will use **EVAL-ADICUP3029**, **EVAL_AD5940BIOZ** and
+**Impedance-Test** board to carry out BIA measurements.
 
 Overview
 --------
@@ -37,7 +38,8 @@ The following is a list of items required to carry out the measurement.
 Setting up the Hardware
 -----------------------
 
--  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
+-  Set switch S2 to USB Arduino function in order to view data over UART. The
+   UART baud rate is **230400**
 -  Set S5 to Wall/USB to power the board from the USB cable
 
 .. image:: ../images/img_20170612_144023_hdr.jpg
@@ -81,7 +83,7 @@ series.
 
 .. container:: column
 
-   
+
    ======= ===========================
    S1 Bank Corresponding Res/Cap Value
    ======= ===========================
@@ -98,11 +100,11 @@ series.
    S11     1000 pF
    S12     0.01 μF
    ======= ===========================
-   
+
 
 .. container:: column
 
-   
+
    ======= ===========================
    S2 Bank Corresponding Res/Cap Value
    ======= ===========================
@@ -119,11 +121,11 @@ series.
    S11     1000 pF
    S12     0.01 μF
    ======= ===========================
-   
+
 
 .. container:: column
 
-   
+
    ======= ===========================
    S3 Bank Corresponding Res/Cap Value
    ======= ===========================
@@ -140,11 +142,11 @@ series.
    S11     1000 pF
    S12     0.01 μF
    ======= ===========================
-   
+
 
 .. container:: column
 
-   
+
    ======= ===========================
    S4 Bank Corresponding Res/Cap Value
    ======= ===========================
@@ -161,11 +163,11 @@ series.
    S11     1000 pF
    S12     0.01 μF
    ======= ===========================
-   
+
 
 .. container:: column
 
-   
+
    ======= ===========================
    S5 Bank Corresponding Res/Cap Value
    ======= ===========================
@@ -182,7 +184,7 @@ series.
    S11     1000 pF
    S12     0.01 μF
    ======= ===========================
-   
+
 
 AD5940 Z Test Schematic and Layout
 ----------------------------------
@@ -190,9 +192,9 @@ AD5940 Z Test Schematic and Layout
 .. admonition:: Download
    :class: download
 
-   
+
    `Schematic <../resources/ad5940_z_test_.pdf>`_
-   
+
    `Layout <../resources/ad5940_z_test.pdf>`_
 
 Obtaining the Source Code
@@ -203,7 +205,7 @@ The source code and include files for the project can be found on Git
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
 
 Configuring the Software

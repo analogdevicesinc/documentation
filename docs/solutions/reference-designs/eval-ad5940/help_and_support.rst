@@ -19,28 +19,33 @@ simple things you can try before contacting Analog Devices.
 
 -  Check the Power on ADICUP3029
 
-   -  Do you have the USB cable plugged in? What about the DC power jack? Is switch (S5) in the "Wall/USB" position?
+   -  Do you have the USB cable plugged in? What about the DC power jack? Is
+      switch (S5) in the "Wall/USB" position?
    -  If you are using batteries, is the switch (S5) in the "BATT" position
 
       -  Try replacing your batteries, and see if the board powers up
 
 -  Check the Power on EVAL-AD5940xxxx
 
-   -  Ensure the EVAL-AD5940xxx is connected to Arduino UNO connectors on ADICUP3029
+   -  Ensure the EVAL-AD5940xxx is connected to Arduino UNO
+      connectors on ADICUP3029
    -  Ensure JP1 and JP2 supply jumpers are in position A to power the board
       from the ADICUP3029.
 
 -  Program the ADuCM3029
 
-   -  Sometimes a flashed program doesn't run properly or can make it difficult to run the debugger.
+   -  Sometimes a flashed program doesn't run properly or can make it
+      difficult to run the debugger.
    -  The first thing to try in this case, is to `drag and drop <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`_ a known good .HEX or .BIN program into flash.(something with quick visible indicators works best)
    -  If drag and drop is not working, it may be necessary to erase the flash.
       To do so:
 
       -  Download and install the CrossCore Serial Flash Programmer from here: :adi:`en/design-center/processors-and-dsp/evaluation-and-development-software/crosscore-serial-flash-programmer.html#dsp-overview`.
       -  Make sure that the USB is selected on the three way UART switch (S2).
-      -  Power cycle the ADICUP3029 board while holding down the boot switch (S3)
-      -  Select the mbed serial COM port in the CrossCore Serial Flash Programmer, and erase the flash.
+      -  Power cycle the ADICUP3029 board while holding down the
+         boot switch (S3)
+      -  Select the mbed serial COM port in the CrossCore Serial Flash
+         Programmer, and erase the flash.
       -  Then try `dragging and dropping <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`_ a .HEX or .BIN file into flash
 
    -  If the mass erase didn't work, and you are trying to drag and drop a large
@@ -48,7 +53,9 @@ simple things you can try before contacting Analog Devices.
       interface file needs to be updated to support your application.
 
       -  Please visit the `Maintenance Drive details <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`_ page in order to put the board in update mode.
-      -  Once you are in "maintenance mode" you should drag and drop the latest interface file onto your maintenance drive. That file can be downloaded at the bottom of `Maintenance Drive Page <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`_.
+      -  Once you are in "maintenance mode" you should drag and drop the
+         latest interface file onto your maintenance drive. That file can be
+         downloaded at the bottom of `Maintenance Drive Page <https://wiki.analog.com/resources/eval/user-guides/eval-adicup3029/tools/adicup3029_hw_drivers>`_.
 
 -  Not receiving/transmitting data to the UART
 
@@ -57,7 +64,12 @@ simple things you can try before contacting Analog Devices.
 
 -  I'm trying to program/debug, but I'm getting errors.
 
-   -  Check the drives attached to your computer, do you see a mass storage device called **DAPLINK** or **Maintenance**? If you see the Maintenance drive and your USB is plugged in, then likely the ADuCM3029 isn't being powered, which means the power switch (S5) is likely in the "BATT" position. Flip it "WALL/USB" and unplug/reconnect your USB cable to your computer, and try to programming again.
+   -  Check the drives attached to your computer, do you see a mass storage
+      device called **DAPLINK** or **Maintenance**? If you see the Maintenance
+      drive and your USB is plugged in, then likely the ADuCM3029 isn't being
+      powered, which means the power switch (S5) is likely in the "BATT"
+      position. Flip it "WALL/USB" and unplug/reconnect your USB cable to your
+      computer, and try to programming again.
 
 This is just a brief self-help guide to troubleshooting common issues. If you
 have other questions that need answering please direct those requests to the
@@ -66,7 +78,9 @@ locations outlined below.
 Hardware, Software, and Documentation Questions
 -----------------------------------------------
 
-If you have any questions regarding the ADICUP3029 base board or are experiencing any problems using the **AD5940 SDK** or issues following any of the **documentation** feel free to ask us a question.
+If you have any questions regarding the ADICUP3029 base board or are
+experiencing any problems using the **AD5940 SDK** or issues following any of
+the **documentation** feel free to ask us a question.
 
 -  :ez:`ADuCM3029 support community <community/analog-microcontrollers/aducm302x>` for questions about:
 

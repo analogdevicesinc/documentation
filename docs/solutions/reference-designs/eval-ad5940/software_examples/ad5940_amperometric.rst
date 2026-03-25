@@ -1,7 +1,8 @@
 AD5940_Amperometric
 ===================
 
-This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry put Amperometric measurements.
+This example will use **EVAL-ADICUP3029** and **EVAL_AD5940ELCZ** to carry
+put Amperometric measurements.
 
 Overview
 --------
@@ -43,7 +44,8 @@ The following is a list of items required to carry out the measurement.
 Setting up the Hardware
 -----------------------
 
--  Set switch S2 to USB Arduino function in order to view data over UART. The UART baud rate is **230400**
+-  Set switch S2 to USB Arduino function in order to view data over UART. The
+   UART baud rate is **230400**
 -  Set S5 to Wall/USB to power the board from the USB cable
 
 .. image:: ../images/img_20170612_144023_hdr.jpg
@@ -68,9 +70,9 @@ The source code and include files for the project can be found on Git
 .. admonition:: Download
    :class: download
 
-   
+
    `AD5940 Source Code <https://github.com/analogdevicesinc/ad5940-examples>`_
-   
+
 
 Configuring the Software
 ------------------------
