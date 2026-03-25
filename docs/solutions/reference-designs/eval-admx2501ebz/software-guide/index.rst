@@ -410,8 +410,8 @@ impedance measurements.
 
    The measurements reported by the module may not be accurate unless it has
    been calibrated. For detailed instructions on how to calibrate the module,
-   please refer to the :ref:`eval-admx2501ebz calibration-procedure` section
-   in this user guide.
+   please refer to the :ref:`eval-admx2501ebz calibration-and-compensation`
+   section in this user guide.
 
 By default, the module is set to perform single-point impedance measurements in
 rectangular coordinates with a 300mV peak-to-peak signal (magnitude = 300) at
@@ -1008,7 +1008,7 @@ measurement to the same frequency under ideal parameters in the first few rows.
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 | 1          | 1         | 10     | 1               | R/X      | None      | Off       | 10.119    | NA           | NA             |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
-| 10000      | 1         | 1      |	10              | R/X      | None      | Off       | 0.01345   | NA           | 0.009000       |
+| 10000      | 1         | 1      | 10              | R/X      | None      | Off       | 0.01345   | NA           | 0.009000       |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 | 1000       | 1         | 1      | 10              | R/X      | None      | Off       | 0.01393   | NA           | 0.009040       |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
@@ -1032,6 +1032,8 @@ measurement to the same frequency under ideal parameters in the first few rows.
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 | 1000       | 10        | 1      | 1               | R/X      | None      | Off       | 0.04343   | 0.004343     | -0.000547      |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
+
+.. _eval-admx2501ebz calibration-and-compensation:
 
 Calibration and Compensation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -63,13 +63,13 @@ Applications
 - Research in Industry or Academia
 
 System Architecture
---------
+-------------------
 
 .. figure:: eval-ad-imp2501-sl_block_diagram.png
    :width: 600px
 
 Specifications
---------
+--------------
 
 TBD from the characterization table what we want to include here:
 
