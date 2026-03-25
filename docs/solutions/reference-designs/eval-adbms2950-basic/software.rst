@@ -9,7 +9,7 @@ scheduling, memory mapping, plotting, data recall, diagnostics, and EIS
 measurements.
 
 Prerequisites
-=============
+-------------
 
 The AD-CELLPACKBM-SL Kit can use the available no-OS BMS embedded drivers as
 well as the Broadmarket BMS GUI for monitoring of crucial BMS parameters.
@@ -18,7 +18,8 @@ well as the Broadmarket BMS GUI for monitoring of crucial BMS parameters.
 
 Follow the steps below to create a MyAnalog account:
 
-1. Go to :adi:`MyAnalog <en/index.html>` and create an account using email. Select the "**Register with email**" option to get started.
+1. Go to :adi:`MyAnalog <en/index.html>` and create an account using email.
+   Select the "**Register with email**" option to get started.
 
 |image1|
 
@@ -27,7 +28,7 @@ Follow the steps below to create a MyAnalog account:
 |image2|
 
 Request for no-OS BMS Embedded Drivers
-======================================
+--------------------------------------
 
 This reference design comes with no-OS BMS Embedded Drivers designed to run BMS
 measurements using a serial terminal.
@@ -39,31 +40,32 @@ cell voltage input.
 
 .. tip::
 
-   
+
    *The BMS Embedded Drivers Installer is available upon request.*
-   
-   | To request for access, send the following details to this email address:
-   | ✉ BM_BMSSoftwareSupport@analog.com
-   
+
+   To request for access, send the following details to this email address:
+   ✉ BM_BMSSoftwareSupport@analog.com
+
    -  Email address used for MyAnalog account creation
    -  Company/School
    -  Country
    -  Purpose/Name of Project
-   
+
    You will receive an email confirmation that you have been granted access to
    the BMS Embedded Installer Package. Follow the steps below to download and
    properly install the file to your host PC.
-   
+
 
 Downloading the BMS Embedded Drivers Installer
-----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Click this link: `BMS Embedded Drivers Version 1.0.0 <https://download.analog.com/secure/bms-no-os-drivers/bmsed-00/1-0-0/no-os-bms-examples-rel1.0.0.exe>`_.
 
 2. You will be directed to the *Software Package Download* page.
 
 -  Tick the checkbox.
--  Then, click the **I Accept** button to indicate acceptance of the license agreement.
+-  Then, click the **I Accept** button to indicate acceptance of the
+   license agreement.
 
 .. image:: images/downloading_drivers1.png
    :align: center
@@ -74,26 +76,27 @@ Downloading the BMS Embedded Drivers Installer
 .. admonition:: Download
    :class: download
 
-   
+
    When software updates or new versions of the software are available an email
    notification will be sent to the email address associated with the MyAnalog
    account used to download the original software package.
-   
+
 
 --------------
 
 Installing the no-OS BMS Embedded Drivers
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation path will be on **C:\\Analog\\**
+1. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation
+   path will be on **C:\\Analog\\**
 
 2. Download and install `MaximSDK for Maxim MCUs <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_.
 
 .. container:: indent
 
-   
+
    **NOTE**: Make sure that the location has NO WHITESPACES! For example, a typical installation location for the Maxim SDK could be “\ **C:\\MaximSDK**\ ” (Windows file location notation)
-   
+
 
 3. While MaximSDK installation is in progress, set up the no-OS-BMS-Examples by
    going to the no-OS-BMS-Examples directory:
@@ -104,16 +107,17 @@ Installing the no-OS BMS Embedded Drivers
 
 .. container:: indent
 
-   
+
    NOTE: This process will take a few minutes. Please ensure you have a stable
    internet connection.
-   
+
 
 5. During this process, the Git Bash application will pop up (running as admin).
 
 6. Wait for the setup to complete.
 
--  A message "**Set-up completed! with no error message**" will be displayed on the command line if the setup is successful.
+-  A message "**Set-up completed! with no error message**" will be displayed
+   on the command line if the setup is successful.
 -  Press **ANY KEY** to close the command prompt.
 
 7. Double check if the MaximSDK is successfully installed.
@@ -124,7 +128,8 @@ Installing the no-OS BMS Embedded Drivers
 
 -  Examples Directory: **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0**
 
-9. Open the Makefile inside **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0\\examples** folder.
+9. Open the Makefile inside
+   **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0\\examples** folder.
 
 -  This will display all the available example projects on the code editor.
 
@@ -136,15 +141,15 @@ Installing the no-OS BMS Embedded Drivers
 
 .. container:: indent
 
-   
+
    The complete procedure on how to use the no-OS BMS examples can be found in the guide inside the **Documents** folder:
-   
+
    File Location: **C:\\Analog\\no-OS-BMS-Examples-Rel1.0.0\\Documents**
-   
+
    .. image:: images/examples_installation_guide.png
       :align: center
       :width: 800
-   
+
 
 --------------
 
@@ -152,7 +157,7 @@ Firmware
 ~~~~~~~~
 
 Installing the Firmware
-=======================
+^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Connect the microcontroller board (for this example, SDP-K1) to the host PC.
 -  Go to the USB_TO_SPI_FIRMWARE directory and find the latest firmware.
@@ -167,10 +172,13 @@ Installing the Firmware
 
 .. tip::
 
-   This software setup uses the SDP-K1 as microcontroller board, but the :adi:`AD-APARD32690-SL` microcontroller may also be used as alternative.
+   This software setup uses the SDP-K1 as microcontroller board, but the
+   :adi:`AD-APARD32690-SL` microcontroller may also be used as alternative.
 
-   
-   In order to flash the firmware image on the :adi:`AD-APARD32690-SL` MCU board, it needs to be connected to the :adi:`MAX32625PICO` programming adapter board.
+
+   In order to flash the firmware image on the :adi:`AD-APARD32690-SL` MCU
+   board, it needs to be connected to the :adi:`MAX32625PICO` programming
+   adapter board.
 
 .. collapsible:: **Click here for instructions on how to flash the firmware image using the MAX32625PICO**
 
@@ -199,21 +207,21 @@ Graphical User Interface
 ------------------------
 
 Downloading the GUI Installer
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
    :class: download
 
-   
+
    Evaluation GUI for ADI Broad Market BMS products:
-   
+
    :adi:`BMS Browser GUI Version 2.3.0 <en/resources/evaluation-hardware-and-software/software/software-download.html?swpart=SD_ELPTRFU>`
-   
+
    *When software updates or new versions of the software are available an email notification will be sent to the email address associated with the MyAnalog account used to download the original software package.*
-   
+
 
 Launching the GUI
-=================
+~~~~~~~~~~~~~~~~~
 
 -  To launch the GUI, navigate to the BMS_BROWSER_GUI_BroadMarket_V2.3.0 directory.
 -  Double-click BMS_BROWSER_GUI_BroadMarket_V2.3.0.exe.
@@ -224,73 +232,73 @@ Launching the GUI
 
 .. container:: indent
 
-   
+
    **Launcher Configuration**
 
-   
+
    -  Use the launcher page to configure a daisy chain of ADBMS devices.
    -  Select an appropriately flashed microcontroller board (for this example, SDP-K1).
    -  Launch the evaluation GUI.
-   
+
    **Establishing Interface Connection**
 
-   
+
    -  The Interface Connection section displays available SDP-K1 devices on the left.
    -  Left-side selection determines the device for launching the evaluation GUI with the **Launch** Button.
    -  If the GUI is open, the connected COM port appears on the right.
    -  Click **Disconnect** to terminate the connection for a new one.
    -  Use the refresh button to reload the available MCU boards list.
-   
+
    .. image:: images/interface_connection.png
       :align: center
       :width: 800
-   
+
    **Daisy Chain Connection**
 
-   
+
    The Daisy Chain section facilitates the creation of a daisy chain using
    compatible ADBMS devices. This process involves selecting a generation of
    ADBMS devices, adding devices to the daisy chain, and configuring the setup
    for the evaluation GUI.
 
-   
+
    |image3|
 
    -  **Select ADBMS Generation:**
-   
+
       -  Navigate to the **Daisy Chain** section.
       -  Use the first option to choose a specific generation of ADBMS devices.
       -  Note: Devices within a selected generation are compatible and can be
          used together in the evaluation GUI.
-   
+
    -  **Add Devices to the Daisy Chain:**
-   
+
       -  After selecting the generation, locate the available devices list.
       -  Choose a device for the daisy chain.
       -  Press the right chevron button to append the selected device to the daisy chain.
       -  This added device becomes the next farthest in the daisy chain.
-   
+
    -  **Remove Devices from the Daisy Chain:**
-   
+
       -  To remove a device, go to the daisy chain table.
       -  Select the device you want to remove.
       -  Press the trash can button to delete the selected device from the daisy
          chain.
-   
+
    -  **Configure Daisy Chain for GUI Launch:**
-   
+
       -  In the Interface Connection section, select the desired MCU board.
       -  Configure the daisy chain in the Daisy Chain section.
       -  Click on the launch button to initiate the evaluation GUI.
-   
+
 
 --------------
 
 GUI Tabs
-========
+--------
 
 Quick Measure
--------------
+~~~~~~~~~~~~~
 
 The Quick Measure tab simplifies metric measurement with a preloaded command
 sequence. Note that it supports a single device in the daisy chain, and key
@@ -300,8 +308,8 @@ features enhance configuration and visualization.
 
 -  **Preloaded Commands:**
 
-   -  Access the Quick Measure tab for easy metric measurement with a preloaded
-      command sequence.
+   -  Access the Quick Measure tab for easy metric measurement with a
+      preloaded command sequence.
 
 -  **Daisy Chain Limitation:**
 
@@ -329,7 +337,7 @@ features enhance configuration and visualization.
    -  The button turns yellow during loop activation and green when deactivated.
 
 Sequences
----------
+~~~~~~~~~
 
 The Sequences tab enables the creation and management of custom command
 sequences. Load and save sequences, divided into Init and Loop lists. The Init
@@ -340,7 +348,8 @@ until stopped. Toggle between lists using the corresponding buttons at the top.
 
 -  **Load Existing Sequence:**
 
-   -  Use the Existing Sequence Files select bar to choose an existing sequence file.
+   -  Use the Existing Sequence Files select bar to choose an existing sequence
+   file.
    -  Select the desired sequence from the Existing Sequences select bar.
 
 -  **Save Sequence:**
@@ -358,7 +367,8 @@ until stopped. Toggle between lists using the corresponding buttons at the top.
 -  **Add Command:**
 
    -  On the left side of the screen, use the select boxes and buttons to add a command to the selected command list.
-   -  Select a command from the Commands; select box to load available bitfields on the bottom left.
+   -  Select a command from the Commands; select box to load available
+      bitfields on the bottom left.
    -  Modify bitfields as needed and press Add to add the command to the list on
       the right side.
 
@@ -375,12 +385,13 @@ until stopped. Toggle between lists using the corresponding buttons at the top.
 
 -  **Optional Map Key:**
 
-   -  Below the SPI Bus and SPI CS Select bars, use the optional Map Key field to apply a label to the command.
+   -  Below the SPI Bus and SPI CS Select bars, use the optional Map Key
+      field to apply a label to the command.
    -  Labels organize output data, grouping commands with the same label
       together for focused data analysis.
 
 Scheduler
----------
+~~~~~~~~~
 
 The Scheduler tab provides insights into the execution time of sequences from
 the Sequences tab. It allows combining sequences for a complete execution loop.
@@ -423,7 +434,7 @@ Key features enable precise timing adjustments and visualization.
    -  Run the transferred sequence to assess real hardware timing.
 
 Memory Map
-----------
+~~~~~~~~~~
 
 The Memory Map tab provides a numerical output for the active command loop,
 organized into tables for user convenience. It offers customization and error
@@ -433,7 +444,8 @@ highlighting for effective data analysis.
 
 -  **Organized Data Display:**
 
-   -  Access the Memory Map tab for a numerical output of the currently running command loop.
+   -  Access the Memory Map tab for a numerical output of the currently
+      running command loop.
    -  Multiple tables organize the data into useful groups.
 
 -  **Table Management:**
@@ -456,7 +468,7 @@ highlighting for effective data analysis.
    -  Valid data does not have any highlighting for easy differentiation.
 
 Plots
------
+~~~~~
 
 The Plots tab provides a graphical representation of data collected through the
 running command loop. It offers customization options for focused analysis and
@@ -496,7 +508,7 @@ allows for the export of captured data for further analysis.
    -  Data is exported to the data directory, grouped by map key.
 
 Data Recall
------------
+~~~~~~~~~~~
 
 The Data Recall tab allows you to retrieve and plot data from previous freerun
 sessions stored in a database file. The interface is similar to the Plots tab
@@ -531,7 +543,7 @@ with added functionality for selecting the database file and test run.
       the Plots tab.
 
 Diagnostics
------------
+~~~~~~~~~~~
 
 The Diagnostics tab offers a straightforward way to execute on-device
 diagnostics following the device's safety manual. It displays available
@@ -549,7 +561,8 @@ diagnostics, test logs, and results for a single device.
 
 -  **Run Diagnostics:**
 
-   -  In the Functions section on the left, click on the button with the name of the desired diagnostic.
+   -  In the Functions section on the left, click on the button with the name
+      of the desired diagnostic.
    -  The diagnostic runs, and results are displayed on the right side:
       highlighted green for pass and red for failure.
 
@@ -562,7 +575,7 @@ diagnostics, test logs, and results for a single device.
 --------------
 
 Custom GUI Configuration
-========================
+------------------------
 
 The configuration settings in the GUI's config.json file allow users to tailor
 the software to their specific needs, providing a more customized and efficient
@@ -573,12 +586,13 @@ limit_usb_polling, and display_user_manual_on_start - that users can adjust to
 better align the software to their intended applications.
 
 Key Settings
-------------
+~~~~~~~~~~~~
 
 auto_detect_sdp:
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
--  **Purpose:** Determines whether the software automatically connects to all comports or requires manual selection of the NUCLEO comport.
+-  **Purpose:** Determines whether the software automatically connects to all
+   comports or requires manual selection of the NUCLEO comport.
 -  **Default Setting:** true
 -  **Modification:**
 
@@ -587,25 +601,27 @@ auto_detect_sdp:
    -  Save the changes.
 
 limit_usb_polling:
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Controls the poll rate of the NUCLEO comport, balancing CPU usage and sample rate.
 -  **Default Setting:** false
 -  **Modification:**
 
    -  Open the config.json file.
-   -  Find the "limit_usb_polling" setting and change its value to true if a reduced poll rate is preferred.
+   -  Find the "limit_usb_polling" setting and change its value to true if a
+      reduced poll rate is preferred.
    -  Save the changes.
 
 display_user_manual_on_start:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  **Purpose:** Governs whether the user manual is displayed each time the software starts.
 -  **Default Setting:** true
 -  **Modification:**
 
    -  Open the config.json file.
-   -  Locate the "display_user_manual_on_start" setting and change its value to false if you prefer not to see the manual on startup.
+   -  Locate the "display_user_manual_on_start" setting and change its value
+      to false if you prefer not to see the manual on startup.
    -  Save the changes.
 
 .. tip::
@@ -620,7 +636,7 @@ display_user_manual_on_start:
 --------------
 
 Further Help
-============
+------------
 
 For questions and more information about this product, connect with us through
 the Analog Devices Engineer Zone.

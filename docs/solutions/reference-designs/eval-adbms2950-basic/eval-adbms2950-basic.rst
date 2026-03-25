@@ -7,9 +7,16 @@ EVAL-ADBMS2950-BASIC User Guide
 Overview
 --------
 
-The :adi:`EVAL-ADBMS2950-BASIC` battery pack monitoring evaluation board features the :adi:`ADBMS2950B`, a bidirectional current monitor, with 12 buffered high impedance voltage sense inputs, linked through a 2-wire isolated serial interface (isoSPI™). The demo circuit also features reversible isoSPI™ enabling a redundant communication path.
+The :adi:`EVAL-ADBMS2950-BASIC` battery pack monitoring evaluation board
+features the :adi:`ADBMS2950B`, a bidirectional current monitor, with 12
+buffered high impedance voltage sense inputs, linked through a 2-wire isolated
+serial interface (isoSPI™). The demo circuit also features reversible isoSPI™
+enabling a redundant communication path.
 
-The EVAL-ADBMS2950-BASIC can communicate to a PC over isoSPI™ by attaching an :adi:`EVAL-ADBMS6822` dual-controller isoSPI™ add-on board to the expansion headers of an :adi:`EVAL-SDP-CK1Z` microcontroller and then connecting this MCU to a host PC through USB.
+The EVAL-ADBMS2950-BASIC can communicate to a PC over isoSPI™ by attaching
+an :adi:`EVAL-ADBMS6822` dual-controller isoSPI™ add-on board to the
+expansion headers of an :adi:`EVAL-SDP-CK1Z` microcontroller and then
+connecting this MCU to a host PC through USB.
 
 The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI™ daisy-chain
 with other ADBMS2950B and ADBMS6830B devices.
@@ -49,19 +56,19 @@ Performance Summary
 
 .. container:: center
 
-   
+
    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------+---------+---------+---------+----------+
    | **Parameter**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |             | **Type** | **Min** | **Typ** | **Max** | **Unit** |
    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------+---------+---------+---------+----------+
-   | \**Low-Voltage Power Supply Input **\||||||\| \| \|Wide Range LV Input (J1) \| P\ IN \| 6 \| \| 15 \| V \| \| \|Alternative 5V LV Input (J10, J12) \| P\ IN \| 4.5 \| \| 5.5 \| V \| \|**Low-Voltage Digital Outputs**\||||||\| \| \|Overcurrent Alert LVOCA, LVOCB \| D\ OUT \| 0 \| \| 5.5 \| V \| \|**High-Voltage Shunt Sense Input**\||||||\| \| \|Current \| A\ IN \| -131 \| \| 131 \| mV \| \| \|Overcurrent \| A\ IN \| -300 \| \| 300 \| mV \| \| \|Shunt Resistance \| \| \| 50 \| \| μΩ \| \|**High-Voltage Power Supply Output**\||||||\| \| \|VDD to GND \| P\ OUT \| \| 14 \| \| V \| \| \|VREG to GND \| P\ OUT \| \| 5 \| \| V \| \|**High-Voltage Analog Input**\||||||\| \| \|HVISO1 to GND \| HV\ IN \| 0 \| \| 1000 \| V \| \| \|HV1 to GND \| HV\ IN \| 0 \| \| 1000 \| V \| \| \|HV2 to GND \| HV\ IN \| -1000 \| \| 1000 \| V \| \| \|HV3 to GND \| HV\ IN \| -1000 \| \| 1000 \| V \| \|**HV to LV Isolation** |             |          |         |         |         |          |
+   | *See ADBMS2950B datasheet for full performance summary*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |             |          |         |         |         |          |
    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------+---------+---------+---------+----------+
    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | GND to LGND |          |         |         | 1000    | V        |
    +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------+----------+---------+---------+---------+----------+
-   
+
    -  P\ :sub:`IN` : Power Input ; P\ :sub:`OUT`: Power Output
    -  A\ :sub:`IN` : Analog Input ; D\ :sub:`OUT`
    -  HV\ :sub:`IN` : High-Voltage Input
-   
+
 
 System Architecture
 -------------------
@@ -112,7 +119,10 @@ allowed HV1 input voltage range is positive only (0 V to 1000 V).
 HV2, HV3: Auxiliary High-Voltage Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The EVAL-ADBMS2950-BASIC features 2 additional high-voltage inputs, HV2 and HV3, that are transformed into the input ranges of the V1ADC and V2ADC. |image3|\
+The EVAL-ADBMS2950-BASIC features 2 additional high-voltage inputs, HV2 and
+HV3, that are transformed into the input ranges of the V1ADC and V2ADC.
+
+|image3|
 
 |image4|
 
@@ -164,8 +174,8 @@ additional inputs and outputs:
 | Thus, external resistive dividers similar to those used for HV1 to HV3 are required for measuring high voltage signals.                                                                               |          |         |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------+---------+
 
-| 
-| ==== Overcurrent Outputs in Low-Voltage Domain ====
+Overcurrent Outputs in Low-Voltage Domain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. container:: indent
 
@@ -177,32 +187,32 @@ additional inputs and outputs:
 
 .. container:: indent
 
-   
+
    **2kB On-Board EEPROM**
 
-   
+
    The EVAL-ADBMS2950-BASIC features a Microchip 24LC02B 2kB I2C EEPROM
    connected to the ADBMS2950B's on-chip peripheral controller interface via
    pins GPIO3 and GPIO4.
-   
+
    .. image:: images/eeprom_on_board.png
       :align: center
       :width: 200
-   
+
    The on-board EEPROM may be used as a persistent data storage, e.g., shunt
    resistor calibration information.
-   
+
    **isoSPI™ Connectors**
 
-   
+
    The EVAL-ADBMS2950-BASIC features 2 transformer-isolated isoSPI™ connectors
    enabling fully redundant reversible isoSPI™ functionality.
-   
+
    The isoSPI™ DuraClik cable supplied with the EVAL-ADBMS2950-BASIC may be
    plugged into any of the connectors J8 or J9, marked isoA and isoB,
    respectively.
 
-   
+
    |image8|
 
    An evaluation board featuring another ADBMS2950B or ADBMS6830B device may be
@@ -212,16 +222,16 @@ additional inputs and outputs:
 
 .. container:: indent
 
-   
+
    **Voltage Sense Overview**
 
-   
+
    Below table shows the assignments of the voltage inputs to the ADBMS2950B
    pins and ADCs.
-   
+
    .. container:: center
 
-         
+
          ========== ========== ================== ============
          **Name**   **Enable** **ADBMS2950B Pin** **ADC**
          HV1 (BAT+) GPO2       VBAT1              VB1ADC
@@ -232,52 +242,52 @@ additional inputs and outputs:
          NTC1                  V7                 V1ADC
          NTC2                  V9                 V2ADC
          ========== ========== ================== ============
-         
 
-   
+
+
 
 .. container:: indent
 
-   
+
    **Remote Shunt**
 
-   
+
    The EVAL-ADBMS2950-BASIC features unpopulated filter and protection circuitry
    for evaluation of remote shunt operation as per the ADBMS2950B data sheet.
-   
+
    In order to convert an EVAL-ADBMS2950-BASIC for remote shunt sensing, run
    through the following modifications:
-   
+
    **On-board Shunt Removal**
 
-   
+
    Remove the sense shunt resistor and solder on wires between the sense pads
    and the remote shunt.
-   
+
    **Common-mode Choke Bypass**
 
-   
+
    Cut the bypass traces of the footprints for the common-mode chokes. In the
    board schematics, you can find these at CURRENT SENSE SHUNT > optional common
    mode filter.
-   
+
    Populate the common-mode chokes. The EVAL-ADBMS2950-BASIC was designed to
    accept a Würth Elektronik WE-SL2 SMT Common-mode Line Filter.
-   
+
    **TVS Protection Diodes**
 
-   
+
    Unpopulated footprints for TVS diodes in SOT-23 package are located on the
    bottom layer of the EVAL-ADBMS2950-BASIC. The respective part in the
    schematics is located at CURRENT SENSE SHUNT > Optional TVS for remote shunt.
-   
+
 
 Power Supply
 ~~~~~~~~~~~~
 
 .. container:: center
 
-   
+
    +-------------------------+---------+-------------+-------------------------------------------------------------------------+
    | **Type**                | **Ref** | **Voltage** | **Notes**                                                               |
    +-------------------------+---------+-------------+-------------------------------------------------------------------------+
@@ -290,15 +300,15 @@ Power Supply
    | LDO bypass power header | J12     | 4.5 V to    | Alternative 5 V supply input via pin header                             |
    |                         |         | 5.5 V       |                                                                         |
    +-------------------------+---------+-------------+-------------------------------------------------------------------------+
-   
+
 
 .. important::
 
-   
+
    J10 and J12 bypass the on-board LDO used for the wide range supply input and instead connect directly to the :adi:`ADuM6020` isolated power supply module.
-   
+
    J1 power input is connected to an :adi:`ADP7142` LDO to regulate input voltage to 5V and as input overvoltage protection. Do not operate above 15V for extended periods of time to keep the ADP7142 within thermal limits.
-   
+
 
 --------------
 
@@ -321,9 +331,11 @@ force on the PCB.
    and cleaned before attaching them. Oxidation and residue may increase contact
    resistance and heat dissipation.
 
--  The lug connectors are used to connect the 50 µΩ current measurement shunt to the load and the battery.
+-  The lug connectors are used to connect the 50 µΩ current measurement shunt
+   to the load and the battery.
 -  Large gauge wires should be used for this connection.
--  For several hundreds of Amperes, copper cables with a diameter of at least 10mm (AWG000) are recommended.
+-  For several hundreds of Amperes, copper cables with a diameter of at least
+   10mm (AWG000) are recommended.
 -  Bigger cables or using more than one in parallel will help minimize power
    dissipation and overheating.
 
@@ -348,9 +360,11 @@ Resources
 
 .. tip::
 
-   Learn how to use the EVAL-ADBMS2950-BASIC board in conjunction other ADI BMS Modules. Visit the AD-CELLPACKBM-SL Wiki Page: `hardware <https://wiki.analog.com/resources/eval/user-guides/ad-cellpackbm-sl/hardware>`_.
+   Learn how to use the EVAL-ADBMS2950-BASIC board in conjunction other ADI
+   BMS Modules. Visit the AD-CELLPACKBM-SL Wiki Page:
+   `hardware <https://wiki.analog.com/resources/eval/user-guides/ad-cellpackbm-sl/hardware>`_.
 
-   
+
    For Software Setup instructions, visit the :doc:`EVAL-ADBMS2950-BASIC Software User Guide </solutions/reference-designs/eval-adbms2950-basic/software>`
 
 Design & Integration Files
@@ -361,12 +375,12 @@ Design & Integration Files
 
    `EVAL-ADBMS2950-BASIC Design & Integration Files <resources/eval-adbms2950-basic-designsupport.zip>`_
 
-   
+
    -  Schematic
    -  PCB Layout
    -  Bill of Materials
    -  Allegro Project
-   
+
 
 Help and Support
 ----------------
