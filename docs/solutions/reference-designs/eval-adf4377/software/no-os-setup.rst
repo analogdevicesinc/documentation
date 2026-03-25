@@ -1,16 +1,22 @@
 Evaluating the ADF4377 Microware Wideband Synthesizer with Integrated VCO
 =========================================================================
 
-The :adi:`EV-ADF4377SD1Z` evaluates the pefromance of the\ :adi:`ADF4377` frequency synthesizer with an integrated voltage controlled oscillator (VCO) for phase-locked loops (PLLs).
+The :adi:`EV-ADF4377SD1Z` evaluates the performance of the
+:adi:`ADF4377` frequency synthesizer with an integrated voltage controlled
+oscillator (VCO) for phase-locked loops (PLLs).
 
-The evaluation board contains the :adi:`ADF4377` frequency synthesizer with an integrated VCO, a USB interface, power supply connectors, and subminiature Version A (SMA) connectors.
+The evaluation board contains the :adi:`ADF4377` frequency synthesizer with
+an integrated VCO, a USB interface, power supply connectors, and subminiature
+Version A (SMA) connectors.
 
-This board requires an :adi:`SDP-S` board (not supplied with the kit). The :adi:`SDP-S` allows software programming of the :adi:`EV-ADF4377SD1Z` board with :adi:`ACE` software.
+This board requires an :adi:`SDP-S` board (not supplied with the kit). The
+:adi:`SDP-S` allows software programming of the :adi:`EV-ADF4377SD1Z` board
+with :adi:`ACE` software.
 
 Supported Carriers
-==================
+------------------
 
--  `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_
+-  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 
 Required Hardware
 -----------------
@@ -28,9 +34,10 @@ Required Software
 Build Application
 -----------------
 
-In order to build the application and generate the .elf file, please follow the `NO-OS Build Guide <https://wiki.analog.com/resources/no-os/build>`_.
+In order to build the application and generate the .elf file, please follow
+the :external+no-OS:doc:`no-OS build guide <build_guide>`.
 
-Source files for the application can be found in the :doc:`Downloads </solutions/reference-designs/eval-adf4377/software/no-os-setup>` section.
+Source files for the application can be found in the `Source code`_ section.
 
 Run Application
 ---------------
@@ -43,12 +50,8 @@ the elf file. An output example of the application is provided below:
    ADF4377 Successfully initialized!
    Output Frequency Locked!
 
-Downloads
-=========
+Source code
+-----------
 
-.. admonition:: Download
-   :class: download
+-  :git-no-OS:`ADF4377 Application <projects/adf4377_sdz>`
 
-   
-   -  :git-no-OS:`ADF4377 Application <projects/adf4377_sdz>`
-   
