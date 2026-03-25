@@ -25,16 +25,12 @@ Hardware prerequisites
       The ZedBoard FMC connector is low pin count. VADJ must be set to
       **2.5 V** before powering on.
 
-#. :adi:`SDP-I-FMC <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-i-fmc.html>`
-   or equivalent adapter board for connecting the evaluation
-   board to the FPGA carrier
-
-   .. todo::
-
-      Confirm exact adapter/connector used and add part number.
-
+#. `FMC XM105
+   <https://www.amd.com/en/products/adaptive-socs-and-fpgas/board-accessories/hw-fmc-xm105-g.html>`__
+   or equivalent FMC to header adapter board for connecting the evaluation board to
+   the FPGA carrier
 #. Jumper wires to tap the SPI signals
-#. 1x Micro-USB to USB Type-A cable (for UART access)
+#. 1x USB cable for UART access (Micro-USB for ZedBoard/CoraZ7, Mini-USB for DE10-Nano)
 #. 1x Ethernet cable (for network access)
 #. 1x microSD card (at least 16 GB)
 
@@ -54,7 +50,7 @@ The following software is needed on the host PC:
 - A UART terminal (e.g. PuTTY, Tera Term, Minicom) configured for
   115200 baud, 8N1
 - A microSD card flashed with the ADI Kuiper Linux image; follow
-  :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+  :external+kuiper:doc:`this guide <index>`
 
 For capturing and visualizing data from the device:
 

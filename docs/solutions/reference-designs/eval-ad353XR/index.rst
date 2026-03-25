@@ -5,7 +5,8 @@ EVAL-AD353XR
 
 16-Bit, 4/8-Channel, Low Power, Voltage Output DAC with On-Chip Reference.
 
-.. image:: ./images/ad3530R.jpeg
+.. figure:: ./images/ad3530R.jpeg
+   :alt: EVAL-AD3530R evaluation board
    :align: left
    :width: 150
 
@@ -57,17 +58,19 @@ Applications:
 - Data acquisition systems
 - Test and measurement equipment
 
-.. image:: ./images/eval_ad3530R.jpeg
-   :alt: EVAL-AD3530R Evaluation BoardExpand annotation
+.. figure:: ./images/eval_ad3530R.jpeg
+   :alt: EVAL-AD3530R evaluation board top view
    :align: center
    :width: 800
 
+   EVAL-AD3530R evaluation board
+
 .. toctree::
    :hidden:
-
+   
    prerequisites
-   user-guide
    quickstart/index
+   user-guide
 
 Following the documented flow provides a much better experience. If you have
 questions, ask on our :ez:`fpga` community forum, but please read the
@@ -103,19 +106,6 @@ Table of contents
 #. About the JESD204 utilities:
 
    - :external+linux:ref:`JESD204 (FSM) interface Linux Kernel framework <jesd204-fsm-framework>`
-
-   - :ref:`eval-ad353xr block-diagram`
-
-     - :adi:`AD3530R` product page
-
-   - Resources for designing with the AD3530R:
-
-     #. For Linux software:
-
-        - :dokuwiki:`SPI Engine Linux driver <resources/tools-software/linux-drivers/spi-engine>`
-
-     #. :external+hdl:ref:`HDL reference design <ad353xr_evb>` which you must
-     use in your FPGA.
 
 #. :ref:`Help and Support <help-and-support>`
 

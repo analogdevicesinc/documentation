@@ -9,12 +9,6 @@ Hardware guide
 Hardware configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. todo::
-
-   Add detailed hardware configuration steps once hardware is available.
-   Include jumper/link settings from the user guides (UG-2276 / UG-2320)
-   and confirm with hardware owner.
-
 The :adi:`EVAL-AD3530R` and :adi:`EVAL-AD3531R` evaluation boards expose an
 SPI interface and GPIO signals that connect to the FPGA carrier. The tables
 below list the signal mapping for each supported carrier.
@@ -27,26 +21,39 @@ Carrier-specific setup
 Place a jumper on JP2, shorting the two pins together. Select the JP3
 connection depending on the power supply source (USB or external).
 
-.. todo::
+.. figure:: images/full_set_up_cora.jpeg
+   :alt: Full setup - CoraZ7s with EVAL-AD3530R connected
+   :width: 700
 
-   Add photo of CoraZ7s hardware configuration.
+   CoraZ7s with EVAL-AD3530R
 
 **DE10-Nano**
 
-Adjust the switch to FPGA configuration mode.
+Adjust the FPGA configuration mode switch (SW10) to the SD card boot
+position.
 
-.. todo::
+.. figure:: images/de10_nano_setup.jpeg
+   :alt: DE10-Nano with EVAL-AD3530R connected via GPIO header
+   :width: 700
 
-   Add photo of DE10-Nano switch configuration.
+   DE10-Nano with EVAL-AD3530R
 
 **ZedBoard**
 
 Set jumpers MIO[6:2] to ``01100``. VADJ must be set to **2.5 V**.
 The ZedBoard FMC connector is low pin count.
 
-.. todo::
+.. figure:: images/zed_board_setup.jpeg
+   :alt: ZedBoard with connections
+   :width: 700
 
-   Add photo of ZedBoard jumper configuration.
+   ZedBoard with connections
+
+.. figure:: images/ad353xr_setup.jpeg
+   :alt: EVAL-AD3530R evaluation board on ZedBoard setup
+   :width: 700
+
+   EVAL-AD3530R evaluation board
 
 Power supply
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,19 +74,24 @@ respective product pages:
 Software guide
 -------------------------------------------------------------------------------
 
-The evaluation board is controlled via the Linux IIO subsystem using
-the SPI engine Linux driver:
+Driver
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :dokuwiki:`SPI Engine Linux driver
-  <resources/tools-software/linux-drivers/spi-engine>`
+The AD3530R/AD3531R is supported by the Linux IIO subsystem via the
+``ad3530r`` driver.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+
+   * - File
+     - Link
+   * - Driver
+     - :git-linux:`drivers/iio/dac/ad3530r.c <64ec98ac2413d592e484d4cb206fbca93c419693:drivers/iio/dac/ad3530r.c>`
+   * - DT bindings
+     - :git-linux:`Documentation/devicetree/bindings/iio/dac/adi,ad3530r.yaml <main:Documentation/devicetree/bindings/iio/dac/adi,ad3530r.yaml>`
 
 Once the system has booted, IIO-based tools can be used to interact with
 the device:
 
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
-
-.. todo::
-
-   Add devicetree and Linux driver configuration details once confirmed
-   with the hardware owner. Include example IIO sysfs commands for setting
-   DAC output voltages on each channel.
+- :ref:`iio-oscilloscope`

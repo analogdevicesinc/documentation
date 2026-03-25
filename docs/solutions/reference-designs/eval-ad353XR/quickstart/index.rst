@@ -64,7 +64,35 @@ Supported environments
 Hardware setup
 -------------------------------------------------------------------------------
 
-.. todo::
+CoraZ7s
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Add hardware setup photos for each carrier once hardware is available.
-   One subsection per carrier following the ad9213-docs pattern.
+.. figure:: ../images/full_set_up_cora.jpeg
+   :alt: Full setup - CoraZ7s with EVAL-AD3530R connected
+   :width: 700
+
+   CoraZ7s with EVAL-AD3530R
+
+DE10-Nano
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ../images/de10_nano_setup.jpeg
+   :alt: DE10-Nano with connections
+   :width: 700
+
+   DE10-Nano with connections
+
+ZedBoard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ../images/zed_board_setup.jpeg
+   :alt: ZedBoard with connections
+   :width: 700
+
+   ZedBoard with connections
+
+.. figure:: ../images/ad353xr_setup.jpeg
+   :alt: EVAL-AD3530R evaluation board on ZedBoard setup
+   :width: 700
+
+   EVAL-AD3530R on ZedBoard
