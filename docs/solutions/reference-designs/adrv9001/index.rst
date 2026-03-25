@@ -1,0 +1,134 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/adrv9001
+
+.. _adrv9001:
+
+ADRV9001/ADRV9002 Prototyping Platform User Guide
+===================================================
+
+.. image:: adrv9002_board.png
+   :align: center
+   :width: 500
+
+The :adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ, low band 30 MHz to 3 GHz) and
+:adi:`EVAL-ADRV9002` (ADRV9002NP/W2/PCBZ, high band 3 GHz to 6 GHz) are FMC
+radio cards for the :adi:`ADRV9002` highly integrated RF transceiver, offering
+dual channel transmitters and dual channel receivers, integrated synthesizers,
+and digital signal processing functions. The IC delivers a versatile combination
+of high performance and low power consumption required by battery powered radio
+equipment and can operate in both FDD and TDD modes. The ADRV9002 operates from
+30 MHz to 6000 MHz covering the VHF, licensed and unlicensed cellular bands, and
+ISM bands. The IC is capable of supporting both narrowband and wideband standards
+up to 40 MHz bandwidth on both receive and transmit.
+
+While the complete chip level design package can be found on the
+:adi:`ADI web site <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`,
+information on the card and how to use it, the design package that surrounds it,
+and the software which can make it work can be found here.
+
+.. figure:: adrv9002_eval_board.jpg
+   :align: center
+   :width: 600
+
+   ADRV9002 Evaluation Board
+
+Naming Conventions
+------------------
+
+The ADRV9001 is a family designator assigned to the System Development User
+Guide (UG-1828 for ADRV9002, ADRV9003, ADRV9004, and upcoming additional
+family members). Throughout this documentation, the ADRV9001 designator may be
+used to refer to either :adi:`ADRV9002`, ADRV9003, or ADRV9004.
+
+.. toctree::
+   :hidden:
+
+   quickstart
+   quickstart/zynqmp
+   quickstart/zynq
+   quickstart/zed
+   quickstart/a10soc
+   reference_hdl
+   axi_adrv9002
+   no_os_setup
+
+Table of contents
+-----------------
+
+#. :ref:`Getting Started <adrv9001-quickstart>`
+
+   #. :doc:`Quick Start Guides <quickstart>`
+
+      #. :doc:`Linux on ZCU102 <quickstart/zynqmp>`
+      #. :doc:`Linux on ZC706 <quickstart/zynq>`
+      #. :doc:`Linux on ZedBoard <quickstart/zed>`
+      #. :doc:`Linux on Arria 10 SoC <quickstart/a10soc>`
+
+   #. :doc:`Kuiper Linux </linux/kuiper/index>`
+
+#. Software Solutions
+
+   #. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+   #. `Transceiver Toolbox for MATLAB and Simulink <https://github.com/analogdevicesinc/TransceiverToolbox>`__
+   #. `pyadi-iio <https://analogdevicesinc.github.io/pyadi-iio/>`__
+   #. `IIO Command Line Tools <https://github.com/analogdevicesinc/libiio>`__
+   #. `GNU Radio <https://github.com/analogdevicesinc/gr-iio>`__
+
+#. Embedded Resources
+
+   #. :git-linux:`ADRV9002 Linux Device Driver <drivers/iio/adc/navassa>`
+   #. :doc:`No-OS System Level Design Setup <no_os_setup>`
+
+#. FPGA Resources
+
+   #. :doc:`HDL Reference Design <reference_hdl>`
+   #. :doc:`AXI ADRV9002 Interface Core <axi_adrv9002>`
+   #. `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+   #. `HDL Targeting from MATLAB and Simulink <https://github.com/analogdevicesinc/TransceiverToolbox>`__
+
+#. Hardware Resources
+
+   #. :adi:`ADRV9002 Product Page <ADRV9002>`
+   #. :adi:`Full Datasheet and Chip Design Package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+
+#. Help and Support
+
+   #. :ez:`Design Support ADRV9001-ADRV9007 <wide-band-rf-transceivers/design-support-adrv9001-adrv9007>` -- hardware technical support
+   #. :ez:`TES GUI Software Support ADRV9001-ADRV9007 <wide-band-rf-transceivers/tes-gui-software-support-adrv9001-adrv9007>` -- evaluation system software support
+   #. :ez:`FPGA Reference Designs <fpga>` -- HDL reference design questions
+   #. :ez:`Linux Software Drivers <linux-software-drivers>` -- Linux distribution, drivers, and device tree questions
+   #. :ez:`Microcontroller No-OS Drivers <microcontroller-no-os-drivers>` -- no-OS driver questions
+
+Downloads
+---------
+
+The latest boot files for ADRV9002 (for all supported carriers) can be found in
+the latest :doc:`Kuiper Linux </linux/kuiper/index>` release.
+
+Source code:
+
+- :git-linux:`Linux driver <drivers/iio/adc/navassa>`
+- :git-hdl:`HDL project <projects/adrv9001>`
+- :git-iio-oscilloscope:`IIO Oscilloscope plugin <plugins/adrv9002.c>`
+- `pyadi-iio example <https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/adrv9002_example.py>`__
+
+Videos
+------
+
+- :adi:`ADRV9002: Narrow to Wide Band Integrated RF Transceiver <en/education/education-library/videos/6170462863001.html>`
+
+ADI Articles
+~~~~~~~~~~~~
+
+Four Quick Steps to Production: Using Model-Based Design for Software-Defined
+Radio:
+
+- :adi:`Part 1 -- The ADI/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+- :adi:`Part 2 -- Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
+- :adi:`Part 3 -- Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
+- :adi:`Part 4 -- Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
+
+MathWorks Webinars
+~~~~~~~~~~~~~~~~~~
+
+- `Modelling and Simulating Analog Devices' RF Transceivers with MATLAB and SimRF <https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`__
+- `Getting Started with Software-Defined Radio using MATLAB and Simulink <https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`__

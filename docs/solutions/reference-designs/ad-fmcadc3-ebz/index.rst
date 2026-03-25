@@ -1,0 +1,173 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcadc3-ebz
+
+.. _ad-fmcadc3-ebz:
+
+AD-FMCADC3-EBZ
+===============
+
+The :adi:`AD-FMCADC3-EBZ <EVAL-AD-FMCADC3-EBZ>` is a high speed data
+acquisition board featuring the :adi:`AD9625` single channel ADC at
+2500 MSPS and the :adi:`ADA4961` Low Distortion, 3.2 GHz, RF Digital Gain
+Amplifier driving the converter. The FMC form factor supports the JESD204B
+high speed serial interface.
+
+This board is targeted to use the ADI reference designs that work with Xilinx
+development systems.
+
+.. image:: ad-fmcadc3-ebz-photo.jpeg
+   :align: center
+   :width: 420
+
+Contains
+--------
+
+The card contains:
+
+- :adi:`AD9625` 12-bit ADC with sampling speeds of up to 2500 MSPS, with a
+  JESD204B digital interface.
+- :adi:`ADA4961` Low Distortion, 3.2 GHz, RF Digital Gain Amplifier.
+- :adi:`ADP7104` 20 V, 500 mA, low noise, CMOS LDO
+- :adi:`ADP1753` low dropout linear regulator, 1.6 V to 3.6 V input, up to
+  800 mA output current
+- :adi:`ADP2119` 2 A, 1.2 MHz, synchronous step-down DC-to-DC regulator
+- :adi:`ADP1741` 2 A, low Vin, low dropout, CMOS linear regulator
+- :adi:`ADR280` ultralow power high PSRR voltage reference
+
+Note for Revision A
+--------------------
+
+The revision A board has the amplifier gain control via SPI. When powering up
+the FMCADC3 board, the gain of the amplifier will default to an attenuated
+state. When applying a signal source to the FMCADC3 at the analog input
+connector J201, use a low jitter, low noise signal source with a level at
+-20 dBm. Apply a signal source no greater than -8 dBm when achieving
+full-scale of the converter and maximum gain of the amplifier is applied.
+
+Supported Devices
+-----------------
+
+- :adi:`AD9625`
+- :adi:`ADA4961`
+
+Supported Carriers
+------------------
+
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>` HPC Slot
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>` HPC Slot
+
+HDL Reference Design
+--------------------
+
+The reference design includes the device data capture via the JESD204B serial
+interface and the SPI interface. The samples are written to the external
+DDR-DRAM. It allows programming the device and monitoring its internal
+registers via SPI.
+
+The AD-FMCADC3-EBZ shares common HDL with the
+:ref:`AD-FMCADC2-EBZ <ad-fmcadc2-ebz>`.
+
+HDL Source Code
+~~~~~~~~~~~~~~~
+
+- :git-hdl:`hdl_2021_r2:projects/fmcadc2/zc706`
+- :git-hdl:`hdl_2021_r2:projects/fmcadc2/vc707`
+
+Quick Start
+-----------
+
+The AD-FMCADC3-EBZ connects to the HPC connector of the carrier board.
+The carrier setup requires power, UART (115200), Ethernet, and JTAG
+connections. A typical setup with the ZC706 carrier is shown below.
+
+.. image:: ad-fmcadc3-ebz_zc706.png
+   :align: center
+
+#. Connect the AD-FMCADC3-EBZ to the HPC FMC connector on the carrier board.
+#. Connect the power supply to the carrier board.
+#. Connect a UART cable between the carrier and the host PC (115200 baud, 8N1).
+#. Connect an Ethernet cable to the carrier board (for Linux).
+#. Optionally connect HDMI (if available) or JTAG (for no-OS).
+#. Connect the desired signal source to the "Ain" SMA connector.
+#. Power on the carrier board.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+   * - :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes
+     - Yes
+
+Specifications
+--------------
+
+The AD-FMCADC3-EBZ board's primary purpose is to quickly and easily connect to
+an FMC carrier platform and start collecting data using the AD9625. The board
+is designed to be easy to use. Out of the box the board will self power and
+self clock when connected to an FMC carrier. The only other required equipment
+is your chosen signal source to provide an input signal to "Ain".
+
+This rapid prototyping board also has 4 vertically mounted SMA connectors.
+These are labeled SYSREF IN and SYSREF OUT. These are to enable
+synchronization of multiple AD-FMCADC3-EBZ boards together using
+characteristics of the JESD204B high speed serial interface between the AD9625
+and FPGA.
+
+Clocking
+~~~~~~~~
+
+The AD-FMCADC3-EBZ provides multiple options for clocking the AD9625. The
+default configuration of the board clocks the ADC using an on-board 2.5 GHz,
+low noise, crystal oscillator from Crystek. This oscillator is then routed
+through a wide band transformer producing the differential clock for the ADC.
+
+Alternatively, the oscillator can be disconnected and an external clock source
+connected by only changing two components on the board. A single ended clock
+connected to the CLK+ input would then be routed through the transformer in
+the same way.
+
+Finally, the option exists to connect a differential clock to the board using
+both the CLK+ and CLK- inputs. Then referencing the schematic, make the
+component changes to directly route the differential input bypassing the
+transformer.
+
+Front End
+~~~~~~~~~
+
+The AD-FMCADC3-EBZ uses a passive front end designed for very wide bandwidth.
+A single ended input needs to be provided to "Ain". A 1:2 impedance ratio
+broadband balun then converts the input signal differentially to the ADA4961
+inputs and has a 1.6 GHz bandwidth at -3 dB.
+
+Software Support
+----------------
+
+Linux Drivers
+~~~~~~~~~~~~~
+
+- :git-linux:`AD9625 Linux Driver <drivers/iio/adc/ad9467.c>`
+- :git-linux:`ADA4961 Linux Driver <drivers/iio/amplifiers/ad8366.c>`
+- :git-linux:`AXI ADC HDL Linux Driver <drivers/iio/adc/cf_axi_adc_core.c>`
+- :git-linux:`JESD204B Receive Linux Driver <drivers/iio/jesd204/axi_jesd204_rx.c>`
+- :git-linux:`AXI ADXCVR High-Speed Transceivers Linux Driver <drivers/iio/jesd204/axi_adxcvr.c>`
+
+More Information
+----------------
+
+- :ref:`AD-FMCADC2-EBZ User Guide <ad-fmcadc2-ebz>`
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+- `JESD204B High-Speed Serial Interface Support <https://analogdevicesinc.github.io/hdl/library/jesd204/index.html>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the core
+with Analog Devices components (ADC, DAC, Video, Audio, etc) via the
+:ez:`FPGA Reference Designs Forum <fpga>`.
+
+.. esd-warning::

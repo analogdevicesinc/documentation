@@ -1,0 +1,133 @@
+.. _adrv9001-quickstart:
+
+ADRV9001/ADRV9002 Quick Start Guides
+=====================================
+
+The Quick Start Guides provide step by step instructions on how to do an
+initial system setup for the :adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ and
+ADRV9002NP/W2/PCBZ) boards on various FPGA development boards. They discuss
+how to program the bitstream, run a no-OS program or boot a Linux distribution.
+
+Supported Carriers
+------------------
+
+The :adi:`EVAL-ADRV9002` is, by definition, an "FPGA mezzanine card" (FMC),
+which means it needs a carrier to plug into. The supported carriers are:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - CMOS Interface
+     - LVDS Interface
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
+     - Yes
+     - Yes
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes (VADJ 1.8V) [1]_
+     - N/A [2]_
+   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - Yes (VADJ 1.8V)
+     - N/A [2]_
+   * - :intel:`Arria 10 SoC
+       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
+     - Yes
+     - N/A [3]_
+
+.. [1] VADJ must be reprogrammed to 1.8V on the ZC706.
+.. [2] On the ZC706 and ZedBoard, the FMC connectors map to HR IO banks. The
+   HR banks require VCCO set to 2.5V for LVDS I/O standard, but the ADRV9001
+   evaluation board uses 1.8V IO supplies without level shifters. Therefore
+   VCCO (VADJ) must be set to 1.8V, limiting operation to CMOS mode only.
+   More information on the limitation can be found in the
+   `7 Series SelectIO guide <https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO>`__
+   section 'LVDS and LVDS_25' and Table 1-43.
+.. [3] Not supported due to sub-optimal mapping of clock pins from the source
+   synchronous interfaces.
+
+CMOS-Only Operation
+~~~~~~~~~~~~~~~~~~~
+
+On the ZC706 and ZedBoard platforms the FMC connectors map to HR (High Range)
+IO banks. The HR banks have a limitation that when using the LVDS I/O standard
+the bank VCCO voltage must be set to 2.5V. However, the :adi:`ADRV9001`
+evaluation board uses IO supplies of 1.8V and does not have level shifters for
+the single-ended lines. Therefore the VCCO of the banks (VADJ) must be set to
+1.8V, restricting operation to CMOS mode only. For more information on this
+limitation, refer to the
+`7 Series SelectIO guide <https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO>`__
+section 'LVDS and LVDS_25' and Table 1-43.
+
+See the :doc:`HDL Reference Design <reference_hdl>` for details on building
+the design with ``CMOS_LVDS_N=1`` for CMOS interface.
+
+Supported Environments
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - HDL
+     - Linux
+     - No-OS
+     - Min. Release
+   * - :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
+     - Yes
+     - Yes
+     - Yes
+     - 2019_R2
+   * - :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+     - Yes
+     - Yes
+     - Yes
+     - 2020_R1
+   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - Yes
+     - Yes
+     - Yes
+     - 2019_R2
+   * - :intel:`Arria 10 SoC
+       <content/www/us/en/products/details/fpga/development-kits/arria/10-sx.html>`
+     - Yes
+     - Yes
+     - N/A
+     - 2020_R1
+
+Prerequisites
+~~~~~~~~~~~~~
+
+As a minimum to begin evaluating the :adi:`ADRV9002`, you need:
+
+- The :adi:`EVAL-ADRV9002` FMC card.
+- One of the supported carrier platforms listed above.
+- A way to interact with the platform: UART terminal, Ethernet connection,
+  and optionally a DisplayPort or HDMI monitor with USB keyboard and mouse.
+- An internet connection to download or update the :doc:`Kuiper Linux </linux/kuiper/index>`
+  SD card image.
+- RF test equipment for signal evaluation.
+
+Hardware Setup
+--------------
+
+In most carriers, the :adi:`EVAL-ADRV9002` board connects to the HPC1
+connector (unless otherwise noted). The carrier setup requires power,
+UART (115200), Ethernet (Linux), DisplayPort or HDMI (if available) and/or
+JTAG (no-OS) connections.
+
+Identify Your Hardware
+~~~~~~~~~~~~~~~~~~~~~~
+
+Evaluation boards were equipped with different silicon revisions. All boards
+built since the middle of December 2020 have **C0** silicon; older ones use
+**B0** silicon and are no longer shipped.
+
+Each revision of silicon requires its corresponding software support files.
+
+Quick Start Guides
+------------------
+
+- :doc:`ZCU102 Quick Start Guide <quickstart/zynqmp>`
+- :doc:`ZC706 Quick Start Guide <quickstart/zynq>`
+- :doc:`ZedBoard Quick Start Guide <quickstart/zed>`
+- :doc:`Arria 10 SoC Quick Start Guide <quickstart/a10soc>`

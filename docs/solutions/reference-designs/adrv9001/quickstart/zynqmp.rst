@@ -1,0 +1,121 @@
+.. _adrv9001-zynqmp:
+
+ADRV9002 ZCU102 Quick Start Guide
+===================================
+
+This guide provides step by step instructions on how to set up the
+:adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ and ADRV9002NP/W2/PCBZ) on:
+
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later
+
+Instructions on how to build the ZynqMP / MPSoC Linux kernel and device trees
+from source can be found at
+:git-linux:`arch/arm64/boot/dts/xilinx` and in the
+`ADI Linux build guide <https://analogdevicesinc.github.io/linux/build/generic/zynqmp.html>`__.
+
+Required Software
+-----------------
+
+- 16 GB SD card imaged using :doc:`/linux/kuiper/index`. Use the 2019_R2 or
+  later release.
+- A UART terminal (PuTTY/Tera Term/Minicom, etc.), baud rate 115200 (8N1).
+
+Required Hardware
+-----------------
+
+- :xilinx:`ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>` Rev 1.0 or later board
+- :adi:`EVAL-ADRV9002` FMC board
+- Reference clock source
+- Micro-USB cable
+- Ethernet cable
+- Optionally USB keyboard, mouse and a DisplayPort compatible monitor
+
+.. warning::
+
+   ESD precautions should be taken when handling evaluation boards.
+
+SD Card Boot Files
+------------------
+
+The files that need to be present on the SD card ``BOOT`` partition are:
+
+- ``BOOT.bin``
+- ``Image``
+- ``system.dtb``
+
+Copy these from the ``zynqmp-zcu102-rev10-adrv9002`` directory.
+
+Testing
+-------
+
+- Connect the :adi:`EVAL-ADRV9002` FMC board to the FPGA carrier **HPC0**
+  (FMC0) socket.
+- On the FMC card, set the switch to select clock source between:
+
+  - an on-board 38.4 MHz VCTCXO (default)
+  - external (via J501) 10 MHz to 1000 MHz / +13 dBm
+
+- Connect USB UART J83 (Micro-USB) to your host PC.
+- Insert SD card into socket.
+- Configure ZCU102 for SD BOOT (mode SW6[4:1] switch in the position
+  **OFF, OFF, OFF, ON**).
+- Turn on the power switch on the FPGA board.
+- Observe kernel and serial console messages on your terminal (use the first
+  ttyUSB or COM port registered).
+
+Expected IIO Devices
+~~~~~~~~~~~~~~~~~~~~
+
+For independent mode, these devices should be present after a successful boot:
+
+.. code-block:: console
+
+   root@analog:~# iio_info | grep iio:device
+           iio:device0: ams
+           iio:device1: adrv9002-phy
+           iio:device2: axi-adrv9002-rx-lpc (buffer capable)
+           iio:device3: axi-adrv9002-rx2-lpc (buffer capable)
+           iio:device4: axi-adrv9002-core-tdd1-lpc
+           iio:device5: axi-adrv9002-core-tdd2-lpc
+           iio:device6: axi-adrv9002-tx-lpc (buffer capable)
+           iio:device7: axi-adrv9002-tx2-lpc (buffer capable)
+
+For MIMO mode, these devices should be present:
+
+.. code-block:: console
+
+   root@analog:~# iio_info | grep iio:device
+           iio:device0: ams
+           iio:device1: adrv9002-phy
+           iio:device2: axi-adrv9002-rx-lpc (buffer capable)
+           iio:device3: axi-adrv9002-core-tdd-lpc
+           iio:device4: axi-adrv9002-tx-lpc (buffer capable)
+
+For more details on device modes (independent vs MIMO), see the
+:git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
+
+pyadi-iio
+~~~~~~~~~
+
+`pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`__ is a Python
+abstraction module for ADI hardware with IIO drivers. An ADRV9002 example
+can be found
+`here <https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/adrv9002_example.py>`__.
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to connect to another platform that has a connected device in
+order to configure the device and read data from it.
+
+Build and start osc on a network-enabled Linux host. Once the application is
+launched, go to Settings > Connect and enter the IP address of the target
+in the popup window.
+
+.. note::
+
+   Even though this is Linux, this is a persistent file system. Care should
+   be taken not to corrupt the file system --- please shut down properly,
+   do not just turn off the power switch. Use ``sudo shutdown -h now``
+   from the terminal.

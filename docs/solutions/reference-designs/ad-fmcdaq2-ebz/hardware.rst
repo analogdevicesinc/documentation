@@ -1,0 +1,43 @@
+.. _ad-fmcdaq2-ebz hardware:
+
+AD-FMCDAQ2-EBZ Hardware
+========================
+
+Picture and Main Components
+---------------------------
+
+.. figure:: daq2_part_breakdown.png
+   :alt: AD-FMCDAQ2-EBZ Part Breakdown
+   :width: 800
+
+   AD-FMCDAQ2-EBZ Part Breakdown
+
+Outline
+-------
+
+For those that don't want to load up the Allegro viewer, here is a basic
+outline/component placements of the board.
+
+.. image:: silk_top_bot.png
+
+.. image:: assbly_top_bot.png
+
+Size
+----
+
+The size of the board (not including the SMA connectors, which project beyond
+the edge of the board) is 3.12 inches by 2.72 inches (or about 79mm x 69mm).
+
+.. image:: daq2_dimensions.png
+
+Schematic, PCB Layout, Bill of Materials
+----------------------------------------
+
+:adi:`AD-FMCDAQ2-EBZ Design & Integration Files`
+
+- Schematic
+- PCB Layout
+- Bill of Materials
+- Allegro Project (get the `Allegro FREE Physical
+  Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`__;
+  you need 16.5 or higher)

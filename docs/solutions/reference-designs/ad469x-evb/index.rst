@@ -1,0 +1,189 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad469x
+
+.. _ad469x-evb:
+
+AD469x-EVB No-OS Project
+=========================
+
+No-OS Firmware for the EVAL-AD4696 16-Bit Precision ADC Evaluation Board
+
+Introduction
+------------
+
+The AD469x-EVB no-OS project provides bare-metal firmware examples for the
+:adi:`EVAL-AD4696 <EVAL-AD4696>` evaluation board. The project demonstrates
+data acquisition from the :adi:`AD4696` 16-channel, 16-bit, 1 MSPS multiplexed
+SAR ADC using the SPI Engine Framework on a ZedBoard FPGA carrier.
+
+The EVAL-AD4696 evaluation board allows users to evaluate the performance of
+the AD4696 with minimal hardware modifications. The board includes two
+externally driven analog input channels (via SMA connectors) for AC performance
+evaluation and 14 channels with on-board DC levels for DC and settling
+performance testing.
+
+Supported Devices
+-----------------
+
+- :adi:`AD4695`
+- :adi:`AD4696`
+- :adi:`AD4697`
+- :adi:`AD4698`
+
+Supported Carriers
+------------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+
+Hardware Requirements
+---------------------
+
+- :adi:`EVAL-AD4696 <EVAL-AD4696>` evaluation board
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- Power supply for the ZedBoard (12 V)
+- USB cable (Micro-B to A) for UART console
+- SD card (at least 16 GB) for boot files
+
+The EVAL-AD4696 connects to the ZedBoard via the FMC connector. The evaluation
+board includes 16 analog input channels with SMA connectors, a 5 V external
+precision voltage reference, and flexible input wiring configuration via
+jumpers.
+
+No-OS Project
+-------------
+
+The no-OS firmware is available in the analogdevicesinc/no-OS repository:
+
+- :git-no-OS:`projects/ad469x_evb`
+- :git-no-OS:`drivers/adc/ad469x`
+
+Build Configuration
+~~~~~~~~~~~~~~~~~~~
+
+The project supports the following build-time options:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Option
+     - Values
+     - Default
+     - Description
+   * - AD469X_DEV
+     - ad4695, ad4696, ad4697, ad4698
+     - ad4696
+     - Select the target device
+   * - AD469X_TEMP
+     - y, n
+     - n
+     - Enable temperature channel
+   * - AD469X_SEQ
+     - standard, advanced, single
+     - standard
+     - Select channel sequence method
+
+Example build commands:
+
+.. code-block:: bash
+
+   # Default build (AD4696, no temperature, standard sequencer)
+   make
+
+   # Build for AD4697 with temperature channel and advanced sequencer
+   make AD469X_DEV=ad4697 AD469X_TEMP=y AD469X_SEQ=advanced
+
+Building and Running
+~~~~~~~~~~~~~~~~~~~~
+
+The project requires a pre-built HDL bitstream (``system_top.xsa``) from the
+:git-hdl:`AD469x HDL project <projects/ad469x_evb>`.
+
+.. code-block:: bash
+
+   # Copy the HDL export file
+   cp <path_to_hdl_build>/system_top.xsa .
+
+   # Clean previous build
+   make reset
+
+   # Build the project
+   make
+
+   # Flash and run on the target
+   make run
+
+Available Examples
+~~~~~~~~~~~~~~~~~~
+
+**Basic Example**
+
+Initializes the AD469x, collects a number of samples, and prints the results
+on the UART console:
+
+.. code-block:: bash
+
+   make IIO_EXAMPLE=n BASIC_EXAMPLE=y
+
+**Sequencer Example**
+
+Demonstrates channel sequencing in either standard or advanced mode:
+
+.. code-block:: bash
+
+   # Standard sequencer
+   make IIO_EXAMPLE=n BASIC_EXAMPLE=y AD469X_SEQ=standard
+
+   # Advanced sequencer
+   make IIO_EXAMPLE=n BASIC_EXAMPLE=y AD469X_SEQ=advanced
+
+**IIO Example (Default)**
+
+Launches an IIO daemon (IIOD) server on the board, allowing connection from IIO
+client applications such as
+:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`:
+
+.. code-block:: bash
+
+   make IIO_EXAMPLE=y BASIC_EXAMPLE=n
+
+IIO Application
+~~~~~~~~~~~~~~~
+
+A firmware application using the IIO framework is also available in the
+precision-converters-firmware repository for the SDP-K1 controller board:
+
+- `AD469x IIO Application
+  <https://github.com/analogdevicesinc/precision-converters-firmware/tree/main/projects/ad469x_iio>`__
+
+HDL Reference Design
+--------------------
+
+The AD469x-EVB no-OS project requires the HDL bitstream from the AD469x HDL
+reference design. The design uses the standard SPI Engine Framework to interface
+the AD4696 ADC in single SDO mode. The SPI offload module, triggered by the
+BUSY signal of the device, captures continuous data streams at maximum data
+rate.
+
+.. figure:: ad469x_hdl.svg
+   :align: center
+
+   AD469x-EVB HDL block diagram
+
+For full details on the HDL design, Linux driver support, and device tree
+configuration, see :doc:`/solutions/reference-designs/ad469x-fmc/index`.
+
+- :git-hdl:`projects/ad469x_evb`
+
+More Information
+----------------
+
+- :adi:`EVAL-AD4696 Product Page <EVAL-AD4696>`
+- :adi:`AD4696 Product Page <AD4696>`
+- `No-OS Build Guide <https://analogdevicesinc.github.io/no-OS/build_guide.html>`__
+- `ADI Reference Designs HDL User Guide <https://analogdevicesinc.github.io/hdl/user_guide/introduction.html>`__
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`FPGA Reference Designs Forum <fpga>`.

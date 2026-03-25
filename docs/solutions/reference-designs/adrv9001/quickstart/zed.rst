@@ -1,0 +1,144 @@
+.. _adrv9001-zed:
+
+ADRV9002 ZedBoard Quick Start Guide
+=====================================
+
+This guide provides step by step instructions on how to set up the
+:adi:`EVAL-ADRV9002` (ADRV9002NP/W1/PCBZ and ADRV9002NP/W2/PCBZ) on:
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  Rev C or later
+
+Instructions on how to build the Zynq Linux kernel and device trees from source
+can be found at
+:git-linux:`arch/arm/boot/dts/xilinx` and in the
+`ADI Linux build guide <https://analogdevicesinc.github.io/linux/build/generic/zynq.html>`__.
+
+LVDS Support
+~~~~~~~~~~~~
+
+According to the
+`7 Series SelectIO guide <https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO>`__
+section 'LVDS and LVDS_25' and Table 1-43, the LVDS I/O standard (VADJ 1.8V) is
+not supported on High Range banks.
+
+Since the evaluation board can only operate with **VADJ set to 1.8V** and the
+FMC connector on the ZedBoard is mapped to HR banks, the **LVDS interface is not
+supported**. Only CMOS operation is possible.
+
+Required Software
+-----------------
+
+- 16 GB SD card imaged using :doc:`/linux/kuiper/index`. Use the 2019_R2 or
+  later release.
+- Copy the boot files from the ``zynq-zed-adrv9002`` directory directly on
+  the SD card ``BOOT`` partition:
+
+  - ``BOOT.bin``
+  - ``uImage``
+  - ``devicetree.dtb``
+
+- A UART terminal (PuTTY/Tera Term/Minicom, etc.), baud rate 115200 (8N1).
+
+Required Hardware
+-----------------
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  Rev C or later
+- :adi:`EVAL-ADRV9002` FMC board
+- Reference clock source
+- Micro-USB cable
+- Ethernet cable
+- Optionally USB keyboard, mouse and an HDMI compatible monitor
+
+.. warning::
+
+   ESD precautions should be taken when handling evaluation boards.
+
+Testing
+-------
+
+.. warning::
+
+   Before executing below steps, **VADJ must be set to 1.8V**.
+   This can be done by changing VADJ jumper (JP18) from default (2V5) to
+   1V8.
+
+On the ADRV9002 card, there is a red LED close to the FMC connector. This LED
+indicates if VADJ voltage exceeded 2.0V. If the LED does not turn off after a
+few seconds after boot, VADJ is exceeding the recommended level, decreasing
+board lifetime and potentially causing permanent damage to the IC.
+
+.. image:: adrv9002_vadj_led.png
+   :align: center
+   :width: 200
+
+- Connect the :adi:`EVAL-ADRV9002` FMC board to the FPGA carrier FMC socket.
+- On the FMC card, set the switch to select clock source between:
+
+  - an on-board 38.4 MHz VCTCXO (default)
+  - external (via J501) 10 MHz to 1000 MHz / +13 dBm
+
+- Connect the UART port of ZedBoard (J14) to a PC via Micro-USB.
+- Insert the SD card into the slot (J12), located on the underside of
+  ZedBoard.
+- Configure ZedBoard for SD BOOT: boot (JP7-JP11) and MIO0 (JP6) jumpers set
+  to SD card mode.
+- Connect 12V power supply to barrel jack (J20).
+- Turn on the power switch (SW8) on the FPGA board. Green Power LED (LD13)
+  should illuminate.
+- Wait approximately 15 seconds. The blue Done LED (LD12) should illuminate.
+- Observe kernel and serial console messages on your terminal.
+
+.. note::
+
+   *USB-OTG* feature: To use USB peripheral devices with ZedBoard, install
+   jumpers JP2 and JP3.
+
+   For more detailed information on ZedBoard jumper settings, check the
+   *ZedBoard Hardware User Guide* available on the
+   `ZedBoard doc page <https://digilent.com/reference/programmable-logic/zedboard/start>`__.
+
+Expected IIO Devices
+~~~~~~~~~~~~~~~~~~~~
+
+These devices should be present after a successful boot:
+
+.. code-block:: console
+
+   root@analog:~# iio_info | grep iio:device
+           iio:device0: adrv9002-phy
+           iio:device1: xadc
+           iio:device2: axi-adrv9002-rx-lpc (buffer capable)
+           iio:device3: axi-adrv9002-rx2-lpc (buffer capable)
+           iio:device4: axi-adrv9002-core-tdd1-lpc
+           iio:device5: axi-adrv9002-core-tdd2-lpc
+           iio:device6: axi-adrv9002-tx-lpc (buffer capable)
+           iio:device7: axi-adrv9002-tx2-lpc (buffer capable)
+
+For more details on device modes (independent vs MIMO), see the
+:git-linux:`ADRV9002 Linux driver documentation <drivers/iio/adc/navassa>`.
+
+pyadi-iio
+~~~~~~~~~
+
+`pyadi-iio <https://github.com/analogdevicesinc/pyadi-iio>`__ is a Python
+abstraction module for ADI hardware with IIO drivers. An ADRV9002 example
+can be found
+`here <https://github.com/analogdevicesinc/pyadi-iio/blob/main/examples/adrv9002_example.py>`__.
+
+IIO Oscilloscope
+~~~~~~~~~~~~~~~~
+
+The :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` application
+can be used to connect to another platform that has a connected device in
+order to configure the device and read data from it.
+
+Build and start osc on a network-enabled Linux host. Once the application is
+launched, go to Settings > Connect and enter the IP address of the target.
+
+.. note::
+
+   Even though this is Linux, this is a persistent file system. Care should
+   be taken not to corrupt the file system --- please shut down properly.
+   Use ``sudo shutdown -h now`` from the terminal.

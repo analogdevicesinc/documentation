@@ -1,0 +1,271 @@
+.. _eval-cn0396-ardz software:
+
+Software
+========
+
+This page describes the demo software for the :ref:`eval-cn0396-ardz` dual
+toxic gas detector system.
+
+ADICUP360 Demo
+--------------
+
+General Description
+~~~~~~~~~~~~~~~~~~~
+
+The **ADuCM360_demo_cn0396** is a dual toxic gas detector demo project for the
+EVAL-ADICUP360 base board with the EVAL-CN0396-ARDZ shield, created using
+CrossCore Embedded Studios IDE.
+
+The EVAL-CN0396-ARDZ board provides a potentiostatic circuit for biasing the
+electrochemical sensor, along with dual programmable TIAs and a 16-bit
+sigma-delta ADC. The TIAs convert the small currents passing through the sensor
+to a voltage that can be read by the :adi:`AD7798 <AD7790>`, a 3-channel, low
+noise, low power 16-bit ADC that converts the analog voltage into digital data.
+The 16-bit ADC outputs are received via the SPI interface of the EVAL-ADICUP360
+board. An :adi:`ADT7310 <ADT7310>` digital temperature sensor is also included
+to measure ambient temperature for correction of temperature effects.
+
+The application reads the temperature value from the ADT7310 and ADC values for
+each gas channel (CO and H2S), processes the values, and makes all necessary
+conversions to provide gas concentrations. A UART interface (115200 baud rate
+and 8-bit data length) is used to send the results to a terminal window. The
+output data is displayed continuously, refreshing at the rate of the
+``DISPLAY_REFRESH`` parameter.
+
+Based on the **maximum sensor sensitivity** for each gas, the system should be
+configured before use. The application calculates gas concentration using
+sensor gas sensitivity and then compensates these values using the measured
+temperature.
+
+.. note::
+
+   **Maximum sensitivity** and **gas sensitivity** are dependent on sensor
+   type. These values will need to be updated when using a different sensor
+   than the one provided.
+
+.. figure:: cn0396_demo_3.png
+   :align: center
+   :width: 800px
+
+   Serial terminal output showing gas concentration readings.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+**Hardware:**
+
+- EVAL-ADICUP360
+- EVAL-CN0396-ARDZ
+- Electrochemical gas sensor (included with CN0396)
+- Micro USB to USB cable
+- PC or laptop with a USB port
+
+**Software:**
+
+- ADuCM360_demo_cn0396 software
+- CrossCore Embedded Studio (2.7.0 or higher)
+- ADuCM36x DFP (1.0.2 or higher)
+- CMSIS ARM Pack (4.3.0 or higher)
+- Serial terminal program (such as PuTTY or Tera Term)
+
+Obtaining the Source Code
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are two ways to program the ADICUP360 with the CN0396 software:
+
+1. **Drag and Drop** -- Drag and drop the .bin file to the MBED drive. This is
+   the easiest way to get started.
+2. **Build with CCES** -- Import the project into CrossCore Embedded Studio to
+   build, compile, and debug. This allows parameter customization.
+
+.. admonition:: Download
+
+   Prebuilt CN0396 Bin File:
+
+   - `ADuCM360_demo_cn0396.bin
+     <https://github.com/analogdevicesinc/EVAL-ADICUP360/releases/download/Release-1.0/ADuCM360_demo_cn0396.bin>`__
+
+   Complete CN0396 Source Files:
+
+   - `ADuCM360_demo_cn0396 Source Code
+     <https://github.com/analogdevicesinc/EVAL-ADICUP360/tree/master/projects/ADuCM360_demo_cn0396>`__
+
+Configuring the Software Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following parameters can be configured in ``CN0396.h``:
+
+**Sensor Range** -- Maximum value of gas concentration (ppm) detectable by each
+electrode:
+
+.. code-block:: c
+
+   #define CO_RANGE   1000
+   #define H2S_RANGE  200
+
+**Sensor Gas Sensitivity** -- Sensitivity (nA/ppm) of each electrode:
+
+.. code-block:: c
+
+   #define CO_SENS    (75 * pow(10, -9))
+   #define H2S_SENS   (800 * pow(10, -9))
+
+**Maximum Sensor Gas Sensitivity** -- Maximum sensitivity (nA/ppm) of each
+electrode:
+
+.. code-block:: c
+
+   #define MAX_CO_SENS  (100 * pow(10, -9))
+   #define MAX_H2S_SENS (1000 * pow(10, -9))
+
+**Terminal Refresh** -- How often to refresh the output data (milliseconds):
+
+.. code-block:: c
+
+   #define DISPLAY_REFRESH  500
+
+Serial Terminal Output
+~~~~~~~~~~~~~~~~~~~~~~
+
+1. Flash the program to the EVAL-ADICUP360.
+2. Switch the USB cable from the DEBUG USB (P14) to the USER USB (P13).
+3. Configure the serial terminal with the following UART settings:
+
+.. code-block:: none
+
+   Select COM Port
+   Baud rate: 115200
+   Data: 8 bit
+   Parity: none
+   Stop: 1 bit
+   Flow Control: none
+
+The data output refreshes in the console window at the rate of the
+``DISPLAY_REFRESH`` parameter with the following results: temperature, CO
+concentration, H2S concentration, ADC values, and sensor data.
+
+Project Structure
+~~~~~~~~~~~~~~~~~
+
+The **ADuCM360_demo_cn0396** is a C project which uses the ADuCM36x C/C++
+Project structure.
+
+.. figure:: cn0396_software_dir.png
+   :align: center
+   :width: 250px
+
+   CN0396 demo project structure.
+
+The project contains:
+
+- System initialization -- disabling watchdog, setting system clock, enabling
+  clock for peripherals
+- Port configuration for SPI1, UART via P0.6/P0.7
+- SPI, UART read/write functions
+- AD7798 control, AD5270 control, ADT7310 control
+- Gas concentration computation
+
+In the **src** and **include** folders:
+
+- ``Communication.c/h`` -- SPI and UART specific data
+- ``AD7798.c/h`` -- ADC control
+- ``AD5270.c/h`` -- Rheostat control
+- ``ADT7310.c/h`` -- Temperature sensor control
+- ``CN0396.c/h`` -- Gas calculations
+
+The **RTE** folder contains device and system related files:
+
+- **Device Folder** -- Low-level drivers for ADuCM360 microcontroller
+- **system.rteconfig** -- Peripheral component selection, startup, and ARM
+  CMSIS files
+
+Arduino Uno Demo
+-----------------
+
+General Description
+~~~~~~~~~~~~~~~~~~~
+
+The **CN0396_example** is a dual toxic gas detector demo project for the
+Arduino Uno base board with the EVAL-CN0396-ARDZ shield, created using the
+Arduino IDE.
+
+The CN0396_example application reads the temperature value from the ADT7310
+and ADC values for each gas channel (CO and H2S), processes the values, and
+makes all necessary conversions to provide gas concentrations. A UART interface
+(9600 baud rate and 8-bit data length) is used to send the results to a
+terminal window.
+
+Demo Requirements
+~~~~~~~~~~~~~~~~~
+
+**Hardware:**
+
+- Arduino Uno Rev 3
+- EVAL-CN0396-ARDZ
+- Type B to Type A USB cable
+- PC or laptop with a USB port
+
+**Software:**
+
+- CN0396_example sketch
+- Arduino IDE
+
+Obtaining the Source Code
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. admonition:: Download
+
+   `CN0396_example at GitHub
+   <https://github.com/analogdevicesinc/arduino/tree/master/Arduino%20Uno%20R3/examples/CN0396_example>`__
+
+Configuring the Software Parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure the ADC gain value in ``CN0396.h``:
+
+.. code-block:: c
+
+   #define ADC_GAIN      AD7798_GAIN_1
+
+Configure the ADC samples/second value in ``CN0396.h``:
+
+.. code-block:: c
+
+   #define ADC_SPS        0x05  //50SPS
+
+Set the refresh time in ``CN0396.h`` (how often to display output values on
+the terminal, in ms):
+
+.. code-block:: c
+
+   #define DISPLAY_REFRESH        500   //[msec]
+
+Set CO range for the sensor in ``CN0396.h``:
+
+.. code-block:: c
+
+   #define MAX_CO_SENS  (100 * pow(10, -9))
+   #define CO_SENS      (75 * pow(10, -9))    /* Sensitivity nA/ppm CO 50 to 100 */
+   #define CO_RANGE     1000 /* Range ppm CO limit of performance warranty 1,000 */
+
+Set H2S range for the sensor in ``CN0396.h``:
+
+.. code-block:: c
+
+   #define MAX_H2S_SENS (1000 * pow(10, -9))
+   #define H2S_SENS     (800 * pow(10, -9)) /* Sensitivity nA/ppm  H2S 450 to 900 */
+   #define H2S_RANGE    200  /* Range ppm H2S limit of performance warranty 200 */
+
+Serial Terminal Output
+~~~~~~~~~~~~~~~~~~~~~~
+
+Configure the serial terminal with the following settings:
+
+.. code-block:: none
+
+   Select COM Port
+   Baud rate: 9600
+   Data: 8 bit
+   Parity: none
+   Stop: 1 bit
+   Flow Control: none

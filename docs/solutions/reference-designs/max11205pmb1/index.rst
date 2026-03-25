@@ -1,0 +1,227 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/max11205pmb1
+
+.. _max11205pmb1:
+
+MAX11205PMB1
+============
+
+Ultra-Low-Power, 16-Bit, Serial-Output ADC PMOD Board.
+
+Overview
+--------
+
+.. image:: max11205pmb1.png
+   :align: right
+   :width: 300px
+
+The :adi:`MAX11205PMB1` peripheral module provides the necessary hardware to
+interface the :adi:`MAX11205` 16-bit ADC to any system that utilizes
+Pmod-compatible expansion ports configurable for SPI interface. The
+:adi:`MAX11205` is an ultra-low-power (< 300uA max active current),
+high-resolution, serial-output ADC. This device provides the highest resolution
+per unit power in the industry and is optimized for applications that require
+very high dynamic range with low power, such as sensors on a 4mA to 20mA
+industrial control loop.
+
+The voltage reference for the IC is supplied by a :adi:`MAX6037` (2.5V) that is
+also on the module. The filtered power-supply voltage from the host can be
+optionally passed (jumper selectable) through a :adi:`MAX8510` ultra-low-noise
+LDO, allowing empirical evaluation of performance with different power sources.
+
+The :adi:`MAX11205` provides a high-accuracy internal oscillator that requires
+no external components. When used with the specified data rates, the internal
+digital filter provides more than 80dB rejection of 50Hz or 60Hz line noise.
+The MAX11205 provides a simple 2-wire serial interface in the space-saving,
+10-pin uMAX package and operates over the -40C to +85C temperature range.
+
+Hardware Specifications
+-----------------------
+
+Power Supply Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :adi:`MAX11205PMB1` board must be supplied with a voltage between 1.7V and
+3.6V. If using directly with a PMOD connector, the host board should be
+capable of providing the 3.3V supply.
+
+Digital Interface (PMOD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+The PMOD interface is a series of standardized digital interfaces for various
+digital communication protocols such as SPI, I2C, and UART. These interface
+types were standardized by Digilent, which is now a division of National
+Instruments. Complete details on the PMOD specification can be found on the
+`Digilent Pmod landing page <https://digilent.com/reference/pmod/start>`__.
+
+The specific interface used for the :adi:`MAX11205PMB1` board is SPI.
+
++---------------+---------------------+----------+
+| P1 Pin Number | Pin Function        | Mnemonic |
++===============+=====================+==========+
+| Pin 1         | N.C.                | CS       |
++---------------+---------------------+----------+
+| Pin 2         | N.C.                | MOSI     |
++---------------+---------------------+----------+
+| Pin 3         | Master In Slave Out | MISO     |
++---------------+---------------------+----------+
+| Pin 4         | Serial Clock        | SCLK     |
++---------------+---------------------+----------+
+| Pin 5         | Digital Ground      | DGND     |
++---------------+---------------------+----------+
+| Pin 6         | Digital Power       | VDD      |
++---------------+---------------------+----------+
+
+.. image:: max11205pmb1-layout.png
+   :width: 400px
+
+No-OS Software Support
+----------------------
+
+The :adi:`MAX11205PMB1` is supported by the ADI No-OS software framework, which
+provides reference projects for microcontroller platforms that cannot run Linux.
+
+* :git-no-OS:`MAX11205 No-OS driver <drivers/adc/max11205>`
+* :git-no-OS:`MAX11205PMB1 No-OS project <projects/max11205pmb1>`
+
+For more information about No-OS, see the
+`No-OS documentation <https://analogdevicesinc.github.io/no-OS/>`__.
+
+Supported Platform
+~~~~~~~~~~~~~~~~~~
+
+The :adi:`MAX11205PMB1` No-OS project supports the :adi:`MAX32655FTHR`
+platform. Since the :adi:`MAX32655FTHR` does not have a PMOD connector, Dupont
+male-female cables are used to make the required connections.
+
+The following table shows the wiring between the :adi:`MAX11205PMB1` and the
+:adi:`MAX32655FTHR`:
+
++-----------------------------+---------------------+---------------------+----------+
+| P1 MAX11205PMB1 Pin Number  | MAX32655 Pin Number | Function            | Mnemonic |
++=============================+=====================+=====================+==========+
+| Pin 1                       | N.C.                | --                  | --       |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 2                       | N.C.                | --                  | --       |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 3                       | MISO                | Master In Slave Out | MISO     |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 4                       | SCLK                | Serial Clock        | SCLK     |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 5                       | GND                 | Digital Ground      | DGND     |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 6                       | POWER 3.3V          | Digital Power       | VDD      |
++-----------------------------+---------------------+---------------------+----------+
+| Pin 3                       | P1_6                | Data Ready          | DRDY     |
++-----------------------------+---------------------+---------------------+----------+
+
+Building the No-OS Project
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Clone the No-OS repository and navigate to the project directory at
+   ``no-OS/projects/max11205pmb1/``.
+#. Follow the build instructions in the
+   :git-no-OS:`No-OS project build guide <build_guide>`.
+#. When running ``make``, specify the target platform (e.g. ``PLATFORM=maxim``).
+
+Example Projects
+~~~~~~~~~~~~~~~~
+
+**Basic Example**
+
+The basic example initializes the SPI, IRQ, and UART drivers, configures the
+:adi:`MAX11205` device, and continuously reads ADC measurements. The raw and
+converted voltage data is output over UART.
+
+To build the basic example, set the following in the Makefile:
+
+.. code-block:: makefile
+
+   BASIC_EXAMPLE = y
+   IIO_EXAMPLE = n
+
+Expected UART output (example with VREF = 3200mV, VIN = 1300mV):
+
+.. code-block::
+
+   ADC raw data 13097:
+   ADC converted data 1279 [mV]:
+
+**IIO Example**
+
+The IIO example launches a TINYIIOD server on the board, allowing a host
+computer to connect using IIO Oscilloscope or other IIO clients. The user
+can view measured data on a plot, inspect channel attributes, and capture
+buffered samples.
+
+To build the IIO example, set the following in the Makefile:
+
+.. code-block:: makefile
+
+   BASIC_EXAMPLE = n
+   IIO_EXAMPLE = y
+
+.. note::
+
+   When running the IIO project on the Maxim platform, select a baud rate of
+   57600 from the IIO Oscilloscope serial connection interface.
+
+For more information, see the
+`IIO No-OS documentation <https://analogdevicesinc.github.io/no-OS/>`__
+and the
+:doc:`IIO Oscilloscope documentation </software/iio-oscilloscope/index>`.
+
+Linux IIO Driver
+----------------
+
+The :adi:`MAX11205` is supported by a mainlined Linux IIO driver.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Function
+     - File
+   * - Driver
+     - :git-linux:`drivers/iio/adc/max11205.c`
+   * - Devicetree binding
+     - :git-linux:`Documentation/devicetree/bindings/iio/adc/maxim,max11205.yaml`
+
+IIO Sysfs Attributes
+~~~~~~~~~~~~~~~~~~~~
+
+When the driver is loaded, the following attributes are available under the
+corresponding IIO device directory:
+
+.. code-block:: console
+
+   root@analog:~# ls /sys/bus/iio/devices/iio:device0/
+   in_voltage0_raw  in_voltage0_scale  in_voltage0_sampling_frequency  name  ...
+
+``in_voltage0_raw``
+   Raw ADC measurement for channel 0.
+
+``in_voltage0_scale``
+   Scale factor to convert the raw value to millivolts.
+   The actual voltage is computed as:
+   ``U = in_voltage0_raw * in_voltage0_scale`` (mV).
+
+``in_voltage0_sampling_frequency``
+   The sampling frequency of the device in Hz.
+
+The driver also exposes a device trigger (``max11205a-dev0``) and standard
+IIO buffer/scan_elements for buffered data capture.
+
+More Information
+----------------
+
+- :adi:`MAX11205PMB1 Product Page <MAX11205PMB1>`
+- :adi:`MAX11205 Product Page <MAX11205>`
+- :git-no-OS:`MAX11205PMB1 No-OS Project <projects/max11205pmb1>`
+- :git-no-OS:`MAX11205 No-OS Driver <drivers/adc/max11205>`
+- :git-linux:`MAX11205 Linux Driver <drivers/iio/adc/max11205.c>`
+
+Support
+-------
+
+Analog Devices will provide limited online support for anyone using the
+reference design with Analog Devices components via the
+:ez:`EngineerZone <data-converters>`.

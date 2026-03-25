@@ -1,0 +1,327 @@
+.. _eval-cn0415-ardz software:
+
+Software Guide
+==============
+
+The **ADuCM3029_demo_cn0415** provides a solution for controlling and monitoring
+solenoid actuator current, using an :adi:`EVAL-CN0415-ARDZ <CN0415>` shield
+installed on an :adi:`EVAL-ADICUP3029` base board. The user interface is
+implemented as a command-line interface (CLI) through a serial UART connection.
+The project is created using CrossCore Embedded Studio and GNU ARM compiler.
+
+General Description
+-------------------
+
+The circuit can be divided into four parts for the purpose of analyzing
+interaction with the software project: the supply block, the sense block, the
+actuator block, and the overcurrent fault / reset block.
+
+**Supply Block** -- Consists of DC-DC converters and protection circuits. This
+block does not interact with the software.
+
+**Overcurrent Fault and Reset Block** -- Controlled by GPIO pins on the
+ADICUP3029. If the solenoid current exceeds a resistor-programmed threshold, a
+comparator trips off the MOSFET gate driver and notifies the software via a GPIO
+signal. The user can then re-enable the driver once the fault condition is
+removed.
+
+**Sense Block** -- Consists of a 0.1 ohm current sense resistor, sense
+amplifier, filtering, and 14-bit ADC. The ADC is connected to the ADICUP3029
+via SPI.
+
+The voltage fed to the ADC with respect to the current passing through the
+solenoid is given by:
+
+.. code-block:: none
+
+   V_ADC = I_solenoid * R_sense * 20
+
+Where R_sense = 0.1 ohm.
+
+The code output by the ADC is then calculated:
+
+.. code-block:: none
+
+   CODE = (V_ADC * 2^14) / V_ref
+
+Where V_ref is the reference voltage of the ADC:
+
+- If 12 V on P1 is selected, the supply voltage of the ADC is 5 V and the
+  corresponding reference is **4.096 V**.
+- If the ADC is powered from Arduino with 3.3 V, the reference is **2.048 V**.
+
+The combined ADC code with respect to current sense:
+
+.. code-block:: none
+
+   CODE = (I_solenoid * R_sense * 20 * 2^14) / V_ref
+
+**Actuator Block** -- Consists of a logic-level to MOSFET driver. The logic
+signal is driven by the ADICUP3029's PWM peripheral, allowing the effective
+voltage across the solenoid to be varied.
+
+The software implements several functions with the sense and actuator blocks.
+PWM frequency and duty cycle can be controlled directly. This mode of operation
+would normally be combined with an outer feedback loop in a control system. One
+example would be a system in which the solenoid controls air pressure, that is
+in turn measured by a pressure sensor, which is then used to determine a new
+duty cycle value that brings the pressure closer to the desired setpoint.
+
+PID Controller
+~~~~~~~~~~~~~~
+
+A PID control loop allows the solenoid current to be accurately controlled,
+compensating for variations in supply voltage and coil resistance. This mode
+of operation allows for optimum drive current for 2-state solenoids, minimizing
+power dissipation. An additional function allows a higher initial "pull-in"
+current to be applied for a short time, after which current drops back to a
+lower "hold" current.
+
+.. figure:: images/cn0415_pid_equation.png
+   :align: center
+
+   PID Controller Equation
+
+To use the PID controller, it must first be tuned with the right values of
+**Kp**, **Ki**, and **Kd**. A simple tuning method:
+
+#. Start increasing **Kp** while keeping **Ki** and **Kd** at 0. Increase
+   **Kp** until the actuation time is reasonable and the current overshoot is
+   within 5% of the desired value.
+#. Start increasing **Ki** until the actuation time is reasonable and the
+   current overshoot is within 5% of the desired value.
+#. Pick **Kd** as 25% (1/4) of **Ki**.
+
+A dither function allows a low-frequency AC signal to be superimposed,
+minimizing mechanical stiction in proportional solenoid applications.
+
+Demo Requirements
+-----------------
+
+**Hardware**
+
+- :adi:`EVAL-ADICUP3029` development board
+- EVAL-CN0415-ARDZ evaluation board
+- Micro-USB to USB cable
+- PC or laptop with a USB port
+- Solenoid actuator
+- 12 V, 1 A limited power supply
+
+**Software**
+
+- `ADuCM3029_demo_cn0415 demo application
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0415>`__
+- CrossCore Embedded Studio (2.6.0 or higher)
+- ADuCM302x DFP (2.0.0 or higher)
+- ADICUP3029 BSP (1.0.0 or higher)
+- Serial terminal program (such as PuTTY or Tera Term)
+
+Setting up the Hardware
+-----------------------
+
+#. Connect the EVAL-CN0415-ARDZ board to the :adi:`EVAL-ADICUP3029`.
+
+   .. figure:: images/cn0415_docked.jpeg
+      :align: center
+      :width: 500
+
+      CN0415 Docked on ADICUP3029
+
+#. Connect a micro-USB cable to the **P10** connector of the EVAL-ADICUP3029
+   and connect it to a computer.
+#. Connect a solenoid actuator to the **P8** connector with the positive wire
+   on pin 1 and negative wire on pin 2.
+#. Connect a 12 V power supply to the **P1** connector with the positive wire
+   on pin 1 and negative wire on pin 2.
+
+   .. figure:: images/cn0415_connected.jpeg
+      :align: center
+      :width: 500
+
+      CN0415 Fully Connected
+
+#. Turn on the power supply.
+
+Configuring the Software
+-------------------------
+
+The configuration parameters can be found in the ``config.h`` file.
+
+**vref** -- Reference voltage of the ADC, set by the supply method. Set to
+**4.096** if the supply is 12 V on P1, or to **2.048** if the supply is the
+Arduino 3.3 V.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Supply Voltage
+     - vref Value
+   * - 3.3 V
+     - 2.048
+   * - 12 V
+     - 4.096
+
+.. code-block:: c
+
+   /* Reference voltage of the ADC */
+   float vref = 4.096;
+
+Outputting Data
+---------------
+
+Serial Terminal Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure the serial terminal with the following settings:
+
+- **Baud rate**: 115200
+- **Data bits**: 8
+- **Parity**: None
+- **Stop bits**: 1
+- **Flow Control**: None
+
+Available Commands
+~~~~~~~~~~~~~~~~~~
+
+Typing ``help`` or ``h`` after the initial calibration sequence displays the
+list of available commands.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 10 15 55
+
+   * - Type
+     - Command
+     - Description
+   * - System
+     - ``h``
+     - Display available commands.
+   * -
+     - ``rst``
+     - Reset controller, parameters, and faults.
+   * -
+     - ``stts``
+     - Show application status and parameters.
+   * -
+     - ``clb``
+     - Run calibration sequence.
+   * - Control
+     - ``f <freq>``
+     - Set frequency (1 Hz to 4 MHz). Example: ``f 5000``
+   * -
+     - ``d <duty>``
+     - Set duty cycle (0 = 0%, 10000 = 100%). Example: ``d 5234`` for 52.34%.
+   * -
+     - ``r``
+     - Read and display the value of the ADC.
+   * -
+     - ``ad``
+     - Activate PWM dither functionality.
+   * -
+     - ``rd``
+     - Deactivate PWM dither functionality.
+   * -
+     - ``df <freq>``
+     - Set dither frequency. Example: ``df 50``
+   * -
+     - ``da <duty>``
+     - Set dither amplitude (0--10000). Example: ``da 200`` for 2%.
+   * - PID
+     - ``ap``
+     - Activate PID controller.
+   * -
+     - ``rp``
+     - Deactivate PID controller.
+   * -
+     - ``kp <kp>``
+     - Set PID Kp constant. Example: ``kp 5000.0``
+   * -
+     - ``ki <ki>``
+     - Set PID Ki constant. Example: ``ki 1.5``
+   * -
+     - ``kd <kd>``
+     - Set PID Kd constant. Example: ``kd 0.25``
+   * -
+     - ``spf <freq>``
+     - Set PID sampling frequency. Example: ``spf 100``
+   * -
+     - ``sps <sp>``
+     - Set PID set point (hold value, 0--1 A or 0--10000 duty cycle).
+       Example: ``sps 2500`` for 25%.
+   * - Digital
+     - ``dson``
+     - Set digital solenoid high.
+   * -
+     - ``dsof``
+     - Set digital solenoid low.
+   * - Proportional
+     - ``pss <val>``
+     - Set and activate proportional solenoid (0--1 A).
+       Example: ``pss 2500`` for 25%.
+
+.. figure:: images/cn0415_terminal.png
+   :align: center
+   :width: 500
+
+   Terminal Example Output
+
+Obtaining the Software
+----------------------
+
+There are two basic ways to program the ADICUP3029 with the software for
+the CN0415:
+
+#. **Drag and Drop** -- Copy the ``.hex`` file to the DAPLINK drive. This is
+   the easiest way to get started.
+#. **Build and Debug using CCES** -- Import the project into CrossCore Embedded
+   Studio to customize the software.
+
+**Downloads:**
+
+- `Prebuilt CN0415 Hex File
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/releases/download/Latest/ADuCM3029_demo_cn0415.hex>`__
+- `CN0415 Source Code
+  <https://github.com/analogdevicesinc/EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0415>`__
+
+Project Structure
+-----------------
+
+The program is composed of three main parts:
+
+#. Board setup, with initialization
+#. Calibration
+#. Main process
+
+.. figure:: images/cn0415_main_flowchart.png
+   :align: center
+
+   Software Main Flow Chart
+
+The board's initial parameters can be given in the software in the main function
+or by uncommenting the ``FLASH_INIT_PARAMETERS`` define in ``config.h``. The
+program initializes timers and UART, SPI, GPIO, and FLASH controllers.
+
+.. figure:: images/cn0415_board_setup_flow.png
+   :align: center
+
+   Board Setup Flow Chart
+
+**Calibration** is done to minimize full-scale error. It sets the control signal
+to logic "1" and measures the current, then prompts the user for a manual
+measurement with a precision tool. The difference between these two measurements
+is stored and used in calculating future values from ADC codes.
+
+.. figure:: images/cn0415_calibration_flow.png
+   :align: center
+
+   Calibration Flow Chart
+
+The **main process** is the infinite loop in which the program implements CLI,
+PID, and dither functionality. The UART is used for the CLI and three different
+timers implement the PWM signal, the PID periodic calculation, and the dither
+functionality.
+
+.. figure:: images/cn0415_process_flow.png
+   :align: center
+
+   Process Flow Chart

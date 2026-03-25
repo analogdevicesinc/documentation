@@ -1,0 +1,113 @@
+.. _ad-fmcdaq2-ebz reference_hdl:
+
+AD-FMCDAQ2-EBZ HDL Reference Design
+=====================================
+
+For the latest HDL reference design source code and documentation, please refer
+to the :git-hdl:`DAQ2 HDL project <projects/daq2>`.
+
+Functional Overview
+-------------------
+
+The reference design is a processor based (ARM or Microblaze/Nios2) embedded
+system. A functional block diagram of the system is given below for both Xilinx
+and Altera FPGAs. The device interfaces are shared by the same set of
+transceivers followed by the individual JESD204B and ADC/DAC pcores. The cores
+are programmable through an AXI-lite interface. The data path consists of
+independent DMA interfaces for the transmit and receive paths.
+
+AD-FMCDAQ2-EBZ block diagram
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: ad-fmcdaq2-ebz_1.svg
+   :alt: AD-FMCDAQ2-EBZ Block Diagram
+
+   AD-FMCDAQ2-EBZ Block Diagram
+
+Xilinx block diagram
+~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: daq2_xilinx_2.svg
+   :alt: Xilinx HDL Block Diagram
+
+   Xilinx HDL Block Diagram
+
+Altera block diagram
+~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: daq2_intel.svg
+   :alt: Altera HDL Block Diagram
+
+   Altera HDL Block Diagram
+
+Digital Interface
+-----------------
+
+The digital interface consists of 4 transmit and 4 receive lanes running at
+10Gbps (default). The transceivers then interfaces to the cores at
+128bits@250MHz. The data is sent or received based on the configuration
+(programmable) from separate transmit and receive chains.
+
+Altera specific
+~~~~~~~~~~~~~~~
+
+When using Qsys, implementing JESD204B protocol requires several IPs. AVL_XCVR
+is a wrapper which instantiates all the required IPs and configures them
+according to the desired data rate. One AVL_XCVR must be instantiated for the
+transmit path and one for the receive path. It adds clock bridges, PLL and
+reconfiguration IP, proper reset, lane PLL for the transmit path, a JESD204B IP
+instantiating the JESD204B base and a JESD204B IP for each lane instantiating
+the PHY.
+
+AXI_XCVR allows resetting and monitoring the transceiver path.
+
+One important aspect for AD-FMCDAQ2-EBZ is that the reference clock needed for
+the FPGA transceiver calibration is generated only after the AD9523-1 clock
+generator is configured. The programming is done only after the FPGA is
+configured and software is running. Because of this, the software needs to
+perform a transceiver re-calibration after the transceiver reference clock is
+stable and before taking AXI_XCVR cores out of reset.
+
+DAC Interface
+-------------
+
+The DAC data may be sourced from an internal data generator (DDS, pattern or
+PRBS) or from the external DDR via DMA. The internal DDS phase and frequency are
+programmable.
+
+ADC Interface
+-------------
+
+The ADC data is sent to the DDR via DMA. The core also supports PN monitoring at
+the sample level. This is different from the JESD204B specific PN sequence
+(though they both claim to be from the same equation).
+
+Control and SPI
+---------------
+
+The device control and monitor signals are interfaced to a GPIO module. The SPI
+signals are controlled by a separate AXI based SPI core.
+
+Supported Carriers
+------------------
+
+These are the supported carriers for the HDL - not the complete package
+(software and HDL). Typically the software lags behind the HDL, so if you don't
+see the these listed on the main project page - it is not yet done.
+
+Our recommended platforms are the Zynq based systems:
+
+- :xilinx:`ZC706 <products/boards-and-kits/ek-z7-zc706-g.html>`
+
+but it also works on the following fabric only systems:
+
+- :xilinx:`KC705 <products/boards-and-kits/ek-k7-kc705-g.html>`
+- :xilinx:`KCU105 <products/boards-and-kits/kcu105.html>`
+- :xilinx:`VC707 <products/boards-and-kits/ek-v7-vc707-g.html>`
+
+For Altera systems:
+
+- :intel:`Arria 10 SoC Development Kit
+  <content/www/us/en/products/details/fpga/arria/10.html>`
+- :intel:`Arria 10 GX FPGA Development Kit
+  <content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`
