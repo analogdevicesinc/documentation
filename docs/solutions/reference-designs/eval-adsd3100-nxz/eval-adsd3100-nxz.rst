@@ -13,7 +13,6 @@ and devices to sense, capture and interact with their spatial environments.
 For more information see: :adi:`Time of Flight Camera – System Overview <en/analog-dialogue/articles/time-of-flight-system-design-part-1-system-overview.html>`
 
 Introduction
-------------
 
 The EVAL-ADSD3100-NXZ time of flight (ToF) evaluation kit is a complete
 high-resolution (1Mpixel) 3D depth camera system assembled with the NXP i.MX 8M
@@ -27,7 +26,6 @@ Key Features
 
 .. container:: indent
 
-   
    ================ =====================================
    Resolution:      1024x1024 TOF sensor
    Illumination:    FOI 60°x60° - 940nm VCSEL
@@ -36,20 +34,17 @@ Key Features
    Depth Noise:     1%
    Accuracy:        +/- 3mm depth error
    ================ =====================================
-   
 
 Modes of Operation
 ~~~~~~~~~~~~~~~~~~
 
 .. container:: indent
 
-   
    ========== ======================= ========== ===== ===
    Mode Index Mode                    Resolution Range FPS
    5          Megapixel (mp)          1024x1024  5.2m  10
    7          Quarter-Megapixel (qmp) 512x512    5.2m  15
    ========== ======================= ========== ===== ===
-   
 
 What is included in the kit?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,28 +60,20 @@ What is included in the kit?
 
 .. container:: indent
 
-   
    ======== ========
    |image1| |image2|
    ======== ========
-   
+
    **Note:** the stand is *not* included.
 
---------------
-
 Quick Start
------------
 
 `Start Up Guide <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-startup>`_
 
---------------
-
 System Information
-------------------
 
-::
-
-   ; USB and Power :
+USB and Power
+~~~~~~~~~~~~~
 
 **Minimum Requirements**
 
@@ -102,45 +89,42 @@ System Information
 
 Note: Do not use USB Type-C to USB Type-A adapters.
 
-; Dimensions : 38mm x 72.5mm x 87mm
-; Schematics : `eval-adsd3100-nxz_drawing_v1.pdf <resources/eval-adsd3100-nxz_drawing_v1.pdf>`_
-; Laser Safety : Class 1
-; Operating Environment : *TO BE COMPLETED*
+**Dimensions:** 38mm x 72.5mm x 87mm
 
---------------
+**Schematics:** `eval-adsd3100-nxz_drawing_v1.pdf <resources/eval-adsd3100-nxz_drawing_v1.pdf>`_
+
+**Laser Safety:** Class 1
+
+**Operating Environment:** *TO BE COMPLETED*
 
 Index of Pages
---------------
 
-.. container:: indent
-
-   \* `Start Up Guide <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-startup>`_
-
-   
-   \* `Installation <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`_
-   
-   \* `ADIToFGUI Tool <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui>`_
-   
-   \* `Data Collect CLI Tool <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`_
-   
-   \* :doc:`Depth Compute CLI Tool </solutions/reference-designs/eval-adsd3100-nxz/depthcompute_cli>`
-   
-   \* :doc:`Auxillary Tools </solutions/reference-designs/eval-adsd3100-nxz/tof_auxtools_cli>`
-   
-   \* `EVAL-ADSD3100-NXZ Development <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-development>`_
-
---------------
+-  `Start Up Guide <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-startup>`_
+-  `Installation <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-software-installation>`_
+-  `ADIToFGUI Tool <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui>`_
+-  `Data Collect CLI Tool <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`_
+-  :doc:`Depth Compute CLI Tool </solutions/reference-designs/eval-adsd3100-nxz/depthcompute_cli>`
+-  :doc:`Auxillary Tools </solutions/reference-designs/eval-adsd3100-nxz/tof_auxtools_cli>`
+-  `EVAL-ADSD3100-NXZ Development <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-development>`_
 
 Terms
------
 
-::
+.. glossary::
 
-   ; FOI : Field of Illumination
-   ; FOV : Field of View
-   ; FPS : Frames per Second
-   ; SOM : System On Module
-   ; VCSEL : Vertical-Cavity Surface-Emitting Laser
+   FOI
+      Field of Illumination
+
+   FOV
+      Field of View
+
+   FPS
+      Frames per Second
+
+   SOM
+      System On Module
+
+   VCSEL
+      Vertical-Cavity Surface-Emitting Laser
 
 .. |image1| image:: images/adsd3100_noenc.png
    :width: 200

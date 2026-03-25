@@ -133,6 +133,7 @@ Example:
    Frame number from metadata:  0
    Mode from metadata:  3
    Connection Closed
+
 If you see the following error:
 
 ::
@@ -395,6 +396,7 @@ Example:
    camera1.saveModuleCCB() Status.Ok
    ccb_Crosby_DV3_2_07D_2407191120.ccb saved in C:\Analog Devices\TOF_Evaluation_ADTF3175D-Rel5.0.0\bin\ccb_directory
    Connection Closed
+
 4.3.0 or Older
 --------------
 
@@ -441,7 +443,7 @@ Depth Compute
 
 .. important::
 
-   IMPORTANT: before using, activate the Conda environment as described in *Setting up Python*.
+   Before using, activate the Conda environment as described in *Setting up Python*.
 
 **Overview**
 
@@ -512,7 +514,7 @@ Microsoft power shell is used as command shell.
 **Visualize Depth Image**
 
 - Dependency : Requires Python 3.1(or later), numpy, and matplotlib libraries
-  for visualization. \* The output AB (active brightness) and Radial depth
+  for visualization. The output AB (active brightness) and Radial depth
   images can be visualized using the python scripts 'visualize_ab.py' and
   'visualize_depth.py', with a specific filename.
 
@@ -572,8 +574,8 @@ Microsoft power shell is used as command shell.
 
 **Known Issues**
 
-- The application may crash if wrong calibartion/config data is used. \*
-  Frames/sec value may be reported incorrectly as 'inf', define argument '--b=1'
+- The application may crash if wrong calibration/config data is used.
+- Frames/sec value may be reported incorrectly as 'inf', define argument '--b=1'
   to return a valid frames/sec estimate.
 
 --------------
@@ -583,7 +585,7 @@ FSF Extraction
 
 .. important::
 
-   IMPORTANT: before using, activate the Conda environment as described in *Setting up Python*.
+   Before using, activate the Conda environment as described in *Setting up Python*.
 
 FSF is a video file format that is used by Microsoft to store various video data
 such as RAW, DEPTH, AB and XYZ. It supports the concept of streams for each of
@@ -600,7 +602,7 @@ Run the python file to extract FSF information (AB, Depth, Point-Cloud), the pyt
    -  cd <TOF installation folder>\\bin\\tools
    -  conda activate tof-tools-py39
 
-**Example usage with the example FSF file that is included** Extract all frames*
+**Example usage with the example FSF file that is included** — Extract all frames:
 
 ::
 
