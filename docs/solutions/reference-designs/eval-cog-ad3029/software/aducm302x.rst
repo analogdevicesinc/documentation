@@ -10,11 +10,6 @@ The following on-chip drivers are provided as part of the ADuCM302x Device
 Family Pack:
 
 -  spi
-
-.. image:: ../images/software_packs_aducm302x_device_block_diagram.png
-   :align: right
-   :width: 600
-
 -  i2c
 -  uart
 -  sport
@@ -27,21 +22,21 @@ Family Pack:
 -  adc
 -  tmr
 
+.. image:: ../images/software_packs_aducm302x_device_block_diagram.png
+   :align: center
+   :width: 600
+
 For detailed information regarding the ADuCM302x DFP, please see our complete
 ADuCM302x software user guide.
 
 .. hint::
 
-   
    `ADuCM302x DFP Release Notes <http://download.analog.com/tools/EZBoards/CM302x/Releases/Release_2.0.0/ADuCM302x_DFP_2.0.0_Release_Notes.pdf>`_
-   
 
 .. important::
 
-   
    You MUST have this software package installed on your laptop or PC in order
    to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
-   
 
 Downloading the ADuCM302x Software Pack
 ---------------------------------------
@@ -65,10 +60,4 @@ manual installation to install the pack.
 .. admonition:: Download
    :class: download
 
-   
    `ADuCM302x DFP 2.0.0 <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.2.0.0.pack>`_
-   
-
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_
