@@ -12,7 +12,7 @@ When you plug Pluto into your PC, this single connector enumerates as multiple d
 * Serial console
 * IIO USB backend
 
-```{image} resources/Pluto_ports.svg
+```{image} resources/pluto_ports.svg
 :width: 300px
 :align: right
 ```
@@ -77,7 +77,7 @@ We'll learn more about all these controls.  But for now, the key message is we c
 
 The plot will be easier to see in the frequency domain.  So click the "Stop" button, and select Plot Type of "Frequency Domain":
 
-```{image} resources/osc_Plot2.svg
+```{image} resources/osc_plot2.svg
 :width: 500px
 :align: center
 ```

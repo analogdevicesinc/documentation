@@ -42,7 +42,7 @@ Now, each time that the ADF4159 receives a pulse on the TX_DATA pin, it will out
 
 Pluto's TDD Engine offers a method to produce a series of carefully timed pulses.  These pulses are produced with respect to the start of the receive buffer.  The whole process is initiated via either a software command (sync_soft) or a voltage pulse onto one of Pluto's pins (L12N).  
 
-```{image} plutoTDD.svg
+```{image} PlutoTDD.svg
 :alt: Pluto TDD Timing
 :width: 900px
 :align: center

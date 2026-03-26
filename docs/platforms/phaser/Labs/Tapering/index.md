@@ -26,7 +26,7 @@ And if we make the pulse wider in the time domain, the main lobe in the spectrum
 
 To control those sidelobes on a rectangular FFT, we’ll commonly apply a window function. Though windowing brings some loss to the peak and broadening of the main lobe.  
 
-```{image} windowFunctions.svg
+```{image} WindowFunctions.svg
 :alt: Windowing Profiles
 :width: 800px
 :align: center
@@ -36,7 +36,7 @@ So we start with Boxcar, and we see that the first sidelobe is only 13 dBc down 
 
 So that analysis was all for the square wave signal in the time domain.  But it’s basically the same in the spatial domain.  If we have a uniformly illuminated antenna pattern, then we get sidelobes.  But if we window that antenna pattern, then we reduce the sidelobes. In antenna terms windowing is “tapering” the power at each element down from the center toward the edge of the antenna.  However, this also has the undesirable effect of broadening the main lobe--just like a Blackman window will broaden the responses in an FFT.
 
-```{image} tapering.svg
+```{image} Tapering.svg
 :alt: Antenna Tapering
 :width: 600px
 :align: center

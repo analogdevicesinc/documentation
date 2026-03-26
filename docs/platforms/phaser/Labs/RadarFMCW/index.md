@@ -76,7 +76,7 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 :align: center
 ```
 
-3. Open a Python IDE (Thonny, Idle, Spyder, etc) and run this [program](../../../../../phaser/pilots/python/PhaserRadarLabs/FMCW_RADAR_Waterfall.py).
+3. Open a Python IDE (Thonny, Idle, Spyder, etc) and run this [program](../resources/python/FMCW_RADAR_Waterfall.py).
   
 ```{image} gui.svg
 :alt: Radar Setup

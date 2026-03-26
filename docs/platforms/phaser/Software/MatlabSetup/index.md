@@ -155,10 +155,14 @@ If there are errors while attempting to verify connectivity, please try the foll
 
 ### Running Scripts
 
-- Once both the Phaser and Pluto are able to communicate with MATLAB, open the Phaser_steeringAngle file found [here](../../../../../phaser/pilots/matlab/phasersteeringangle/Phaser_steeringAngle.m)
+- Once both the Phaser and Pluto are able to communicate with MATLAB, open the Phaser_steeringAngle file found [here](../../Labs/resources/matlab/Phaser_steeringAngle.m)
 
 - This script functions to scan through a range of steering angles and output a plot of the array factor.
-- Also download the other files in this folder:  [setupPluto.m](../../../../../phaser/pilots/matlab/phasersteeringangle/setupPluto.m), [setupPhaser.m](../../../../../phaser/pilots/matlab/phasersteeringangle/setupPhaser.m), [setupAntenna.m](../../../../../phaser/pilots/matlab/phasersteeringangle/setupAntenna.m), and [findTxFrequency.m](../../../../../phaser/pilots/matlab/phasersteeringangle/findTxFrequency.m).
+- Also download the other files in this folder:  
+1) [setupPluto.m](../../Labs/resources/matlab/setupPluto.m), 
+2) [setupPhaser.m](../../Labs/resources/matlab/setupPhaser.m), 
+3) [setupAntenna.m](../../Labs/resources/matlab/setupAntenna.m), 
+4) [findTxFrequency.m](../../Labs/resources/matlab/findTxFrequency.m).
 
 ---
 

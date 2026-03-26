@@ -4,15 +4,15 @@ Phased array communications and radar systems are finding increased use in a var
 
 To facilitate that introduction, Analog Devices has prepared several example labs on the topics of beamforming and radar.  Most of these labs can be run directly on the Raspberry Pi (Refer to the "Common Phaser Configurations" page for more information).  For more advanced application development, the Phaser is also supported in MATLAB. Equivalent MATLAB lab exercises for most of these labs can be found in the "MATLAB Printable Lab Manual" document.  
 
-```{image} overview.svg
+```{image} resources/overview.svg
 :alt: Phaser Labs Overview
 :width: 800px
 :align: center
 ```
 
 ## Printable Lab Manuals
-* [Python Printable Lab Manual](2025_Phaser_labs_Python.pdf)
-* [MATLAB Printable Lab Manual](2025_Phaser_MATLAB_lab_instructions.pdf)
+* [Python Printable Lab Manual](resources/2025_Phaser_labs_Python.pdf)
+* [MATLAB Printable Lab Manual](resources/2025_Phaser_MATLAB_lab_instructions.pdf)
 
 ### Phaser Beamforming Labs and Examples
 

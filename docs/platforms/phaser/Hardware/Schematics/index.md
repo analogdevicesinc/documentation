@@ -13,7 +13,7 @@
 :width: 900px
 ```
 
-# HB100 3D Print File
+## HB100 3D Print File
 
 ```{image} hb100.svg
 :alt: Phaser Picture
@@ -21,9 +21,9 @@
 :align: right
 ```
 
-This is the step file to 3D print the HB100 holder.  It allows the HB100 to mounted via a standard a 1/4-20 thread camera mount. 
-<br>
-[hb100_holder.stl](../../../../../phaser/misc/HB100_holder.stl)
+This is the step file to 3D print the HB100 holder.  It allows the HB100 to mounted via a standard a 1/4-20 thread camera mount:  
+
+* [hb100_holder.stl](HB100_holder.stl)
 
 
 <br>
