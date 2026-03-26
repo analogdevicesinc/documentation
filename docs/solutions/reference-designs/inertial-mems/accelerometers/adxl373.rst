@@ -1,8 +1,10 @@
 Evaluating the ADXL373
 ======================
 
-*==== ADXL373 Breakout Board documentation: ====
-*`Preliminary User Guide <../images/eval-adxl373z_ug-xxx.docx>`_*for the ADXL373 Breakout Board* `ADXL372 Breakout Board Schematic <../resources/301-720_adxl372z_-_schematic.pdf>`_ // `ADXL372 Breakout Board Layout <../resources/301-720_adxl372z_-_layout.pdf>`_
+ADXL373 Breakout Board documentation:
+--------------------------------------
+
+`Preliminary User Guide <../images/eval-adxl373z_ug-xxx.docx>`_ for the ADXL373 Breakout Board | `ADXL372 Breakout Board Schematic <../resources/301-720_adxl372z_-_schematic.pdf>`_ | `ADXL372 Breakout Board Layout <../resources/301-720_adxl372z_-_layout.pdf>`_
 
 ADXL373 Example Code
 --------------------

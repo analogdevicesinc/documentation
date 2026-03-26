@@ -93,7 +93,7 @@ Windows 7
 .. container:: indent
 
    
-   |image9|\
+   |image9|
 
 --------------
 

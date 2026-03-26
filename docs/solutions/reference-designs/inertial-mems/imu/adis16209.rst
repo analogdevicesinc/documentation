@@ -54,8 +54,6 @@ The :adi:`EVAL-ADIS16209 <ADIS16209>` provides the :adi:`EVAL-ADIS16209 <ADIS162
 
    **NOTE:** Do not plug the :adi:`EVAL-ADIS` into the USB cable at this stage of the setup. Wait until the software installation is complete.
 
-}
-
 Step #1
 ~~~~~~~
 
@@ -92,7 +90,7 @@ The following picture (left side) shows JP1 in the **+3.3V** position (factory-d
 
 .. container:: center round box
 
-   **NOTE:** If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the\ **+3.3V** setting to correct the problem.
+   **NOTE:** If JP1 is left on **+5v** the software will look like the following picture. Move JP1 to the **+3.3V** setting to correct the problem.
 
 .. image:: ../images/209-wrong-voltage.png
    :width: 800

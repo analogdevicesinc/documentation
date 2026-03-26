@@ -1,7 +1,7 @@
 Evaluating the ADXL367
 ======================
 
-*Useful links: ADXL367* :adi:`product page <adxl367>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL367.pdf>`\ *. ADXL367 pedometer algorithm implementation with Arduino Nano 33 BLE:* `adxl367_pedometer.zip <../resources/adxl367_pedometer.zip>`_
+*Useful links: ADXL367* :adi:`product page <adxl367>` | :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL367.pdf>`. *ADXL367 pedometer algorithm implementation with Arduino Nano 33 BLE:* `adxl367_pedometer.zip <../resources/adxl367_pedometer.zip>`_
 
 ADXL367 Quick Start:
 --------------------
@@ -24,13 +24,13 @@ This is a small footprint PCB that consist of the ADXL367 and pin headers.
 EVAL-ADXL367-SDP:
 ^^^^^^^^^^^^^^^^^
 
-ADXL367 evaluation system based on ADI's `SDP-B evaluation board <adi>en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B]>`__. This a plug and play solution that allows testing of all ADXL367 features. Drivers to install the LabView based GUI are provided.
+ADXL367 evaluation system based on ADI's :adi:`SDP-B evaluation board <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/SDP-B>`. This a plug and play solution that allows testing of all ADXL367 features. Drivers to install the LabView based GUI are provided.
 
 |image2|
 
 -  The EVAL-ADXL367-SDP drivers can be downloaded from the following GitHub site: `EVAL-ADXL367-SDP drivers <https://github.com/bbearssADI/ADXL367-Evaluation-Software>`_.
 
--  The EVAL-ADXL367-SDP User Guide: ::doc:`EVAL-ADXL367-SDP wiki </solutions/reference-designs/inertial-mems/accelerometers/adxl367/eval-adxl367-sdp>`
+-  The EVAL-ADXL367-SDP User Guide: :doc:`EVAL-ADXL367-SDP wiki </solutions/reference-designs/inertial-mems/accelerometers/adxl367/eval-adxl367-sdp>`
 
 .. |image1| image:: ../images/eval-adxl367z_photo.jpg
    :width: 400

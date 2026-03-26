@@ -279,7 +279,7 @@ example, the Activity threshold is set to 3g, if there’s any activity more tha
 3g, the measurement starts for X-axis. Activity counter sets the number of
 consecutive events needed above the set threshold to detect activity.
 
-|image10|}}
+|image10|
 
 **Figure 21:** Activity Detection for X-Axis.
 

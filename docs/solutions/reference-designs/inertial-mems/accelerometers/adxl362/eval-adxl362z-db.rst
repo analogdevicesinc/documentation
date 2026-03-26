@@ -77,7 +77,7 @@ to get started.
 -  Power the board.
    
 
-- This board ships pre-programmed with the MultiDemo firmware that allows is to be used as a motion switch, data logger, or input to a real-time PC-connected user interface. The motion switch functionality can be used with the coin cell battery alone, without downloading any drivers or connecting to USB. Just insert a CR2450 coin cell batter in the holder on the back of the board, ensure all jumpers and switches are in the appropriate positions, and turn the board on. (this shows the back side of the board with the battery orientation - positive side of battery facing out\ |image1|)
+- This board ships pre-programmed with the MultiDemo firmware that allows is to be used as a motion switch, data logger, or input to a real-time PC-connected user interface. The motion switch functionality can be used with the coin cell battery alone, without downloading any drivers or connecting to USB. Just insert a CR2450 coin cell batter in the holder on the back of the board, ensure all jumpers and switches are in the appropriate positions, and turn the board on. (this shows the back side of the board with the battery orientation - positive side of battery facing out |image1|)
 
 - To use the data logger or real-time evaluation functionality, you will need to
   install drivers and other files. Proceed to the next step for instructions.

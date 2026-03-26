@@ -1,7 +1,7 @@
 Evaluating the ADXL317
 ======================
 
-*Useful links: ADXL317* :adi:`product page <adxl317>` *\|* :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL317.pdf>`\ *.*
+*Useful links: ADXL317* :adi:`product page <adxl317>` | :adi:`datasheet <media/en/technical-documentation/data-sheets/ADXL317.pdf>`
 
 ADXL317 Quick Start User Guide:
 -------------------------------

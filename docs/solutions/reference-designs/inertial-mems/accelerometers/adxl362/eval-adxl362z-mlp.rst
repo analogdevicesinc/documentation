@@ -32,12 +32,9 @@ Installation Files
 .. admonition:: Download
    :class: download
 
-   // //
-
-   
    -  **Driver installer:** `.zip <../../resources/adi_iseb_drivers.zip>`_
    -  **LabView environment and GUI installer:** :adi:`.zip <static/imported-files/eval_boards/ADXL362_EVB_GUI_Installer.zip>`
-   
+
 
 --------------
 
@@ -47,17 +44,12 @@ Quick Start Guide
 For first-time installations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. container:: center box
+.. important::
 
-   
-   +-------------------------------------------------------------------------------------------------------------------+
+   **If you've never used ANY of Analog Devices' Inertial Sensor Evaluation Kits before\*, start here!**
 
-   
-   | :!:\*\* If you've never used ANY of Analog Devices' Inertial Sensor Evaluation Kits before\*, start here! \*\*:!: |
+   *\*This includes any of ``EVAL-ADXL###Z-M``, ``EVAL-ADXRS###Z-M`` and ``EVAL-ADXL###Z-MLP``.*
 
-   | *\*This includes any of ``EVAL-ADXL###Z-M``, ``EVAL-ADXRS###Z-M`` and ``EVAL-ADXL###Z-MLP``.*                     |
-   +-------------------------------------------------------------------------------------------------------------------+
-   
 
 -  **Begin by installing the drivers.**
    Click on the link `above <https://wiki.analog.com/>`_ to download the driver installer. Extract the entire contents of the folder and run the file **ADI_ISEB_USB_Drivers.exe**.
@@ -65,7 +57,9 @@ For first-time installations
    **Next, install the GUI.**
    Download and run the ADI-provided **LabView environment and GUI installer**, also `above <https://wiki.analog.com/>`_.
    Follow the installer instructions.
-   ==== For returning users ====
+
+For returning users
+~~~~~~~~~~~~~~~~~~~
 
 | **Prior to starting the GUI, plug in the system:** Connect the motherboard to the satellite board via the ribbon cable. Then, connect the motherboard to the computer via the USB cable.
 | The ADI installer places a shortcut to the GUI in the Start menu under ``All Programs`` -> ``Analog Devices - Inertial Sensor Eval``, as shown below. Click on this shortcut to start the evaluation system GUI.
@@ -84,7 +78,7 @@ functionality.
    :align: center
    :width: 400
 
-// // To end the program, click the “Quit Program” button at the bottom right
+To end the program, click the “Quit Program” button at the bottom right
 corner of the GUI screen, and then use the X at the top right to close the
 window.
 
@@ -167,7 +161,7 @@ and Self Test (see figure above).
 
    When this button is clicked, the user is prompted to specify a file name and location for saving the data. Data is saved into a tab-delimited .txt file. The first row of the file always contains column labels denoting Date, Time, X, Y, and Z (for acceleration data in *g*).
 
-      The Save functionality is capable of saving unlimited data. To keep file size manageable, the data is split up into up to 11 separate .txt files. The first 10 files have a capacity of 64000 samples. The 11th file will contain all remaining data.
+   The Save functionality is capable of saving unlimited data. To keep file size manageable, the data is split up into up to 11 separate .txt files. The first 10 files have a capacity of 64000 samples. The 11th file will contain all remaining data.
    The name and location of the first .txt file are specified by the user upon clicking the ``View & Save Meas`` button. All 11 files are created as soon as the first file name and location are specified. Consecutive numeric suffixes are appended to the specified file name, and all 11 files are saved to the same location. For example, if the first file is named ``ADXL362Test.txt`` and saved to the desktop, then 11 files will be automatically created on the desktop: ``ADXL362Test.txt``, ``ADXL362Test_1.txt``, ..., ``ADXL362Test_10.txt``. Files will be filled in order as data becomes available. When measurement is stopped (via the GUI), empty files are automatically deleted.
 
 -  **Stop real-time measurement** by clicking the **``Stop Meas``** button.
