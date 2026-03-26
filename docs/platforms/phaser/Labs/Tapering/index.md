@@ -36,7 +36,7 @@ So we start with Boxcar, and we see that the first sidelobe is only 13 dBc down 
 
 So that analysis was all for the square wave signal in the time domain.  But it’s basically the same in the spatial domain.  If we have a uniformly illuminated antenna pattern, then we get sidelobes.  But if we window that antenna pattern, then we reduce the sidelobes. In antenna terms windowing is “tapering” the power at each element down from the center toward the edge of the antenna.  However, this also has the undesirable effect of broadening the main lobe--just like a Blackman window will broaden the responses in an FFT.
 
-```{image} Tapering.svg
+```{image} tapering.svg
 :alt: Antenna Tapering
 :width: 600px
 :align: center
