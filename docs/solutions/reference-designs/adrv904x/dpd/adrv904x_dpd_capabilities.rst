@@ -1,3 +1,6 @@
+ADRV904x DPD Capabilities
+=========================
+
 This page captures the capabilities of ADRV904x compared with the previous
 generation integrated DFE transceiver AD9029.
 
