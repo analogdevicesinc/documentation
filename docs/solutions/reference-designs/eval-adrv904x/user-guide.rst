@@ -4,7 +4,7 @@ User guide
 ===============================================================================
 
 The complete user guide of the evaluation board can be found at
-:adi:`ADRV904x Evaluation System User Guide (UG-2229) <media/en/technical-documentation/user-guides/eval-adrv904x-ug-2229.pdf>`.
+:adi:`ADRV904X Evaluation System User Guide (UG-2229) <media/en/technical-documentation/user-guides/eval-adrv904x-ug-2229.pdf>`.
 
 Hardware guide
 -------------------------------------------------------------------------------
@@ -37,75 +37,10 @@ The evaluation board is supported with the Libiio library. This library is
 cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
 MATLAB, and others. One easy to example that can be used with it is:
 
-.. include-template:: ../common/using-iio-osc.rst.jinja
-
-   has_linux: true
-   has_no_os: true
-
-About the IIO devices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Main receivers RX1 through RX8 are handled by the ``axi-adrv904x-rx-hpc`` IIO
-device.
-
-Channels:
-
-- IIO device channel: ``axi-adrv904x-rx-hpc``
-- Receiver inputs:
-
-  - {``voltage0_i``, ``voltage0_q``}: RX1
-  - {``voltage1_i``, ``voltage1_q``}: RX2
-  - {``voltage2_i``, ``voltage2_q``}: RX3
-  - {``voltage3_i``, ``voltage3_q``}: RX4
-  - {``voltage4_i``, ``voltage4_q``}: RX5
-  - {``voltage5_i``, ``voltage5_q``}: RX6
-  - {``voltage6_i``, ``voltage6_q``}: RX7
-  - {``voltage7_i``, ``voltage7_q``}: RX8
-
-Transmitters TX1 through TX8 are handled by the ``axi-adrv904x-tx-hpc`` IIO
-device.
-
-Channels:
-
-- IIO device channel: ``axi-adrv904x-tx-hpc``
-- Transmitter outputs:
-
-  - {``voltage0_i``, ``voltage0_q``}: TX1
-  - {``voltage1_i``, ``voltage1_q``}: TX2
-  - {``voltage2_i``, ``voltage2_q``}: TX3
-  - {``voltage3_i``, ``voltage3_q``}: TX4
-  - {``voltage4_i``, ``voltage4_q``}: TX5
-  - {``voltage5_i``, ``voltage5_q``}: TX6
-  - {``voltage6_i``, ``voltage6_q``}: TX7
-  - {``voltage7_i``, ``voltage7_q``}: TX8
-
-NLS profile (with observation receiver)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When using the NLS device tree (``zynqmp-zcu102-rev10-adrv904x-nls.dts``),
-the observation receiver path is enabled. The observation receiver IIO device
-appears as an additional device:
-
-.. shell::
-
-   $iio_info | grep iio:device
-    iio:device0: xilinx-ams
-    iio:device1: adrv904x-phy
-    iio:device2: axi-adrv904x-rx-hpc (buffer capable)
-    iio:device3: axi-adrv904x-tx-hpc (buffer capable)
-    iio:device4: axi-adrv904x-obs-hpc (buffer capable)
-
-To use the NLS profile, copy ``system.dtb`` built from
-``zynqmp-zcu102-rev10-adrv904x-nls.dts`` and ``DeviceProfileTest_NLS.bin``
-renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
-
-.. include-template:: ../common/using-scopy.rst.jinja
-
-Linux Driver
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- :ref:`iio-oscilloscope`
 
 For details on how to customize the driver for a specific use case, see the
-:external+linux:ref:`adrv904x-customization`.
+:external+linux:ref:`ADRV904x customization guide <adrv904x-customization>`.
 
 Kernel configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,10 +96,9 @@ These files are included in the Kuiper Linux SD card image.
 
 .. note::
 
-   The ``stream_image.bin`` must be regenerated when updating firmware
-   versions, as it is version-specific. The ``DeviceProfileTest.bin`` is
-   use-case specific and contains filter coefficients, clock rates, and DFE
-   resource settings.
+   The ``stream_image.bin`` must be regenerated when updating firmware versions,
+   as it is version-specific. The ``DeviceProfileTest.bin`` is use-case specific
+   and contains filter coefficients, clock rates, and DFE resource settings.
 
 Device variants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -177,16 +111,16 @@ Two device tree configurations are provided:
   observation receiver (ORx) path for transmitter monitoring and DPD
   calibration.
 
-To select the device tree, copy the corresponding ``system.dtb`` to the SD
-card boot partition before powering up the board.
+To select the device tree, copy the corresponding ``system.dtb`` to the SD card
+boot partition before powering up the board.
 
 IIO attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``adrv904x-phy`` IIO device exposes sysfs attributes under
 ``/sys/bus/iio/devices/iio:deviceN/``. For a full attribute reference, see the
-:external+linux:ref:`adrv904x`
-wiki page.
+:external+linux:ref:`ADRV904x Linux device driver <adrv904x>`
+documentation.
 
 Channel naming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -421,3 +355,4 @@ To access HDL core registers, set bit 31 of the address.
    $echo 0x80000000 > /sys/kernel/debug/iio/iio:device1/direct_reg_access
    $cat /sys/kernel/debug/iio/iio:device1/direct_reg_access
     0x80062
+    

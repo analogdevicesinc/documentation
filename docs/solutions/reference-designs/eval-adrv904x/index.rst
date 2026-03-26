@@ -5,23 +5,24 @@
 EVAL-ADRV904x
 ===============================================================================
 
-Integrated 8T8R RF Transceiver with Digital Pre-Distortion and Crest Factor Reduction.
+Integrated 8T8R RF Transceiver with Digital Pre-Distortion and Crest Factor
+Reduction.
 
-.. image:: ../images/adrv904x-evaluation-board.png
+.. image:: images/adrv904x.jpeg
    :align: left
    :width: 150
 
 Overview
 -------------------------------------------------------------------------------
 
-The :adi:`EVAL-ADRV904x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html>`,
-is an FMC radio card designed to showcase the :adi:`ADRV9040` and
-:adi:`ADRV9044`, highly integrated, radio frequency (RF) agile transceivers
-offering 8 independently controlled transmitters, 2 observation receiver inputs
-for monitoring transmitter channels, 8 independently controlled receivers,
-integrated local oscillator (LO) and clock synthesizers, digital front-end
-(DFE) with crest factor reduction (CFR) and digital pre-distortion (DPD), and
-digital signal processing functions providing a complete transceiver solution.
+The :adi:`EVAL-ADRV904x`, is an FMC radio card designed to showcase the
+:adi:`ADRV9040` and :adi:`ADRV9044`, highly integrated, radio frequency (RF)
+agile transceivers offering 8 independently controlled transmitters, 2
+observation receiver inputs for monitoring transmitter channels, 8 independently
+controlled receivers, integrated local oscillator (LO) and clock synthesizers,
+digital front-end (DFE) with crest factor reduction (CFR) and digital
+pre-distortion (DPD), and digital signal processing functions providing a
+complete transceiver solution.
 
 The device provides the high radio performance and low-power consumption
 demanded by cellular infrastructure applications and massive MIMO base stations,
@@ -44,8 +45,8 @@ Features:
 
   - Integrated Digital Front-End (DFE) with CFR and digital pre-distortion
   - ARM Cortex-A55 quad-core processor for DFE algorithms (DPD, CLGC, VSWR)
-  - JESD204B and JESD204C digital interface with fixed and floating-point
-    data format support
+  - JESD204B and JESD204C digital interface with fixed and floating-point data
+    format support
   - Zero-IF (ZIF) architecture
 
 - Complete ADRV9040/ADRV9044 radio cards for evaluation
@@ -61,37 +62,43 @@ Applications:
 - Software defined radios
 - Wireless infrastructure
 
+.. image:: images/adrv904x-evaluation-board.png
+   :align: center
+   :width: 500
+
 .. toctree::
    :hidden:
 
    user-guide
    prerequisites
    quickstart/index
+   adrv904x_osc_main
+   dpd/index
 
 Recommendations
 -------------------------------------------------------------------------------
 
 People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it
-should be. If you have any questions, feel free to ask on our
-:ref:`EngineerZone forums <help-and-support>`, but before that, please make
-sure you read our documentation thoroughly.
+should be. If you have any questions, check the :ref:`Help and Support <adrv904x
+help_and_support>` section at the bottom of the page.
 
-To better understand the :adi:`ADRV9040` / :adi:`ADRV9044`, we recommend to
-use the :adi:`EVAL-ADRV904x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html>`
-evaluation board.
+To better understand the :adi:`ADRV9040` / :adi:`ADRV9044`, we recommend to use
+the :adi:`EVAL-ADRV904x` evaluation board.
 
 Table of contents
 -------------------------------------------------------------------------------
 
 #. Using the evaluation board/full stack reference design that we offer:
 
-   #. :ref:`Prerequisites <adrv904x prerequisites>` - what you need to get started
+   #. :ref:`User guide <adrv904x user-guide>`
+   #. :ref:`Prerequisites <adrv904x prerequisites>` - what you need to get
+      started
    #. :ref:`Quick start guides <adrv904x quickstart>`:
 
-      #. Using the :ref:`ZCU102/Zynq UltraScale+ MP SoC <adrv904x quickstart zcu102>`
+      #. Using the :ref:`ZCU102 (ZynqMP) <adrv904x quickstart zcu102>`
 
-   #. Configure an SD Card with :external+kuiper:doc:`Kuiper <index>`
+   #. Configure an SD Card with :external+kuiper:ref:`Kuiper <use-kuiper-image>`
 
    #. Linux Applications
 
@@ -99,71 +106,81 @@ Table of contents
 
 #. Design with the ADRV9040/ADRV9044
 
-   - :ref:`adrv904x block-diagram`
+   #. :ref:`adrv904x block-diagram`
 
-     - :adi:`ADRV9040 product page <ADRV9040>`
-     - :adi:`ADRV9044 product page <ADRV9044>`
-     - :adi:`Full data sheet and chip design package <en/products/adrv9040.html>`
+     #. :adi:`ADRV9040 product page <ADRV9040>`
+     #. :adi:`ADRV9044 product page <ADRV9044>`
+     #. :adi:`Full data sheet and chip design package <en/products/adrv9040.html>`
 
-   - Hardware in the Loop / How to design your own custom BaseBand
+   #. Hardware in the Loop / How to design your own custom BaseBand
 
-     - :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-     - :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
+     #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     #. :ref:`Transceiver Toolbox <matlab transceiver-toolbox>`
 
-   - Resources for designing a custom ADRV9040/ADRV9044-based platform software
+   #. Resources for designing a custom ADRV9040/ADRV9044-based platform software
 
      #. For Linux software:
 
         #. About the device driver:
 
-           - :external+linux:ref:`axi_jesd204_tx`
-           - :external+linux:ref:`axi_jesd204_rx`
-           - :external+linux:ref:`axi_adxcvr`
-           - :external+linux:ref:`axi-adc-hdl`
-           - :external+linux:ref:`axi-dac-dds-hdl`
-           - :external+linux:ref:`ad9528`
-           - :external+linux:ref:`axi-dmac`
-           - :external+linux:ref:`adrv904x`
-             (not yet mainlined; source at
-             :git-linux:`staging/koror_support:drivers/iio/adc/koror/adrv904x.c`)
-             and :external+linux:ref:`adrv904x-customization`
+           #. :external+hdl:ref:`axi_jesd204_tx` / :git-linux:`JESD204B Transmit Linux driver <drivers/iio/jesd204/axi_jesd204_tx.c>`
+           #. :external+hdl:ref:`axi_jesd204_rx` / :git-linux:`JESD204B Receive Linux driver <drivers/iio/jesd204/axi_jesd204_rx.c>`
+           #. :external+hdl:ref:`axi_adxcvr` / :git-linux:`AXI_ADXCVR High-speed transceivers Linux driver <drivers/iio/jesd204/axi_adxcvr.c>`
+           #. :external+linux:ref:`AXI ADC HDL Linux driver <axi-adc-hdl>`
+           #. :external+linux:ref:`AXI DAC HDL Linux driver <axi-dac-dds-hdl>`
+           #. :external+linux:ref:`AD9528 Low Jitter Clock Generator Linux driver <ad9528>`
+           #. :external+hdl:ref:`axi_dmac` / :git-linux:`AXI-DMAC DMA Controller Linux driver <drivers/dma/dma-axi-dmac.c>`
+           #. :external+linux:ref:`ADRV904x Linux device driver <adrv904x>`
 
         #. About the device tree:
 
-           - :dokuwiki:`Customizing the device tree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+           #. :dokuwiki:`Customizing the device tree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
         #. About the JESD204 utilities:
 
-           - :external+linux:ref:`jesd204-fsm-framework`
-           - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
-           - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
-           - :external+hdl:ref:`jesd204`
+           #. :external+linux:ref:`JESD204 FSM <jesd204-fsm-framework>`
+           #. :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
+           #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
+           #. :external+hdl:ref:`jesd204`
 
      #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
-     #. :git-hdl:`HDL reference design <projects/adrv904x>` which you must use in your FPGA.
+     #. :git-hdl:`HDL reference design <projects/adrv904x>`
+        which you must use in your FPGA.
 
-#. :dokuwiki:`Additional documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
-#. :ref:`Help and Support <help-and-support>`
+#. Digital Pre-Distortion (DPD)
+
+   #. :ref:`ADRV904x DPD User Guide <adrv904x dpd user-guide>`
+   #. :ref:`DPD Introduction <adrv904x dpd introduction>`
+   #. :ref:`DFE System Overview <adrv904x dfe overview>`
+   #. :ref:`DPD Capabilities <adrv904x dpd capabilities>`
+   #. :ref:`High Level Development Flow <adrv904x dpd dev flow>`
+   #. :ref:`DPD Evaluation Prerequisites <adrv904x dpd pre-requisites>`
+   #. :ref:`Evaluating ADRV904x DPD <adrv904x dpd eval guide>`
+   #. :ref:`DPD Error Troubleshooting <adrv904x dpd troubleshooting>`
+   #. :ref:`DPD Analysis Tool <adrv904x dpd analysis tool>`
+
+#. :dokuwiki:`SDR math <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+#. :ref:`Help and Support <adrv904x help_and_support>`
 
 .. _adrv904x block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------
 
-The ADRV9040/ADRV9044 features a zero-IF (ZIF) architecture that provides
-wide bandwidth with dynamic range suitable for contiguous and non-contiguous
+The ADRV9040/ADRV9044 features a zero-IF (ZIF) architecture that provides wide
+bandwidth with dynamic range suitable for contiguous and non-contiguous
 multicarrier applications. The transceiver includes:
 
-- 8 transmitter channels with integrated DACs and DPD/CFR
-- 8 receiver channels with integrated ADCs
-- 2 observation receiver channels for transmitter monitoring
-- Integrated RF and clock synthesizers
-- Integrated ARM Cortex-A55 quad-core processor for DFE
-- JESD204B/C digital interface
-- SPI control interface
-- General purpose I/O and interrupts
+#. 8 transmitter channels with integrated DACs and DPD/CFR
+#. 8 receiver channels with integrated ADCs
+#. 2 observation receiver channels for transmitter monitoring
+#. Integrated RF and clock synthesizers
+#. Integrated ARM Cortex-A55 quad-core processor for DFE
+#. JESD204B/C digital interface
+#. SPI control interface
+#. General purpose I/O and interrupts
 
-.. image:: ../images/adrv904x_block_diagram.png
+.. image:: images/adrv904x_block_diagram.png
    :align: center
    :width: 800
 
@@ -181,16 +198,16 @@ ADI articles
 Four Quick Steps to Production: Using Model-Based Design for Software-Defined
 Radio:
 
-#. :adi:`Part 1 - The Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
-#. :adi:`Part 2 - Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
-#. :adi:`Part 3 - Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
-#. :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
+#. :adi:`Part 1 <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+#. :adi:`Part 2 <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
+#. :adi:`Part 3 <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
+#. :adi:`Part 4 <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
 
 About JESD standard:
 
 #. :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`
-#. :adi:`JESD204C Primer: What's New and in It for You—Part 1 <resources/analog-dialogue/articles/jesd204c-primer-part1.html>`
-#. :adi:`JESD204C Primer: What's New and in It for You—Part 2 <resources/analog-dialogue/articles/jesd204c-primer-part2.html>`
+#. :adi:`Part 1 <resources/analog-dialogue/articles/jesd204c-primer-part1.html>`
+#. :adi:`Part 2 <resources/analog-dialogue/articles/jesd204c-primer-part2.html>`
 
 MathWorks webinars
 -------------------------------------------------------------------------------
@@ -198,7 +215,22 @@ MathWorks webinars
 #. :mw:`Modelling and Simulating Analog Devices' RF Transceivers with MATLAB and SimRF <videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`
 #. :mw:`Getting Started with Software-Defined Radio using MATLAB and Simulink <videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`
 
+.. _adrv904x unboxing:
+
+Unboxing guide
+-------------------------------------------------------------------------------
+Detailed description of the setup procedure for ADRV9009 (similar procedure for ADRV904x):
+
+:ez:`Detailed unboxing guide <cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9009-setup-with-ZCU102-or-ZC706-April2019.pdf>`
+
 Warning
 -------------------------------------------------------------------------------
-
 .. esd-warning::
+
+.. _adrv904x help_and_support:
+
+Help and support
+-------------------------------------------------------------------------------
+
+For questions and more information, please visit the :ez:`Help and Support <rf/wide-band-rf-transceivers/design-support-adrv904x>` technical support
+community.
