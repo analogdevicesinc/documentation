@@ -20,6 +20,3 @@ The Cog software development kit consists of these packs
 
       -  Temperature Sensor Demo
 
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_

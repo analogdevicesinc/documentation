@@ -7,9 +7,9 @@ different USB modes and drivers needed.
 
 It contains four main sections:
 
--  `CrossCore Embedded Studio Download & Install <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz/tools/cces_download>`_ - Provides all the necessary instructions on how to download and install the CrossCore Embedded Studios software development environment.
+-  :doc:`CrossCore Embedded Studio Download & Install </solutions/reference-designs/eval-cog-ad4050lz/tools/cces_download>` - Provides all the necessary instructions on how to download and install the CrossCore Embedded Studios software development environment.
 
-   -  `CrossCore Embedded Studio Quickstart Userguide <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz/tools/cces_guide>`_ - Provides information about using the CrossCore Embedded Studios IDE, in particular, the process of importing, building, debugging, and creating user applications for the EV-COG-AD4050LZ.
+   -  :doc:`CrossCore Embedded Studio Quickstart Userguide </solutions/reference-designs/eval-cog-ad4050lz/tools/cces_guide>` - Provides information about using the CrossCore Embedded Studios IDE, in particular, the process of importing, building, debugging, and creating user applications for the EV-COG-AD4050LZ.
 
--  `Driver Installation for On-board Debugger (CMSIS DAP) <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz/tools/hardware_usb>`_ - Provides detailed information how to load pre-compiled .HEX or .BIN files using the USB drive of the EV-COG-AD4050LZ board.
+-  :doc:`Driver Installation for On-board Debugger (CMSIS DAP) </solutions/reference-designs/eval-cog-ad4050lz/tools/hardware_usb>` - Provides detailed information how to load pre-compiled .HEX or .BIN files using the USB drive of the EV-COG-AD4050LZ board.
 -  `Using EV-COG-AD4050LZ with IAR & Keil IDEs <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz/tools/other_ide>`_ - Provides detailed information how to use the EV-COG-AD4050LZ board with IAR Embedded Workbench and Keil µVision.

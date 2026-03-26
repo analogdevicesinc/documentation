@@ -128,9 +128,4 @@ the Analog Devices family of ARM Cortex Processor.
 CrossCore Embedded Studio Support
 =================================
 
-For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
-
-*End of Document*
-
-CrossCore Embedded Studio Download & Install
-============================================
+For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <mailto:processor.tools.support@analog.com>`_

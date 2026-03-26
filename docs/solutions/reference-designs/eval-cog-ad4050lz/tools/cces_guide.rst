@@ -375,6 +375,5 @@ How to create an Intel Hex (.hex) file from an ADuCM4050 application
 .. image:: ../images/hex_generation.jpg
    :align: center
 
-*End of Document*
 
 .. |image1| image:: ../images/new_project.jpg

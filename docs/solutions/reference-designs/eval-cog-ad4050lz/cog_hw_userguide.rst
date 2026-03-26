@@ -126,7 +126,7 @@ worry about porting their firmware. The figures below capture the pin-mapping
 and jumpers that need to be changed to get external access (via the expansion
 connectors) to GPIO (as well as power/reset, etc).
 
-|image2|\ |image3|
+|image2| |image3|
 
 Jumper Settings
 ---------------
