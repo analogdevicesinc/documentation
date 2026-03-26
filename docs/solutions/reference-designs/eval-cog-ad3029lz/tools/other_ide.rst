@@ -64,6 +64,3 @@ following steps.
 -  Push the Green-Button – “Download and debug” – Another popup for C-SPY configuration opens up, just press “OK”
 -  That’s it – You are ready to go.
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

@@ -122,7 +122,7 @@ worry about porting their firmware. The figures below capture the pin-mapping
 and jumpers that need to be changed to get external access (via the expansion
 connectors) to GPIO (as well as power/reset, etc).
 
-|image2|\ |image3|
+|image2| |image3|
 
 Jumper Settings
 ---------------
@@ -134,11 +134,11 @@ The MCU Cog offers flexibility in terms of power muxing options and the facility
 MCU Cog Design and Integration Files
 ------------------------------------
 
-\*\ `MCU Cog revB Schematics <resources/21052017-iot-devkit-tile-revb-schematics.pdf>`_
+-  `MCU Cog revB Schematics <resources/21052017-iot-devkit-tile-revb-schematics.pdf>`_
 
-\*\ `MCU Cog revB Gerbers <resources/21052017-mcu-cog-revb-gerbers.zip>`_
+-  `MCU Cog revB Gerbers <resources/21052017-mcu-cog-revb-gerbers.zip>`_
 
-\*\ `MCU Cog revB BOM <resources/21052017-mcu-cog-revb-bom.zip>`_
+-  `MCU Cog revB BOM <resources/21052017-mcu-cog-revb-bom.zip>`_
 
 Add-on (Gear) Template
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -149,9 +149,6 @@ expansion connectors as well as place-bound rules embedded.
 
 `Template Design Files (Cadence Allegro v16.6) <resources/20-047257-01a.zip>`_
 
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_
 
 .. |image1| image:: images/23062017-tile-revb-power-mux-scheme.png
 .. |direct| image:: images/24072017-tile-revb-adp5300-gpio.png

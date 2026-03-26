@@ -26,6 +26,3 @@ The Cog software development kit consists of these packs
 
    -  BLE Pack
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

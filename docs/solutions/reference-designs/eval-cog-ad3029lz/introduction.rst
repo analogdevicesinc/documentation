@@ -15,6 +15,3 @@ This modular nature is depicted in the concept sketches below.
 
 .. image:: images/11082017-mcu-cog-revb-stacking.png
 
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

@@ -22,14 +22,13 @@ complete Sensor software user guide.
 .. hint::
 
    
-   ADD LINK HERE Sensor Software Pack Release Notes.
-   
+   Sensor Software Pack Release Notes (link not yet available)
 
 .. important::
 
    
    You MUST have this software package installed on your laptop or PC in order
-   to compile, debug, and run the applications for the EC-COG-AD3029LZ platform.
+   to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
    
 
 Downloading the Sensor Software Pack
@@ -62,7 +61,5 @@ The software pack can be downloaded in following ways.
    
    Link to Github Repository for Cloning or Viewing.
    
-   ADD GITHUB LINK HERE
-   
+   GitHub Repository (link not yet available)
 
-*End of Document*

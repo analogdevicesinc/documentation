@@ -371,4 +371,3 @@ How to create an Intel Hex (.hex) file from an ADuCM3029 application
 .. image:: ../images/eval-aducm3029-tools-hex.png
    :align: center
 
-*End of Document*

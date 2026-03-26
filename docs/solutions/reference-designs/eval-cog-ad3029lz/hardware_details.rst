@@ -14,6 +14,3 @@ The following boards are currently available:
 -  `EV-COG-BLEINTP1Z Connectivity Cog <https://wiki.analog.com/resources/eval/user-guides/ev-cog-bleintp1z>`_
 -  `EV-GEAR-EXPANDER1Z Expander Gear <https://wiki.analog.com/resources/eval/user-guides/ev-gear-expander1z>`_
 
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

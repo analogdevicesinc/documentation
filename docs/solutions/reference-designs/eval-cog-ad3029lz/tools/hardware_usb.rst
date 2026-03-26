@@ -13,8 +13,9 @@ which mode of operation the EV-COG-AD3029LZ emulator comes up.
    that the drivers are being installed in the task bar, open it up and wait
    till everything finished before progressing.
 
-| |image1|
-| |image2|
+|image1|
+
+|image2|
 
 DAPLINK Drive
 -------------
@@ -83,9 +84,6 @@ patches and updates to the firmware on the emulator.
 -  Unplug the micro USB cable from the USB port of the EV-COG-AD3029LZ, and then
    reconnect the USB cable to the USB port to “reboot” the board.
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_
 
 .. |image1| image:: ../images/device_drivers_install_notification.png
    :width: 400

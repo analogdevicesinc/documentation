@@ -14,6 +14,3 @@ It contains three main sections:
 -  :doc:`Driver Installation for On-board Debugger (CMSIS DAP) </solutions/reference-designs/eval-cog-ad3029lz/tools/hardware_usb>` - Provides detailed information on how to load pre-compiled .HEX or .BIN files using the USB drive of the EV-COG-AD3029LZ board.
 -  :doc:`Using EV-COG-AD3029LZ with IAR & Keil IDEs </solutions/reference-designs/eval-cog-ad3029lz/tools/other_ide>` - Provides detailed information on how to use the EV-COG-AD3029LZ board with IAR Embedded Workbench and Keil µVision.
 
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

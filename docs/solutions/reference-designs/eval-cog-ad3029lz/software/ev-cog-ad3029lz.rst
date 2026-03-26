@@ -15,9 +15,9 @@ EV-COG-AD3029LZ software pack contains the following components:
 -  On-Chip Driver Examples ( GPIO,RTC, SPI, Systick, TMR, UART, WDT)
 -  Bluetooth Profile Examples
 
-   -  \* FindMe Target
-   -  \* Proximity Reporter
-   -  \* Data Exchange (Hello World)
+   -  FindMe Target
+   -  Proximity Reporter
+   -  Data Exchange (Hello World)
 
 -  Android IoTNode application software
 -  Documentation
@@ -28,8 +28,7 @@ our complete EV-COG-AD3029LZ software user guide.
 .. hint::
 
    
-   ADD LINK HERER EV-COG-AD3029LZ BSP Release Notes
-   
+   EV-COG-AD3029LZ BSP Release Notes (link not yet available)
 
 .. important::
 
@@ -61,6 +60,3 @@ The software pack can be downloaded in several ways.
 
    
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_
