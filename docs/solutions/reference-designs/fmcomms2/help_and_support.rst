@@ -1,13 +1,19 @@
+.. _fmcomms2 help-and-support:
+
 Help and Support for ADI FMC Cards & RF SoMs
-============================================
+===============================================================================
 
 If you have any questions regarding the:
 
--  ADI FMC Boards : AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ, AD-FMCOMMS5-EBZ AD-FMCOMMS11-EBZ
--  Arrow ARRADIO board or
--  ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
+- ADI FMC Boards: AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ, AD-FMCOMMS4-EBZ,
+  AD-FMCOMMS5-EBZ AD-FMCOMMS11-EBZ
+- Arrow ARRADIO board or
+- ADI RF SoM (ADRV9364-Z7020, ADRV9361-Z7035 or ADRV9009-ZU11EG)
 
-or are experiencing any problems while using the board or following the user guides feel free to ask us a question. Questions can be asked on our `EngineerZone support community <https://ez.analog.com/>`_. Calling on the phone, emailing someone directly, will only cause things to get answered in much slower manner.
+or are experiencing any problems while using the board or following the user
+guides feel free to ask us a question. Questions can be asked on our
+:ez:`EngineerZone support community </>`. Calling on the phone, emailing someone
+directly, will only cause things to get answered in much slower manner.
 
 Why EngineerZone? Why can't I get one-on-one email/phone support on the AD9361?
 The AD9361 is a very complex part - it has over one thousand (1000) different
@@ -39,58 +45,82 @@ question is unanswered for a few working days, please bump the thread (we are
 human, and sometimes miss things).
 
 HDL / Hardware Questions
-------------------------
+-------------------------------------------------------------------------------
 
-For questions regarding the AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ or AD-FMCOMMS4-EBZ hardware or the HDL reference design please state them in the :ez:`FPGA Reference Designs <community/fpga>` sub-community. If you have questions about the tools, please go ask the tools vendors:
+For questions regarding the AD-FMCOMMS2-EBZ, AD-FMCOMMS3-EBZ or AD-FMCOMMS4-EBZ
+hardware or the HDL reference design please state them in the :ez:`FPGA
+Reference Designs <fpga>` sub-community. If you have questions about the tools,
+please go ask the tools vendors:
 
--  `Xilinx Forums <http://forums.xilinx.com/>`_
--  `Altera Forums <http://www.alteraforums.com/>`_
+- `AMD Xilinx Forums <https://support.xilinx.com/s>`_
+- `Intel Altera Forums <https://community.intel.com/t5/FPGA/ct-p/fpga>`_
 
 Linux Driver or Application Questions
--------------------------------------
+-------------------------------------------------------------------------------
 
-For questions regarding the the ADI Linux distribution (which is based `Linaro <https://www.linaro.org/>`_ with `Xfce <http://www.xfce.org/>`_ desktop), the Linux drivers, or the device trees for the AD9361 or AD9364 based platforms, please use the :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>` sub-community.
+For questions regarding the the ADI Linux distribution (which is based `Linaro
+<https://www.linaro.org/>`_ with `Xfce <https://www.xfce.org/>`_ desktop), the
+Linux drivers, or the device trees for the AD9361 or AD9364 based platforms,
+please use the :ez:`Linux Software Drivers <linux-software-drivers>`
+sub-community.
 
-If you have generic userspace questions (*how do I use a standard linux tool*), we should suggest to use your favorite `search tool <http://www.google.com/>`_ to find that tool/utility/application support method (some use email, some use web). If you think you have found a bug specific to ARM, please `report this upstream <https://www.linaro.org/support/>`_.
+If you have generic userspace questions (*how do I use a standard linux tool*),
+we should suggest to use your favorite `search tool <https://google.com>`_ to
+find that tool/utility/application support method (some use email, some use
+web). If you think you have found a bug specific to ARM, please `report this
+upstream <https://www.linaro.org/support/>`_.
 
 No-OS Questions
----------------
+-------------------------------------------------------------------------------
 
-For questions regarding the no-OS drivers for AD9361 or AD9364, please use the :ez:`Microcontroller and No-OS Driver <community/linux-device-drivers/microcontroller-no-os-drivers>` sub-community.
+For questions regarding the no-OS drivers for AD9361 or AD9364, please use the
+:ez:`Microcontroller and No-OS Driver <microcontroller-no-os-drivers>`
+sub-community.
 
 General AD9361 Questions
-------------------------
+-------------------------------------------------------------------------------
 
-Questions about the AD9361 or AD9364, please use the :ez:`AD9361 <community/wide-band-rf-transceivers/design-support>` sub-community.
+Questions about the AD9361 or AD9364, please use the :ez:`AD9361
+<wide-band-rf-transceivers/design-support>` sub-community.
 
-Detailed documentation on the AD9361 device can be found at: :adi:`AD9361 Design support package <en/rfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html>`
+Detailed documentation on the AD9361 device can be found at: :adi:`AD9361 Design
+support package
+<en/rfif-components/rfif-transceivers/products/AD9361-Integrated-RF-Agile-Transceiver-Design-Res/fca.html>`
 
 AD9361/4 FIR Filter Wizard
---------------------------
+-------------------------------------------------------------------------------
 
-Questions about the :doc:`AD936x FIR Filter Wizard </solutions/reference-designs/fmcomms2/software/filters>` can be asked on :ez:`Analog Devices Filter Wizard Support support <community/linux-device-drivers/microcontroller-no-os-drivers>`.
+Questions about the :ref:`AD936x FIR Filter Wizard
+<fmcomms2 software filters>` can be asked
+on :ez:`Linux Software Drivers <linux-software-drivers>` sub-community.
 
 MATLAB/Simulink/SimRF Questions
--------------------------------
+-------------------------------------------------------------------------------
 
 Questions about the MathWorks provided AD9361 simRF model, or the FMCOMMS2/3/4/5
 Hardware support package can be asked either:
 
--  `MathWorks information page <https://www.mathworks.com/products/connections/product_detail/adi-rf-transceivers.html?s_tid=srchtitle>`_
--  `MathWorks Hardware Support <https://www.mathworks.com/hardware-support/request-hardware-support.html>`_
+- `MathWorks information page
+  <https://www.mathworks.com/products/connections/product_detail/adi-rf-transceivers.html>`_
+- `MathWorks Hardware Support
+  <https://www.mathworks.com/hardware-support/request-hardware-support.html>`_
 
 Questions about the Analog Devices provided Filter Wizard, or streaming system
 object, or Board Support Package can be asked:
 
--  :ez:`Analog Devices MATLAB/Simulink support <sw-interface-tools>`
+- :ez:`Analog Devices MATLAB/Simulink support <sw-interface-tools>`
 
 GNU Radio
----------
+-------------------------------------------------------------------------------
 
-Questions about using the FMCOMMSx boards and GNU Radio either on a host or on the ARM target, can be asked on Analog Devices' :ez:`Software Interface Tools <sw-interface-tools>` sub-community. Generic questions about GNU Radio should be asked on their `mailing list <https://wiki.gnuradio.org/index.php/MailingLists>`_.
+Questions about using the FMCOMMSx boards and GNU Radio either on a host or on
+the ARM target, can be asked on Analog Devices' :ez:`Software Interface Tools
+<sw-interface-tools>` sub-community. Generic questions about GNU Radio should be
+asked on their `mailing list
+<https://wiki.gnuradio.org/index.php/MailingLists>`_.
 
 Bugs / Feature Requests
-~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------------------------------------------
 
 If you think you have a bug to report, the best place to to this is the
 Engineerzone (above). This way we can discuss if the bug is a bug, or a feature
@@ -99,20 +129,21 @@ request, or just missing documentation.
 If you think you have a real bug, where you have developed a real fix (first -
 thanks), feel free to:
 
--  post something on engineerzone
--  post something on the github issue tracker
--  `Fork <https://help.github.com/articles/fork-a-repo/>`_ the github repository, and fix it, and then send a pull request
+- post something on engineerzone
+- post something on the github issue tracker
+- `Fork <https://help.github.com/articles/fork-a-repo/>`_ the github repository,
+  and fix it, and then send a pull request
 
 Either is OK with us.
 
 More info
-=========
+-------------------------------------------------------------------------------
 
 For more information also check:
 
--  `VITA's FMC info <http://www.vita.com/fmc>`_
--  :adi:`AD-FMCOMMS2-EBZ`
--  :adi:`AD-FMCOMMS3-EBZ`
--  :adi:`AD-FMCOMMS4-EBZ`
--  :adi:`AD-FMCOMMS5-EBZ`
--  `Arradio <https://wiki.analog.com/../arradio>`_
+- `VITA's FMC info <https://www.vita.com/fmc>`_
+- :adi:`AD-FMCOMMS2-EBZ`
+- :adi:`AD-FMCOMMS3-EBZ`
+- :adi:`AD-FMCOMMS4-EBZ`
+- :adi:`AD-FMCOMMS5-EBZ`
+- :dokuwiki:`Arradio <resources/eval/user-guides/arradio>`
