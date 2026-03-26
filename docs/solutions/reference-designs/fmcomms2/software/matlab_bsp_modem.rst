@@ -1,9 +1,12 @@
+.. _fmcomms2 software matlab-bsp-modem:
+
 QPSK Modem Design Workflow
-==========================
+===============================================================================
 
 .. warning::
 
-   This example has been deprecated and only limited support is provided. `Please look at this example instead <https://www.mathworks.com/help/comm/ug/hdlqpsktransmitterreceiver.html>`_\
+   This example has been deprecated and only limited support is provided.
+   `Please look at this example instead <https://www.mathworks.com/help/comm/ug/hdlqpsktransmitterreceiver.html>`_\
 
 The purpose of this project set is to demonstrate an example narrowband modem
 design from simulation to complete standalone deployment utilizing the ADI
@@ -22,26 +25,39 @@ and demonstrates a video link with the PackRF kit.
    :align: center
    :width: 800
 
-A detailed workflow that governs this model development is outlined in the figure above, capturing the necessary steps from ideas to production ready hardware. This flow has been explored previously in an :adi:`article series about ADS-B <en/analog-dialogue/articles/using-model-based-design-sdr-1.html>`.
+A detailed workflow that governs this model development is outlined in the
+figure above, capturing the necessary steps from ideas to production ready
+hardware. This flow has been explored previously in an :adi:`article series
+about ADS-B <en/analog-dialogue/articles/using-model-based-design-sdr-1.html>`.
 
 Source Outline
---------------
+-------------------------------------------------------------------------------
 
-The modem project is available under the :git-TransceiverToolbox:`TransceiverToolbox <trx_examples/targeting/modem-qpsk>` repository :git-TransceiverToolbox:`Zipfile <trx_examples/targeting/modem-qpsk>`. The code is structured in the following way:
+The modem project is available under the
+:git-TransceiverToolbox:`TransceiverToolbox <trx_examples/targeting/modem-qpsk>`
+repository :git-TransceiverToolbox:`Zipfile
+<trx_examples/targeting/modem-qpsk>`. The code is structured in the following
+way:
 
--  ``FixedPoint``: Fixed-point model IP and demos
--  ``FloatingPoint``: Floating point mfiles and model IP
--  ``test``: Testing harness and interfacing models for float and fixed libraries
--  ``utils``: Useful scripts for managing project and environment
+- ``FixedPoint``: Fixed-point model IP and demos
+- ``FloatingPoint``: Floating point mfiles and model IP
+- ``test``: Testing harness and interfacing models for float and fixed libraries
+- ``utils``: Useful scripts for managing project and environment
 
-The main IP is provided in two libraries ``RxTxFixedPointLibrary.slx``, ``RxFloatingPointLibrary.slx``. These contain receiver and transmitter blocks which are used in the demo models and testing harness. By using libraries, blocks can be easily shared and maintained between models. The Fixed-Point specific libraries models are shown below. These blocks maintain an array of configuration for the internal designs as well as the necessary interfaces to the AD9361 transceiver and DMA IP back to the ARM on the SDR itself.
+The main IP is provided in two libraries ``RxTxFixedPointLibrary.slx``,
+``RxFloatingPointLibrary.slx``. These contain receiver and transmitter blocks
+which are used in the demo models and testing harness. By using libraries,
+blocks can be easily shared and maintained between models. The Fixed-Point
+specific libraries models are shown below. These blocks maintain an array of
+configuration for the internal designs as well as the necessary interfaces to
+the AD9361 transceiver and DMA IP back to the ARM on the SDR itself.
 
 .. image:: ../images/fixedrxtx.png
    :align: center
    :width: 400
 
 Theory of Operation
--------------------
+-------------------------------------------------------------------------------
 
 The modem was designed as a constantly transmitting frequency division duplexing
 (FDD) system with a single transmit channel (uplink) and single receive channel
@@ -93,48 +109,57 @@ packet detector will reset and the process for finding another packet will begin
 again.
 
 Support Devices and Required Software
--------------------------------------
+-------------------------------------------------------------------------------
 
 The developed modem was specifically designed and tuned for the AD9361 using the
 axi_ad9361 IP cores. The deployed and streaming models should function with:
 
--  Streaming
+- Streaming
 
-   -  ADI RF SOM 1x1 and 2x2
-   -  FMCOMMS 2/3/4 with Zed, ZC706, and ZC702
-   -  ADALM-PLUTO
+   - ADI RF SOM 1x1 and 2x2
+   - FMCOMMS 2/3/4 with Zed, ZC706, and ZC702
+   - ADALM-PLUTO
 
--  Targetting
+- Targetting
 
-   -  ADI RF SOM 2x2
-   -  FMCOMMS 2/3/4 with ZC706
+   - ADI RF SOM 2x2
+   - FMCOMMS 2/3/4 with ZC706
 
 The developed designs implemented to show off different features for debugging
 and development in the MATLAB and Simulink environments with ADI transceivers.
 Therefore, different examples with require specific toolboxes and hardware
 depending on use case.
 
-The main dependencies across all example are `MATLAB <https://www.mathworks.com/products/matlab/>`_ version *2017b* or later, and your license needs to include the following components:
+The main dependencies across all example are `MATLAB
+<https://www.mathworks.com/products/matlab/>`_ version *2017b* or later, and
+your license needs to include the following components:
 
--  `Communications Toolbox <https://www.mathworks.com/products/communications/>`_
--  `DSP System Toolbox <https://www.mathworks.com/products/dsp-system/>`_
--  `Signal Processing Toolbox <https://www.mathworks.com/products/signal/>`_
--  You can find what toolboxes you have by running the `ver <https://www.mathworks.com/help/matlab/ref/ver.html>`_ command
+- `Communications Toolbox <https://www.mathworks.com/products/communications/>`_
+- `DSP System Toolbox <https://www.mathworks.com/products/dsp-system/>`_
+- `Signal Processing Toolbox <https://www.mathworks.com/products/signal/>`_
+- You can find what toolboxes you have by running the `ver
+  <https://www.mathworks.com/help/matlab/ref/ver.html>`_ command
 
-When targeting the FPGA or streaming data, there are two options depending on the hardware you have. Official MathWorks support is provided through the `Communications Toolbox Support Package for Xilinx Zynq-Based Radio <https://www.mathworks.com/hardware-support/zynq-sdr.html>`_. This Hardware Support Package (HSP) supports the following hardware:
+When targeting the FPGA or streaming data, there are two options depending on
+the hardware you have. Official MathWorks support is provided through the
+`Communications Toolbox Support Package for Xilinx Zynq-Based Radio
+<https://www.mathworks.com/hardware-support/zynq-sdr.html>`_. This Hardware
+Support Package (HSP) supports the following hardware:
 
--  ADI RF SOM 2x2
--  FMCOMMS 2/3/4 with ZC706 or Zedboard
+- ADI RF SOM 2x2
+- FMCOMMS 2/3/4 with ZC706 or Zedboard
 
 Alternatively, ADI provides support for through the Analog Devices Board Support
 Package (BSP) for the following boards:
 
--  ADI RF SOM 1x1 and 2x2
--  FMCOMMS 2/3/4 with Zed, ZC706, and ZC702
--  PackRF
--  FMCOMMS 5 with ZC706 and ZC702
+- ADI RF SOM 1x1 and 2x2
+- FMCOMMS 2/3/4 with Zed, ZC706, and ZC702
+- PackRF
+- FMCOMMS 5 with ZC706 and ZC702
 
-The ADI BSP currently does not support External Mode unlike the MathWorks HSP. *ADI recommends utilizing the MathWorks officially supported HSP if your board is shared between both lists.*
+The ADI BSP currently does not support External Mode unlike the MathWorks HSP.
+*ADI recommends utilizing the MathWorks officially supported HSP if your board
+is shared between both lists.*
 
 +-------------------------------+----------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Demo                          | Purpose                                                        | Toolboxes Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -154,31 +179,35 @@ The ADI BSP currently does not support External Mode unlike the MathWorks HSP. *
 
 Besides, the following items are required in prototype and production stages:
 
--  `Xilinx Vivado <https://www.xilinx.com/support/download.html>`_
+- `Xilinx Vivado <https://www.xilinx.com/support/download.html>`_
 
 Testing Harness
----------------
+-------------------------------------------------------------------------------
 
 MATLAB Unittest Tagging of tests Hardware in the loop
 
 HDL Capable Demos
------------------
+-------------------------------------------------------------------------------
 
--  :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/Standard_IQ`
--  :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT`
--  :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/FPGA_Capture`
--  :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/External_Mode`
+- :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/Standard_IQ`
+- :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT`
+- :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/FPGA_Capture`
+- :git-TransceiverToolbox:`trx_examples/targeting/modem-qpsk/FixedPoint/demos/External_Mode`
 
 All Demos
-~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The codebase is designed to reuse code as much as possible. Therefore, the
 recommended process for getting started with the modem project is to perform the
 following:
 
-Clone the repository: <code> git clone `TransceiverToolbox <https://github.com/analogdevicesinc/TransceiverToolbox>`_.git\ </code>
+Clone the repository: <code> git clone `TransceiverToolbox
+<https://github.com/analogdevicesinc/TransceiverToolbox>`_.git\ </code>
 
-Launch MATLAB and navigate to the *TransceiverToolbox\\target_models\\modem-qpsk* folder. Now add the necessary files to your path by running the startup script: <code> startup_adi_qpsk </code>
+Launch MATLAB and navigate to the
+*TransceiverToolbox\\target_models\\modem-qpsk* folder. Now add the necessary
+files to your path by running the startup script: <code> startup_adi_qpsk
+</code>
 
 If you are generating HDL code you will be to add Vivado to your MATLAB path.
 There is a helper function to make this easy as long as Vivado is installed in a
@@ -187,7 +216,7 @@ default location: <code> setupHDL </code>
 Next, you can proceed to the build and run the desired demo.
 
 Standard IQ
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This demo is a simple "Hello World" example that demonstrates a simple loopback
 test where transmitted packets contain the message "Hello World N" where N is a
@@ -200,11 +229,17 @@ host PC. Specifically, the real component contains the payload characters and
 the imaginary component contains synchronization information to mark where the
 payload starts and stops for correct display.
 
-First, make sure you have gone through the setup process for your given board documented `SDR set up <https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/installation-and-setup.html>`_. The deployed model is applicable for FMComms 2/3/4 and ADI RF SOM SDR devices.
+First, make sure you have gone through the setup process for your given board
+documented `SDR set up
+<https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/installation-and-setup.html>`_.
+The deployed model is applicable for FMComms 2/3/4 and ADI RF SOM SDR devices.
 
-To run this example first navigate to the *FixedPoint\\demos\\Standard_IQ* folder.
+To run this example first navigate to the *FixedPoint\\demos\\Standard_IQ*
+folder.
 
-Run the script *hdlworkflow.m* which will build the design for the FPGA: <code> hdlworkflow </code> Once the build has completed move the generated bit file to the board as:
+Run the script *hdlworkflow.m* which will build the design for the FPGA: <code>
+hdlworkflow </code> Once the build has completed move the generated bit file to
+the board as:
 
 ::
 
@@ -234,10 +269,15 @@ received messages:
    Hello World 1
    ....
 
-These messages will appear at a high rate since in this configuration the radio is running at 384kHz. Now you can modify the design if desired in the model provided in the folder *combinedTxRx_StandardIQ.slx*. However, By only relying on the default reference designs, HDL Coder, and the baseline HSP features information from the FPGA will be limited to the IQ default interfaces from the generated IP.
+These messages will appear at a high rate since in this configuration the radio
+is running at 384kHz. Now you can modify the design if desired in the model
+provided in the folder *combinedTxRx_StandardIQ.slx*. However, By only relying
+on the default reference designs, HDL Coder, and the baseline HSP features
+information from the FPGA will be limited to the IQ default interfaces from the
+generated IP.
 
 External Mode
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This demo provides builds up the Standard_IQ model but also exposes various
 configuration and status information from the deployed design. This example
@@ -251,18 +291,24 @@ register that contains the last recovered payload length and a selectable debug
 signal. This selectable debug signal also has a connected mux which allows
 selection of:
 
--  Timing PLL lock
--  Frequency PLL lock
--  Peak detections
--  Header failure events
--  Packet CRC errors
--  Packets recovered
+- Timing PLL lock
+- Frequency PLL lock
+- Peak detections
+- Header failure events
+- Packet CRC errors
+- Packets recovered
 
-First, make sure you have gone through the setup process for your given board documented `SDR set up <https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/installation-and-setup.html>`_. The deployed model is applicable for FMComms 2/3/4 and ADI RF SOM SDR devices.
+First, make sure you have gone through the setup process for your given board
+documented `SDR set up
+<https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/installation-and-setup.html>`_.
+The deployed model is applicable for FMComms 2/3/4 and ADI RF SOM SDR devices.
 
-To run this example first navigate to the *FixedPoint\\demos\\External_Mode* folder.
+To run this example first navigate to the *FixedPoint\\demos\\External_Mode*
+folder.
 
-Run the script *hdlworkflow.m* which will build the design for the FPGA: <code> hdlworkflow </code> Once the build has completed move the generated bit file to the board as:
+Run the script *hdlworkflow.m* which will build the design for the FPGA: <code>
+hdlworkflow </code> Once the build has completed move the generated bit file to
+the board as:
 
 ::
 
@@ -289,12 +335,22 @@ running design on hardware. However, External Mode is limited to Simulink,
 requires Embedded Coder, and has limited performance.
 
 AXI Memory Mapped Components
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Under the hood Simulink and External are exposing some of the model's configuration parameters and status values as AXI-Lite registers provides the means to configure and monitor the IP at runtime from software. This way the IP does not have to be regenerated every time a tuning value needs to change and debugging becomes much more flexible. The External Mode demo is actually using these interfaces under the hood but it may not be obvious to the users. In the demos :git-TransceiverToolbox:`targeting_models/modem-qpsk/FixedPoint/demos/ADI_DMA_TT` and `AXI_MM <https://github.com/analogdevicesinc/TransceiverToolbox/tree/a70ecd4bb0e0e765778ccc84d2d818c5975dd531/targeting_models/modem-qpsk/FixedPoint/demos/AXI_MM>`_ these control interface are much more obvious, and arguably more flexible.
+Under the hood Simulink and External are exposing some of the model's
+configuration parameters and status values as AXI-Lite registers provides the
+means to configure and monitor the IP at runtime from software. This way the IP
+does not have to be regenerated every time a tuning value needs to change and
+debugging becomes much more flexible. The External Mode demo is actually using
+these interfaces under the hood but it may not be obvious to the users. In the
+demos
+:git-TransceiverToolbox:`targeting_models/modem-qpsk/FixedPoint/demos/ADI_DMA_TT`
+and `AXI_MM
+<https://github.com/analogdevicesinc/TransceiverToolbox/tree/a70ecd4bb0e0e765778ccc84d2d818c5975dd531/targeting_models/modem-qpsk/FixedPoint/demos/AXI_MM>`_
+these control interface are much more obvious, and arguably more flexible.
 
 Register Map
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------------+--------------------+--------------------------------------------------------------------------+
 | Address Offset | Name               | Purpose                                                                  |
@@ -327,7 +383,7 @@ Register Map
 +----------------+--------------------+--------------------------------------------------------------------------+
 
 FPGA Capture
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In many cases, in order to figure out what is not working right in a design, it
 is necessary to be able to look at the internal signals at the design's internal
@@ -347,9 +403,13 @@ Logic Analyzer, Simulink, or MATLAB.
 |FPGA Data Capture|
 
 ADI TunTap
-~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The modem IP implements the Data Link layer of the OSI stack but, in a deployed system, the full stack needs to be implemented. To verify the modem design in a real-life system it was exposed as an Ethernet connection in Linux by making use of the `TUN/TAP virtual network layer device <https://en.wikipedia.org/wiki/TUN/TAP>`_.
+The modem IP implements the Data Link layer of the OSI stack but, in a deployed
+system, the full stack needs to be implemented. To verify the modem design in a
+real-life system it was exposed as an Ethernet connection in Linux by making use
+of the `TUN/TAP virtual network layer device
+<https://en.wikipedia.org/wiki/TUN/TAP>`_.
 
 TUN and TAP are virtual network kernel drivers. TAP (as in network tap)
 simulates an Ethernet device and it operates with layer 2 packets such as
@@ -369,23 +429,31 @@ userspace daemon which is responsible for configuring the modem IP through the
 register set that it exposes and for passing data back and forth between the
 TUN/TAP driver and the modem's receive and transmit DMA engines.
 
--  :git-rfsom-box-gui:`Modem daemon source code <tun_tap>`
+- :git-rfsom-box-gui:`Modem daemon source code <tun_tap>`
 
 Video Streaming for PackRF and Demo Boot Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADI_DMA_TT design allows for video streaming example which has further detail in these articles:`modem setup <https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf/example-use-case>`_ and `PackRF software <https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf/system-software-architecture>`_. This design requires a specific kernel and devicetree, since it was designed for a specific platform (`PackRF <https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf>`_). Prebuilt files have been provided here (Note that you may have to click on the \*View raw\* link to directly download the file from the forwarded page on GitHub):
+The ADI_DMA_TT design allows for video streaming example which has further
+detail in these articles: :dokuwiki:`modem setup
+<resources/eval/user-guides/pzsdr/carriers/packrf/example-use-case>` and
+:dokuwiki:`PackRF software
+<resources/eval/user-guides/pzsdr/carriers/packrf/system-software-architecture>`.
+This design requires a specific kernel and devicetree, since it was designed for
+a specific platform (:dokuwiki:`PackRF
+<resources/eval/user-guides/pzsdr/carriers/packrf>`). Prebuilt files have been
+provided here (Note that you may have to click on the \*View raw\* link to
+directly download the file from the forwarded page on GitHub):
 
--  `BOOT.BIN <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/BOOT.BIN?raw=true>`_
--  `uImage <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/uImage?raw=true>`_
--  `Device Tree <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/devicetree.dtb?raw=true>`_
+- `BOOT.BIN
+  <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/BOOT.BIN?raw=true>`_
+- `uImage
+  <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/uImage?raw=true>`_
+- `Device Tree
+  <https://github.com/analogdevicesinc/TransceiverToolbox/blob/modem-bootfiles/trx_examples/targeting/modem-qpsk/FixedPoint/demos/ADI_DMA_TT/devicetree.dtb?raw=true>`_
 
 Additional resources
---------------------
-
--
-
-|Radio Deployment on SoC Platforms|
+-------------------------------------------------------------------------------
 
 .. |ILA Debugging| image:: ../images/ila.png
    :width: 500
@@ -393,4 +461,3 @@ Additional resources
    :width: 400
 .. |TUN/TAP flow| image:: ../images/tun_tap.png
    :width: 400
-.. |Radio Deployment on SoC Platforms| image:: https://wiki.analog.com/_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/youtube>kl_syvodxgw

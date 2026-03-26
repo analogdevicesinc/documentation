@@ -1,10 +1,20 @@
-Configuration Options for AD9361/AD9364 boards
-==============================================
+.. _fmcomms2 hardware configuration-options:
 
-By default, the `AD-FMCOMMS2-EBZ <https://wiki.analog.com/..>`_, `AD-FMCOMMS4-EBZ <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms4-ebz>`_ and `ARRADIO <https://wiki.analog.com/../../arradio>`_ board includes the Johanson Technology's `2450BL15B050E <http://www.johansontechnology.com/datasheets/baluns/JTI_Balun-2450BL15B050_12-03.pdf>`_ 2.45 GHz Balun. This balun is rated for a operating frequency of 2400~2500 MHz. If you want to evaluate the part outside of this frequency range, an alternative balun should be installed. A list of alternative baluns are below:
+Configuration Options for AD9361/AD9364 boards
+===============================================================================
+
+By default, the :ref:`AD-FMCOMMS2-EBZ <fmcomms2>`,
+:dokuwiki:`AD-FMCOMMS4-EBZ <resources/eval/user-guides/ad-fmcomms4-ebz>`
+and :dokuwiki:`ARRADIO <resources/eval/user-guides/arradio>` boards include
+the Johanson Technology's
+`2450BL15B050E <https://www.johansontechnology.com/datasheets/2450BL15B050/2450BL15B050.pdf>`_
+2.45 GHz Balun. This balun is rated for an operating frequency of
+2400~2500 MHz. If you want to evaluate the part outside of this frequency
+range, an alternative balun should be installed. A list of alternative
+baluns is below:
 
 Receive Balun
--------------
+-------------------------------------------------------------------------------
 
 ============ =============== =============== ========= ===========
 Manufacturer Frequency (MHz) Balun number    Impedance AC coupling
@@ -12,7 +22,7 @@ Manufacturer Frequency (MHz) Balun number    Impedance AC coupling
 TDK          350             HHM1591D1       50/100    100pF
 TDK          900             HHM1564A4       50/200    100pF
 Johanson     1450            1450BL15A200E   50/200    20pF
-Johanson     1600            1600BL15B050E   50/50     20pf
+Johanson     1600            1600BL15B050E   50/50     20pF
 Anaren       1631            BD1631J50100A00 50/100    18pF
 Johanson     2450            2450BL15B200E   50/200    9pF
 Johanson     2450            2450BL15B050E   50/50     18pF
@@ -22,7 +32,7 @@ Hitachi      5000            ESLT_S540E      50/50     10pF
 ============ =============== =============== ========= ===========
 
 Transmit Balun
---------------
+-------------------------------------------------------------------------------
 
 ============ =============== ============= =========
 Manufacturer Frequency (MHz) Balun number  Impedance

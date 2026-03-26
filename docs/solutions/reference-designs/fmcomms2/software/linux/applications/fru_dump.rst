@@ -1,10 +1,19 @@
-FMC EEPROM Programming
-======================
+.. _fmcomms2 software fru-dump:
 
-As part of the FMC specification, EEPROMs exist on the FMC cards which can provide configuration for different voltages on for the cards themselves. EEPROM images for different ADI cards are available online and can be manipulated using the `fru-dump tool <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`_. This page will provide steps for updating specific FMC cards. The steps are very generic and should apply to all ADI FMC cards which have available master image files.
+FMC EEPROM Programming
+===============================================================================
+
+As part of the `FMC specification <https://www.vita.com/fmc>`_, EEPROMs exist
+on the FMC cards which can provide configuration for different voltages on for
+the cards themselves. EEPROM images for different ADI cards are available
+online and can be manipulated using the
+:dokuwiki:`fru-dump tool <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`.
+This page will provide steps for updating specific FMC cards. The steps are very
+generic and should apply to all ADI FMC cards which have available master image
+files.
 
 FMCOMMS2 + ZCU102 Example
--------------------------
+-------------------------------------------------------------------------------
 
 To update the EEPROM image with the masterfiles follow this procedure on the
 FPGA development kit itself, such as the ZCU102, ZC706, or similar.
@@ -23,7 +32,12 @@ FPGA development kit itself, such as the ZCU102, ZC706, or similar.
    /sys/bus/i2c/devices/i2c-14/14-0050/eeprom
    /sys/bus/i2c/devices/i2c-6/6-0054/eeprom
 
-**/sys/bus/i2c/devices/14-0050/eeprom** is the desired EEPROM for ZCU102. The actual path on your system might be different depending on FPGA carrier, kernel version, and devicetree. **/sys/bus/i2c/devices/6-0054/eeprom** is for the EEPROM on the FPGA system. The remaining entries are simply references to these EEPROMs. If you don't know which is which, remove the FMC card and run the **find** command again. Only the FPGA EEPROM will be listed.
+**/sys/bus/i2c/devices/14-0050/eeprom** is the desired EEPROM for ZCU102. The
+actual path on your system might be different depending on FPGA carrier, kernel
+version, and devicetree. **/sys/bus/i2c/devices/6-0054/eeprom** is for the
+EEPROM on the FPGA system. The remaining entries are simply references to these
+EEPROMs. If you don't know which is which, remove the FMC card and run the
+**find** command again. Only the FPGA EEPROM will be listed.
 
 3. Check existing EEPROM.
 
@@ -53,7 +67,11 @@ If programmed, it will have the following output:
    BOM Rev         : 1
    Uses LVDS       : Y
 
-4. To update the EEPROM you will need the master file for that particular board. For Kuiper Linux, the master files are located within the **/usr/local/src/fru_tools/masterfiles/** folder. If this does not exist or you are not using Kuiper Linux, you can download the files from :git-fru_tools:`GitHub <masterfiles>`.
+4. To update the EEPROM you will need the master file for that particular board.
+   For Kuiper Linux, the master files are located within the
+   **/usr/local/src/fru_tools/masterfiles/** folder. If this does not exist or
+   you are not using Kuiper Linux, you can download the files from
+   :git-fru_tools:`GitHub <masterfiles>`.
 
 Once you have located the master file for you board, update the EEPROM with it.
 Below is for FMCOMMS2:
