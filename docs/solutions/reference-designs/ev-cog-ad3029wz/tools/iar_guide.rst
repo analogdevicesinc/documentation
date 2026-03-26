@@ -1,11 +1,9 @@
 EV-COG-AD3029WZ with IAR Embedded Workbench for ARM
 ===================================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software
-for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for
-EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin
-muxing based on the application.For help regarding pinmapping refer to the
-Hardware Details section.
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ; the toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ. The user needs to change only the pin muxing based on the application. For help regarding pin mapping refer to the Hardware Details section.
 
 First, install mBed windows serial driver from https://developer.mbed.org/handbook/Windows-serial-configuration
 
@@ -23,13 +21,13 @@ IDE Setup
 Software Packs and Driver Setup
 -------------------------------
 
--  Download the following packs for EV-COG-AD3029LZ \*\* (The packs are same for
-   EV-COG-AD3029LZ and EV-COG-AD3029WZ) \*\*
+-  Download the following packs for EV-COG-AD3029LZ **(The packs are same for
+   EV-COG-AD3029LZ and EV-COG-AD3029WZ)**
 
    -  `ARM CMSIS Pack <https://keilpack.azureedge.net/pack/ARM.CMSIS.5.2.0.pack>`_
 
       -  `DFP - Device Family Pack for ADuCM302x <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.3.1.0.pack>`_
-      -  `BSP - Board Support Pack for EV-COG-AD3029LZ <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.3.1.0.pack>`_
+   -  `BSP - Board Support Pack for EV-COG-AD3029LZ <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.3.1.0.pack>`_
 
 -  Start IAR Embedded Workbench for ARM.
 -  Go to Project-> CMSIS-Pack-> Pack Installer.
@@ -84,13 +82,11 @@ Running an Example Project
    :width: 700
 
 -  Save the project to the desired location.
--  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029WZ using CMSIS-DAP.
+-  Click on 'Debug and Download' icon |image1| on the menu bar. This will compile, build and download the project on EV-COG-AD3029WZ using CMSIS-DAP.
 -  Click on 'Run' icon |image2| to start the debug session.
 -  Now press BTN1 or BTN2 on EV-COG-AD3029WZ and inspect corresponding LED
 
 You are all set!
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/quickstart_1>`
 
 .. |image1| image:: ../images/debug_debug_button.png
 .. |image2| image:: ../images/run_button.png

@@ -43,12 +43,10 @@ Power Supply Options
 
 The MCU Cog offers the following power supply options:
 
-::
-
-   -5V USB power (USB microB connector)
-   -3V CR2032 Coin cell (Cell holder - BT1)
-   -3V - 6V Rechargeable Li-Ion Battery (JST Connector - P6)
-   -3V - 6V External Supply from an MCU Cog Add-on card (via Connector C1)
+-  5V USB power (USB microB connector)
+-  3V CR2032 Coin cell (Cell holder - BT1)
+-  3V - 6V Rechargeable Li-Ion Battery (JST Connector - P6)
+-  3V - 6V External Supply from an MCU Cog Add-on card (via Connector C1)
 
 Power Muxing Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -89,11 +87,9 @@ Programming & Debug Options
 
 The MCU Cog offers the following debug options:
 
-::
-
-   -On-board CMSIS-DAP debugger (USB microB connector)
-   -JLINK-9 Connector for access to SWD interface (P26)
-   -Access to SW interface to an MCU Cog Add-on card (via Connector C2)
+-  On-board CMSIS-DAP debugger (USB microB connector)
+-  JLINK-9 Connector for access to SWD interface (P26)
+-  Access to SW interface to an MCU Cog Add-on card (via Connector C2)
 
 Wireless Connectivity Options
 -----------------------------
@@ -225,9 +221,6 @@ expansion connectors as well as place-bound rules embedded.
 
    `Gear Template Design Database <resources/geartemplatedesigndatabase.zip>`_
 
-| End Document
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/ev-cog-ad3029wz>`
 
 .. |25072017-tile-revb-front.png| image:: images/25072017-tile-revb-front.png
 .. |25072017-tile-revb-back.png| image:: images/25072017-tile-revb-back.png

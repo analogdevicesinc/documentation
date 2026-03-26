@@ -1,7 +1,9 @@
 Software Packs & Board Support Package
 ======================================
 
-<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** 
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ; the toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ. The user needs to change only the pin muxing based on the application. For help regarding pin mapping refer to the Hardware Details section.
 
 A modular software framework is provided for quick application prototyping.
 Based on the application use case, developers need to download the respective
@@ -15,8 +17,6 @@ software packs.
    
    -  IAR Embedded Workbench for ARM 8.20.1 or higher
    -  CrossCore Embedded Studio 2.7.0 ® or higher
-   
-   packs
 
 The Cog software development kit consists of these packs
 
@@ -34,7 +34,7 @@ The Cog software development kit consists of these packs
 
    -  *Version History*
 
-      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench.\ **[Latest]**
+      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench. **[Latest]**
 
          -  Version: 1.0.0 - Initial Release
 
@@ -52,6 +52,3 @@ The Cog software development kit consists of these packs
 
       -  **Version: 1.0.0** - Initial Release **[Latest]**
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/ev-cog-ad3029wz>`
-
-*End of Document*

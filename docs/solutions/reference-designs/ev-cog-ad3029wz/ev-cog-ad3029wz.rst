@@ -9,11 +9,11 @@ The :adi:`EV-COG-AD3029WZ <en/design-center/evaluation-hardware-and-software/eva
 -  ARM mbed Compiler
 
 Make sure a valid license for the selected toolchain is installed before using
-EV-COG-AD3029WZ board. \*\* The software and power measurement is same for both
-EV-COG-AD3029WZ and EV-COG-AD3029LZ \*\*
+EV-COG-AD3029WZ board. **The software and power measurement is same for both
+EV-COG-AD3029WZ and EV-COG-AD3029LZ**
 
 -  :doc:`Introduction </solutions/reference-designs/ev-cog-ad3029wz/introduction>`
--  `Software Packs & Board Support Package <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029wz/packs_&_bsp>`_: EV-COG-AD3029WZ software architecture is categorized into 4 groups as below.
+-  :doc:`Software Packs & Board Support Package <packs_bsp>`: EV-COG-AD3029WZ software architecture is categorized into 4 groups as below.
 
 |image2|
 

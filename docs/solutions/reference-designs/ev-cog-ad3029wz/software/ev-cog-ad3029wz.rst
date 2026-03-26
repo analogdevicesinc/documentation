@@ -1,7 +1,9 @@
-Analog Devices EV-COG-AD3029LZ Off-Chip Drivers and Examples
+Analog Devices EV-COG-AD3029WZ Off-Chip Drivers and Examples
 ============================================================
 
-<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** 
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ; the toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ. The user needs to change only the pin muxing based on the application. For help regarding pin mapping refer to the Hardware Details section.
 
 General Description/Overview
 ----------------------------
@@ -17,9 +19,9 @@ EV-COG-AD3029LZ software pack contains the following components:
 -  On-Chip Driver Examples ( GPIO,RTC, SPI, Systick, TMR, UART, WDT)
 -  Bluetooth Profile Examples
 
-   -  \* FindMe Target
-   -  \* Proximity Reporter
-   -  \* Data Exchange (Hello World)
+   -  FindMe Target
+   -  Proximity Reporter
+   -  Data Exchange (Hello World)
 
 -  Android IoTNode application software
 -  Documentation
@@ -65,6 +67,3 @@ The software pack can be downloaded in several ways.
    -  `EV-COG-AD3029LZ BSP 1.0.0 <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.1.0.0.pack>`_
    
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad3029lz>`_

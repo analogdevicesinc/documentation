@@ -15,6 +15,3 @@ This modular nature is depicted in the concept sketches below.
 
 .. image:: images/11082017-mcu-cog-revb-stacking.png
 
-| End Document
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/ev-cog-ad3029wz>`

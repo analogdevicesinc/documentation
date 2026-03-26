@@ -1,11 +1,9 @@
 CrossCore Embedded Studio Download & Install
 ============================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software
-for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for
-EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin
-muxing based on the application.For help regarding pinmapping refer to the
-Hardware Details section.
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ; the toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ. The user needs to change only the pin muxing based on the application. For help regarding pin mapping refer to the Hardware Details section.
 
 This page provides all the necessary steps to get CrossCore Embedded Studio
 (CCES) software environment up and running on Windows or Linux.
@@ -30,7 +28,7 @@ following features and many more:
    IDE as well.
 
 Pre-Requisites and Requirements List
-====================================
+------------------------------------
 
 There are a few things that you will need for the tools and software to work
 properly.
@@ -52,7 +50,7 @@ properly.
       -  Or other favorite Terminal program
 
 CrossCore Embedded Studio Download Packages
-===========================================
+-------------------------------------------
 
 .. admonition:: Download
    :class: download
@@ -84,7 +82,7 @@ The following features are only supported via the Windows version
 -  Debugging an Application using the CrossCore Debugger (TPSDK)
 
 CrossCore Embedded Studio Installer Instructions
-================================================
+------------------------------------------------
 
 It is best that you save all the files/folders to the default directories
 recommended by the CrossCore Embedded Studios installer. This way all the
@@ -127,7 +125,7 @@ Analog Devices local directory structure which can be found below.
 -  CMSIS Pack files are installed to **/opt/analog/cces/2.6.0/ARM/packs**
 
 Activating CrossCore Embedded Studio
-====================================
+------------------------------------
 
 The first time you launch CrossCore Embedded Studio, you will be prompted to input a serial number, name, and email address. The serial number for **ALL** EV-COG-AD3029WZ boards is:
 
@@ -136,10 +134,7 @@ allow you full and unlimited access to all the features of the tool when using
 the Analog Devices family of ARM Cortex Processor.
 
 CrossCore Embedded Studio Support
-=================================
+---------------------------------
 
-For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
+For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <mailto:processor.tools.support@analog.com>`_
 
-*End of Document*
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/ev-cog-ad3029wz>`

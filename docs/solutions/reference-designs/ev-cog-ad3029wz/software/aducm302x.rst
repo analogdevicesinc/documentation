@@ -1,7 +1,9 @@
 Analog Devices ADuCM302x Device Support Pack
 ============================================
 
-<note > **There are no seperate toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ, the toolchain,On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ.The user needs to change only the pin muxing based on the application.For help regarding pinmapping refer to the Hardware Details section.** 
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029WZ; the toolchain, On-Board Peripheral Drivers & Software for EV-COG-AD3029LZ works with EV-COG-AD3029WZ. The user needs to change only the pin muxing based on the application. For help regarding pin mapping refer to the Hardware Details section.
 
 General Description/Overview
 ----------------------------
@@ -73,6 +75,3 @@ manual installation to install the pack.
    -  `ADuCM302x DFP 2.0.0 <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.2.0.0.pack>`_
    
 
-*End of Document*
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029wz/ev-cog-ad3029wz>`
