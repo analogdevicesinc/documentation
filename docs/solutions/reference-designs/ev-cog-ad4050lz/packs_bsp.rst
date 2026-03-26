@@ -27,8 +27,4 @@ The Cog software development kit consists of the following packs:-
 
    -  *Version History*
 
-      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench.\ **[Latest]**
-
-| End Document
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
+      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench. **[Latest]**

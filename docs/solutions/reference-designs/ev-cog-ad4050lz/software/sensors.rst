@@ -56,6 +56,3 @@ The software pack can be downloaded in following ways.
    `Sensor Software Pack 1.1.0 <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_
    
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_

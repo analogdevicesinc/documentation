@@ -73,6 +73,3 @@ The software pack can be downloaded in following ways.
    -  `AnalogDevices.ADuCM4x50_EZ_KIT_BSP.3.1.1 <../resources/analogdevices.aducm4x50_ez_kit_bsp.3.1.1.zip>`_
    
 
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_

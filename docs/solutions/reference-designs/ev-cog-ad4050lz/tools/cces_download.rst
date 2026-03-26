@@ -24,7 +24,7 @@ following features and many more:
    IDE as well.
 
 Pre-Requisites and Requirements List
-====================================
+------------------------------------
 
 There are a few things that you will need for the tools and software to work
 properly.
@@ -46,13 +46,13 @@ properly.
       -  Or other favorite Terminal program
 
 CrossCore Embedded Studio Download Packages
-===========================================
+-------------------------------------------
 
 .. admonition:: Download
    :class: download
 
    
-   The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD3029LZ.
+   The EV-COG-AD4050LZ **requires** the use of Crosscore Embedded Studios version **2.6.0 or higher**. Do not attempt to use earlier versions of the CrossCore tools, due to compatibility issues that will **damage** the EV-COG-AD4050LZ.
    
    `CrossCore Embedded Studio 2.7.0 Windows Installer(Executable) <http://download.analog.com/tools/CrossCoreEmbeddedStudio/Releases/Release_2.7.0/ADI_CrossCoreEmbeddedStudio-Rel2.7.0.exe>`_
    
@@ -78,7 +78,7 @@ The following features are only supported via the Windows version
 -  Debugging an Application using the CrossCore Debugger (TPSDK)
 
 CrossCore Embedded Studio Installer Instructions
-================================================
+------------------------------------------------
 
 It is best that you save all the files/folders to the default directories
 recommended by the CrossCore Embedded Studios installer. This way all the
@@ -102,7 +102,7 @@ directory structure which can be found below.
 -  Eclipse IDE installs to **C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\Eclipse**
 -  GNU ARM Embedded Toolchain for Cortex-M installs to **C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\gcc-arm-embedded**
 -  OpenOCD installs to **C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\openocd\\bin**
--  CMSIS Pack files are installed to **C:\\Analog Devices\\CrossCore Embedded Studio 2.5.1\\ARM\\packs**
+-  CMSIS Pack files are installed to **C:\\Analog Devices\\CrossCore Embedded Studio 2.6.0\\ARM\\packs**
 
 Installing CrossCore Embedded Studio on Linux
 ---------------------------------------------
@@ -121,7 +121,7 @@ Analog Devices local directory structure which can be found below.
 -  CMSIS Pack files are installed to **/opt/analog/cces/2.6.0/ARM/packs**
 
 Activating CrossCore Embedded Studio
-====================================
+------------------------------------
 
 The first time you launch CrossCore Embedded Studio, you will be prompted to input a serial number, name, and email address. The serial number for **ALL** EV-COG-AD4050LZ boards is:
 
@@ -130,10 +130,6 @@ allow you full and unlimited access to all the features of the tool when using
 the Analog Devices family of ARM Cortex Processor.
 
 CrossCore Embedded Studio Support
-=================================
+---------------------------------
 
-For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
-
-*End of Document*
-
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
+For more details on CrossCore Embedded Studio, updated versions of the tools, release notes, tools documentation, or other support. Please visit the CrossCore :adi:`webpage <cces>`, or email the CrossCore support team at `processor.tools.support@analog.com <mailto:processor.tools.support@analog.com>`_

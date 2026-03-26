@@ -76,15 +76,11 @@ Running an Example Project
    :width: 700
 
 -  Save the project to the desired location.
--  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD4050LZ using CMSIS-DAP.
+-  Click on 'Debug and Download' icon |image1| on the menu bar. This will compile, build and download the project on EV-COG-AD4050LZ using CMSIS-DAP.
 -  Click on 'Run' icon |image2| to start the debug session.
 -  Now press BTN1 or BTN2 on EV-COG-AD4050LZ and inspect corresponding LED
 
 You are all set!
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad4050lz/quickstart>`
-
-| End Document
 
 .. |image1| image:: ../images/debug_debug_button.png
 .. |image2| image:: ../images/run_button.png

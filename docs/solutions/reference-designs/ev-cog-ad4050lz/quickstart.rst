@@ -24,6 +24,3 @@ Click below link to go to CrossCore Embedded Studio userguide.
 
 :doc:`EV-COG-AD4050LZ with IAR Embedded Workbench for ARM </solutions/reference-designs/ev-cog-ad4050lz/quickstart_guide/iar>`
 
-`Back <https://wiki.analog.com/resources/eval/user-guides/ev-cog-ad4050lz>`_
-
-| End Document
