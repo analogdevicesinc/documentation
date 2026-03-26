@@ -1,11 +1,13 @@
 EV-COG-AD4050WZ with CrossCore Embedded Studio
 ==============================================
 
-<note >There are no seperate toolchain,On-Board Peripheral Drivers & Software
-for EV-COG-AD4050WZ, the toolchain,On-Board Peripheral Drivers & Software for
-EV-COG-AD4050LZ works with EV-COG-AD4050WZ.The user needs to change only the pin
-muxing based on the application.For help regarding pinmapping refer to the
-Hardware Details section.
+.. note::
+
+   There are no separate toolchain, On-Board Peripheral Drivers & Software for
+   EV-COG-AD4050WZ; the toolchain, On-Board Peripheral Drivers & Software for
+   EV-COG-AD4050LZ works with EV-COG-AD4050WZ. The user needs to change only
+   the pin muxing based on the application. For help regarding pin mapping refer
+   to the Hardware Details section.
 
 IDE Setup
 ---------
@@ -32,7 +34,7 @@ Software Packs and Driver Setup
 -  `Analog Devices EV-COG-AD4050 Off-Chip Drivers and Examples 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/COG_4050/Releases/AnalogDevices.EV-COG-AD4050LZ_BSP.3.1.0.pack>`_
 -  Start CrossCore Embedded Studio.
 -  Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
--  Click Import Existing Packs icon |image1|.\ `Refer for more details <https://wiki.analog.com/resources/ev/user-guides/ev-cog-ad4050lz/tools/cces_guide>`_.
+-  Click Import Existing Packs icon |image1|. `Refer for more details <https://wiki.analog.com/resources/ev/user-guides/ev-cog-ad4050lz/tools/cces_guide>`_.
 -  Select all the packs and import. This will install the packs. Ignore the warnings seen on the console window. In order to remove these warnings, additional packs needs to be installed which are available in the last section of this page.
 -  Please refer to this `link <https://os.mbed.com/handbook/Windows-serial-configuration>`_ to download and install mbed serial driver on PC.
 
@@ -76,10 +78,6 @@ Running an Example Project
 -  Now press BTN1 or BTN2 on EV-COG-AD4050LZ and inspect corresponding LED.
 
 You are all set!
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad4050w/quickstart>`
-
-| End Document
 
 .. |image1| image:: ../images/import_existing_packs_icon.jpg
 .. |image2| image:: ../images/pack_manager.jpg

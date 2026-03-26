@@ -11,7 +11,3 @@ provided example demo software projects.
 The following boards are currently available:
 
 -  :doc:`EV-COG-AD4050WZ MCU Cog </solutions/reference-designs/ev-cog-ad4050w/cog_hw_userguide>`
-
-| End Document
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad4050w/ev-cog-ad4050w>`

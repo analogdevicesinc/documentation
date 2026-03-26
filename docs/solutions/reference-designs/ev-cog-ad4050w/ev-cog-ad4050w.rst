@@ -11,11 +11,11 @@ The :adi:`EV-COG-AD4050WZ <en/design-center/evaluation-hardware-and-software/eva
 Make sure a valid license for the selected toolchain is installed before using
 EV-COG-AD4050WZ board.
 
-\*\* The software and power measurement is same for both EV-COG-AD4050WZ and
-EV-COG-AD4050LZ \*\*
+**The software and power measurement is same for both EV-COG-AD4050WZ and
+EV-COG-AD4050LZ**
 
 -  :doc:`Introduction </solutions/reference-designs/ev-cog-ad4050w/introduction>`
--  :doc:`Software Packs & Board Support Package </solutions/reference-designs/ev-cog-ad4050w/packs_bsp>`:EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
+-  :doc:`Software Packs & Board Support Package </solutions/reference-designs/ev-cog-ad4050w/packs_bsp>`: EV-COG-AD4050WZ software architecture is categorized into 2 groups as below.
 
 |image2|
 

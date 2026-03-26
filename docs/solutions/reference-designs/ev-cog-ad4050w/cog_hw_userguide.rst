@@ -40,12 +40,10 @@ Power Supply Options
 
 The MCU Cog offers the following power supply options:
 
-::
-
-   -5V USB power (USB microB connector)
-   -3V CR2032 Coin cell (Cell holder - BT1)
-   -3V - 6V Rechargeable Li-Ion Battery (JST Connector - P6)
-   -3V - 6V External Supply from an MCU Cog Add-on card (via Connector C1)
+-  5V USB power (USB microB connector)
+-  3V CR2032 Coin cell (Cell holder - BT1)
+-  3V - 6V Rechargeable Li-Ion Battery (JST Connector - P6)
+-  3V - 6V External Supply from an MCU Cog Add-on card (via Connector C1)
 
 Power Muxing Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -86,11 +84,9 @@ Programming & Debug Options
 
 The MCU Cog offers the following debug options:
 
-::
-
-   -On-board CMSIS-DAP debugger (USB microB connector)
-   -JLINK-9 Connector for access to SWD interface (P26)
-   -Access to SW interface to an MCU Cog Add-on card (via Connector C2)
+-  On-board CMSIS-DAP debugger (USB microB connector)
+-  JLINK-9 Connector for access to SWD interface (P26)
+-  Access to SW interface to an MCU Cog Add-on card (via Connector C2)
 
 Wireless Connectivity Options
 -----------------------------
@@ -105,13 +101,11 @@ The MCU Cog board offers support for ADI RF daughter-cards such as the EV-ADF703
 Differences between EV-COG-AD4050LZ and EV-COG-AD4050WZ
 -------------------------------------------------------
 
-::
-
-   -LFXTAL changed to a smaller footprint version
-   -Instead of UART0 being brought to the RF, UART1 is always wired to the RF module (32-pin Hirose connector).
-   -If an application needs to use UART1 as well, the RF module may not be used at the same time.
-   -As a larger number of GPIOs are attached to the expansion connector (as given in the spreadsheet), the ADF_GPIOs from the RF module connector and RF_RTC_OPC1 are not available on the expansion headers.
-   -LED2 is on GPIO47 instead of earlier GPIO42 (as GPIO42 is not available), where there was GPIO42 earlier on the expansion pin header, now there is GPIO47.
+-  LFXTAL changed to a smaller footprint version
+-  Instead of UART0 being brought to the RF, UART1 is always wired to the RF module (32-pin Hirose connector).
+-  If an application needs to use UART1 as well, the RF module may not be used at the same time.
+-  As a larger number of GPIOs are attached to the expansion connector (as given in the spreadsheet), the ADF_GPIOs from the RF module connector and RF_RTC_OPC1 are not available on the expansion headers.
+-  LED2 is on GPIO47 instead of earlier GPIO42 (as GPIO42 is not available), where there was GPIO42 earlier on the expansion pin header, now there is GPIO47.
 
 Buttons/LED(s)
 --------------
@@ -153,7 +147,7 @@ C1 & C2 from pins 29 to 60
 Expansion connectors pin out table
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-\*\* Differences between EV-COG-AD4050WZ and EV-COG-AD4050LZ include the differently coloured entries in the pinout table*\* |image2| |image3| |image4|
+**Differences between EV-COG-AD4050WZ and EV-COG-AD4050LZ include the differently coloured entries in the pinout table** |image2| |image3| |image4|
 
 |image5|
 
@@ -246,8 +240,6 @@ expansion connectors as well as place-bound rules embedded.
    :class: download
 
    `Gear Template Design Database <resources/geartemplatedesigndatabase.zip>`_
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad4050w/ev-cog-ad4050w>`
 
 .. |image1| image:: images/23062017-tile-revb-power-mux-scheme.png
 .. |direct| image:: images/24072017-tile-revb-adp5300-gpio.png
