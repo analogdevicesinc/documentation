@@ -7,7 +7,7 @@ EV-HT-200CDAQ1 User's Guide
 Introduction
 ------------
 
-The EV-HT-200CDAQ1 reference design kit includes a high temperature circuit assembly with data acquisition front-end and microcontroller, optimized firmware, data capture and analysis software, source code, design files, bill of materials, test reports, and breakout boards. This platform is suitable for reference design, rapid prototyping and lab testing of high temperature instrumentation systems. The dimensions and construction of the circuit assembly have been designed to be compatible with oil and gas instrumentation form factors, although it can also be used as the basis for other high temperature applications. A block diagram of the main board is shown below. For a detailed overview of the platform features, see the :doc:`overview </solutions/reference-designs/high-temp/ev-ht-200cdaq1/overview>` wiki page.
+The EV-HT-200CDAQ1 reference design kit includes a high temperature circuit assembly with data acquisition front-end and microcontroller, optimized firmware, data capture and analysis software, source code, design files, bill of materials, test reports, and breakout boards. This platform is suitable for reference design, rapid prototyping and lab testing of high temperature instrumentation systems. The dimensions and construction of the circuit assembly have been designed to be compatible with oil and gas instrumentation form factors, although it can also be used as the basis for other high temperature applications. A block diagram of the main board is shown below. For a detailed overview of the platform features, see the :doc:`overview </solutions/reference-designs/high-temp/ev-ht-200cdaq1/overview>` page.
 
 .. image:: ../images/block_diagram.jpg
    :align: center
@@ -16,7 +16,7 @@ The EV-HT-200CDAQ1 reference design kit includes a high temperature circuit asse
 Purpose
 ~~~~~~~
 
-This document is intended to provide instructions on how to connect and use the main features of the evaluation board. For more detailed information on the software features, organization, hardware design notes and other useful information refer to the :doc:`main wiki page </solutions/reference-designs/high-temp/ev-ht-200cdaq1>`.
+This document is intended to provide instructions on how to connect and use the main features of the evaluation board. For more detailed information on the software features, organization, hardware design notes and other useful information refer to the :doc:`main page </solutions/reference-designs/high-temp/ev-ht-200cdaq1>`.
 
 Kit Contents
 ~~~~~~~~~~~~
@@ -46,9 +46,7 @@ the kit:
    :align: center
 
 -  Analog Input Breakout board with “Downhole” connections to analog sensors and
-   analog circuit specific power
-
-supplies.
+   analog circuit specific power supplies.
 
 .. image:: ../images/ev-ht-200cdaq1bangle.jpg
    :align: center
@@ -74,12 +72,12 @@ ARM microcontroller firmware, and the Data Viewer host software.
 
 All EV-HT-200CDAQ1 boards come with the microcontroller pre-programmed. The
 latest firmware can be downloaded and built by downloading it from ADI's GitHub.
-See the software download wiki page for further details. The firmware is
+See the software download page for further details. The firmware is
 programmed with multiple, highly configurable modes of data acquisition.
 Acquired data is sent to a PC via the UART interface.
 
 The Data Viewer host software (and open source) can be downloaded from the
-software download wiki page. This software communicates with the main board via
+software download page. This software communicates with the main board via
 UART to control acquisition modes, display data, log data and run signal
 analysis.
 
@@ -123,16 +121,18 @@ Prior to running the HT DAQ viewer software and measuring precision signals, it 
 -  On the powers/comms breakout board, connect a 3.3V power supply to two connections on the uphole interface board: “3.3VIN” and “Vp”. Vp provides power to the analog portion of the board. Make a ground connection to the K9 turret, “DGND” and the K2 turret, “Vm”. Apply 3.3V. If you are able to monitor current through the supply, it should be around 45 mA.
 -  Connect the USB cable between PC and the HT-DAB-1 uphole interface board. The PC should enumerate with the FTDI chip. If it does not, please go to the FTDI website (http://www.ftdichip.com/FTDrivers.htm) and download the Windows drivers for FT232R.
 -  Start a PuTTY terminal window,select baud rate = 2000000 (6 zeros) with handshaking = CTS/RTS. Choose the Communication Port. (To determine the COM port, start the Windows Device Manager and select “Ports (COM & LPT)”. If the USB interface on the Uphole board has enumerated, it will show up as a serial port.)
--  Enter “\ :math:`version” on the terminal window. If the MCU is powered, it will respond with firmware and MCU identification information. If no response is made when key strokes are entered, please double check the hardware and the COM port number.  * Enter “`\ gettemp” on the terminal window. If the analog portion is powered and working properly, you should get a message back with accurate temperature and VCC voltage measurement information. If the temperature or voltage do not make sense, the most likely cause is not having the analog supply provided.
--  Enter “\ :math:`setacq 40 255 80 255 5”. This will set the experiment to 255 samples of ch0 (4 microsecond conversion period.) and ch2 (8 microsecond conversion period).  * Enter “`\ single”. The terminal window should display sampling data for ch0 and ch2 with hexadecimal characters.
+-  Enter ``$version`` on the terminal window. If the MCU is powered, it will respond with firmware and MCU identification information. If no response is made when key strokes are entered, please double check the hardware and the COM port number.
+-  Enter ``$gettemp`` on the terminal window. If the analog portion is powered and working properly, you should get a message back with accurate temperature and VCC voltage measurement information. If the temperature or voltage do not make sense, the most likely cause is not having the analog supply provided.
+-  Enter ``$setacq 40 255 80 255 5``. This will set the experiment to 255 samples of ch0 (4 microsecond conversion period.) and ch2 (8 microsecond conversion period).
+-  Enter ``$single``. The terminal window should display sampling data for ch0 and ch2 with hexadecimal characters.
 
 .. important::
 
    Connecting Vp to 3.3V and Vm to GND is the simplest connection, but does not
    give the highest performance signal acquisition. To achieve maximum
    performance from the analog front end, separate bipolar connections should be
-   used with Vp=+5VDC and Vm=-2.5VDC. See the wiki section on hardware design
-   notes for further information
+   used with Vp=+5VDC and Vm=-2.5VDC. See the hardware design notes section
+   for further information
 
 Installing and Using HT DAQ Viewer
 ----------------------------------
@@ -141,7 +141,7 @@ HT DAQ Viewer is a Windows application that allows the user to connect, control,
 view and log captured data from the EV-HT-200CDAQ1 reference design board. It
 has advanced signal analysis functions built in including FFT, histogram, and
 spectrum analysis to facilitate deep data examination. Source code for HT DAQ
-Viewer in C# is available on the ADI GitHub, see the software download wiki page
+Viewer in C# is available on the ADI GitHub, see the software download page
 for more information.
 
 System Requirements
@@ -155,7 +155,7 @@ Installing the Application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 HT DAQ Viewer is a “zero install” executable. Download the latest version of the
-software from the software download wiki page. Unzip the archive in a directory
+software from the software download page. Unzip the archive in a directory
 of your choice. Click on the “HT DAQ Viewer.exe” to run the program. If you want
 to have a shortcut on your desktop or another folder, right click on the “HT DAQ
 Viewer.exe” and select “create shortcut” and place this link where desired.

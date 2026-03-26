@@ -1,5 +1,3 @@
-.
-
 EV-HT-200CDAQ1 Overview
 =======================
 
@@ -82,7 +80,8 @@ Open Source Firmware and Software Optimized for Data Acquisition
    -  Burst mode for frequency domain analysis or high throughput data capture
    -  Continuous mode for time domain analysis or lower throughput data capture
 
-==== FreeRTOS Firmware Integration ====
+FreeRTOS Firmware Integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Optimized drivers and data acquisition controls functions partitioned into
    tasks allows end user to focus on application coding right away

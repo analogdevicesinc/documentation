@@ -55,7 +55,7 @@ element.
 Analog Input Channel
 --------------------
 
-The design of the data acquisition channel for the EV-HT-200CDAQ1 is covered extensively by the\ :adi:`CN0365` application note. That design serves as the basis for the three ADC inputs on this platform, although some changes and optimizations were made, mostly in passive component selection, in order to address the form factor requirements of the board and extended reliable operation up to 200°C. The reference acquisition channel circuit is shown the schematic below. There are two “digital multiplexed” channels that each contain a complete data acquisition channel, similar to CN0365, that are capable of running at high sample rates. There is also an “analog multiplexed” channel that adds an ADG798 multiplexer in front of the inputs, optimized for lower throughput inputs. R1 and R3 provide a 1.25 V bias for the non-inverting input of U1, and prevent it from floating to the rail of the analog input if left open, or if the multiplexer is de-selected. R8 and R9 can be changed to increase the gain of U1. R4, R7, and C1 are the anti-aliasing filter, but they can be re-configured as an attenuator or alternate filter configuration. R5, R6, and C4 form the RC filter between the ADC driver and ADC input that limits the amount of out-of-band noise arriving at the ADC input and attenuates the kickback voltage from the switched capacitors in the ADC’s input.
+The design of the data acquisition channel for the EV-HT-200CDAQ1 is covered extensively by the :adi:`CN0365` application note. That design serves as the basis for the three ADC inputs on this platform, although some changes and optimizations were made, mostly in passive component selection, in order to address the form factor requirements of the board and extended reliable operation up to 200°C. The reference acquisition channel circuit is shown the schematic below. There are two “digital multiplexed” channels that each contain a complete data acquisition channel, similar to CN0365, that are capable of running at high sample rates. There is also an “analog multiplexed” channel that adds an ADG798 multiplexer in front of the inputs, optimized for lower throughput inputs. R1 and R3 provide a 1.25 V bias for the non-inverting input of U1, and prevent it from floating to the rail of the analog input if left open, or if the multiplexer is de-selected. R8 and R9 can be changed to increase the gain of U1. R4, R7, and C1 are the anti-aliasing filter, but they can be re-configured as an attenuator or alternate filter configuration. R5, R6, and C4 form the RC filter between the ADC driver and ADC input that limits the amount of out-of-band noise arriving at the ADC input and attenuates the kickback voltage from the switched capacitors in the ADC’s input.
 
 .. image:: ../images/inputchannel.png
    :align: center
@@ -148,9 +148,6 @@ be taken:
 -  An individual calibration can be performed to null the effect of mux leakage over temperature
 -  Lower value resistors and RTD can be used at the cost of higher power
    consumption
-
-Headline
-^^^^^^^^
 
 PCB Layout and Assembly
 -----------------------

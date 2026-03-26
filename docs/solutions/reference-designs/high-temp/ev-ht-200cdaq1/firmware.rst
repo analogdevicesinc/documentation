@@ -89,7 +89,7 @@ UART receive software is implemented in an ISR when the FIFO buffer has informat
 Parsing (“parser.c”)
 --------------------
 
-As part of the main loop, the “ParseCommand” function is called. This will analyze the UART “RxBuffer”. When an end of string character (“\\r”) is received, the string is compared against valid commands. All command strings begin with “\ :math:`”. Invalid command strings will result in an “`\ ERROR:” response on the UART transmitter. Using the backspace character to correct typing errors is allowed. The use of the back and forward arrows to edit an input string is not supported.
+As part of the main loop, the “ParseCommand” function is called. This will analyze the UART “RxBuffer”. When an end of string character (``\r``) is received, the string is compared against valid commands. All command strings begin with ``$``. Invalid command strings will result in an ``ERROR:`` response on the UART transmitter. Using the backspace character to correct typing errors is allowed. The use of the back and forward arrows to edit an input string is not supported.
 
 Valid commands will prompt further actions. Status and Mode information is set
 for a subset of the commands in global variables “m_iStatus” with “StatusEnum”
