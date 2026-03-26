@@ -11,14 +11,12 @@ Design Support Package
 
 The Design Support Package is a zip file that contains the following:
 
-::
-
-     Schematic
-     Bill of Materials
-     Assembly Drawing
-     Fabrication Drawing
-     Native CAD Project Files
-     Gerber Layout Files
+-  Schematic
+-  Bill of Materials
+-  Assembly Drawing
+-  Fabrication Drawing
+-  Native CAD Project Files
+-  Gerber Layout Files
 
 Click here to download the design package: `ev-ht-200cdaq1-z_revc_deisgn_support_package.zip <../resources/ev-ht-200cdaq1-z_revc_deisgn_support_package.zip>`_
 

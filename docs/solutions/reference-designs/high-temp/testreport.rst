@@ -51,7 +51,7 @@ multimeters. Power cycle testing was performed at each temperature point
 Crosstalk
 ---------
 
-Crosstalk, in simplified terms, is a metric of how much a channel in a data acquisition system is effected by signal(s) on adjacent channel(s). For more information on crosstalk in data converters, see this\ :adi:`"Rarely Asked Questions" article. <en/analog-dialogue/raqs/raq-issue-75.html>`
+Crosstalk, in simplified terms, is a metric of how much a channel in a data acquisition system is effected by signal(s) on adjacent channel(s). For more information on crosstalk in data converters, see this :adi:`"Rarely Asked Questions" article. <en/analog-dialogue/raqs/raq-issue-75.html>`
 
 For this test, a single board was used at room temperature. It was powered with
 +5VDC Vp/-2.5VDC Vm / +3.3VDC. A very low distortion signal generature was

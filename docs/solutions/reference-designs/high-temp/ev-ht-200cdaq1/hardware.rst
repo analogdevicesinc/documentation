@@ -230,7 +230,7 @@ and 28-mil. For this reason a six layer design was utilized and allows a ground
 plane next to each signal layer for better noise performance.
 
 .. image:: ../images/pcb_stackup.png
-   :alt: 600
+   :width: 600
    :align: center
 
 Power and digital communication signals feed into one connector and analog
