@@ -9,7 +9,6 @@ In this lab, we will implement a monopulse tracking function and observe it lock
     
 ```{image} mGUI1.svg
 :width: 600px
-:align: center
 ```
 
 3. From the lecture (see video below), what do the “Delta”, “Phase Delta”, and “Error Function” bars represent?  
@@ -18,26 +17,20 @@ In this lab, we will implement a monopulse tracking function and observe it lock
 6. Move the Phaser antenna and observe the tracking function in action
 ```{image} mGUI2.svg
 :width: 600px
-:align: center
 ```
 
----
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=hZDopcNjVzY
-:align: left
 ```
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

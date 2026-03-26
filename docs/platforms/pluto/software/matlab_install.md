@@ -15,43 +15,27 @@ These can all be found in the MATLAB "Add-Ons":
 
 ```{image} resources/matlab1.svg
 :width: 450px
-:align: center
 ```  
-<br>
-<br>
-
 Then search for the desired toolbox:
 
 ```{image} resources/matlab2.svg
 :width: 400px
-:align: center
 ```  
-
-<br>
-<br>
-
 When installing the Pluto Toolbox, a "Connect Hardware" window will open.  Just select cancel.  Do not allow MATLAB to update Pluto's firmware.  
 
 ```{image} resources/matlab3.svg
 :width: 400px
-:align: center
 ```  
-
-<br>
-<br>
-
 ```{caution} 
 When installing this Pluto Toolbox, MATLAB may prompt you to update or reinstall Pluto's firmware.  
 ⚠️**Do not allow MATLAB to modify Pluto's firmware!**⚠️  
 Instead, follow the [Upgrading Firmware](../getStarted/firmware.md) section of this guide to ensure you have the latest firmware, with the correct configuration for the Phaser.  
 ```
 
-<br>
 
----
 ## MATLAB Pluto (2T/2R) Installation
 
-If you are using Pluto in the {ref}`2T2R configuration <adding-a-second-rx-and-tx-channel>`, then you'll also need to install the toolboxes necessary for the AD9361 control. They are found in the MATLAB Add On manager. The toolboxes to install are:
+If you are using Pluto in the {ref}`2T2R configuration <pluto setup adding-a-second-rx-and-tx-channel>`, then you'll also need to install the toolboxes necessary for the AD9361 control. They are found in the MATLAB Add On manager. The toolboxes to install are:
 
 1. [Analog Devices, Inc. Transceiver Toolbox](https://www.mathworks.com/matlabcentral/fileexchange/72645-analog-devices-inc-transceiver-toolbox)
 2. [MATLAB Support for MinGW-w64 C/C++ Compiler](https://www.mathworks.com/matlabcentral/fileexchange/52848-matlab-support-for-mingw-w64-c-c-fortran-compiler)
@@ -63,9 +47,7 @@ A=adi.utils.libad9361
 A.download_libad9361
 ```
 
-<br>
 
----
 
 ## Test MATLAB Pluto (1T/1R) Installation
 
@@ -81,11 +63,7 @@ This first creates a Pluto receive object ("rx").  For the context, it is best t
 
 ```{image} resources/matlab4.svg
 :width: 400px
-:align: center
 ```  
-<br>
-<br>
-
 Here's another example, this time setting more attributes and plotting the result:
 
 ```{code-block} matlab   
@@ -115,24 +93,17 @@ grid on
 release(rx);
 ```
 
-<br>
 
 You should see something like the plot below (Pluto is just measuring noise):
 
 ```{image} resources/matlab5.svg
 :width: 400px
-:align: center
 ```  
-<br>
-<br>
-
----
 
 ## Test MATLAB Pluto (2T/2R) Installation
 
 If you are using Pluto as a 2T/2R device, then you need to address it as a AD9361, and not as a Pluto.  That means that instead of using the Pluto Toolbox, you'll use the Analog Devices Transceiver Toolbox. The setup is very similar though. Here are some examples:
 
-<br>
 
 Simple example (just a check that you've installed the Transceiver Toolbox)
 
@@ -143,7 +114,6 @@ data = sdr();
 data(1:10)
 ```
 
-<br>
 
 Here's a more complete example showing how to create a waveform, transmit it, and process both channels of receive data:
 
@@ -202,15 +172,7 @@ xlim([0 250]); title("Rx2"); xlabel('sample index');
 
 ```{image} resources/matlab6.svg
 :width: 300px
-:align: center
 ```  
-
-
-
-<br>
-<br>
-
----
 
 ## Useful Pluto MATLAB Links
 - [Additional Examples](https://github.com/analogdevicesinc/TransceiverToolbox/tree/master/trx_examples/streaming/ad936x)
@@ -221,12 +183,9 @@ xlim([0 250]); title("Rx2"); xlabel('sample index');
 - [Intro to Comms Systems Using Pluto](https://www.mathworks.com/matlabcentral/fileexchange/69417-introductory-communication-systems-course-using-sdr)
 - [Chapter 5: Pluto Hardware and MATLAB](https://www.analog.com/en/resources/technical-books/software-defined-radio-for-engineers.html)
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

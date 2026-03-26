@@ -7,7 +7,6 @@ To facilitate that introduction, Analog Devices has prepared several example lab
 ```{image} resources/overview.svg
 :alt: Phaser Labs Overview
 :width: 800px
-:align: center
 ```
 
 ## Printable Lab Manuals
@@ -51,14 +50,11 @@ CFAR Processing <RadarCFAR/index>
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

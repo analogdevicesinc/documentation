@@ -2,11 +2,10 @@
 
 There's a number of ways you can customize your PlutoSDR.  Most of these are detailed [here](https://wiki.analog.com/university/tools/pluto/users/customizing).  In this guide, we'll walk through the two most popular customizations:  increasing the frequency range and adding a second transmit and receive channel.
 
-Both of these customizations require logging into the command line terminal of Pluto.  This is easily accomplished with an SSH or serial connection, as explained {ref}`here <connecting-via-ssh-or-serial-virtual-com-port>`.  
+Both of these customizations require logging into the command line terminal of Pluto.  This is easily accomplished with an SSH or serial connection, as explained {ref}`here <pluto setup connecting-via-ssh-or-serial-virtual-com-port>`.  
 
 ```{image} resources/login.svg
 :width: 400px
-:align: center
 ```
 
 Remember the username is root, password is analog
@@ -27,16 +26,14 @@ After rebooting, log back into Pluto and see if the commands took effect.  If at
 
 ```{image} resources/ad9364.svg
 :width: 300px
-:align: center
 ```
-(adding-a-second-rx-and-tx-channel)=
+(pluto setup adding-a-second-rx-and-tx-channel)=
 ## Adding a Second Rx and Tx Channel
 
 By default, your PlutoSDR comes with one transmit channel and one receive channel.  These are connected to the SMA ports in the case.  However, you can open up the PlutoSDR and connect another transmit and receive channel. Note that this only works for Rev C, or later, of PlutoSDR (look on the back of your Pluto).  You'll also need the latest firmware -- i.e. rev 0.39 or later.  
 
 ```{image} resources/pluto_ports.png
 :width: 600px
-:align: center
 ```  
 
 The main downside to enabling the second channel is that the maximum sample rate is reduced from 61.44 MSPS to 30.72 MSPS. With twice the number of channels, the sample rate is halved. This is a unique limitation of the PlutoSDR (due to its CMOS digital data output). This limitation does not apply to the AD9361 SOM, which is designed to support two channels at 61.44 MSPS
@@ -44,13 +41,10 @@ The main downside to enabling the second channel is that the maximum sample rate
 Here's a complete video walkthrough of how to open up your Pluto, add the correct cables, and configure Pluto:
 
 ```{video} https://www.youtube.com/watch?v=ph0Kv4SgSuI
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 Once you've made those hardware changes, you can now configure the Pluto software to recognize the second transmit and receive ports.  At the command line, enter:
 
 ```{code} bash
@@ -65,7 +59,6 @@ After rebooting, log back into Pluto and see if the commands took effect.  If at
 
 ```{image} resources/ad9361.svg
 :width: 300px
-:align: center
 ```
 
 If you ever needed to switch back to the 1T/1R mode (for example to operate Pluto at > 30.72 MSPS), then simply set the values back to 1r1t and AD9364. 
@@ -74,19 +67,15 @@ If you have access to a 3D printer, you can print [this panel](resources/PlutoPa
 
 ```{image} resources/panel.svg
 :width: 400px
-:align: center
 ```
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

@@ -12,14 +12,11 @@ ESD Diode Issue <esd>
 Direct LIBIIO Access <libiio>
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

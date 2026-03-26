@@ -3,14 +3,10 @@
 Quantization sidelobes are analogous to quantization error in a data converter. These sidelobes can appear, for certain steering angles, if our phase steps are too large.  More information is in this excellent lecture by Bob Broughton here:
 
 ```{video} https://www.youtube.com/watch?v=51O5FLVZE4c
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
-
+```{clear-content}
+```
 ___
 
 ## Quantization Sidelobes Lab
@@ -21,7 +17,6 @@ In this lab, we will change the phase step size and observe the formation of qua
 
 ```{image} qGUI1.svg
 :width: 600px
-:align: center
 ```
 
 3. Click on the Gain tab and select a taper—we don’t want any sidelobes!   
@@ -30,7 +25,6 @@ In this lab, we will change the phase step size and observe the formation of qua
 
 ```{image} rotate.svg
 :width: 600px
-:align: center
 ```
 
 5. Keep the HB100 pointed at Phaser, and move at a smooth/consistent speed
@@ -38,7 +32,6 @@ In this lab, we will change the phase step size and observe the formation of qua
 
 ```{image} scan.svg
 :width: 600px
-:align: center
 ```
 
 6. Our Blackman taper should have suppressed all the sidelobes.  So we are just seeing the true mainlobe at 15
@@ -47,20 +40,16 @@ In this lab, we will change the phase step size and observe the formation of qua
 
 ```{image} qGUI2.svg
 :width: 600px
-:align: center
 ```
 
 9.  Do you see any new sidelobes?  
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

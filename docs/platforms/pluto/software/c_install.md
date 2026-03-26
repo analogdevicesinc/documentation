@@ -2,17 +2,13 @@
 
 ```{image} resources/software.svg
 :width: 400px
-:align: right
 ```  
 
 ## C
 If you prefer to work with C, you can use the `libiio` library to interface with PlutoSDR. The `libiio` library provides a low-level API for controlling Pluto and accessing its data. You can install `libiio` from the Analog Devices website or using your package manager if it is available. Once you have `libiio` installed, you can use the following code to read samples from [PlutoSDR in C](https://analogdevicesinc.github.io/documentation/tools/pluto/transceiver_transferring_data.html#pluto-transceiver-transferring-data):
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
-
+```{clear-content}
+```
 ```{code-block} c
 // main.c
 // Pluto (AD9361) RX streaming example using libiio over network.
@@ -181,12 +177,9 @@ cleanup_ctx:
 
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

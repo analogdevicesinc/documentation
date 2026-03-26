@@ -45,7 +45,6 @@ cd /root
 ACTION=remove_all /lib/mdev/automounter.sh
 ```
 
----
 
 runme1.sh
 ```{code-block} bash
@@ -64,14 +63,10 @@ cd /root
 ACTION=remove_all /lib/mdev/automounter.sh
 ```
 
----
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

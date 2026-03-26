@@ -1,9 +1,3 @@
-<!--
-   ADEF Platforms documentation master file, created by
-   sphinx-quickstart on Tue Sep 30 12:05:43 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-   -->
 # ADC System Platforms Documentation
 
 ## Complete Evaluation & Demonstration Systems for ADI Data Converters
@@ -20,7 +14,6 @@ real-world system development.
 ## What Makes a Platform?
 
 ````{grid} 1 2 4 4
-:gutter: 2
 
 ```{grid-item-card} Signal-Chain Hardware
 :img-bottom: resources/Signal_Chain_Hardware_transparent.png
@@ -61,7 +54,6 @@ For more information on each of ADC Platforms, please click on the links below:
 
 
 ````{grid} 1 2 4 4
-:gutter: 4
 
 ```{grid-item-card} Phaser (CN0566)
 :link: phaser/index
@@ -87,7 +79,6 @@ Low-cost SDR system based on the AD9361
 
 ```{image} resources/pilot_ships.svg
 :width: 400px
-:align: right
 ```
 
 Each platform includes at least one **Pilot** --- a fully documented system-level example of a representative use case--complete with all the key elements to implement that use case.   
@@ -117,7 +108,6 @@ directly with ADI engineers.
 
 ```{image} resources/rtp_nc_adaptive.jpeg
 :width: 400px
-:align: right
 ```
 
 We have a Catalyst centres in:  

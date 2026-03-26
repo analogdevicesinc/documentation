@@ -5,7 +5,6 @@ When we ask the Pluto to output receive data, it simply captures a buffer contai
 ```{image} pluto_normal.svg
 :alt: Pluto Normal Buffer Capture
 :width: 600px
-:align: center
 ```
 
 However, for a lot of radar processing (like range doppler and MTI) we'll want to record the beat frequency for each chirp.  And then organize those beat frequencies into a sequence.  This means that we need some way to align Pluto's receive buffer with one (or more) chirps. 
@@ -15,7 +14,6 @@ On Phaser, this is implemented using
    and
 2. The TDD engine of Pluto
 
----
 
 ## The ADF4159 TX_DATA Pin
 
@@ -24,7 +22,6 @@ The ADF4159 has a special pin called “TX_DATA."  And when you toggle this pin,
 ```{image} txdata.svg
 :alt: TX Data operation
 :width: 600px
-:align: center
 ```
 
 This is easily programmed in Phaser by setting the ADF4159's ramp mode and then enabling this trigger:
@@ -36,7 +33,6 @@ This is easily programmed in Phaser by setting the ADF4159's ramp mode and then 
 
 Now, each time that the ADF4159 receives a pulse on the TX_DATA pin, it will output whatever frequency ramp was programmed into it.  This works well, and we could simply use a GPIO from the Raspberry Pi to send these pulses to TX_DATA.  However, the Raspberry Pi is not great and controlling the timing between pulses.  And for a lot of radar processing, we'll want to know how much time has passed between chirps.  To solve this, we'll use a feature of Pluto called the "TDD Engine."
 
----
 
 ## Pluto's TDD Engine
 
@@ -45,7 +41,6 @@ Pluto's TDD Engine offers a method to produce a series of carefully timed pulses
 ```{image} PlutoTDD.svg
 :alt: Pluto TDD Timing
 :width: 900px
-:align: center
 ```
 
 This is what Pluto's TDD attributes and corresponding sequence look like.  The top graph is the trigger signal and then there's three channels below that.  The trigger signal is going to tell us when to begin our timing, and it is initiated with either a sync_soft software command or by pulsing the L12N pin on Pluto's 14 pin header.  
@@ -59,7 +54,6 @@ For each of these buffers we're going to program a software pulse that is going 
 
 ```{image} python.svg
 :width: 500px
-:align: left
 ```
 
 ```{note}
@@ -71,19 +65,14 @@ For each of these buffers we're going to program a software pulse that is going 
 * After programming the tddn, trigger it with a sync_soft command or an external signal to L12N
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
----
+```{clear-content}
+```
 
 ```{image} pluto_tdd_pinout.svg
 :alt: Pluto TDD Timing
 :width: 900px
-:align: center
 ```
 
----
 
 ## Phaser Implementation
 
@@ -92,29 +81,22 @@ So when we want a new buffer of data from Pluto, just send a gpio pulse to L12N.
 ```{image} pluto_adf4159.svg
 :alt: Pluto with the ADF4159
 :width: 500px
-:align: center
 ```
 
 ```{image} final_timing.svg
 :alt: Pluto with the ADF4159
 :width: 700px
-:align: center
 ```
 
 
----
 You can find a video walkthrough of this material here:
 
 ```{video} https://www.youtube.com/watch?v=KBFYzVOuhmI
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

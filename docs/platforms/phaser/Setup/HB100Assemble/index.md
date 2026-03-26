@@ -7,7 +7,6 @@
  ```{image} hb100.svg
 :alt: Phaser Picture
 :width: 200px
-:align: right
 ```
  
  It is powered with a 3-5V supply -- most commonly we use 3 AA batteries in series.  
@@ -22,13 +21,10 @@ For those wishing to take this a step further, you can also mount a battery pack
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

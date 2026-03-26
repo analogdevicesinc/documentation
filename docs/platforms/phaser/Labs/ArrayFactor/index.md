@@ -3,7 +3,6 @@
 ```{image} elementFactor.svg
 :alt: Element and Array Factor
 :width: 300px
-:align: right
 ```
 
 In a phased array antenna, the total antenna gain is actually a function of two parts:  the Element Factor and the Array Factor. (see [this article](https://www.analog.com/en/analog-dialogue/articles/phased-array-antenna-patterns-part1.html)).
@@ -15,7 +14,6 @@ The Array Factor is the portion of the antenna gain that we can influence by bea
 ```{image} AFequation.svg
 :alt: Normalized AF Equation
 :width: 200px
-:align: center
 ```
 
 
@@ -26,7 +24,6 @@ It may not be intuitively obvious what this normalized array factor equation mea
 ```{image} AFplot.svg
 :alt: Array Factor Plot
 :width: 600px
-:align: center
 ```
 
 The first thing we can measure in our Phaser lab is the width of that main lobe.  The array factor equation predicts that we can reduce the main lobe beamwidth by increasing the number of elements (which for a linear uniformly distributed array increasing the number of elements means that our aperture diameter is increasing).
@@ -36,11 +33,7 @@ So how do you measure the width of the main lobe?  Most commonly we talk about t
 ```{image} HPBW.svg
 :alt: HPBW Equation
 :width: 200px
-:align: left
 ```
-<br>
-<br>
-
 | N | HPBW |
 |:---|:---|
 | 8 | 13 deg |
@@ -82,7 +75,6 @@ Now let's make measurements on the array pattern and compare to the theoretical 
 ```{image} AFlab.svg
 :alt: GUI
 :width: 600px
-:align: center
 ```
 
 2. Move the HB100 to the mechanical boresight location (i.e. directly facing the array)
@@ -91,7 +83,6 @@ Now let's make measurements on the array pattern and compare to the theoretical 
 ```{image} measure.svg
 :alt: What to Measure
 :width: 600px
-:align: center
 ```
 
 
@@ -115,7 +106,6 @@ Now let's make measurements on the array pattern and compare to the theoretical 
 ```{image} N4.svg
 :alt: 4 Element in GUI
 :width: 600px
-:align: center
 ```
 
 8. Repeat the beamwidth measurements and compare to the calculated values and to the N=8 values.
@@ -126,24 +116,18 @@ Now let's make measurements on the array pattern and compare to the theoretical 
 | 4 |  |  | 27 deg |    | 62 deg |    |
 | 2 |  |  | 62 deg |    | 180 deg |    |
 
----
 
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=m7mCBJcKNWw
-:align: left
 ```
-<br>
 
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

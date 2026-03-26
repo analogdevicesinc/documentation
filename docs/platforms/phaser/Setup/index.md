@@ -15,19 +15,14 @@ Raspberry Pi Software Setup <RpiSetup/index>
 For a detailed unboxing and setup video of the entire process, please see:
 
 ```{video} https://www.youtube.com/watch?v=a6MeTsatTUg
-:align: left
 ```
-<br>
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

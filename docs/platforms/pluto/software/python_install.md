@@ -12,7 +12,6 @@ Programming with Python is a popular choice for working with PlutoSDR due to its
 
 ```{image} resources/pyadi.png
 :width: 200px
-:align: right
 ```  
 
 For most users, the `pyadi-iio` library (commonly called PyADI) provides a more user-friendly and high-level API for controlling Pluto and accessing its data. The PyADI quick start guide, installation instructions, and examples are all found [here](https://analogdevicesinc.github.io/pyadi-iio/index.html
@@ -26,7 +25,6 @@ pip install pyadi-iio
 ```
 Once you have these libraries installed, you can start using it to control Pluto and access its data. Here is a simple example of how to use `pyadi-iio` to read samples from Pluto:
 
-<br>
 
 ***PyADI Example for 1t1r version of Pluto:***
 
@@ -48,7 +46,6 @@ data = my_sdr.rx()  # Read samples from Pluto
 # Process the samples (e.g., print the first 10 samples)
 print(data[:10])
 ```
-<br>
 
 ***PyADI Example for 2t2r version of Pluto:***
 ```{code-block} python
@@ -72,28 +69,21 @@ print(rx1[:10])
 print(rx2[:10])
 ```
 
-<br>
 
 **Additional PyADI examples:**
 - [https://analogdevicesinc.github.io/pyadi-iio/guides/examples.html](https://analogdevicesinc.github.io/pyadi-iio/guides/examples.html)
 - [https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/pluto.py](https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/pluto.py)
 - [https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ad9361_example.py](https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ad9361_example.py)
 
-<br>
 
 ```{video} https://www.youtube.com/watch?v=ZnCi-LHJ0GQ
-:align: left
 ```
 
 ```{video} https://www.youtube.com/watch?v=ph0Kv4SgSuI
-:align: right
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
----
+```{clear-content}
+```
 
 ## pyLIBIIO
 
@@ -121,7 +111,6 @@ So this code will work on Pluto, but you can see that it is not nearly as intuit
 
 Below is a more complete example of a full Pluto python program using only pyLIBIIO:
 
-<br>
 
 ***pyLIBIIO Example Code***
 
@@ -180,7 +169,6 @@ print("First 5 samples:", iq_complex[:5])
 sys.exit(0)
 ```  
 
-<br>
 
 Here's another pyLIBIIO example, this time using the FPGA DDS to generate a tone on the transmitter and plot the data:
 
@@ -276,12 +264,9 @@ plt.show()
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

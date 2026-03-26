@@ -13,7 +13,6 @@ The software is written in Python and uses the PyADI-IIO library to interface wi
 
 The code is structured as follows:
 
----
 
 The first bit of code just sets up our key variables. 
 - The sample rate is set to 2MHz, but this could be anything between 600kHz and 30.72 MHz.  
@@ -43,9 +42,7 @@ d = d_wavelength*wavelength         # distance between elements in meters
 print("Set distance between Rx Antennas to ", int(d*1000), "mm")
 ```
 
-<br>
 
----
 
 The next bit of the code, is pretty standard for any PyADI-IIO Pluto Python script.  Of course we have to import the PyADI library (import adi).  Then we create our Pluto radio object ("sdr").  Then we assign rx and tx attributes to that object.  Finally, we'll program the transmit buffer of Pluto to create a complex sine wave.  
 
@@ -90,9 +87,7 @@ sdr.tx([iq0,iq0])  # Send Tx data.
 
 ```
 
-<br>
 
----
 
 Now we'll create a function to convert the phase shift of each channel into the steering angle (where the beam is pointing).  Remember that math we did in [this section](../beamforming/bf_theory.md)?  We're putting into action here!
 
@@ -104,11 +99,9 @@ def calcTheta(phase):
     return calc_theta
 ```
 
-<br>
 
----
 
-This next function, "dbfs", converts the IQ samples from Pluto's receive buffer into "decibels full scale".  What does that mean?  Decibels are always relative to something.  And since we don't have an absolute power measurement, we make these decibels relative to the only consistent thing that we do know:  the full scale range of the receiver's ADC.  So this is decibels relative to the full scale value of the ADC.  That full scale value is always 0dB (or 0dBFS).  So our Pluto conversions will always be a negative number (unless we start combining multiple channels, and then that sum could get higher than the full scale range of any one individual receiver ADC).  There's an excellent explanation of "dbfs" [here](https://ez.analog.com/adiacademy/university-program/f/q-a/584799/spectrum-analyzer-using-adalm-pluto).
+This next function, "dbfs", converts the IQ samples from Pluto's receive buffer into "decibels full scale".  What does that mean?  Decibels are always relative to something.  And since we don't have an absolute power measurement, we make these decibels relative to the only consistent thing that we do know:  the full scale range of the receiver's ADC.  So this is decibels relative to the full scale value of the ADC.  That full scale value is always 0dB (or 0dBFS).  So our Pluto conversions will always be a negative number (unless we start combining multiple channels, and then that sum could get higher than the full scale range of any one individual receiver ADC).  There's an excellent explanation of "dbfs" {ez}`here <adiacademy/university-program/f/q-a/584799/spectrum-analyzer-using-adalm-pluto>`.
 
 ```{code-block} python
 def dbfs(raw_data):
@@ -121,9 +114,7 @@ def dbfs(raw_data):
     return s_dbfs
 ```
 
-<br>
 
----
 Finally, we put all of this into a loop and plot out the peak response for every steering angle:
 
 ```{code-block} python
@@ -167,9 +158,7 @@ for i in range(num_scans):
         plt.show()
 ```
 
-<br>
 
----
 
 The end result will look something like the plot below.  So this is the power received by the two element array for every angle from horizon to horizon.
 
@@ -178,29 +167,22 @@ Now let's revisit that "phase_cal" variable from the top of this page.  Rerun th
 
 ```{image} resources/beamforming_plot.svg
 :width: 600px
-:align: center
 ```
 
 
-<br>
 
----
 
 
 A video walkthrough of this system example, including detailed code descriptions, is here:
 
 ```{video} https://www.youtube.com/watch?v=2QXKuEYR4Bw
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

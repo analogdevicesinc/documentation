@@ -1,6 +1,4 @@
----
 orphan: true
----
 
 # Pluto Drone Monitor & Control Demo
 ```{attention}

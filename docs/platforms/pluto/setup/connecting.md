@@ -19,10 +19,9 @@ You can try this out for yourself by opening a terminal and pinging "192.168.2.1
 
 ```{image} resources/ping.svg
 :width: 300px
-:align: center
 ```
 
-(connecting-via-ssh-or-serial-virtual-com-port)=
+(pluto setup connecting-via-ssh-or-serial-virtual-com-port)=
 ## Connecting via SSH or Serial (Virtual COM Port)
 
 Another way to connect to Pluto is via SSH or a virtual COM port. This allows you to access the command line interface (CLI) of Pluto, which can be useful for advanced users who want to configure Pluto or run custom scripts.
@@ -37,7 +36,6 @@ To connect to Pluto via SSH or Serial, follow these steps:
 
 ```{image} resources/putty.svg
 :width: 500px
-:align: center
 ```
 
 3. When prompted:
@@ -47,17 +45,13 @@ To connect to Pluto via SSH or Serial, follow these steps:
 
 ```{image} resources/login.svg
 :width: 300px
-:align: center
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

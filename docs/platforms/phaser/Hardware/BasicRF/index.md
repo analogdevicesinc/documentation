@@ -4,7 +4,6 @@
 ```{image} blockdiagram.svg
 :alt: Phaser Picture
 :width: 800px
-:align: center
 ```
 The most prominent feature of the Phaser's RF board is an onboard patch antenna that operates from 10 to 10.5 GHz. Each antenna element is input to an ADL8107, a low noise amplifier (LNA) that operates from 6-18GHz with 1.3dB NF and 24 dB gain. The output of these amplifiers is fed into the main core of this circuitry, two of the ADAR1000. The ADAR1000 is an 8 GHz to 16 GHz, 4-Channel, beamformer that allows per-channel, 360° phase adjustment with 2.8° resolution, and 31dB gain adjustment with 0.5dB resolution. The ADAR1000s are capable of bidirectional, half-duplex operation. However, CN0566 only connects the ADAR1000 receive paths. The outputs of four LNAs get phase and amplitude shifted by an ADAR1000, then summed together at its RFIO output.
 
@@ -17,7 +16,6 @@ LTC5548 outputs an IF of approximately 2.2 GHz which passes through a low pass f
 ```{image} ports.svg
 :alt: Phaser Ports
 :width: 400px
-:align: right
 ```
 <!--<img src="ports.svg" alt="Phaser Ports" style="float: left; width:400px;"> -->
 
@@ -56,14 +54,11 @@ The antenna elements are numbered 1-8.
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

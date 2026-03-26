@@ -18,7 +18,6 @@
 ```{image} hb100.svg
 :alt: Phaser Picture
 :width: 200px
-:align: right
 ```
 
 This is the step file to 3D print the HB100 holder.  It allows the HB100 to mounted via a standard a 1/4-20 thread camera mount:  
@@ -26,13 +25,10 @@ This is the step file to 3D print the HB100 holder.  It allows the HB100 to moun
 * [hb100_holder.stl](HB100_holder.stl)
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

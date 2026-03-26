@@ -12,14 +12,9 @@ https://github.com/analogdevicesinc/pyadi-iio/tree/master/examples/phaser
 There is also a video walkthrough of this material here:
 
 ```{video} https://www.youtube.com/watch?v=jBGzOlThpRE
-:align: left
 ```
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
-
-
+```{clear-content}
+```
 ## Minimum Python Example
 
 There is a lot that can be done with the Phaser kit.  Therefore, when getting started, it may be useful to start with the simplest possible example of how to control the hardware and plot the data.  This example can be found in the phaser examples directory, and run from the command line:
@@ -34,7 +29,6 @@ Assuming the HB100 is on and facing the array, the output will be rendered somet
 ```{image} minimum.svg
 :alt: Phaser Minimal Example Results
 :width: 400px
-:align: center
 ```
 
 So what did that Python script do?? The python script, “phaser_minimal_example.py” first takes care of some housekeeping operations - set the antenna to zero phase, equal gain on all elements, and set a few parameters in the Pluto SDR. That will enact these changes in the Phaser hardware:
@@ -58,13 +52,9 @@ https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/phaser/phaser
 There is an in-depth walkthrough of "phaser_minimal_example.py" here:
 
 ```{video} https://www.youtube.com/watch?v=5lihNPh4Rm0
-:align: left
 ```
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
-
+```{clear-content}
+```
 ## Simple Phaser Examples
 
 It may also be instructive to examine "phaser_examples.py", located in the same folder.  The main purpose for this script is to provide a template for developing additional custom programs (CLI, GUI, or other), as well as interacting directly with the Phaser from the Python console. Run:
@@ -77,7 +67,6 @@ The script will continuously take beam pattern measurements, and plot a represen
 ```{image} examples.svg
 :alt: Phaser Examples Results
 :width: 600px
-:align: center
 ```
 
 ## Python GUI
@@ -85,33 +74,25 @@ The script will continuously take beam pattern measurements, and plot a represen
 ```{image} thonny.svg
 :alt: Thonny
 :width: 300px
-:align: right
 ```
 
 To streamline the exploration of some basic phased array principles, there is a python based GUI (Graphical User Interface) included in the examples directory.  This can be run directly from the command line (python3 phaser_gui.py), or by first opening the Python IDE, Thonny, from the Raspberry Pi desktop menu.  Once in Thonny, simply open the phaser_gui.py and click the green run button.  
 
 The GUI will launch and begin updating a plot with some data.  If the HB100 is directed at the array, and calibration is complete, you should see an updating plot like this:
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
-
+```{clear-content}
+```
 ```{image} cal.svg
 :alt: calibrated results
 :width: 600px
-:align: center
 ```
 
 There is much more that the GUI can do, and data it can show.  But we'll go over all of this in the next section (Labs and Examples).
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

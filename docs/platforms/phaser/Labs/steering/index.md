@@ -7,7 +7,6 @@ Phased arrays are more accurately called “electronically steerable arrays”, 
 
 ```{image} steering_array.svg
 :width: 500px
-:align: center
 ```
 
 Based on the direction of arrival (DOA) of the RF signal to the array, each element will see the signal at some slightly different time.  You can see that that delay will be smaller if the signal moved directly over the array (called the broadside or mechanical boresight direction). And the delay will be larger as the signal moves toward either horizon of the array.  So the delay that we pick will set the steering angle for our array to optimally add all the elements together.  Conversely, signals arriving from other angles will then have a greatly reduced gain. 
@@ -17,21 +16,18 @@ So how do we choose the exact delay we want, to steer the array to a particular 
 
 ```{image} steering_angle.svg
 :width: 700px
-:align: center
 ```
 
 You can see that we now have a right triangle whose hypotenuse is the incoming wavefront.  The distance between elements is “d” (14mm for the Phaser board).  And the angle from mechanical boresight is called theta.  And if we form another right triangle with the wavefront and theta, we can calculate L, which is the incremental propagation distance between elements.  We can do some simple math to show that the time delay between when the wavefront strikes one element to when it strikes the neighboring element is:
 
 ```{image} deltaT.svg
 :width: 200px
-:align: center
 ```
 
 And we can convert that time delay into a phase shift if we multiply by 2 Pi f, where f is the frequency of the incoming signal. 
 
 ```{image} delta_phase.svg
 :width: 120px
-:align: center
 ```
 
 So if we shift each element from its neighbor by that amount, then we will steer the antenna in the direction of “theta.”  Here’s an example of how that would work for a 30 deg steering angle (theta), at a frequency of 10.3 GHz:
@@ -39,12 +35,10 @@ So if we shift each element from its neighbor by that amount, then we will steer
 ```{image} steering_example.svg
 :alt: 
 :width: 600px
-:align: center
 ```
 
 So that’s the basic idea of how we can electronically steer the receive array of Phaser.  Now, let’s try it out!
 
----
 
 ## Steering Angle Lab with Phaser
 
@@ -55,7 +49,6 @@ In this lab, we’ll explore the relationship between the element to element pha
 ```{image} gui.svg
 :alt: GUI
 :width: 300px
-:align: right
 ```
 
 * Open the file “phaser_gui.py” in the Thonny IDE (This guide uses the Thonny IDE, but the file should run on other IDEs as well)
@@ -66,14 +59,11 @@ In this lab, we’ll explore the relationship between the element to element pha
 ```{image} fft.svg
 :alt: FFT
 :width: 400px
-:align: center
 ```
-<br>
 
 ```{image} setup.svg
 :alt: Picture of Lab Setup
 :width: 400px
-:align: right
 ```
 
 * By adjusting the “Steering Angle” slider bar, you can change the phase values of each element.
@@ -82,14 +72,12 @@ In this lab, we’ll explore the relationship between the element to element pha
 * Now slide the “Steering Angle” bar to find the phase delta that produces the maximum FFT amplitude.
 * What phase delta do you observe that produces the maximum FFT amplitude?
 
----
 
 * Now click on the “Rectangular Plot” tab
 
 ```{image} rect_plot.svg
 :alt: FFT
 :width: 700px
-:align: center
 ```
 
 * This plots the peak FFT amplitude vs the selected steering angle
@@ -97,23 +85,17 @@ In this lab, we’ll explore the relationship between the element to element pha
 * Does the amplitude move in a predictable way? What do you think is happening?
 
 
----
 For a video walkthrough of this lab, see the second half of this video:
 
 ```{video} https://www.youtube.com/watch?v=5bqsyF1zhR8
-:align: left
 ```
-<br>
 
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

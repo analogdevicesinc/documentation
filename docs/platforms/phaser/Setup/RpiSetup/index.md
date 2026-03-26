@@ -5,7 +5,6 @@ At this point, your Raspberry Pi should have successfully booted up, and you are
 ```{image} kuiper.svg
 :alt: Phaser Picture
 :width: 500px
-:align: center
 ```
 
 If you are using the VNC Configuration, then you can login to:
@@ -76,13 +75,10 @@ hdmi_mode=82
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

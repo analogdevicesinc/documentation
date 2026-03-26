@@ -3,7 +3,6 @@
 ```{image} doppler.svg
 :alt: Doppler Illustration
 :width: 400px
-:align: right
 ```
 
 Perhaps the simplest radar to start with is an unmodulated CW radar.  This type of radar cannot determine distance, but can measure velocity.  So it is ideal for applications where only the speed of a moving target is needed -- such as a police radar.  The key to an unmodulated CW radar is understanding the doppler frequency.
@@ -13,7 +12,6 @@ RF waves, as they bounce off a moving target, will shift in frequency. This new 
 ```{image} equation.svg
 :alt: Doppler Velocity Equation
 :width: 600px
-:align: center
 ```
 
 This beat frequency is equal to 2 times the velocity of the target times the transmitted frequency, divided by the speed of light. For example, if f = 2.4 GHz and the car's velocity is 100 mph (160 km/hr) then the beat frequency is 716 Hz.  However, if the carrier frequency is increased from 2.4 GHz to 10 GHz, then that same velocity produces a beat frequency of 2982 Hz.  
@@ -29,23 +27,18 @@ This lab will use:
 ```{image} cw_setup.svg
 :alt: CW Radar Setup
 :width: 600px
-:align: center
 ```
-<br>
 
 ```{image} cw_setup2.svg
 :alt: CW Radar Setup
 :width: 600px
-:align: center
 ```
-<br>
 
 1. Open "CW_RADAR_Waterfall.py" and click run.  A frequency plot and waterfall plot will appear
 
 ```{image} waterfall.svg
 :alt: CW Radar Setup
 :width: 600px
-:align: center
 ```
 
 2. Vary the speed of the fan and observe the change in beat frequency.
@@ -53,21 +46,16 @@ This lab will use:
 
 
 
----
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=5VSIIFKK6Ck
-:align: left
 ```
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

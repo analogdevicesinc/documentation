@@ -6,21 +6,18 @@ A two pulse canceller simply subtracts the time domain received signal of one ch
 
 ```{image} 2pulse.svg
 :width: 500px
-:align: center
 ```
 
 And we don't have to stop at two pulses. We can do another round of pulse cancellation and get to a three pulse canceller. And here's what that looks like:
 
 ```{image} 3pulse.svg
 :width: 800px
-:align: center
 ```
 
 The figure below shows the impact of the MTI filter on identifying a small drone captured with the Phaser Radar.
 
 ```{image} mti_compare.svg
 :width: 500px
-:align: center
 ```
 
 The raw range-Doppler plot (without MTI filtering) is shown at the top, with the two pulse canceller result shown in the middle. Compared to the unfiltered case, the transmit leakage and ground clutter are significantly attenuated, while the drone retains its full signal amplitude. 
@@ -29,7 +26,6 @@ The bottom graph shows the 3 pulse canceller.  And here the ground clutter is co
 
 Of course a down side to MTI is that when the drone is stationary, you wouldn't see it. But you could see the micro doppler signature from the propeller blades, so in the case of a quad copter, you can use that.  
 
----
 
 ## Lab Instructions
 
@@ -41,7 +37,6 @@ Of course a down side to MTI is that when the drone is stationary, you wouldn't 
 
 ```{image} 1.svg
 :width: 200px
-:align: center
 ```
 
 1. Run the python file now and observe the impact of this filter on moving objects – particularly the fidget spinners.
@@ -56,30 +51,22 @@ Of course a down side to MTI is that when the drone is stationary, you wouldn't 
 
 ```{image} 2.svg
 :width: 500px
-:align: center
 ```
-<br>
 
 ```{image} 3.svg
 :width: 400px
-:align: center
 ```
 
 
 
----
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=M1eXeqN1c-I
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

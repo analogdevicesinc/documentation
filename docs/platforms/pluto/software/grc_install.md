@@ -2,16 +2,12 @@
 
 ```{image} resources/grc4.svg
 :width: 300px
-:align: right
 ```  
 
 [GNU Radio](https://www.gnuradio.org/) is a powerful open-source software development toolkit that provides signal processing blocks to implement software-defined radios and signal processing systems. You can use GNU Radio to create flowgraphs that interface with PlutoSDR and process the data it receives. To use PlutoSDR with GNU Radio, you need to install the `gr-iio` module, which provides blocks for interfacing with IIO devices like PlutoSDR. Once you have the `gr-iio` module installed, you can create a flowgraph in GNU Radio Companion (GRC) that includes the `IIO Source` block to read samples from PlutoSDR and process them using other GNU Radio blocks.
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
----
+```{clear-content}
+```
 
 ## GNU Radio Installation
 
@@ -44,7 +40,6 @@ Just install GNU Radio by following these instructions:
 2. Install SD Card into Raspberry Pi, and boot up. First boot may take a few minutes extra
 3. GNU Radio is installed by default on ADI-Kuiper Linux (full)
 
----
 
 ### Test the Installation
 Whichever operating system you use, let's test the GRC installation now.  
@@ -64,7 +59,6 @@ print(adi.__version__)
 
 ```{image} resources/grc1.svg
 :width: 400px
-:align: center
 ```  
 
 7. Delete that "Python Module"
@@ -72,14 +66,12 @@ print(adi.__version__)
 
 ```{image} resources/grc2.svg
 :width: 400px
-:align: center
 ```  
 
 9. Place a "PlutoSDR Sink" and "PlutoSDR Source" into the flowgraph:
 
 ```{image} resources/grc3.svg
 :width: 400px
-:align: center
 ```  
 
 10. Double click on the blocks and set the context as follows:
@@ -90,10 +82,8 @@ print(adi.__version__)
 
 ```{image} resources/grc4.svg
 :width: 400px
-:align: center
 ```  
 
----
 
 ### Pluto GNU Radio Resources
 
@@ -108,11 +98,9 @@ print(adi.__version__)
 
 
 ```{video} https://www.youtube.com/watch?v=Yx3RPOtv7x8
-:align: left
 ```
 
 ```{video} https://www.youtube.com/watch?v=63qY9tYhhro
-:align: right
 ```
 
 
@@ -120,12 +108,9 @@ print(adi.__version__)
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Pluto SDR, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

@@ -5,23 +5,18 @@ Frequency Modulated CW (FMCW) radar is the most common of the modulated waveform
 ```{image} tx_fmcw.svg
 :alt: FMCW Waveform
 :width: 400px
-:align: center
 ```
-<br>
 
 ```{image} fmcw.svg
 :alt: FMCW Waveform
 :width: 500px
-:align: center
 ```
-<br>
 
 The reflected signal is received by a separate antenna.  This signal will be delayed in time, based on the round trip distance to strike an object and return.  This delay in time will produce a shifted copy of the transmit waveform. By comparing the transmit waveform to this receive signal, a beat frequency is obtained.  This beat frequency is proportional to the time delay, which is proportional to the range to that target.  
 
 ```{image} beatfreq.svg
 :alt: FMCW Beat Freq
 :width: 400px
-:align: center
 ```
 
 Each ramp of the frequency is called a "chirp."  Ts is the duration of the chirp, and fb is the beat frequency formed by comparing the receive waveform to the transmitted waveform. B is the bandwidth of the chirp (f2 - f1).  Higher bandwidths are desirable as they increase the range resolution (the ability to distinguish two targets closer to each other).  The range resolution is given by:
@@ -29,7 +24,6 @@ Each ramp of the frequency is called a "chirp."  Ts is the duration of the chirp
 ```{image} range_resolution.svg
 :alt: Range Resolution
 :width: 100px
-:align: center
 ```
 
 The comparison between the transmit and receive waveforms can be done with a matched filter.  However, this requires high speed data converters capable of digitizing the bandwidth of the radar chirp.  For lower cost implementations, such as Phaser, a "Stretch Processing" technique is commonly used.  
@@ -40,7 +34,6 @@ That’s why we can use Pluto, even though our chirp bandwidth could be as high 
 ```{image} stretch.svg
 :alt: Stretch LO Processing
 :width: 600px
-:align: center
 ```
 
 As mentioned, the beat frequency (which Pluto will digitize) is directly proportional to the range to the target.  The equation for this is summarized below:
@@ -48,7 +41,6 @@ As mentioned, the beat frequency (which Pluto will digitize) is directly proport
 ```{image} fb_eq.svg
 :alt: Beat Freq Equation
 :width: 400px
-:align: center
 ```
 
 For example, if the transmit chirp started at 10 GHz and went to 10.5 GHz in 0.5 ms, and the target was 10 m away, that would give a beat frequency of:
@@ -56,12 +48,10 @@ For example, if the transmit chirp started at 10 GHz and went to 10.5 GHz in 0.5
 ```{image} fb_example.svg
 :alt: Beat Freq Equation
 :width: 350px
-:align: center
 ```
 
 Let's use the Phaser to experiment with these concepts now!
 
----
 
 ## Lab Instructions
 
@@ -73,7 +63,6 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 ```{image} radar_setup.svg
 :alt: Radar Setup
 :width: 350px
-:align: center
 ```
 
 3. Open a Python IDE (Thonny, Idle, Spyder, etc) and run this [program](../resources/python/FMCW_RADAR_Waterfall.py).
@@ -81,7 +70,6 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 ```{image} gui.svg
 :alt: Radar Setup
 :width: 600px
-:align: center
 ```
 
 
@@ -94,7 +82,6 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 ```{image} range_cal.svg
 :alt: Range Calibration
 :width: 600px
-:align: center
 ```
 
 
@@ -105,7 +92,6 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
    * This is the ramp_time variable around line 106 of the program 
    * How did the beat frequency change?
 
----
 9.	The other graph is a running plot of the beat frequency (i.e. range), over time.  Commonly called a “waterfall” plot or spectrogram.
 
 4. Move the target back and forth in front of the display.  Do you see your pattern traced out in the waterfall plot? 
@@ -113,23 +99,17 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 
 ```{image} waterfall.svg
 :width: 600px
-:align: center
 ```
 
 
----
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=lFach2NxAIM
-:align: left
 ```
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```

@@ -12,11 +12,9 @@ This section will provide a deeper look at the major sections of the RF Board:
 This video will also walk through much of the same material:
 
 ```{video} https://www.youtube.com/watch?v=-Vqbgf0MjPk
-:align: left
 ```
 
 <div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
 
 ***
 
@@ -27,15 +25,12 @@ The receive antenna consists of a total of 32 antenna patches. However, each col
 ```{image} AntennaColumn.svg
 :alt: Summation of 4 Antenna Elements
 :width: 300px
-:align: center 
 ```
-<br>
 
 
 ```{image} RxAntenna.svg
 :alt: Receive Antenna
 :width: 400px
-:align: center
 ```
 
 Each of these combined group of 4 elements will have a higher gain, and narrower beam, than any one individual antenna patch. Also built into the antenna is a quarter-wavelength shorting stub to provide some electrostatic discharge (ESD) protection. Each element is AC coupled, via 10 nF capacitors, to the 24 dB gain ADL8107 low noise amplifier. The LNAs increase the sensitivity of the array, providing a sharp beam pattern even with low power microwave sources.
@@ -43,7 +38,6 @@ Each of these combined group of 4 elements will have a higher gain, and narrower
 ```{image} AntennaGain.svg
 :alt: Antenna Gain
 :width: 300px
-:align: center
 ```
 
 This graph shows the typical built in receive antenna gain vs. frequency. The -3 dB bandwidth is about 9.9 to 10.8 GHz.
@@ -59,7 +53,6 @@ At the center of the RF board is a pair of ADAR1000 4-channel, 8 GHz to 16 GHz, 
 ```{image} ADAR1000.svg
 :alt: Antenna Gain
 :width: 600px
-:align: center
 ```
 
 ***
@@ -70,7 +63,6 @@ The ADF4159 phase-locked loop (PLL) and the HMC735 voltage-controlled oscillator
 ```{image} synth.svg
 :alt: LO Generation
 :width: 600px
-:align: center
 ```
 
 Alternatively, the on-board synthesizer can be disabled, and an external LO can be applied to the LO input SMA connector. This allows the Phaser to be synchronized to an external radio, or several Phaser boards to be synchronized to a single LO. Whether generated on-board or externally, the local oscillator is split using monolithic microwave integrated circuit (MMIC) splitter or combiners to the two receive mixers, and to either the on-board transmit path or to an LO output port.
@@ -84,7 +76,6 @@ The RFIO output of the ADAR1000 passes through a 10.6 GHz low pass filter and th
 ```{image} mixers.svg
 :alt: Mixers
 :width: 500px
-:align: center
 ```
 
 The low pass filter removes the high-side image of the mixer (which in the figure above will appear at 12.2 GHz + 2.2 GHz = 14.4 GHz) as well as any reradiation of the LO (12.2 GHz). The LTC5548 mixer outputs an IF of 2.2 GHz, which is filtered by a 2.5 GHz low pass filter.
@@ -94,7 +85,6 @@ Figure 11 shows the measured results of the receive signal path (ADL8107 + ADAR1
 ```{image} SFDR_Rx1.svg
 :alt: SFDR of Rx1
 :width: 600px
-:align: center
 ```
 
 ***
@@ -107,7 +97,6 @@ As shown below, the transmitter signal path starts with the transmit input SMA c
 ```{image} transmit.svg
 :alt: Transmit Signal Path
 :width: 600px
-:align: center
 ```
 
 The transmit input is generally the same frequency as the receive IF, which is about 2.2 GHz. This transmit input can either be a continuous wave, modulated communications, or radar signal. Since the output of many SDRs (including that of the PlutoSDR) use a square wave LO, it produces harmonics of the LO frequency. Therefore, the transmit input signal must first pass through a low pass filter. 
@@ -117,7 +106,6 @@ After passing through the 2.5 GHz low pass filter, the signal is then fed onto t
 ```{image} TxSFDR.svg
 :alt: Transmit Output SFDR
 :width: 600px
-:align: center
 ```
 
 ***
@@ -128,7 +116,6 @@ The Phaser derives power directly from a single USB-C receptacle that provides 5
 ```{image} power_tree.svg
 :alt: Power Tree
 :width: 600px
-:align: center
 ```
 
 The LTC4217 integrated hot swap controller allows the CN0566 to be safely inserted and removed by limiting the amount of inrush current to the load supply during power-up, and provides a convenient means of measuring the board's power consumption via the IMON output.
@@ -142,17 +129,13 @@ The ADM7170 is a low quiescent current, low dropout linear regulator that powers
 The LT3460 step-up DC/DC converter and ADP7118 LDO boost the 5 V input voltage to 15 V, then regulate to 14 V, which is used as the supply of the AD8065 amplifier. It uses a constant frequency, current-mode control scheme to provide line and load regulation. The ADP7118 is a CMOS, low dropout linear regulator that provides high power supply rejection, minimizing synthesizer phase noise.
 
 
-<br>
 
----
 
 <div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
 
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 

@@ -4,7 +4,6 @@ The key parameter in the CFAR algorithm is the probability of false alarm, which
 
 ```{image} cfar.svg
 :width: 500px
-:align: center
 ```
 
 Here's an example of setting the CFAR threshold value with a "Cell Averaging CFAR" algorithm:
@@ -16,7 +15,6 @@ Here's an example of setting the CFAR threshold value with a "Cell Averaging CFA
 6. Compare that threshold to the COI
 7. If that threshold is < COI, then Target!
 
----
 
 ## Lab Instructions
 
@@ -24,7 +22,6 @@ In this lab, adjust the guard and training (reference) cells, based on our obser
 
 ```{image} 1.svg
 :width: 300px
-:align: right
 ```
 
 1. Download [“CFAR_RADAR_Waterfall_ChirpSync.py”](../resources/python/CFAR_RADAR_Waterfall_ChirpSync.py) and ["target_detection_dbfs.py"](../resources/python/target_detection_dbfs.py)
@@ -38,25 +35,19 @@ In this lab, adjust the guard and training (reference) cells, based on our obser
 
 ```{image} 2.svg
 :width: 700px
-:align: center
 ```
 
----
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=wzrfgTOhXLA
-:align: left
 ```
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 

@@ -5,7 +5,6 @@
 ```{image} radar_basics.svg
 :alt: Radar Simple Diagram
 :width: 300px
-:align: right
 ```
 
 
@@ -30,7 +29,6 @@ RADAR = **Ra**dio **D**etection **A**nd **R**anging
 ```{image} pulsed.svg
 :alt: Pulsed Radar
 :width: 400px
-:align: center
 ```
 
 **Continuous Wave (CW) Radar**
@@ -43,7 +41,6 @@ RADAR = **Ra**dio **D**etection **A**nd **R**anging
 ```{image} cw.svg
 :alt: CW Radar
 :width: 400px
-:align: center
 ```
 
 There’s many reasons why you would choose a CW or a pulsed radar.  Both are commonly used to good effect. However, CW is always better at short range radar applications.  Therefore, it is ideal to demonstrate radar concepts in a small lab environment.  
@@ -56,7 +53,6 @@ Radar processing can be very computationally intensive.  Therefore, while it is 
 ```{image} block1.svg
 :alt: Radar Setup
 :width: 700px
-:align: center
 ```
 
 * An ethernet cable goes from the Raspberry Pi directly to the computer, or to the local network router
@@ -68,39 +64,27 @@ The transmit antenna is generally placed to the side of the receive array, and a
 ```{image} radar_setup.svg
 :alt: Radar Setup
 :width: 500px
-:align: center
 ```
-<br>
 
 
----
 
 ### Radar Calibration
 
 Prior to running any of these radar labs, be sure to complete the phased array calibration.  This procedure is built into the MATLAB examples.  But for python you'll need to run the following two programs (place these files with the other files found [here](https://github.com/analogdevicesinc/pyadi-iio/tree/master/examples/phaser)) and place the generated "pkl" files in the same folder as the other python radar examples.  
 1. [phaser_find_hb100](../resources/python/phaser_find_hb100.py)
 2. [phaser_cal](../resources/python/phaser_cal.py)
-
-<br>
-<br>
-
----
 You can find a video walkthrough of this material here:
 
 ```{video} https://www.youtube.com/watch?v=igrN_wd_g74
-:align: left
 ```
 
 
 
-<br>
-<div style="clear: both;"></div> <!-- Ensures clean section break -->
-<br>
-
+```{clear-content}
+```
 ```{note}
 For questions or help with the Phaser, please visit:
-<br>
-[https://ez.analog.com/adieducation/university-program/](https://ez.analog.com/adieducation/university-program/)
+{ez}`adieducation/university-program`
 ```
 
 
