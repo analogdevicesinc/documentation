@@ -67,7 +67,7 @@ Running an Example Project
    :width: 700
 
 -  Save the project to the desired location.
--  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
+-  Click on 'Debug and Download' icon |image1| on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
 -  Click on 'Run' icon |image2| to start the debug session.
 -  Now press BTN1 or BTN2 on EV-COG-AD3029LZ and inspect corresponding LED
 

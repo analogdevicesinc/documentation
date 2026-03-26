@@ -10,11 +10,9 @@ software packs.
    Please make sure you install either of the below toolchain before installing
    any of the below packs
 
-   
+
    -  IAR Embedded Workbench for ARM 8.20.1 or higher
    -  CrossCore Embedded Studio 2.7.0 ® or higher
-   
-   packs
 
 The Cog software development kit consists of these packs
 
@@ -32,7 +30,7 @@ The Cog software development kit consists of these packs
 
    -  *Version History*
 
-      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench.\ **[Latest]**
+      -  **Version 3.1.0** - Extended support for IAR Embedded Workbench. **[Latest]**
 
          -  Version: 1.0.0 - Initial Release
 
@@ -50,6 +48,3 @@ The Cog software development kit consists of these packs
 
       -  **Version: 1.0.0** - Initial Release **[Latest]**
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
-
-*End of Document*

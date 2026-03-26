@@ -5,8 +5,8 @@ The MCU Cog boards **EV-COG-AD3029LZ** , **EV-COG-AD4050LZ**, and **EV-COG-AD405
 
 .. note::
 
-   \*\* The power measurement procedure is same for EV-COG-AD3029LZ,
-   EV-COG-AD4050LZ, EV-COG-AD4050WZ, and EV-COG-AD4050WZ.*\*
+   The power measurement procedure is same for EV-COG-AD3029LZ,
+   EV-COG-AD4050LZ, EV-COG-AD4050WZ, and EV-COG-AD4050WZ.
 
 Current measurement test points on COG
 --------------------------------------
@@ -157,7 +157,6 @@ rail. To power up COG from an external source,
    regulator. Connecting a source with voltage level more than 3.6V would damage
    the on board components.
 
-*End of Document*
 
 .. |image1| image:: images/power_isolation.jpg
    :width: 600

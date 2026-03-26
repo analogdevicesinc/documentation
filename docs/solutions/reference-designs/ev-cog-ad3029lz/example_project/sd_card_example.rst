@@ -102,11 +102,8 @@ SD Card Example Application
 .. admonition:: Download
    :class: download
 
-   :git-EV-COG-AD3029LZ:`SD Card With EV-COG_AD3029LZ <SDCARD%20EXAMPLE%20PROJECT/SD_CARD_SPI_3029_V1.0>`
+   `SD Card With EV-COG_AD3029LZ <https://github.com/analogdevicesinc/EV-COG-AD3029LZ/tree/master/SDCARD%20EXAMPLE%20PROJECT/SD_CARD_SPI_3029_V1.0>`_
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
 
-*End of Document*
-
-.. |image1| image:: https://wiki.analog.com/_media/_resources/eval/user-guides/ev-cog-ad3029lz/example_project/cog_expan_connector.png
+.. |image1| image:: ../images/cog_expan_connector.png
    :width: 800

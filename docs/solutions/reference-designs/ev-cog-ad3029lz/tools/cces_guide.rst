@@ -190,8 +190,8 @@ There are three(3) methods for importing existing projects:
 How to Import Existing Projects Saved to a Local Drive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Select *File \| Import...* from the CCES menu.
--  A dialog will pop-up with several importing options, choose the *General \| Existing Projects into Workspace* option, and click Next
+-  Select *File | Import...* from the CCES menu.
+-  A dialog will pop-up with several importing options, choose the *General | Existing Projects into Workspace* option, and click Next
 -  Select *Browse* in the dialog window and search for the saved project which is on your local drive.
 -  (Optional) If the *Copy projects into workspace* option is checked, the project will be copied to your workspace folder and the newly copied project will be opened and used. This preserves the original version of the project.
 -  Click *Finish*
@@ -289,7 +289,7 @@ You will need to create a launch configuration to debug your ADuCM3029 program.
    :align: center
 
 Hardware breakpoints are limited in your ADuCM3029 application
-==============================================================
+--------------------------------------------------------------
 
 -  When you click Debug or Apply, you will be prompted with a dialog informing your the Hardware Breakpoints are limited. Click *Yes*. You can opt to not show this dialog again.
 
@@ -336,25 +336,27 @@ How to start and stop debugging an ADuCM3029 application
 -  If everything goes fine, in the Console window, you will see a report without
    errors.
 
-   -  As a reference, the full text should be similar to:``Open On-Chip Debugger (OpenOCD) 0.9.0
-      Licensed under GNU GPL v2
-      Report bugs to <openocd-devel@lists.sourceforge.net>
-      0
-      Info : select transport "swd"
-      adapter speed: 1000 kHz
-      cortex_m reset_config sysresetreq
-      Info : CMSIS-DAP: SWD  Supported
-      Info : CMSIS-DAP: Interface Initialised (SWD)
-      Info : CMSIS-DAP: FW Version = 1.0
-      Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
-      Info : CMSIS-DAP: Interface ready
-      Info : clock speed 1000 kHz
-      Info : SWD IDCODE 0x2ba01477
-      Info : aducm3029.cpu: hardware has 2 breakpoints, 1 watchpoints
-      Info : CHIPID 0x0284
-      memory bus access delay set to 6 tck
-      adapter speed: 1000 kHz
-      Info : accepting 'gdb' connection on tcp/3333``
+   -  As a reference, the full text should be similar to::
+
+         Open On-Chip Debugger (OpenOCD) 0.9.0
+         Licensed under GNU GPL v2
+         Report bugs to <openocd-devel@lists.sourceforge.net>
+         0
+         Info : select transport "swd"
+         adapter speed: 1000 kHz
+         cortex_m reset_config sysresetreq
+         Info : CMSIS-DAP: SWD  Supported
+         Info : CMSIS-DAP: Interface Initialised (SWD)
+         Info : CMSIS-DAP: FW Version = 1.0
+         Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+         Info : CMSIS-DAP: Interface ready
+         Info : clock speed 1000 kHz
+         Info : SWD IDCODE 0x2ba01477
+         Info : aducm3029.cpu: hardware has 2 breakpoints, 1 watchpoints
+         Info : CHIPID 0x0284
+         memory bus access delay set to 6 tck
+         adapter speed: 1000 kHz
+         Info : accepting 'gdb' connection on tcp/3333
 
 -  Your program's execution is stopped automatically at the first breakpoint
    which is at the beginning of main() loop. You can use the debug functions and
@@ -386,8 +388,5 @@ How to create an Intel Hex (.hex) file from an ADuCM3029 application
 .. image:: ../images/eval-aducm3029-tools-hex.png
    :align: center
 
-*End of Document*
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
 
 .. |image1| image:: ../images/install_packs_online_new.png

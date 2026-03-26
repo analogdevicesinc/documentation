@@ -92,8 +92,5 @@ EV-COG-AD3029LZ, either post a question or send an email.
 -  The CrossCore Embedded Studio team can also be emailed using the address
    below:
 
-   -  `processor.tools.support@analog.com <https://wiki.analog.com/mailto/processor.tools.support@analog.com>`_
+   -  `processor.tools.support@analog.com <mailto:processor.tools.support@analog.com>`_
 
-*End of Document*
-
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`

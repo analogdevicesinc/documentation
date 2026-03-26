@@ -19,6 +19,3 @@ package
 
    `wifi_software_users_guide.pdf <../resources/wifi_software_users_guide.pdf>`_
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
-
-*End of Document*

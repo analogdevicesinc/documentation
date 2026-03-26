@@ -15,7 +15,7 @@ CrossCore Embedded Studio
 
 Click below link to go to CrossCore Embedded Studio userguide.
 
-`EV-COG-AD3029LZ with CrossCore Embedded Studio <https://wiki.analog.com/resources/eval/quickstart/ev-cog-ad3029lz/tools/cces_guide>`_
+:doc:`EV-COG-AD3029LZ with CrossCore Embedded Studio </solutions/reference-designs/ev-cog-ad3029lz/tools/cces_guide>`
 
 IAR Embedded Workbench for ARM
 ------------------------------
@@ -24,6 +24,3 @@ Click below link to go to CrossCore Embedded Studio userguide.
 
 :doc:`EV-COG-AD3029LZ with IAR Embedded Workbench for ARM </solutions/reference-designs/ev-cog-ad3029lz/tools/iar_guide>`
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
-
-| End Document

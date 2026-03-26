@@ -3,7 +3,7 @@ Driver Installation for On-board Debugger (CMSIS DAP)
 
 .. note::
 
-   \ The following steps are valid for both EV-COG-AD3029WZ and EV-COG-AD3029LZ\
+   The following steps are valid for both EV-COG-AD3029WZ and EV-COG-AD3029LZ.
 
 MCU Cog has an on-board debugger which supports the `ARM CMSIS DAP <https://developer.mbed.org/handbook/CMSIS-DAP>`_ interface. When connecting up the EV-COG-AD3029LZ to your computer or laptop, all the necessary drivers are automatically located and loaded up when using Windows operating systems.
 
@@ -17,8 +17,9 @@ which mode of operation the EV-COG-AD3029LZ emulator comes up.
    that the drivers are being installed in the task bar, open it up and wait
    till everything finished before progressing.
 
-| |image1|
-| |image2|
+|image1|
+
+|image2|
 
 DAPLINK Drive
 -------------
@@ -95,16 +96,13 @@ EV-COG-AD3029LZ Interface File Downloads
 
    The current EV-COG-AD3029LZ interface file can be downloaded here:
 
-   
+
    `EV-COG-AD3029LZ Interface File <../resources/ev_cog_ad3029lz_mbed.zip>`_
-   
+
    -  Initial version of mbed firmware for interfacing ADuCM3029 on
       EV-COG-AD3029LZ.
-   
 
-*End of Document*
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
 
 .. |image1| image:: ../images/device_drivers_install_notification.png
    :width: 400

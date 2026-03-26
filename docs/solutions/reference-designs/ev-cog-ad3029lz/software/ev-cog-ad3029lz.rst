@@ -15,9 +15,9 @@ EV-COG-AD3029LZ software pack contains the following components:
 -  On-Chip Driver Examples ( GPIO,RTC, SPI, Systick, TMR, UART, WDT)
 -  Bluetooth Profile Examples
 
-   -  \* FindMe Target
-   -  \* Proximity Reporter
-   -  \* Data Exchange (Hello World)
+   -  FindMe Target
+   -  Proximity Reporter
+   -  Data Exchange (Hello World)
 
 -  Android IoTNode application software
 -  Documentation
@@ -27,17 +27,17 @@ our complete EV-COG-AD3029LZ software user guide.
 
 .. hint::
 
-   
+
    -  `EV-COG-AD3029LZ BSP 3.1.0 Release Notes <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/Release_3.1.0/EV-COG-AD3029LZ_3.1.0_Release_Notes.pdf>`_
    -  `EV-COG-AD3029LZ BSP 2.0.0 Release Notes <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/Release_1.0.0/EV-COG-AD3029LZ_1.0.0_Release_Notes.pdf>`_
-   
+
 
 .. important::
 
-   
+
    You MUST have this software package installed on your laptop or PC in order
    to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
-   
+
 
 Downloading the EV-COG-AD3029LZ Software Pack
 ---------------------------------------------
@@ -58,11 +58,8 @@ The software pack can be downloaded in several ways.
 .. admonition:: Download
    :class: download
 
-   
+
    -  `EV-COG-AD3029LZ BSP 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.3.1.0.pack>`_
    -  `EV-COG-AD3029LZ BSP 1.0.0 <http://download.analog.com/tools/EZBoards/COG_AD3029/Releases/AnalogDevices.EV-COG-AD3029LZ_BSP.1.0.0.pack>`_
-   
 
-*End of Document*
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`

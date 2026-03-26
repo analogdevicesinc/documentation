@@ -19,7 +19,7 @@ consists of these packs:-
 
 -  `SmartMesh C library <https://github.com/dustcloud/sm_clib>`_- This pack is required for the implementation of the serial APIs of the EV-COG-SMARTMESH1Z and nullifies the need for application software to deal low level processes.
 
-For details on the C-Library, follow this\ `link <https://dustcloud.atlassian.net/wiki/spaces/CLIB>`_
+For details on the C-Library, follow this `link <https://dustcloud.atlassian.net/wiki/spaces/CLIB>`_
 
 Software Overview
 -----------------
@@ -41,7 +41,7 @@ This section gives user a basic understanding on how the software is designed
 for handling both transmission and reception of packets between the
 EV-COG-SMARTMESH1Z and EV-COG-AD3029LZ.
 
-To download the software source from Analog Devices Git - click on :git-EV-COG-AD3029LZ:`"SmartMesh-Temperature-Sensor-Software" <SmartMesh_temp_slavemode_licensed_v2.0>`
+To download the software source from Analog Devices Git - click on `"SmartMesh-Temperature-Sensor-Software" <https://github.com/analogdevicesinc/EV-COG-AD3029LZ/tree/master/SmartMesh_temp_slavemode_licensed_v2.0>`_
 
 Transmission of Packets
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,13 +153,10 @@ Example project
 .. admonition:: Download
    :class: download
 
-   To download an example project to interface EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ click on :git-EV-COG-AD3029LZ:`"SmartMesh-Temperature-Sensor-Software" <SmartMesh_temp_slavemode_licensed_v2.0>`
+   To download an example project to interface EV-COG-SMARTMESH1Z with EV-COG-AD3029LZ click on `"SmartMesh-Temperature-Sensor-Software" <https://github.com/analogdevicesinc/EV-COG-AD3029LZ/tree/master/SmartMesh_temp_slavemode_licensed_v2.0>`_
 
-   
+
    The example project sends temperature data or a dummy data to the manager
    which can be viewed on TempMonitor(GUI) or on the APIExplorer(GUI) of the
    manager.
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
-
-*End of Document*

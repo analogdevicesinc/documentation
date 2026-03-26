@@ -114,7 +114,7 @@ Following are the steps involved,
 
 -  Download and install IAR Embedded Workbench 7.60.1 or higher.
 -  Download the joystick_example project from `joystick_example.zip <../resources/joystick_example.zip>`_
--  The joystick_example project is also available on `Bitbucket <https://wiki.analog.com/link_to_bitbucket_has_to_be_put_here>`_.
+-  The joystick_example project is also available on `GitHub <https://github.com/analogdevicesinc/EV-COG-AD3029LZ>`_.
 -  Import the source into IAR workspace and run the application software to
    generate interrupts by joystick press.
 

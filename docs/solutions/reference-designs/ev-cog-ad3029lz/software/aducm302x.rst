@@ -32,17 +32,17 @@ ADuCM302x software user guide.
 
 .. hint::
 
-   
+
    -  `ADuCM302x DFP 3.1.0 Release Notes <http://download.analog.com/tools/EZBoards/CM302x/Releases/Release_3.1.0/ADuCM302x_DFP_3.1.0_Release_Notes.pdf>`_
    -  `ADuCM302x DFP 2.0.0 Release Notes <http://download.analog.com/tools/EZBoards/CM302x/Releases/Release_2.0.0/ADuCM302x_DFP_2.0.0_Release_Notes.pdf>`_
-   
+
 
 .. important::
 
-   
+
    You MUST have this software package installed on your laptop or PC in order
    to compile, debug, and run the applications for the EV-COG-AD3029LZ platform.
-   
+
 
 Downloading the ADuCM302x Software Pack
 ---------------------------------------
@@ -66,11 +66,8 @@ manual installation to install the pack.
 .. admonition:: Download
    :class: download
 
-   
+
    -  `ADuCM302x DFP 3.1.0 (Latest) <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.3.1.0.pack>`_
    -  `ADuCM302x DFP 2.0.0 <http://download.analog.com/tools/EZBoards/CM302x/Releases/AnalogDevices.ADuCM302x_DFP.2.0.0.pack>`_
-   
 
-*End of Document*
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`

@@ -64,7 +64,7 @@ Running an Example Project
    :align: center
    :width: 700
 
--  Click ok on Hardware Breakpoint Limited and Semihosting Enabled window.\
+-  Click ok on Hardware Breakpoint Limited and Semihosting Enabled window.
 
 |image5|
 
@@ -77,23 +77,22 @@ Running an Example Project
 You are all set!
 
 Additional Packs
-================
+----------------
 
 For Sensor based application with BLE connectivity please download and install
 below packages.
 
 - Download below packs
-  - ` Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/software/sensor>`
+
+  - `Analog Devices Sensor Drivers and Examples <http://download.analog.com/tools/Sensor_Software/Releases/AnalogDevices.ADI-SensorSoftware.1.1.0.pack>`_ - :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/software/sensor>`
   - `Analog Devices Bluetooth Low Energy Software <http://download.analog.com/tools/BLE_Software/Releases/AnalogDevices.ADI-BleSoftware.1.0.0.pack>`_ - :doc:`Refer for more details </solutions/reference-designs/ev-cog-ad3029lz/software/connectivity>`
-   * Start CrossCore Embedded Studio.
-   * Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
-   * Install above downloaded packs by clicking Import Existing Packs icon  |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg|.
-   * Refer "Running Example Project" section as mentioned above to copy existing
-     sensor or BLE based application to workspace.
 
-| End Document
+- Start CrossCore Embedded Studio.
+- Go to CMSIS Pack Manager by navigating to Windows ->Perspective ->Open Perspective ->Others -> CMSIS Pack Manager.
+- Install above downloaded packs by clicking Import Existing Packs icon |resources-eval-user-guides-ev-cog-ad3029lz-import_existing_packs_icon.jpg|.
+- Refer "Running Example Project" section as mentioned above to copy existing
+  sensor or BLE based application to workspace.
 
-:doc:`Back </solutions/reference-designs/ev-cog-ad3029lz/ev-cog-ad3029lz>`
 
 .. |image1| image:: images/import_existing_packs_icon.jpg
 .. |image2| image:: images/pack_manager.jpg
