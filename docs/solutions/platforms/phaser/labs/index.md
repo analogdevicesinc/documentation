@@ -18,17 +18,17 @@ To facilitate that introduction, Analog Devices has prepared several example lab
 ```{toctree}
 :maxdepth: 1
 
-Introduction to Beamforming <intro_beamforming/index>
+Introduction to Beamforming <intro-beamforming/index>
 Steering Angle Lab <steering/index>
-Array Factor and Beamwidth <ArrayFactor/index>
-Measuring the Antenna Pattern <Pattern/index>
-Sidelobes and Tapering <Tapering/index>
-Grating Lobes <Grating/index>
-Beam Squint <BeamSquint/index>
-Quantization Sidelobes <Quantization/index>
-Null Steering <NullSteering/index>
-Intro to Adaptive Beamforming <Adaptive/index>
-Monopulse Tracking <Monopulse/index>
+Array Factor and Beamwidth <array-factor/index>
+Measuring the Antenna Pattern <pattern/index>
+Sidelobes and Tapering <tapering/index>
+Grating Lobes <grating/index>
+Beam Squint <beam-squint/index>
+Quantization Sidelobes <quantization/index>
+Null Steering <null-steering/index>
+Intro to Adaptive Beamforming <adaptive/index>
+Monopulse Tracking <monopulse/index>
 
 ```
 
@@ -37,13 +37,13 @@ Monopulse Tracking <Monopulse/index>
 ```{toctree}
 :maxdepth: 1
 
-Setup and Introduction to Radar <RadarSetup/index>
-CW Radar <RadarCW/index>
-FMCW Radar <RadarFMCW/index>
-Chirp Synchronization <ChirpSync/index>
-Range Doppler Plotting <RadarDoppler/index>
-MTI Processing <RadarMTI/index>
-CFAR Processing <RadarCFAR/index>
+Setup and Introduction to Radar <radar-setup/index>
+CW Radar <radar-cw/index>
+FMCW Radar <radar-fmcw/index>
+Chirp Synchronization <chirp-sync/index>
+Range Doppler Plotting <radar-doppler/index>
+MTI Processing <radar-mti/index>
+CFAR Processing <radar-cfar/index>
 
 ```
 

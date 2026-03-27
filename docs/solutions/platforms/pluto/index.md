@@ -31,7 +31,7 @@ The below guide is meant to highlight important aspects of Pluto and guide the u
 :maxdepth: 2
 
 Hardware Introduction <hardware/index>
-Unboxing and Getting Started <getStarted/index>
+Unboxing and Getting Started <get-started/index>
 Additional Setup Tips <setup/index>
 Simple Programming <software/index>
 System Examples (Pilots) <pilots/index>

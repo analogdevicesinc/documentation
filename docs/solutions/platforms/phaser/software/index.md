@@ -5,9 +5,9 @@ This section covers how to calibrate the Phaser receive array and how to run sim
 ```{toctree}
 :maxdepth: 2
 
-Calibration <Calibration/index>
-Python Examples <PythonSetup/index>
-MATLAB Setup and Examples <MatlabSetup/index>
+Calibration <calibration/index>
+Python Examples <python-setup/index>
+MATLAB Setup and Examples <matlab-setup/index>
 ```
 
 

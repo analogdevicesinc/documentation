@@ -26,12 +26,12 @@ parts, all connected together:
 ```{toctree}
 :maxdepth: 1
 
-The Phaser RF Board <BasicRF/index>
-Common Phaser Configurations <Configs/index>
-RF Board Details <DetailedRF/index>
-Device Tree Overlay <DeviceTree/index>
-Schematics, Layout, and BOM <Schematics/index>
-Assembly and Production <Assembly/index>
+The Phaser RF Board <basic-rf/index>
+Common Phaser Configurations <configs/index>
+RF Board Details <detailed-rf/index>
+Device Tree Overlay <device-tree/index>
+Schematics, Layout, and BOM <schematics/index>
+Assembly and Production <assembly/index>
 ```
 
 

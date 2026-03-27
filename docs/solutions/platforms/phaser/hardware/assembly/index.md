@@ -84,7 +84,7 @@ Place the Vivaldi antenna / Selfie-Stick directly above the assembly as shown. T
 ```
 
 - Plug a micro HDMI to HDMI cable into the Raspberry Pi HDMI connector closest to the USB-C power input.
-- Insert a pre-prepared SD card into the Raspberry Pi. (To create this SD card, follow the instructions [here](../../Setup/SDcard/index.md))
+- Insert a pre-prepared SD card into the Raspberry Pi. (To create this SD card, follow the instructions [here](../../setup/sd-card/index.md))
 - Plug a keyboard into one of the remaining USB ports on the Raspberry Pi (A mouse is optional.)
 - Connect a 3 Amp USB-C power adapter to the USB-C power input on the CN0566 board.  Do not use the USB-C Power input on the Raspberry Pi.  The CN0566 board will power the Raspberry Pi.
 - Wait for the Raspberry Pi to boot.

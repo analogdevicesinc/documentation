@@ -21,7 +21,7 @@ Beamforming <beamforming/index>
 
 <!--
 Pilots in development:
-Drone Detection <drone_monitor/index>
+Drone Detection <drone-monitor/index>
 Ovidia
 -->
 

@@ -5,11 +5,11 @@ The Phaser ships fully assembled.  However, there are still a couple of steps to
 ```{toctree}
 :maxdepth: 2
 
-Download the SD Card <SDcard/index>
-Update Pluto Firmware <PlutoSetup/index>
-Assemble the System <SystemAssemble/index>
-Assemble the HB100 <HB100Assemble/index>
-Raspberry Pi Software Setup <RpiSetup/index>
+Download the SD Card <sd-card/index>
+Update Pluto Firmware <pluto-setup/index>
+Assemble the System <system-assemble/index>
+Assemble the HB100 <hb100-assemble/index>
+Raspberry Pi Software Setup <rpi-setup/index>
 ```
 
 For a detailed unboxing and setup video of the entire process, please see:

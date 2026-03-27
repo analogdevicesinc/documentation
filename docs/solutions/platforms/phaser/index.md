@@ -22,11 +22,11 @@ Most of the labs are run in Python, directly on the included Raspberry Pi. For g
 ```{toctree}
 :maxdepth: 2
 
-Hardware Introduction <Hardware/index>
-Unboxing and Initial Setup <Setup/index>
-Calibration and Simple Programming <Software/index>
-Labs <Labs/index>
-Additional Resources <Resources/index>
+Hardware Introduction <hardware/index>
+Unboxing and Initial Setup <setup/index>
+Calibration and Simple Programming <software/index>
+Labs <labs/index>
+Additional Resources <resources/index>
 ```
 
 ```{video} https://www.youtube.com/watch?v=B66JHcZMq_Q

@@ -3,7 +3,7 @@
 ## Getting Started and Setup
 
 If the CN0566 (Phaser) board is not yet assembled, please visit the 
-[Unboxing and Initial Setup Guide](../../Setup/index.md) and watch the **Unboxing/Setup Video** to see how to assemble the Phaser and create an image of ADI Kuiper Linux onto the Raspberry Pi’s SD card.
+[Unboxing and Initial Setup Guide](../../setup/index.md) and watch the **Unboxing/Setup Video** to see how to assemble the Phaser and create an image of ADI Kuiper Linux onto the Raspberry Pi’s SD card.
 
 After basic setup is complete, configure the Phaser in the {ref}`Host Computer Configuration <phaser hardware host-computer-configuration>`.  
 
@@ -139,14 +139,14 @@ If there are errors while attempting to verify connectivity, please try the foll
 
 ### Running Scripts
 
-- Once both the Phaser and Pluto are able to communicate with MATLAB, open the Phaser_steeringAngle file found [here](../../Labs/resources/matlab/Phaser_steeringAngle.m)
+- Once both the Phaser and Pluto are able to communicate with MATLAB, open the Phaser_steeringAngle file found [here](../../labs/resources/matlab/Phaser_steeringAngle.m)
 
 - This script functions to scan through a range of steering angles and output a plot of the array factor.
 - Also download the other files in this folder:  
-1) [setupPluto.m](../../Labs/resources/matlab/setupPluto.m), 
-2) [setupPhaser.m](../../Labs/resources/matlab/setupPhaser.m), 
-3) [setupAntenna.m](../../Labs/resources/matlab/setupAntenna.m), 
-4) [findTxFrequency.m](../../Labs/resources/matlab/findTxFrequency.m).
+1) [setupPluto.m](../../labs/resources/matlab/setupPluto.m), 
+2) [setupPhaser.m](../../labs/resources/matlab/setupPhaser.m), 
+3) [setupAntenna.m](../../labs/resources/matlab/setupAntenna.m), 
+4) [findTxFrequency.m](../../labs/resources/matlab/findTxFrequency.m).
 
 This segment of the code serves to initialize the Pluto and Phaser objects in MATLAB using the ADI toolboxes installed earlier, here labeled as “rx” and “bf” respectively. It also scans briefly to find the frequency of the HB100 emitter.
 
