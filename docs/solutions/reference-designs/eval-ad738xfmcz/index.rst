@@ -84,13 +84,13 @@ Applications:
 .. toctree::
    :hidden:
 
-   user-guide
-   linux-driver
+   ad738x
    eval-ad7380-4fmcz
    eval-ad7386fmcz
+   linux-driver
    prerequisites
    quickstart/index
-
+   user-guide
 Recommendations
 -------------------------------------------------------------------------------
 
