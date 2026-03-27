@@ -71,10 +71,13 @@ While :adi:`EVAL-AD9082` looks like this, with 2x ADCs and 4x DACs:
 .. toctree::
    :hidden:
 
-   user-guide
+   2to24ghz-mxfe-rf-front-end
+   ad9081
+   ad9081_plugin
+   ad9082
    prerequisites
    quickstart/index
-
+   user-guide
 Recommendations
 -------------------------------------------------------------------------------
 
