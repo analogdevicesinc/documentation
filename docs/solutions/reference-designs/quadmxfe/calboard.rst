@@ -27,7 +27,7 @@ Below is the full integrated system including the Xilinx `VCU118 <https://www.xi
 General Description
 -------------------
 
-This page serves to inform system engineers and software developers about the calibration board addition kit that pairs with the :adi:`Quad-MxFE <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>`. This board directly aligns with the 16 Rx and 16 Tx ports on the output of the Quad MxFE and includes power detectors and loopback configurations for the system-level calibration of the Quad MxFE. The board contains a PMOD 2A interface that connects the `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board from Xilinx®. A DIP switch and multi-channel ADC/DAC,\ :adi:`AD5592R`, are also included for additional control and power readings. The goal of this kit is to enable users to demonstrate combined-channel dynamic range, spurious, and phase noise improvements, develop system-level calibration algorithms, and demonstrate immediate phase determinism.
+This page serves to inform system engineers and software developers about the calibration board addition kit that pairs with the :adi:`Quad-MxFE <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>`. This board directly aligns with the 16 Rx and 16 Tx ports on the output of the Quad MxFE and includes power detectors and loopback configurations for the system-level calibration of the Quad MxFE. The board contains a PMOD 2A interface that connects the `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board from Xilinx®. A DIP switch and multi-channel ADC/DAC, :adi:`AD5592R`, are also included for additional control and power readings. The goal of this kit is to enable users to demonstrate combined-channel dynamic range, spurious, and phase noise improvements, develop system-level calibration algorithms, and demonstrate immediate phase determinism.
 
 High Level Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,7 +71,7 @@ Equipment Needed
 
 -  PMOD Cable
 
-   -  `Cable Assembly <https://www.samtec.com/products/idsd-06-d-15.00>`_
+   -  `Cable Assembly <https://www.samtec.com/products/idsd-06-d-15.00>`__
 
 -  12V (150W) Wall Supply
 

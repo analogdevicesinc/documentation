@@ -141,7 +141,7 @@ In order to program the FPGA, the Vitis/Vivado tool suite is required: `Vivado T
 
 .. important::
 
-   \ *Make sure to grab Vitis 2020.2 or earlier. The 2020.3 version does not support the VCU118!!!*\
+   *Make sure to grab Vitis 2020.2 or earlier. The 2020.3 version does not support the VCU118!!!*
 
 Grab the Self Extracting Web Installer from the full product installation
 section and run the installer. Choose the Vitis installation option which will
@@ -341,6 +341,7 @@ The control interface for the Quad-MxFE is implemented using standard system obj
          CalibrationBoardAttached: false
                               uri: 'ip:analog'
                   EnabledChannels: 1
+
 --------------
 
 CalBoardVCU118.m

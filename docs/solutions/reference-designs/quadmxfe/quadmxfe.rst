@@ -20,10 +20,6 @@ applications like:
 .. image:: images/adquadmxfe1ebztop-web.gif
    :alt: adquadmxfe1ebztop-web.gif
 
-.. image:: https://wiki.analog.com/_media/resources/eval/user-guides/analogtv>6184061669001
-   :alt: analogTV>6184061669001
-   :align: center
-
 --------------
 
 User Resources

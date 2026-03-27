@@ -281,6 +281,7 @@ In windows, you can run the ``XSCT`` or ``XSDB`` terminal from start menu → Xi
       Info: MicroBlaze #0 (target 3) Running
       xsct% Info: tcfchan#1 closed
       xsct%
+
 Kernel startup
 ~~~~~~~~~~~~~~
 
@@ -498,6 +499,7 @@ while the second one is connected to the FPGA and features the serial terminal.
 
    Welcome to Buildroot
    buildroot login:
+
 Login
 ~~~~~
 
@@ -540,7 +542,7 @@ Check JESD204 Link Status
 
 .. important::
 
-   Both Links must be in ``DATA``\
+   Both Links must be in ``DATA``
 
 The link status can be checked either from the
 
@@ -801,7 +803,7 @@ Instructions and Overview
 
 .. important::
 
-   \ Note: In Frequency Domain view channels can be only enabled pairwise (I+Q).
+   Note: In Frequency Domain view channels can be only enabled pairwise (I+Q).
 
    
    And not more that 2 frequency plots can be enabled in the same window.
