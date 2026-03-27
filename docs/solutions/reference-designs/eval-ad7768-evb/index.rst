@@ -45,10 +45,10 @@ Applications:
 .. toctree::
    :hidden:
 
-   user-guide
+   ad7768
    prerequisites
    quickstart/index
-
+   user-guide
 Recommendations
 -------------------------------------------------------------------------------
 
