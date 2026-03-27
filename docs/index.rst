@@ -52,13 +52,6 @@ Contents
    solutions/*/index
 
 .. toctree::
-   :caption: ADC Platforms
-   :maxdepth: 5
-   :glob:
-
-   platforms/index.md
-
-.. toctree::
    :caption: University Program
    :maxdepth: 4
 
