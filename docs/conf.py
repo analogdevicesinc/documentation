@@ -16,8 +16,6 @@ extensions = [
     "adi_doctools",
     "sphinxcontrib.mermaid",
     "myst_parser",
-    "sphinx_design",
-    #"sphinx.ext.mathjax",
 ]
 
 needs_extensions = {
