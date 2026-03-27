@@ -15,7 +15,6 @@ real-world system development.
 
 `````{grid}
 :columns: 4
-:class: cards
 
 ````{card} Signal-Chain Hardware
 
@@ -65,7 +64,6 @@ For more information on each of ADC Platforms, please click on the links below:
 
 `````{grid}
 :columns: 3
-:class: cards
 
 ````{card} Phaser (CN0566)
 :ref: adc adalm-phaser
