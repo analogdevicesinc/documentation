@@ -61,10 +61,10 @@ Applications:
 .. toctree::
    :hidden:
 
-   user-guide
+   ad77681_mbed_iio_application
    prerequisites
    quickstart/index
-
+   user-guide
 Recommendations
 -------------------------------------------------------------------------------
 
