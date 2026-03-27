@@ -1,4 +1,4 @@
-# ADC System Platforms Documentation
+# Aerospace, Defense and Communication Platforms
 
 ## Complete Evaluation & Demonstration Systems for ADI Data Converters
 
@@ -13,32 +13,42 @@ real-world system development.
 
 ## What Makes a Platform?
 
-````{grid} 1 2 4 4
+`````{grid}
+:columns: 4
+:class: cards
 
-```{grid-item-card} Signal-Chain Hardware
-:img-bottom: resources/Signal_Chain_Hardware_transparent.png
+````{card} Signal-Chain Hardware
 
 ADI MxFE, SDR, MEMS and power solutions integrated into validated system architectures.
-```
 
-```{grid-item-card} FPGA + Reference HDL
-:img-bottom: resources/FPGA_Reference_HDL_transparent.png
-
-COTS FPGA platforms with production-grade HDL reference designs.
-```
-
-```{grid-item-card} Linux + IIO
-:img-bottom: resources/Linux_IIO_transparent.png
-
-Embedded Linux builds with native [IIO](https://www.kernel.org/doc/html/latest/driver-api/iio/index.html) support.
-```
-
-```{grid-item-card} Application Software
-:img-bottom: resources/Application_Software_transparent.png
-
-System-level control via Python, MATLAB, or QIQ using libIIO APIs.
+```{image} resources/Signal_Chain_Hardware_transparent.png
 ```
 ````
+
+````{card} FPGA + Reference HDL
+
+COTS FPGA platforms with production-grade HDL reference designs.
+
+```{image} resources/FPGA_Reference_HDL_transparent.png
+```
+````
+
+````{card} Linux + IIO
+
+Embedded Linux builds with native [IIO](https://www.kernel.org/doc/html/latest/driver-api/iio/index.html) support.
+
+```{image} resources/Linux_IIO_transparent.png
+```
+````
+
+````{card} Application Software
+
+System-level control via Python, MATLAB, or QIQ using libIIO APIs.
+
+```{image} resources/Application_Software_transparent.png
+```
+````
+`````
 
 ## Platforms
 
@@ -53,27 +63,28 @@ Pluto SDR<pluto/index>
 For more information on each of ADC Platforms, please click on the links below:
 
 
-````{grid} 1 2 4 4
+`````{grid}
+:columns: 3
+:class: cards
 
-```{grid-item-card} Phaser (CN0566)
-:link: phaser/index
-:link-type: doc
-:img-bottom: resources/phaser_pict.svg
-:class-card: platform-card
+````{card} Phaser (CN0566)
+:ref: adc adalm-phaser
+
 X-Band Beamforming and Radar Learning Platform
-```
 
-```{grid-item-card} Pluto SDR
-:link: pluto/index
-:link-type: doc
-:img-bottom: resources/pluto.png
-:class-card: platform-card
+```{image} resources/phaser_pict.svg
+```
+````
+
+````{card} Pluto SDR
+:ref: adc pluto
 
 Low-cost SDR system based on the AD9361
+
+```{image} resources/pluto.png
 ```
-````  
-
-
+````
+`````
 
 ## Platform Pilots
 

@@ -1,3 +1,4 @@
+(adc adalm-phaser)=
 # ADALM-PHASER
 
 ```{image} phaser1.svg
