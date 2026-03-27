@@ -117,7 +117,7 @@ Putting together the CN0549
 
 -  Orient the CN0540 DAQ board so that the SMA connector is on the same end as the Ethernet jack of the DE10-Nano.
 -  Find the Arduino header pins on the CN0540 and line them up with the mating
-   Arduino connectors found on the DE10-Nano.\
+   Arduino connectors found on the DE10-Nano.
 
 |image1|
 
@@ -125,9 +125,9 @@ Putting together the CN0549
    :align: center
    :width: 400
 
--  Once both rows of pins are lined up, push the CN0540 DAQ board down into the DE10-Nano so that the boards fit snuggly together.\ |image2| Note, the CN0540 will make solid contact with the DE10-Nano even with the plexiglass installed, so there is no need to remove that before connecting the two boards together.
+-  Once both rows of pins are lined up, push the CN0540 DAQ board down into the DE10-Nano so that the boards fit snuggly together. |image2| Note, the CN0540 will make solid contact with the DE10-Nano even with the plexiglass installed, so there is no need to remove that before connecting the two boards together.
 -  Connect the SMA cable from the CN0532 sensor board to the SMA connector on
-   the CN0540 DAQ board.\
+   the CN0540 DAQ board.
 
 |image3|
 
@@ -148,7 +148,7 @@ Putting together the CN0549
    :align: center
    :width: 400
 
--  Place one end of the HDMI cable into the HDMI connector on the DE10-Nano.\
+-  Place one end of the HDMI cable into the HDMI connector on the DE10-Nano.
 
 |image4|
 
@@ -206,7 +206,7 @@ registers. This is optional and typically application specific.
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
-|image6|\ |image7|
+|image6| |image7|
 
 User interface
 ^^^^^^^^^^^^^^
@@ -257,7 +257,7 @@ domain plots. To obtain a FFT plot, do the following:
 -  Set the number of samples to 16384
 -  Set the averaging to 3
 
-You should see a nice plot like this when connected to the CN0532 sensor.\
+You should see a nice plot like this when connected to the CN0532 sensor.
 
 |image8|
 

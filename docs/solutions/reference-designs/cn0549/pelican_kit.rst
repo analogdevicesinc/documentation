@@ -47,7 +47,7 @@ In order to do this, you MUST cut into the foam provided in the case.
    :width: 400
 
 -  Roughly locate the monitor about 1 inch from the top and 2 inches from the
-   bottom edge of the foam.\
+   bottom edge of the foam.
 
 |image1|
 
@@ -77,7 +77,7 @@ In order to do this, you MUST cut into the foam provided in the case.
    :width: 400
 
 -  Looking at the righthand side you'll see the connector panel. Connect the
-   HDMI cable and the DC barrel jack to the monitor.\
+   HDMI cable and the DC barrel jack to the monitor.
 
 |image2|
 
@@ -87,7 +87,7 @@ In order to do this, you MUST cut into the foam provided in the case.
 -  Once complete, use the monitor to align the other side of the velcro to the
    case. Remove the adhesive backing and insert the monitor into the Pelican
    case lid. Apply light force as to ensure a safe, stable connection, but not
-   to hard as to damage the screen.\
+   to hard as to damage the screen.
 
 |image3|
 
@@ -125,12 +125,11 @@ arranged and how they can best fit in the case.
    :align: center
    :width: 400
 
-::
+-  Keyboard == No Padding
+-  HDMI and Power cords == 1 inch of padding
+-  DAQ, FPGA, Sensor, Mounting block, USB OTG, Mouse == 1.5 inches of padding
 
-     * Keyboard == No Padding
-     * HDMI and Power cords ==  1 inch of padding
-     * DAQ, FPGA, Sensor, Mounting block, USB OTG, Mouse == 1.5 inches of padding
-   * After you cut the padding, its now time to reinsert the padding back into the foam cutout.  If you do everything correctly your Pelican case should look like this at the end
+-  After you cut the padding, its now time to reinsert the padding back into the foam cutout. If you do everything correctly your Pelican case should look like this at the end
 
 .. image:: images/cn0549_pelican_case_buildup_keyboard2.jpg
    :align: center
