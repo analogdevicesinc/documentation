@@ -71,10 +71,11 @@ Applications:
    :hidden:
 
    eval-ada4355ebz
+   eval-ada4356
    eval-ada4356ebz
    prerequisites
    quickstart/index
-
+   testsoftware
 Recommendations
 -------------------------------------------------------------------------------
 
