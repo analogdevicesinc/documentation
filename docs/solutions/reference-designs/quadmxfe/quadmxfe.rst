@@ -20,6 +20,8 @@ applications like:
 .. image:: images/adquadmxfe1ebztop-web.gif
    :alt: adquadmxfe1ebztop-web.gif
 
+:adi:`Quad-MxFE Product Video <en/education/education-library/videos/6184061669001.html>`
+
 --------------
 
 User Resources
