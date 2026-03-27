@@ -79,7 +79,7 @@ IOSEL      Shorted Pin 1 and 2
 Set the following :adi:`EVAL-ADICUP3029` switches according to their configuration on the table below.
 
 ========== =====================
-**Switch** \**Configuration**
+**Switch** **Configuration**
 ========== =====================
 UART (S2)  USB
 POWER (S5) WALL/USB
@@ -91,7 +91,7 @@ POWER (S5) WALL/USB
 Firmware Setup
 --------------
 
-Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. Drag and drop the appropriate .hex file from the list below to the Daplink Drive. (See :doc:`-firmware-setup </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`)
+Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. Drag and drop the appropriate .hex file from the list below to the Daplink Drive. (See :doc:`Firmware Setup </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`)
 
 .. admonition:: Download
    :class: download

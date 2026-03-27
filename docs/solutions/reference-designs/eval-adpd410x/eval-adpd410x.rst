@@ -116,7 +116,7 @@ the AFE, and supply voltage for the LED. The user can use this along with the
 break-away protoboard to implement a custom circuit for testing. The pin
 assignment and functions are shown below.
 
-|image13|\ |image14|
+|image13| |image14|
 
 Pins labeled **XYC** (where X refers to LED 1, 2, 3, or 4, and Y refers to channel A or B) denote connections to the LED cathode which are voltage protected via transistors to the ADPD4100/1 LED inputs (denoted by **LXY**). It is recommended to connect LED cathodes to these pins instead of connecting directly to **LXY** pins. **PDXY** (X refers to photodiode 1, 2, 3, or 4 and Y refers to channel A or B) pins denote photodiode signal inputs to the AFE. **ACOM** and **BCOM** pins refer to the common cathode bias output for photodiode sensors. These should be connected to the cathodes of photodiodes in the matching channel (for example, photodiodes connected to PD1A, PD2A, PD3A, and PD4A should have their cathodes connected to ACOM).
 
@@ -274,7 +274,7 @@ You can configure the default timeslots and other settings of the :adi:`ADPD4100
 -  **ADC Cycles**
    This sets the number of integration cycles per ADC conversion. This value can range from 0x01 to 0xFF.
 -  **Number of Repeats**
-   This sets the number of repeat ADC conversions\\\\. This value can range from 0x01 to 0xFF\\\\. ``total number of pulses = ADC cycles X Number of Repeats``
+   This sets the number of repeat ADC conversions. This value can range from 0x01 to 0xFF. ``total number of pulses = ADC cycles X Number of Repeats``
 
 Here is an example timeslot setting used in the pre-built hex files:
 
@@ -357,7 +357,7 @@ IIO Oscilloscope
 
 .. important::
 
-   Make sure to download/update to the latest version of IIO-Oscilloscope found on this link\ https://github.com/analogdevicesinc/iio-oscilloscope/releases.
+   Make sure to download/update to the latest version of IIO-Oscilloscope found on this `link <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_.
 
 -  Install and start IIO-Oscilloscope. There are two options you can use to select IIO contexts. First, you can use the Serial option and input the correct port settings of the board from the Device Manager. Another way is by manually entering the URI used in :doc:`Connection </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`.
 
@@ -368,7 +368,7 @@ IIO Oscilloscope
 
 -  Press Refresh to display available IIO Devices, and once adpd410x is
    detected, press Connect. It may take several presses to Connect before the
-   software proceeds and opens the Debug Panel and Waveform Panel\\\\.
+   software proceeds and opens the Debug Panel and Waveform Panel.
 
 .. image:: images/iio-oscilloscopedetecteddevice.png
    :width: 400
@@ -415,7 +415,7 @@ Installing the Packages
    PyADI-IIO requires a Python installed on your computer. It is recommended to
    install Python 3.7 or higher.
 
-Install PyADI-IIO using one of the methods in `PyADI-IIO <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_\\\\.
+Install PyADI-IIO using one of the methods in `PyADI-IIO <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_.
 
 There are two example scripts found in the examples folder in `PyADI-IIO <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_. To run both examples, the following packages are required: `pyqtgraph <https://www.pyqtgraph.org>`_, `scipy <https://scipy.org>`_, `PyQt5 <https://www.riverbankcomputing.com/software/pyqt>`_, `matplotlib <https://matplotlib.org>`_.
 

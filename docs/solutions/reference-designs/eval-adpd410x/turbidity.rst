@@ -1,7 +1,10 @@
------------------------------------------------------------------------------------------------------------------------------====== EVAL-ADPD410X-ARDZ Turbidity Measurement Demo ====== The :adi:`EVAL-ADPD410x-ARDZ` allows users to take advantage of the flexibility of the :adi:`ADPD4100` and :adi:`ADPD4101` as multimodal sensor front ends to a wide range of applications. One example of a specialized application is the :adi:`CN0409`, a reference design for turbidity measurement. This demonstration shows how to measure turbidity using a similar method, but using the :adi:`EVAL-ADPD410x-ARDZ`.
+EVAL-ADPD410X-ARDZ Turbidity Measurement Demo
+=============================================
+
+The :adi:`EVAL-ADPD410x-ARDZ` allows users to take advantage of the flexibility of the :adi:`ADPD4100` and :adi:`ADPD4101` as multimodal sensor front ends to a wide range of applications. One example of a specialized application is the :adi:`CN0409`, a reference design for turbidity measurement. This demonstration shows how to measure turbidity using a similar method, but using the :adi:`EVAL-ADPD410x-ARDZ`.
 
 General Description/Overview
-============================
+-----------------------------
 
 The International Organization for Standardization (ISO) developed a design standard known as ISO 7027 Water Quality—Determination of Turbidity, which is best known for its requirement of a monochromatic light source. Most instruments that comply with this standard use an 860 nm LED light source and a primary detector at an angle of 90°. Additional detection angles are allowed, such as a detector at an angle of 180°, to increase the range of measurable turbidity levels.
 
@@ -10,7 +13,7 @@ to achieve a water turbidity measurement system. The system can measure low to
 high water turbidity levels ranging from 0 FTU to 1000 FTU.
 
 Demo Requirements
-=================
+-----------------
 
 The following is a list of items needed to replicate this demo:
 
@@ -26,7 +29,7 @@ The following is a list of items needed to replicate this demo:
 -  (**Optional**) Samples with known turbidity concentration
 
 Setting up the EVAL-ADPD410X-ARDZ
-=================================
+---------------------------------
 
 | Configure the onboard jumper header and solder jumper connections, as shown below.
 | |image1|
@@ -51,7 +54,7 @@ IOSEL      Shorted Pin 1 and 2
 Set the following :adi:`EVAL-ADICUP3029` switches according to their configuration on the table below.
 
 ========== =====================
-**Switch** \**Configuration**
+**Switch** **Configuration**
 ========== =====================
 UART (S2)  USB
 POWER (S5) WALL/USB
@@ -61,9 +64,9 @@ POWER (S5) WALL/USB
 | |image5|
 
 Firmware Setup
-==============
+--------------
 
-Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. Drag and drop the appropriate .hex file from the list below to the Daplink Drive. (See :doc:`-firmware-setup </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`)
+Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. Drag and drop the appropriate .hex file from the list below to the Daplink Drive. (See :doc:`Firmware Setup </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`)
 
 .. admonition:: Download
    :class: download
@@ -80,7 +83,7 @@ Connect the :adi:`EVAL-ADICUP3029` to the PC using the micro USB to USB cable. D
    
 
 DIY Test Board Setup
-====================
+--------------------
 
 To set up the optical path, use the prototype board that comes in the box with the :adi:`EVAL-ADPD410x-ARDZ` as a base. The connection diagram for the QED123 LED and the two QSD123 is shown below:
 
@@ -101,7 +104,7 @@ shown below.
    :width: 600
 
 Software Setup
-==============
+--------------
 
 This demo uses a PyADI-IIO example script. See :doc:`Software Setup </solutions/reference-designs/eval-adpd410x/eval-adpd410x>` for the complete installation instructions from libiio to pyadi-iio.
 
@@ -143,7 +146,7 @@ This demo uses a PyADI-IIO example script. See :doc:`Software Setup </solutions/
    The demo script uses the same approximation used in `Linear Approximation using 3-Point Calibration <https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity>`_.
 
 Reference Links
-===============
+---------------
 
 -  :doc:`Hardware User Guide </solutions/reference-designs/eval-adpd410x/eval-adpd410x>`
 
