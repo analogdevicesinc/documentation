@@ -79,7 +79,7 @@ Import RapidNet IP Example Project
    :align: center
    :width: 600
 
--  Click on 'Debug and Download' icon |image1|\ on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
+-  Click on 'Debug and Download' icon |image1| on the menu bar. This will compile, build and download the project on EV-COG-AD3029LZ using CMSIS-DAP.
 
 mBed windows serial driver - Installation
 -----------------------------------------
