@@ -8,7 +8,7 @@ GMSL3/2 Deserializer Board for MIPI CSI-2 Cameras
 Overview
 --------
 
-.. figure:: AD-GMSL793MIPI-EVK_top-angle.png
+.. figure:: images/eval-top-angle.png
   :align: left
   :width: 200 px
 
@@ -79,7 +79,7 @@ Specifications
 System Architecture
 -------------------
 
-.. figure:: AD-GMSL793MIPI-EVK-block-diagram.svg
+.. figure:: images/block-diagram.svg
   :width: 600 px
 
   AD-GMSL793MIPI-EVK System Architecture
@@ -134,7 +134,7 @@ Hardware Setup
 - USB-C power supply (5V, minimum 2A)
 - Multimeter (for verification)
 
-.. figure:: AD-GMSL793MIPI-EVK_hardware-setup.png
+.. figure:: images/hardware-setup.png
 
   AD-GMSL793MIPI-EVK Hardware Connection
 
@@ -210,8 +210,7 @@ Resources
 
 - :adi:`MAX96793 Product Page <max96793>`
 - :adi:`LTC3303 Product Page <ltc3303>`
-- :adi:`GMSL3 Channel Specification User Guide
-  <media/en/technical-documentation/user-guides/gmsl3-channel-specification-user-guide.pdf>`
+- :adi:`GMSL3 Channel Specification User Guide <media/en/technical-documentation/user-guides/gmsl3-channel-specification-user-guide.pdf>`
 
 Design & Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
