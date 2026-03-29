@@ -1,6 +1,6 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/admx/eval-admx2501ebz
 
-.. _eval-admx2501ebz software-user-guide:
+.. _ad-imp2501-sl software-user-guide:
 
 Software User Guide
 ===================
@@ -11,7 +11,7 @@ application. The number of parameters makes it impossible to show every
 combination, but the user will understand how each parameter affects the
 measurement data.
 
-The **AD-IMP2501DBZ-SL** comes with pre-loaded embedded firmware and can be
+The :adi:`AD-IMP2501DBZ-SL` comes with preloaded embedded firmware and can be
 used out of the box. This firmware handles communication with the host PC,
 setting user specified parameters, initiating signal generation, processing
 impedance measurement data, and reporting that information back to the user.
@@ -21,7 +21,7 @@ Some drivers and peripheral software is required for operation. Instructions on
 how to download and install all necessary software or firmware is provided
 below.
 
-.. _eval-admx2501ebz usb-driver-installation:
+.. _ad-imp2501-sl usb-driver-installation:
 
 USB Driver Installation
 -----------------------
@@ -30,7 +30,7 @@ USB Driver Installation
 
    The default communication interface to the EVAL-AD-IMP250-SL is via its USB
    port. Using the USB Type C cable included with the evaluation board
-   (TTL-232R-RPI), FTDI"s Virtual COM Port (VCP) drivers must be downloaded from
+   (TTL-232R-RPI), FTDI's Virtual COM Port (VCP) drivers must be downloaded from
    their website located at https://www.ftdichip.com/Drivers/VCP.htm
 
 **Installation steps:**
@@ -46,9 +46,9 @@ USB Driver Installation
 - Open the Device Manager
 - In the Device Manager window, verify that the USB Serial Port is displayed
   under ``Ports (COM & LPT)`` and that a serial port identifier has been
-  assigned as shown below (the COM# may be different than shown here):
+  assigned as shown below (the COM# may be different from shown here):
 
-.. figure:: device_manager_com_port.png
+.. figure:: images/device_manager_com_port.png
    :width: 600px
 
 Embedded Software Update
@@ -59,12 +59,12 @@ AD-IMP2501DBZ-SL, follow these steps using the
 :adi:`MAX32625PICO2 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/max32625pico2.html#eb-overview>`
 ``PICO`` Board
 
-.. _eval-admx2501ebz request-fw-sw:
+.. _ad-imp2501-sl request-fw-sw:
 
 Request and Download New Firmware or Software
 ---------------------------------------------
 
-Follow these instruction for downloading software/firmware from Analog Device"s
+Follow these instructions for downloading software/firmware from Analog Device's
 Secure Software Delivery (SSD) system. The example below is for requesting new
 firmware, but the process is the same for requesting software:
 
@@ -80,14 +80,14 @@ Software/Firmware Request
 - You will receive an email that looks like the below image once the request has
   been processed. Follow the URL at the bottom of the page:
 
-.. figure:: adi_license.png
+.. figure:: images/adi_license.png
    :width: 600px
 
 - View the software license agreement by selecting the hyperlink ``software
-  license agreement`` highlighted in blue, and hit the check box to indicate
+  license agreement`` highlighted in blue, and hit the checkbox to indicate
   that you have read and agree to the terms outlined in the license.
 
-.. figure:: adi_sw_download.png
+.. figure:: images/adi_sw_download.png
    :width: 500px
 
 - Then select the green ``Download`` button. This will download a zipped folder
@@ -103,7 +103,7 @@ picture in the Hardware User Guide *General Setup section* for locating the
 proper header. Once connected, open a file explorer window and verify that a
 DAPLINK drive has been found by your PC. See below circled in red.
 
-.. figure:: daplink_drive.png
+.. figure:: images/daplink_drive.png
    :width: 400px
 
 Flash the ADI Provided Firmware File
@@ -117,7 +117,7 @@ corresponds to the numbered revision of the firmware file.
 Simply drag and drop the .hex file into the DAPLINK drive and a download screen
 should open and show the process.
 
-.. figure:: fw_download.png
+.. figure:: images/fw_download.png
    :width: 400px
 
 After flashing, power cycle the AD-IMP2501DBZ-SL by removing the USB C cable
@@ -132,7 +132,7 @@ revision the board reports is the same as the firmware file that was flashed
    process may have failed. A good check is to re-open the explorer window and
    check the DAPLINK drive.
 
-.. figure:: fw_fail.png
+.. figure:: images/fw_fail.png
    :width: 400px
 
 If a FAIL.TXT file exists, as shown in the image above, the FW flash was not
@@ -156,7 +156,7 @@ for custom scripting. This script is offered for users who want to implement
 post processing of their data in real time or create their own visual
 representation of the impedance data.
 
-.. _eval-admx2501ebz ad-imp2501dbz-sl-available-commands:
+.. _ad-imp2501-sl ad-imp2501dbz-sl-available-commands:
 
 AD-IMP2501DBZ-SL Available Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -345,19 +345,19 @@ Opening a Session via Teraterm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Verify the COM Port that your system is connected to in the PC"s Device
-Manager. Check the :ref:`eval-admx2501ebz usb-driver-installation` instructions
+Manager. Check the :ref:`ad-imp2501-sl usb-driver-installation` instructions
 if needed.
 
-If multiple ports are in use and you are unsure which is connected to the
+If multiple ports are in use, and you are unsure which is connected to the
 AD-IMP2501DBZ-SL board simply remove the USB from the computer and when the
 Device Manager window refreshes, note which Port is no longer in use. Plug the
 system USB back into your PC and that Port should again be listed.
 
 Continue with the system powered on via USB connection to the host PC, open the
-TeraTerm application and choose File -> New Connection, and choose the "Serial"
+TeraTerm application and choose File → New Connection, and choose the "Serial"
 radio button and select "OK".
 
-.. figure:: teraterm_new_conn.png
+.. figure:: images/teraterm_new_conn.png
    :width: 400px
 
 Select the COM port identified earlier in the Device Manager. Click "OK". Then
@@ -365,10 +365,10 @@ choose the tab labeled "Setup" and select "Serial port…". Ensure that the COM
 port is set and the following are set accordingly, Speed = 115200, Data = 8
 bits, Parity = none, Stop bits = 1 bits, Flow control = None. Then select "OK"
 
-.. figure:: teraterm_settings.png
+.. figure:: images/teraterm_settings.png
    :width: 500px
 
-Optionally, choose "Setup" -> "Save setup…". Save the file to the default
+Optionally, choose "Setup" → "Save setup…". Save the file to the default
 directory. Now, when launching TeraTerm, it will automatically try to connect
 with those saved settings.
 
@@ -390,13 +390,13 @@ Using the "help" Functionality in the Command-Line Interface
 
 The ``help`` command will display all the commands available to the user from
 the command-line interface (CLI). Use this command while operating for a quick
-refresher. See the :ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
+refresher. See the :ref:`ad-imp2501-sl ad-imp2501dbz-sl-available-commands`
 section for more details on each command.
 
-.. figure:: fishercat_help_command_page1.png
+.. figure:: images/fishercat_help_command_page1.png
    :width: 700px
 
-.. figure:: fishercat_help_command_page2.png
+.. figure:: images/fishercat_help_command_page2.png
    :width: 700px
 
 
@@ -410,7 +410,7 @@ impedance measurements.
 
    The measurements reported by the module may not be accurate unless it has
    been calibrated. For detailed instructions on how to calibrate the module,
-   please refer to the :ref:`eval-admx2501ebz calibration-and-compensation`
+   please refer to the :ref:`ad-imp2501-sl calibration-and-compensation`
    section in this user guide.
 
 By default, the module is set to perform single-point impedance measurements in
@@ -421,7 +421,7 @@ prompt and press ENTER.
 Type ``get`` and press ENTER to view the current default parameter settings in
 the terminal window.
 
-.. figure:: fishercat_get_default.png
+.. figure:: images/fishercat_get_default.png
    :width: 600px
 
 Measurement settings are not always in their base SI form. Frequency is in Hz,
@@ -433,7 +433,7 @@ The AC magnitude can be configured anywhere between approximately 10mV pk-pk and
 across the DUT will be be dependent on the DUT impedance, due to the onboard
 100Ω source resistance (for current limiting and patient protection, can be
 modified for different applications); see
-:ref:`eval-admx2501ebz selecting-a-measurement-range` for details.
+:ref:`ad-imp2501-sl selecting-a-measurement-range` for details.
 
 .. tip::
 
@@ -529,7 +529,7 @@ accesses the Serial port directly, and calling the library functions will
 execute the same commands that are normally typed into the terminal emulator.
 
 This Python library and project are currently accessible by request. Follow the
-instructions in the :ref:`eval-admx2501ebz request-fw-sw` section but request
+instructions in the :ref:`ad-imp2501-sl request-fw-sw` section but request
 the Python Application Software for the AD-IMP2501DBZ-SL.
 
 The Python script download includes an example measurement sweep script, which
@@ -572,7 +572,7 @@ ohms.
 | 6                     | Admittance in magnitude and phase in radians    | Y, rad  | Siemens, Radians |
 +-----------------------+-------------------------------------------------+---------+------------------+
 
-.. _eval-admx2501ebz selecting-a-measurement-range:
+.. _ad-imp2501-sl selecting-a-measurement-range:
 
 Selecting a Measurement Range
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -604,7 +604,7 @@ and current gain parameters will retain the values set during the autogain
 measurement. If testing at multiple frequencies, note the gain settings for each
 measurement and verify the same gain settings were chosen by the autogain
 setting for each measurement. If the gain settings changed, the lowest gain
-settings should be chosen for an entire sweep so the system does not saturate.
+settings should be chosen for an entire sweep, so the system does not saturate.
 
 Available voltage gain values for channel 0 are listed below.
 
@@ -677,7 +677,7 @@ of measurement using the equations above. A simpler method to obtain an
 approximate value based on the expected capacitance or inductance value is
 through the reactance chart shown below.
 
-.. figure:: reactance_chart_labeled.jpg
+.. figure:: images/reactance_chart_labeled.jpg
    :width: 600px
 
 To find the approximate impedance or admittance value for a capacitor or
@@ -708,7 +708,7 @@ is small in comparison to the total impedance magnitude. The default is set to
    Averaging increases the time required to return a reading. So finding the
    compromise between improved noise and measurement speed will depend on the
    application. At some point there is a limited return as the average value
-   continues to increases. This threshold of limited return will depend on the
+   continues to increase. This threshold of limited return will depend on the
    application.
 
 Improving Measurement Precision
@@ -726,7 +726,7 @@ To test surface-mount components, fixtures like the
 or the
 `Keysight 16034G <https://www.keysight.com/en/pd-1000000474%3Aepsg%3Apro-pn-16034G/smd-test-fixture>`__
 are good examples. For a full list of recommended accessories, please refer to
-the :ref:`eval-admx2501ebz optional-equipment` section
+the :ref:`ad-imp2501-sl optional-equipment` section
 at the beginning of this user guide. These fixtures are not possible for all
 applications and some systems will require relative precision versus absolute
 precision.
@@ -818,7 +818,7 @@ can be used to control the settling time between measurements.
   trigger delay, but the AC source will only start after the delay for the data
   capture.
 
-To setup ``measdelay`` and ``trigdelay``, simply enter the command followed by a
+To set up ``measdelay`` and ``trigdelay``, simply enter the command followed by a
 value in milliseconds, up to a maximum of 60 seconds.
 
 Below is a demonstration on how each measurement time parameter fits in the
@@ -827,7 +827,7 @@ periods marked with blocks in light/dark green. If enabled, the DC offset will
 turn on during the tdelay blocks. The example measurement uses a 100 Ohm onboard
 resistor as the DUT.
 
-.. figure:: command_timing_diagram.png
+.. figure:: images/command_timing_diagram.png
    :width: 1000px
 
 Single Sample Measurement
@@ -1033,7 +1033,7 @@ measurement to the same frequency under ideal parameters in the first few rows.
 | 1000       | 10        | 1      | 1               | R/X      | None      | Off       | 0.04343   | 0.004343     | -0.000547      |
 +------------+-----------+--------+-----------------+----------+-----------+-----------+-----------+--------------+----------------+
 
-.. _eval-admx2501ebz calibration-and-compensation:
+.. _ad-imp2501-sl calibration-and-compensation:
 
 Calibration and Compensation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1049,19 +1049,19 @@ can be used to validate.
 There are three basic calibration steps involved in calibrating the module: open
 calibration, short calibration, and load calibration. The first two correct the
 module and test lead parasitics. The latter provides traceability to an external
-source. The calibration steps must be performed in the order open->short->load.
+source. The calibration steps must be performed in the order open→short→load.
 Open and load calibration are the most important. Short calibration may need to
 be skipped in certain gain/load ranges where the current ADC would saturate.
 Open calibration may need to be skipped in gain/load ranges that the voltage ADC
 would saturate.
 
-.. figure:: open_short_load_config.png
+.. figure:: images/open_short_load_config.png
    :width: 800px
 
-.. figure:: fishercat_open_short_load.png
+.. figure:: images/fishercat_open_short_load.png
    :width: 800px
 
-.. figure:: open_short_load_config_photo.png
+.. figure:: images/open_short_load_config_photo.png
    :width: 800px
 
 .. tip::
@@ -1089,7 +1089,7 @@ again, the user will overwrite the result of the first calibration. Support for
 calibration over frequency is included and incorporates the entire 1Hz to 1.5MHz
 range.
 
-.. _eval-admx2501ebz calibration-steps:
+.. _ad-imp2501-sl calibration-steps:
 
 Calibration Steps
 ^^^^^^^^^^^^^^^^^
@@ -1129,7 +1129,7 @@ To calibrate the module in a specific gain combination, follow the steps below:
 +-------------------------+--------------------+------------------------------------+
 
 - If using test clips or SMA cables that are tied together at the clip, remove
-  jumpers from P23 and P24. Place them so the clips are separated as close to
+  jumpers from P23 and P24. Place them, so the clips are separated as close to
   the same distance as they will be when the DUT is connected.
 
 .. note::
@@ -1153,7 +1153,7 @@ To calibrate the module in a specific gain combination, follow the steps below:
 
 - Run the ``calshort`` command, if possible, and follow the prompts when ready.
 - Connect a known impedance between the measurement leads or choose a connection
-  configuration from the on board resistors.
+  configuration from the onboard resistors.
 - Run the ``calload <value1> <value2>`` command where ``<value1>`` is the true
   resistive value of the component (Ohms) and ``<value 2>`` is the true reactive
   value of the component (Ohms) and follow the prompts when ready.
@@ -1358,24 +1358,24 @@ Compensation Procedure
 
 Compensation is an additional measurement adjustment function designed to
 account for changes in the test fixture or application setup that were not
-present during calibration. This feature is useable, but it is also reasonable
+present during calibration. This feature is usable, but it is also reasonable
 to recalibrate for each fixture/setup, and use the commands detailed in
-:ref:`eval-admx2501ebz calibration-steps` to save data for each config.
+:ref:`ad-imp2501-sl calibration-steps` to save data for each config.
 
 To configure compensation coefficients, run the same steps in the calibration
 procedure, but use the ``comp`` commands instead of the ``cal`` commands. Make
 sure the commands are run with the setup fully intact and all connections to the
 DUT in place. Refer to the help section on available commands for the specific
 list and associated names for compensation located at
-:ref:`eval-admx2501ebz ad-imp2501dbz-sl-available-commands`
+:ref:`ad-imp2501-sl ad-imp2501dbz-sl-available-commands`
 
-.. figure:: fishercat_compensation.png
+.. figure:: images/fishercat_compensation.png
    :width: 600px
 
 Firmware Release Highlights
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Currently available firmare versions and release highlights:
+Currently, available firmware versions and release highlights:
 
 +-----------------+------------+-------------------------------------------+
 | FW Version      | Status     | Release Highlights                        |

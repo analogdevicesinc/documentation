@@ -1,11 +1,11 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/admx/eval-admx2501ebz
 
-.. _admx eval-admx2501ebz hardware-guide:
+.. _ad-imp2501-sl hardware-guide:
 
 Hardware User Guide
 ===================
 
-The AD-IMP2501DBZ-SL and AD-IMP2501EBZ-SL are designed for evaluating impedance
+The :adi:`AD-IMP2501DBZ-SL` and :adi:`AD-IMP2501EBZ-SL` are designed for evaluating impedance
 analysis technology in an application that requires a small form factor and wide
 frequency range. This platform is designed to get an impedance analysis evaluation set-up running quickly with only a provided USB cable and a computer.
 This hardware guide will walk the user through the basic setup, the varying
@@ -24,10 +24,10 @@ Required Equipment
 #. PC
 
 USB drivers and terminal emulator required. Please see
-:ref:`eval-admx2501ebz software-user-guide` for instructions to download and
+:ref:`ad-imp2501-sl software-user-guide` for instructions to download and
 install on your PC if not already installed.
 
-.. _eval-admx2501ebz optional-equipment:
+.. _ad-imp2501-sl optional-equipment:
 
 Optional Equipment
 ~~~~~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ Optional Equipment
 EVAL-ADMX2001EBZ Terminal Description
 -------------------------------------
 
-.. figure:: eval-admx2001ebz_diagram_3.png
+.. figure:: images/eval-admx2001ebz_diagram_3.png
    :width: 600px
 
 .. list-table::
@@ -113,7 +113,7 @@ EVAL-ADMX2001EBZ Terminal Description
 AD-IMP2501DBZ-SL Pin Configuration and Descriptions
 ---------------------------------------------------
 
-.. figure:: ad-imp2501ebz-sl_pinout.png
+.. figure:: images/ad-imp2501ebz-sl_pinout.png
    :width: 600px
 
 +-------------------------+--------------------+------------------------------------+
@@ -225,7 +225,7 @@ General Setup
 The following figure shows the basic connections required for evaluating the
 ADMX2501B.
 
-.. figure:: fishercat_hardware_setup.png
+.. figure:: images/fishercat_hardware_setup.png
    :width: 800px
 
 - Insert the AD-IMP2501DBZ-SL module into the AD-IMP2501EBZ-SL board in the
@@ -238,7 +238,7 @@ ADMX2501B.
   communication. The second table is for EIS on board measurements. The third
   table is for EIS off board measurements.
 
-.. figure:: fishercat_jumper_positions.png
+.. figure:: images/fishercat_jumper_positions.png
    :width: 600px
 
 - Verify jumpers are installed in the locations designated by the following
