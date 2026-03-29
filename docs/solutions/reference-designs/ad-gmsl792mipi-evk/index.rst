@@ -8,27 +8,27 @@ GMSL3/2 Deserializer Board for MIPI CSI-2 Cameras
 Overview
 --------
 
-.. figure:: AD-GMSL792MIPI-EVK_top-angle.png
+.. figure:: images/eval-top-angle.png
     :align: left
     :width: 500 px
 
     AD-GMSL792MIPI-EVK Board
 
-The :adi:`AD‑GMSL792MIPI‑EVK` is a compact and cost‑effective evaluation kit
-that converts dual GMSL3/2 camera links into MIPI CSI‑2 for modern SoC
+The :adi:`AD-GMSL792MIPI-EVK` is a compact and cost-effective evaluation kit
+that converts dual GMSL3/2 camera links into MIPI CSI-2 for modern SoC
 platforms. Built around the :adi:`MAX96792` dual deserializer, it delivers a
 robust bridge for vision workloads across automotive and industrial
 applications.
 
 To simplify wiring and speed up integration, the board supports a wide
-range of image sensors and integrates Power over Coax (PoC) so data and 
-power travel on a single coaxial cable. The kit also includes ready‑to‑use
-reference software with device‑tree overlays and Linux images for
-supported camera setups, helping you go from power‑up to first frames
+range of image sensors and integrates Power over Coax (PoC) so data and
+power travel on a single coaxial cable. The kit also includes ready-to-use
+reference software with device-tree overlays and Linux images for
+supported camera setups, helping you go from power-up to first frames
 fast.
 
 Engineered for quick results, it maintains reliable video over cable up
-to 15m length with PAM‑4 GMSL3 at 12 Gbps and remains backward
+to 15m length with PAM-4 GMSL3 at 12 Gbps and remains backward
 compatible with GMSL2 at 6 Gbps or 3 Gbps. A bidirectional I²C control
 channel streamlines camera configuration while the small footprint and
 flexible mounting make it ideal for rapid GMSL3 camera prototyping.
@@ -37,11 +37,11 @@ Features
 --------
 
 - Dual GMSL3/2 deserializer based on MAX96792
-- 2 × MIPI CSI‑2 output connectors 
-  (each up to 4 lanes D‑PHY at 2.5 Gbps/lane)
+- 2 × MIPI CSI-2 output connectors
+  (each up to 4 lanes D-PHY at 2.5 Gbps/lane)
 - 2 × GMSL input connectors over 50Ω coax
 - Power over Coax implementation, 12V, 1.2A total output
-- USB‑C 5V input or 6‑pin header alternative power input
+- USB-C 5V input or 6-pin header alternative power input
 - Compatible with NVIDIA Jetson, Raspberry Pi, and AMD SoC
   platforms
 - Independent MIPI CSI-2 connector operation available
@@ -81,7 +81,7 @@ Specifications
 System Architecture
 -------------------
 
-.. figure:: AD-GMSL792MIPI-EVK-block-diagram.svg
+.. figure:: images/block-diagram.svg
   :width: 800 px
 
   AD-GMSL792MIPI-EVK System Architecture
@@ -131,18 +131,19 @@ Components and Connections
 Primary Side
 ~~~~~~~~~~~~~
 
-- DS1 LED – indicates 5V USB-C input
-- DS2 LED – indicates 1.8V rail
-- P5 Connector – alternative 5V input and Raspberry Pi shield
+- DS1 LED - indicates 5V USB-C input
+- DS2 LED - indicates 1.8V rail
+- P5 Connector - alternative 5V input and Raspberry Pi shield
   (same nets as Raspberry Pi's GPIOs)
 - S1 Power Switch
-    
+
     -  Up = USB-C power
     - Down = P5 power
-- J1/J2 FAKRA-HF Coax Connectors – GMSL3/2 data + PoC
+
+- J1/J2 FAKRA-HF Coax Connectors - GMSL3/2 data + PoC
   (12V, 1.2A)
-- P1/P2 22-pin FFC Connectors – MIPI CSI-2 outputs
-- PoC Circuitry – delivers camera power over coax
+- P1/P2 22-pin FFC Connectors - MIPI CSI-2 outputs
+- PoC Circuitry - delivers camera power over coax
 
 Hardware Setup
 ---------------
@@ -157,7 +158,7 @@ Hardware Setup
 - USB-C power supply (5V, minimum 2A)
 - Multimeter (for verification)
 
-.. figure:: AD-GMSL792MIPI-EVK_hardware_setup.png
+.. figure:: images/hardware-setup.png
 
     AD-GMSL792MIPI-EVK Hardware Connection
 
@@ -220,7 +221,7 @@ Sample Measurements and Expected Readings
 Software
 --------
 
-The GMSL software package provides comprehensive driver support 
+The GMSL software package provides comprehensive driver support
 and configuration tools for integrating GMSL3/2 cameras with
 popular SoC platforms. The software includes device tree configuration
 and kernel drivers.
@@ -241,7 +242,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-     :download:`AD-GMSL792MIPI-EVK Design Support Package <AD-GMSL792MIPI-EVK-designsupport.zip>`
+     :download:`AD-GMSL792MIPI-EVK Design Support Package <files/design-support.zip>`
 
      - Schematic
      - PCB Layout
@@ -255,5 +256,5 @@ Analog Devices will provide **limited** online support for anyone using the
 reference design with Analog Devices components via the
 :ez:`EngineerZone reference designs <reference-designs>` forum.
 
-It should be noted that the older the tools’ versions and release branches are,
+It should be noted that the older the tools' versions and release branches are,
 the lower the chances to receive support from ADI engineers.
