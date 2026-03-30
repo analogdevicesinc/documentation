@@ -905,19 +905,4 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../common/using-iio-osc.rst
 
-About the IIO devices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-adrv9025-rx-hpc IIO device.
-
-Channels:
-
-- IIO device channel: ``axi-adrv9025-rx-hpc``
-- Receiver inputs:
-
-  - {``voltage0_i``, ``voltage0_q``}: RX1
-  - {``voltage1_i``, ``voltage1_q``}: RX2
-  - {``voltage2_i``, ``voltage2_q``}: RX3
-  - {``voltage3_i``, ``voltage3_q``}: RX4

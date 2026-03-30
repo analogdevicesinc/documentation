@@ -109,7 +109,7 @@ by the Linux kernel:
     iio:device2: axi-adrv903x-rx-hpc (buffer capable)
     iio:device3: axi-adrv903x-tx-hpc (buffer capable)
 
-.. include:: ../../common/using-iio-osc.rst
+
 
 Using no-OS as software
 -------------------------------------------------------------------------------

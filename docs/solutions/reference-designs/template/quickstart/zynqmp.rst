@@ -73,8 +73,8 @@ Required hardware
 - 4x SMA cables
 - (Optional) USB keyboard & mouse and a HDMI compatible monitor
 
-More details as to why you need these, can be found at
-:ref:`template prerequisites`.
+.. More details as to why you need these, can be found at
+.. :ref:`template prerequisites`.
 
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1021,7 +1021,6 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../common/using-iio-osc.rst
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1078,8 +1077,8 @@ Required hardware
 - 2x Micro-USB cables, one for UART and one for JTAG
 - (Optional) USB keyboard & mouse and a HDMI-compatible monitor
 
-More details as to why you need these, can be found at
-:ref:`template prerequisites`.
+.. More details as to why you need these, can be found at
+.. :ref:`template prerequisites`.
 
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

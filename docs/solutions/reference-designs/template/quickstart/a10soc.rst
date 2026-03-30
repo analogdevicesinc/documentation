@@ -97,8 +97,8 @@ Required hardware
 - 4x SMA cables (optional, but recommended)
 - (Optional) USB keyboard & mouse and a HDMI compatible monitor
 
-More details as to why you need these, can be found at
-:ref:`template prerequisites`.
+.. More details as to why you need these, can be found at
+.. :ref:`template prerequisites`.
 
 .. _template quickstart a10soc_changes:
 
@@ -699,4 +699,4 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../common/using-iio-osc.rst
+

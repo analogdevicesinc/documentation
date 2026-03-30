@@ -37,4 +37,10 @@ The evaluation board is supported with the Libiio library. This library is
 cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
 MATLAB, and others. One easy to example that can be used with it is:
 
-- :ref:`iio-oscilloscope`
+.. include-template:: ../common/using-iio-osc.rst.jinja
+
+   has_linux: true
+   has_no_os: true
+
+.. include-template:: ../common/using-scopy.rst.jinja
+

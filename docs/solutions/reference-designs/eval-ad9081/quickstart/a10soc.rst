@@ -696,10 +696,4 @@ To reboot the system, run:
    :code:`sudo shutdown -h now` or the above-mentioned command for powering
    off.
 
-.. include:: ../../common/using-iio-osc.rst
 
-..
-   About the IIO devices
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-   TBD

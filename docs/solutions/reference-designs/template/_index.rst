@@ -42,8 +42,8 @@ Applications:
    :hidden:
 
    user-guide
-   prerequisites
    quickstart/index
+..   prerequisites
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ Table of contents
 
 #. Using the evaluation board/full stack reference design that we offer:
 
-   #. :ref:`Prerequisites <template prerequisites>` - what you need to get started
+..    #. :ref:`Prerequisites <template prerequisites>` - what you need to get started
    #. :ref:`Quick start guides <template quickstart>`:
 
       #. Using the :ref:`ZCU102/Zynq UltraScale MP SoC <template quickstart zynqmp>`

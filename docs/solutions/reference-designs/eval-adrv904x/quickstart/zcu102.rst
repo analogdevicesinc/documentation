@@ -112,64 +112,8 @@ by the Linux kernel:
     iio:device2: axi-adrv904x-rx-hpc (buffer capable)
     iio:device3: axi-adrv904x-tx-hpc (buffer capable)
 
-.. include:: ../../common/using-iio-osc.rst
 
-About the IIO devices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Main receivers RX1 through RX8 are handled by the ``axi-adrv904x-rx-hpc`` IIO
-device.
-
-Channels:
-
-- IIO device channel: ``axi-adrv904x-rx-hpc``
-- Receiver inputs:
-
-  - {``voltage0_i``, ``voltage0_q``}: RX1
-  - {``voltage1_i``, ``voltage1_q``}: RX2
-  - {``voltage2_i``, ``voltage2_q``}: RX3
-  - {``voltage3_i``, ``voltage3_q``}: RX4
-  - {``voltage4_i``, ``voltage4_q``}: RX5
-  - {``voltage5_i``, ``voltage5_q``}: RX6
-  - {``voltage6_i``, ``voltage6_q``}: RX7
-  - {``voltage7_i``, ``voltage7_q``}: RX8
-
-Transmitters TX1 through TX8 are handled by the ``axi-adrv904x-tx-hpc`` IIO
-device.
-
-Channels:
-
-- IIO device channel: ``axi-adrv904x-tx-hpc``
-- Transmitter outputs:
-
-  - {``voltage0_i``, ``voltage0_q``}: TX1
-  - {``voltage1_i``, ``voltage1_q``}: TX2
-  - {``voltage2_i``, ``voltage2_q``}: TX3
-  - {``voltage3_i``, ``voltage3_q``}: TX4
-  - {``voltage4_i``, ``voltage4_q``}: TX5
-  - {``voltage5_i``, ``voltage5_q``}: TX6
-  - {``voltage6_i``, ``voltage6_q``}: TX7
-  - {``voltage7_i``, ``voltage7_q``}: TX8
-
-NLS profile (with observation receiver)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When using the NLS device tree (``zynqmp-zcu102-rev10-adrv904x-nls.dts``),
-the observation receiver path is enabled. The observation receiver IIO device
-appears as an additional device:
-
-.. shell::
-
-   $iio_info | grep iio:device
-    iio:device0: xilinx-ams
-    iio:device1: adrv904x-phy
-    iio:device2: axi-adrv904x-rx-hpc (buffer capable)
-    iio:device3: axi-adrv904x-tx-hpc (buffer capable)
-    iio:device4: axi-adrv904x-obs-hpc (buffer capable)
-
-To use the NLS profile, copy ``system.dtb`` built from
-``zynqmp-zcu102-rev10-adrv904x-nls.dts`` and ``DeviceProfileTest_NLS.bin``
-renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
 
 Using no-OS as software
 -------------------------------------------------------------------------------

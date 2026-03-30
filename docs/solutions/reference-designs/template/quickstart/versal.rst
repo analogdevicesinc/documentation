@@ -890,7 +890,7 @@ To reboot the system, run:
    power off could be hiding. You can do this from the terminal as well with
    :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
 
-.. include:: ../../common/using-iio-osc.rst
+
 
 About the IIO devices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

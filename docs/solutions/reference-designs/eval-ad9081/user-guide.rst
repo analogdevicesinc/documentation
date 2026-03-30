@@ -88,5 +88,28 @@ The evaluation board is supported with the Libiio library. This library is
 cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
 MATLAB, and others. Two easy examples that can be used with it are:
 
-- :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
-- :external+pyadi-iio:doc:`index`
+- :external+pyadi-iio:doc:`PyADI-IIO <index>`
+
+.. include-template:: ../common/using-iio-osc.rst.jinja
+
+   has_linux: true
+   has_no_os: true
+   
+About the IIO devices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Main receivers RX1, RX2, RX3, and RX4 are handled by the axi-ad9081-rx-hpc IIO
+device.
+
+Channels:
+
+- IIO device channel: ``axi-ad9081-rx-hpc``
+- Receiver inputs:
+
+  - {``voltage0_i``, ``voltage0_q``}: RX1
+  - {``voltage1_i``, ``voltage1_q``}: RX2
+  - {``voltage2_i``, ``voltage2_q``}: RX3
+  - {``voltage3_i``, ``voltage3_q``}: RX4
+
+
+.. include-template:: ../common/using-scopy.rst.jinja
