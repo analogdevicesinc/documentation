@@ -3,34 +3,25 @@
 Intel Stratix 10 SX Quick start
 ===============================================================================
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213_dualbrd_plus_stratix10_diagram_two_power_adapters.png
-   :alt: Intel Stratix 10 SX SoC board with AD9213-DUAL-EBZ connected via
-         FMC+
-   :align: center
+.. figure:: ../images/stratix10_board.jpeg
+   :alt: Stratix 10 SX SoC board
+   :width: 800
 
-   AD9213-DUAL-EBZ and Intel Stratix 10 SX Board — Typical Setup
-
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213_dualbrd_plus_stratix10_diagram_two_power_adapters.png
-   :alt: Intel Stratix 10 SX SoC board with AD9213-DUAL-EBZ connected via
-         FMC+
-   :align: center
-
-   AD9213-DUAL-EBZ and Intel Stratix 10 SX Board — Typical Setup
+   Stratix 10 SX SoC board
 
 .. esd-warning::
 
-This guide provides instructions on how to bring up the AD9213-DUAL-EBZ
-in Synchronized 10G Mode or Interleaved 20G Mode to enable data capture and
-visualization in :ref:`iio-oscilloscope` and VisualAnalog. The AD9213
-Manual Calibration and Interleaving Guide provides additional detail.
+This guide provides instructions on how to bring up the :adi:`AD9213-DUAL-EBZ`
+on  in Synchronized 10G Mode or Interleaved 20G Mode to enable data capture and
+visualization in :ref:`iio-oscilloscope` and 
+:adi:`VisualAnalog <en/resources/interactive-design-tools/visualanalog.html>`.
+The AD9213 Manual Calibration and Interleaving Guide provides extra detail.
 
 Required equipment and hardware
 -------------------------------------------------------------------------------
 
-- AD9213-DUAL-EBZ Evaluation Board
-- :ref:`eval-ad9213-dual user-guide` (AD9213-DUAL-EBZ Evaluation Board
-  Hardware)
-- Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS)
+- :adi:`AD9213-DUAL-EBZ Evaluation Board`
+- :intel:`Intel Stratix 10 SX SoC Development Kit <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
 - RF Power Splitter for splitting the test tone to apply two equal signals
   to each of the two ADCs
 - Phase matched coaxial cables to connect the power splitter to the ADC
@@ -44,7 +35,7 @@ Required equipment and hardware
     tests to be performed; a bandpass filter is often used for single tone
     tests
   - 500 MHz Reference Clock source: should have very low phase noise and be
-    capable of supplying a 5 dBm 500 MHz clock signal
+    capable of supplying a 5 dBm, 500 MHz clock signal
 
 - PC running Windows with at least 2 USB ports and an Ethernet port, with:
 
@@ -56,29 +47,23 @@ Helpful documents
 -------------------------------------------------------------------------------
 
 - :adi:`AD9213 Datasheet <en/products/ad9213.html>`
-- Intel Stratix 10 SX SoC Development Kit User Guide (from Intel website)
+- `Intel Stratix 10 SX SoC Development Kit User Guide <https://docs.altera.com/r/docs/683303/current/stratix-10-sx-soc-development-kit-user-guide/overview>`_
 
 Required software
 -------------------------------------------------------------------------------
 
-- `Intel Quartus Prime Programmer 19.3
-  <https://www.intel.com/content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html>`_
-- `PuTTY SSH and telnet client <https://www.putty.org>`_
+- :intel:`Intel Quartus Prime Programmer 19.3 <content/www/us/en/software-kit/661657/intel-quartus-prime-pro-edition-design-software-version-19-3-for-windows.html>`
 - :ref:`iio-oscilloscope`
-- `VisualAnalog
-  <http://www.analog.com/en/design-center/interactive-design-tools/visualanalog.html>`_
+- :adi:`VisualAnalog <en/resources/interactive-design-tools/visualanalog.html>`
 
   - VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
-  - `libiio (required for using IIO Client block in provided VisualAnalog
-    Canvas) <https://github.com/analogdevicesinc/libiio/releases>`_
-  - `IIO Plugin for VisualAnalog
-    <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
+  - :git-libiio:`/` (for IIO Client block in provided VisualAnalog Canvas)
+  - :download:`IIO Plugin for VisualAnalog <../files/va_iiopluginsetup.zip>`
 
 ADI software deliverables
 -------------------------------------------------------------------------------
 
-- `Dual-AD9213-EBZ
-  <https://wiki.analog.com/_media/resources:eval:dual_ad9213_ebz.zip>`_
+- :download:`Dual-AD9213-EBZ <../files/dual_ad9213_ebz.zip>`
 
 The link above contains the following:
 
@@ -89,6 +74,7 @@ The link above contains the following:
 - PDF Documents: Software License, Quickstart Guide, Manual Calibration
   Guide
 - VisualAnalog (software from analog.com) Canvases for viewing FFTs
+- Serial terminal of your choice to connect to the board via UART
 
 Setup and connection
 -------------------------------------------------------------------------------
@@ -96,20 +82,29 @@ Setup and connection
 Perform all connections with power and signal generators OFF, connecting the
 boards as shown in the typical setup figure above.
 
-Software installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. figure:: ../images/ad9213_dualbrd_plus_stratix10_image_two_power_adapters.jpeg
+   :alt: Image of Intel Stratix 10 SX SoC board with AD9213-DUAL-EBZ
+         connected via FMC+
+   :align: center
 
-Install the following software on the PC:
+   AD9213-DUAL-EBZ and Intel Stratix 10 SX Board - Setup
 
-#. Intel Quartus Prime Programmer (free download from Intel website)
-#. PuTTY (free, open-source)
-#. :ref:`iio-oscilloscope`
-#. VisualAnalog
+.. figure:: ../images/ad9213_dualbrd_plus_stratix10_diagram_two_power_adapters.jpeg
+   :alt: Diagram of Intel Stratix 10 SX SoC board with AD9213-DUAL-EBZ
+         connected via FMC+
+   :align: center
+
+   AD9213-DUAL-EBZ and Intel Stratix 10 SX Board - Typical Setup
 
 Board switch configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure the switches on the Stratix 10 SX SoC FPGA board as follows:
+
+.. figure:: ../images/stratix10_board_switches.jpeg
+    :alt: Switches on the Stratix 10 SX SoC board
+
+    Switches on the Stratix 10 SX SoC board  
 
 **SW1**
 
@@ -133,21 +128,30 @@ Configure the switches on the Stratix 10 SX SoC FPGA board as follows:
      - ON
      - ON
 
-**SW2 — MSEL**
+**SW2 - MSEL**
+
+Configure SW2 according to the desired boot mode:
 
 .. list-table::
    :header-rows: 1
 
-   * - PIN1
-     - PIN2
-     - PIN3
-     - PIN4
-   * - ON
+   * - Switch Bit
+     - 1 (MSEL0)
+     - 2 (MSEL1)
+     - 3 (MSEL2)
+     - 4 (Not Used)
+   * - JTAG Mode
+     - ON
      - ON
      - ON
      - OFF
+   * - QSPI Mode
+     - ON
+     - OFF
+     - OFF
+     - OFF
 
-**SW3 — USR_DIPSW_FPGA**
+**SW3 - USR_DIPSW_FPGA**
 
 .. list-table::
    :header-rows: 1
@@ -179,13 +183,9 @@ SD card preparation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Download the ADI Linux Image (``image_2021-07-28-ADI-Kuiper-full.zip``)
-   available under the Old Releases section from
-   :dokuwiki:`ADI SD Card Images
-   <resources/tools-software/linux-software/adi-kuiper_images/release_notes>`.
+   available under :git-kuiper:`releases+`.
 #. Program a blank SD card (at least 16 GB) with the downloaded image using
-   the instructions in
-   :dokuwiki:`Formatting and Flashing SD Cards using Windows
-   <resources/tools-software/linux-software/zynq_images/windows_hosts>`.
+   the instructions in :external+kuiper:ref:`use-kuiper-image`.
 
    .. note::
 
@@ -199,8 +199,8 @@ SD card preparation
    addition to this, also place one of the ``Image`` files based on use
    case:
 
-   - From the **Dual 10G Image** folder — for Synchronized 10G Mode
-   - From the **Single 20G Image** folder — for Interleaved 20G Mode
+   - From the **Dual 10G Image** folder - for Synchronized 10G Mode
+   - From the **Single 20G Image** folder - for Interleaved 20G Mode
 
 #. Replace the SD card on the Stratix 10 SX SoC board with the SD card you
    just programmed.
@@ -214,51 +214,12 @@ Power up the boards and configure the signal generators:
   later as desired.
 - For the reference clock signal, set the generator power to 5 dBm.
 
-COM port setup
+UART connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Determine the USB-COM port connection to your PC by looking in the
-   Device Manager under **Ports (COM & LPT)**.
-
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig2_com_port_setup.png
-      :alt: Windows Device Manager showing the COM port for the Stratix 10
-            SX SoC board USB connection
-      :width: 600
-
-      Figure 2. Setting up the COM port connection from the Stratix 10 SX
-      SoC board to the PC
-
-#. Once you determine the COM port connection, right-click to open
-   properties and navigate to the **Port Settings** tab. Change
-   **Bits per second** to ``115200`` and click OK.
-
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig3_config_com_port_settings.png
-      :alt: COM port properties dialog showing 115200 baud rate setting
-      :width: 600
-
-      Figure 3. Configuring the COM port settings
-
-   .. note::
-
-      This procedure must be repeated every time the Stratix 10 board's
-      USB to mini-USB COM connection cable is physically disconnected and
-      re-connected to the PC.
-
-#. Run PuTTY to establish serial communications. In the PuTTY Options page,
-   specify:
-
-   - **Connection Type**: Serial
-   - **Serial line**: the COM port determined in the step above (note: the
-     COM port number will depend on port availability on the user's machine)
-   - **Speed**: ``115200``
-   - Save this configuration for quicker setup next power cycle.
-
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig4_open_com_using_putty.png
-      :alt: PuTTY configuration dialog with serial connection settings for
-            the Stratix 10 SX SoC board
-      :width: 600
-
-      Figure 4. Opening the COM port connection using PuTTY
+Connect the Micro-USB port of the Stratix 10 SX SoC board to the host PC.
+Use a serial terminal application of choice (PuTTY, Tera Term, etc) to open
+the corresponding COM port with the following settings: **115200 baud, 8N1**.
 
 Programming the board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -269,12 +230,12 @@ Programming the board
 
 #. Once the board has been detected, click **Add File**.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig5_quartus_setup.png
+   .. figure:: ../images/ad9213dual_quickstart_fig5_quartus_setup.jpeg
       :alt: Quartus Prime Programmer Hardware Setup dialog showing the
             detected Stratix 10 board
       :width: 600
 
-      Figure 5. Setting up the Quartus Programmer to program the FPGA image
+      Setting up the Quartus Programmer to program the FPGA image
 
 #. Navigate to the location of the ADI-provided FPGA program
    (``ad9213_dual_ebz_s10soc_hps_20_4.sof``), select the file, and click
@@ -290,80 +251,68 @@ Programming the board
    .. note::
 
       Programming the FPGA also triggers the Linux boot on the HPS. The
-      PuTTY COM console provides updates on the progress of the boot.
+      COM console provides updates on the progress of the boot.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig6_using_quartus_programmer.png
+   .. figure:: ../images/ad9213dual_quickstart_fig6_using_quartus_programmer.jpeg
       :alt: Quartus Prime Programmer showing programming progress for the
             AD9213-DUAL-EBZ FPGA image
       :width: 600
 
-      Figure 6. Using the Quartus Programmer to program the FPGA image
+      Using the Quartus Programmer to program the FPGA image
 
-#. The PuTTY COMx console will display a verbose running of the
+#. The COM console will display a verbose running of the
    initialization scripts, at the end of which the setup will be ready.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig7_com_console_process__initialization.png
-      :alt: PuTTY COM console showing the completed boot process and
+   .. figure:: ../images/ad9213dual_quickstart_fig7_com_console_process_initialization.jpeg
+      :alt: COM console showing the completed boot process and
             initialization output
       :width: 600
 
-      Figure 7. COM console once the boot process and initialization are
+      COM console once the boot process and initialization are
       complete
 
 #. Obtain the board IP address by running ``ifconfig`` in the console.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig8_using_ifconfig_for_stratix10_ip_address.png
-      :alt: PuTTY console showing ifconfig output with the Stratix 10 board
+   .. figure:: ../images/ad9213dual_quickstart_fig8_using_ifconfig_for_stratix10_ip_address.jpeg
+      :alt: COM console showing ifconfig output with the Stratix 10 board
             Ethernet IP address
       :width: 600
 
-      Figure 8. Using ifconfig to obtain the IP address of the Stratix 10
+      Using ifconfig to obtain the IP address of the Stratix 10
       SX SoC board Ethernet connection
 
 SSH connection (Interleaved 20G Mode only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open PuTTY again to establish an SSH connection to the board. This
-connection allows you to control components on the board via SPI.
-
-.. note::
-
-   This step is only needed if you need to perform SPI writes or reads to
-   the board components using scripts when using Interleaved 20G Mode.
-
-In the PuTTY Options page, specify:
+For Interleaved 20G Mode, open an SSH connection to the board to run SPI
+scripts. Use your terminal application with the following settings:
 
 - **Connection Type**: SSH
 - **Host Name**: IP address of the Stratix 10 board, obtained in the
   previous step
 - **Port**: ``22``
-- Save this configuration for quicker setup next time.
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig9_opening_ssh_connection.png
-   :alt: PuTTY configuration dialog with SSH connection settings for the
+.. figure:: ../images/ad9213dual_quickstart_fig9_opening_ssh_connection.jpeg
+   :alt: Configuration dialog with SSH connection settings for the
          Stratix 10 SX SoC board
    :width: 600
 
-   Figure 9. Opening an SSH connection to the Stratix 10 SX SoC board
-   using PuTTY
+   Opening an SSH connection to the Stratix 10 SX SoC board
 
 Login credentials:
 
 - **Login**: ``root``
 - **Password**: ``analog``
 
-.. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig10_ssh_login_successful.png
-   :alt: PuTTY SSH session after login showing access to board components
+.. figure:: ../images/ad9213dual_quickstart_fig10_ssh_login_successful.jpeg
+   :alt: SSH session after login showing access to board components
          via SPI
    :width: 600
 
-   Figure 10. SSH connection after login ready to access the components on
+   Connection after login ready to access the components on
    the board via SPI
 
-.. note::
-
-   An example script for SPI reads and writes in this scripting environment
-   can be provided on request.
+An example script for SPI reads and writes can be provided on request.
 
 IIO Oscilloscope
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -372,50 +321,38 @@ IIO Oscilloscope
    the board prefaced by ``ip:`` in the URL input box, and click
    **Refresh**.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig11_setup_iio_scope.png
+   .. figure:: ../images/ad9213dual_quickstart_fig11_setup_iio_scope.jpeg
       :alt: IIO Oscilloscope connection dialog with manual IP entry
       :width: 600
 
-      Figure 11. Setting up a connection to IIO Oscilloscope
+      Setting up a connection to IIO Oscilloscope
 
 #. Once you click Refresh, all the IIO devices on the AD9213-DUAL-EBZ —
    including the two AD9213s and the other clock chips — will show up.
-   Click **Connect**.
+   Click **Connect**. On subsequent connections with the same setup,
+   IIO Oscilloscope will auto-detect the configuration automatically.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig12_iio_ready_to_connect.png
+   .. figure:: ../images/ad9213dual_quickstart_fig12_iio_ready_to_connect.jpeg
       :alt: IIO Oscilloscope showing all devices on the evaluation board
             ready to connect
       :width: 600
 
-      Figure 12. All devices on the evaluation board ready to connect to
+      All devices on the evaluation board ready to connect to
       IIO Oscilloscope
-
-   .. note::
-
-      These two steps only need to be done when using IIO Oscilloscope with
-      a setup for the first time. The next time you open IIO Oscilloscope
-      and are using the same setup, it will auto-detect the setup and open
-      the configuration and plotting windows.
 
 #. After connecting, an SPI Controller window and a Plotting window will
    open.
 
-#. Use the SPI Controller window to select a device you'd like to
-   communicate with and then use the register section at the bottom to read
-   or write individual registers.
+#. The SPI Controller window allows reading and writing individual registers
+   for any device on the board. This is optional — the automatic startup
+   configuration has already run on boot.
 
-   .. note::
-
-      This only needs to be used if you are looking to do reads and writes
-      in addition to the automatic startup configuration that has already
-      been run.
-
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig13_read_write_spi_registers.png
+   .. figure:: ../images/ad9213dual_quickstart_fig13_read_write_spi_registers.jpeg
       :alt: IIO Oscilloscope Controller view showing SPI register read/write
             interface
       :width: 600
 
-      Figure 13. Using the IIO Oscilloscope Controller view to read and
+      Using the IIO Oscilloscope Controller view to read and
       write SPI
 
 #. Use the Plotting window to capture data from one AD9213 at a time or
@@ -425,23 +362,19 @@ IIO Oscilloscope
 
    .. note::
 
-      If the SD card image used is for Interleaved 20G Mode, voltage 0
-      (channel 0) will represent data from both ``ad9213_0`` and
-      ``ad9213_1`` as a combined waveform or a combined FFT.
+      In Interleaved 20G Mode, voltage 0 (channel 0) represents data from
+      both ``ad9213_0`` and ``ad9213_1`` as a combined waveform or FFT.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig14_plot_separate_domain_outputs.png
+   .. figure:: ../images/ad9213dual_quickstart_fig14_plot_separate_domain_outputs.jpeg
       :alt: IIO Oscilloscope Plotting view showing separate time domain
             outputs from each AD9213
-      :width: 600
+      :width: 1000
 
-      Figure 14. Using the IIO Oscilloscope Plotting view to plot separate
+      Using the IIO Oscilloscope Plotting view to plot separate
       time domain outputs from each AD9213 (Ain = 136 MHz @ 5 dBm)
 
-.. note::
-
-   Frequency domain plotting with more detailed analysis can be performed
-   using a VisualAnalog Canvas. The following are the steps to use
-   VisualAnalog.
+For more detailed frequency domain analysis, use a VisualAnalog Canvas as
+described in the next section.
 
 VisualAnalog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -449,11 +382,8 @@ VisualAnalog
 One-time IIO installations before running VisualAnalog (only needed if the
 ADI-provided VisualAnalog Canvas will be used):
 
-#. Install `libiio
-   <https://github.com/analogdevicesinc/libiio/releases>`_
-   (required for using the IIO Client block in VisualAnalog)
-#. Install the `IIO Plugin for VisualAnalog
-   <https://wiki.analog.com/_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`_
+#. Install :git-libiio:`/` (needed to use the IIO Client block in VisualAnalog)
+#. Install the :download:`IIO Plugin for VisualAnalog <../files/va_iiopluginsetup.zip>`
 
 **Synchronized 10G Mode**
 
@@ -461,12 +391,12 @@ ADI-provided VisualAnalog Canvas will be used):
    ``Dual9213_IIOScope_FFT.vac`` canvas. Select the canvas and click
    **Open**.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig15_open_visualanalog_canvas.png
+   .. figure:: ../images/ad9213dual_quickstart_fig15_open_visualanalog_canvas.jpeg
       :alt: VisualAnalog canvas selection dialog for the dual AD9213
             Synchronized 10G Mode
       :width: 600
 
-      Figure 15. Opening the VisualAnalog Canvas to plot FFTs for the dual
+      Opening the VisualAnalog Canvas to plot FFTs for the dual
       AD9213s (Synchronized 10G Mode)
 
 #. Once the canvas is open, open the settings for the IIO Client module.
@@ -474,24 +404,24 @@ ADI-provided VisualAnalog Canvas will be used):
    frequency, the sample size per AD9213, and enable both AD9213s. Click
    **OK**.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig16_setup_va_for_dualad9213.png
+   .. figure:: ../images/ad9213dual_quickstart_fig16_setup_va_for_dualad9213.jpeg
       :alt: VisualAnalog IIO Client module settings for Synchronized 10G
             capture
-      :width: 600
+      :width: 800
 
-      Figure 16. Setting up the VisualAnalog Canvas for capture for the
+      Setting up the VisualAnalog Canvas for capture for the
       dual AD9213s (Synchronized 10G Mode)
 
 #. The canvas is now ready to capture FFTs for each of the AD9213s. Click
    **Play** to capture. In addition to the FFT plot and its analysis, the
    canvas also displays sample data for each AD9213.
 
-   .. figure:: https://wiki.analog.com/_media/resources/eval/user-guides/ad9213_dual_ebz/ad9213dual_quickstart_fig17_va_fft_capture_data_analysis.png
+   .. figure:: ../images/ad9213dual_quickstart_fig17_va_fft_capture_data_analysis.jpeg
       :alt: VisualAnalog canvas showing FFT capture, analysis, and sample
             data for AD9213_0
-      :width: 600
+      :width: 800
 
-      Figure 17. VisualAnalog canvas FFT capture, analysis and sample data
+      VisualAnalog canvas FFT capture, analysis and sample data
       for AD9213_0 (150.3 MHz @ 14.90 dBm)
 
 **Interleaved 20G Mode**
@@ -618,27 +548,3 @@ Generate .sof and .jic files
    $  ad9213_dual_ebz_s10soc_hps.jic \
    $  -o device=MT25QU02G \
    $  -o flash_loader=1SX280HU2F50E1VGAS
-
-Set FPGA configuration mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Configure SW2 (4-bit DIP Switch) according to the desired boot mode:
-
-.. list-table::
-   :header-rows: 1
-
-   * - Switch Bit
-     - 1 (MSEL0)
-     - 2 (MSEL1)
-     - 3 (MSEL2)
-     - 4 (Not Used)
-   * - JTAG Mode
-     - ON
-     - ON
-     - ON
-     - OFF
-   * - QSPI Mode
-     - ON
-     - OFF
-     - OFF
-     - OFF

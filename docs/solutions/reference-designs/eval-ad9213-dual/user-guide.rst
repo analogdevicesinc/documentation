@@ -66,10 +66,10 @@ Downloads
 Software guide
 -------------------------------------------------------------------------------
 
-The :adi:`EVAL-AD9213-DUAL-EBZ` is supported through the Linux IIO subsystem when used
-with the Intel Stratix 10 SX SoC Development Kit. The FPGA is programmed
-via the Quartus Prime Programmer and the system boots from an SD card
-containing the ADI Linux image.
+The :adi:`EVAL-AD9213-DUAL-EBZ` is supported through the Linux IIO subsystem
+when used with the Intel Stratix 10 SX SoC Development Kit. The FPGA is
+programmed via the Quartus Prime Programmer and the system boots from an
+SD card containing the ADI Linux image.
 
 Once booted, the following IIO-based tools can be used to interact with and
 capture data from the device:

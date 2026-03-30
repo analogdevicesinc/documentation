@@ -10,14 +10,14 @@ Hardware prerequisites
 -------------------------------------------------------------------------------
 
 #. The :adi:`EVAL-AD9213-DUAL-EBZ` evaluation board
-#. :intel:`Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS)
-   <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
+#. :intel:`Intel Stratix 10 SX SoC Development Kit (1SX280HU2F50E1VGAS) <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
 #. RF Power Splitter for splitting the test tone to apply two equal signals
    to each of the two ADCs
 #. Phase matched coaxial cables to connect the power splitter to the ADC
    input board connectors
 #. RF Balun for single-ended-to-differential conversion of the 500 MHz
-   reference clock
+   reference clock signal, if your signal generator does not have a
+   differential output
 #. Coax cables for the 500 MHz reference clock connections
 #. Signal generators:
 
@@ -40,7 +40,7 @@ Software prerequisites
 The following software must be installed on the host PC:
 
 - Intel Quartus Prime Programmer 19.3
-- PuTTY SSH and telnet client (or other terminal emulator of your choice)
+- A serial terminal application (e.g. PuTTY, minicom, or screen)
 - :ref:`iio-oscilloscope`
 - :adi:`VisualAnalog <en/resources/interactive-design-tools/visualanalog.html>`
 
@@ -48,7 +48,8 @@ The following software must be installed on the host PC:
   - libiio (required for using the IIO Client block in the provided
     VisualAnalog Canvas)
   - IIO Plugin for VisualAnalog
-  
+
+
 .. note::
 
    :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan;

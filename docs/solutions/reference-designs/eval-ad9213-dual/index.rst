@@ -14,20 +14,15 @@ analog-to-digital converters (ADCs) with a JESD204B interface. The
 two converters are interleaved to achieve 20 GSPS, using their
 built-in multi-chip synchronization (MCS) capability.
 
-The :adi:`ADF4377 <en/products/adf4377.html#product-overview>`, a
-high-performance, ultra-low jitter, dual-output integer-N phase-locked
-loop (PLL) with integrated VCO, drives the interleaving. The
-:adi:`LTC6955 <en/products/ltc6955.html>` low jitter fanout clock
+The :adi:`ADF4377`, a high-performance, ultra-low jitter, dual-output
+integer-N phase-locked loop (PLL) with integrated VCO, drives the interleaving.
+The :adi:`LTC6955 <en/products/ltc6955.html>` low jitter fanout clock
 buffer and the :adi:`LTC6952 <en/products/ltc6952.html>` JESD204B
 clock generation and distribution IC together form a clocking
 architecture optimized for multi-channel scalability.
 
 The platform supports direct sampling of L, S, and C bands with up
-to 8 GHz of instantaneous bandwidth (IBW) per channel. It delivers a
-complete signal chain reference design — covering RF input networks,
-clocking architectures, power distribution, and a full software stack
-(HDL to MATLAB) - designed to accelerate prototyping and reduce
-time to market.
+to 8 GHz of instantaneous bandwidth (IBW) per channel.
 
 Features:
 
@@ -50,7 +45,7 @@ Applications:
 .. figure:: ./images/ad9213_dual_ebz_board.jpeg
    :alt: Photo of the AD9213-DUAL-EBZ evaluation board
    :align: center
-   :width: 800
+   :width: 600
 
    AD9213-DUAL-EBZ Evaluation Board
 
