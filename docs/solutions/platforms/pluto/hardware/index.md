@@ -5,6 +5,7 @@ At the heart of the Pluto is the AD9363 transceiver IC. This is part of the Cata
 ```{image} pluto_overview.svg
 :alt: Put Text Here to Describe the Image
 :width: 800px
+:align: center
 ```
 
 Shown above is the Pluto SDR after a modification (discussed {ref}`here <pluto setup adding-a-second-rx-and-tx-channel>`) to access the second transmit and receive ports.  These ports attach directly to RF baluns, which then interface to the AD9363's Rx1/2 ADC inputs and Tx1/2 DAC outputs.  

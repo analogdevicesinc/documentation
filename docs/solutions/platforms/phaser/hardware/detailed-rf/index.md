@@ -12,6 +12,9 @@ This section will provide a deeper look at the major sections of the RF Board:
 This video will also walk through much of the same material:
 
 ```{video} https://www.youtube.com/watch?v=-Vqbgf0MjPk
+:align: left
+```
+```{clear-content}
 ```
 
 <div style="clear: both;"></div> <!-- Ensures clean section break -->

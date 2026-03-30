@@ -9,6 +9,9 @@ The ADALM-PHASER is meant for you to experience, first hand, phased array beamfo
 Some additional background on Phased Array Systems can be found in this introductory video:
 
 ```{video} https://www.youtube.com/watch?v=5bqsyF1zhR8
+:align: left
+```
+```{clear-content}
 ```
 
 

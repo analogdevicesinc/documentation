@@ -7,6 +7,7 @@ To facilitate that introduction, Analog Devices has prepared several example lab
 ```{image} resources/overview.svg
 :alt: Phaser Labs Overview
 :width: 800px
+:align: center
 ```
 
 ## Printable Lab Manuals

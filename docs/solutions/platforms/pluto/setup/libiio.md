@@ -8,6 +8,7 @@ Let's explore these commands now.  In the previous section, we detailed how to c
 
 ```{image} resources/pluto_ssh.png
 :width: 800px
+:align: center
 ```  
 
 From the shell you can use libiio userspace command line tools such as `iio_info` to get information about the available devices and channels on Pluto, or `iio_attr` to read and write attributes of the devices. You can also use the IIO API in your own scripts or applications to control Pluto and access its data.

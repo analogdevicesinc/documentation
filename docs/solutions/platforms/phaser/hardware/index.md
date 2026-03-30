@@ -4,6 +4,7 @@
 ```{image} phaser_pict.svg
 :alt: Phaser Picture
 :width: 400px
+:align: right
 ```
 
 The ADALM-PHASER (CN0566) is a phased-array beamforming antenna demonstration platform that allows the user to experience the principles and applications of phased array antennas. The Phaser consists of 3

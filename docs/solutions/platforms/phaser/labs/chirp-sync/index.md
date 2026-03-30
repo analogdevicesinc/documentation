@@ -5,6 +5,7 @@ When we ask the Pluto to output receive data, it simply captures a buffer contai
 ```{image} pluto_normal.svg
 :alt: Pluto Normal Buffer Capture
 :width: 600px
+:align: center
 ```
 
 However, for a lot of radar processing (like range doppler and MTI) we'll want to record the beat frequency for each chirp.  And then organize those beat frequencies into a sequence.  This means that we need some way to align Pluto's receive buffer with one (or more) chirps. 
@@ -22,6 +23,7 @@ The ADF4159 has a special pin called “TX_DATA."  And when you toggle this pin,
 ```{image} txdata.svg
 :alt: TX Data operation
 :width: 600px
+:align: center
 ```
 
 This is easily programmed in Phaser by setting the ADF4159's ramp mode and then enabling this trigger:
@@ -41,6 +43,7 @@ Pluto's TDD Engine offers a method to produce a series of carefully timed pulses
 ```{image} PlutoTDD.svg
 :alt: Pluto TDD Timing
 :width: 900px
+:align: center
 ```
 
 This is what Pluto's TDD attributes and corresponding sequence look like.  The top graph is the trigger signal and then there's three channels below that.  The trigger signal is going to tell us when to begin our timing, and it is initiated with either a sync_soft software command or by pulsing the L12N pin on Pluto's 14 pin header.  
@@ -54,6 +57,7 @@ For each of these buffers we're going to program a software pulse that is going 
 
 ```{image} python.svg
 :width: 500px
+:align: left
 ```
 
 ```{note}
@@ -71,6 +75,7 @@ For each of these buffers we're going to program a software pulse that is going 
 ```{image} pluto_tdd_pinout.svg
 :alt: Pluto TDD Timing
 :width: 900px
+:align: center
 ```
 
 
@@ -81,17 +86,20 @@ So when we want a new buffer of data from Pluto, just send a gpio pulse to L12N.
 ```{image} pluto_adf4159.svg
 :alt: Pluto with the ADF4159
 :width: 500px
+:align: center
 ```
 
 ```{image} final_timing.svg
 :alt: Pluto with the ADF4159
 :width: 700px
+:align: center
 ```
 
 
 You can find a video walkthrough of this material here:
 
 ```{video} https://www.youtube.com/watch?v=KBFYzVOuhmI
+:align: left
 ```
 
 ```{clear-content}

@@ -167,6 +167,7 @@ Now let's revisit that "phase_cal" variable from the top of this page.  Rerun th
 
 ```{image} resources/beamforming_plot.svg
 :width: 600px
+:align: center
 ```
 
 
@@ -176,6 +177,7 @@ Now let's revisit that "phase_cal" variable from the top of this page.  Rerun th
 A video walkthrough of this system example, including detailed code descriptions, is here:
 
 ```{video} https://www.youtube.com/watch?v=2QXKuEYR4Bw
+:align: left
 ```
 
 ```{clear-content}

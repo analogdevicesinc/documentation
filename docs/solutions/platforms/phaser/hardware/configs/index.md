@@ -8,6 +8,7 @@ Rpi4. Do not connect a USB-C power supply to both RF board and Rpi4 power ports.
 ```{image} complete_setup.svg
 :alt: Standard Config
 :width: 600px
+:align: center
 ```
 
 ## Standard Configuration
@@ -23,6 +24,7 @@ After following the standard Phaser SD card setup, no further installations are 
 ```{image} standard_config.bmp
 :alt: Standard Config
 :width: 600px
+:align: center
 ```
 
 ## Radar Configuration
@@ -32,6 +34,7 @@ The radar configuration simply adds a transmit antenna to the OUT1 and/or OUT2 p
 ```{image} radar_config.bmp
 :alt: Radar Config
 :width: 600px
+:align: center
 ```
 
 ## VNC Configuration
@@ -44,6 +47,7 @@ On the remote computer, Real VNC Viewer or Tight VNC, have worked well for the V
 ```{image} vnc_config.bmp
 :alt: VNC Radar Config
 :width: 600px
+:align: center
 ```
 
 (phaser hardware host-computer-configuration)=
@@ -55,6 +59,7 @@ connected directly to the host computer, instead of to the Rpi4. This allows fas
 ```{image} host_config.bmp
 :alt: Host Computer Config
 :width: 600px
+:align: center
 ```
 
 The Host Computer Configuration will require:

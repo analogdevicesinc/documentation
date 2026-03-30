@@ -15,6 +15,9 @@ Raspberry Pi Software Setup <rpi-setup/index>
 For a detailed unboxing and setup video of the entire process, please see:
 
 ```{video} https://www.youtube.com/watch?v=a6MeTsatTUg
+:align: left
+```
+```{clear-content}
 ```
 
 

@@ -4,6 +4,7 @@
 
 ```{image} resources/qiq1.svg
 :width: 300px
+:align: right
 ```  
 
 The QIQ software is offered as a subscription license.  However, as a courtesy to the educational and hobbyist community, QIQ Systems often makes the Pluto plugs available at no cost.  This provides a compelling, professional environment to explore signal modulations and their impact on EVM.  In particular, there are three QIQ applications that are very valuable to pair with the PlutoSDR:
@@ -25,6 +26,7 @@ The QIQ software is offered as a subscription license.  However, as a courtesy t
 
 ```{image} resources/qiq2.svg
 :width: 600px
+:align: center
 ```  
 
 
@@ -33,6 +35,7 @@ Installation is very straightforward -- simply download the application's "msi" 
 A comprehensive video on using QIQ Transceiver with Pluto is available here:
 
 ```{video} https://www.youtube.com/watch?v=kiN-ZRU2PeY
+:align: left
 ```
 
 ```{clear-content}

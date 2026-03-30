@@ -10,18 +10,21 @@ Under a section of code labeled “fragment@2”, you’ll see 3 main sections: 
 
 ```{image} 1.png
 :width: 500px
+:align: center
 ```
 
 For the two ADAR1000s on Phaser, you’ll see that they have a label “BEAM0” and “BEAM1”.  And the ADF4159 is given the label “pll0”.   Remember those!  We’ll use these labels to tell Python which device we want to control.   
 
 ```{image} 2.png
 :width: 500px
+:align: center
 ```
 
 You’ll also see a list of “one-bit-adc-dac” channels.  These are GPIOs (general purpose inputs/outputs) on the Raspberry Pi.  Each one also has a “label”, and we’ll again use those labels to read or set the voltage on that pin.  The actual pins, located on the Raspberry Pi 40 pin header, are given in the list of “in-gpios” (for pins where we read the voltage) and “out-gpios” (for pins where we set the voltage).  That might be useful if you want to probe a pin and see if you are setting it correctly.   
 
 ```{image} 3.jpg
 :width: 700px
+:align: center
 ```
 
 ## A Simple Python Beam Steering Program for Phaser
@@ -30,12 +33,14 @@ Now let’s look at a simple Python script, and see how IIO makes use of the dev
 
 ```{image} 4.png
 :width: 700px
+:align: center
 ```
 
 So “rx_array” is an array of 2 ADAR1000s called “BEAM0” and “BEAM1.”  The “device_map” sets BEAM0 as device 1, and BEAM1 as device 2.  The element map is how we are arranging elements 1 through 8.  This is for a linear array, but you could also add another row for a two-dimensional array.  The physical arrangement looks like this: 
 
 ```{image} 5.jpg
 :width: 600px
+:align: center
 ```
 
 Now we map each of the ADAR1000’s 4 channels to one of those elements.  For example, channel 2 (RX2 pin of the ADAR1000) of device 1 (BEAM0) will map to element #8.   Or channel 3 of device 2 (BEAM1) maps to element # 1.   The great thing about this setup is we never again need to refer to which ADAR1000 we are controlling.  We just refer to the antenna element number or the beam output number.  This minimizes the changes required to software if you want to build a prototype with more elements or a different arrangement of the elements.   
@@ -44,6 +49,7 @@ And remember those GPIOs?  Here’s a snippet on how we access them to set them 
 
 ```{image} 6.png
 :width: 600px
+:align: center
 ```
 
 

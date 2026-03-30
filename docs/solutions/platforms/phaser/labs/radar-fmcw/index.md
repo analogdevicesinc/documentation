@@ -105,6 +105,7 @@ In this lab, we will transmit a frequency ramped waveform from Phaser and then r
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=lFach2NxAIM
+:align: left
 ```
 
 ```{clear-content}

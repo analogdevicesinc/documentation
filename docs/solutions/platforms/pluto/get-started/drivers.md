@@ -61,6 +61,7 @@ You should receive a list of "Available Contexts." These are just ways to addres
 
 ```{image} resources/iio_info.svg
 :width: 800px
+:align: center
 ```  
 
 If you see a list of "Available contexts", such as shown above, then you have successfully installed the drivers.  
@@ -70,11 +71,13 @@ If you get something like the message below, then you've probably installed the 
 
 ```{image} resources/iio_info2.svg
 :width: 400px
+:align: center
 ```  
 You might also receive a message like the one below, 'iio_info' is not recognized.  If you see this, then you have not properly installed the drivers.  Check the driver installation steps and complete anything that you missed.  
 
 ```{image} resources/iio_info3.png
 :width: 400px
+:align: center
 ```  
 
 

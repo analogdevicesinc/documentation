@@ -2,6 +2,7 @@
 
 ```{image} resources/overview.svg
 :width: 400px
+:align: right
 ```
 
 In this pilot you will learn how to construct a two-channel digital beamformer using the **ADALM-PLUTO SDR** as the front-end.  

@@ -1,7 +1,8 @@
 # GNU Radio Installation and Examples
 
 ```{image} resources/grc4.svg
-:width: 300px
+:width: 400px
+:align: center
 ```  
 
 [GNU Radio](https://www.gnuradio.org/) is a powerful open-source software development toolkit that provides signal processing blocks to implement software-defined radios and signal processing systems. You can use GNU Radio to create flowgraphs that interface with PlutoSDR and process the data it receives. To use PlutoSDR with GNU Radio, you need to install the `gr-iio` module, which provides blocks for interfacing with IIO devices like PlutoSDR. Once you have the `gr-iio` module installed, you can create a flowgraph in GNU Radio Companion (GRC) that includes the `IIO Source` block to read samples from PlutoSDR and process them using other GNU Radio blocks.
@@ -59,6 +60,7 @@ print(adi.__version__)
 
 ```{image} resources/grc1.svg
 :width: 400px
+:align: center
 ```  
 
 7. Delete that "Python Module"
@@ -66,12 +68,14 @@ print(adi.__version__)
 
 ```{image} resources/grc2.svg
 :width: 400px
+:align: center
 ```  
 
 9. Place a "PlutoSDR Sink" and "PlutoSDR Source" into the flowgraph:
 
 ```{image} resources/grc3.svg
 :width: 400px
+:align: center
 ```  
 
 10. Double click on the blocks and set the context as follows:
@@ -82,6 +86,7 @@ print(adi.__version__)
 
 ```{image} resources/grc4.svg
 :width: 400px
+:align: center
 ```  
 
 
@@ -98,9 +103,15 @@ print(adi.__version__)
 
 
 ```{video} https://www.youtube.com/watch?v=Yx3RPOtv7x8
+:align: left
+```
+```{clear-content}
 ```
 
 ```{video} https://www.youtube.com/watch?v=63qY9tYhhro
+:align: left
+```
+```{clear-content}
 ```
 
 

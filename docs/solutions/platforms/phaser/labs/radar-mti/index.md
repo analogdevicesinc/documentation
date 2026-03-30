@@ -62,6 +62,7 @@ Of course a down side to MTI is that when the drone is stationary, you wouldn't 
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=M1eXeqN1c-I
+:align: left
 ```
 
 ```{clear-content}

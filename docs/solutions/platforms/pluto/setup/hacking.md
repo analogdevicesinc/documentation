@@ -6,6 +6,7 @@ Both of these customizations require logging into the command line terminal of P
 
 ```{image} resources/login.svg
 :width: 400px
+:align: center
 ```
 
 Remember the username is root, password is analog
@@ -26,6 +27,7 @@ After rebooting, log back into Pluto and see if the commands took effect.  If at
 
 ```{image} resources/ad9364.svg
 :width: 300px
+:align: center
 ```
 (pluto setup adding-a-second-rx-and-tx-channel)=
 ## Adding a Second Rx and Tx Channel
@@ -34,6 +36,7 @@ By default, your PlutoSDR comes with one transmit channel and one receive channe
 
 ```{image} resources/pluto_ports.png
 :width: 600px
+:align: center
 ```  
 
 The main downside to enabling the second channel is that the maximum sample rate is reduced from 61.44 MSPS to 30.72 MSPS. With twice the number of channels, the sample rate is halved. This is a unique limitation of the PlutoSDR (due to its CMOS digital data output). This limitation does not apply to the AD9361 SOM, which is designed to support two channels at 61.44 MSPS
@@ -41,6 +44,7 @@ The main downside to enabling the second channel is that the maximum sample rate
 Here's a complete video walkthrough of how to open up your Pluto, add the correct cables, and configure Pluto:
 
 ```{video} https://www.youtube.com/watch?v=ph0Kv4SgSuI
+:align: left
 ```
 
 ```{clear-content}
@@ -59,6 +63,7 @@ After rebooting, log back into Pluto and see if the commands took effect.  If at
 
 ```{image} resources/ad9361.svg
 :width: 300px
+:align: center
 ```
 
 If you ever needed to switch back to the 1T/1R mode (for example to operate Pluto at > 30.72 MSPS), then simply set the values back to 1r1t and AD9364. 
@@ -67,6 +72,7 @@ If you have access to a 3D printer, you can print [this panel](resources/PlutoPa
 
 ```{image} resources/panel.svg
 :width: 400px
+:align: center
 ```
 
 

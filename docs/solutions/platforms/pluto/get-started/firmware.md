@@ -5,6 +5,7 @@ Shortly after plugging Pluto in your PC it should appear as a storage device:
 
 ```{image} resources/usb_drive.svg
 :width: 300px
+:align: center
 ```
 
 
@@ -13,11 +14,13 @@ Click on the Firmware (or Version) button:
 
 ```{image} resources/version_button.png
 :width: 800px
+:align: center
 ```  
 
 
 ```{image} resources/firmware_version.png
 :width: 800px
+:align: center
 ```  
 
 
@@ -28,6 +31,7 @@ Click on **"Latest ADALM-PLUTO (PlutoSDR) Release"** and download the **"plutosd
 
 ```{image} resources/firmware_copy.svg
 :width: 500px
+:align: center
 ```  
 
 
@@ -35,6 +39,7 @@ After copying the file(s), you **MUST** do a software eject of Pluto.  For Windo
 
 ```{image} resources/firmware_eject.svg
 :width: 500px
+:align: center
 ```  
 
 Pluto's blue LED will rapidly flash whilst it updates(less the 2 minutes).  When it is complete, PlutoSDR will again appear as a mounted USB drive.  It is **VERY IMPORTANT** that you do not interrupt this process.  DO NOT unplug PlutoSDR while this firmware upgrade is occurring.  If this should happen, and Pluto becomes unresponsive, follow the [DFU Update Procedure](https://analogdevicesinc.github.io/documentation/tools/pluto-m2k/firmware.html#dfu-update) to attempt to recover the PlutoSDR.

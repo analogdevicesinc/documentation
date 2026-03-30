@@ -7,6 +7,9 @@ This page is mostly intended for those companies that are assembling and buildin
 A video walkthrough of the entire board assembly, including all of the cables, is found here:
 
 ```{video} https://www.youtube.com/watch?v=WR1DHfraLf8
+:align: left
+```
+```{clear-content}
 ```
 
 ## Assembly
@@ -15,24 +18,28 @@ A video walkthrough of the entire board assembly, including all of the cables, i
 
 ```{image} u_fl_cables.jpg
 :width: 300px
+:align: center
 ```
 
 2. Install the 40-pin M-F extender on the reverse side of the board. Place the board on stiff antistatic foam while doing this, and use a steady, even pressure.
 
 ```{image} rpi_riser.jpg
 :width: 300px
+:align: center
 ```
 
 3. Install a 22 mm M-F standoff and 12 mm M-F standoff as shown below. The threads from the 22 mm standoff enter from the reverse side of the board.
 
 ```{image} standoff_stackup.png
 :width: 300px
+:align: center
 ```
 
 4. Install the camera mount using two 3 mm pan head screws as shown. Do not over-tighten.
 
 ```{image} camera_mount.jpg
 :width: 300px
+:align: center
 ```
 
 5. Install the four tall standoffs from the top side of the board, at the four corners.
@@ -43,6 +50,7 @@ A video walkthrough of the entire board assembly, including all of the cables, i
 
 ```{image} pluto_prep.jpg
 :width: 300px
+:align: center
 ```
 
 7. Mount the ADALM-Pluto from the top side of the board. Note that the threaded ends of the standoff will need to be flexed slightly. Secure with 4x M2.5 nylon nuts. 
@@ -51,6 +59,7 @@ A video walkthrough of the entire board assembly, including all of the cables, i
 
 ```{image} pluto_u_fls_8.jpg
 :width: 300px
+:align: left
 ```
 
 ```{note}
@@ -67,12 +76,14 @@ A video walkthrough of the entire board assembly, including all of the cables, i
 
 ```{image} ribbon_cable_installation_9.jpg
 :width: 300px
+:align: center
 ```
 
 10. Mount the Raspberry Pi from the reverse side of the board. Use 4x M2.5 x 4 mm pan head screws to secure.
 
 ```{image} rpi_mounting_10.jpg
 :width: 300px
+:align: center
 ```
 
 ## Test
@@ -81,6 +92,7 @@ Place the Vivaldi antenna / Selfie-Stick directly above the assembly as shown. T
 
 ```{image} test_front_view.jpg
 :width: 300px
+:align: center
 ```
 
 - Plug a micro HDMI to HDMI cable into the Raspberry Pi HDMI connector closest to the USB-C power input.
@@ -101,6 +113,7 @@ Example test results (taken from a random board on May 24, 2025). Your results m
 
 ```{image} example_test_results.png
 :width: 800px
+:align: center
 ```
 
 ```{note}

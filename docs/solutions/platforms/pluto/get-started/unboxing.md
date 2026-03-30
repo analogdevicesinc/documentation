@@ -14,6 +14,7 @@ When you plug Pluto into your PC, this single connector enumerates as multiple d
 
 ```{image} resources/pluto_ports.svg
 :width: 300px
+:align: right
 ```
 
 This center port also provides power to Pluto.  Therefore, it is generally not necessary to use the other (right edge) USB port.  There are two cases where you would apply power to the right USB port:
@@ -33,6 +34,7 @@ More information on Pluto's USB OTG can be found [here](https://analogdevicesinc
 
 ```{image} resources/usb_drive.svg
 :width: 300px
+:align: right
 ```
 
 Now connect that center micro USB port to your computer.  You will notice that Pluto appears as a mass storage device.  This is a convenient feature of Pluto! There is more that we'll do with the Pluto drive.  But for now, it's just good to know that it is connected.  
@@ -47,6 +49,7 @@ Once installed, launch IIO-Scope by finding its shortcut (“IIO-Oscilloscope”
 
 ```{image} resources/osc1.svg
 :width: 500px
+:align: center
 ```
 
 In the "Context" field, several address for Pluto will show up. All of these are valid, and sometimes there's a reason to choose one over the other.  But for now, choose one of them and click "Connect".  Two windows will now open:  the main control window and the plotting window.
@@ -55,6 +58,7 @@ In the plotting window, click "Enable All" and then press "Play":
 
 ```{image} resources/osc_plot.svg
 :width: 500px
+:align: center
 ```
 
 Congratulations!  You just made your first plot with Pluto!  What did you plot?  It was just random noise.  But let's fix that now.  Go now to the other window that opened, the main control window.  In that window, you'll see several tabs.  Click on the "AD936X" tab and you'll see how Pluto is currently configured.  Change the two highlighted values:
@@ -62,6 +66,7 @@ Congratulations!  You just made your first plot with Pluto!  What did you plot? 
 
 ```{image} resources/osc_config.svg
 :width: 500px
+:align: center
 ```
 
 We'll learn more about all these controls.  But for now, the key message is we configured Pluto to both up and down convert a waveform at 2.4 GHz (2400 MHz).  That waveform is a sine wave ("One CW Tone") that is 9.239985 MHz away from 2400 MHz.  And it has scale, relative to the full scale DAC output, of -3 dB.  Go back to the plot window, and observe the change.
@@ -70,6 +75,7 @@ The plot will be easier to see in the frequency domain.  So click the "Stop" but
 
 ```{image} resources/osc_plot2.svg
 :width: 500px
+:align: center
 ```
 
 You should see a large FFT spike, right at 9.24 MHz.  To verify, right click on the plot and select "Peak Markers."  

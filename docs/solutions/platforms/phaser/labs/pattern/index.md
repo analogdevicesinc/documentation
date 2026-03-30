@@ -10,6 +10,7 @@ In the last lab, where we measured the half power beamwidth and first null beamw
 ```{image} GUI.svg
 :alt: GUI
 :width: 800px
+:align: center
 ```
 
 3. Now rotate the HB100 in a radius around the Phaser board –keep the HB100 pointed at Phaser!
@@ -17,6 +18,7 @@ In the last lab, where we measured the half power beamwidth and first null beamw
 ```{image} rotate.svg
 :alt: Rotate the HB100
 :width: 800px
+:align: center
 ```
 
 4. Start at the left position (-90 deg), and move around to the right position (+90 deg)
@@ -27,6 +29,7 @@ In the last lab, where we measured the half power beamwidth and first null beamw
 ```{image} result.svg
 :alt: Antenna Plot
 :width: 800px
+:align: center
 ```
 
 8. Ok, so we can’t really get angular measurements from this (we can never rotate it perfectly). But we can get accurate lobe amplitudes. 
@@ -36,6 +39,9 @@ In the last lab, where we measured the half power beamwidth and first null beamw
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=9x2P9JilVx4
+:align: left
+```
+```{clear-content}
 ```
 
 

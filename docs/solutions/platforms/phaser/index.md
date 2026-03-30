@@ -4,6 +4,7 @@
 ```{image} phaser1.svg
 :alt: Phaser Picture
 :width: 400px
+:align: right
 ```
 
 The [**ADALM-PHASER**](https://www.analog.com/en/resources/reference-designs/circuits-from-the-lab/cn0566.html) (part number EVAL-CN0566-RPIZ) is a beamforming development system designed to demonstrate phased array concepts with a compact, software-defined architecture. It provides a low cost, simplified, phased array radar system which allows real beamforming hardware to be used for education, project prototyping, and software development.
@@ -30,6 +31,9 @@ Additional Resources <resources/index>
 ```
 
 ```{video} https://www.youtube.com/watch?v=B66JHcZMq_Q
+:align: left
+```
+```{clear-content}
 ```
 
 

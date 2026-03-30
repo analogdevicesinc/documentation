@@ -12,6 +12,7 @@ Programming with Python is a popular choice for working with PlutoSDR due to its
 
 ```{image} resources/pyadi.png
 :width: 200px
+:align: right
 ```  
 
 For most users, the `pyadi-iio` library (commonly called PyADI) provides a more user-friendly and high-level API for controlling Pluto and accessing its data. The PyADI quick start guide, installation instructions, and examples are all found [here](https://analogdevicesinc.github.io/pyadi-iio/index.html
@@ -77,9 +78,13 @@ print(rx2[:10])
 
 
 ```{video} https://www.youtube.com/watch?v=ZnCi-LHJ0GQ
+:align: left
+```
+```{clear-content}
 ```
 
 ```{video} https://www.youtube.com/watch?v=ph0Kv4SgSuI
+:align: left
 ```
 
 ```{clear-content}

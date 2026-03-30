@@ -5,6 +5,7 @@ At this point, your Raspberry Pi should have successfully booted up, and you are
 ```{image} kuiper.svg
 :alt: Phaser Picture
 :width: 500px
+:align: center
 ```
 
 If you are using the VNC Configuration, then you can login to:

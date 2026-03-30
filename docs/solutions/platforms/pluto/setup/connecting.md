@@ -19,6 +19,7 @@ You can try this out for yourself by opening a terminal and pinging "192.168.2.1
 
 ```{image} resources/ping.svg
 :width: 300px
+:align: center
 ```
 
 (pluto setup connecting-via-ssh-or-serial-virtual-com-port)=
@@ -36,6 +37,7 @@ To connect to Pluto via SSH or Serial, follow these steps:
 
 ```{image} resources/putty.svg
 :width: 500px
+:align: center
 ```
 
 3. When prompted:
@@ -45,6 +47,7 @@ To connect to Pluto via SSH or Serial, follow these steps:
 
 ```{image} resources/login.svg
 :width: 300px
+:align: center
 ```
 
 ```{clear-content}

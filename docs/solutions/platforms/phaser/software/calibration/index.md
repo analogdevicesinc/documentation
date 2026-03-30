@@ -16,6 +16,7 @@ You should see one prominent, sharp, peak as shown in the figure below.
 ```{image} findhb100.svg
 :alt: find_hb100 program results
 :width: 600px
+:align: center
 ```
 
 If there is a single prominent peak, enter “y”. This will save that frequency into a pkl file.  If there are several peaks of equal magnitude, or no visible peak, then close the plot and enter 'n' at the prompt. Reposition the HB100 (and make sure there are no other sources nearby), then re-run the script.
@@ -40,6 +41,7 @@ The GUI should load and it will start displaying a beam pattern as shown below:
 ```{image} uncal.svg
 :alt: uncalibrated results
 :width: 600px
+:align: center
 ```
 
 Your results may vary.  But likely, this is not the crisp array pattern plot that you were hoping for!  The reason is that the Phaser board is initially uncalibrated.  Each element in the array has a slightly different gain and phase relative to its neighbor.  These variations are due to numerous factors; however, once the Phaser board has reached a steady temperature, these errors should not shift significantly.
@@ -66,6 +68,7 @@ The Python GUI program will load these "pkl" files automatically.  If these file
 ```{image} cal.svg
 :alt: calibrated results
 :width: 600px
+:align: center
 ```
 
 ## Details on the Calibration Procedure
@@ -89,6 +92,7 @@ Typical plots are shown below:
 ```{image} cal_plots.svg
 :alt: calibration results
 :width: 600px
+:align: center
 ```
 
 After running this script, files gain_cal_val.pkl and phase_cal_val.pkl will be placed in the working directory. The GUI program will also load these files automatically.
@@ -99,6 +103,7 @@ If plots differ greatly from the results above, examine the physical setup, repo
 For a detailed walk through of these calibration procedures, please see:
 
 ```{video} https://www.youtube.com/watch?v=a6MeTsatTUg
+:align: left
 ```
 
 ```{clear-content}

@@ -2,6 +2,7 @@
 
 ```{image} resources/software.svg
 :width: 400px
+:align: right
 ```  
 
 ## C

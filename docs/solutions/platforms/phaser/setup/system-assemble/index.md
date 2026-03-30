@@ -5,6 +5,7 @@ The Phaser RF board, Raspberry Pi, and Pluto will come pre-assembled.  Only a fe
 ```{image} assembly.svg
 :alt: Phaser Picture
 :width: 300px
+:align: right
 ```
 
 

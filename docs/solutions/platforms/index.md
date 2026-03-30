@@ -88,6 +88,7 @@ Low-cost SDR system based on the AD9361
 
 ```{image} resources/pilot_ships.svg
 :width: 400px
+:align: right
 ```
 
 Each platform includes at least one **Pilot** --- a fully documented system-level example of a representative use case--complete with all the key elements to implement that use case.   
@@ -117,6 +118,7 @@ directly with ADI engineers.
 
 ```{image} resources/rtp_nc_adaptive.jpeg
 :width: 400px
+:align: right
 ```
 
 We have a Catalyst centres in:  

@@ -2,6 +2,7 @@
 
 ```{image} triangle.svg
 :width: 400px
+:align: right
 ```
 
 
@@ -11,6 +12,7 @@ Recall that in an electronically steerable array, there are two ways to represen
 
 ```{image} eq1.svg
 :width: 120px
+:align: center
 ```
 
 
@@ -18,6 +20,7 @@ Recall that in an electronically steerable array, there are two ways to represen
 
 ```{image} eq2.svg
 :width: 170px
+:align: center
 ```
 
 Note that the phase shift is a function of the instantaneous frequency.  If that frequency changes, then the phase shift applied to the elements would also need to change.  If the phase shift cannot change, perhaps due to a wideband signal, then an effective variation in time delay is placed on the array at those frequencies.  It means that, for different frequencies, the steering angle will change.  This change in steering angle is called "beam squint."  
@@ -26,6 +29,7 @@ At mechanical boresight (a steering angle of 0 deg), there is no phase shift app
 
 ```{image} eq4.svg
 :width: 300px
+:align: center
 ```
 
 For example, if we have a carrier frequency of 10.5GHz, and a peak frequency deviation of 500MHz, then the beam will move off the intended 45 degree beam angle by 3 degrees. That’s not really a problem if the HPBW is 25 degrees, as is the case for our 4 element setup.  But for a large antenna with, say, 1 degree beam width, the received power will be down by many dB at the band edge.
@@ -39,6 +43,7 @@ Since our HB100 frequency source is fixed, for this lab, we will instead change 
 
 ```{image} squint1.svg
 :width: 600px
+:align: center
 ```
 
 3. Click “Copy Plot to Memory”
@@ -48,6 +53,7 @@ Since our HB100 frequency source is fixed, for this lab, we will instead change 
 
 ```{image} squint2.svg
 :width: 600px
+:align: center
 ```
 
 7. Try other **signal bandwidths** and observe the effect.
@@ -56,6 +62,7 @@ Since our HB100 frequency source is fixed, for this lab, we will instead change 
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=LYVD014ClZI
+:align: left
 ```
 
 ```{clear-content}

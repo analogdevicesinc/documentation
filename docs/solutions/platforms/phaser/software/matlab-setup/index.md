@@ -9,6 +9,7 @@ After basic setup is complete, configure the Phaser in the {ref}`Host Computer C
 
 ```{image} host_config.bmp
 :width: 500px
+:align: center
 ```
 
 In this configuration:
@@ -45,6 +46,7 @@ that all the products shown in the image have been selected.
 ```
 ```{image} mathworks_products_install.png
 :width: 800px
+:align: center
 ```
 
 Once this has been done, continue installing MATLAB through the installer as
@@ -57,12 +59,14 @@ Once MATLAB is installed, additional toolboxes can be downloaded through MATLAB'
 
 ```{image} matlab_addons_button.png
 :width: 800px
+:align: center
 ```
 
 This will open the Add-On Explorer. Here, you can search for toolboxes using the search bar in the top right corner, and install them.
 
 ```{image} matlab_addons_search.png
 :width: 800px
+:align: center
 ```
 
 - Confirm that the following toolboxes are installed.  Just put the name in the search and they should indicate "Installed".  If any are not installed, install these first:
@@ -84,6 +88,7 @@ This will open the Add-On Explorer. Here, you can search for toolboxes using the
 
 ```{image} pluto_toolbox_img.png
 :width: 800px
+:align: center
 ```
 
 ````{caution}
@@ -91,6 +96,7 @@ When installing this Pluto add on, MATLAB may prompt you to update/reinstall Plu
 
 ```{image} pluto_toolbox_img3.png
 :width: 400px
+:align: center
 ```
 ````
 
@@ -232,6 +238,7 @@ plot(steeringAngle,mag2db(ArrayFactor./max(abs(ArrayFactor))))
 
 ```{image} phaser_steeringangle_output.png
 :width: 800px
+:align: center
 ```
 
 ## Complete Radar Example

@@ -6,6 +6,7 @@ But the problem with sidelobes is they end up pointing our antenna in unintended
 
 ```{image} sidelobes.svg
 :width: 400px
+:align: right
 ```
 
 
@@ -16,6 +17,7 @@ The most common method to deal with sidelobes is to use amplitude tapering acros
 ```{image} windowing.svg
 :alt: E Field Windowing
 :width: 800px
+:align: center
 ```
 
 If you took the fourier transform of that time domain square wave you would end up with a sin(x)/x function (the middle graph).  Taking 20 LOG of that will give you the signal power, and that graph yields the familiar main lobe, and a bunch of sidelobes.  Note that the first sidelobe at -13dB down from the peak lobe--just like we get when we measured the first sidelobe of our antenna pattern.
@@ -27,6 +29,7 @@ To control those sidelobes on a rectangular FFT, we’ll commonly apply a window
 ```{image} WindowFunctions.svg
 :alt: Windowing Profiles
 :width: 800px
+:align: center
 ```
 
 So we start with Boxcar, and we see that the first sidelobe is only 13 dBc down from the peak, but it has the narrowest main lobe.  Then we can apply a windowing function to that.  And there are many windowing functions to choose from, but as an example, here are Hanning and Blackman.  Hanning brings the first sidelobe down to -30 dBc.  And Blackman has the lowest sidelobes, but you can clearly see it has the widest main lobe.
@@ -36,6 +39,7 @@ So that analysis was all for the square wave signal in the time domain.  But it�
 ```{image} tapering.svg
 :alt: Antenna Tapering
 :width: 600px
+:align: center
 ```
 *Figures from “Phased Array Antenna Patterns—Part 3: Sidelobes and Tapering”*
 
@@ -49,6 +53,7 @@ So tapering presents an interesting dilemma:  We taper to reduce the sidelobes. 
 ```{image} TaperingGUI.svg
 :alt: Antenna Tapering
 :width: 600px
+:align: center
 ```
 
 3.  What is the impact to sidelobe level, beamwidth, and peak gain?
@@ -60,6 +65,7 @@ So tapering presents an interesting dilemma:  We taper to reduce the sidelobes. 
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=be_5D4eNtCY
+:align: left
 ```
 
 ```{clear-content}

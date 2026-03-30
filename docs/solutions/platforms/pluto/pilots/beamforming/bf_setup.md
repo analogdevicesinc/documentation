@@ -14,6 +14,7 @@ To run this pilot you’ll need:
 
 ```{image} resources/hardware_setup.svg
 :width: 600px
+:align: center
 ```
 ## Software
 - Python with **numpy**, **matplotlib**, and **pyadi-iio**.  
@@ -29,6 +30,7 @@ To run this pilot you’ll need:
 A video walkthrough of this system example, including setup, is here:
 
 ```{video} https://www.youtube.com/watch?v=2QXKuEYR4Bw
+:align: left
 ```
 
 ```{clear-content}

@@ -49,6 +49,9 @@ This lab will use:
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=5VSIIFKK6Ck
+:align: left
+```
+```{clear-content}
 ```
 
 

@@ -6,6 +6,7 @@
 ```{image} ../resources/pluto.png
 :alt: PlutoSDR Picture
 :width: 400px
+:align: right
 ```  
 
 The [ADALM‑PLUTO](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm-pluto.html), commonly known as the Pluto SDR, is a portable, self‑contained software‑defined radio (SDR). It is designed primarily as an educational platform for students, hobbyists, and engineers to explore radio frequency (RF) concepts, wireless communication, and SDR fundamentals in a hands‑on environment.  PlutoSDR acts as a personal RF lab that easily fits into a pocket and connects to a computer over USB. It supports a wide range of software environments including MATLAB, GNU Radio, C/C++/C#, Python, and SDRangel.
@@ -43,6 +44,7 @@ System Examples (Pilots) <pilots/index>
 This video is a quick introduction to the Pluto platform along with some simple examples:
 
 ```{video} https://www.youtube.com/watch?v=ZnCi-LHJ0GQ
+:align: left
 ```
 
 ```{clear-content}

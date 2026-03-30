@@ -15,16 +15,19 @@ These can all be found in the MATLAB "Add-Ons":
 
 ```{image} resources/matlab1.svg
 :width: 450px
+:align: center
 ```  
 Then search for the desired toolbox:
 
 ```{image} resources/matlab2.svg
 :width: 400px
+:align: center
 ```  
 When installing the Pluto Toolbox, a "Connect Hardware" window will open.  Just select cancel.  Do not allow MATLAB to update Pluto's firmware.  
 
 ```{image} resources/matlab3.svg
 :width: 400px
+:align: center
 ```  
 ```{caution} 
 When installing this Pluto Toolbox, MATLAB may prompt you to update or reinstall Pluto's firmware.  
@@ -63,6 +66,7 @@ This first creates a Pluto receive object ("rx").  For the context, it is best t
 
 ```{image} resources/matlab4.svg
 :width: 400px
+:align: center
 ```  
 Here's another example, this time setting more attributes and plotting the result:
 
@@ -98,6 +102,7 @@ You should see something like the plot below (Pluto is just measuring noise):
 
 ```{image} resources/matlab5.svg
 :width: 400px
+:align: center
 ```  
 
 ## Test MATLAB Pluto (2T/2R) Installation
@@ -172,6 +177,7 @@ xlim([0 250]); title("Rx2"); xlabel('sample index');
 
 ```{image} resources/matlab6.svg
 :width: 300px
+:align: center
 ```  
 
 ## Useful Pluto MATLAB Links

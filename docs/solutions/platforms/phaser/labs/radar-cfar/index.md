@@ -40,6 +40,9 @@ In this lab, adjust the guard and training (reference) cells, based on our obser
 You can find a video walkthrough of this lab here:
 
 ```{video} https://www.youtube.com/watch?v=wzrfgTOhXLA
+:align: left
+```
+```{clear-content}
 ```
 
 

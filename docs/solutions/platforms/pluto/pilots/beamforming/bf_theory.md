@@ -9,6 +9,7 @@ Beamforming is a signal processing technique used in antenna arrays to direct th
 ```{image} resources/phased_ani.gif
 :alt: Phaser Picture
 :width: 700px
+:align: center
 ```
 
 ## Basic Beamforming Math
@@ -27,6 +28,7 @@ Referring to the diagram below, we can derive the relationship between the phase
 ```{image} resources/math_illustration.png
 :alt: Phaser Picture
 :width: 800px
+:align: center
 ```
 
 Start with the additional path length L between adjacent elements due to wavefront tilt:
