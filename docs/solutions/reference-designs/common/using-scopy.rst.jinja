@@ -1,0 +1,40 @@
+Scopy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:external+scopy:doc:`Scopy <index>` is a cross-platform software toolbox for
+interfacing with ADI devices, enabling you to configure device parameters,
+visualize data, and perform advanced signal analysis.
+
+{% if scopy_has_plugin is defined and scopy_has_plugin %}
+Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This project also contains a Scopy device-specific plugin that enables
+you to access the unique features and functions of the device.
+
+.. seealso::
+   Find more information about this plugin
+   :external+scopy:doc:`here <{{ scopy_plugin_path }}>`
+{% endif %}
+
+{% if scopy_show_data_capture %}
+Data capture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+{% if scopy_show_time_domain %}
+Time domain:
+
+.. image:: {{ scopy_time_domain_image }}
+   :width: 600
+
+{% endif %}
+
+{% if scopy_show_frequency_domain %}
+Frequency domain:
+
+.. image:: {{ scopy_frequency_domain_image }}
+   :width: 600
+
+{% endif %}
+{% endif %}
+

@@ -1,0 +1,98 @@
+ADI IIO Oscilloscope
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The :ref:`iio-oscilloscope` is a cross-platform application for interfacing
+with IIO devices, enabling you to configure device parameters and visualize
+data.
+
+.. important::
+   Make sure to download/update to the latest version of
+   :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`.
+
+{% if has_linux %}
+For Linux
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remote run on host
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+The :ref:`iio-oscilloscope` application can be used to connect to another
+platform that has a connected device, to configure the device and read data
+from it. This application is not for performance testing, but rather
+showcasing the basic features.
+
+Please see :ref:`IIO Oscilloscope documentation <iio-oscilloscope>` for
+installation steps and more details.
+
+Build and start ``osc`` on a network-enabled Linux host.
+For Windows computers, open the application from the start menu.
+
+Once the application is launched, go to Settings > Connect > URI and type
+"ip:" then the IP address of the target in the pop-up window. This IP can
+be found out with a command from the previous section of this documentation.
+
+{% if show_connection_image and connection_image %}
+
+.. image:: {{ connection_image }}
+   :align: center
+   :width: 600px
+
+{% endif %}
+
+Locally run on the board
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+If you connected an HDMI monitor to your FPGA and a mouse and a keyboard
+(both on one dongle), you can navigate the ADI Kuiper Linux that is on the
+FPGA.
+
+Going to the top left corner icon (the menu icon), search for IIO
+Oscilloscope. Opening it will automatically connect to the setup and you
+can use the application.
+{% endif %}
+
+{% if has_no_os %}
+For no-OS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+For connecting IIO Oscilloscope to no-OS applications, they need to be built
+with the IIOD=y flag. This way, the no-OS applications will run an IIO daemon
+that is awaiting connections from the IIO Oscilloscope.
+{% endif %}
+
+{% if iio_has_plugin %}
+Plugin
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This project also contains an IIO-Oscilloscope device-specific plugin that
+enables you to access the unique features and functions of the device.
+
+{% if iio_plugin_ref %}
+.. seealso::
+   For more information about this plugin: :ref:`{{ iio_plugin_ref }}`
+
+{% endif %}
+{% endif %}
+
+{% if iio_show_data_capture %}
+Data capture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+   Device names and channel definition may differ between no-OS and Linux.
+
+{% if iio_show_time_domain %}
+Time domain:
+
+.. image:: {{ iio_time_domain_image }}
+   :width: 600
+
+{% endif %}
+
+{% if iio_show_frequency_domain %}
+Frequency domain:
+
+.. image:: {{ iio_frequency_domain_image }}
+   :width: 600
+
+{% endif %}
+{% endif %}
