@@ -1,3 +1,7 @@
 sphinx
 adi-doctools
 sphinxcontrib-mermaid
+sphinx-tabs
+myst_parser
+sphinx-inline-tabs
+wireviz
