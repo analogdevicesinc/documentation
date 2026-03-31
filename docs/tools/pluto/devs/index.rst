@@ -35,11 +35,11 @@ Content
    #. :dokuwiki:`Running Scripts from USB drive <university/tools/m2k/devs/usb_otg>`
    #. :dokuwiki:`Creating compiled apps to run on-device <university/tools/m2k/devs/embedded_code>`
 
-#. :dokuwiki:`ADI Reference Designs HDL User Guide </resources/fpga/docs/hdl>`
+#. :external+hdl:ref:`user_guide`
 
    #. :dokuwiki:`AD9361 HDL reference design </resources/eval/user-guides/ad-fmcomms2-ebz/reference_hdl>`
-   #. :dokuwiki:`AXI_AD9361 </resources/fpga/docs/axi_ad9361>`
-   #. :dokuwiki:`High-Speed DMA Controller Peripheral </resources/fpga/docs/axi_dmac>`
+   #. :external+hdl:ref:`axi_ad9361`
+   #. :external+hdl:ref:`axi_dmac`
 
 
    #. `AD9361 high performance, highly integrated RF Agile Transceiver™ Linux

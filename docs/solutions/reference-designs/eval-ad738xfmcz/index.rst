@@ -156,7 +156,7 @@ Table of Contents
 
       #. More information
 
-         #. :dokuwiki:`SPI Engine Framework <resources/fpga/peripherals/spi_engine>`
+         #. :external+hdl:ref:`spi_engine`
 
 #. :ref:`Help and Support <help-and-support>`
 
