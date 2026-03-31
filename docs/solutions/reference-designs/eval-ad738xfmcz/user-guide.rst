@@ -49,11 +49,11 @@ source.
 HDL Design Description
 ----------------------
 
-In the :dokuwiki:`ADI Reference Designs HDL User Guide <resources/fpga/docs/hdl>`
+In the :external+hdl:ref:`user_guide`
 can be found an in-depth presentation and instructions about the HDL design in
 general.
 
-The reference design uses the standard :dokuwiki:`SPI Engine Framework <resources/fpga/peripherals/spi_engine>`
+The reference design uses the standard :external+hdl:ref:`spi_engine`
 with an integrated pulse generator, which will provide the required conversion
 rate for the ADC.
 
@@ -61,7 +61,7 @@ In order to build the HDL design the user has to go through the following steps:
 
 -  Confirm that you have the right tools (the reference design requires Vivado 2018.3)
 -  Clone the HDL GitHub repository (the project is located at :git-hdl:`projects/ad738x_fmc`)
--  Build the project (see :dokuwiki:`Building HDL <resources/fpga/docs/build>`)
+-  Build the project (see :external+hdl:ref:`build_hdl`)
 
 HDL Downloads
 -------------
