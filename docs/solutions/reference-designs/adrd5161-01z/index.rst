@@ -1,5 +1,5 @@
-ADRD5161
-========
+ADRD5161-01Z
+============
 
 BMS module with CANopen CiA 419
 """""""""""""""""""""""""""""""
@@ -7,7 +7,7 @@ BMS module with CANopen CiA 419
 Introduction
 ------------
 
-The ADRD5161 is a battery management/ monitoring system compatible with 3S LiPo battery packs. It communicates via CANopen CiA 419 OVER 500 kbaud CAN.
+The :adi:`ADRD5161-01Z` is a battery management/ monitoring system compatible with 3S LiPo battery packs. It communicates via CANopen CiA 419 OVER 500 kbaud CAN.
 The module functions as a state machine with 4 distinct states: Normal State, Charging State, Configure State and Shutdown state.
 Battery is monitored using the MAX17320 fuel gauge chip. Charging current is handled by MAX77961 charger chip, while the MAX77958 handles power delivery.
 Current state and specific parameters can be observed on the on-board OLED display.
@@ -43,7 +43,7 @@ Connections:
 Required Hardware
 -----------------
 
-* ADRD5161
+* ADRD5161-01Z
 * 3S LiPo battery pack with an XT60 connector 
 * USB PD charger, capable of 20V 3A
 * Optional: MAXPICO (or compatible) debug/ programming probe

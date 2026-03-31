@@ -1,10 +1,10 @@
-ADRD5161 Quick Start Guide
-==========================
+ADRD5161-01Z Quick Start Guide
+==============================
 
 Required Hardware
 -----------------
 
-	- ADRD5161
+	- ADRD5161-01Z
 	- 3S LiPo battery pack with an XT60 connector 
 	- USB PD charger, capable of 15V/20V, 3A (min)
 	- CAN cable
@@ -13,7 +13,7 @@ Required Hardware
 Getting Started
 ---------------
 
-The ADRD5161 module comes with the state machine firmware already flashed. 
+The ADRD5161-01Z module comes with the state machine firmware already flashed. 
 MAX17320 and MAX77958 are already configured for Panasonic NCR18650B batteries, with a total capacity 6600mAh.
 
 * Connect the battery pack and balancing leads to the BMS module
@@ -81,7 +81,7 @@ The buttons and their significance for the Configure State are highlighted in th
 Normal State
 ~~~~~~~~~~~~
 
-When in the Normal State, the ADRD5161 board enables the power supply towards the system( motor control boards, localization boards)
+When in the Normal State, the ADRD5161-01Z board enables the power supply towards the system( motor control boards, localization boards)
 The CAN Transceiver is powered up here as well, thus enabling CAN communication.
 This state displays the following parameters, both on the screen in the serial console:
 
@@ -102,7 +102,7 @@ To navigate OLED display, press S5.
 
 Charging State
 ~~~~~~~~~~~~~~
-When in the Charging State, the ADRD5161 board enables the charging power path.
+When in the Charging State, the ADRD5161-01Z board enables the charging power path.
 This allows for the battery pack to be charged, without cutting the power to the additional modules.
 In case of an undervoltage event (e.g. connecting USB-C cable from 5V supply, instead of 20V), the module will go to Shutdown state.
 This state displays the following parameters, both on the screen in the serial console:
@@ -124,7 +124,7 @@ To navigate OLED display, press S5. When in this state, the highlighted LED is o
 Shutdown State
 ~~~~~~~~~~~~~~
 
-When in the Shutdown state, the ADRD5161 is still powered on. However, the supply to the consumers and the CAN Transceiver is cut off.
+When in the Shutdown state, the ADRD5161-01Z is still powered on. However, the supply to the consumers and the CAN Transceiver is cut off.
 This state can be triggered either by faults appearing in the powerpath, or by pressing the designated S4 button.
 To exit Shutdown State, the same button must be pressed. 
 

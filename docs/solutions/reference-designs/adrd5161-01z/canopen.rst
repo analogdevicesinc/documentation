@@ -1,7 +1,7 @@
-ADRD5161 CANopen reference
+ADRD5161-01Z CANopen reference
 ==========================
 
-The current version of the ADRD5161 module exposes the following parameters via the CAN interface:
+The current version of the ADRD5161-01Z module exposes the following parameters via the CAN interface:
 
 * OD_RAM.x2060_batteryCellVoltages[0-3]
 * OD_RAM.x2071_current

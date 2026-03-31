@@ -1,10 +1,10 @@
-ADRD5161 Software Guide
-=======================
+ADRD5161-01Z Software Guide
+===========================
 
 Hardware Requirements
 ---------------------
 
-* ADRD5161 board
+* ADRD5161-01Z board
 * MAX32625PICO (or compatible) DAPLINK programmer
 * battery pack or connection to USB-C supply (otherwise module is not powered)
 * CAN to USB adaptor to connect to the PC, to view data on CAN bus
@@ -77,7 +77,7 @@ Enter the workspace and load the python virtual environment:
 Build and Flash the Firmware
 ----------------------------
 
-The ADRD5161 firmware is based on Zephyr. The source code for the latest version: link.
+The ADRD5161-01Z firmware is based on Zephyr. The source code for the latest version: link.
 The CiA 419 profile prescribes a standard set of CANopen objects and their function for BMS systems. While hand-crafting compatible CAN messages is possible, it is recommended to use an implementation of the CANopen and CiA 419 stack that exposes a simpler API, such as the Python ``canopen`` package or the ROS2 ``ros2_canopen`` package, exemplified in the following sections.
 
 Build the firmware:
@@ -262,7 +262,7 @@ The code block below is a minimal example of accessing the BMS parameters throug
 
 	def main():
 
-	print("ADRD5161 CAN Example \n")
+	print("ADRD5161-01Z CAN Example \n")
 	print("-" * 60)
 
 	# Setup network
@@ -291,7 +291,7 @@ The code block below is a minimal example of accessing the BMS parameters throug
 Control through ROS2 (Python ``canopen`` wrapper)
 -------------------------------------------------
 
-This section demonstrates how to create a ROS2 node that wraps the Python ``canopen`` library to interface with the ADRD5161 BMS board. This approach uses the same Python ``canopen`` library from the previous section, but wraps it in a ROS2 node to publish ``BatteryState`` messages.
+This section demonstrates how to create a ROS2 node that wraps the Python ``canopen`` library to interface with the ADRD5161-01Z BMS board. This approach uses the same Python ``canopen`` library from the previous section, but wraps it in a ROS2 node to publish ``BatteryState`` messages.
 
 .. note::
 
@@ -302,7 +302,7 @@ Prerequisites
 
 * Ubuntu 22.04 or later
 * Docker installed on your PC
-* ADRD5161 board connected via CAN-to-USB adapter
+* ADRD5161-01Z board connected via CAN-to-USB adapter
 * CAN network configured (see Python canopen section above)
 
 Pull the ADI ROS2 Docker Image

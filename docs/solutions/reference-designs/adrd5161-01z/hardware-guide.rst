@@ -1,5 +1,5 @@
-ADRD5161 Hardware Guide
-=======================
+ADRD5161-01Z Hardware Guide
+===========================
 
 .. figure:: res/bms.png
 
