@@ -38,17 +38,28 @@ Prerequisites Template Variables
      - string
      - Reference ID for cross-linking (e.g., "adrv9002 prerequisites")
    * - ``chip_name``
-     - string
-     - Name of the chip used in the evaluation board (e.g., "ADRV9002",
-       "AD9081"). Rendered as an ADI product link.
+     - string or list
+     - Name(s) of the chip(s) used in the evaluation board.
+       Accepts a single string (e.g., ``ADRV9002``) or a list
+       for multiple chips (e.g., ``[AD9162, AD9625]``). Each
+       entry is rendered as an ADI product link, separated
+       by "/".
    * - ``eval_board``
-     - string
-     - Name of the ADI evaluation board (e.g., "EVAL-ADRV9002").
-       Rendered as an ADI product link.
+     - string or list
+     - Name(s) of the ADI evaluation board(s). Accepts a single
+       string (e.g., ``EVAL-ADRV9002``) or a list for multiple
+       boards (e.g., ``[AD-FMCOMMS11-EBZ, AD-FMCOMMS12-EBZ]``).
+       Each entry is rendered as an ADI product link, separated
+       by "/". The label automatically pluralizes to "boards"
+       when multiple entries are provided.
    * - ``carriers_ref``
      - string
      - Reference to the carriers/supported platforms section (e.g.,
        "adrv9002 carriers")
+   * - ``has_linux``
+     - boolean
+     - Whether the project uses Linux. When true, an SD card
+       requirement is included in the hardware prerequisites.
    * - ``has_rf_test_equipment``
      - boolean
      - Whether RF test equipment is required
@@ -72,6 +83,7 @@ Prerequisites Usage Example
       chip_name: ADRV9002
       eval_board: EVAL-ADRV9002
       carriers_ref: adrv9002 carriers
+      has_linux: true
       has_rf_test_equipment: true
       additional_hardware:
         - USB-JTAG programmer for FPGA configuration
@@ -83,7 +95,8 @@ Prerequisites Usage Example
 The prerequisites template automatically generates sections for:
 
 - **Hardware prerequisites**: Including the evaluation board, FPGA carrier
-  platform, connectivity options, and SD card requirements
+  platform, connectivity options, and SD card requirements (if Linux is
+  enabled)
 - **Software prerequisites**: Including required development tools
 
 2. ZedBoard Quick Start Template (``quickstart/zed.rst.jinja``)

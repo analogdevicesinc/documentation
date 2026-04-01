@@ -10,8 +10,10 @@ Hardware prerequisites
 -------------------------------------------------------------------------------
 
 {% if eval_board is defined and eval_board %}
-#. The :adi:`{{ chip_name }}`-based evaluation board:
-   :adi:`{{ eval_board }}`
+{% set chip_list = chip_name if chip_name is iterable and chip_name is not string else [chip_name] %}
+{% set board_list = eval_board if eval_board is iterable and eval_board is not string else [eval_board] %}
+#. The {% for chip in chip_list %}:adi:`{{ chip }}`{% if not loop.last %}/{% endif %}{% endfor %}-based evaluation board{% if board_list | length > 1 %}s{% endif %}:
+   {% for board in board_list %}:adi:`{{ board }}`{% if not loop.last %}/{% endif %}{% endfor %}
 {% endif %}
 #. An FPGA carrier platform. Our recommended ones can be found
    :ref:`here <{{ carriers_ref }}>`.
@@ -40,8 +42,10 @@ Hardware prerequisites
 {% if has_rf_test_equipment %}
 #. RF Test equipment
 {% endif %}
-#. An SD card with at least 16GB of memory (in case you're using Linux). You
-   should have received one when purchasing the evaluation board.
+{% if has_linux %}
+#. An SD card with at least 16 GB of memory, either provided with the evaluation 
+   board or required to be prepared by the user.
+{% endif %}
 {% if additional_hardware %}
 {% for item in additional_hardware %}
 #. {{ item }}
