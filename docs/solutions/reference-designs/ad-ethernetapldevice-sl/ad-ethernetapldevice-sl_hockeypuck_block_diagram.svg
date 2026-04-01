@@ -7,8 +7,8 @@
    viewBox="0 0 217.56538 155.36438"
    version="1.1"
    id="svg1459"
-   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
-   sodipodi:docname="APL_Hockeypuck_block_diagram_nomargin_web.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="APL_Hockeypuck_block_diagram_nomargin_web_noMAXQ.svg"
    inkscape:export-filename="APL_Hockeypuck_block_diagram_web.png"
    inkscape:export-xdpi="599.95807"
    inkscape:export-ydpi="599.95807"
@@ -27,12 +27,12 @@
      inkscape:document-units="mm"
      showgrid="true"
      inkscape:zoom="2.8284272"
-     inkscape:cx="401.99019"
-     inkscape:cy="266.2257"
-     inkscape:window-width="3136"
-     inkscape:window-height="1327"
-     inkscape:window-x="309"
-     inkscape:window-y="25"
+     inkscape:cx="421.61241"
+     inkscape:cy="372.29171"
+     inkscape:window-width="3130"
+     inkscape:window-height="1319"
+     inkscape:window-x="310"
+     inkscape:window-y="30"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      fit-margin-top="0"
@@ -957,25 +957,6 @@
          style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
          d="M 5.77,0 -2.88,5 V -5 Z"
          id="path2557-6-4-9-0-9-5" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker2559-9-04-9-4"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="TriangleStart"
-       markerWidth="5.3244081"
-       markerHeight="6.155385"
-       viewBox="0 0 5.3244081 6.1553851"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path2557-5-5-3-3" />
     </marker>
     <marker
        style="overflow:visible"
@@ -3119,42 +3100,32 @@
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';stroke:none;stroke-width:0.298"
          x="244.05501"
          y="83.351463">x2</tspan></text>
-    <g
-       id="g3506-8-8-8"
-       transform="translate(100.0984,75.140101)"
-       style="fill:#80a9ff;fill-opacity:1;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none">
-      <rect
-         style="fill:#aaccff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
-         id="rect1926-1-7-2-4"
-         width="17.462"
-         height="7.4083333"
-         x="152.28102"
-         y="78.15287" />
-      <text
-         xml:space="preserve"
-         style="font-size:2.82081px;font-family:Barlow;-inkscape-font-specification:Barlow;fill:#80a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
-         x="160.9108"
-         y="81.777496"
-         id="text1930-7-0-7-2"
-         transform="scale(1.0005091,0.99949115)"><tspan
-           sodipodi:role="line"
-           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
-           x="160.9108"
-           y="81.777496"
-           id="tspan1932-7-8-7-2">ADP151</tspan></text>
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5032-30);marker-end:url(#marker5032-30)"
-         d="m 75.551855,44.550781 -2e-6,12.435416 h 23.283333 v 14.2875 l 2.381254,10e-7"
-         id="path8468"
-         sodipodi:nodetypes="ccccc" />
-      <rect
-         style="fill:#aaccff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
-         id="rect1926-1-7-2-4-0"
-         width="17.462"
-         height="7.4083333"
-         x="151.96652"
-         y="62.835541" />
-    </g>
+    <rect
+       style="fill:#aaccff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1926-1-7-2-4"
+       width="17.462"
+       height="7.4083333"
+       x="252.37943"
+       y="153.29297" />
+    <text
+       xml:space="preserve"
+       style="font-size:2.82081px;font-family:Barlow;-inkscape-font-specification:Barlow;fill:#80a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
+       x="260.95825"
+       y="156.95586"
+       id="text1930-7-0-7-2"
+       transform="scale(1.0005091,0.99949115)"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
+         x="260.95825"
+         y="156.95586"
+         id="tspan1932-7-8-7-2">ADP151</tspan></text>
+    <rect
+       style="fill:#aaccff;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1926-1-7-2-4-0"
+       width="17.462"
+       height="7.4083333"
+       x="252.06493"
+       y="137.97565" />
     <text
        xml:space="preserve"
        style="font-size:2.82081px;font-family:Barlow;-inkscape-font-specification:Barlow;fill:#1c2224;fill-opacity:1;stroke:#000000;stroke-width:0.29785;stroke-dasharray:none"
@@ -3210,8 +3181,8 @@
          y="119.41269"
          id="tspan2063-9-7-24-6-4">SUP_3.3V</tspan></text>
     <path
-       style="fill:none;fill-opacity:0.5;stroke:#000000;stroke-width:0.409;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker5032-30-0);marker-end:url(#Arrow1Lstart)"
-       d="m 178.32916,119.85625 v 7.9375 h 23.01875"
+       style="fill:none;fill-opacity:0.5;stroke:#000000;stroke-width:0.469873;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker5032-30-0);marker-end:url(#Arrow1Lstart)"
+       d="m 177.99241,119.99557 v 10.51295 h 22.93795"
        id="path5513-7-0"
        sodipodi:nodetypes="ccc" />
     <g
@@ -3307,24 +3278,24 @@
     <text
        xml:space="preserve"
        style="font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:Barlow;text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.198;stroke-dasharray:none"
-       x="191.24734"
-       y="127.13387"
+       x="190.87317"
+       y="133.49489"
        id="text2034-8-4-3-8-1-5-9"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none;stroke-opacity:1"
-         x="191.24734"
-         y="127.13387"
+         x="190.87317"
+         y="133.49489"
          id="tspan2063-9-7-2-9-8-1-1">RESET_OUT</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:Barlow;text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.198;stroke-dasharray:none"
-       x="192.83482"
-       y="121.27995"
+       x="191.05748"
+       y="126.61198"
        id="text2034-8-4-3-8-1-5-9-1"><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none;stroke-opacity:1"
-         x="192.83482"
-         y="121.27995"
+         x="191.05748"
+         y="126.61198"
          id="tspan2063-9-7-2-9-8-1-1-4">I2C/WATCHDOG</tspan></text>
     <g
        id="g3506-0-8"
@@ -3707,8 +3678,8 @@
          y="163.97047"
          id="tspan181122">x2</tspan></text>
     <path
-       style="fill:none;fill-opacity:0.5;stroke:#000000;stroke-width:0.409004;stroke-dasharray:none;marker-start:url(#marker5032-30-0-3);marker-end:url(#RoundedArrow-1-5-6)"
-       d="m 182.03333,119.85625 v 3.175 h 18.78542"
+       style="fill:none;fill-opacity:0.5;stroke:#000000;stroke-width:0.42031;stroke-dasharray:none;marker-start:url(#marker5032-30-0-3);marker-end:url(#RoundedArrow-1-5-6)"
+       d="m 182.07854,119.92184 v 3.36858 h 18.69836"
        id="path5513-7-0-7"
        sodipodi:nodetypes="ccc" />
     <path
@@ -3932,77 +3903,6 @@
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.298;stroke-dasharray:none;marker-end:url(#marker2559-2-1-5-7-1-6)"
        d="m 133.87916,96.308331 h 5.42677"
        id="path3192-3-4-7-1-8-7" />
-    <g
-       id="g3506-0-8-3"
-       style="fill:#80a9ff;fill-opacity:1"
-       transform="translate(50.918975,67.731716)">
-      <rect
-         style="fill:#80a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.29785;stroke-dasharray:none"
-         id="rect1926-1-73-0-3"
-         width="16.404167"
-         height="11.807083"
-         x="152.28102"
-         y="72.861198" />
-      <text
-         xml:space="preserve"
-         style="font-size:2.82081px;font-family:Barlow;-inkscape-font-specification:Barlow;fill:#80a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.29785;stroke-dasharray:none"
-         x="160.86826"
-         y="73.268349"
-         id="text1930-7-1-7-4"
-         transform="scale(1.0005091,0.99949115)"><tspan
-           sodipodi:role="line"
-           style="text-align:center;text-anchor:middle;fill:#80a9ff;fill-opacity:1;stroke-width:0.29785"
-           x="160.86826"
-           y="73.268349"
-           id="tspan1932-7-7-8-3" /><tspan
-           sodipodi:role="line"
-           style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.29785"
-           x="160.86826"
-           y="76.794365"
-           id="tspan17179-5-3">MAXQ1065</tspan></text>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-size:2.11667px;font-family:Barlow;-inkscape-font-specification:Barlow;text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.198;stroke-dasharray:none"
-       x="211.87115"
-       y="147.7459"
-       id="text2034-8-4-3-8-1-5-9-0-6-4"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.11667px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none"
-         x="211.87115"
-         y="147.7459"
-         id="tspan9848-9">SECURITY</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.11667px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none"
-         x="211.87115"
-         y="150.39174"
-         id="tspan10483">CHIP</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:Barlow;text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.198;stroke-dasharray:none"
-       x="186.55098"
-       y="131.56564"
-       id="text2034-8-4-3-8-1-5-9-81"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.82222px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none;stroke-opacity:1"
-         x="186.55098"
-         y="131.56564"
-         id="tspan2063-9-7-2-9-8-1-1-5">SPI 2 Security</tspan></text>
-    <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.280115;stroke-dasharray:none;marker-end:url(#marker2559-9-04-9-4)"
-       d="m 225.31083,146.57916 h -4.11917"
-       id="path3192-36-9-5-06" />
-    <text
-       xml:space="preserve"
-       style="font-size:2.11667px;font-family:Barlow;-inkscape-font-specification:Barlow;text-align:center;text-anchor:middle;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.198;stroke-dasharray:none"
-       x="227.85449"
-       y="147.38182"
-       id="text2034-8-8-8-3-6-3"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:2.11667px;font-family:Barlow;-inkscape-font-specification:'Barlow Semi-Bold';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.198;stroke-dasharray:none"
-         x="227.85449"
-         y="147.38182"
-         id="tspan2063-9-0-9-1-6-6">3.3V</tspan></text>
     <g
        id="g46810-7"
        transform="translate(19.940244,-13.259326)">

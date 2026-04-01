@@ -25,13 +25,6 @@ Key Features
 
 - :adi:`MAX32690`  dual-core MCU (ARM Cortex-M4 with FPU + RISC-V co-processor)
 - External RAM (512 Mb) and Flash (64 Mb)
-- :adi:`MAXQ1065`  security co-processor for:
-
-  - Root-of-trust
-  - Mutual authentication
-  - Data confidentiality and integrity
-  - Secure boot and communications
-
 - 10BASE-T1L Ethernet via :adi:`ADIN1110`  MAC/PHY
 - Powered via Single-Pair Power over Ethernet (SPoE), :adi:` ADIN1100D2Z` recommended
 - Open-source software stack with drivers and example applications
@@ -44,7 +37,7 @@ Key Features
 
    AD-EthernetAPLDevice-SL Board
 
-.. figure:: apl_hockeypuck_block_diagram.svg
+.. figure:: ad-ethernetapldevice-sl_hockeypuck_block_diagram.svg
    :width: 450 px
    :align: right
    :alt: Simplified Block Diagram
@@ -58,14 +51,14 @@ Hardware Design Files
 ~~~~~~~~~~~~~~~~~~~~~
 
 - :download:`Schematic Power and Comms board <02-083152-01-b.pdf>`
-- :download:`Schematic Digital IS board <02-083153-01-d.pdf>`
-- :download:`Schematic Digital NON-IS board <02-084576-01-b.pdf>`
+- :download:`Schematic Digital IS board <02-083153-01-e.pdf>`
+- :download:`Schematic Digital NON-IS board <02-084576-01-c.pdf>`
 - :download:`Layout Power and Comms board <08-083152-01-b.pdf>`
 - :download:`Layout Digital IS board <08-083153-01-d.pdf>`
 - :download:`Layout Digital NON-IS board <08-084576-01-b.pdf>`
 - :download:`Bill of Materials Power and Comms board <05-083152-01-b.zip>`
-- :download:`Bill of Materials Digital IS board <05-083153-01-d.zip>`
-- :download:`Bill of Materials Digital NON-IS board <05-084576-01-b.zip>`
+- :download:`Bill of Materials Digital IS board <05-083153-01-e.csv.zip>`
+- :download:`Bill of Materials Digital NON-IS board <05-084576-01-c.csv.zip>`
 
 Package Contents
 ----------------
@@ -190,7 +183,6 @@ The software stack includes:
 - no-OS drivers and HAL
 - Example applications for ADCs, DACs, sensors
 - UART and Ethernet (10BASE-T1L) communication support
-- Secure boot and authentication via MAXQ1065
 - Zephyr RTOS support
 
 Complementary Documentation
