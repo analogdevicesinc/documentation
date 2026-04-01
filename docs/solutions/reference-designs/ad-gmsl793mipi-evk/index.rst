@@ -162,13 +162,6 @@ SoC Platform Connection
 - Verify pin compatibility and orientation.
 - Secure cable connections.
 
-Configuration Setup
-~~~~~~~~~~~~~~~~~~~
-
-- Set SW1 for appropriate link speed (3Gbps/6Gbps).
-- Configure SW2 for I2C device address if needed.
-- Set SW3 for operating mode (pixel/tunneling).
-
 Power-Up Sequence
 ~~~~~~~~~~~~~~~~~
 
