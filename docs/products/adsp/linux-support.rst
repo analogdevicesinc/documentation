@@ -35,6 +35,7 @@ Release versions include the upstream version and a ADI specific release number
       :git-linux:`Commits <commits/adsp-6.12.0-y+>`
       :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
       :git-linux:`Release 2 <releases/tag/6.12.0-2+>`
+      :git-linux:`Release 3 <releases/tag/6.12.0-3+>`
 
 ..
     - v6.12.38:
@@ -50,13 +51,21 @@ Release versions include the upstream version and a ADI specific release number
       :git-u-boot:`Commits <commits/adi-u-boot-2025.10.y+>`
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
       :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
+      :git-u-boot:`Release 3 <releases/tag/v2025.10-3+>`
     - v2026.01:
       :git-u-boot:`Commits <commits/adi-u-boot-2026.01.y+>`
 - :git-buildroot:`+`
+    - v2025.02 (LTS):
+      :git-buildroot:`Commits <commits/adi-2025.02-y+>`
     - v2025.05:
       :git-buildroot:`Commits <commits/adi-2025.05.x+>`
       :git-buildroot:`Release 1 <releases/tag/2025.05-1+>`
       :git-buildroot:`Release 2 <releases/tag/2025.05-2+>`
+    - v2026.02:
+      :git-buildroot:`Commits <commits/adi-2026.02-y+>`
+      :git-buildroot:`Release 1 <releases/tag/2026.02-1+>`
+      :git-buildroot:`Release 2 <releases/tag/2026.02-2+>`
+    - v2027.02 (LTS):
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
 - :git-openocd:`+`
