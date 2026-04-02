@@ -3,13 +3,6 @@
 EVAL-CN0363-PMDZ
 ================================================================================
 
-Dual-Channel Colorimeter with Synchronous Detection.
-
-.. image:: images/colorimeter_photo.png
-   :align: left
-
-.. clear-content::
-
 Overview
 --------------------------------------------------------------------------------
 
@@ -29,17 +22,6 @@ wavelengths. This forms the basis of many chemical analysis and
 environmental monitoring instruments used to measure concentrations and
 characterize materials through absorption spectroscopy.
 
-.. tip::
-
-   Further details of the circuit can be found in the circuit note
-   :adi:`CN0363`
-
-.. _eval-cn0363-pmdz-introduction:
-
-.. image:: images/cn0363_sch.jpg
-   :align: center
-   :width: 500
-
 A clock set to a user-programmable frequency modulates one of the
 three LED colors (R,G,B) with a constant current driver built around
 the :adi:`AD8615` op amp, the :adi:`ADG819` switch, and the
@@ -53,6 +35,28 @@ containers. The transimpedance amplifiers use the ADG633 single-pole,
 double-throw (SPDT) switches to select one of two transimpedance gains.
 The :adi:`AD7175-2` Σ-Δ ADC samples the voltage and sends the digital
 data to an FPGA for digital demodulation.
+
+Features:
+
+- Dual-channel colorimeter with synchronous detection
+- Modulated light source with three LED colors (R, G, B)
+- Programmable gain transimpedance amplifiers on each
+  channel
+- Very low noise, 24-bit sigma-delta ADC
+  (:adi:`AD7175-2`)
+- FPGA-based digital synchronous demodulation
+- Standard PMOD connector for FPGA interface
+- Ratiometric measurement (sample vs. reference)
+
+Applications:
+
+- Chemical analysis
+- Environmental monitoring
+- Absorption spectroscopy
+
+.. image:: images/colorimeter_photo.png
+   :align: center
+   :width: 500
 
 For a thorough circuit description, please visit
 :adi:`CN0363 Circuit Note
@@ -91,6 +95,19 @@ Table of contents
 #. Software:
 
    #. :ref:`Colorimeter application <eval-cn0363-pmdz-colorimeter>`
+
+#. Design with the :adi:`EVAL-CN0363-PMDZ`:
+
+   #. :external+hdl:ref:`cn0363` - HDL reference design
+
+#. :ref:`Help and Support <help-and-support>`
+
+Block diagram
+--------------------------------------------------------------------------------
+
+.. image:: images/cn0363_sch.jpg
+   :align: center
+   :width: 800
 
 Warning
 --------------------------------------------------------------------------------

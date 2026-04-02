@@ -27,6 +27,15 @@ operate with the following hardware and FPGA development system:
    board
 #. Ethernet connection for updating SD card
 
+Software prerequisites
+--------------------------------------------------------------------------------
+
+#. MicroSD Card imaged with :external+kuiper:doc:`Kuiper Linux <index>`
+#. A UART terminal (PuTTY/Tera Term/Minicom, etc.) configured for 115200 baud
+   rate (8N1)
+#. Boot files for your carrier platform (provided on the SD card or built
+   manually)
+
 More Information
 --------------------------------------------------------------------------------
 
