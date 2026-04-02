@@ -1,5 +1,7 @@
+.. _adrv9009-zu11eg synchronization:
+
 ADRV9009-ZU11EG Multi-SOM Synchronization
-=========================================
+==========================================
 
 Clock tree synchronization considerations
 -----------------------------------------
@@ -28,37 +30,47 @@ Reference distribution
    :align: center
    :width: 600
 
-A lower frequency reference is used between different levels in the clock tree (Inter-stage Frequency). All clock-chips in the hierarchy require its own local VCXO and this reference is used to lock the VCXO using PLL1 to the external reference. Any of the four available reference inputs ``CLKINx`` can be used in this mode.
+A lower frequency reference is used between different levels in the clock
+tree (Inter-stage Frequency). All clock-chips in the hierarchy require its
+own local VCXO and this reference is used to lock the VCXO using PLL1 to
+the external reference. Any of the four available reference inputs
+``CLKINx`` can be used in this mode.
 
-A additional ``SYNC`` signals is used to generate the synchronization event. If the ``SYNC`` pin transitions from 0 to 1 with sufficient setup/hold margin with respect to the VCXO, this synchronization event is deterministically carried through PLL2, up the timing chain through the N2 divider, and then to the master SYSREF timer. This mechanism of deterministic phase adjustment allows synchronization of the SYSREF timer and output phases of multiple HMC7044 devices. Please see the datasheet chapter “\ **Multichip Synchronization via PLL2**" For further details.
+A additional ``SYNC`` signals is used to generate the synchronization
+event. If the ``SYNC`` pin transitions from 0 to 1 with sufficient
+setup/hold margin with respect to the VCXO, this synchronization event is
+deterministically carried through PLL2, up the timing chain through the N2
+divider, and then to the master SYSREF timer. This mechanism of
+deterministic phase adjustment allows synchronization of the SYSREF timer
+and output phases of multiple HMC7044 devices. Please see the datasheet
+chapter “\ **Multichip Synchronization via PLL2**” For further details.
 
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                                                                                                                                                                 |
-+==========+======================================================================================================================================================================================================================================================================================+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-primary.dts`                                                                                                                                                          |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-secondary.dts`                                                                                                                                                        |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary.dts`                                                                                                                                                 |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary.dts`                                                                                                                                               |
-+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                   |
++==========+========================================================================================================================================+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-primary.dts`            |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-jesd204-fsm-multisom-secondary.dts`          |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary.dts`   |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary.dts` |
++----------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. warning::
 
-   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by `AD-SYNCHRONA14-EBZ <https://wiki.analog.com/resources/eval/user-guides/ad-synchrona14-ebz>`_ please see here: :git-linux:`linux/commit/ff537311d1fc7dc20d43a198b44007c22f2e9779 <commit/ff537311d1fc7dc20d43a198b44007c22f2e9779>`
+   Depending on the Linux/Devicetree version, the HMC7044 eval board got replaced by `AD-SYNCHRONA14-EBZ <https://wiki.analog.com/resources/eval/user-guides/ad-synchrona14-ebz>`_
+   please see here: :git-linux:`linux/commit/ff537311d1fc7dc20d43a198b44007c22f2e9779 <commit/ff537311d1fc7dc20d43a198b44007c22f2e9779>`
 
-   
    ::
-   
+
       arch: arm64: adrv9009-zu11eg: Update hmc7044_ext
       To match default AD-SYNCHRONA14-EBZ configuration:
-   
+
       CH8 - HMC7044 CLKOUT4 - CMOS
       CH10 - HMC7044 CLKOUT5 - LVPECL AC-COUPLED
       CH6 - HMC7044 CLKOUT6 - CMOS
       CH9 - HMC7044 CLKOUT12 - LVPECL AC-COUPLED
-   
 
 Clock distribution
 ~~~~~~~~~~~~~~~~~~
@@ -67,7 +79,14 @@ Clock distribution
    :align: center
    :width: 600
 
-The maximum frequency used in the system is generated by the topmost HMC7044 and then distributed throughout the entire clock tree (Inter-stage Frequency). This method bypasses the PLL1 and PLL2 of all clock chips below the TOP chip. All lower level clock-chips act as clock fanout buffers, where only the clock distribution network output dividers can be used. This method is referred as **clock distribution**. All lower level clock-chips receive their input clock via ``FIN``/CLKIN1 and are synced via ``RFSYNC``/CLKIN0.
+The maximum frequency used in the system is generated by the topmost
+HMC7044 and then distributed throughout the entire clock tree
+(Inter-stage Frequency). This method bypasses the PLL1 and PLL2 of all
+clock chips below the TOP chip. All lower level clock-chips act as clock
+fanout buffers, where only the clock distribution network output dividers
+can be used. This method is referred as **clock distribution**. All lower
+level clock-chips receive their input clock via ``FIN``/CLKIN1 and are
+synced via ``RFSYNC``/CLKIN0.
 
 .. tip::
 
@@ -76,30 +95,31 @@ The maximum frequency used in the system is generated by the topmost HMC7044 and
    needs exactly 250.000MSPS. This becomes possible by providing a 500.000MHz or
    1000.000MHz external clock.
 
-Depending on your :doc:`ADRV2CRR-FMC </solutions/reference-designs/adrv9009zu11eg/adrv2crr-fmc_carrier_board>` Carrier Board Hardware revision following stuffing options need to be checked. These are required to route ``RFSYNC`` DC coupled to the from SMA connectors J5 RFSYNC_P, J6 RFSYNC_N to the HMC7044 ``RFSYNC`` input.
+Depending on your :ref:`adrv9009-zu11eg carrier-board` Carrier Board
+Hardware revision following stuffing options need to be checked. These are
+required to route ``RFSYNC`` DC coupled to the from SMA connectors J5 RFSYNC_P,
+J6 RFSYNC_N to the HMC7044 ``RFSYNC`` input.
 
 .. important::
 
    Rev C:
 
-   
    -  Replace C18, C19, C236, C240 with 0 Ohm resistors
    -  Replace C289, C290 with 0 Ohm resistors
    -  Unload 0 Ohm resistors from location R77, R112 and insert to R110, R111
-   
+
    Rev C.1:
-   
+
    -  Replace C289, C290 with 0 Ohm resistors
    -  Unload 0 Ohm resistors from location R77, R112 and insert to R110, R111
-   
 
-+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Function | File                                                                                                                                                                                                                                                                                                     |
-+==========+==========================================================================================================================================================================================================================================================================================================+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary-clockdist.dts`                                                                                                                                                           |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary-clockdist.dts`                                                                                                                                                         |
-+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| Function | File                                                                                                                                             |
++==========+==================================================================================================================================================+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-primary-clockdist.dts`   |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| dts      | :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb-sync-fmcomms8-jesd204-fsm-multisom-secondary-clockdist.dts` |
++----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Hardware setup
 --------------
@@ -108,22 +128,20 @@ Required equipment
 ~~~~~~~~~~~~~~~~~~
 
 -  :adi:`EVAL-HMC7044` circuit evaluation board
--  2 x :doc:`ADRV9009-ZU11EG RF System-on-Module </solutions/reference-designs/adrv9009zu11eg/index>`
+-  2 x :doc:`ADRV9009-ZU11EG RF System-on-Module </solutions/reference-designs/adrv9009-zu11eg/index>`
 
 EVAL-HMC7044 modifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. container:: box bggreen
+.. warning::
 
-   There is no over-voltage or reverse polarity protection
+   There is no over-voltage or reverse polarity protection. Connect a 5V 1A
+   power supply to TP17(GND) and TP14(VCC).
 
-   
-   ::
-   
-      Connect a 5V 1A power supply to TP17(GND) and TP14(VCC)
-   
+.. image:: images/hmc7044_4.png
+   :width: 800
 
-|image1| The following changes need to be made on the evaluation board:
+The following changes need to be made on the evaluation board:
 
 -  Populate J4 and J20 SMA (in case they aren't)
 -  Replace C28 and C59 with 0 ohm resistors
@@ -132,7 +150,11 @@ EVAL-HMC7044 modifications
 SPI connection to the carrier board
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-|image2| The following connections between connectors P25(carrier) and J1(clk) need to be done.
+.. image:: images/hmc7044_1.jpg
+   :width: 800
+
+The following connections between connectors P25(carrier) and
+J1(clk) need to be done.
 
 === == ========
 P25 J1 Function
@@ -149,8 +171,8 @@ RefCLK and Sync connections to the carrier boards
 
 ::
 
-         -CLKOUT5_P and CLKOUT6_P connect to the SYNC SMAs on the carrier
-         -CLKOUT0 and CLKOUT2 connect to the REFCLK SMAs on the carrier
+   -CLKOUT5_P and CLKOUT6_P connect to the SYNC SMAs on the carrier
+   -CLKOUT0 and CLKOUT2 connect to the REFCLK SMAs on the carrier
 
 .. important::
 
@@ -165,7 +187,7 @@ RefCLK and Sync connections to the carrier boards
 Software
 --------
 
--  `Analog Devices Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
+-  :external+kuiper:ref:`Analog Devices Kuiper Linux <use-kuiper-image>`
 
 .. tip::
 
@@ -187,16 +209,20 @@ FPGAs.
 
 The System Clocking Tree Diagram is located here:
 
-|ADRV9009-ZU11EG Clock Tree|
+.. image:: images/adrv9009_rfsom_clocking_tree.png
+   :width: 400
 
-During multi-chip synchronization (MCS), which is a feature of the ADRV9009s, all baseband data from the converters is synchronized across transceiver chips. This requires specific sysrefs to be captured at each of the transceiver simultaneously. This will also create deterministic phase differences between transceivers, when RFPLL sync is enabled, as well. The individual API rights to the transceivers, clock chips, and their sequences are detailed in the rx method of the python class :git-pyadi-iio:`adi/adrv9009_zu11eg_multi.py`.
+During multi-chip synchronization (MCS), which is a feature of the ADRV9009s,
+all baseband data from the converters is synchronized across transceiver chips.
+This requires specific sysrefs to be captured at each of the transceiver
+simultaneously. This will also create deterministic phase differences between
+transceivers, when RFPLL sync is enabled, as well. The individual API rights to
+the transceivers, clock chips, and their sequences are detailed in the rx method
+of the python class :git-pyadi-iio:`adi/adrv9009_zu11eg_multi.py`.
 
-For more information on:
-
--  `Clock Tree Setup and Synchronization <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
--  `Synchronizing distributed multi-topology systems <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
-
-Please visit the `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_ page
+For more information, visit the
+:dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+page.
 
 .. important::
 
@@ -204,14 +230,14 @@ Please visit the `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.a
    must not be accessed via their regular API, since they are not yet fully
    initialized.
 
-   
    You need to make sure:
-   
-   -  OSC doesn't start automatically remove it from /home/analog/.config/autostart/ADI IIO Oscilloscope.
-   -  No other script starts automatically which tries to access the adrv9009-phy IIO devices.
+
+   -  OSC doesn't start automatically remove it from
+      /home/analog/.config/autostart/ADI IIO Oscilloscope.
+   -  No other script starts automatically which tries to access the
+      adrv9009-phy IIO devices.
    -  Please also take into consideration that both boards need to have unique
       HW-MAC addresses, otherwise strange network issues will happen.
-   
 
 Synchronization at the application layer
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,8 +246,8 @@ Synchronization at the application layer across multiple FPGAs is achieved using
 the external synchronization feature of the transport layer cores and using the
 SYSREF signal as the external synchronization signal.
 
--  `ADC JESD204B/C Transport Peripheral - External synchronization <https://wiki.analog.com/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>`_
--  `DAC JESD204B/C Transport Peripheral - External synchronization <https://wiki.analog.com/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>`_
+  - :external+hdl:ref:`ADC JESD204B/C Transport Peripheral - External synchronization <ad_ip_jesd204_tpl_adc>`
+  - :external+hdl:ref:`DAC JESD204B/C Transport Peripheral - External synchronization <ad_ip_jesd204_tpl_dac>`
 
 Once the JESD links are up the SYSREF pulses are no longer required from the
 JESD link perspective. However later assertions of the SYSREF pulses must
@@ -442,80 +468,65 @@ Running the software
 Troubleshooting
 ^^^^^^^^^^^^^^^
 
-On the primary setup check the status of the external clockchip. This chip reporting status ``Unsynchronized`` is expected, since this chip is only frequency locked against a 30.720MHz reference clock.
+On the primary setup check the status of the external clockchip. This
+chip reporting status ``Unsynchronized`` is expected, since this chip is
+only frequency locked against a 30.720MHz reference clock.
 
-.. container:: box bggreen
+.. shell::
+   :show-user:
 
-   This specifies any shell prompt running on the target
-
-   
-   ::
-   
-      root@analog:~# iio_attr -D hmc7044-ext status
-      --- PLL1 ---
-      Status: Locked
-      Using:  CLKIN1 @ 30720000 Hz
-      PFD:    3840 kHz
-      --- PLL2 ---
-      Status: Locked (Unsynchronized)
-      Frequency:      2949120000 Hz (Autocal cap bank value: 13)
-      SYSREF Status:  Valid & Locked
-      SYNC Status:    Unsynchronized
-      Lock Status:    PLL1 & PLL2 Locked
-      root@analog:~#
-   
+   root@analog:~# iio_attr -D hmc7044-ext status
+   --- PLL1 ---
+   Status: Locked
+   Using:  CLKIN1 @ 30720000 Hz
+   PFD:    3840 kHz
+   --- PLL2 ---
+   Status: Locked (Unsynchronized)
+   Frequency:      2949120000 Hz (Autocal cap bank value: 13)
+   SYSREF Status:  Valid & Locked
+   SYNC Status:    Unsynchronized
+   Lock Status:    PLL1 & PLL2 Locked
 
 On the primary and secondary setup check the status of all clockchips in the
 topology.
 
-.. container:: box bggreen
+.. shell::
+   :show-user:
 
-   This specifies any shell prompt running on the target
+   root@analog:~# iio_attr -D hmc7044-car status
+   --- PLL1 ---
+   Status: Locked
+   Using:  CLKIN1 @ 30720000 Hz
+   PFD:    7680 kHz
+   --- PLL2 ---
+   Status: Locked (Synchronized)
+   Frequency:      2949120000 Hz (Autocal cap bank value: 14)
+   SYSREF Status:  Valid & Locked
+   SYNC Status:    Synchronized
+   Lock Status:    PLL1 & PLL2 Locked
 
-   
-   ::
-   
-      root@analog:~# iio_attr -D hmc7044-car status
-      --- PLL1 ---
-      Status: Locked
-      Using:  CLKIN1 @ 30720000 Hz
-      PFD:    7680 kHz
-      --- PLL2 ---
-      Status: Locked (Synchronized)
-      Frequency:      2949120000 Hz (Autocal cap bank value: 14)
-      SYSREF Status:  Valid & Locked
-      SYNC Status:    Synchronized
-      Lock Status:    PLL1 & PLL2 Locked
-   
-      root@analog:~# iio_attr -D hmc7044 status
-      --- PLL1 ---
-      Status: Locked
-      Using:  CLKIN1 @ 30720000 Hz
-      PFD:    30720 kHz
-      --- PLL2 ---
-      Status: Locked (Synchronized)
-      Frequency:      2949120000 Hz (Autocal cap bank value: 14)
-      SYSREF Status:  Valid & Locked
-      SYNC Status:    Synchronized
-      Lock Status:    PLL1 & PLL2 Locked
-   
-      root@analog:~# iio_attr -D hmc7044-fmc status
-      --- PLL1 ---
-      Status: Locked
-      Using:  CLKIN1 @ 30720000 Hz
-      PFD:    30720 kHz
-      --- PLL2 ---
-      Status: Locked (Synchronized)
-      Frequency:      2949120000 Hz (Autocal cap bank value: 14)
-      SYSREF Status:  Valid & Locked
-      SYNC Status:    Synchronized
-      Lock Status:    PLL1 & PLL2 Locked
-      root@analog:~#
-   
+   root@analog:~# iio_attr -D hmc7044 status
+   --- PLL1 ---
+   Status: Locked
+   Using:  CLKIN1 @ 30720000 Hz
+   PFD:    30720 kHz
+   --- PLL2 ---
+   Status: Locked (Synchronized)
+   Frequency:      2949120000 Hz (Autocal cap bank value: 14)
+   SYSREF Status:  Valid & Locked
+   SYNC Status:    Synchronized
+   Lock Status:    PLL1 & PLL2 Locked
 
-.. |image1| image:: images/hmc7044_4.png
-   :width: 800
-.. |image2| image:: images/hmc7044_1.jpg
-   :width: 800
-.. |ADRV9009-ZU11EG Clock Tree| image:: images/adrv9009_rfsom_clocking_tree.png
-   :width: 400
+   root@analog:~# iio_attr -D hmc7044-fmc status
+   --- PLL1 ---
+   Status: Locked
+   Using:  CLKIN1 @ 30720000 Hz
+   PFD:    30720 kHz
+   --- PLL2 ---
+   Status: Locked (Synchronized)
+   Frequency:      2949120000 Hz (Autocal cap bank value: 14)
+   SYSREF Status:  Valid & Locked
+   SYNC Status:    Synchronized
+   Lock Status:    PLL1 & PLL2 Locked
+
+

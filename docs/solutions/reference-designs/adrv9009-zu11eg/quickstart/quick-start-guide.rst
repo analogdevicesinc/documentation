@@ -1,7 +1,9 @@
-ADRV9009-ZU11EG Quick Start Guide
-=================================
+.. _adrv9009-zu11eg quick-start:
 
-.. image:: images/adrv9009-zu11g-quick-setup.png
+ADRV9009-ZU11EG Quick Start Guide
+==================================
+
+.. image:: ../images/adrv9009-zu11g-quick-setup.png
    :align: center
    :width: 600
 
@@ -10,7 +12,7 @@ set things up) on how to setup the ADRV9009-ZU11EG on:
 
 -  :adi:`ADRV2CRR-FMC`
 
-If you want to use it with FMCOMMS8, please refer to `FMCOMMS8 Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms8-ebz/quick-start-guide>`_
+If you want to use it with FMCOMMS8, please refer to :ref:`adrv9009-zu11eg fmcomms8-quick-start`
 
 Instructions on how to build the ZynqMP / MPSoC Linux kernel and devicetrees
 from source can be found here:
@@ -54,20 +56,23 @@ Testing
 
 .. esd-warning::
 
--  Connect the ``ADRV9009-ZU11EG`` System on Module to the ``ADRV2CRR-FMC`` carrier board.
+-  Connect the ``ADRV9009-ZU11EG`` System on Module to the
+   ``ADRV2CRR-FMC`` carrier board.
 -  Connect the 12V Power Supply to ``P11``
 -  Connect USB UART ``P8`` (Micro USB) to your host PC.
 -  Connect fan to ``P9``
 -  Insert SD card into socket ``P15``.
--  Configure ADRV2CRR-FMC for SD BOOT using ``S13``, ``S14``, ``S15``, ``S16``. See picture below.
+-  Configure ADRV2CRR-FMC for SD BOOT using ``S13``, ``S14``, ``S15``,
+   ``S16``. See picture below.
 
-.. image:: images/adrv2crr_rev_a_and_b_sw_jmp_settings.jpg
+.. image:: ../images/adrv2crr_rev_a_and_b_sw_jmp_settings.jpg
    :align: center
    :width: 800
 
--  Configure ``ADRV2CRR-FMC`` for SD BOOT from carrier using ``S9``. See picture below.
+-  Configure ``ADRV2CRR-FMC`` for SD BOOT from carrier using ``S9``.
+   See picture below.
 
-.. image:: images/adrv9009-zu11g-sd-card-select.png
+.. image:: ../images/adrv9009-zu11g-sd-card-select.png
    :align: center
    :width: 400
 
@@ -83,25 +88,22 @@ Messages
 
    This specifies any shell prompt running on the target
 
-   
-
    .. collapsible:: Boot log (click to expand)
 
          ::
-   
+
             Xilinx Zynq MP First Stage Boot Loader
             Release 2021.1   Aug  3 2022  -  11:00:01
-   
-   
+
             U-Boot 2018.01-21439-gd244ce5 (Mar 28 2021 - 13:30:43 +0100) Analog Devices Inc. ADR9009-ZU11EG, Build: jenkins-development-build_uboot-3
-   
+
             I2C:   ready
             DRAM:  4 GiB
             EL Level:       EL2
             Chip ID:        zu11eg
             MMC:   sdhci@ff170000: 0 (SD)
             ** Warning - bad CRC, using default environment
-   
+
             In:    serial@ff010000
             Out:   serial@ff010000
             Err:   serial@ff010000
@@ -109,11 +111,11 @@ Messages
             Net:   ZYNQ GEM: ff0b0000, phyaddr 1, interface sgmii
             i2c_mux_set: could not set mux: id: 5 chip: 74 channel: 0
             I2C EEPROM MAC address read failed
-   
+
             Warning: ethernet@ff0b0000 (eth1) using random MAC address - c6:bd:2a:d9:e2:01
             eth1: ethernet@ff0b0000ZYNQ GEM: ff0e0000, phyaddr 0, interface rgmii-id
             I2C EEPROM MAC address read failed
-   
+
             Warning: ethernet@ff0e0000 (eth0) using random MAC address - aa:cd:e8:38:80:de
             , eth0: ethernet@ff0e0000
             Hit any key to stop autoboot:  0
@@ -147,9 +149,9 @@ Messages
             ## Flattened Device Tree blob at 04000000
                Booting using the fdt blob at 0x4000000
                Loading Device Tree to 000000000ffe9000, end 000000000ffff535 ... OK
-   
+
             Starting kernel ...
-   
+
             [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
             [    0.000000] Linux version 5.10.0-98248-g1bbe32fa5182 (jenkins@romlxbuild1.adlk.analog.com) (aarch64-xilinx-linux-gcc.real (GCC) 10.2.0, 2
             [    0.000000] Machine model: Analog Devices ADRV9009-ZU11EG Rev.B
@@ -581,9 +583,9 @@ Messages
             [   18.494456] systemd[1]: System time before build time, advancing clock.
             [   18.533602] systemd[1]: systemd 247.3-7+rpi1 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRY)
             [   18.556807] systemd[1]: Detected architecture arm64.
-   
+
             Welcome to Kuiper GNU/Linux 11.2 (bullseye)!
-   
+
             [   18.581954] systemd[1]: Set hostname to <analog>.
             [   19.969929] systemd[1]: /lib/systemd/system/plymouth-start.service:16: Unit configured to use KillMode=none. This is unsafe, as it disab.
             [   20.190835] systemd[1]: Queued start job for default target Graphical Interface.
@@ -809,22 +811,21 @@ Messages
                      Starting Start USB gadget scheme...
             [  OK  ] Started OpenBSD Secure Shell server.
             [  OK  ] Started LSB: Switch to ond�…(unless shift key is pressed).
-   
+
             Raspbian GNU/Linux 11 analog ttyPS0
-   
+
             analog login: root (automatic login)
-   
+
             Linux analog 5.10.0-98248-g1bbe32fa5182 #1143 SMP Wed Aug 3 18:38:55 IST 2022 aarch64
-   
+
             The programs included with the Debian GNU/Linux system are free software;
             the exact distribution terms for each program are described in the
             individual files in /usr/share/doc/*/copyright.
-   
+
             Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
             permitted by applicable law.
             Last login: Wed Aug 17 12:17:14 BST 2022 on ttyPS0
             root@analog:~#
-   
 
 Make sure all devices are present
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -833,9 +834,8 @@ Make sure all devices are present
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# iio_info | grep iio:device
               iio:device0: ams
               iio:device1: hmc7044-car
@@ -846,7 +846,6 @@ Make sure all devices are present
               iio:device6: axi-adrv9009-rx-obs-hpc (buffer capable)
               iio:device7: axi-adrv9009-tx-hpc (buffer capable)
               iio:device8: axi-adrv9009-rx-hpc (buffer capable)
-   
 
 Check clock chip lock status (SoM)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -858,9 +857,8 @@ Check clock chip lock status (SoM)
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# iio_attr -q -D hmc7044 status
       --- PLL1 ---
       Status: Locked
@@ -873,7 +871,6 @@ Check clock chip lock status (SoM)
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
       root@analog:~#
-   
 
 Check clock chip lock status (Carrier)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -885,9 +882,8 @@ Check clock chip lock status (Carrier)
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# iio_attr -q -D hmc7044-car status
       --- PLL1 ---
       Status: Locked
@@ -900,7 +896,6 @@ Check clock chip lock status (Carrier)
       SYNC Status:    Unsynchronized
       Lock Status:    PLL1 & PLL2 Locked
       root@analog:~#
-   
 
 Check JESD204B Link Status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -911,18 +906,16 @@ Using the `JESD204B Status Utility <https://wiki.analog.com/resources/tools-soft
 
    This specifies any shell prompt running on the target
 
-   
    ::
-   
+
       root@analog:~# TERM=vt100 jesd_status -s
-   
-   
+
         (DEVICES) Found 3 JESD204 Link Layer peripherals
-   
+
         (0): 84a30000.axi-jesd204-tx
         (1): 84a50000.axi-jesd204-rx
         (2): 84a70000.axi-jesd204-rx
-   
+
         (STATUS)               (0)          (1)        (2)
         Link is                 enabled      enabled    enabled
         Link Status             DATA         DATA       DATA
@@ -934,7 +927,7 @@ Using the `JESD204B Status Utility <https://wiki.analog.com/resources/tools-soft
         SYSREF captured         Yes          Yes        Yes
         SYSREF alignment error  No           No         No
         SYNC~                   deasserted
-   
+
         (LANE STATUS)                   (1)                          (2)
         Lane#                             0      1      2      3       0      1      2      3
         Errors                            0      0      0      0       0      0      0      0
@@ -942,7 +935,6 @@ Using the `JESD204B Status Utility <https://wiki.analog.com/resources/tools-soft
         CGS State                         DATA   DATA   DATA   DATA    DATA   DATA   DATA   DATA
         Initial Frame Sync                Yes    Yes    Yes    Yes     Yes    Yes    Yes    Yes
         Initial Lane Alignment Sequence   Yes    Yes    Yes    Yes     Yes    Yes    Yes    Yes
-   
 
 Video Configuration
 -------------------
@@ -968,5 +960,5 @@ address of the target in the popup window.
 
    |image1|
 
-.. |image1| image:: images/shutdown.png
+.. |image1| image:: ../images/shutdown.png
    :width: 300
