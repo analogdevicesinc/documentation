@@ -83,7 +83,7 @@ System Architecture
 
 - 5V input power received via USB-C connector or via the 6-pin connector
 - LTC3303 regulator converts 5V to required board voltages: 1.8V and 1.2V
-- PoC circuit using LT8337JV generates 12V output for camera power
+- PoC circuit using LT8337 generates 12V output for camera power
 - Power delivered to camera through coaxial cable
 
 Specifications
@@ -174,13 +174,6 @@ SoC Platform Connection
 - Connect AD-GMSL716MIPI-EVK board MIPI output to SoC platform CSI-2 input.
 - Verify pin compatibility and orientation.
 - Secure cable connections.
-
-Configuration Setup
-~~~~~~~~~~~~~~~~~~~
-
-- Set SW1 for appropriate link speed (3Gbps/6Gbps).
-- Configure SW2 for I2C device address if needed.
-- Set SW3 for operating mode (pixel/tunneling).
 
 Power-Up Sequence
 ~~~~~~~~~~~~~~~~~
