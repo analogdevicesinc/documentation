@@ -20,8 +20,9 @@ to multiple platforms for different application scenarios:
 **Controller Boards** - For PC-based evaluation and control:
 
 The evaluation board connects to system demonstration platform (SDP) controller
-boards via Arduino connectors, providing USB connectivity to a Windows PC running
-the ACE Plugin software for easy configuration, data capture, and analysis.
+boards via Arduino connectors, providing USB connectivity to a Windows PC
+running the ACE Plugin software for easy configuration, data capture, and
+analysis.
 
 The carriers we support are:
 
@@ -66,4 +67,4 @@ Connection overview:
 
 .. toctree::
 
-      AD4170-4 on SDP-K1 <sdp_k1>
+   AD4170-4 on SDP-K1 <sdp_k1>

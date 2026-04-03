@@ -42,7 +42,8 @@ Connection Procedure:
 
 4. **Verify default link/jumper positions** on the evaluation board
    (see Hardware Guide section of :ref:`ad4170 user-guide`)
-5. **Connect USB-C cable** to the EVAL-SDP-CK1Z board (after software installation)
+5. **Connect USB-C cable** to the EVAL-SDP-CK1Z board (after software 
+   installation)
 6. **Allow Windows to detect and install drivers** if needed
 7. **Launch ACE Plugin** software to begin evaluation
 
@@ -84,13 +85,13 @@ Install in this order:
 
 1. **ACE Software** (Base platform)
 2. **SDP Controller Drivers** (Universal for all SDP boards)
-3. **AD4170 Plugin** (Device-specific plugin)
+3. **AD4170 Plugin** (Device-specific plugin)http://beta-tools.analog.com/virtualeval/
 
 Software Download Locations:
 
 - :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
-- :adi:`SDP Controller Drivers <swdownloads.analog.com/ACE/SDP/SDPDrivers.exe>`
-- :adi:`AD4170 ACE Plugin <media/en/evaluation-boards-kits/evaluation-software/AD4170>`
+- :download:`SDP Controller Drivers <https://swdownloads.analog.com/ACE/SDP/SDPDrivers.exe>`
+- :download:`AD4170 ACE Plugin <https://www.analog.com/plugins/ace/board.ad417xiio.1.2026.2131713.acezip>`
 
 Step 1: Install ACE Software
 -------------------------------------------------------------------------------
@@ -552,7 +553,7 @@ ADI provides a Virtual Evaluation Tool for software-only exploration:
 
 1. Open your browser and navigate to:
 
-   `Virtual Eval Tool <http://beta-tools.analog.com/virtualeval/>`_
+   `Virtual Eval Tool <https://beta-tools.analog.com/virtualeval/>`_
 
    OR
 

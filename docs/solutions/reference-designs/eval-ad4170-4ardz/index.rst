@@ -51,7 +51,7 @@ Applications:
 - Instrumentation
 - Weigh scale
 
-.. image:: ./images/eval-ad4170-4.png
+.. image:: ./images/eval-ad4170-4.webp
    :align: center
    :width: 600
 
