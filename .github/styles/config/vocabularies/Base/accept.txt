@@ -79,7 +79,9 @@ PTYs
 RPi|rpi
 RTDs
 RTOSes
+SHARC
 Scarthgap
+SPU(s)?
 SDRangel
 SDRsharp
 STMicroelectronics
