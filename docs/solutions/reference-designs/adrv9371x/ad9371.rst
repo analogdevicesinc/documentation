@@ -1,6 +1,0 @@
-AD9371 Block Diagram
-====================
-
-.. image:: images/mykonos_block_diagram_v2.png
-   :alt: AD9371
-   :align: center

@@ -1,50 +1,57 @@
-ADRV9371x Arria 10 GX Quick Start Guide
-=======================================
+Arria10 GX Quick Start Guide
+================================================================================
 
-.. image:: ../images/arria10-fpga_adrv9371.jpg
-   :alt: arria10-fpga_adrv9371.jpg
-   :align: center
-   :width: 330
+.. image:: ../images/arria10-fpga-kit.jpg
+   :width: 400
+
+
 
 .. warning::
 
-   \ NOTE: Support for the A10GX carrier is discontinued and will not be supported in future releases. Last pre-build images can be found at :doc:`Nios2 Linux on the Altera FPGA Development Boards </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>` page.
+   Support for the A10GX carrier is discontinued and will not be
+   supported in future releases. Last pre-build images can be found at
+   :dokuwiki:`Nios2 Linux on the Altera FPGA Development Boards </resources/tools-software/linux-drivers/platforms/nios2>`
+   page.
 
-This guide provides some quick instructions on how to setup the ADRV9371x on `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_
+This guide provides some quick instructions on how to setup the ADRV9371x on
+`A10GX <https://www.altera.com/products/devkit/po-3017/arria-10-gx-fpga-development-kit>`_
 
 Prerequisites
--------------
+--------------------------------------------------------------------------------
 
 Required Hardware
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board
--  :adi:`ADRV9371x <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv9371.html>` FMC board
+-  `A10GX <https://www.altera.com/products/devkit/po-3017/arria-10-gx-fpga-development-kit>`_
+   board
+-  :adi:`EVAL-ADRV9371`
+   FMC board
 -  Ethernet cable
 -  Micro-USB cable
 
 Required Software
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  You need a Host PC (Windows)
 -  Intel Quartus 21.2
 -  Bitfile and Linux ELF image
--  IIO Scope `Download <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
+-  :git+iio-oscilloscope:`IIO Oscilloscope <releases+>`
 
 .. tip::
 
-   \ :doc:`Pre-build Images for Intel Arria 10 GX. </wiki-migration/resources/tools-software/linux-drivers/platforms/nios2>`\
+   :dokuwiki:`Pre-build Images for Intel Arria 10 GX. </resources/tools-software/linux-drivers/platforms/nios2>`
 
 Setting up the hardware (A10GX)
--------------------------------
+--------------------------------------------------------------------------------
 
 You will need to:
 
-.. image:: ../images/arria10-fpga-kit.jpg
-   :width: 330
+.. image:: ../images/arria10-fpga_adrv9371.jpg
+   :width: 600
 
-- Get the `A10GX <https://www.intel.com/en:products:details:fpga:development-kits:arria:10-gx>`_ board.
-- Connect the ADRV9371x FMC board to the FPGA carrier **FMC1** socket(J1).
+- Get the `A10GX <https://www.altera.com/products/devkit/po-3017/arria-10-gx-fpga-development-kit>`_
+  board.
+- Connect the ADRV9371x FMC board to the FPGA carrier **FMC1** socket (J1).
 - Connect the USB JTAG J3 (Micro USB) to your Host PC.
 - Connect the Ethernet cable.
 - Plug the Power Supply into 12V Power input connector (DC Input).
@@ -53,26 +60,31 @@ You will need to:
 .. esd-warning::
 
 Programming the FPGA
---------------------
+--------------------------------------------------------------------------------
 
 Nios II Command Shell is used to program the FPGA. To run Nios II Command Shell
-navigate to C:\\intelFPGA_pro\\21.2\\nios2eds and start Nios II Command
+navigate to ``C:\\intelFPGA_pro\\21.2\\nios2eds`` and start Nios II Command
 Shell.bat. Windows Subsystem for Linux (WSL) needs to be installed in order to
 run Nios II Command Shell.
 
 After starting the Command Shell, navigate to the path where the pre-build
 images are saved. For example:
 
-::
+.. shell::
+   :user: ceshu
+   :group: LADACE
 
    ceshu@LADACE-L02:/mnt/c/intelFPGA_pro/21.2/nios2eds$ cd /mnt/c/Users/ladace/Downloads/adrv9371x_a10gx
 
-Programming FPGA bitfiled image
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Programming FPGA bitfile image
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To flash the bitfield pre-build image, **nios2-configure-sof** command is used. For example:
+To flash the bitfile pre-build image, **nios2-configure-sof** command is used.
+For example:
 
-::
+.. shell::
+   :user: ceshu
+   :group: LADACE
 
    ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-configure-sof adrv9371x_a10gx.sof
    Searching for SOF file:
@@ -97,11 +109,14 @@ To flash the bitfield pre-build image, **nios2-configure-sof** command is used. 
        Info: System process ID: 8172
 
 Programming Linux image
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To flash the Linux pre-build image, **nios2-download** command is used. For example:
+To flash the Linux pre-build image, **nios2-download** command is used. For
+example:
 
-::
+.. shell::
+   :user: ceshu
+   :group: LADACE
 
    ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-download -g zImage
    Using cable "USB-BlasterII [USB-1]", device 1, instance 0x00
@@ -113,140 +128,145 @@ To flash the Linux pre-build image, **nios2-download** command is used. For exam
    Starting processor at address 0xC4000000
 
 Nios II Terminal
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start the Nios II Terminal use the following **nios2-terminal.exe** command. Example of console: 
+To start the Nios II Terminal use the following **nios2-terminal.exe** command.
+Example of console:
 
 .. collapsible:: Complete kernel boot log (Click to expand)
 
-   .. container:: box bggreen
+   .. shell::
+      :user: ceshu
+      :group: LADACE
 
-      ::
+      ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-terminal.exe
+      nios2-terminal: connected to hardware target using JTAG UART on cable
+      nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
+      nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
 
-         ceshu@LADACE-L02:/mnt/c/Users/ladace/Downloads/adrv9371x_a10gx$ nios2-terminal.exe
-         nios2-terminal: connected to hardware target using JTAG UART on cable
-         nios2-terminal: "USB-BlasterII [USB-1]", device 1, instance 0
-         nios2-terminal: (Use the IDE stop button or Ctrl-C to terminate)
+      Linux version 4.9.0-04235-g4db1e6cb5208 (sandu@saturn) (gcc versiLinux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk
+      .analog.com) (gcc version 8.3.1 20190416 (Altera 19.3 Build 222)) #1875 Tue Jul 27 14:46:07 IST 2021
+      On node 0 totalpages: 65536
+         Normal zone: 512 pages used for memmap
+         Normal zone: 0 pages reserved
+         Normal zone: 65536 pages, LIFO batch:15
+      pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+      pcpu-alloc: [0] 0
+      Built 1 zonelists, mobility grouping on.  Total pages: 65024
+      Kernel command line: debug console=ttyJ0,115200
+      Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+      Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+      Sorting __ex_table...
+      Memory: 247920K/262144K available (3795K kernel code, 469K rwdata, 4372K rodata, 3160K init, 106K bss, 14224K reserved,
+      0K cma-reserved)
+      NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+      clocksource: nios2-clksrc: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+      Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=400000)
+      pid_max: default: 32768 minimum: 301
+      Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+      Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+      devtmpfs: initialized
+      random: get_random_u32 called from bucket_table_alloc.isra.6+0x98/0x1e8 with crng_init=0
+      clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+      futex hash table entries: 256 (order: -1, 3072 bytes)
+      NET: Registered protocol family 16
+      jesd204: found 0 devices and 0 topologies
+      clocksource: Switched to clocksource nios2-clksrc
+      NET: Registered protocol family 2
+      tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes)
+      TCP established hash table entries: 2048 (order: 1, 8192 bytes)
+      TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
+      TCP: Hash tables configured (established 2048 bind 2048)
+      UDP hash table entries: 256 (order: 0, 4096 bytes)
+      UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+      NET: Registered protocol family 1
+      RPC: Registered named UNIX socket transport module.
+      RPC: Registered udp transport module.
+      RPC: Registered tcp transport module.
+      RPC: Registered tcp NFSv4.1 backchannel transport module.
+      random: fast init done
+      workingset: timestamp_bits=30 max_order=16 bucket_order=0
+      jffs2: version 2.2. (NAND) ┬⌐ 2001-2006 Red Hat, Inc.
+      Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
+      io scheduler noop registered
+      io scheduler deadline registered
+      io scheduler cfq registered (default)
+      io scheduler mq-deadline registered
+      io scheduler kyber registered
+      101814f0.serial: ttyJ0 at MMIO 0x101814f0 (irq = 2, base_baud = 0) is a Altera JTAG UART
+      console [ttyJ0] enabled
+      loop: module loaded
+      spi_altera 10181400.spi: base (ptrval), irq 8
+      libphy: Fixed MDIO Bus: probed
+      libphy: altera_tse: probed
+      altera_tse 10181000.ethernet (unnamed net_device) (uninitialized): MDIO bus altera_tse-0: created
+      altera_tse 10181000.ethernet: Altera TSE MAC version 19.3 at 0x10181000 irq 1/3
+      ad9371 spi0.1: ad9371_probe : enter
+      altera-a10-fpll 10045000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+      altera-a10-fpll 10035000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+      altera-a10-fpll 10025000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: ATX PLL calibration OK (20 ms)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 0 TX termination and VOD calibration OK (400 us)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 1 TX termination and VOD calibration OK (400 us)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 2 TX termination and VOD calibration OK (500 us)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 3 TX termination and VOD calibration OK (500 us)
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Altera ADXCVR (17.01.a) probed
+      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (400 us)
+      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
+      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Altera ADXCVR (17.01.a) probed
+      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (600 us)
+      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
+      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Altera ADXCVR (17.01.a) probed
+      NET: Registered protocol family 17
+      altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+      altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+      altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
+      ad9371 spi0.1: ad9371_probe : enter
+      ad9371 spi0.1: ad9371_probe : enter
+      random: crng init done
+      ad9371 spi0.1: framerStatus (0x20)
+      ad9371 spi0.1: AD9371 Rev 3, Firmware 5.2.2 API version: 1.5.2.3566 successfully initialized
+      cf_axi_dds 10054000.axi-ad9371-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0x10054000 mapped to 0x03281b71,
+         probed DDS AD9371
+      cf_axi_adc 10050000.axi-ad9371-rx-hpc: ADI AIM (10.01.b) at 0x10050000 mapped to 0x78806569, probed ADC AD9371 as MASTER
+      Freeing unused kernel memory: 3160K
+      This architecture does not have kernel memory protection.
+      Run /init as init process
+      Starting logging: OK
+      Initializing random number generator... done.
+      Starting network: OK
+      altera_tse 10181000.ethernet eth0: device MAC address b2:94:3d:6e:11:8f
+      altera_tse 10181000.ethernet eth0: TSE revision 1303
+      altera_tse 10181000.ethernet eth0: PCS PHY ID: 0x00000000
+      altera_tse 10181000.ethernet eth0: SGMII PCS block initialised OK
+      altera_tse 10181000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+      Network cable is plugged
+      udhcpc: started, v1.25.0
+      udhcpc: sending discover
+      udhcpc: sending select for 10.48.65.123
+      udhcpc: lease of 10.48.65.123 obtained, lease time 21600
+      deleting routers
+      adding dns 10.32.51.110
+      adding dns 10.64.53.110
+                  inet addr:10.48.65.123  Bcast:10.48.65.255  Mask:255.255.255.0
+      Starting dropbear sshd: OK
+      Starting IIO Server Daemon
 
-         Linux version 4.9.0-04235-g4db1e6cb5208 (sandu@saturn) (gcc versiLinux version 4.19.0-g17f4223 (jenkins@romlxbuild1.adlk
-         .analog.com) (gcc version 8.3.1 20190416 (Altera 19.3 Build 222)) #1875 Tue Jul 27 14:46:07 IST 2021
-         On node 0 totalpages: 65536
-           Normal zone: 512 pages used for memmap
-           Normal zone: 0 pages reserved
-           Normal zone: 65536 pages, LIFO batch:15
-         pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
-         pcpu-alloc: [0] 0
-         Built 1 zonelists, mobility grouping on.  Total pages: 65024
-         Kernel command line: debug console=ttyJ0,115200
-         Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
-         Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
-         Sorting __ex_table...
-         Memory: 247920K/262144K available (3795K kernel code, 469K rwdata, 4372K rodata, 3160K init, 106K bss, 14224K reserved,
-         0K cma-reserved)
-         NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
-         clocksource: nios2-clksrc: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
-         Calibrating delay loop (skipped), value calculated using timer frequency.. 200.00 BogoMIPS (lpj=400000)
-         pid_max: default: 32768 minimum: 301
-         Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
-         Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
-         devtmpfs: initialized
-         random: get_random_u32 called from bucket_table_alloc.isra.6+0x98/0x1e8 with crng_init=0
-         clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
-         futex hash table entries: 256 (order: -1, 3072 bytes)
-         NET: Registered protocol family 16
-         jesd204: found 0 devices and 0 topologies
-         clocksource: Switched to clocksource nios2-clksrc
-         NET: Registered protocol family 2
-         tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes)
-         TCP established hash table entries: 2048 (order: 1, 8192 bytes)
-         TCP bind hash table entries: 2048 (order: 1, 8192 bytes)
-         TCP: Hash tables configured (established 2048 bind 2048)
-         UDP hash table entries: 256 (order: 0, 4096 bytes)
-         UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
-         NET: Registered protocol family 1
-         RPC: Registered named UNIX socket transport module.
-         RPC: Registered udp transport module.
-         RPC: Registered tcp transport module.
-         RPC: Registered tcp NFSv4.1 backchannel transport module.
-         random: fast init done
-         workingset: timestamp_bits=30 max_order=16 bucket_order=0
-         jffs2: version 2.2. (NAND) ┬⌐ 2001-2006 Red Hat, Inc.
-         Block layer SCSI generic (bsg) driver version 0.4 loaded (major 252)
-         io scheduler noop registered
-         io scheduler deadline registered
-         io scheduler cfq registered (default)
-         io scheduler mq-deadline registered
-         io scheduler kyber registered
-         101814f0.serial: ttyJ0 at MMIO 0x101814f0 (irq = 2, base_baud = 0) is a Altera JTAG UART
-         console [ttyJ0] enabled
-         loop: module loaded
-         spi_altera 10181400.spi: base (ptrval), irq 8
-         libphy: Fixed MDIO Bus: probed
-         libphy: altera_tse: probed
-         altera_tse 10181000.ethernet (unnamed net_device) (uninitialized): MDIO bus altera_tse-0: created
-         altera_tse 10181000.ethernet: Altera TSE MAC version 19.3 at 0x10181000 irq 1/3
-         ad9371 spi0.1: ad9371_probe : enter
-         altera-a10-fpll 10045000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-         altera-a10-fpll 10035000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-         altera-a10-fpll 10025000.altera-a10-fpll: FPLL PLL calibration OK (1400 us)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: ATX PLL calibration OK (20 ms)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 0 TX termination and VOD calibration OK (400 us)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 1 TX termination and VOD calibration OK (400 us)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 2 TX termination and VOD calibration OK (500 us)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Lane 3 TX termination and VOD calibration OK (500 us)
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Altera ADXCVR (17.01.a) probed
-         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (400 us)
-         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
-         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Altera ADXCVR (17.01.a) probed
-         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 0 CDR/CMU PLL & RX offset calibration OK (600 us)
-         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Lane 1 CDR/CMU PLL & RX offset calibration OK (500 us)
-         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Altera ADXCVR (17.01.a) probed
-         NET: Registered protocol family 17
-         altera_adxcvr 10024000.axi-ad9371-tx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-         altera_adxcvr 10034000.axi-ad9371-rx-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-         altera_adxcvr 10044000.axi-ad9371-rx-os-xcvr: Setting link rate to 122880000 (lane rate: 4915200)
-         ad9371 spi0.1: ad9371_probe : enter
-         ad9371 spi0.1: ad9371_probe : enter
-         random: crng init done
-         ad9371 spi0.1: framerStatus (0x20)
-         ad9371 spi0.1: AD9371 Rev 3, Firmware 5.2.2 API version: 1.5.2.3566 successfully initialized
-         cf_axi_dds 10054000.axi-ad9371-tx-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.01.b) at 0x10054000 mapped to 0x03281b71,
-          probed DDS AD9371
-         cf_axi_adc 10050000.axi-ad9371-rx-hpc: ADI AIM (10.01.b) at 0x10050000 mapped to 0x78806569, probed ADC AD9371 as MASTER
-         Freeing unused kernel memory: 3160K
-         This architecture does not have kernel memory protection.
-         Run /init as init process
-         Starting logging: OK
-         Initializing random number generator... done.
-         Starting network: OK
-         altera_tse 10181000.ethernet eth0: device MAC address b2:94:3d:6e:11:8f
-         altera_tse 10181000.ethernet eth0: TSE revision 1303
-         altera_tse 10181000.ethernet eth0: PCS PHY ID: 0x00000000
-         altera_tse 10181000.ethernet eth0: SGMII PCS block initialised OK
-         altera_tse 10181000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
-         Network cable is plugged
-         udhcpc: started, v1.25.0
-         udhcpc: sending discover
-         udhcpc: sending select for 10.48.65.123
-         udhcpc: lease of 10.48.65.123 obtained, lease time 21600
-         deleting routers
-         adding dns 10.32.51.110
-         adding dns 10.64.53.110
-                   inet addr:10.48.65.123  Bcast:10.48.65.255  Mask:255.255.255.0
-         Starting dropbear sshd: OK
-         Starting IIO Server Daemon
-
-         Welcome to Buildroot
-         buildroot login:
+      Welcome to Buildroot
+      buildroot login:
 
 IIO Oscilloscope
-----------------
+--------------------------------------------------------------------------------
 
-To connect the board to IIO Scope start the IIO Oscilloscope application and go to **Settings** menu and then press **Connect**. From **Select or Discover libIIO Context** select **Manual** and enter the URI in the following format **ip:<your_board_ip>** Press the **Refresh** button and then **Connect**.
+To connect the board to IIO Scope start the IIO Oscilloscope application and go
+to **Settings** menu and then press **Connect**. From **Select or Discover
+Libiio Context** select **Manual** and enter the URI in the following format
+**ip:<your_board_ip>** Press the **Refresh** button and then **Connect**.
 
-To determine the IP of the board, in Nios II Command Shell login using **root** and password **analog**. Then run the **ifconfig** command. For example:
+To determine the IP of the board, in Nios II Command Shell login using **root**
+and password **analog**. Then run the **ifconfig** command. For example:
 
-::
+.. shell::
 
    # ifconfig
    eth0      Link encap:Ethernet  HWaddr B2:94:3D:6E:11:8F
@@ -272,70 +292,5 @@ To determine the IP of the board, in Nios II Command Shell login using **root** 
    :alt: iioscope_connect.jpg
    :align: center
 
-To plot the captured waveforms go to **File** menu then click **New Plot**. Select the channels to plot and then click **Capture / Stop** button.
-
-.. image:: ../images/iioscope_newplot.jpg
-   :alt: iioscope_newplot.jpg
-   :align: center
-
-More Information
-----------------
-
--  :doc:`ADRV9371x User Guide </wiki-migration/resources/eval/user-guides/mykonos>`
--  :doc:`ADRV9371x HDL Reference Design </wiki-migration/resources/eval/user-guides/mykonos/reference_hdl>`
-
-Useful links
-------------
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Quick Start Guides </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart>`
-
-   -  :doc:`Zynq-7000 SoC ZC706 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynq>`
-   -  :doc:`Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/zynqmp>`
-   -  :doc:`Virtex UltraScale+ VCU118 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/microblaze>`
-   -  :doc:`Versal ACAP VCK190 Quick Start Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/quickstart/versal>`
-   -  `Arria10 SoC Quick Start Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081/quickstart/a10soc]>`_
-
--  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
-
-   -  :doc:`ADI Reference Designs HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`
-   -  :doc:`Generic JESD204B block designs </wiki-migration/resources/fpga/docs/hdl/generic_jesd_bds>`
-   -  :doc:`JESD204B High-Speed Serial Interface Support </wiki-migration/resources/fpga/peripherals/jesd204>`
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
-
-::
-
-         - :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
-         - :doc:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-pll/hmc7044>`
-         - :doc:`AXI-DMAC DMA Controller Linux Driver </wiki-migration/resources/tools-software/linux-drivers/axi-dmac>`
-         - :doc:`JESD204B Transmit Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
-           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
-         - :doc:`JESD204B Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
-           - :doc:`JESD204B Status Utility </wiki-migration/resources/tools-software/linux-software/jesd_status>` 
-         - :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
-           - :doc:`JESD204 Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
-         - :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-         - :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-   * :doc:`MATLAB Support </wiki-migration/resources/tools-software/hsx-toolbox>`
-        * MATLAB support is provided through the :doc:`High Speed Converter Toolbox </wiki-migration/resources/tools-software/hsx-toolbox>`
-   * :doc:`Python Support </wiki-migration/resources/tools-software/linux-software/pyadi-iio>`
-        * PYTHON support is provided through the :doc:`Device Specific Python Interfaces For IIO Drivers </wiki-migration/resources/tools-software/linux-software/pyadi-iio>` 
-        * `PyADI-IIO Documentation <https://analogdevicesinc.github.io/pyadi-iio/>`_
-        * `AD9081 class documentation <https://analogdevicesinc.github.io/pyadi-iio/devices/adi.ad9081.html>`_
-   * Product Datasheet
-       * :adi:`AD9081 <media/en/technical-documentation/data-sheets/AD9081.pdf>`
-       * :adi:`AD9082 <media/en/technical-documentation/data-sheets/AD9082.pdf>`
-       * :adi:`AD9988 <media/en/technical-documentation/data-sheets/AD9988.pdf>`
-       * :adi:`AD9986 <media/en/technical-documentation/data-sheets/AD9986.pdf>`
-   * :adi:`UG-1578, Device User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
-   * :adi:`UG-1829, Evaluation Board User Guide <media/en/technical-documentation/user-guides/ad9081-fmca-ebz-9082-fmca-ebz-ug-1829.pdf>`
-
-Support
--------
-
-Analog Devices will provide limited online support for anyone using the reference design with Analog Devices components via the :ez:`EngineerZone <community/fpga>`.
-
-Software support
-----------------
-
--  :doc:`AD9081/AD9082/AD9988/AD9986 Linux Driver Support </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+To plot the captured waveforms go to **File** menu then click **New Plot**.
+Select the channels to plot and then click **Capture / Stop** button.

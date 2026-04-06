@@ -1,120 +1,162 @@
-AD9371 & AD9375 Prototyping Platform User Guide
-===============================================
+ADRV9371x
+================================================================================
 
 .. image:: images/ad9371-bc_196-adi_m.png
+   :width: 250
    :align: left
-   :width: 300
 
-The :adi:`ADRV9371-W/PRBZ <EVAL-ADRV9371>`, :adi:`ADRV9371-N/PCBZ <EVAL-ADRV9371>` and :adi:`ADRV9375-N/PCBZ <ADRV9375>` are FMC radio cards for the :adi:`AD9371` respectively :adi:`AD9375`, a highly integrated RF Transceiver™. While the complete chip level design package can be found on the the :adi:`the ADI web site <en/license/licensing-agreement/ad9371.html>`, information on the card and how to use it, the design package that surrounds it, and the software which can make it work can be found here.
+The :adi:`ADRV9371-W/PRBZ <EVAL-ADRV9371>`,
+:adi:`ADRV9371-N/PCBZ <EVAL-ADRV9371>`,
+:adi:`ADRV9375-W/PRBZ <EVAL-ADRV9371>`, and
+:adi:`ADRV9375-N/PCBZ <ADRV9375>` are FMC radio cards for the :adi:`AD9371` and
+:adi:`AD9375`, highly integrated RF Transceivers™. The
+:adi:`ADRV9375-N/PCBZ <ADRV9375>` has the same matching network as the
+:adi:`ADRV9371-N/PRBZ <EVAL-ADRV9371>`. The :adi:`ADRV9375-W/PCBZ <ADRV9375>`
+has the same matching network as the :adi:`ADRV9371-W/PRBZ <EVAL-ADRV9371>`.
+While the complete chip level design package can be found on
+:adi:`the ADI website <ad9371>`, information on the card and how to use it,
+the design package that surrounds it, and the software which can make it work
+can be found here.
 
 .. image:: images/adrv9371-n_pcbz_side.jpg
-   :align: center
    :width: 600
 
+Recommendations
+--------------------------------------------------------------------------------
+
+People who follow the flow that is outlined, have a much better experience with
+things. However, like many things, documentation is never as complete as it
+should be. If you have any questions, check the **Help and Support** section at
+the bottom of the page.
+
+To better understand the :adi:`AD9371` / :adi:`AD9375`, we recommend to use
+the :adi:`EVAL-ADRV9371` / :adi:`EVAL-ADRV9375 <ADRV9375>` evaluation boards.
+
 Table of Contents
------------------
+--------------------------------------------------------------------------------
 
-People who follow the flow that is outlined, have a much better experience with things. However, like many things, documentation is never as complete as it should be. If you have any questions, feel free to `ask <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`_.
+.. toctree::
+   :hidden:
 
--  Use the board to better understand the AD9371/AD9375
+   prerequisites
+   quickstart/index
+   user-guide/index
 
-   -  :doc:`What you need to get started </solutions/reference-designs/adrv9371x/prerequisites>`
-   -  :doc:`Quick Start Guides </solutions/reference-designs/adrv9371x/quickstart>`
+#. Use the evaluation board to better understand the AD9371/AD9375
 
-      -  :doc:`Linux on ZC706 </solutions/reference-designs/adrv9371x/quickstart/zynq>`
-      -  `Linux on Arria 10 SOC <https://wiki.analog.com/resources/eval/user-guides/adrv9371/quickstart/a10soc>`_
-      -  `Configure a pre-existing SD-Card <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
-      -  `Update the old card you received with your hardware <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
+   #. :doc:`/solutions/reference-designs/adrv9371x/prerequisites`
+   #. :doc:`Quick Start Guides </solutions/reference-designs/adrv9371x/quickstart/index>`:
 
-   -  Linux Applications
+      #. :doc:`On ZCU102 </solutions/reference-designs/adrv9371x/quickstart/zcu102>`
+      #. :doc:`On KCU105 </solutions/reference-designs/adrv9371x/quickstart/kcu105>`
+      #. :doc:`On ZC706 </solutions/reference-designs/adrv9371x/quickstart/zc706>`
+      #. :doc:`On Arria 10 SoC </solutions/reference-designs/adrv9371x/quickstart/a10soc>`
+      #. :doc:`On Arria 10 GX </solutions/reference-designs/adrv9371x/quickstart/a10gx>`
 
-      -  `IIO Scope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+   #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/index`
+   #. Linux Applications
 
-         -  `AD9371/AD9375 IIO Scope View <https://wiki.analog.com/resources/tools-software/linux-software/ad9371_osc_main>`_
-         -  `AD9371/AD9375 Control IIO Scope Plugin <https://wiki.analog.com/resources/tools-software/linux-software/ad9371_plugin>`_
-         -  `Advanced AD9371/AD9375 Control IIO Scope Plugin <https://wiki.analog.com/resources/tools-software/linux-software/ad9371_advanced_plugin>`_
+      #. :doc:`/software/iio-oscilloscope/index`
 
-      -  `FRU EEPROM Utility <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`_
+         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_osc_main`
+         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_plugin`
+         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_advanced_plugin`
 
-   -  Push custom data into/out of the AD9371/AD9375
+      #. :dokuwiki:`FRU EEPROM Utility <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
 
-      -  :doc:`Basic Data files and formats </solutions/reference-designs/adrv9371x/software/basic_iq_datafiles>`
-      -  `Stream data into/out of MATLAB <https://wiki.analog.com/resources/tools-software/transceiver-toolbox>`_
-      -  `Python Interfaces <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_
+   #. Push custom data into/out of the AD9371/AD9375
 
--  Design with the AD9371/AD9375
+      #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/basic_iq_datafiles`
+      #. :doc:`/software/matlab/transceiver-toolbox/index`
+      #. :doc:`/software/pyadi-iio/index`
 
-   -  :doc:`Understanding the AD9371/AD9375 </solutions/reference-designs/adrv9371x/ad9371>`
+#. Design with the AD9371/AD9375
 
-      -  :adi:`AD9371 Product page <AD9371>`
-      -  :adi:`AD9375 Product page <AD9375>`
-      -  :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
-      -  :doc:`MATLAB Filter Wizard / Profile Generator for AD9371 </solutions/reference-designs/adrv9371x/software/filters>`
+   #. :ref:`Understanding the AD9371/AD9375 <adrv9371x block diagram>`
 
-   -  Hardware in the Loop / How to design your own custom BaseBand
+      #. :adi:`AD9371 Product page <AD9371>`
+      #. :adi:`AD9375 Product page <AD9375>`
+      #. :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+      #. :doc:`MATLAB Filter Wizard / Profile Generator for AD9371 </solutions/reference-designs/adrv9371x/user-guide/filters>`
 
-      -  `GNU Radio <https://wiki.analog.com/resources/tools-software/linux-software/gnuradio>`_
-      -  `Transceiver Toolbox <https://wiki.analog.com/resources/tools-software/transceiver-toolbox>`_
+   #. Hardware in the Loop / How to design your own custom Baseband
 
-   -  Design a custom AD9371/AD9375 based platform
+      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+      #. :doc:`/software/matlab/transceiver-toolbox/index`
 
-      -  Linux software
+   #. Design a custom AD9371/AD9375 based platform
 
-         -  `AD9371/AD9375 Linux Device Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/ad9371>`_
+      #. Linux software
 
-            -   `Customizing the devicetree on the target <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`_
+         #. About the device driver:
 
-         -  `AD9528 Low Jitter Clock Generator Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/ad9528>`_
-         -  `AD7291 IIO ADC Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7291>`_
-         -  `JESD204B Transmit Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`_
+            #. :external+linux:doc:`AD9371/AD9375 Linux Device Driver <drivers/iio-transceiver/ad9371>`
+            #. :external+linux:ref:`JESD204B Transmit Linux Driver <axi_jesd204_tx>`
+            #. :external+linux:ref:`JESD204B Receive Linux Driver <axi_jesd204_rx>`
+            #. :external+linux:ref:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <axi_adxcvr>`
+            #. :external+linux:ref:`AXI ADC HDL Linux Driver <axi-adc-hdl>`
+            #. :external+linux:ref:`AXI DAC HDL Linux Driver <axi-dac-dds-hdl>`
 
-            -  `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_
+         #. About the device tree:
 
-         -  `JESD204B Receive Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`_
+            #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
-            -  `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_
+         #. About the JEDS204 utilities:
 
-         -  `JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_
+            #. :external+linux:ref:`JESD204 (FSM) interface Linux Kernel framework <jesd204-fsm-framework>`
+            #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
+            #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
+            #. :external+hdl:ref:`jesd204`
 
-            -  `JESD204 Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_
+      #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
+      #. :external+hdl:ref:`adrv9371x` which you must use in your FPGA.
+      #. :dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
 
-         -  `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_
-         -  `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_
+.. _adrv9371x block diagram:
 
-      -  `Changing the VCXO frequency and updating the default RF Transceiver Profile <https://wiki.analog.com/resources/eval/user-guides/rf-trx-vcxo-and-profiles>`_
-      -  :doc:`AD9371/AD9375 No-OS System Level Design Setup </solutions/reference-designs/adrv9371x/no-os-setup>`
-      -  :doc:`HDL Reference Design </solutions/reference-designs/adrv9371x/reference_hdl>` which you must use in your FPGA.
-      -  `Transceiver Toolbox: HDL Targeting with MATLAB and Simulink <https://wiki.analog.com/resources/tools-software/transceiver-toolbox>`_
+Block Diagram
+--------------------------------------------------------------------------------
 
--  `Additional Documentation about SDR Signal Chains - The math behind the RF <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/math>`_
--  `Help and Support <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/help_and_support>`_
+.. image:: images/mykonos_block_diagram_v2.png
+   :width: 800
 
-Videos
-------
 
-Software Defined Radio using the Linux IIO Framework
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`iiosdr.mp4 <http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4>`_
+Additional Information
+--------------------------------------------------------------------------------
 
 ADI Articles
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--   Four Quick Steps to Production: Using Model-Based Design for
-    Software-Defined Radio
+Four Quick Steps to Production: Using Model-Based Design for Software-Defined
+Radio
 
-   -  :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
-   -  :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
-   -  :adi:`Part 3—Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
-   -  :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
+- :adi:`Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools <library/analogDialogue/archives/49-09/four-step-sdr-01.html>`
+- :adi:`Part 2—Mode S Detection and Decoding Using MATLAB and Simulink <library/analogDialogue/archives/49-10/four-step-sdr-02.html>`
+- :adi:`Part 3—Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop <library/analogDialogue/archives/49-11/four-step-sdr-03.html>`
+- :adi:`Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow <library/analogDialogue/archives/49-12/four-step-sdr-04.html>`
 
-MathWorks Webinars
-~~~~~~~~~~~~~~~~~~
+About JESD standard:
 
--  `Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF <https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`_
--  `Getting Started with Software-Defined Radio using MATLAB and Simulink <https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`_
+- :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`
+- :adi:`JESD204C Primer: What's New and in It for You—Part 1 <resources/analog-dialogue/articles/jesd204c-primer-part1.html>`
+- :adi:`JESD204C Primer: What's New and in It for You—Part 2 <resources/analog-dialogue/articles/jesd204c-primer-part2.html>`
 
-Warning
--------
+Mathworks Webinars
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. esd-warning::
+- :mw:`Modelling and Simulating Analog Devices' RF Transceivers with MATLAB and SimRF <videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html>`
+- :mw:`Getting Started with Software-Defined Radio using MATLAB and Simulink <videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html>`
+
+Videos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Software Defined Radio using the Linux IIO Framework
+
+.. video:: http://ftp.fau.de/fosdem/2015/devroom-software_defined_radio/iiosdr.mp4
+
+Help and Support
+--------------------------------------------------------------------------------
+
+For additional questions or support, please visit the
+:ez:`Engineering Zone <rf/wide-band-rf-transceivers/design-support-ad9371>`
+forum.
