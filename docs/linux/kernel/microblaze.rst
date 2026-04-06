@@ -205,6 +205,8 @@ And patch the device tree into the strip simpleImage:
         bs=1 seek=$dtb_start conv=notrunc
      31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
 
+.. _linux-kernel microblaze boot:
+
 Boot on FPGA MicroBlaze
 ~~~~~~~~~~~~~~~~~~~~~~~
 
