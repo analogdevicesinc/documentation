@@ -1,7 +1,7 @@
 AD9081 Plugin Description
 =========================
 
-The AD9081 plugin works with the :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9081 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the AD9081 or the FPGA fabric) does not support that mode/precision.
+The AD9081 plugin works with the `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9081 settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the AD9081 or the FPGA fabric) does not support that mode/precision.
 
 If you want to go play with ``/sys/bus/iio/devices/....`` and manipulate the devices behind the back of the GUI, it's still possible to see the settings by clicking the ``Reload Settings`` button at the bottom of the GUI.
 
@@ -24,12 +24,12 @@ Receive Chain
    :align: right
    :width: 300
 
--  **ADC Rate(MHz):** Displays the ADC Sample Rate. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **ADC Nyquist Zone Control:** Selects the Nyquist Zone. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **RX Main NCO Frequency Control:** Controls the Main NCO. Frequency :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **RX Main NCO Phase Control:** Controls the Main NCO Phase. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **RX Channel NCO Frequency Control:** Controls the Channel NCO Frequency. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **RX Channel NCO Phase Control:** Controls the Channel NCO Phase. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+-  **ADC Rate(MHz):** Displays the ADC Sample Rate. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **ADC Nyquist Zone Control:** Selects the Nyquist Zone. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **RX Main NCO Frequency Control:** Controls the Main NCO. Frequency `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **RX Main NCO Phase Control:** Controls the Main NCO Phase. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **RX Channel NCO Frequency Control:** Controls the Channel NCO Frequency. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **RX Channel NCO Phase Control:** Controls the Channel NCO Phase. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
 
 --------------
 
@@ -40,13 +40,13 @@ Transmit Chain
    :align: right
    :width: 300
 
--  **DAC Rate(MHz):** Displays the DAC Sample Rate. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX Main NCO Frequency Control:** Controls the Main NCO Frequency.\ :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX Main NCO Phase Control:** Controls the Main NCO Phase. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX Channel NCO Frequency Control:** Controls the Channel. NCO Frequency :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX Channel NCO Phase Control:** Controls the Channel NCO Phase. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX NCO Channel Digital Gain:** Controls the Channel NCO digital gain. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
--  **TX NCO Test Tone Modes:** Controls the Test Tone generation. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`
+-  **DAC Rate(MHz):** Displays the DAC Sample Rate. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX Main NCO Frequency Control:** Controls the Main NCO Frequency.\ `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX Main NCO Phase Control:** Controls the Main NCO Phase. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX Channel NCO Frequency Control:** Controls the Channel. NCO Frequency `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX Channel NCO Phase Control:** Controls the Channel NCO Phase. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX NCO Channel Digital Gain:** Controls the Channel NCO digital gain. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
+-  **TX NCO Test Tone Modes:** Controls the Test Tone generation. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_
 
 --------------
 
@@ -103,7 +103,7 @@ DAC Buffer Output
 
 **Restrictions:**
 
--  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+-  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the `Basic IQ Data Files <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>`_ documentation first.
 -  Due to hardware limitation only specific combinations of enabled channels are
    possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
    enabled then it can be any of them. If two channels are enabled then channels

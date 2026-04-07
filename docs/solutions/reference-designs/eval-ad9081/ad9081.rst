@@ -24,13 +24,13 @@ Supported Boards
 User Guides
 ~~~~~~~~~~~
 
--  :doc:`AD9081/AD9082 Prototyping Platform User Guide </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz>`
--  :doc:`Quad-MxFE Prototyping Platform User Guide </wiki-migration/resources/eval/user-guides/quadmxfe>`
+-  `AD9081/AD9082 Prototyping Platform User Guide <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz>`_
+-  `Quad-MxFE Prototyping Platform User Guide <https://wiki.analog.com/resources/eval/user-guides/quadmxfe>`_
 
 Supported HDL Cores
 -------------------
 
--  :doc:`AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design </wiki-migration/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`
+-  `AD9081-FMCA-EBZ (Single MxFE) HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/ad9081_fmca_ebz/ad9081_fmca_ebz_hdl>`_
 
 Description
 -----------
@@ -86,46 +86,46 @@ Example device trees
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                     |
 +==========+==========================================================================================================================+
-| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/arm/boot/dts/adi-ad9081-fmc-ebz.dtsi>`__                             |
+| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/arm/boot/dts/adi-ad9081-fmc-ebz.dtsi>`_                             |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
-| dts      | `socfpga_arria10_socdk_ad9081.dts </linux.github>master?arch/arm/boot/dts/socfpga_arria10_socdk_ad9081.dts>`__           |
+| dts      | `socfpga_arria10_socdk_ad9081.dts </linux.github>master?arch/arm/boot/dts/socfpga_arria10_socdk_ad9081.dts>`_           |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
-| dts      | `socfpga_arria10_socdk_ad9081_np12.dts </linux.github>master?arch/arm/boot/dts/socfpga_arria10_socdk_ad9081_np12.dts>`__ |
+| dts      | `socfpga_arria10_socdk_ad9081_np12.dts </linux.github>master?arch/arm/boot/dts/socfpga_arria10_socdk_ad9081_np12.dts>`_ |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynq-zc706-adv7511-ad9081-np12.dts </linux.github>master?arch/arm/boot/dts/zynq-zc706-adv7511-ad9081-np12.dts>`__       |
+| dts      | `zynq-zc706-adv7511-ad9081-np12.dts </linux.github>master?arch/arm/boot/dts/zynq-zc706-adv7511-ad9081-np12.dts>`_       |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
-| dts      | `zynq-zc706-adv7511-ad9081.dts </linux.github>master?arch/arm/boot/dts/zynq-zc706-adv7511-ad9081.dts>`__                 |
+| dts      | `zynq-zc706-adv7511-ad9081.dts </linux.github>master?arch/arm/boot/dts/zynq-zc706-adv7511-ad9081.dts>`_                 |
 +----------+--------------------------------------------------------------------------------------------------------------------------+
 
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Function | File                                                                                                                                                                |
 +==========+=====================================================================================================================================================================+
-| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/microblaze/boot/dts/adi-ad9081-fmc-ebz.dtsi>`__                                                                 |
+| dtsi     | `adi-ad9081-fmc-ebz.dtsi </linux.github>master?arch/microblaze/boot/dts/adi-ad9081-fmc-ebz.dtsi>`_                                                                 |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081.dts>`__                                                                             |
+| dts      | `vcu118_ad9081.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081.dts>`_                                                                             |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_10_rxmode_11.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11.dts>`__                           |
+| dts      | `vcu118_ad9081_204c_txmode_10_rxmode_11.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11.dts>`_                           |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_10_rxmode_11_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11_lr_24_75gbps.dts>`__ |
+| dts      | `vcu118_ad9081_204c_txmode_10_rxmode_11_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_10_rxmode_11_lr_24_75gbps.dts>`_ |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25.dts>`__                           |
+| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25.dts>`_                           |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_lr_24_75gbps.dts>`__ |
+| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_lr_24_75gbps.dts>`_ |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25_vcxo100.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_vcxo100.dts>`__           |
+| dts      | `vcu118_ad9081_204c_txmode_23_rxmode_25_vcxo100.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_23_rxmode_25_vcxo100.dts>`_           |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_204c_txmode_24_rxmode_26_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_24_rxmode_26_lr_24_75gbps.dts>`__ |
+| dts      | `vcu118_ad9081_204c_txmode_24_rxmode_26_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_204c_txmode_24_rxmode_26_lr_24_75gbps.dts>`_ |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9081_m8_l4.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_m8_l4.dts>`__                                                                 |
+| dts      | `vcu118_ad9081_m8_l4.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9081_m8_l4.dts>`_                                                                 |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| dts      | `vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75gbps.dts>`__ |
+| dts      | `vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75Gbps.dts </linux.github>master?arch/microblaze/boot/dts/vcu118_ad9082_204c_txmode_18_rxmode_19_lr_24_75gbps.dts>`_ |
 +----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
--  :doc:`JESD204 Interface Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
+-  `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
+-  `JESD204 Interface Framework <https://wiki.analog.com/resources/fpga/peripherals/jesd204>`_
 
 Transport Layer Receive AXI-ADC driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -140,7 +140,7 @@ Transport Layer Receive AXI-ADC driver
 | include  | :git-linux:`drivers/iio/adc/cf_axi_adc.h`                                                                                                     |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
-**Documentation:** :doc:`AXI ADC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+**Documentation:** `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_
 
 Transport Layer Transmit AXI-DAC / DDS driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,7 +153,7 @@ Transport Layer Transmit AXI-DAC / DDS driver
 | include  | :git-linux:`drivers/iio/frequency/cf_axi_adc.h <drivers/iio/frequency/cf_axi_dds.h>`                                              |
 +----------+-----------------------------------------------------------------------------------------------------------------------------------+
 
-**Documentation:** :doc:`AXI DAC HDL Linux Driver </wiki-migration/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+**Documentation:** `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_
 
 Link Layer AXI JESD204B HDL driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -169,7 +169,7 @@ Link Layer AXI JESD204B HDL driver
 **Documentation:**
 
 -  `JESD204B/C Transmit Linux Driver <https://wiki.analog.com/[resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`_
--  :doc:`JESD204B/C Receive Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+-  `JESD204B/C Receive Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`_
 
 PHY Layer AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -182,7 +182,7 @@ PHY Layer AXI JESD204B GT (Gigabit Tranceiver) HDL driver (XILINX/ALTERA-INTEL)
 
 **Documentation:**
 
--  :doc:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+-  `JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_
 
 Enabling Linux driver support
 =============================
@@ -969,7 +969,7 @@ Device Tree Example
 General IIO and driver conventions
 ==================================
 
-Controlling the MxFE is done via the IIO sysfs interface. For convenience users can use :doc:`libiio </wiki-migration/resources/tools-software/linux-software/libiio>` and its various programming langue bindings. The MxFE IIO device under /sys/bus/iio/devices/iio:deviceX features a set of channels and device attributes, which are explained here. Some basic, but important concepts are explained in the bullet list below:
+Controlling the MxFE is done via the IIO sysfs interface. For convenience users can use `libiio <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_ and its various programming langue bindings. The MxFE IIO device under /sys/bus/iio/devices/iio:deviceX features a set of channels and device attributes, which are explained here. Some basic, but important concepts are explained in the bullet list below:
 
 -  Channels prefixed with ``in_voltageX`` apply to Receive (RX) ADC data paths.
 -  Channels prefixed with ``out_voltageX`` apply to Transmit (TX) DAC data paths.
@@ -1541,7 +1541,7 @@ The Test Tone Mode can be enabled using the ``out_voltageX_[i|q]_[channel|main]_
 
 **Range is**: 0 ≤ Scale ≤ 0.9999.
 
-Please see also :doc:`NCO Frequency Control </wiki-migration/resources/tools-software/linux-drivers/iio-mxfe/ad9081>` section.
+Please see also `NCO Frequency Control <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_ section.
 
 The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for applications that require multiple single-tone signals of varying frequency and amplitude, while applications that only require a single tone can use the same feature available on the main datapath NCOs. ``out_voltageX_[i|q]_main_nco_test_tone_en``
 
@@ -1784,7 +1784,7 @@ Writing ``bist_prbs_select_jrx`` selects the `PRBS <https://en.wikipedia.org/wik
 
 .. tip::
 
-   When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+   When testing this feature make sure `axi_adxcvr-tx prbs_select <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_ is configured with a matching PRBS.
 
 ===== ============
 Value Comment
@@ -1879,7 +1879,7 @@ Writing following 3 values to ``bist_spo_sweep_jrx`` performs a horizontal sweep
 
 .. tip::
 
-   When testing this feature make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+   When testing this feature make sure `axi_adxcvr-tx prbs_select <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_ is configured with a matching PRBS.
 
 ===== ============
 Value PRBS type
@@ -1952,7 +1952,7 @@ Writing ``bist_2d_eyescan_jrx`` selects the physical lane (0..7). In HALF_RATE m
 
 .. tip::
 
-   When using HALF_RATE mode make sure :doc:`axi_adxcvr-tx prbs_select </wiki-migration/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>` is configured with a matching PRBS.
+   When using HALF_RATE mode make sure `axi_adxcvr-tx prbs_select <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_ is configured with a matching PRBS.
 
 ===== ============
 Value PRBS type
@@ -2239,7 +2239,7 @@ feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
-   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+   To simplify direct register access you may want to use the libiio `iio_reg <https://wiki.analog.com/resources/tools-software/linux-software/libiio/iio_reg>`_ command line utility.
 
 Accessing debugfs requires root privileges.
 
@@ -2331,7 +2331,7 @@ Write ADDRESS VALUE
 
 In this case when accessing the HDL Core Registers always set BIT31.
 
-The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+The register map for typical ADI HDL cores can be found here: `Register Map <https://wiki.analog.com/resources/fpga/docs/hdl/regmap>`_
 
 .. container:: box bggreen
 
@@ -2354,10 +2354,10 @@ IIO pointers
 -  IIO mailing list: linux-iio@vger.kernel.org
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
--  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
--  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
--  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO test and visualization application <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  `libiio - IIO system library <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
+-  `libiio - Internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
+-  `Pointers and good books <https://wiki.analog.com/resources/tools-software/pointers>`_
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -

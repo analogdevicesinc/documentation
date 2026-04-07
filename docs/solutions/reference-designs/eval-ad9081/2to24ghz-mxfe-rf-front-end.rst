@@ -39,34 +39,34 @@ Resources
 =========
 
 -  :ez:`2 to 24GHz Wideband Transceiver Reference Design Webinar <webinar/c/e/211>`
--  :doc:`Digitizer Overview </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/digitizer-overview>`
+-  `Digitizer Overview <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/digitizer-overview>`_
 
--  :doc:`Receiver Front End Overview & Theory Of Operation </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
+-  `Receiver Front End Overview & Theory Of Operation <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
 
-   -  :doc:`Rx Input Stage & Modes Of Operation </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
-   -  :doc:`Downconversion Stage & Frequency Plan </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
-   -  :doc:`Spurious Analysis </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
-   -  :doc:`IF Stage </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
-   -  :doc:`Timing & Control </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
-   -  :doc:`Rx Performance Simulations </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`
+   -  `Rx Input Stage & Modes Of Operation <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
+   -  `Downconversion Stage & Frequency Plan <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
+   -  `Spurious Analysis <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
+   -  `IF Stage <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
+   -  `Timing & Control <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
+   -  `Rx Performance Simulations <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/rx-overview>`_
 
--  :doc:`Transmitter Front End Overview & Theory Of Operation </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
+-  `Transmitter Front End Overview & Theory Of Operation <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
 
-   -  :doc:`IF Input Stage </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
-   -  :doc:`Frequency Conversion Stage & Frequency Plan </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
-   -  :doc:`RF Output Stage </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
-   -  :doc:`Timing & Control </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
-   -  :doc:`Tx Performance Simulations </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`
+   -  `IF Input Stage <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
+   -  `Frequency Conversion Stage & Frequency Plan <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
+   -  `RF Output Stage <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
+   -  `Timing & Control <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
+   -  `Tx Performance Simulations <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/tx-overview>`_
 
--  :doc:`LO Generation Options </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`
+-  `LO Generation Options <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`_
 
-   -  :doc:`Fixed LO Source </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`
-   -  :doc:`Tunable LO Source </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`
+   -  `Fixed LO Source <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`_
+   -  `Tunable LO Source <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/lo-generation>`_
 
--  :doc:`Size Estimate </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/layout-mockup>`
--  :doc:`Power Architecture </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/power-architecture>`
--  :doc:`Hardware </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/hw>`
--  :doc:`Software Resources </wiki-migration/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/sw>`
+-  `Size Estimate <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/layout-mockup>`_
+-  `Power Architecture <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/power-architecture>`_
+-  `Hardware <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/hw>`_
+-  `Software Resources <https://wiki.analog.com/resources/eval/developer-kits/2to24ghz-mxfe-rf-front-end/sw>`_
 
 Bill of Materials
 =================
