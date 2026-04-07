@@ -78,6 +78,7 @@ While :adi:`EVAL-AD9082` looks like this, with 2x ADCs and 4x DACs:
    prerequisites
    quickstart/index
    user-guide
+
 Recommendations
 -------------------------------------------------------------------------------
 
