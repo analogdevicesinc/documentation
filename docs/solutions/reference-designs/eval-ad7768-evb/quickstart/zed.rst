@@ -6,7 +6,7 @@ ZED Quickstart
 This guide provides quick instructions on how to set up the
 :adi:`EVAL-AD7768` / :adi:`EVAL-AD7768-4` on:
 
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__ FMC LPC
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_ FMC LPC
 
 .. image:: ../../images/ZedBoard.png
    :width: 900
@@ -64,7 +64,7 @@ Required Software
 Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- AMD Xilinx `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- AMD Xilinx `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply (12V)
 - :adi:`EVAL-AD7768` / :adi:`EVAL-AD7768-4` FMC evaluation board and its power supply (7V - 9V)
 - SD card with at least 16GB of memory
@@ -92,7 +92,7 @@ In the following example, we will prepare the evaluation setup by connecting the
 
 Follow the steps in this order, to avoid damaging the components:
 
-#. Get the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+#. Get the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 #. Configure ZedBoard for SD BOOT:
 
     .. image:: ../images/ad7768_zed_sdcard.jpg
@@ -804,7 +804,7 @@ Required Software
 Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- AMD Xilinx `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- AMD Xilinx `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply (12V)
 - :adi:`EVAL-AD7768` / :adi:`EVAL-AD7768-4` FMC evaluation board and its power
    supply (7V - 9V)
@@ -832,7 +832,7 @@ board for JTAG boot, and applying a test input signal.
 
 Follow the steps in this order, to avoid damaging the components:
 
-#. Get the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+#. Get the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 #. Configure ZedBoard for JTAG boot:
 
     .. image:: ../images/ad7768_zed_jtag.jpg

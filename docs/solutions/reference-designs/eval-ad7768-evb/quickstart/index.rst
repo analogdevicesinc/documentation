@@ -28,7 +28,7 @@ The carriers we support are:
    - - FPGA board
      - EVAL-AD7768
      - EVAL-AD7768-4
-   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - FMC LPC
      - FMC LPC
 
@@ -46,12 +46,12 @@ The supported OS are:
      - Linux software
      - No-OS software
    - - EVAL-AD7768
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - Yes
    - - EVAL-AD7768-4
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - No
