@@ -197,22 +197,24 @@ The ADA4356 PyADI driver can be used thru the following commands:
 
 .. container:: center round box
 
-   \ ``import adi
+   .. code-block:: python
 
-         my_uri = "ip:analog.local"
-         my_buffer_size = 4096
+   import adi
    
-         # Setting the “adi.ada4355(uri=my_uri)” to the “my_4356” variable for
-         ease of initializations
-         my_4356 = adi.ada4355(uri=my_uri)
-         my_4356.rx_buffer_size = my_buffer_size
-         my_4356.rx_enabled_channels = [0]
-         my_4356.ada4355_register_write(0x0D,0x00)
-   
-         data = my_4356.rx()*my_4356.rx_scale
-         # or: my_4356.rx()*0.00012207
-   
-   my_4356.rx_destroy_buffer()``\
+            my_uri = "ip:analog.local"
+            my_buffer_size = 4096
+      
+            # Setting the “adi.ada4355(uri=my_uri)” to the “my_4356” variable for
+            ease of initializations
+            my_4356 = adi.ada4355(uri=my_uri)
+            my_4356.rx_buffer_size = my_buffer_size
+            my_4356.rx_enabled_channels = [0]
+            my_4356.ada4355_register_write(0x0D,0x00)
+      
+            data = my_4356.rx()*my_4356.rx_scale
+            # or: my_4356.rx()*0.00012207
+      
+      my_4356.rx_destroy_buffer()\
 
 --------------
 
@@ -275,15 +277,17 @@ Parameter   Channel Assigned
 
 .. container:: center round box
 
-   \ ``import adi
+   .. code-block:: python
 
-   my_7291 = adi.ad7291(uri=my_uri)
-   print(my_7291.temp0())
-   print(my_7291.voltage0())
-   print(my_7291.voltage1())
-   print(my_7291.voltage2())
-   print(my_7291.voltage3())
-   print(my_7291.voltage4())``\
+   import adi
+   
+      my_7291 = adi.ad7291(uri=my_uri)
+      print(my_7291.temp0())
+      print(my_7291.voltage0())
+      print(my_7291.voltage1())
+      print(my_7291.voltage2())
+      print(my_7291.voltage3())
+      print(my_7291.voltage4())\
 
 --------------
 
