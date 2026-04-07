@@ -840,7 +840,7 @@ Insert the :adi:`ADIS16228CMLZ's <ADIS16228>` flex connector into the mating con
 
 **Step #2**
 
-Secure the `ADIS16228CMLZ <ad>ADIS16228>`__ to the interface board, using the M2x0.4x6mm machine screws.
+Secure the `ADIS16228CMLZ <ad>ADIS16228>`_ to the interface board, using the M2x0.4x6mm machine screws.
 
 .. image:: ../images/adis16228_pcb_asy_step2_01.jpg
    :width: 200

@@ -121,19 +121,19 @@ Connect the ADIS16IMU4/PCBZ to the EVAL-ADIS
 | **3** | Install the other side of the ribbon cable on to J1 of the EVAL-ADISZ | |image10_2| |
 +-------+-----------------------------------------------------------------------+-------------+
 
-.. |image1_2| image:: ../images/adis16imu4_to_eval_adis_01a.jpg
+.. |image1_2_2| image:: ../images/adis16imu4_to_eval_adis_01a.jpg
    :width: 400
 
-.. |image2_2| image:: ../images/adis16imu4_to_eval_adis_02a.jpg
+.. |image2_2_2| image:: ../images/adis16imu4_to_eval_adis_02a.jpg
    :width: 400
 
-.. |image3_2| image:: ../images/adis16imu4_to_eval_adis_02b.jpg
+.. |image3_2_2| image:: ../images/adis16imu4_to_eval_adis_02b.jpg
    :width: 400
 
-.. |image4_2| image:: ../images/adis16imu4_to_eval_adis_02c.jpg
+.. |image4_2_2| image:: ../images/adis16imu4_to_eval_adis_02c.jpg
    :width: 400
 
-.. |image5_2| image:: ../images/adis16imu4_to_eval_adis_03.jpg
+.. |image5_2_2| image:: ../images/adis16imu4_to_eval_adis_03.jpg
    :width: 400
 
 .. |image6_2| image:: ../images/adis16imu4_to_eval_adis_01a.jpg
