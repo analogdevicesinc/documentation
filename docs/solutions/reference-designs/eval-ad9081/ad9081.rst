@@ -996,7 +996,9 @@ Controlling the MxFE is done via the IIO sysfs interface. For convenience users 
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root:/> cd /sys/bus/iio/devices/
       root:/sys/bus/iio/devices> ls
@@ -1424,7 +1426,9 @@ Sets the main data path (CDDC/CDUC) NCO frequency (fCARRIER) in Hz
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1000000000 > out_voltage0_i_main_nco_frequency
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_main_nco_frequency
@@ -1449,7 +1453,9 @@ Sets the channel data path (FDDC/FDUC) NCO frequency (fCARRIER) in Hz
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1000000000 > out_voltage0_i_channel_nco_frequency 
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_frequency
@@ -1477,7 +1483,9 @@ Sets the main data path (CDDC/CDUC) NCO phase offset in milli degrees
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 66000 > out_voltage0_i_main_nco_phase
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_main_nco_phase
@@ -1502,7 +1510,9 @@ Sets the channel data path (FDDC/FDUC) NCO phase offset in milli degrees
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 13123 > out_voltage0_i_channel_nco_phase
       root@analog:/sys/bus/iio/devices/iio:device2# cat out_voltage0_i_channel_nco_phase
@@ -1527,7 +1537,9 @@ The input data into each channelizer stage can be rescaled prior to additional p
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 0.707 > out_voltage0_i_channel_nco_gain_scale
    
@@ -1550,7 +1562,9 @@ The ``out_voltageX_[i|q]_channel_nco_test_tone_en`` mode is most useful for appl
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 0.25 > out_voltage0_i_channel_nco_test_tone_scale
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > out_voltage0_i_channel_nco_test_tone_en
@@ -1606,7 +1620,9 @@ Filter configurations can be written as follows:
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# cat /root/pfilt.cfg > filter_fir_config
    
@@ -1696,7 +1712,9 @@ The **direct loopback** path loops the ADC output data directly back into a spec
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# echo 1 > loopback_mode
    
@@ -1713,7 +1731,9 @@ The device contains a Temperature Monitoring Unit (TMU) that functions as a digi
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/bus/iio/devices/iio:device2# cat in_temp0_input
       86120
@@ -1722,7 +1742,9 @@ The device contains a Temperature Monitoring Unit (TMU) that functions as a digi
 Low level debug functions via debugfs
 =====================================
 
-::
+
+
+.. code-block:: none
 
    root@analog:/sys/kernel/debug/iio/iio:device2# ls -al
    total 0
@@ -1750,7 +1772,9 @@ Reading ``status`` returns a status string.
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# cat status
       **JESD TX (JRX) Link1 0xF lanes in DATA
@@ -1771,7 +1795,9 @@ Writing ``dac-full-scale-current-ua`` controls the DAC full scale current in uA.
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 40000 > dac-full-scale-current-ua
       root@analog:/sys/kernel/debug/iio/iio:device2#
@@ -1807,7 +1833,9 @@ Value Comment
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 15 1 > bist_prbs_select_jrx
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_select_jrx
@@ -1838,7 +1866,9 @@ Format is: <errors>/<pass>
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_error_counters_jrx
       0/1 0/1 0/1 0/1 0/1 0/1 0/1 0/1
@@ -1865,7 +1895,9 @@ Value Comment
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 31 > bist_prbs_select_jtx
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_prbs_select_jtx
@@ -1900,7 +1932,9 @@ Value PRBS type
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 0 15 1 > bist_spo_sweep_jrx
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_spo_sweep_jrx
@@ -1926,7 +1960,9 @@ QUART_RATE        > 16 Gbps   +/- 16
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device2# echo 2 > bist_spo_set_jrx
       root@analog:/sys/kernel/debug/iio/iio:device2# cat bist_spo_set_jrx
@@ -1971,7 +2007,9 @@ Value PRBS type
    This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:~# echo 7 > /sys/bus/platform/devices/84b60000.axi-adxcvr-tx/prbs_select
       root@analog:~# iio_attr -D axi-ad9081-rx-hpc bist_2d_eyescan_jrx "1 7 10"
@@ -2256,7 +2294,9 @@ Therefore read the name attribute of each IIO device
       This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:~# grep "" /sys/bus/iio/devices/iio\:device*/name
       /sys/bus/iio/devices/iio:device0/name:ad7291
@@ -2279,7 +2319,9 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:~# cd /sys/kernel/debug/iio/iio\:device1
       root@analog:/sys/kernel/debug/iio/iio:device1# ls direct_reg_access 
@@ -2296,7 +2338,9 @@ Change directory to **/sys/kernel/debug**/iio/ iio:deviceX and check if the dire
       This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 > direct_reg_access                                                                                                                                 
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
@@ -2315,7 +2359,9 @@ Write ADDRESS VALUE
       This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device1# echo 0x7 0x50  > direct_reg_access                                                                                                                            
       root@analog:/sys/kernel/debug/iio/iio:device1# cat direct_reg_access 
@@ -2341,7 +2387,9 @@ The register map for typical ADI HDL cores can be found here: `Register Map <htt
       This specifies any shell prompt running on the target
 
    
-   ::
+
+
+.. code-block:: none
    
       root@analog:/sys/kernel/debug/iio/iio:device6# echo 0x80000000 > direct_reg_access                                                                                                                           
       root@analog:/sys/kernel/debug/iio/iio:device6# cat direct_reg_access 
