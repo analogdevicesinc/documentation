@@ -250,7 +250,7 @@ Device tree customization
 
 The AD9081 Linux IIO device driver is configured and customized using device tree, a simple tree structure of nodes and properties. Properties are key-value pairs, and node may contain both properties and child nodes. The top device node of the AD9081/82 contains common and device specific attributes. Under the top node, there are two child-nodes (``adi,tx-dacs`` and ``adi,rx-adcs``). In case of DAC or ADC only operation, both nodes are required and must contain at least the ``adi,dac-frequency-hz`` and respectively the ``adi,adc-frequency-hz`` property. However omitting the child nodes will disable this ADC/DAC data path.
 
-.. code:: c
+.. code:: none
 
    &spi {
        trx0_ad9081: ad9081@0 {
@@ -296,7 +296,7 @@ interfaces.
 -  The second mandatory node is the ``adi,channelizer-paths`` node. The utilized channelizers FDDCs and FDUCs are described in here, which are always related to the main data paths. Therefore, the main data path child-nodes contain a property (``adi,crossbar-select``) of a device node containing a phandle to the FDUC or FDDC that it is attached to.
 -  The last mandatory child-node is the ``adi,jesd-links`` node. This node contains up to two (single/dual link) child-nodes, one for each link.
 
-.. code:: c
+.. code:: none
 
     adi,main-data-paths {
 
@@ -2220,7 +2220,7 @@ Events have timestamps.
 
 **The format is:**
 
-.. code:: c
+.. code:: none
 
    /**
     * struct iio_event_data - The actual event being pushed to userspace
