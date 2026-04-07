@@ -11,13 +11,13 @@ baseband rates.
 
 Channels:
 
-======================= ===================== =====================
-\                       Receiver Inputs       
-======================= ===================== =====================
-IIO Device Channels     voltage0_i voltage0_q voltage1_i voltage1_q
-axi-adrv9009-rx-hpc     RX1                   RX2
-axi-adrv9009-rx-obs-hpc OBS RX1               OBS RX2
-======================= ===================== =====================
+======================================= ===================== =====================
+\                       Receiver Inputs
+======================================= ===================== =====================
+IIO Device Channels                     voltage0_i voltage0_q voltage1_i voltage1_q
+axi-adrv9009-rx-hpc                     RX1                   RX2
+axi-adrv9009-rx-obs-hpc                 OBS RX1               OBS RX2
+======================================= ===================== =====================
 
 Screenshots
 -----------

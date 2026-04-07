@@ -256,7 +256,7 @@ numbering is constant and may be known in advance.
 ================================= ===============
 IIO sysfs attribute naming prefix Target
 ================================= ===============
-Transceiver                       
+Transceiver
 in_voltage0\_[…]                  RX1
 in_voltage1\_[…]                  RX2
 in_voltage2\_[…]                  Observation RX1
@@ -265,7 +265,7 @@ out_voltage0\_[…]                 TX1
 out_voltage1\_[…]                 TX2
 out_altvoltage0\_[…]              TRX LO
 out_altvoltage1\_[…]              AUX LO
-Auxilary Converters               
+Auxilary Converters
 in_voltage4\_[…]                  AUX ADC0
 in_voltage5\_[…]                  AUX ADC1
 in_voltage6\_[…]                  AUX ADC2
@@ -1815,11 +1815,11 @@ More Information
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -
 
-|libiio introduction|
+|libiio introduction_2|
 
 *Need Help?*
 
 -  :ez:`Analog Devices Linux Device Drivers Help Forum <linux-software-drivers>`
 -  `Ask a Question <https://ez.analog.com/>`_
 
-.. |libiio introduction| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
+.. |libiio introduction_2| image:: https://wiki.analog.com/_media/software/linux/docs/iio/youtube>p_vntewue24
