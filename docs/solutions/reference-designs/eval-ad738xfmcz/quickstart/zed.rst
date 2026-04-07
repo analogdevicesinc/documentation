@@ -7,7 +7,7 @@ This guide provides quick instructions on how to set up the
 :adi:`EVAL-AD7380FMCZ` / :adi:`EVAL-AD7381FMCZ` /
 :adi:`EVAL-AD7386FMCZ` on:
 
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FMC LPC
 
 .. figure:: ../images/ZedBoard.png
@@ -73,7 +73,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx
-  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply (12V)
 - :adi:`EVAL-AD7380FMCZ` / :adi:`EVAL-AD7381FMCZ` /
   :adi:`EVAL-AD7386FMCZ` FMC evaluation board
@@ -103,7 +103,7 @@ a test input signal.
 Follow the steps in this order, to avoid damaging the components:
 
 #. Get the
-   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 #. Configure ZedBoard for SD BOOT:
 
    .. image:: ../images/ad7380_zed_config_jumpers.jpg
@@ -828,7 +828,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx
-  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply (12V)
 - :adi:`EVAL-AD7380FMCZ` / :adi:`EVAL-AD7381FMCZ` /
   :adi:`EVAL-AD7386FMCZ` FMC evaluation board
@@ -854,7 +854,7 @@ the board for JTAG boot, and applying a test input signal.
 Follow the steps in this order, to avoid damaging the components:
 
 #. Get the
-   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 #. Configure ZedBoard for JTAG boot:
 
     .. image:: ../images/zed_jtag.jpg

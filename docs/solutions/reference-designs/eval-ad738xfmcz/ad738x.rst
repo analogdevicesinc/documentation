@@ -34,7 +34,7 @@ Evaluation Boards
 Description
 -----------
 
-This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting dual or quad channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+This is a Linux industrial I/O (`IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_) subsystem driver, targeting dual or quad channel serial interface ADCs. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See `IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_ for more information.
 
 Source Code
 ===========
@@ -440,10 +440,10 @@ More Information
 -  IIO mailing list: linux-iio@vger.kernel.org
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
--  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
--  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
--  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO test and visualization application <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  `libiio - IIO system library <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
+-  `libiio - Internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
+-  `Pointers and good books <https://wiki.analog.com/resources/tools-software/pointers>`_
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -

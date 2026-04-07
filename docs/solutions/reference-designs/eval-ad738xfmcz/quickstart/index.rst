@@ -35,7 +35,7 @@ The carriers we support are:
      - EVAL-AD7380FMCZ
      - EVAL-AD7381FMCZ
      - EVAL-AD7386FMCZ
-   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - FMC LPC
      - FMC LPC
      - FMC LPC
@@ -54,17 +54,17 @@ The supported OS are:
      - Linux software
      - No-OS software
    - - EVAL-AD7380FMCZ
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - Yes
    - - EVAL-AD7381FMCZ
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - Yes
    - - EVAL-AD7386FMCZ
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - No
