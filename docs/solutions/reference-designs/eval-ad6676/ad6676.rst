@@ -19,12 +19,12 @@ Evaluation Boards
 -----------------
 
 -  :adi:`AD6676-EBZ <AD6676EBZ>`
--  :doc:`AD6676 : Design Tools and Startup Guide for the AD6676 evaluation board, a high dynamic range, Wideband Receiver </wiki-migration/resources/eval/ad6676-wideband_rx_subsystem_ad6676ebz>`
+-  `AD6676 : Design Tools and Startup Guide for the AD6676 evaluation board, a high dynamic range, Wideband Receiver <https://wiki.analog.com/resources/eval/ad6676-wideband_rx_subsystem_ad6676ebz>`_
 
 Description
 -----------
 
-This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting RF Transceivers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+This is a Linux industrial I/O (`IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_) subsystem driver, targeting RF Transceivers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See `IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_ for more information.
 
 Source Code
 ===========
@@ -182,7 +182,7 @@ numbering is constant and may be known in advance.
    \ TIP: An example program which uses the interface can be found here:
 
    
-   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
+   -  `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
    
    .. image:: https://wiki.analog.com/_media/resources/tools-software/linux-drivers/iio-adc/ad6676-osc-screenshot.png
       :align: center
@@ -531,7 +531,7 @@ JESD204B Interface Testing
 
 Below Eyes were captured on a Xilinx ZC706 after > 4 hours of operation:
 
-:doc:`JESD204B Eye Scan </wiki-migration/resources/tools-software/linux-software/jesd_eye_scan>`
+`JESD204B Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_
 
 |LANE0| |LANE1|
 
@@ -541,10 +541,10 @@ More Information
 -  IIO mailing list: linux-iio@vger.kernel.org
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
--  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
--  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
--  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO test and visualization application <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  `libiio - IIO system library <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
+-  `libiio - Internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
+-  `Pointers and good books <https://wiki.analog.com/resources/tools-software/pointers>`_
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -

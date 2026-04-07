@@ -54,7 +54,7 @@ Helpful Links
 -  :adi:`ADI RF Impedance Matching Tool <en/design-center/interactive-design-tools/rf-impedance-matching-calculator.html>`
 -  `ADIsimRF Software <https://form.analog.com/form_pages/rfcomms/adisimrf.aspx>`_
 -  :adi:`ADI RF/IF Transceiver Products Web page <en/rfif-components/rfif-transceivers/products/index.html>`
--  :doc:`AD6676 Wideband IF Receiver Subsystem Linux device driver </wiki-migration/resources/tools-software/linux-drivers/iio-adc/ad6676>`
+-  `AD6676 Wideband IF Receiver Subsystem Linux device driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad6676>`_
 
 AD6676 Evaluation Platform User Guides
 --------------------------------------
