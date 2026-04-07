@@ -37,7 +37,7 @@ Hardware requirements
 -  `Coraz7s FPGA Board <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development/>`_
 -  Ethernet cable (for network access)
 -  Micro USB to USB Type A for UART access
--  1x SD card (at least 16GB); follow :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>`
+-  1x SD card (at least 16GB); follow `this guide <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
 
 Block design
 ------------
@@ -113,7 +113,7 @@ Then go to the **\*PROJECT LOCATION WITHIN HDL (EX: projects/ad5706r/coraz7s)**\
    user@analog:~$ cd hdl/projects/ad5706r/coraz7s
    user@analog:~/hdl/projects/ad5706r/coraz7s$ make
 
-Check :doc:`this guide </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` on how to prepare your SD card with the proper boot files. A more comprehensive build guide can be found in the :doc:`HDL User Guide </wiki-migration/resources/fpga/docs/hdl>`.
+Check `this guide <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_ on how to prepare your SD card with the proper boot files. A more comprehensive build guide can be found in the `HDL User Guide <https://wiki.analog.com/resources/fpga/docs/hdl>`_.
 
 System setup
 ------------
@@ -126,15 +126,15 @@ Resources
 
 -  `EVAL-AD5706RARDZ <https://analog.com/eval-ad5706r>`_
 -  `HDL project documentation <http://analogdevicesinc.github.io/hdl/projects/ad5706r/index.html>`_
--  :doc:`AD5706 HDL Reference Design </wiki-migration/resources/eval/user-guides/ad5706r>`
+-  `AD5706 HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/ad5706r>`_
 
 More information
 ----------------
 
--  :doc:`How to prepare an SD card </wiki-migration/resources/tools-software/linux-software/kuiper-linux>` with boot files
--  :doc:`ADI reference designs HDL user guide </wiki-migration/resources/fpga/docs/hdl>`
--  :doc:`ADI HDL architecture </wiki-migration/resources/fpga/docs/arch>` wiki page
--  :doc:`How to build an ADI HDL project </wiki-migration/resources/fpga/docs/build>`
+-  `How to prepare an SD card <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_ with boot files
+-  `ADI reference designs HDL user guide <https://wiki.analog.com/resources/fpga/docs/hdl>`_
+-  `ADI HDL architecture <https://wiki.analog.com/resources/fpga/docs/arch>`_ wiki page
+-  `How to build an ADI HDL project <https://wiki.analog.com/resources/fpga/docs/build>`_
 
 Support
 -------

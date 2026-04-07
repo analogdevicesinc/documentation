@@ -4,7 +4,7 @@ AD5790 AD5780 AD5760 Evaluation Board Programmer
 Overview
 --------
 
-The 'AD5790 AD5780 AD5760 Evaluation Board Programmer' can be used to program the board ID on the evaluation boards for the AD5790, AD5780, and AD5760 for use with their legacy or :doc:`ACE </wiki-migration/resources/tools-software/ace>` evaluation software. The evaluation kits this program can be used with are listed here.
+The 'AD5790 AD5780 AD5760 Evaluation Board Programmer' can be used to program the board ID on the evaluation boards for the AD5790, AD5780, and AD5760 for use with their legacy or `ACE <https://wiki.analog.com/resources/tools-software/ace>`_ evaluation software. The evaluation kits this program can be used with are listed here.
 
 -  :adi:`EVAL-AD5790SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5790.html>`
 -  :adi:`EVAL-AD5780SDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad5780.html>`
