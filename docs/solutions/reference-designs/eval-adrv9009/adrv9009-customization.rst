@@ -10,7 +10,7 @@ ADRV9009/ADRV9008 Device Driver Customization
    
    If unsure please see the manual or don't change!
 
-The Linux platform allows you to examine and determine optimal settings for your target application: See here: :doc:`ADRV9009/ADRV9008 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>`
+The Linux platform allows you to examine and determine optimal settings for your target application: See here: `ADRV9009/ADRV9008 Advanced Plugin <https://wiki.analog.com/resources/tools-software/linux-software/adrv9009_advanced_plugin>`_
 
 AGC Settings
 ------------

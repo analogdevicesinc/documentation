@@ -24,7 +24,7 @@ Evaluation Boards
 Description
 -----------
 
-This is a Linux industrial I/O (:doc:`IIO </wiki-migration/software/linux/docs/iio/iio>`) subsystem driver, targeting RF Transceivers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See :doc:`IIO </wiki-migration/software/linux/docs/iio/iio>` for more information.
+This is a Linux industrial I/O (`IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_) subsystem driver, targeting RF Transceivers. The industrial I/O subsystem provides a unified framework for drivers for many different types of converters and sensors using a number of different physical interfaces (i2c, spi, etc). See `IIO <https://wiki.analog.com/software/linux/docs/iio/iio>`_ for more information.
 
 Source Code
 ===========
@@ -56,8 +56,8 @@ Files
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  :doc:`JESD204 (FSM) Interface Linux Kernel Framework </wiki-migration/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
--  :doc:`JESD204 Interface Framework </wiki-migration/resources/fpga/peripherals/jesd204>`
+-  `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
+-  `JESD204 Interface Framework <https://wiki.analog.com/resources/fpga/peripherals/jesd204>`_
 
 Receive AXI-ADC driver
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -108,7 +108,7 @@ Device Driver Customization
 
 Please follow the link here for detailed options and examples:
 
--  :doc:`ADRV9009/ADRV9008 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
+-  `ADRV9009/ADRV9008 Device Driver Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_
 
 Stream Processor Configuration
 ==============================
@@ -247,8 +247,8 @@ numbering is constant and may be known in advance.
    \ TIP: An example program which uses the interface can be found here:
 
    
-   -  :doc:`IIO Oscilloscope </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
-   -  :doc:`ADRV9009 Control IIO Scope Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_plugin>`
+   -  `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+   -  `ADRV9009 Control IIO Scope Plugin <https://wiki.analog.com/resources/tools-software/linux-software/adrv9009_plugin>`_
    
 
 *General attribute naming convention:*
@@ -1132,12 +1132,12 @@ Attributes are:
 Advanced Debug Facilities
 =========================
 
-The ADRV9009 driver supports a number of advanced debug controls via the kernel `debugfs <https://en.wikipedia.org/wiki/debugfs>`_. How these device files/controls can be used is described here. The :doc:`ADRV9009 Advanced Plugin </wiki-migration/resources/tools-software/linux-software/adrv9009_advanced_plugin>` directly controls these and adds a user friendly interface.
+The ADRV9009 driver supports a number of advanced debug controls via the kernel `debugfs <https://en.wikipedia.org/wiki/debugfs>`_. How these device files/controls can be used is described here. The `ADRV9009 Advanced Plugin <https://wiki.analog.com/resources/tools-software/linux-software/adrv9009_advanced_plugin>`_ directly controls these and adds a user friendly interface.
 
 Runtime Device Driver Customization
 -----------------------------------
 
-There is a large number of :doc:`ADRV9009 Device Driver Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>` options available. Typically these are supplied via `Devicetree <https://en.wikipedia.org/wiki/device_tree>`_. However for debug and evaluation purposes these can be changed during runtime. Please note that changes will be lost if the device is unbinded or the platform is rebooted. Changes will only take affect once the ``initialize`` attribute is written ``1``. It should also be noted that the ADRV9009 will take a RESET, so current settings done via the main IIO API will be lost. Accessing `debugfs <https://en.wikipedia.org/wiki/debugfs>`_ requires root privileges. Only device files prefixed with ``adi,`` are :doc:`ADRV9009 Device Driver Customization Options </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`.
+There is a large number of `ADRV9009 Device Driver Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_ options available. Typically these are supplied via `Devicetree <https://en.wikipedia.org/wiki/device_tree>`_. However for debug and evaluation purposes these can be changed during runtime. Please note that changes will be lost if the device is unbinded or the platform is rebooted. Changes will only take affect once the ``initialize`` attribute is written ``1``. It should also be noted that the ADRV9009 will take a RESET, so current settings done via the main IIO API will be lost. Accessing `debugfs <https://en.wikipedia.org/wiki/debugfs>`_ requires root privileges. Only device files prefixed with ``adi,`` are `ADRV9009 Device Driver Customization Options <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_.
 
 In order to identify if the IIO device in question (adrv9009-phy) you first need
 to identify the IIO device number. Therefore read the name attribute of each IIO
@@ -1669,7 +1669,7 @@ feature, since you can modify registers on the back of the driver.
 
 .. tip::
 
-   To simplify direct register access you may want to use the libiio :doc:`iio_reg </wiki-migration/resources/tools-software/linux-software/libiio/iio_reg>` command line utility.
+   To simplify direct register access you may want to use the libiio `iio_reg <https://wiki.analog.com/resources/tools-software/linux-software/libiio/iio_reg>`_ command line utility.
 
 Accessing debugfs requires root privileges.
 
@@ -1761,7 +1761,7 @@ Write ADDRESS VALUE
 
 In this case when accessing the HDL Core Registers always set BIT31.
 
-The register map for typical ADI HDL cores can be found here: :doc:`Register Map </wiki-migration/resources/fpga/docs/hdl/regmap>`
+The register map for typical ADI HDL cores can be found here: `Register Map <https://wiki.analog.com/resources/fpga/docs/hdl/regmap>`_
 
 .. container:: box bggreen
 
@@ -1784,10 +1784,10 @@ IIO pointers
 -  IIO mailing list: linux-iio@vger.kernel.org
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
--  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
--  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
--  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO test and visualization application <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  `libiio - IIO system library <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
+-  `libiio - Internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
+-  `Pointers and good books <https://wiki.analog.com/resources/tools-software/pointers>`_
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -
@@ -1807,10 +1807,10 @@ More Information
 -  IIO mailing list: linux-iio@vger.kernel.org
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
--  :doc:`IIO test and visualization application </wiki-migration/resources/tools-software/linux-software/iio_oscilloscope>`
--  :doc:`libiio - IIO system library </wiki-migration/resources/tools-software/linux-software/libiio>`
--  :doc:`libiio - Internals </wiki-migration/resources/tools-software/linux-software/libiio_internals>`
--  :doc:`Pointers and good books </wiki-migration/resources/tools-software/pointers>`
+-  `IIO test and visualization application <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  `libiio - IIO system library <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
+-  `libiio - Internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
+-  `Pointers and good books <https://wiki.analog.com/resources/tools-software/pointers>`_
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
 -

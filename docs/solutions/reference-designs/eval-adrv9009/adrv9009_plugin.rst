@@ -49,48 +49,48 @@ The ADRV9009 view is divided in four sections:
 Device Global Settings
 ----------------------
 
--  **Active ENSM:** Displays the active mode of the Enable State Machine. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **ENSM Modes:** Selects one of the available modes :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Profile configuration:** Allows a Profile configuration to be loaded from a file. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **TRX LO Frequency(MHz):** Selects the local oscillator frequency. Range 75MHz to 6GHz with low tuning granularity. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Calibrations:** Allows the user to reschedule a certain calibration :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+-  **Active ENSM:** Displays the active mode of the Enable State Machine. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **ENSM Modes:** Selects one of the available modes `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Profile configuration:** Allows a Profile configuration to be loaded from a file. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **TRX LO Frequency(MHz):** Selects the local oscillator frequency. Range 75MHz to 6GHz with low tuning granularity. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Calibrations:** Allows the user to reschedule a certain calibration `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
 Receive Chain
 -------------
 
--  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+-  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 -  **RX**
 
-   -  **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control Mode (MGC). :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **RSSI(dB):** Displays the received strength signal level. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **Gain Control:** Displays the active gain mode. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **Gain Control Modes:** Selects one of the available modes: manual, hybrid and automatic. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **Gain Control Pin Mode:** Enables Pin Control Mode :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **Tracking** :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control Mode (MGC). `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **RSSI(dB):** Displays the received strength signal level. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **Gain Control:** Displays the active gain mode. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **Gain Control Modes:** Selects one of the available modes: manual, hybrid and automatic. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **Gain Control Pin Mode:** Enables Pin Control Mode `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **Tracking** `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
       -  **Quadrature**
       -  **HD2**
 
-   -  **Powerdown:** Channel Enable/Powerdown\ :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Powerdown:** Channel Enable/Powerdown\ `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
 Transmit Chain
 --------------
 
--  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **PA Protection:** Enables PA protection :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+-  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **PA Protection:** Enables PA protection `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 -  **TX**
 
-   -  **Attenuation(dB):** The TX attenuation/gain can be individually controlled for TX1 and TX2. The range is from 0 to -41.95 dB in programmable steps sizes. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Attenuation(dB):** The TX attenuation/gain can be individually controlled for TX1 and TX2. The range is from 0 to -41.95 dB in programmable steps sizes. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
-      -  **Attenuation Pin Control Mode:** Enables Pin Control Mode :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-      -  **Tracking** :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+      -  **Attenuation Pin Control Mode:** Enables Pin Control Mode `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+      -  **Tracking** `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
          -  **Quadrature**
          -  **LO Leakage**
 
-   -  **Powerdown:** Channel Enable/Powerdown\ :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Powerdown:** Channel Enable/Powerdown\ `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
 Observation Chain
 -----------------
@@ -99,19 +99,19 @@ Observation Chain
    :align: right
    :width: 400
 
--  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **AUX PLL LO Frequency(MHz):** Controls the AUX PLL local oscillator frequency. Range 75MHz to 6GHz with low tuning granularity. :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
--  **Observation Path LO Source:** Controls the LO source for the observation receiever :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+-  **RF Bandwidth(MHz):** Displays the Primary Signal Bandwidth of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Sampling Rate(MSPS):** Displays the RX Sample Rate of the current Profile. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **AUX PLL LO Frequency(MHz):** Controls the AUX PLL local oscillator frequency. Range 75MHz to 6GHz with low tuning granularity. `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+-  **Observation Path LO Source:** Controls the LO source for the observation receiever `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
 -  **RX**
 
-   -  **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control Mode (MGC). :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
-   -  **Tracking** :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Hardware Gain(dB):** Controls the RX gain only in Manual Gain Control Mode (MGC). `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
+   -  **Tracking** `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
       -  **Quadrature**
 
-   -  **Powerdown:** Channel Enable/Powerdown\ :doc:`Read More </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   -  **Powerdown:** Channel Enable/Powerdown\ `Read More <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
 
 FPGA Settings
 -------------
@@ -165,7 +165,7 @@ DAC Buffer Output
 
 **Restrictions:**
 
--  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the :doc:`Basic IQ Data Files </wiki-migration/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>` documentation first.
+-  There are two types of files than can be loaded: **.txt** or **.mat**. The IIO-Oscilloscope comes with several :git-iio-oscilloscope:`data files <waveforms>` that can be used. If you want to create your own data files please take a look at the `Basic IQ Data Files <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles>`_ documentation first.
 -  Due to hardware limitation only specific combinations of enabled channels are
    possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
    enabled then it can be any of them. If two channels are enabled then channels

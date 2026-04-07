@@ -12,7 +12,7 @@ In the No-OS driver the values directly correspond to members of the (taliseInit
    :align: center
    :width: 500
 
-See more details about :doc:`ADRV9009/ADRV9008 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`.
+See more details about `ADRV9009/ADRV9008 Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_.
 
 In order for the settings made on these plugin to take affect, the Save Settings
 button must be pressed. It should be noted that the driver then reinitialized
@@ -57,9 +57,9 @@ several seconds to complete.
          
 
    
-   Simply update the values here: :doc:`ADRV9009 Devicetree Initialization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`
+   Simply update the values here: `ADRV9009 Devicetree Initialization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
    
-   For the No-OS driver the mapping can be found here: :doc:`ADRV9009 Customization </wiki-migration/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`
+   For the No-OS driver the mapping can be found here: `ADRV9009 Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_
    
 
 Screenshots / Descriptions
