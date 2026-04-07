@@ -65,6 +65,7 @@ Applications:
    prerequisites
    quickstart/index
    user-guide
+
 Recommendations
 -------------------------------------------------------------------------------
 

@@ -573,8 +573,8 @@ Name          Description
 GAIN0,        Gain mode/input range control for the ADAQ7768-1.
 GAIN1,        (See Table 4 for more details.)
 GAIN2         Set to LO for GPIO input control mode.
-(labelled as
-A0, A1, A2 on
+(labelled     as
+A0, A1, A2    on
 Rev. A board)
 FDA_M0        Reserved. Default low.
 FDA_M1        Reserved. Default low.
