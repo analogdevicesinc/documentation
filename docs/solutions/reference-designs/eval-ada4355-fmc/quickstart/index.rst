@@ -33,7 +33,7 @@ The carriers we support are:
 
    - - FPGA board
      - EVAL-ADA4356EBZ
-   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   - - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - FMC LPC
 
 Supported environments
@@ -47,7 +47,7 @@ Supported environments
      - HDL
      - Linux software
    - - EVAL-ADA4356EBZ
-     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+     - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
 

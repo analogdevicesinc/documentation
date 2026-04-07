@@ -129,7 +129,7 @@ More Information and Useful Links
 
 - :adi:`ADA4355 Product Page <ADA4355>`
 - :adi:`ADA4356 Product Page <ADA4356>`
-- `EVAL-ADA4356EBZ User Guide (PDF) <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ada4356ebz.pdf>`__
+- `EVAL-ADA4356EBZ User Guide (PDF) <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ada4356ebz.pdf>`_
 
 Software Projects and Platforms
 -------------------------------------------------------------------------------

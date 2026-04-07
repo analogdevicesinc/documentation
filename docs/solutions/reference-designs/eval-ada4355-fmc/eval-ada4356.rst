@@ -68,7 +68,7 @@ application that allows the evaluation and control of multiple evaluation
 systems from across the Analog Devices product portfolio. The application
 consists of a common framework and individual component specific plug-ins.
 
-The controller board supported by ACE for the evaluation of EVAL-ADA4356EBZ is the ZedBoard. For ACE installation and documentation instructions, refer to the :doc:`ACE user guide </wiki-migration/resources/tools-software/ace/userguide>`. Once ACE is installed, open the ACE application and search for the EVAL-ADA4356EBZ board plugin in ACE’s plugin manager, then install or update.
+The controller board supported by ACE for the evaluation of EVAL-ADA4356EBZ is the ZedBoard. For ACE installation and documentation instructions, refer to the `ACE user guide <https://wiki.analog.com/resources/tools-software/ace/userguide>`_. Once ACE is installed, open the ACE application and search for the EVAL-ADA4356EBZ board plugin in ACE’s plugin manager, then install or update.
 
 Controlling the EVAL-ADA4356EBZ
 ===============================

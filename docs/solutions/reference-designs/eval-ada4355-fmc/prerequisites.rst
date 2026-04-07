@@ -35,7 +35,7 @@ Hardware prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. :adi:`EVAL-ADA4356EBZ <ADA4356>` evaluation board
-#. `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+#. `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
    FPGA carrier platform
 #. 12 V power supply for the ZedBoard
 #. Some way to interact with the ZedBoard:

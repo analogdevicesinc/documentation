@@ -6,7 +6,7 @@ ZedBoard Quickstart
 This guide provides quick instructions on how to set up the
 :adi:`EVAL-ADA4356EBZ` on:
 
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FMC LPC
 
 .. figure:: ../../images/ZedBoard.png
@@ -69,7 +69,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx
-  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply (12 V)
 - :adi:`EVAL-ADA4356EBZ <ADA4356>` FMC evaluation board
 - SD card with at least 16 GB of memory
@@ -122,7 +122,7 @@ the EVAL-ADA4356EBZ and the ZedBoard.
 Follow the steps in this order, to avoid damaging the components:
 
 #. Get the
-   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 #. Install the standoffs on the ZedBoard: locate the two drilled
    holes beside the FMC connector. From the bottom side, install a
    6 mm screw through each hole into a 10 mm spacer on the top
