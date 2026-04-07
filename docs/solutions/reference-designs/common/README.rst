@@ -60,6 +60,11 @@ Optional Variables
      - string
      - Reference to IIO plugin documentation (required if
        ``iio_has_plugin`` is true)
+   * - ``iio_channel_description``
+     - multiline string
+     - Custom RST content for the "Channel Description" section,
+       placed after Plugin and before Data capture. Use YAML
+       multiline syntax (``|``) to write content directly in the page.
    * - ``iio_show_data_capture``
      - boolean
      - Enable data capture section
@@ -77,6 +82,12 @@ Optional Variables
      - path
      - Frequency domain capture image (required if
        ``iio_show_frequency_domain`` is true)
+   * - ``iio_data_captures``
+     - list
+     - List of data capture entries (requires ``iio_show_data_capture``).
+       Each entry has optional ``title``, ``time_domain_image``, and
+       ``frequency_domain_image`` fields. Use this for multiple data
+       capture groups with different titles and images.
 
 Usage Example
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,6 +124,51 @@ Usage Example
       iio_time_domain_image: ../images/ADRV9002_time_domain.png
       iio_show_frequency_domain: true
       iio_frequency_domain_image: ../images/ADRV9002_frequency_domain.png
+
+**With channel description:**
+
+.. code-block:: rst
+
+   .. include-template:: ../../common/using-iio-osc.rst.jinja
+
+      has_linux: true
+      has_no_os: true
+      iio_channel_description: |
+        Main receivers RX1 and RX2 are handled by the axi-ad9371-rx-hpc IIO
+        device, while the observation is handled by the axi-ad9371-rx-obs-hpc
+        device.
+
+        Channels:
+
+        .. list-table::
+           :header-rows: 1
+
+           * - IIO Device Channels
+             - voltage0_i voltage0_q
+             - voltage1_i voltage1_q
+           * - axi-ad9371-rx-hpc
+             - RX1
+             - RX2
+           * - axi-ad9371-rx-obs-hpc
+             - OBS RX1
+             -
+
+**With multiple data captures:**
+
+.. code-block:: rst
+
+   .. include-template:: ../../common/using-iio-osc.rst.jinja
+
+      has_linux: true
+      has_no_os: true
+      iio_show_data_capture: true
+      iio_data_captures:
+        - title: Channel 1
+          time_domain_image: ../images/ch1_time_domain.png
+          frequency_domain_image: ../images/ch1_frequency_domain.png
+        - title: Channel 2
+          time_domain_image: ../images/ch2_time_domain.png
+          frequency_domain_image: ../images/ch2_frequency_domain.png
 
 Template Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

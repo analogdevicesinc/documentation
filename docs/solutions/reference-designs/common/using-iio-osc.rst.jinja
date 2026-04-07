@@ -73,6 +73,14 @@ enables you to access the unique features and functions of the device.
 {% endif %}
 {% endif %}
 
+{% if iio_channel_description %}
+Channel Description
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+{{ iio_channel_description }}
+
+{% endif %}
+
 {% if iio_show_data_capture %}
 Data capture
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -94,5 +102,30 @@ Frequency domain:
 .. image:: {{ iio_frequency_domain_image }}
    :width: 600
 
+{% endif %}
+
+{% if iio_data_captures %}
+{% for capture in iio_data_captures %}
+{% if capture.title %}
+{{ capture.title }}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+{% endif %}
+{% if capture.time_domain_image %}
+Time domain:
+
+.. image:: {{ capture.time_domain_image }}
+   :width: 600
+
+{% endif %}
+
+{% if capture.frequency_domain_image %}
+Frequency domain:
+
+.. image:: {{ capture.frequency_domain_image }}
+   :width: 600
+
+{% endif %}
+{% endfor %}
 {% endif %}
 {% endif %}
