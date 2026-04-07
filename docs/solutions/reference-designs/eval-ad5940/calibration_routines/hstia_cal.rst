@@ -12,7 +12,7 @@ close in value to the Rtia to be calibrated and should have a tolerance <=
 magnitude of the impedance is the value of Rtia. A sine wave is applied
 through RCAL and the Rtia. The voltage drop across each is measured with a DFT
 calculated on each. Using ratiometric analysis the actual impedance of the
-Rtia is calculated by the following equation: |Rtia| = |Vrcal|/|Vrtia|.
+Rtia is calculated by the following equation: Rtia = Vrcal/Vrtia.
 
 It is important to calibrate at the correct frequency. For example, if the
 measurement of the sensor requires an excitation signal of 50 kHz, the
