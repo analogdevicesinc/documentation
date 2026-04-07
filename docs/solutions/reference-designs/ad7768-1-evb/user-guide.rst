@@ -17,7 +17,7 @@ Hardware configuration
 The :adi:`EVAL-AD7768-1` and :adi:`EVAL-ADAQ7768-1` boards connect to the FPGA
 carrier via the FMC LPC connector.
 
-On the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__,
+On the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_,
 configure the BOOT switches (JP7–JP11) and the MIO0 jumper (JP6) for the desired
 boot mode, and set VADJ to **2.5 V** as required by the HDL project.
 Refer to the :ref:`ad77681 quickstart zed` guide for the specific jumper positions
