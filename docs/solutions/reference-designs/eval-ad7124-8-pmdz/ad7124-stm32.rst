@@ -12,7 +12,7 @@ applied to other IDEs.
 Useful links
 ------------
 
--  :doc:`AD7124 No-OS Software </wiki-migration/resources/tools-software/uc-drivers/ad7124>`
+-  `AD7124 No-OS Software <https://wiki.analog.com/resources/tools-software/uc-drivers/ad7124>`_
 -  :adi:`AD7124-8 Product Page <AD7124-8>`
 -  :adi:`AD7124-4 Product Page <AD7124-4>`
 -  :adi:`AD7124-8 Evaluation Board <EVAL-AD7124-8>`
@@ -25,7 +25,7 @@ The :adi:`AD7124 <AD7124-8>` is a low power, low noise, completely integrated an
 
 |ad7124_main_menu.png| |image1|
 
-The example makes use of the :doc:`AD7124 No-OS </wiki-migration/resources/tools-software/uc-drivers/ad7124>` software drivers and platform drivers that are using the STM32 HAL firmware libraries.
+The example makes use of the `AD7124 No-OS <https://wiki.analog.com/resources/tools-software/uc-drivers/ad7124>`_ software drivers and platform drivers that are using the STM32 HAL firmware libraries.
 
 .. important::
 

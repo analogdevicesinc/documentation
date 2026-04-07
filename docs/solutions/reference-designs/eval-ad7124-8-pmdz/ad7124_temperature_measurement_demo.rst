@@ -27,7 +27,7 @@ Useful links
 .. image:: https://wiki.analog.com/_media/resources/tools-software/product-support-software/section>resources/tools-software/product-support-software/useful_links#useful_link&showfooter=nofooter
    :alt: section>resources/tools-software/product-support-software/useful_links#Useful Link&showfooter=nofooter
 
--  :doc:`AD7124 No-OS Software </wiki-migration/resources/tools-software/uc-drivers/ad7124>`
+-  `AD7124 No-OS Software <https://wiki.analog.com/resources/tools-software/uc-drivers/ad7124>`_
 -  :adi:`AD7124-8 Product Page <AD7124-8>`
 -  :adi:`AD7124-4 Product Page <AD7124-4>`
 -  :adi:`AD7124-8 Evaluation Board <EVAL-AD7124-8>`
@@ -82,7 +82,7 @@ This section briefs on the usage of MBED firmware. This also explains the steps 
    
    Build Guide for Precision Converters MBED firmware (Use below link):
    
-   -  :doc:`Precision Converters MBED Firmware </wiki-migration/resources/tools-software/product-support-software/pcg-fw-mbed-build-guide>`
+   -  `Precision Converters MBED Firmware <https://wiki.analog.com/resources/tools-software/product-support-software/pcg-fw-mbed-build-guide>`_
    
 
 Quick Start to use AD7124 Mbed Firmware

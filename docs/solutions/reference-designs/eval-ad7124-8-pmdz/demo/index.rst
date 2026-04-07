@@ -108,9 +108,9 @@ line driver / receiver and connected to the PC via a 9-pin or 25-pin serial
 port.) There are many open-source applications, and while there are many
 choices, typically we use one of the following:
 
-- `TeraTerm <https://ttssh2.osdn.jp/index.html.en>`__
-- `Putty <https://www.putty.org/>`__
-- `Real Term <https://realterm.sourceforge.io/>`__
+- `TeraTerm <https://ttssh2.osdn.jp/index.html.en>`_
+- `Putty <https://www.putty.org/>`_
+- `Real Term <https://realterm.sourceforge.io/>`_
 
 Before continuing, please make sure you download and install one of the above
 programs.
