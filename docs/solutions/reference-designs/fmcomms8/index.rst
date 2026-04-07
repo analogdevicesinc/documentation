@@ -33,8 +33,8 @@ Highlevel Specification
 
 ::
 
-     * FMC HPC Compatible interface
-     * Complies with VITA 57.1 mechanical dimensions 84mm x 69mm (not full compliance with keep out areas)
+  - FMC HPC Compatible interface
+  - Complies with VITA 57.1 mechanical dimensions 84mm x 69mm (not full compliance with keep out areas)
    * Platform development environment support includes Industry standard Linux Industrial I/O (IIO) Applications, MATLAB®, Simulink®, and GNU Radio, and streaming interfaces for custom C, C++, python, and C# applications
    * HDL reference designs and drivers to allow zero day development
 
@@ -75,16 +75,17 @@ The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
 - Push custom data into/out of the ADRV9009
   - `Basic Data files and formats <https://wiki.analog.com/resources/eval/user-guides/adrv9009/software/basic_iq_datafiles>`_
   - `Stream data into/out of MATLAB <https://wiki.analog.com/resources/tools-software/linux-software/libiio/clients/matlab_simulink>`_
-   * Design with the ADRV9009
-     * `Understanding the ADRV9009 <https://wiki.analog.com/resources/eval/user-guides/adrv9009/adrv9009>`_
-       * :adi:`ADRV9009 Product page <ADRV9009>`
-       * :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
-       * :adi:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
-     * Hardware in the Loop / How to design your own custom BaseBand
-       * `GNU Radio <https://wiki.analog.com/resources/tools-software/linux-software/gnuradio>`_
-       * `Board Support Package for MathWorks Tools <https://wiki.analog.com/resources/eval/user-guides/matlab_bsp>`_
-     * Design with the ADRV9009-ZU11EG based platform
-       * Linux software
+
+- Design with the ADRV9009
+  - `Understanding the ADRV9009 <https://wiki.analog.com/resources/eval/user-guides/adrv9009/adrv9009>`_
+    - :adi:`ADRV9009 Product page <ADRV9009>`
+    - :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+    - :adi:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
+  - Hardware in the Loop / How to design your own custom BaseBand
+    - `GNU Radio <https://wiki.analog.com/resources/tools-software/linux-software/gnuradio>`_
+    - `Board Support Package for MathWorks Tools <https://wiki.analog.com/resources/eval/user-guides/matlab_bsp>`_
+  - Design with the ADRV9009-ZU11EG based platform
+    - Linux software
          * `ADRV9009/ADRV9008 Linux Device Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009>`_
            *  `ADRV9009/ADRV9008 Device Driver Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv9009-customization>`_
            *  `Customizing the devicetree on the target <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`_
@@ -99,8 +100,8 @@ The following is leveraged directly from the ADRV9009-ZU11EG RF-SOM site.
            * `JESD204 Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_
          * `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_
          * `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_
-       * `ADRV9009/ADRV9008 No-OS System Level Design Setup <https://wiki.analog.com/resources/eval/user-guides/adrv9009/no-os-setup>`_
-       * `HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/adrv9009-zu11eg/hdl>`_
+    - `ADRV9009/ADRV9008 No-OS System Level Design Setup <https://wiki.analog.com/resources/eval/user-guides/adrv9009/no-os-setup>`_
+    - `HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/adrv9009-zu11eg/hdl>`_
 
 Functional Test
 ~~~~~~~~~~~~~~~
