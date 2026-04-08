@@ -5,7 +5,7 @@ In the previous sections we learnt the basics of beamforming theory and setup Pl
 ## Software
 
 The script for this Pilot is available to download here:
-- {download}`Beamforming Pilot Software <resources/Pluto_beamformer_PlotPeaks.py>`
+- {git-documentation}`Pluto_beamformer_PlotPeaks.py <docs/solutions/platforms/pluto/pilots/beamforming/resources/Pluto_beamformer_PlotPeaks.py>`
 
 The software is written in Python and uses the PyADI-IIO library to interface with PlutoSDR.
 
