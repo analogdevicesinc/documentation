@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="1475" height="800" version="1.1" viewBox="0 0 1475 800" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <clipPath id="clipPath22">
+   <path d="m310.5 48h822c2.484 0 4.5 2.016 4.5 4.5v58.5c0 2.484-2.016 4.5-4.5 4.5h-822c-2.484 0-4.5-2.016-4.5-4.5v-58.5c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath36">
+   <path d="m306 317h831v489h-831z"/>
+  </clipPath>
+  <clipPath id="clipPath37">
+   <path d="m311 317.5h821c2.484 0 4.5 2.016 4.5 4.5v33.125h-830v-33.125c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath40">
+   <path d="m306.5 354.62h830v0.5h-830z"/>
+  </clipPath>
+  <clipPath id="clipPath42">
+   <path d="m321.5 406.32h800v0.5h-800z"/>
+  </clipPath>
+  <clipPath id="clipPath44">
+   <path d="m321.5 452.73h800v0.5h-800z"/>
+  </clipPath>
+  <clipPath id="clipPath46">
+   <path d="m321.5 465.23h68.5v27.773h-68.5z"/>
+  </clipPath>
+  <clipPath id="clipPath48">
+   <path d="m389 465.23h393.4v27.773h-393.4z"/>
+  </clipPath>
+  <clipPath id="clipPath50">
+   <path d="m321.5 492h68.5v29h-68.5z"/>
+  </clipPath>
+  <clipPath id="clipPath52">
+   <path d="m389 492h393.4v29h-393.4z"/>
+  </clipPath>
+  <clipPath id="clipPath54">
+   <path d="m321.5 520h68.5v28.527h-68.5z"/>
+  </clipPath>
+  <clipPath id="clipPath56">
+   <path d="m389 520h393.4v28.527h-393.4z"/>
+  </clipPath>
+  <clipPath id="clipPath58">
+   <path d="m321.5 465.23h0.5v83.301h-0.5z"/>
+  </clipPath>
+  <clipPath id="clipPath60">
+   <path d="m388 465.23h2v83.301h-2z"/>
+  </clipPath>
+  <clipPath id="clipPath62">
+   <path d="m781 465.23h1.398v83.301h-1.398z"/>
+  </clipPath>
+  <clipPath id="clipPath64">
+   <path d="m321.5 465.23h67.5v0.773h-67.5z"/>
+  </clipPath>
+  <clipPath id="clipPath66">
+   <path d="m389 465.23h393.4v0.773h-393.4z"/>
+  </clipPath>
+  <clipPath id="clipPath68">
+   <path d="m321.5 492h460.9v2h-460.9z"/>
+  </clipPath>
+  <clipPath id="clipPath70">
+   <path d="m321.5 520h460.9v1h-460.9z"/>
+  </clipPath>
+  <clipPath id="clipPath72">
+   <path d="m321.5 548h460.9v0.527h-460.9z"/>
+  </clipPath>
+  <clipPath id="clipPath75">
+   <path d="m321.5 681.73h800v0.5h-800z"/>
+  </clipPath>
+  <clipPath id="clipPath77">
+   <path d="m320.5 84h14v14h-14zm7 1c3.312 0 6 2.688 6 6s-2.688 6-6 6-6-2.688-6-6 2.688-6 6-6z" clip-rule="evenodd"/>
+  </clipPath>
+  <clipPath id="clipPath86">
+   <path d="m443.74 83h19.801c2.481 0 4.5 2.016 4.5 4.5v5c0 2.484-2.019 4.5-4.5 4.5h-19.801c-2.484 0-4.5-2.016-4.5-4.5v-5c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath95">
+   <path d="m590.74 370.12h211.8c2.481 0 4.5 2.016 4.5 4.5v19c0 2.484-2.019 4.5-4.5 4.5h-211.8c-2.484 0-4.5-2.016-4.5-4.5v-19c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath98">
+   <path d="m336.25 500.19h38.438c2.484 0 4.5 2.015 4.5 4.5v7.074c0 2.484-2.016 4.5-4.5 4.5h-38.438c-2.484 0-4.5-2.016-4.5-4.5v-7.074c0-2.485 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath100">
+   <path d="m403.69 500.19h363.96c2.485 0 4.5 2.015 4.5 4.5v7.074c0 2.484-2.015 4.5-4.5 4.5h-363.96c-2.485 0-4.5-2.016-4.5-4.5v-7.074c0-2.485 2.015-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath102">
+   <path d="m336.25 527.84h38.438c2.484 0 4.5 2.019 4.5 4.5v7.078c0 2.481-2.016 4.5-4.5 4.5h-38.438c-2.484 0-4.5-2.019-4.5-4.5v-7.078c0-2.481 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath104">
+   <path d="m403.69 527.84h307.84c2.485 0 4.5 2.019 4.5 4.5v7.078c0 2.481-2.015 4.5-4.5 4.5h-307.84c-2.485 0-4.5-2.019-4.5-4.5v-7.078c0-2.481 2.015-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath107">
+   <path d="m329.62 580.99h189.98c2.48 0 4.5 2.016 4.5 4.5v7.074c0 2.485-2.02 4.5-4.5 4.5h-189.98c-2.484 0-4.5-2.015-4.5-4.5v-7.074c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath109">
+   <path d="m326 599.14h240.49c2.485 0 4.5 2.015 4.5 4.5v7.074c0 2.484-2.015 4.5-4.5 4.5h-240.49c-2.484 0-4.5-2.016-4.5-4.5v-7.074c0-2.485 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath113">
+   <path d="m507.27 696.69h128.24c2.484 0 4.5 2.015 4.5 4.5v7.074c0 2.484-2.016 4.5-4.5 4.5h-128.24c-2.48 0-4.5-2.016-4.5-4.5v-7.074c0-2.485 2.02-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath116">
+   <path d="m511.06 714.84h49.665c2.48 0 4.5 2.019 4.5 4.5v7.078c0 2.481-2.02 4.5-4.5 4.5h-49.665c-2.484 0-4.5-2.019-4.5-4.5v-7.078c0-2.481 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath118">
+   <path d="m586.65 714.84h83.34c2.485 0 4.5 2.019 4.5 4.5v7.078c0 2.481-2.015 4.5-4.5 4.5h-83.34c-2.48 0-4.5-2.019-4.5-4.5v-7.078c0-2.481 2.02-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath125">
+   <path d="m243 83h21v21.5h-21zm4.5-0.5h12c2.484 0 4.5 2.016 4.5 4.5v12c0 2.484-2.016 4.5-4.5 4.5h-12c-2.484 0-4.5-2.016-4.5-4.5v-12c0-2.484 2.016-4.5 4.5-4.5z" clip-rule="evenodd"/>
+  </clipPath>
+  <clipPath id="clipPath127">
+   <path d="m247.5 82.5h12c2.484 0 4.5 2.016 4.5 4.5v12c0 2.484-2.016 4.5-4.5 4.5h-12c-2.484 0-4.5-2.016-4.5-4.5v-12c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath131">
+   <path d="m64.5 54h195c2.484 0 4.5 2.016 4.5 4.5v15c0 2.484-2.016 4.5-4.5 4.5h-195c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5z"/>
+  </clipPath>
+  <clipPath id="clipPath134">
+   <path d="m55.5 57c0.828 0 1.5 0.672 1.5 1.5v15c0 0.828-0.672 1.5-1.5 1.5s-1.5-0.672-1.5-1.5v-15c0-0.828 0.672-1.5 1.5-1.5z"/>
+  </clipPath>
+  <linearGradient id="linearGradient184" x1="792.64" x2="794" y1="1026" y2="887.04" gradientTransform="translate(-7.1289e-7 -322.67)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m306 48h831v67.5h-831z" clip-path="url(#clipPath22)" fill="#fff"/>
+ <path d="m358.99 15h1096c3.3119 0 5.9999 2.6879 5.9999 5.9998v77.998c0 3.3119-2.688 5.9998-5.9999 5.9998h-1096c-3.3119 0-5.9998-2.6879-5.9998-5.9998v-77.998c0-3.3119 2.6879-5.9998 5.9998-5.9998zm1096 0.66665h-1096c-2.9426 0-5.3332 2.3906-5.3332 5.3332v77.998c0 2.9426 2.3906 5.3332 5.3332 5.3332h1096c2.9426 0 5.3332-2.3906 5.3332-5.3332v-77.998c0-2.9426-2.3906-5.3332-5.3332-5.3332z" fill="#d1d9e0" stroke-width="1.3333"/>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -295.27)" d="m310.5 317h822c2.484 0 4.5 2.016 4.5 4.5v4386.2c0 2.48-2.016 4.5-4.5 4.5h-822c-2.484 0-4.5-2.02-4.5-4.5v-4386.2c0-2.484 2.016-4.5 4.5-4.5zm822 0.5h-822c-2.207 0-4 1.793-4 4v4386.2c0 2.207 1.793 4 4 4h822c2.207 0 4-1.793 4-4v-4386.2c0-2.207-1.793-4-4-4z" clip-path="url(#clipPath36)" fill="#d1d9e0"/>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m306.5 317.5h830v37.625h-830z" clip-path="url(#clipPath37)" fill="#f6f8fa"/>
+ </g>
+ <g transform="translate(-55 -48.998)" fill="#d1d9e0">
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m311 317.5h821c2.484 0 4.5 2.016 4.5 4.5v33.125h-830v-33.125c0-2.484 2.016-4.5 4.5-4.5zm821 0h-821c-2.484 0-4.5 2.016-4.5 4.5v32.625h830v-32.625c0-2.484-2.016-4.5-4.5-4.5z" clip-path="url(#clipPath40)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 406.32h800v0.5h-800z" clip-path="url(#clipPath42)" fill-opacity=".70196"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 452.73h800v0.5h-800z" clip-path="url(#clipPath44)" fill-opacity=".70196"/>
+ </g>
+ <g transform="translate(-55 -48.998)" fill="#fff">
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.75 465.48h67.438v27.5h-67.438z" clip-path="url(#clipPath46)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m389.19 465.48h392.96v27.5h-392.96z" clip-path="url(#clipPath48)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.75 492.98h67.438v27.648h-67.438z" clip-path="url(#clipPath50)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m389.19 492.98h392.96v27.648h-392.96z" clip-path="url(#clipPath52)"/>
+ </g>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -295.27)" d="m321.75 520.62h67.438v27.648h-67.438z" clip-path="url(#clipPath54)" fill="#f6f8fa"/>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -295.27)" d="m389.19 520.62h392.96v27.648h-392.96z" clip-path="url(#clipPath56)" fill="#f6f8fa"/>
+ <g transform="translate(-55 -48.998)" fill="#d1d9e0">
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 465.23h0.5v83.301h-0.5z" clip-path="url(#clipPath58)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m388.94 465.23h0.5v82.801h-0.5z" clip-path="url(#clipPath60)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m781.9 465.23h0.5v83.301h-0.5z" clip-path="url(#clipPath62)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 465.23h67.438v0.5h-67.438z" clip-path="url(#clipPath64)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m389.44 465.23h392.96v0.5h-392.96z" clip-path="url(#clipPath66)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 492.73h460.9v0.5h-460.9z" clip-path="url(#clipPath68)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 520.38h460.9v0.5h-460.9z" clip-path="url(#clipPath70)"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 548.02h460.9v0.5h-460.9z" clip-path="url(#clipPath72)"/>
+  <path d="m428.67 597.49h1066.7v4h-1066.7z"/>
+  <path transform="matrix(1.3333,0,0,1.3333,0,-246.27)" d="m321.5 681.73h800v0.5h-800z" clip-path="url(#clipPath75)" fill-opacity=".70196"/>
+  <path d="m428.67 775.76h1066.7v4h-1066.7z"/>
+ </g>
+ <text x="373.66998" y="49.334599" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="373.66998" y="49.334599" fill="#59636e" font-family="'Segoe UI'" font-size="12px" stroke-width="1.3333">Manually triggered yesterday</tspan></text>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m327.25 84.375h0.5c3.586 0 6.5 2.914 6.5 6.5v0.5c0 3.586-2.914 6.5-6.5 6.5h-0.5c-3.586 0-6.5-2.914-6.5-6.5v-0.5c0-3.586 2.914-6.5 6.5-6.5z" clip-path="url(#clipPath77)" fill="#1f2328" fill-opacity=".14902"/>
+ <g stroke-width="1.3333">
+  <text x="393.66998" y="77.001602" font-size="16px" xml:space="preserve"><tspan x="393.66998" y="77.001602" fill="#1f2328" font-family="'Segoe UI'" font-size="14px" stroke-width="1.3333">user</tspan></text>
+  <path d="m473.76 73.769c-0.31732 1.6506-1.76 2.8386-3.4372 2.8386-1.6773 0-3.1199-1.188-3.4372-2.8386h-2.9066c-0.36399 0-0.65598-0.29199-0.65598-0.65598 0-0.36532 0.29199-0.65598 0.65598-0.65598h2.9066c0.31732-1.652 1.76-2.8386 3.4372-2.8386 1.6773 0 3.1199 1.1866 3.4372 2.8386h2.9066c0.36399 0 0.65598 0.29066 0.65598 0.65598 0 0.36399-0.29199 0.65598-0.65598 0.65598zm-1.2493-0.65598c0-1.208-0.97997-2.1879-2.1879-2.1879s-2.188 0.97998-2.188 2.1879 0.97998 2.1879 2.188 2.1879 2.1879-0.97998 2.1879-2.1879z" fill="#1f2328"/>
+  <text x="481.74997" y="77.001602" font-size="16px" xml:space="preserve"><tspan x="481.74997" y="77.001602" fill="#1f2328" font-family="'Segoe UI'" font-size="12px" stroke-width="1.3333">abc1234</tspan></text>
+ </g>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m439.24 83h28.801v14h-28.801z" clip-path="url(#clipPath86)" fill="#ddf4ff"/>
+ <g font-size="16px" stroke-width="1.3333">
+  <text x="536.64996" y="75.001602" xml:space="preserve"><tspan x="536.64996" y="75.001602" fill="#0969da" font-family="Consolas" font-size="12px" stroke-width="1.3333">main</tspan></text>
+  <text x="625.04999" y="49.334599" xml:space="preserve"><tspan x="625.04999" y="49.334599" dx="0 -0.39599007" fill="#59636e" font-family="'Segoe UI'" font-size="12px" stroke-width="1.3333">Status</tspan></text>
+  <text x="625.04999" y="76.331596" xml:space="preserve"><tspan x="625.04999" y="76.331596" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" font-weight="600" stroke-width="1.3333">Success</tspan></text>
+  <text x="753.04999" y="49.334599" xml:space="preserve"><tspan x="753.04999" y="49.334599" dx="0 -1.1759707" fill="#59636e" font-family="'Segoe UI'" font-size="12px" stroke-width="1.3333">Total duration</tspan></text>
+  <text x="753.04999" y="76.331596" xml:space="preserve"><tspan x="753.04999" y="76.331596" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" font-weight="600" stroke-width="1.3333">18m 54s</tspan></text>
+  <text x="882.44995" y="49.334599" xml:space="preserve"><tspan x="882.44995" y="49.334599" fill="#59636e" font-family="'Segoe UI'" font-size="12px" stroke-width="1.3333">Artifacts</tspan></text>
+  <text x="882.44995" y="76.331596" dominant-baseline="auto" fill="#000000" font-family="sans-serif" stop-color="#000000" style="-inkscape-stroke:none;font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;font-variation-settings:normal;line-height:normal;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal" xml:space="preserve">2</text>
+ </g>
+ <text x="373.66663" y="227.56013" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="373.66663" y="227.56013" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.83200002" fill="#1f2328" font-family="'Segoe UI'" font-size="32px" font-weight="600" stroke-width="1.3333">Documentation Review: </tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m586.24 370.12h220.8v28h-220.8z" clip-path="url(#clipPath95)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <g transform="translate(-55 -48.998)" font-size="16px" stroke-width="1.3333">
+  <text x="788.04999" y="276.55853" xml:space="preserve"><tspan x="788.04999" y="276.55853" fill="#1f2328" font-family="Consolas" font-size="32px" font-weight="700" stroke-width="1.3333">def1234..abc1234</tspan></text>
+  <text x="428.66666" y="345.15854" xml:space="preserve"><tspan x="428.66666" y="345.15854" dx="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.62399995" fill="#1f2328" font-family="'Segoe UI'" font-size="24px" font-weight="600" stroke-width="1.3333">Commits Under Review</tspan></text>
+  <text x="455.78333" y="399.35852" xml:space="preserve"><tspan x="455.78333" y="399.35852" dx="0 0 0 0 261.93851" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" font-weight="600" stroke-width="1.3333">HashSubject</tspan></text>
+ </g>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m331.75 500.19h47.438v16.074h-47.438z" clip-path="url(#clipPath98)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="392.76666" y="387.02679" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="392.76666" y="387.02679" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">def1234</tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="matrix(1.0409 0 0 1.3333 116.74 0)" d="m399.19 500.19h372.96v16.074h-372.96z" clip-path="url(#clipPath100)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="482.68332" y="387.02679" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="482.68332" y="387.02679" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">reference-designs/ad1234: move ad1234 landing page</tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m331.75 527.84h47.438v16.074h-47.438z" clip-path="url(#clipPath102)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="392.76666" y="423.89346" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="392.76666" y="423.89346" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">abc1234</tspan></text>
+ <g transform="matrix(.85198 0 0 1 23.783 -295.27)">
+  <path transform="scale(1.3333)" d="m399.19 527.84h316.84v16.074h-316.84z" clip-path="url(#clipPath104)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="482.68332" y="423.89346" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="482.68332" y="423.89346" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">reference-designs/ad1234: migrate documentation</tspan></text>
+ <text x="373.66663" y="470.76013" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="373.66663" y="470.76013" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">Both commits migrate the AD1234/AD1234X user guide from the old documentation (</tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m325.12 580.99h198.98v16.074h-198.98z" clip-path="url(#clipPath107)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="383.93332" y="494.76013" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="383.93332" y="494.76013" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">resources/eval/user-guides/mykonos</tspan></text>
+ <text x="643.79993" y="494.76013" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="643.79993" y="494.76013" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">) into the Sphinx documentation tree at</tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m321.5 599.14h249.49v16.074h-249.49z" clip-path="url(#clipPath109)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <g transform="translate(-55 -48.998)" font-size="16px" stroke-width="1.3333">
+  <text x="434.10001" y="567.9585" xml:space="preserve"><tspan x="434.10001" y="567.9585" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">docs/solutions/reference-designs/adrv9371x/</tspan></text>
+  <text x="761.31665" y="567.9585" xml:space="preserve"><tspan x="761.31665" y="567.9585" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">.</tspan></text>
+  <text x="428.66666" y="650.49188" xml:space="preserve"><tspan x="428.66666" y="650.49188" fill="#1f2328" font-family="'Segoe UI'" font-size="24px" font-weight="600" stroke-width="1.3333">CI/CD Notes</tspan></text>
+  <text x="428.66666" y="698.02515" xml:space="preserve"><tspan x="428.66666" y="698.02515" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">No warnings or errors reported in </tspan></text>
+ </g>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m502.77 696.69h137.24v16.074h-137.24z" clip-path="url(#clipPath113)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="620.79993" y="649.02673" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="620.79993" y="649.02673" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">/tmp/tmp.roUe6NeIOO.txt</tspan></text>
+ <text x="798.34998" y="649.02673" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="798.34998" y="649.02673">.</tspan><tspan x="373.66666" y="673.22681">The documentation builds cleanly (</tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m506.56 714.84h58.664v16.074h-58.664z" clip-path="url(#clipPath116)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <text x="625.84998" y="673.22681" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="625.84998" y="673.22681" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">make html</tspan></text>
+ <text x="703.01605" y="673.22681" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="703.01605" y="673.22681" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">→ </tspan></text>
+ <g transform="translate(-55 -295.27)">
+  <path transform="scale(1.3333)" d="m582.15 714.84h92.336v16.074h-92.336z" clip-path="url(#clipPath118)" fill="#818b98" fill-opacity=".12157"/>
+ </g>
+ <g stroke-width="1.3333">
+  <text x="726.63324" y="673.22681" font-size="16px" xml:space="preserve"><tspan x="726.63324" y="673.22681" fill="#1f2328" font-family="Consolas" font-size="13.6px" stroke-width="1.3333">build succeeded</tspan></text>
+  <text x="844.31659" y="673.22681" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" xml:space="preserve"><tspan x="844.31659" y="673.22681">) both before and</tspan><tspan x="373.66666" y="697.42682">after all fixup commits.</tspan></text>
+  <path d="m16.998 102h287.99v0.99997h-287.99z" fill="#d1d9e0" fill-opacity=".70196"/>
+  <path d="m16.998 150h287.99v0.99998h-287.99z" fill="#d1d9e0" fill-opacity=".70196"/>
+  <text x="24.999969" y="79.6716" font-size="16px" xml:space="preserve"><tspan x="24.999969" y="79.6716" fill="#59636e" font-family="'Segoe UI'" font-size="12px" font-weight="600" stroke-width="1.3333">All jobs</tspan></text>
+ </g>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m247.5 83.25h12c2.484 0 4.5 2.016 4.5 4.5v12c0 2.484-2.016 4.5-4.5 4.5h-12c-2.484 0-4.5-2.016-4.5-4.5v-12c0-2.484 2.016-4.5 4.5-4.5z" clip-path="url(#clipPath125)" fill="#1f2328" fill-opacity=".039216"/>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m243 82.5h21v21h-21z" clip-path="url(#clipPath127)" fill="#f6f8fa"/>
+ <g stroke-width="1.3333">
+  <path d="m274.99 60.999h16c3.3119 0 5.9998 2.6879 5.9998 5.9998v16c0 3.3119-2.6879 5.9998-5.9998 5.9998h-16c-3.3119 0-5.9998-2.6879-5.9998-5.9998v-16c0-3.3119 2.6879-5.9998 5.9998-5.9998zm16 0.66665h-16c-2.9426 0-5.3332 2.3906-5.3332 5.3332v16c0 2.9426 2.3906 5.3332 5.3332 5.3332h16c2.9426 0 5.3332-2.3906 5.3332-5.3332v-16c0-2.9426-2.3906-5.3332-5.3332-5.3332z" fill="#d1d9e0"/>
+  <path d="m275.74 69.999h14.501c0.41599 0 0.74931 0.33332 0.74931 0.74932 0 0.41732-0.33332 0.75065-0.74931 0.75065h-14.501c-0.41599 0-0.74932-0.33332-0.74932-0.75065 0-0.41599 0.33333-0.74932 0.74932-0.74932zm2.2506 4.7492c0-0.41599 0.33332-0.74932 0.74931-0.74932h8.5011c0.41599 0 0.74932 0.33332 0.74932 0.74932 0 0.41732-0.33333 0.75065-0.74932 0.75065h-8.5011c-0.41599 0-0.74931-0.33332-0.74931-0.75065zm2.9999 3.9999c0-0.41599 0.33333-0.74932 0.74932-0.74932h2.5013c0.41599 0 0.74931 0.33332 0.74931 0.74932 0 0.41732-0.33332 0.75065-0.74931 0.75065h-2.5013c-0.41599 0-0.74932-0.33332-0.74932-0.75065z" fill="#59636e"/>
+  <text x="32.999969" y="178.6716" font-size="16px" xml:space="preserve"><tspan x="32.999969" y="178.6716" fill="#59636e" font-family="'Segoe UI'" font-size="12px" font-weight="600" stroke-width="1.3333">Run details</tspan></text>
+ </g>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m60 54h204v24h-204z" clip-path="url(#clipPath131)" fill="#818b98" fill-opacity=".14902"/>
+ <path d="m39.904 31.661c0.63998-0.51065 1.5466-0.51065 2.1866 0l5.2505 4.2026c0.41599 0.33332 0.65598 0.83331 0.65598 1.3653v7.0212c0 0.96798-0.78131 1.7493-1.7493 1.7493h-3.5012c-0.41599 0-0.74932-0.33332-0.74932-0.74932v-5.2505h-2v5.2505c0 0.41599-0.33332 0.74932-0.74931 0.74932h-3.5012c-0.96798 0-1.7493-0.78131-1.7493-1.7493v-7.0212c0-0.53199 0.23999-1.032 0.65598-1.3653zm1.2493 1.172c-0.09333-0.07333-0.21866-0.07333-0.31199 0l-5.2505 4.2026c-0.05733 0.04667-0.09333 0.12-0.09333 0.19333v7.0212c0 0.13466 0.11466 0.24933 0.24933 0.24933h2.7506v-5.2492c0-0.41732 0.33332-0.75065 0.75065-0.75065h3.4986c0.41732 0 0.75065 0.33332 0.75065 0.75065v5.2492h2.7506c0.14 0 0.24933-0.10933 0.24933-0.24933v-7.0212c0-0.07333-0.036-0.14666-0.09333-0.19333z" fill="#59636e" stroke-width="1.3333"/>
+ <text x="56.999969" y="45.001598" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="56.999969" y="45.001598" dx="0 0 0 0 0 0 0.54598635" fill="#25292e" font-family="'Segoe UI'" font-size="14px" font-weight="600" stroke-width="1.3333">Summary</tspan></text>
+ <path transform="matrix(1.3333 0 0 1.3333 -55 -48.998)" d="m54 57h3v18h-3z" clip-path="url(#clipPath134)" fill="#0969da"/>
+ <g stroke-width="1.3333">
+  <path d="m40.998 135c-4.4159 0-7.9998-3.5839-7.9998-7.9998s3.5839-7.9998 7.9998-7.9998c4.4159 0 7.9998 3.5839 7.9998 7.9998s-3.5839 7.9998-7.9998 7.9998zm3.7812-9.7184c0.27599-0.29733 0.26533-0.75465-0.02133-1.0413-0.28666-0.28666-0.74398-0.29733-1.0413-0.0213l-3.9692 3.9692-1.468-1.4693c-0.29733-0.27599-0.75465-0.26532-1.0413 0.0213-0.28666 0.28666-0.29733 0.74398-0.02133 1.0413l2 2c0.29199 0.292 0.77065 0.292 1.0626 0z" fill="#1a7f37"/>
+  <text x="56.999969" y="133.0016" font-size="16px" xml:space="preserve"><tspan x="56.999969" y="133.0016" fill="#1f2328" font-family="'Segoe UI'" font-size="14px" stroke-width="1.3333">llm</tspan></text>
+  <path d="m38.747 197.74c0-0.41599 0.33332-0.74932 0.75065-0.74932h2.9999c0.41732 0 0.75065 0.33333 0.75065 0.74932 0 0.41732-0.33332 0.75065-0.75065 0.75065h-0.75065v1.0413c1.2666 0.14133 2.4693 0.63599 3.4639 1.432l0.75598-0.75465c0.18666-0.19733 0.46799-0.28133 0.73332-0.21333 0.26666 0.068 0.47466 0.27599 0.54265 0.54132 0.06667 0.26533-0.016 0.54665-0.21466 0.73465l-0.75465 0.75465c2.2026 2.7613 1.9066 6.7558-0.68265 9.1611-2.5879 2.4013-6.5985 2.4013-9.1864 0-2.5893-2.4053-2.8853-6.3998-0.68265-9.1611l-0.75465-0.75465c-0.27599-0.29733-0.26666-0.75465 0.02-1.0413 0.28666-0.28666 0.74532-0.29732 1.0413-0.0213l0.75598 0.75465c0.99464-0.79598 2.1973-1.2906 3.4639-1.432v-1.0413h-0.75065c-0.41732 0-0.75065-0.33333-0.75065-0.75065zm2.2506 13.75c2.9013 0 5.2505-2.3493 5.2505-5.2492 0-2.9013-2.3493-5.2505-5.2505-5.2505s-5.2505 2.3493-5.2505 5.2505c0 2.8999 2.3493 5.2492 5.2505 5.2492zm0.39066-6.6972 1.328-1.3333c0.188-0.19332 0.46932-0.27199 0.72932-0.20399 0.25999 0.068 0.46932 0.27066 0.53599 0.53732 0.068 0.25999-0.01067 0.54132-0.20266 0.72798l-1.3333 1.3293c0.12 0.45199 0.02533 0.93198-0.25999 1.3013-0.28133 0.36933-0.71865 0.58799-1.188 0.58799-0.57865-4e-3 -1.104-0.34266-1.3493-0.86931-0.23866-0.52532-0.16133-1.1453 0.21333-1.588 0.37066-0.44799 0.96398-0.63599 1.5266-0.48933z" fill="#59636e"/>
+  <text x="56.999969" y="211.0016" font-size="16px" xml:space="preserve"><tspan x="56.999969" y="211.0016" fill="#1f2328" font-family="'Segoe UI'" font-size="14px" stroke-width="1.3333">Usage</tspan></text>
+  <path d="m36.998 230.74c0-0.96264 0.78665-1.7493 1.7493-1.7493h5.5892c0.46399 0 0.90664 0.18267 1.2346 0.51066l2.9159 2.9159c0.32799 0.328 0.51065 0.77065 0.51065 1.2346v8.5891c0 0.96797-0.78131 1.7493-1.7493 1.7493h-8.9998c-0.41732 0-0.75065-0.33333-0.75065-0.74932 0-0.41732 0.33332-0.75064 0.75065-0.75064h8.9998c0.14 0 0.24933-0.10933 0.24933-0.24933v-7.2505h-2.7506c-0.96798 0-1.7493-0.78131-1.7493-1.7493v-2.7506h-4.2506c-0.14 0-0.24933 0.10933-0.24933 0.24932v2.5013c0 0.41599-0.33332 0.74932-0.75065 0.74932-0.41599 0-0.74932-0.33333-0.74932-0.74932zm1.7186 4.9692c0.29199-0.29199 0.77065-0.29199 1.0626 0l2 2c0.29199 0.29199 0.29199 0.77065 0 1.0626l-2 2c-0.188 0.19733-0.46932 0.28133-0.73465 0.21333-0.26533-0.068-0.47332-0.27599-0.54132-0.54132-0.068-0.26533 0.016-0.54665 0.21333-0.73465l1.4693-1.468-1.4693-1.4693c-0.29199-0.29199-0.29199-0.77065 0-1.0626zm-2.4373 1.0626-1.4693 1.4693 1.4693 1.468c0.27599 0.29733 0.26533 0.75465-0.02133 1.0413-0.28666 0.28666-0.74398 0.29733-1.0413 0.0213l-2-2c-0.29199-0.29199-0.29199-0.77065 0-1.0626l2-2c0.29733-0.27599 0.75465-0.26532 1.0413 0.0213 0.28666 0.28666 0.29733 0.74399 0.02133 1.0413zm8.2185-6.2185v2.6879c0 0.13467 0.11466 0.24933 0.24933 0.24933h2.6879z" fill="#59636e"/>
+  <text x="56.999969" y="243.0016" font-size="16px" xml:space="preserve"><tspan x="56.999969" y="243.0016" dx="0 -0.54598635" fill="#1f2328" font-family="'Segoe UI'" font-size="14px" stroke-width="1.3333">Workflow file</tspan></text>
+ </g>
+ <path d="m1436.3 154.39c0.828 0 1.5-0.672 1.5-1.5s-0.672-1.5-1.5-1.5-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5zm-6.5 0c0.828 0 1.5-0.672 1.5-1.5s-0.672-1.5-1.5-1.5-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5zm13 0c0.828 0 1.5-0.672 1.5-1.5s-0.672-1.5-1.5-1.5-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5z" fill="#59636e"/>
+ <rect y="564.37" width="1475" height="235.63" fill="url(#linearGradient184)" stroke-width="1.5"/>
+ <text x="882.44995" y="-169.93988" font-size="16px" stroke-width="1.3333" xml:space="preserve"><tspan x="373.66666" y="159.47679" fill="#1f2328" font-family="'Segoe UI'" font-size="16px" stroke-width="1.3333">llm summary</tspan></text>
+</svg>
