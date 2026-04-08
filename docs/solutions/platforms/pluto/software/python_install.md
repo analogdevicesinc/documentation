@@ -73,8 +73,8 @@ print(rx2[:10])
 
 **Additional PyADI examples:**
 - [https://analogdevicesinc.github.io/pyadi-iio/guides/examples.html](https://analogdevicesinc.github.io/pyadi-iio/guides/examples.html)
-- [https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/pluto.py](https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/pluto.py)
-- [https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ad9361_example.py](https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ad9361_example.py)
+- {git-documentation}`pluto.py <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/pluto.py>`
+- {git-documentation}`ad9361_example.py <https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/ad9361_example.py>`
 
 
 ```{video} https://www.youtube.com/watch?v=ZnCi-LHJ0GQ

@@ -11,8 +11,8 @@ To facilitate that introduction, Analog Devices has prepared several example lab
 ```
 
 ## Printable Lab Manuals
-* [Python Printable Lab Manual](resources/2025_Phaser_labs_Python.pdf)
-* [MATLAB Printable Lab Manual](resources/2025_Phaser_MATLAB_lab_instructions.pdf)
+* {download}`Python Printable Lab Manual <resources/2025_Phaser_labs_Python.pdf>`
+* {download}`MATLAB Printable Lab Manual <resources/2025_Phaser_MATLAB_lab_instructions.pdf>`
 
 ### Phaser Beamforming Labs and Examples
 
