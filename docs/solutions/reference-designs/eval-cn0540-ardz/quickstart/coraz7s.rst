@@ -24,7 +24,7 @@ Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `ADI Kuiper Image for CN0540 <https://swdownloads.analog.com/cse/kuiper/cn0540.tar.gz>`__
-- :git-iio-oscilloscope:`IIO-Oscilloscope <releases>`
+- :git-iio-oscilloscope:`IIO-Oscilloscope <releases+>`
 
 Setup
 -------------------------------------------------------------------------------
