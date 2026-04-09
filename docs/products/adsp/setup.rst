@@ -23,14 +23,14 @@ Install Dependencies
       .. shell:: sh
 
          $ sudo apt install -y git autoconf automake libtool pkg-config \
-                libjim-dev gcc g++ make texinfo gdb-multiarch
+                libjim-dev gcc g++ make texinfo gdb-multiarch libusb-1.0-0-dev
 
    .. tab-item:: Fedora
 
       .. shell:: sh
 
          $sudo dnf install -y git autoconf automake libtool pkgconfig \
-               jimtcl-devel gcc gcc-c++ make texinfo gdb
+               jimtcl-devel gcc gcc-c++ make texinfo gdb libusb1-devel
 
    .. tab-item:: Windows (MSYS2)
 
