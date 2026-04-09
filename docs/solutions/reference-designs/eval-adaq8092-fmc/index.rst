@@ -110,7 +110,7 @@ Table of contents
      #. :external+hdl:ref:`HDL reference design <adaq8092_fmc>` which you must
         use in your FPGA.
 
-#. :ref:`Help and Support <help-and-support>`
+#. :ref:`Help and Support <adaq8092 help_and_support>`
 
 .. _adaq8092 block-diagram:
 
@@ -127,6 +127,8 @@ Warning
 -------------------------------------------------------------------------------
 
 .. esd-warning::
+
+.. _adaq8092 help_and_support:
 
 Help and support
 -------------------------------------------------------------------------------
