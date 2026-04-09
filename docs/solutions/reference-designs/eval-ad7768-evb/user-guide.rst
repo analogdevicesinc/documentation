@@ -77,7 +77,7 @@ and with no-OS (bare metal). The Libiio library is cross-platform (Windows,
 Linux, Mac) with language bindings for C, C#, Python, and others. Two
 applications that can be used with it are:
 
-- :git-iio-oscilloscope:`IIO Oscilloscope <releases>`
+- :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`
 - :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO
   plugin)
 

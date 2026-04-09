@@ -50,7 +50,7 @@ Normally, for basic functionalities regarding visualizing the data received
 from the FPGA, we use the following:
 
 #. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain the IIO plugin)
-#. :git-iio-oscilloscope:`IIO Oscilloscope <releases>`
+#. :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`
 #. UART terminal application (PuTTY/TeraTerm/Minicom), 115200 8N1
 
 .. note::

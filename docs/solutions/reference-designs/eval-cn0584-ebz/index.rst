@@ -430,7 +430,7 @@ Hardware Connection
 Libiio is a library used for interfacing with IIO devices and must be installed
 on your computer to interface with the hardware.
 
-Download and install the latest :git-libiio:`Libiio package <releases>` on your
+Download and install the latest :git-libiio:`Libiio package <releases+>` on your
 machine.
 
 To connect to your device, the IIO Osciloscope software must be able to create a
@@ -477,7 +477,7 @@ evaluation boards from within a Linux system.
 
 .. important::
    Make sure to download/update to the latest version of
-   :git-iio-oscilloscope:`IIO Oscilloscope <releases>`.
+   :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`.
 
 #. Once done with the installation or an update of the latest IIO Oscilloscope,
    open the application. The user needs to supply a URI which will be used in the

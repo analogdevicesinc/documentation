@@ -54,7 +54,7 @@ Software prerequisites
 
 #. :external+scopy:doc:`Scopy <index>` v2.0 or later (must contain
    the IIO plugin)
-#. :git-iio-oscilloscope:`IIO Oscilloscope <releases>`
+#. :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`
 #. UART terminal application (PuTTY/TeraTerm/Minicom), 115200 8N1
 
 .. note::
