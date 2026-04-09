@@ -743,28 +743,6 @@ To reboot the system, run:
    :code:`sudo shutdown -h now` or the above-mentioned command for powering
    off.
 
-IIO Oscilloscope
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
-
-   Make sure to download/update to the latest version of
-   :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`.
-
-#. Once done with the installation or an update of the latest IIO Oscilloscope,
-   open the application. The user needs to supply a URI which will be used in the
-   context creation of the IIO Oscilloscope.
-#. Press ``Refresh`` to display available IIO Devices and press ``Connect``.
-
-    .. image:: ../images/adaq8092_zed_iio_linux.png
-        :width: 1000
-
-#. After the board is connected and a channel is enabled, hit the play button.
-   The data capture window can be seen like in the shown picture.
-
-    .. image:: ../images/adaq8092_zed_time_domain_linux.png
-        :width: 1000
-
 Using no-OS as software
 -------------------------------------------------------------------------------
 
@@ -1375,40 +1353,3 @@ connected to the proper ttyUSB or COM port:
           Parity: none
           Stop bits: 1
           Flow control: none
-
-IIO Oscilloscope
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
-   Make sure to download/update to the latest version of
-   :git-iio-oscilloscope:`IIO Oscilloscope <releases+>`.
-
-As indicated in the boot log, the board runs an IIOD server over the serial
-(UART) connection.
-
-  #. Disconnect or close the serial terminal used to view the boot log.
-  #. Once done with the installation or an update of the latest IIO Oscilloscope,
-     open the application.
-  #. Select the **Serial** backend and configure the connection with the
-     settings shown at the end of the boot log:
-
-     - **Port**: the COM port (Windows) or ``/dev/ttyUSBx`` (Linux) used by the
-       UART connection
-     - **Baud rate**: ``115200``
-     - **Data size**: 8 bits
-     - **Parity**: none
-     - **Stop bits**: 1
-     - **Flow control**: none
-
-  #. Press ``Refresh`` to display the available IIO devices and press
-     ``Connect``.
-
-      .. image:: ../images/adaq8092_zed_iio_no_os.png
-         :width: 1000
-  #. After the board is connected and a channel is enabled, hit the play button.
-     The data capture window will display the sampled data.
-
-      .. image:: ../images/adaq8092_zed_time_domain_no_os.png
-         :width: 1000
-
-.. ../common/support.rst

@@ -123,3 +123,58 @@ Schematic
 The evaluation board schematic can be found at:
 
 - :adi:`EVAL-ADAQ8092-FMCZ Schematic <media/en/technical-documentation/eval-board-schematic/eval-adaq8092-schematic.pdf>`
+
+.. include-template:: ../common/using-iio-osc.rst.jinja
+
+   has_linux: true
+   has_no_os: true
+   has_local_connection: true
+   show_linux_connection_image: true
+   linux_connection_image: images/adaq8092_zed_iio_linux.png
+   show_no_os_connection_image: true
+   no_os_connection_image: images/adaq8092_zed_iio_no_os.png
+   iio_show_data_capture: true
+   iio_data_captures:
+     - title: Linux
+       time_domain_image: images/adaq8092_zed_time_domain_linux.png
+     - title: no-OS
+       time_domain_image: images/adaq8092_zed_time_domain_no_os.png
+
+Pyadi-IIO
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`pyadi-iio` is a python abstraction module for ADI hardware with IIO
+drivers to make them easier to use.
+
+This module provides device-specific APIs built on top of the current libIIO
+python bindings. These interfaces try to match the driver naming as much as
+possible without the need to understand the complexities of libIIO and IIO.
+
+Running the Example
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After installing and configuring PYADI-IIO in your machine, you are now ready
+to run python script examples. In our case, run the adaq8092_example.py found
+in the examples folder.
+
+#. Connect the :adi:`EVAL-ADAQ8092` to the ZedBoard.
+#. Open command prompt or terminal and navigate through the examples
+   folder inside the downloaded or cloned *pyadi-iio* directory.
+#. Run the example script using the command.
+
+.. shell::
+
+   /path/to/pyadi-iio/examples
+   $python3 adaq8092_example.py
+
+Before running the example, make sure to connect a signal generator and a clock
+source to the evaluation board as described in :ref:`adaq8092 quickstart zed`.
+
+The expected output should look like this:
+
+.. figure:: images/adaq8092_pyadi_output.png
+
+   ADAQ8092 Time Domain Output
+
+GitHub link for the python sample script:
+:git-pyadi-iio:`ADAQ8092 Python Example <examples/adaq8092_example.py>`
