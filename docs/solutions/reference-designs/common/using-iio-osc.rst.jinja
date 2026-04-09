@@ -31,14 +31,15 @@ Once the application is launched, go to Settings > Connect > URI and type
 "ip:" then the IP address of the target in the pop-up window. This IP can
 be found out with a command from the previous section of this documentation.
 
-{% if show_connection_image and connection_image %}
+{% if show_linux_connection_image and linux_connection_image %}
 
-.. image:: {{ connection_image }}
+.. image:: {{ linux_connection_image }}
    :align: center
-   :width: 600px
+   :width: 600
 
 {% endif %}
 
+{% if has_local_connection %}
 Locally run on the board
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -50,6 +51,7 @@ Going to the top left corner icon (the menu icon), search for IIO
 Oscilloscope. Opening it will automatically connect to the setup and you
 can use the application.
 {% endif %}
+{% endif %}
 
 {% if has_no_os %}
 For no-OS
@@ -57,6 +59,31 @@ For no-OS
 For connecting IIO Oscilloscope to no-OS applications, they need to be built
 with the IIOD=y flag. This way, the no-OS applications will run an IIO daemon
 that is awaiting connections from the IIO Oscilloscope.
+
+As indicated in the boot log, the board runs an IIOD server over the serial
+(UART) connection.
+
+#. Disconnect or close the serial terminal used to view the boot log.
+#. Once done with the installation or an update of the latest IIO Oscilloscope,
+   open the application.
+#. Select the **Serial** backend and configure the connection with the settings
+   shown at the end of the boot log.
+
+   {% if show_no_os_connection_image and no_os_connection_image %}
+
+   .. image:: {{ no_os_connection_image }}
+      :align: center
+      :width: 600
+
+   {% endif %}
+   
+#. Press :guilabel:`Refresh` to display the available IIO devices and press
+   :guilabel:`Connect`.
+
+.. note::
+
+   The serial port is the COM port on Windows or ``/dev/ttyUSBx`` on Linux.
+      
 {% endif %}
 
 {% if iio_has_plugin %}

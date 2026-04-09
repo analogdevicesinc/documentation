@@ -50,9 +50,25 @@ Optional Variables
    * - ``has_no_os``
      - boolean
      - Show no-OS section (default: false)
-   * - ``connection_image``
+   * - ``has_local_connection``
+     - boolean
+     - Show "Locally run on the board" subsection under Linux
+       (default: false, requires ``has_linux``)
+   * - ``show_linux_connection_image``
+     - boolean
+     - Show Linux connection image (default: false, requires ``has_linux``
+       and ``linux_connection_image``)
+   * - ``linux_connection_image``
      - path
      - Image showing IIO Oscilloscope connection (Linux only)
+   * - ``show_no_os_connection_image``
+     - boolean
+     - Show no-OS connection image (default: false, requires ``has_no_os``
+       and ``no_os_connection_image``)
+   * - ``no_os_connection_image``
+     - path
+     - Image showing IIO Oscilloscope no-OS serial connection
+       (requires ``has_no_os`` and ``show_no_os_connection_image``)
    * - ``iio_has_plugin``
      - boolean
      - Enable plugin section
@@ -99,7 +115,8 @@ Usage Example
    .. include-template:: ../../common/using-iio-osc.rst.jinja
 
       has_linux: true
-      connection_image: ../images/ADRV9002_IIO_connection_zed.png
+      show_linux_connection_image: true
+      linux_connection_image: ../images/ADRV9002_IIO_connection_zed.png
       iio_has_plugin: true
       iio_plugin_ref: adrv9002-plugin
       iio_show_data_capture: true
@@ -115,8 +132,11 @@ Usage Example
    .. include-template:: ../../common/using-iio-osc.rst.jinja
 
       has_linux: true
+      show_linux_connection_image: true
+      linux_connection_image: ../images/ADRV9002_IIO_connection_zed.png
       has_no_os: true
-      connection_image: ../images/ADRV9002_IIO_connection_zed.png
+      show_no_os_connection_image: true
+      no_os_connection_image: ../images/ADRV9002_IIO_no_os_serial.png
       iio_has_plugin: true
       iio_plugin_ref: adrv9002-plugin
       iio_show_data_capture: true
@@ -186,8 +206,8 @@ The template generates different sections based on ``has_linux`` and
 
    - **Remote run on host** - Instructions for connecting from a host PC
      via IP (with optional connection image)
-   - **Locally run on the board** - Instructions for running on the FPGA
-     with HDMI monitor
+   - **Locally run on the board** (if ``has_local_connection: true``) -
+     Instructions for running on the FPGA with HDMI monitor
 
 **For no-OS (if ``has_no_os: true``):**
 
@@ -352,7 +372,7 @@ zed.rst template for a complete integration example:
 
    .. include-template:: ../../common/using-iio-osc.rst.jinja
       os_type: linux
-      connection_image: ../images/ADRV9002_IIO_connection_zed.png
+      linux_connection_image: ../images/ADRV9002_IIO_connection_zed.png
       iio_has_plugin: true
       iio_plugin_ref: adrv9002-plugin
 
