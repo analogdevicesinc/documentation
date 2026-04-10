@@ -3,7 +3,7 @@
 EVAL-LTPA-KIT Software Guide
 ============================
 
-The :adi:`EVAL-LTPA-KIT` or LTpowerAnalyzer software features Bode Plot measurement,
+The :adi:`EVAL-LTPA-KIT` or LTpowerAnalyzer™ software features Bode Plot measurement,
 Transient Response Measurement, Output Impedance Measurement, and simultaneous
 viewing and analysis of signals in both time and frequency domains.
 
@@ -20,7 +20,7 @@ System Requirements
 | Storage               | 1 GB                                                |
 +-----------------------+-----------------------------------------------------+
 | Additional Notes      | These minimum requirements ensures that the         |
-|                       | LTpowerAnalyzer software will run. Better system    |
+|                       | LTpowerAnalyzer™ software will run. Better system   |
 |                       | requirements may improve user experience            |
 +-----------------------+-----------------------------------------------------+
 | Prerequisite software | Python 3.9 or later versions                        |
@@ -28,27 +28,27 @@ System Requirements
 
 .. admonition:: Download
 
-   :download:`LTpowerAnalyzer Software Installer <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`
+   :download:`LTpowerAnalyzer™ Software Installer <https://swdownloads.analog.com/LTpowerAnalyzer™/SetupLTpowerAnalyzer™.exe>`
 
 Software Installation
 ---------------------
 
-This section provides a step-by-step procedure of installing the LTpowerAnalyzer
-software. For this demonstration, the LTpowerAnalyzer software version is **LTPA
+This section provides a step-by-step procedure of installing the LTpowerAnalyzer™
+software. For this demonstration, the LTpowerAnalyzer™ software version is **LTPA
 version 1.8.1.2.**
 
-1. Download the :download:`LTpowerAnalyzer Software Installer Package <https://swdownloads.analog.com/LTpowerAnalyzer/SetupLTpowerAnalyzer.exe>`
-2. Locate the executable file **SetupLTpowerAnalyzer.exe** inside the
+1. Download the :download:`LTpowerAnalyzer™ Software Installer Package <https://swdownloads.analog.com/LTpowerAnalyzer™/SetupLTpowerAnalyzer™.exe>`
+2. Locate the executable file **SetupLTpowerAnalyzer™.exe** inside the
    downloads folder.
 3. Double-click the installer file. A notification window will pop up, listing
-   the accompanying drivers and libraries necessary to run the LTpowerAnalyzer
+   the accompanying drivers and libraries necessary to run the LTpowerAnalyzer™
    software. Click ``OK`` to proceed.
-4. Select a destination location to install the LTpowerAnalyzer folder files. By
+4. Select a destination location to install the LTpowerAnalyzer™ folder files. By
    default, the software files will install at the location
-   **C:\\Program Files (x86)\LTpowerAnalyzer**. To select a different location,
+   **C:\\Program Files (x86)\LTpowerAnalyzer™**. To select a different location,
    click the ``Browse`` option.
 5. After choosing a destination location, click ``Install`` to proceed with the
-   installation of the LTpowerAnalyzer software.
+   installation of the LTpowerAnalyzer™ software.
 
 Installing the Software Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,16 +93,16 @@ Installing M2K USB Drivers
 7. Click ``Finish``.
 8. Proceed with finishing the M2K USB Device Drivers installation.
 
-Complete the entire LTpowerAnalyzer Setup Wizard with all required
+Complete the entire LTpowerAnalyzer™ Setup Wizard with all required
 dependencies.
 
-A desktop shortcut will be automatically created. Launch the LTpowerAnalyzer
+A desktop shortcut will be automatically created. Launch the LTpowerAnalyzer™
 software by clicking the shortcut.
 
 Calibration
 -----------
 
-The LTpowerAnalyzer requires that a DC offset and gain system calibration be
+The LTpowerAnalyzer™ requires that a DC offset and gain system calibration be
 performed in order to achieve the most accurate results. The ADALM2000 W1 and W2
 outputs will drift about 20 mV to 50 mV when power is first applied, and the
 circuit board starts to heat up. The outputs will stabilize after about 10
@@ -117,7 +117,7 @@ calibration. If no calibration has yet been run, a warning will be generated:
 
 To perform a calibration, click on the ``Calibration`` -> ``Run`` menu item.
 The calibration data will be saved in the ``AppData directory`` usually found at
-**C:\\Users\\(Your User Name)\\AppData\\Local\\LTpowerAnalyzer\\LTpowerAnalyzer.xml**.
+**C:\\Users\\(Your User Name)\\AppData\\Local\\LTpowerAnalyzer™\\LTpowerAnalyzer™.xml**.
 
 .. figure:: run_calibrate.png
    :width: 350 px
@@ -139,7 +139,7 @@ Below are the required connections when performing a calibration. It is
 important to adhere with the connections guide to proceed with a calibration.
 
 +-----------------------------------------------+-----------------------------------------------+
-| **LTpowerAnalyzer Main Board (LB3031A) Pin**  | **Connection During Calibration**             |
+| **LTpowerAnalyzer™ Main Board (LB3031A) Pin** | **Connection During Calibration**             |
 +-----------------------------------------------+-----------------------------------------------+
 | OUT+, OUT-, IN+, IN-, VOUT+, VOUT-            | Constant DC voltage or floating               |
 +-----------------------------------------------+-----------------------------------------------+
@@ -385,7 +385,7 @@ Load, Modify, and Save Data
 -  Click on the ``File Menu`` to save or open a .BOD file that includes all the
    data and the setup. A previously saved file can be opened and viewed without
    being connected to the Analog Discovery 2. You can also open the
-   **LTPowerAnalyzer.bod example file**.
+   **LTpowerAnalyzer™.bod example file**.
 
 *Pop-Up Menu*
 
@@ -421,16 +421,16 @@ Making a Bode Plot Measurement
 
 After setting up the hardware, you may now start taking gain and phase
 measurements. This section provides a step-by-step guide on how to use the Bode
-Plot feature of the LTpowerAnalyzer software.
+Plot feature of the LTpowerAnalyzer™ software.
 
-1. Launch the LTpowerAnalyzer software.
+1. Launch the LTpowerAnalyzer™ software.
 
    .. figure:: launching_the_ltpoweranalyzer_software_without_the_current_probe.png
 
-      Launching the LTpowerAnalyzer Software Without the Current Probe
+      Launching the LTpowerAnalyzer™ Software Without the Current Probe
 
    Check the status bar at the bottom of the main window. It should indicate that
-   it found the M2k or Analog Discover 2 and the LTpowerAnalyzer main board is
+   it found the M2k or Analog Discover 2 and the LTpowerAnalyzer™ main board is
    connected. In this example, we are not using the LB3058A current probe since
    we are only interested in taking a bode plot measurement.
 
@@ -587,7 +587,7 @@ beyond 10 kHz, indicating too much signal level.
 Saving and Importing Data to Excel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The LTpowerAnalyzer allows users to import acquired bode plot measurements to an
+The LTpowerAnalyzer™ allows users to import acquired bode plot measurements to an
 Excel Spreadsheet. Measurement data can be accessed under the Data tab next to
 the Graph tab in the Bode Plot pane. Data are arranged in a spreadsheet manner.
 
@@ -633,7 +633,7 @@ TRANSIENT RESPONSE
    before proceeding to below steps.
 
 Navigate through the different functionalities of the transient response
-measurement feature of the LTpowerAnalyzer.
+measurement feature of the LTpowerAnalyzer™.
 
 - Transient Interface Guide
 - Making a Transient Measurement
@@ -859,7 +859,7 @@ Making a Transient Measurement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After setting up the hardware, here’s a step-by-step guide on how to use the
-Transients Response Measurement feature of the LTpowerAnalyzer software.
+Transients Response Measurement feature of the LTpowerAnalyzer™ software.
 
 1. Check the system status
 
@@ -1011,7 +1011,7 @@ OUTPUT IMPEDANCE
    before proceeding to below steps.
 
 Navigate the following sections to learn about the Impedance Measurement feature
-of the LTpowerAnalyzer.
+of the LTpowerAnalyzer™.
 
 - Impedance Measurement Interface Guide
 - Make and Impedance Measurement
@@ -1112,7 +1112,7 @@ Making an Impedance Measurement
 Ensure that the hardware has been properly set up as described in the
 :ref:`EVAL-LTPA-KIT Hardware Guide <ltpa-hardware>`
 before performing these measurements. The following section discusses
-the procedure to make an impedance measurement using the LTpowerAnalyzer software.
+the procedure to make an impedance measurement using the LTpowerAnalyzer™ software.
 
 1. Check the system status.
 
@@ -1204,7 +1204,7 @@ probe current, leading to a less noisy sine wave.
 OSCILLOSCOPE
 ------------
 
-Navigate the scope feature of the LTpowerAnalyzer through the listed sections
+Navigate the scope feature of the LTpowerAnalyzer™ through the listed sections
 below:
 
 - Oscilloscope Interface
@@ -1483,7 +1483,7 @@ level or switch the trigger mode from Normal to Auto to force the trigger.
 Measuring Switcher Ripple Voltage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The oscilloscope feature of the LTpowerAnalyzer provides automatic measurements
+The oscilloscope feature of the LTpowerAnalyzer™ provides automatic measurements
 of ripple in the voltage traces, and measurement of the switcher frequency by
 checking the FFT trace.
 
@@ -1694,7 +1694,7 @@ Each form in the main window (right window below) can be undocked by right-click
 
    .. figure:: lib1_undock.png
 
-      Undocking Forms in the LTpowerAnalyzer Software
+      Undocking Forms in the LTpowerAnalyzer™ Software
 
    Separated forms can be merged back into the main window by clicking on the ``X``
    icon in the upper right-hand corner of the form.
@@ -1703,31 +1703,31 @@ Each form in the main window (right window below) can be undocked by right-click
 
       Merging Undocked Forms
 
-Using the LTpowerAnalyzer with LTpowerCAD
------------------------------------------
+Using the LTpowerAnalyzer™ with LTpowerCAD
+------------------------------------------
 
-The Bode Plot data measured by the LTpowerAnalyzer can be imported into the
+The Bode Plot data measured by the LTpowerAnalyzer™ can be imported into the
 LTpowerCAD software to help optimize the design. You must have the version of
 LTpowerCAD that is authorized for ADI internal use for the interface to work.
 Here are the steps to follow:
 
-1. Launch LTpowerCAD and open LTpowerAnalyzer interface.
+1. Launch LTpowerCAD and open LTpowerAnalyzer™ interface.
 
    .. figure:: ltpowercad1.png
 
-      Launching LTpowerCAD with LTpowerAnalyzer Interface
+      Launching LTpowerCAD with LTpowerAnalyzer™ Interface
 
-2. Copy and paste from LTpowerAnalyzer to LTpowerCAD.
+2. Copy and paste from LTpowerAnalyzer™ to LTpowerCAD.
 
    .. figure:: ltpowercad2.png
 
-      Copying and Pasting Bode Plot Data from LTpowerAnalyzer to LTpowerCAD
+      Copying and Pasting Bode Plot Data from LTpowerAnalyzer™ to LTpowerCAD
 
-3. Import LTpowerAnalyzer data to LTpowerCAD.
+3. Import LTpowerAnalyzer™ data to LTpowerCAD.
 
    .. figure:: ltpowercad3.png
 
-      Importing LTpowerAnalyzer Data to LTpowerCAD
+      Importing LTpowerAnalyzer™ Data to LTpowerCAD
 
 4. Re-compensate measured loop gain in LTpowerCAD.
 
@@ -1753,7 +1753,7 @@ on the ``Update button`` will download and launch the latest install file.
 
 .. figure:: lib1_upcheck.png
 
-   LTpowerAnalyzer Software Update Check
+   LTpowerAnalyzer™ Software Update Check
 
 .. grid::
    :widths: 50% 50%
@@ -1764,7 +1764,7 @@ on the ``Update button`` will download and launch the latest install file.
 
    .. figure:: lib3_upcheck.png
 
-      LTpowerAnalyzer Software Installer File
+      LTpowerAnalyzer™ Software Installer File
 
 .. figure:: lib4_upcheck.png
 

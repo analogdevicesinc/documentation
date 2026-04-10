@@ -1,27 +1,27 @@
 .. _eval-ltpa-kit:
 
-EVAL-LTPA-KIT (LTpowerAnalyzer Kit)
-===================================
+EVAL-LTPA-KIT (LTpowerAnalyzer™ Kit)
+====================================
 
-Low-cost, High Performance, Compact Laboratory Tool for Evaluating and Characterizing Power Supply Designs.
+Low-cost, High Performance, Compact Laboratory Tool for Evaluating and Characterizing Power Supply Designs
 
 .. figure:: kitangle.gif
     :align: center
     :width: 600 px
 
-    EVAL-LTPA-KIT (LTpowerAnalyzer Kit)
+    EVAL-LTPA-KIT (LTpowerAnalyzer™ Kit)
 
 Overview
 --------
 
-The :adi:`EVAL-LTPA-KIT or LTpowerAnalyzer Kit <EVAL-LTPA-KIT>` is a low-cost,
+The :adi:`EVAL-LTPA-KIT or LTpowerAnalyzer™ Kit <EVAL-LTPA-KIT>` is a low-cost,
 high performance, compact laboratory tool for evaluating and characterizing
 power supply designs — allowing measurements of frequency response,
 transient response, and output impedance. Combined with the capabilities
 of the ADALM2000 Active Learning Module, it offers high portability
 with its compact size.
 
-The LTpowerAnalyzer Software offers a user-friendly interface with
+The LTpowerAnalyzer™ Software offers a user-friendly interface with
 documentations for ease of usage. It comes with four different current probes
 for 1A, 10A, 50A, and 100A. Immediately kick-off using the kit with the
 LT8642S-based demo board as the device under test (DUT).
@@ -59,7 +59,7 @@ Specifications
 +--------------------+--------------------+---------+---------+-----------+
 | **Parameter**      | **Conditions**     | **Min** | **Max** | **Units** |
 +--------------------+--------------------+---------+---------+-----------+
-| **LTpowerAnalyzer  |                    |         |         |           |
+| **LTpowerAnalyzer™ |                    |         |         |           |
 | Main Board         |                    |         |         |           |
 | (LB3031A)**        |                    |         |         |           |
 +--------------------+--------------------+---------+---------+-----------+
@@ -116,7 +116,7 @@ Components and Connections
 Power Analyzer Board Connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The LTpowerAnalyzer Main Board (LB3031A) extends the electrical capabilities
+The LTpowerAnalyzer™ Main Board (LB3031A) extends the electrical capabilities
 of the ADALM2000 Active Learning Module (M2K) by providing an analog signal
 chain interface that can accommodate ±100 VDC of differential input voltage at
 its ports. This enables a broader range of power supply DUTs that can be
@@ -125,7 +125,7 @@ evaluated with the ADALM2000.
 *Main Board Pinout*
 
 +------------------+----------------------------------------------------------+
-| **GROUND**       | Ground pin of the LTpowerAnalyzer Main Board             |
+| **GROUND**       | Ground pin of the LTpowerAnalyzer™ Main Board            |
 +------------------+----------------------------------------------------------+
 | **VOUT-**        | Input negative terminal pin for the DUT output voltage   |
 |                  | sensing                                                  |
@@ -152,7 +152,7 @@ evaluated with the ADALM2000.
 
 .. figure:: power_analyzer_board_pinout.png
 
-   LTpowerAnalyzer Board (LB3031A) Pinout
+   LTpowerAnalyzer™ Board (LB3031A) Pinout
 
 Current Probe Connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -302,7 +302,7 @@ This can lead to gain and phase errors when the frequency reaches the 50 kHz to
 1 MHz range, depending on the absolute value of R3 and R4. The best practice is
 to reduce the absolute value or R3 compared to R1, and R4 compared to R2 by a
 factor of 10 to 100, pushing the pole out to beyond the frequencies of interest.
-The input impedance of the LTpowerAnalyzer is about 1 pF in parallel with 1 MΩ,
+The input impedance of the LTpowerAnalyzer™ is about 1 pF in parallel with 1 MΩ,
 which should minimize this problem.
 
 Follow below configuration to set up the system using Module Connection:
@@ -319,7 +319,7 @@ series with the ISN current sense line, and input and output voltage must be
 measured differentially from the respective Rs connection to the ISP current
 sense line.
 
-The common-mode range of the LTPowerAnalyzer is ±100V, and Rs is typically 20Ω
+The common-mode range of the LTPowerAnalyzer™ is ±100V, and Rs is typically 20Ω
 to 40Ω.
 
 .. figure:: ledriver2.jpg
@@ -330,7 +330,7 @@ Getting Started
 ----------------
 
 Please refer to the following pages for detailed instructions on
-how to set up the LTpowerAnalyzer system for evaluation.
+how to set up the LTpowerAnalyzer™ system for evaluation.
 
 .. toctree::
    :titlesonly:

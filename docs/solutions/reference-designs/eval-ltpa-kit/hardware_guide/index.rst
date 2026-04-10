@@ -3,13 +3,13 @@
 EVAL-LTPA-KIT Hardware User Guide
 =================================
 
-The :adi:`EVAL-LTPA-KIT` or LTpowerAnalyzer Kit is a low-cost, high performance,
+The :adi:`EVAL-LTPA-KIT` or LTpowerAnalyzer™ Kit is a low-cost, high performance,
 compact laboratory tool for evaluating and characterizing power supply designs
 – allowing measurements of frequency response, transient response, and output
 impedance. Combined with the capabilities of the ADALM2000 Learning Module,
 it offers high portability with its compact size.
 
-The LTpowerAnalyzer Software offers a user-friendly interface with
+The LTpowerAnalyzer™ Software offers a user-friendly interface with
 documentations for ease of usage. It comes with four different current probes
 for 1A, 10A, 50A, and 100A. Immediately kick-off using the kit with the
 LT8642S-based demo board as the device under test (DUT).
@@ -24,7 +24,7 @@ The EVAL-LTPA-KIT comes with the following boards and accessories:
 
 - **Base Board**:
 
-  - LTpowerAnalyzer Base Board
+  - LTpowerAnalyzer™ Base Board
 
 - **Current Probes**:
 
@@ -60,8 +60,8 @@ section, depending on the feedback network of the DUT, this may be done by
 placing a series injection resistor.
 
 The included DUT, **LT8642S Demo Board**, features a 16-pin male header for
-easy interfacing with the LTpowerAnalyzer’s interposer board. The demo board may
-be connected to the interface board of the LTpowerAnalyzer via a ribbon cable.
+easy interfacing with the LTpowerAnalyzer™’s interposer board. The demo board may
+be connected to the interface board of the LTpowerAnalyzer™ via a ribbon cable.
 
 .. grid::
    :widths: 75% 25%
@@ -73,7 +73,7 @@ be connected to the interface board of the LTpowerAnalyzer via a ribbon cable.
    .. figure:: sample_ribbon_cable_connection.png
 
       Sample ribbon cable connection
-      from the Demo Board to the LTpowerAnalyzer
+      from the Demo Board to the LTpowerAnalyzer™
       (via the Interface A Board)
 
 However, other DUTs do not have a native support for these interfaces. Below
@@ -135,17 +135,17 @@ ensure there are no shorts.
 
 **3. Preparing the system for measurements**
 
-- Connect the LTpowerAnalyzer (LB3031A) main board to the ADALM2000 (M2k) or the
+- Connect the LTpowerAnalyzer™ (LB3031A) main board to the ADALM2000 (M2k) or the
   Analog Discovery 2 USB scope.
-- Connect the wires to the terminal block on the LTpowerAnalyzer main board and
+- Connect the wires to the terminal block on the LTpowerAnalyzer™ main board and
   connect the demo board Vin inputs to a power supply.
 - Connect the USB scope to the computer via the USB cable and launch the
-  LTpowerAnalyzer software.
-- Connect a current probe to the LTpowerAnalyzer main board.
+  LTpowerAnalyzer™ software.
+- Connect a current probe to the LTpowerAnalyzer™ main board.
 
 .. figure:: bode_system_example.jpg
 
-    Basic LTpowerAnalyzer System Setup for Bode Plots Only
+    Basic LTpowerAnalyzer™ System Setup for Bode Plots Only
     (No current probe attached yet)
 
 Transients and Impedance Measurements
@@ -260,7 +260,7 @@ installing and swapping out current probes.
 
 .. tip::
 
-   The LTpowerAnalyzer Kit comes with an easy-to-use graphical user interface,
+   The LTpowerAnalyzer™ Kit comes with an easy-to-use graphical user interface,
    designed to be used in conjunction with the hardware components. To access
    the installer and learn how to use the built-in tools, visit the
    :ref:`EVAL-LTPA-KIT Software User Guide <ltpa-software>` page.
