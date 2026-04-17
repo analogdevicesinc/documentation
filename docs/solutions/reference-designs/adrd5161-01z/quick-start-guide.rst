@@ -1,34 +1,42 @@
+.. _adrd5161-01z quick-guide-guide:
+
 ADRD5161-01Z Quick Start Guide
 ==============================
 
 Required Hardware
 -----------------
 
-	- ADRD5161-01Z
-	- 3S LiPo battery pack with an XT60 connector 
-	- USB PD charger, capable of 15V/20V, 3A (min)
-	- CAN cable
-	- Optional: MAXPICO (or compatible) debug / programming probe
-	
+- ADRD5161-01Z
+- 3S LiPo battery pack with an XT60 connector
+- USB PD charger, capable of 15V/20V, 3A (min)
+- CAN cable
+- Optional: MAXPICO (or compatible) debug / programming probe
+
 Getting Started
 ---------------
 
-The ADRD5161-01Z module comes with the state machine firmware already flashed. 
+The ADRD5161-01Z module comes with the state machine firmware already flashed.
 MAX17320 and MAX77958 are already configured for Panasonic NCR18650B batteries, with a total capacity 6600mAh.
 
 * Connect the battery pack and balancing leads to the BMS module
 
 * In order to start the module, after the battery is connected, S1 needs to be pressed.
 
-* To poweroff the module, press S2. 
+* To poweroff the module, press S2.
 
-* If the battery pack requires charging, plug in the USB-C cable, connected to 20V/3A capable power supply. In this case, the module will power up automatically.
+* If the battery pack requires charging, plug in the USB-C cable, connected to
+  20V/3A capable power supply. In this case, the module will power up
+  automatically.
 
-* After powering up, the module will enter the Configure State, where it waits for user input to be triggered. If no user input is received, the module will use default values.
+* After powering up, the module will enter the Configure State, where it waits
+  for user input to be triggered. If no user input is received, the module will
+  use default values.
 
-* Depending on whether or not the USB-C cable is plugged in, the module will enter either the Normal or the Charging State.
+* Depending on whether or not the USB-C cable is plugged in, the module will
+  enter either the Normal or the Charging State.
 
-* The Shutdown state cuts the power to the CAN Transceiver and the rest of the system, while keeping the BMS module powered on. 
+* The Shutdown state cuts the power to the CAN Transceiver and the rest of the
+  system, while keeping the BMS module powered on.
 
 .. figure:: res/buttons.jpg
    :align: center
@@ -55,7 +63,8 @@ Software Requirements:
    $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd
 
 
-Complete build instructions for the firmware, required tools and Zephyr workspace configuration are provided in the Software Guide
+Complete build instructions for the firmware, required tools and Zephyr
+workspace configuration are provided in the :ref:`adrd5161-01z software-guide`.
 
 
 BMS State Machine Description and GUI control
@@ -73,10 +82,12 @@ However, the Configure state allows for the following parameters to be configure
 * Constant Charge Current: 100mA < CC Current < 3A
 * Charge Termination Voltage: 10.2V < Vt < 12.6V
 
-At power up, the module will go to the Configure State. To trigger user configuration, press S4 button.
-Then, to increase the value for each parameter, the same button needs to be pressed(S4).
-To decrease, S5 must be pressed. When satisfied with the value, and to move on to the next parameter, press S6.
-The buttons and their significance for the Configure State are highlighted in the image below.
+At power up, the module will go to the Configure State. To trigger user
+configuration, press S4 button. Then, to increase the value for each parameter,
+the same button needs to be pressed(S4). To decrease, S5 must be pressed. When
+satisfied with the value, and to move on to the next parameter, press S6. The
+buttons and their significance for the Configure State are highlighted in the
+image below.
 
 .. figure:: res/configure1.jpg
    :align: center
@@ -93,13 +104,15 @@ The buttons and their significance for the Configure State are highlighted in th
 Normal State
 ~~~~~~~~~~~~
 
-When in the Normal State, the ADRD5161-01Z board enables the power supply towards the system( motor control boards, localization boards)
-The CAN Transceiver is powered up here as well, thus enabling CAN communication.
-This state displays the following parameters, both on the screen in the serial console:
+When in the Normal State, the ADRD5161-01Z board enables the power supply
+towards the system( motor control boards, localization boards) The CAN
+Transceiver is powered up here as well, thus enabling CAN communication. This
+state displays the following parameters, both on the screen in the serial
+console:
 
 * State of Charge - SoC - %
 * Pack Voltage - mV (serial console) & V on display
-* Cell1, Cell2, Cell3 Voltage - mV 
+* Cell1, Cell2, Cell3 Voltage - mV
 * Current - mA
 * Fuel Gauge Temperature - °C
 * Remaining Capacity - mAh
@@ -118,14 +131,16 @@ To navigate OLED display, press S5.
 
 Charging State
 ~~~~~~~~~~~~~~
-When in the Charging State, the ADRD5161-01Z board enables the charging power path.
-This allows for the battery pack to be charged, without cutting the power to the additional modules.
-In case of an undervoltage event (e.g. connecting USB-C cable from 5V supply, instead of 20V), the module will go to Shutdown state.
-This state displays the following parameters, both on the screen in the serial console:
+When in the Charging State, the ADRD5161-01Z board enables the charging power
+path. This allows for the battery pack to be charged, without cutting the power
+to the additional modules. In case of an undervoltage event (e.g. connecting
+USB-C cable from 5V supply, instead of 20V), the module will go to Shutdown
+state. This state displays the following parameters, both on the screen in the
+serial console:
 
 * State of Charge - SoC - %
 * Pack Voltage - mV (serial console) & V on display
-* Cell1, Cell2, Cell3 Voltage - mV 
+* Cell1, Cell2, Cell3 Voltage - mV
 * Current - mA
 * Fuel Gauge Temperature - °C
 * Remaining Capacity - mAh
@@ -144,9 +159,10 @@ To navigate OLED display, press S5. When in this state, the highlighted LED is o
 Shutdown State
 ~~~~~~~~~~~~~~
 
-When in the Shutdown state, the ADRD5161-01Z is still powered on. However, the supply to the consumers and the CAN Transceiver is cut off.
-This state can be triggered either by faults appearing in the powerpath, or by pressing the designated S4 button.
-To exit Shutdown State, the same button must be pressed. 
+When in the Shutdown state, the ADRD5161-01Z is still powered on. However, the
+supply to the consumers and the CAN Transceiver is cut off. This state can be
+triggered either by faults appearing in the powerpath, or by pressing the
+designated S4 button. To exit Shutdown State, the same button must be pressed.
 
 .. figure:: res/shutdown.jpg
    :align: center

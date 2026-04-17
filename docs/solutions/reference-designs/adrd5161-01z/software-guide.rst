@@ -1,3 +1,5 @@
+.. _adrd5161-01z software-guide:
+
 ADRD5161-01Z Software Guide
 ===========================
 
@@ -18,14 +20,14 @@ Software Requirements
 Install Tools
 --------------
 
-Install MSDK following the `MSDK User Guide
-<https://analogdevicesinc.github.io/msdk/USERGUIDE/#download>`_. On WSL, we
-recommend installing it as root in ``/MaximSDK``, instead of the default
-user home install path.
+Install MSDK following the
+`MSDK User Guide <https://analogdevicesinc.github.io/msdk/USERGUIDE/#download>`_.
+On WSL, we recommend installing it as root in ``/MaximSDK``, instead of the
+default user home install path.
 
 If you do not have Zephyr SDK already set up, start by creating a Zephyr
-workspace, following the `Zephyr Getting Started
-<https://docs.zephyrproject.org/latest/develop/getting_started/index.html>`_
+workspace, following the
+`Zephyr Getting Started <https://docs.zephyrproject.org/latest/develop/getting_started/index.html>`_
 tutorial.
 
 Setup Zephyr Workspace
@@ -38,7 +40,7 @@ Setup Zephyr Workspace
 
     Set up virtualenv:
 
-    .. code-block:: console
+    .. shell::
 
        $ mkdir zephyrproject
        $ cd zephyrproject
@@ -47,7 +49,7 @@ Setup Zephyr Workspace
 
     Set up west workspace:
 
-    .. code-block:: console
+    .. shell::
 
        $ pip install west
        $ west init -m https://github.com/analogdevicesinc/adrd5161-fw . # This might take a while - big download
@@ -62,9 +64,9 @@ Setup Zephyr Workspace
 
     You may reuse a pre-existing West workspace. This is especially convenient if working on other boards in the ADRD family.
 
-    .. code-block:: console
+    .. shell::
 
-       $ cd <path to west workspace>
+       $ cd path/to/west
        $ source .venv/bin/activate
        $ git clone https://github.com/analogdevicesinc/adrd5161-fw
        $ west config manifest.path adrd5161-fw
@@ -72,7 +74,7 @@ Setup Zephyr Workspace
 
 Enter the workspace and load the python virtual environment:
 
-.. code-block:: console
+.. shell::
 
    $ cd <path to west workspace>
    $ source .venv/bin/activate
@@ -81,225 +83,236 @@ Enter the workspace and load the python virtual environment:
 Build and Flash the Firmware
 ----------------------------
 
-The ADRD5161-01Z firmware is based on Zephyr. The source code for the latest version: link.
-The CiA 419 profile prescribes a standard set of CANopen objects and their function for BMS systems. While hand-crafting compatible CAN messages is possible, it is recommended to use an implementation of the CANopen and CiA 419 stack that exposes a simpler API, such as the Python ``canopen`` package or the ROS2 ``ros2_canopen`` package, exemplified in the following sections.
+The ADRD5161-01Z firmware is based on Zephyr. The source code is available at
+:git-adrd5161-fw:`releases/latest+`.
+
+The CiA 419 profile prescribes a standard set of CANopen objects and their
+function for BMS systems. While hand-crafting compatible CAN messages is
+possible, it is recommended to use an implementation of the CANopen and CiA 419
+stack that exposes a simpler API, such as the Python ``canopen`` package or the
+ROS2 ``ros2_canopen`` package, exemplified in the following sections.
 
 Build the firmware:
 
-.. code-block:: console
+.. shell::
 
    $ west build -p auto app
 
 Flash the firmware (will build if necessary):
 
-.. code-block:: console
+.. shell::
 
    # Replace /MaximSDK/ with the path to MSDK
-   $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ --openocd /MaximSDK/Tools/OpenOCD/openocd
+   $ west flash --openocd-search /MaximSDK/Tools/OpenOCD/scripts/ \
+          --openocd /MaximSDK/Tools/OpenOCD/openocd
 
 Control through Python ``canopen``
 ----------------------------------
-Install the python canopen package: 
+
+Install the python canopen package:
 
 .. code-block:: console
 
-	$ pip install canopen
+   $ pip install canopen
 
 Before running any examples, make sure the CAN network is properly set up.
 
 .. code-block:: console
 
-	$ ip link set can0 down
-	$ ip link set can0 type can bitrate 500000
-	$ ip link set can0 up
+   $ ip link set can0 down
+   $ ip link set can0 type can bitrate 500000
+   $ ip link set can0 up
 
 The code block below is a minimal example of accessing the BMS parameters through Python.
 
 .. code-block:: python
 
-	#!/usr/bin/env python3
-	import canopen
-	import time
-	import sys
-	import struct
+   #!/usr/bin/env python3
+   import canopen
+   import time
+   import sys
+   import struct
 
-	# Configuration
-	CAN_INTERFACE = 'socketcan'
-	CAN_CHANNEL = 'can0'
-	CAN_BITRATE = 500000
-	NODE_ID = 2
-
-
-	def setup_network():
-	"""Initialize CANopen network and node"""
-	try:
-		# Create network
-		network = canopen.Network()
-
-		# Connect to CAN bus
-		network.connect(interface=CAN_INTERFACE, channel=CAN_CHANNEL, bitrate=CAN_BITRATE)
-		print(f"Connected to {CAN_INTERFACE} on {CAN_CHANNEL} at {CAN_BITRATE} bit/s")
-
-		# Add remote node
-		node = canopen.RemoteNode(NODE_ID, object_dictionary=None)
-		network.add_node(node)
-		print(f"Added node {NODE_ID}")
-
-		return network, node
-	except Exception as e:
-		print(f"Error setting up network: {e}")
-		sys.exit(1)
+   # Configuration
+   CAN_INTERFACE = 'socketcan'
+   CAN_CHANNEL = 'can0'
+   CAN_BITRATE = 500000
+   NODE_ID = 2
 
 
-	def read_sdo_auto(node, index, subindex=0, signed=False):
-	"""Read a value via SDO and auto-detect size"""
-	try:
-		data = node.sdo.upload(index, subindex)
-		data_len = len(data)
+   def setup_network():
+       """Initialize CANopen network and node"""
+       try:
+           # Create network
+           network = canopen.Network()
 
-		if data_len == 1:
-		fmt = '<b' if signed else '<B'
-		elif data_len == 2:
-		fmt = '<h' if signed else '<H'
-		elif data_len == 4:
-		fmt = '<i' if signed else '<I'
-		elif data_len == 8:
-		fmt = '<q' if signed else '<Q'
-		else:
-		return None, f"Unsupported data length: {data_len} bytes", data_len
+           # Connect to CAN bus
+           network.connect(interface=CAN_INTERFACE, channel=CAN_CHANNEL, bitrate=CAN_BITRATE)
+           print(f"Connected to {CAN_INTERFACE} on {CAN_CHANNEL} at {CAN_BITRATE} bit/s")
 
-		value = struct.unpack(fmt, data)[0]
-		return value, None, data_len
-	except Exception as e:
-		return None, str(e), 0
+           # Add remote node
+           node = canopen.RemoteNode(NODE_ID, object_dictionary=None)
+           network.add_node(node)
+           print(f"Added node {NODE_ID}")
 
-	def charger_status_str(status):
-	"""Convert charger status to string"""
-
-	if status == 0:
-		return "?"
-	if status == 1:
-		return "charging"
-	if status == 2:
-		return "fault"
-	if status == 3:
-		return "off"
-	if status == 4:
-		return "full"
-	return None
+           return network, node
+       except Exception as e:
+           print(f"Error setting up network: {e}")
+           sys.exit(1)
 
 
-	def read_od_values(node):
-	"""Read all Object Dictionary values from the device"""
+   def read_sdo_auto(node, index, subindex=0, signed=False):
+       """Read a value via SDO and auto-detect size"""
+       try:
+           data = node.sdo.upload(index, subindex)
+           data_len = len(data)
 
-	print("\n" + "=" * 60)
-	print("Reading Object Dictionary Values")
-	print("=" * 60)
+           if data_len == 1:
+               fmt = '<b' if signed else '<B'
+           elif data_len == 2:
+               fmt = '<h' if signed else '<H'
+           elif data_len == 4:
+               fmt = '<i' if signed else '<I'
+           elif data_len == 8:
+               fmt = '<q' if signed else '<Q'
+           else:
+               return None, f"Unsupported data length: {data_len} bytes", data_len
 
-	# Battery Cell Voltages (0x2060, array of 4)
-	print("\n[Battery Cell Voltages - 0x2060]")
-	for i in range(4):
-		voltage, error = read_sdo_auto(node, 0x2060, i + 1, signed=False)
-		if error:
-		print(f"  Cell {i + 1}: Error - {error}")
-		else:
-		print(f"  Cell {i + 1}: {voltage} mV ({voltage / 1000:.3f} V)")
+           value = struct.unpack(fmt, data)[0]
+           return value, None, data_len
+       except Exception as e:
+           return None, str(e), 0
 
-	# Current (0x2071) - signed
-	print("\n[Current - 0x2071]")
-	current, error, size = read_sdo_auto(node, 0x2071, 0, signed=True)
-	if error:
-		print(f"  Current: Error - {error}")
-	else:
-		print(f"  Current: {current} uA ({current / 1000:.3f} mA)")
+   def charger_status_str(status):
+       """Convert charger status to string"""
 
-	# Battery Status (0x6000)
-	print("\n[Battery Status - 0x6000]")
-	status, error = read_sdo_auto(node, 0x6000, 0, signed=False)
-	if error:
-		print(f"  Battery Status: Error - {error}")
-	else:
-		print("Battery status: discharging" if status == 1 else "Battery status: charging")
-
-	# Charger Status (0x6001)
-	print("\n[Charger Status - 0x6001]")
-	status, error = read_sdo_auto(node, 0x6001, 0, signed=False)
-	if error:
-		print(f"  Charger Status: Error - {error}")
-	else:
-		print(f"  Charger Status is {charger_status_str(status)}")
-
-	# Temperature (0x6010) - signed
-	print("\n[Temperature - 0x6010]")
-	temp, error, size = read_sdo_auto(node, 0x6010, 0, signed=True)
-	if error:
-		print(f"  Temperature: Error - {error}")
-	else:
-		print(f"  Temperature: {temp} °C")
-
-	# Ah Returned During Last Charge (0x6052)
-	print("\n[Ah Returned During Last Charge - 0x6052]")
-	ah, error = read_sdo_auto(node, 0x6052, 0, signed=False)
-	if error:
-		print(f"  Ah Returned: Error - {error}")
-	else:
-		print(f"  Ah Returned: {ah} mAh ({ah / 1000:.3f} Ah)")
-
-	# Battery Voltage (0x6060)
-	print("\n[Battery Voltage - 0x6060]")
-	voltage, error = read_sdo_auto(node, 0x6060, 0, signed=False)
-	if error:
-		print(f"  Battery Voltage: Error - {error}")
-	else:
-		print(f"  Battery Voltage: {voltage} mV ({voltage / 1000:.3f} V)")
-
-	# Battery State of Charge (0x6081)
-	print("\n[Battery State of Charge - 0x6081]")
-	soc, error = read_sdo_auto(node, 0x6081, 0, signed=False)
-	if error:
-		print(f"  Battery SOC: Error - {error}")
-	else:
-		print(f"  Battery SOC: {soc}%")
-
-	print("\n" + "=" * 60)
+       if status == 0:
+           return "?"
+       if status == 1:
+           return "charging"
+       if status == 2:
+           return "fault"
+       if status == 3:
+           return "off"
+       if status == 4:
+           return "full"
+       return None
 
 
-	def main():
+   def read_od_values(node):
+       """Read all Object Dictionary values from the device"""
 
-	print("ADRD5161-01Z CAN Example \n")
-	print("-" * 60)
+       print("\n" + "=" * 60)
+       print("Reading Object Dictionary Values")
+       print("=" * 60)
 
-	# Setup network
-	print("Connect to CAN network\n")
-	network, node = setup_network()
+       # Battery Cell Voltages (0x2060, array of 4)
+       print("\n[Battery Cell Voltages - 0x2060]")
+       for i in range(4):
+           voltage, error = read_sdo_auto(node, 0x2060, i + 1, signed=False)
+           if error:
+               print(f"  Cell {i + 1}: Error - {error}")
+           else:
+               print(f"  Cell {i + 1}: {voltage} mV ({voltage / 1000:.3f} V)")
 
-	try:
-		read_od_values(node)
-		print("No Errors. System test passed.\n")
-	except Exception as e:
-		print(f"\nError: {e}")
-		import traceback
-		traceback.print_exc()
-	finally:
-		# Cleanup
-		print("\nDisconnecting...")
-		network.disconnect()
-		print("Disconnected")
+       # Current (0x2071) - signed
+       print("\n[Current - 0x2071]")
+       current, error, size = read_sdo_auto(node, 0x2071, 0, signed=True)
+       if error:
+           print(f"  Current: Error - {error}")
+       else:
+           print(f"  Current: {current} uA ({current / 1000:.3f} mA)")
+
+       # Battery Status (0x6000)
+       print("\n[Battery Status - 0x6000]")
+       status, error = read_sdo_auto(node, 0x6000, 0, signed=False)
+       if error:
+           print(f"  Battery Status: Error - {error}")
+       else:
+           print("Battery status: discharging" if status == 1 else "Battery status: charging")
+
+       # Charger Status (0x6001)
+       print("\n[Charger Status - 0x6001]")
+       status, error = read_sdo_auto(node, 0x6001, 0, signed=False)
+       if error:
+           print(f"  Charger Status: Error - {error}")
+       else:
+           print(f"  Charger Status is {charger_status_str(status)}")
+
+       # Temperature (0x6010) - signed
+       print("\n[Temperature - 0x6010]")
+       temp, error, size = read_sdo_auto(node, 0x6010, 0, signed=True)
+       if error:
+           print(f"  Temperature: Error - {error}")
+       else:
+           print(f"  Temperature: {temp} °C")
+
+       # Ah Returned During Last Charge (0x6052)
+       print("\n[Ah Returned During Last Charge - 0x6052]")
+       ah, error = read_sdo_auto(node, 0x6052, 0, signed=False)
+       if error:
+           print(f"  Ah Returned: Error - {error}")
+       else:
+           print(f"  Ah Returned: {ah} mAh ({ah / 1000:.3f} Ah)")
+
+       # Battery Voltage (0x6060)
+       print("\n[Battery Voltage - 0x6060]")
+       voltage, error = read_sdo_auto(node, 0x6060, 0, signed=False)
+       if error:
+           print(f"  Battery Voltage: Error - {error}")
+       else:
+           print(f"  Battery Voltage: {voltage} mV ({voltage / 1000:.3f} V)")
+
+       # Battery State of Charge (0x6081)
+       print("\n[Battery State of Charge - 0x6081]")
+       soc, error = read_sdo_auto(node, 0x6081, 0, signed=False)
+       if error:
+           print(f"  Battery SOC: Error - {error}")
+       else:
+           print(f"  Battery SOC: {soc}%")
+
+       print("\n" + "=" * 60)
 
 
-	if __name__ == "__main__":
-	main()
+   def main():
+
+       print("ADRD5161-01Z CAN Example \n")
+       print("-" * 60)
+
+       # Setup network
+       print("Connect to CAN network\n")
+       network, node = setup_network()
+
+       try:
+           read_od_values(node)
+           print("No Errors. System test passed.\n")
+       except Exception as e:
+           print(f"\nError: {e}")
+           import traceback
+           traceback.print_exc()
+       finally:
+           # Cleanup
+           print("\nDisconnecting...")
+           network.disconnect()
+           print("Disconnected")
 
 
+   if __name__ == "__main__":
+       main()
 
 Control through ROS2 (Python ``canopen`` wrapper)
 -------------------------------------------------
 
-This section demonstrates how to create a ROS2 node that wraps the Python ``canopen`` library to interface with the ADRD5161-01Z BMS board. This approach uses the same Python ``canopen`` library from the previous section, but wraps it in a ROS2 node to publish ``BatteryState`` messages.
+This section demonstrates how to create a ROS2 node that wraps the Python
+``canopen`` library to interface with the ADRD5161-01Z BMS board. This approach
+uses the same Python ``canopen`` library from the previous section, but wraps
+it in a ROS2 node to publish ``BatteryState`` messages.
 
 .. note::
 
-   This example uses the Python ``canopen`` library directly within a ROS2 node. For production robotics applications, see the :ref:`ros2_canopen_todo` section below.
+   This example uses the Python ``canopen`` library directly within a ROS2
+   node. For production robotics applications, see the :ref:`adrd5161-01z
+   ros2-canopen-todo` section below.
 
 Prerequisites
 ~~~~~~~~~~~~~
@@ -312,16 +325,18 @@ Prerequisites
 Pull the ADI ROS2 Docker Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADI ROS2 Docker image provides a pre-configured environment with ROS2 Humble and the necessary dependencies.
+The ADI ROS2 Docker image provides a pre-configured environment with ROS2
+Humble and the necessary dependencies.
 
 **Available Images:**
 
-* `astanea/adi_ros2 <https://hub.docker.com/r/astanea/adi_ros2>`__ - Standard Ubuntu-based images for x86_64 and ARM64
+* `astanea/adi_ros2 <https://hub.docker.com/r/astanea/adi_ros2>`__ - Standard
+  Ubuntu-based images for x86_64 and ARM64
 
 **Resources:**
 
-* `ADI ROS2 GitHub Repository <https://github.com/analogdevicesinc/adi_ros2>`__
-* `ADI ROS2 Documentation <https://analogdevicesinc.github.io/adi_ros2/humble/adi_meta/index.html>`__
+* :git-adi_ros2:`ADI ROS2 GitHub Repository </+>`
+* :external+adi_ros2:doc:`index`
 
 **Image Tag Format:** ``{ros-distro}-{arch/platform}-{stage}``
 
@@ -364,7 +379,8 @@ Create a Custom BMS Node
 
 Use the ROS2 package creation tool to generate the package structure. This must be run inside the Docker container.
 
-For more details on ROS2 package creation, see the official `ROS2 Creating Your First Package Tutorial <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html>`__.
+For more details on ROS2 package creation, see the official
+`ROS2 Creating Your First Package Tutorial <https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Creating-Your-First-ROS2-Package.html>`__.
 
 .. code-block:: console
 
@@ -401,29 +417,29 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
    from sensor_msgs.msg import BatteryState
    import canopen
    import struct
-   
+
    class BMSNode(Node):
        def __init__(self):
            super().__init__('bms_node')
-           
+
            # Parameters
            self.declare_parameter('can_interface', 'socketcan')
            self.declare_parameter('can_channel', 'can0')
            self.declare_parameter('can_bitrate', 500000)
            self.declare_parameter('node_id', 2)
            self.declare_parameter('publish_rate', 1.0)
-           
+
            # Get parameters
            can_interface = self.get_parameter('can_interface').value
            can_channel = self.get_parameter('can_channel').value
            can_bitrate = self.get_parameter('can_bitrate').value
            node_id = self.get_parameter('node_id').value
            publish_rate = self.get_parameter('publish_rate').value
-           
+
            # Initialize CANopen network with error handling
            self.network = canopen.Network()
            self.can_connected = False
-           
+
            try:
                self.network.connect(interface=can_interface, channel=can_channel, bitrate=can_bitrate)
                self.can_connected = True
@@ -436,24 +452,24 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
                    f'  $ sudo ip link set {can_channel} up'
                )
                raise SystemExit(1)
-           
+
            self.node = canopen.RemoteNode(node_id, object_dictionary=None)
            self.network.add_node(self.node)
-           
+
            self.get_logger().info(f'Connected to BMS on {can_channel} at {can_bitrate} bps')
-           
+
            # Publisher
            self.battery_pub = self.create_publisher(BatteryState, 'battery_state', 10)
-           
+
            # Timer
            self.timer = self.create_timer(1.0 / publish_rate, self.publish_battery_state)
-       
+
        def read_sdo(self, index, subindex=0, signed=False):
            """Read SDO value from BMS"""
            try:
                data = self.node.sdo.upload(index, subindex)
                data_len = len(data)
-               
+
                if data_len == 1:
                    fmt = '<b' if signed else '<B'
                elif data_len == 2:
@@ -462,7 +478,7 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
                    fmt = '<i' if signed else '<I'
                else:
                    return None
-               
+
                return struct.unpack(fmt, data)[0]
            except canopen.SdoCommunicationError as e:
                self.get_logger().warning(f'SDO communication error reading 0x{index:04X}: {e}')
@@ -473,33 +489,33 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
            except Exception as e:
                self.get_logger().warning(f'Failed to read 0x{index:04X}: {e}')
                return None
-       
+
        def publish_battery_state(self):
            """Read BMS data and publish as BatteryState message"""
            msg = BatteryState()
            msg.header.stamp = self.get_clock().now().to_msg()
            msg.header.frame_id = 'battery'
-           
+
            # Read voltage (0x6060) in mV
            voltage_mv = self.read_sdo(0x6060, 0, signed=False)
            if voltage_mv is not None:
                msg.voltage = voltage_mv / 1000.0  # Convert to V
-           
+
            # Read current (0x2071) in uA
            current_ua = self.read_sdo(0x2071, 0, signed=True)
            if current_ua is not None:
                msg.current = current_ua / 1000000.0  # Convert to A
-           
+
            # Read State of Charge (0x6081) in %
            soc = self.read_sdo(0x6081, 0, signed=False)
            if soc is not None:
                msg.percentage = float(soc) / 100.0
-           
+
            # Read temperature (0x6010) in °C
            temp = self.read_sdo(0x6010, 0, signed=True)
            if temp is not None:
                msg.temperature = float(temp)
-           
+
            # Read individual cell voltages
            cell_voltages = []
            for i in range(4):
@@ -507,17 +523,17 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
                if cell_mv is not None:
                    cell_voltages.append(cell_mv / 1000.0)
            msg.cell_voltage = cell_voltages
-           
+
            # Publish
            self.battery_pub.publish(msg)
            self.get_logger().info(f'Battery: {msg.voltage:.2f}V, {msg.percentage*100:.1f}%, {msg.temperature}°C')
-       
+
        def destroy_node(self):
            """Cleanup on shutdown"""
            if self.can_connected:
                self.network.disconnect()
            super().destroy_node()
-   
+
    def main(args=None):
        rclpy.init(args=args)
        try:
@@ -525,7 +541,7 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
        except SystemExit:
            rclpy.shutdown()
            sys.exit(1)
-       
+
        try:
            rclpy.spin(node)
        except KeyboardInterrupt:
@@ -533,7 +549,7 @@ Now replace the generated ``src/adrd5161_bms_node/adrd5161_bms_node/bms_node.py`
        finally:
            node.destroy_node()
            rclpy.shutdown()
-   
+
    if __name__ == '__main__':
        main()
 
@@ -581,7 +597,7 @@ Create the ``docker-compose.yaml`` file in ``~/adrd5161_ws/``:
          - DEBIAN_FRONTEND=noninteractive
          - PIP_ROOT_USER_ACTION=ignore
        command: /bin/bash
-   
+
      build:
        extends: ros2
        command: >
@@ -592,7 +608,7 @@ Create the ``docker-compose.yaml`` file in ``~/adrd5161_ws/``:
            source /opt/ros/humble/setup.bash &&
            colcon build --symlink-install
          "
-   
+
      run:
        extends: ros2
        privileged: true
@@ -611,7 +627,7 @@ Create the ``docker-compose.yaml`` file in ``~/adrd5161_ws/``:
            source /ros2_ws/install/setup.bash &&
            ros2 run adrd5161_bms_node bms_node
          "
-   
+
      echo:
        extends: ros2
        command: >
@@ -684,14 +700,18 @@ Make the scripts executable:
 * ``run``: Runs the BMS node with access to CAN devices
 * ``echo``: Echoes the ``/battery_state`` topic for monitoring
 
-.. _ros2_canopen_todo:
+.. _adrd5161-01z ros2-canopen-todo:
 
 Future: Native ``ros2_canopen`` Integration
 -------------------------------------------
 
 .. todo::
 
-   This section will be expanded to use the native `ros2_canopen <https://github.com/ros-industrial/ros2_canopen>`__ package instead of wrapping Python ``canopen``. The ros2_canopen stack provides a more robust integration with ROS2 lifecycle management, standardized CANopen interfaces, and better support for multi-device CAN networks.
+   This section will be expanded to use the native
+   `ros2_canopen <https://github.com/ros-industrial/ros2_canopen>`__ package instead of
+   wrapping Python ``canopen``. The ros2_canopen stack provides a more robust
+   integration with ROS2 lifecycle management, standardized CANopen interfaces,
+   and better support for multi-device CAN networks.
 
 **ros2_canopen Architecture:**
 

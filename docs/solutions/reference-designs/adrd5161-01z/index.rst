@@ -1,3 +1,5 @@
+.. _adrd5161-01z:
+
 ADRD5161-01Z
 ============
 
@@ -7,11 +9,16 @@ BMS module with CANopen CiA 419
 Introduction
 ------------
 
-The :adi:`ADRD5161-01Z` is a battery management/ monitoring system compatible with 3S LiPo battery packs. It communicates via CANopen CiA 419 OVER 500 kbaud CAN.
-The module functions as a state machine with 4 distinct states: Normal State, Charging State, Configure State and Shutdown state.
-Battery is monitored using the MAX17320 fuel gauge chip. Charging current is handled by MAX77961 charger chip, while the MAX77958 handles power delivery.
-Current state and specific parameters can be observed on the on-board OLED display.
-For development and debugging, data is printed to the serial console.   
+The :adi:`ADRD5161-01Z` is a battery management/ monitoring system compatible
+with 3S LiPo battery packs. It communicates via CANopen CiA 419 over 500 kbaud
+CAN.
+
+The module functions as a state machine with 4 distinct states: Normal State,
+Charging State, Configure State and Shutdown state. Battery is monitored using
+the MAX17320 fuel gauge chip. Charging current is handled by MAX77961 charger
+chip, while the MAX77958 handles power delivery. Current state and specific
+parameters can be observed on the on-board OLED display. For development and
+debugging, data is printed to the serial console.
 
 Specifications
 --------------
@@ -48,7 +55,7 @@ Required Hardware
 -----------------
 
 * ADRD5161-01Z
-* 3S LiPo battery pack with an XT60 connector 
+* 3S LiPo battery pack with an XT60 connector
 * USB PD charger, capable of 20V 3A
 * Optional: MAXPICO (or compatible) debug/ programming probe
 
@@ -62,11 +69,14 @@ To set the system up:
 
 * connect battery pack and balancing connector
 * if battery is charged: press S1 button (see image below) to start module
-* if battery is discharged: plug in USB-C cable connected to 20V/3A capable power supply and module starts on its own
+* if battery is discharged: plug in USB-C cable connected to 20V/3A capable
+  power supply and module starts on its own
 * after start, the firmware will go to the Configure state, wait for user input for 10s.
-* if no user input received, the module will go to either Normal or Charging state, depending on whether the USB-C charging cable is plugged in or not
+* if no user input received, the module will go to either Normal or Charging
+  state, depending on whether the USB-C charging cable is plugged in or not
 
-To poweroff the module, press S2 button. Be mindful when using this feature, as this cuts the power supply to the entire system.
+To poweroff the module, press S2 button. Be mindful when using this feature, as
+this cuts the power supply to the entire system.
 
 .. figure:: res/buttons.jpg
    :align: center
@@ -74,14 +84,16 @@ To poweroff the module, press S2 button. Be mindful when using this feature, as 
 
    ADRD5161-01Z switches S1 and S2.
 
-A detailed description of each state and how to control them from the onboard buttons is provided in the Quick Start section.
+A detailed description of each state and how to control them from the onboard
+buttons is provided in the Quick Start section.
 
 
 User Guides
 -----------
 
 .. toctree::
-   
+   :caption: The following user guides are available:
+
    quick-start-guide
    hardware-guide
    software-guide

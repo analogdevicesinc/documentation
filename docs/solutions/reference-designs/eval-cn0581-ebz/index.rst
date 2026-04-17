@@ -1,7 +1,9 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0581
 
+.. _eval-cn0581-ebz:
+
 EVAL-CN0581-EBZ
-================
+===============
 
 Configurable USB-C Power Sink Solution.
 

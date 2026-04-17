@@ -52,6 +52,7 @@ interref_repos = [
     'no-OS',
     'precision-converters-firmware',
     'PrecisionToolbox',
+    'adi_ros2/humble/adi_meta',
 ]
 
 # -- Options for HTML output --------------------------------------------------
