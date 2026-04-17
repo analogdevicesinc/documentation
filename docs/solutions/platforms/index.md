@@ -51,14 +51,6 @@ System-level control via Python, MATLAB, or QIQ using libIIO APIs.
 
 ## Platforms
 
-```{toctree}
-:maxdepth: 1
-:hidden:
-
-Phaser (CN0566)<phaser/index>
-Pluto SDR<pluto/index>
-```
-
 For more information on each of ADC Platforms, please click on the links below:
 
 
@@ -82,7 +74,17 @@ Low-cost SDR system based on the AD9361
 ```{image} resources/pluto.png
 ```
 ````
-`````
+
+
+````{card} Triton
+:ref: adc triton
+
+16T/16R X-Band System Platform
+
+```{image} resources/ADXBAND16EBZ_top-angle-evaluation-board.png
+```
+````
+`````  
 
 ## Platform Pilots
 
@@ -137,5 +139,14 @@ We have a Catalyst centres in:
 3.  **Drive Collaborative Innovation**\
     Co-develop system-level solutions with customers and ADI design
     teams.
+
+```{toctree}
+:maxdepth: 1
+:hidden:
+
+Phaser (CN0566)<phaser/index>
+Pluto SDR<pluto/index>
+Triton <triton/index>
+```
 
 
