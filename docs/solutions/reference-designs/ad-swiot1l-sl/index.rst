@@ -109,6 +109,7 @@ User guides
    hardware-guide/index
    firmware-guide/index
    software-guide/index
+   sample_application/index
 
 
 Help and Support
