@@ -201,14 +201,14 @@ Start a file server in a new terminal on your PC in the release directory:
       .. shell:: sh
 
          $ cd images-*   # Navigate to extracted release directory
-         $ python3 -m http.server 8000
+         $ python3 -m http.server
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
          $ cd images-*   # Navigate to extracted release directory
-         $ python -m http.server 8000
+         $ python -m http.server
 
 Find your IP address:
 
