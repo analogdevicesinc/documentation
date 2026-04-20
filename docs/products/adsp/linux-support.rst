@@ -76,6 +76,7 @@ for the the Commits link with the newest version and at least one Release.
       :git-buildroot:`Commits <commits/adi-2026.02-y+>`
       :git-buildroot:`Release 1 <releases/tag/2026.02-1+>`
       :git-buildroot:`Release 2 <releases/tag/2026.02-2+>`
+      :git-buildroot:`Release 3 <releases/tag/2026.02-3+>`
     - v2027.02 (LTS):
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
