@@ -1,3 +1,5 @@
+.. _conv_connect_tutorial:
+
 Converter Connectivity Tutorial
 ===============================
 
