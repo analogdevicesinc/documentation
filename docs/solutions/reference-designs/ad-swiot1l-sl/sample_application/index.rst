@@ -106,7 +106,7 @@ Software Setup
 Repository Cloning
 ~~~~~~~~~~~~~~~~~~
 
-1. Clone the repository and checkout the *swiot* branch:
+1. Clone the repository:
 
    .. shell::
       :user: analog
@@ -115,7 +115,6 @@ Repository Cloning
 
       $ git clone https://github.com/analogdevicesinc/pyadi-iio.git
       $ cd pyadi-iio
-      $ git checkout swiot
 
 2. Install Python dependencies:
 
