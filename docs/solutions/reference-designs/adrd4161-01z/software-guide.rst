@@ -1,7 +1,23 @@
+.. _adrd4161-01z software-guide:
+
 ADRD4161-01Z Software Guide
 ===========================
 
 This guide covers the software configuration for the ADRD4161-01Z carrier board.
+
+Hardware Requirements
+---------------------
+
+* ADRD4161-01Z board
+* Raspberry Pi 5 (or compatible)
+* Optional: MAX32625PICO (or compatible) DAPLINK programmer for MCU reprogramming
+
+Software Requirements
+---------------------
+
+* Raspberry Pi OS (64-bit recommended)
+* ``can-utils`` package for CAN bus utilities
+* ``libiio`` for IMU access via IIO subsystem
 
 UART
 ----
@@ -21,8 +37,6 @@ Usage:
    gpioset 0 24=0  # Turn off P7 power pin
    gpioset 0 24=1  # Turn on P7 power pin
    picocom -b 115200 /dev/ttyAMA4  # Interact with UART4
-
-.. todo:: P7 pinout diagram
 
 CAN Bus
 -------
@@ -60,7 +74,14 @@ Start the slcan daemon:
 
 .. code-block:: bash
 
-   sudo slcand -o -c -f -t hw -S 2000000 -s 6 /dev/ttyAMA0
+   sudo slcand -o -c -f -t hw -S 2000000 -s 6 /dev/ttyAMA0 can0
+
+Configure and bring up the CAN interface:
+
+.. code-block:: bash
+
+   ip link set can0 type can bitrate 500000
+   ip link set can0 up
 
 CAN Bitrate Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -68,31 +89,19 @@ CAN Bitrate Configuration
 To adjust the CAN bitrate, change the ``-s`` option according to the following
 table:
 
-.. list-table::
-   :header-rows: 1
-
-   * - CAN Bitrate
-     - slcan Speed Option
-   * - 10 kbit/s
-     - ``-s 0``
-   * - 20 kbit/s
-     - ``-s 1``
-   * - 50 kbit/s
-     - ``-s 2``
-   * - 100 kbit/s
-     - ``-s 3``
-   * - 125 kbit/s
-     - ``-s 4``
-   * - 250 kbit/s
-     - ``-s 5``
-   * - 500 kbit/s
-     - ``-s 6``
-   * - 800 kbit/s
-     - ``-s 7``
-   * - 1000 kbit/s
-     - ``-s 8``
-
-.. todo:: CAN cable diagram
+============ ===================
+CAN Bitrate  slcan Speed Option
+============ ===================
+10 kbit/s    ``-s 0``
+20 kbit/s    ``-s 1``
+50 kbit/s    ``-s 2``
+100 kbit/s   ``-s 3``
+125 kbit/s   ``-s 4``
+250 kbit/s   ``-s 5``
+500 kbit/s   ``-s 6``
+800 kbit/s   ``-s 7``
+1000 kbit/s  ``-s 8``
+============ ===================
 
 ADIS16xxx IMU
 -------------
@@ -126,31 +135,19 @@ After rebooting, you can interact with the IMU as an IIO device:
 GPIOs and Relays
 ----------------
 
-Header P10 exposes a number of GPIOs.
+Header P10 exposes a number of GPIOs. Header P12 exposes NC/NO/Common contacts
+for two SPDT relays, controlled from Raspberry Pi GPIOs.
 
-.. todo:: P10 pinout diagram
+See :ref:`adrd4161-01z hardware-guide` for pinout details.
 
-Header P12 exposes NC/NO/Common contacts for two SPDT relays, controlled from
-Raspberry Pi GPIOs:
+Example relay control:
 
-.. list-table::
-   :header-rows: 1
+.. code-block:: bash
 
-   * - Relay
-     - Pi GPIO
-     - P12 NC Pin
-     - P12 Common Pin
-     - P12 NO Pin
-   * - K1
-     - 17
-     - 1
-     - 2
-     - 3
-   * - K2
-     - 18
-     - 4
-     - 5
-     - 6
+   gpioset 0 17=1  # Activate relay K1
+   gpioset 0 17=0  # Deactivate relay K1
+   gpioset 0 18=1  # Activate relay K2
+   gpioset 0 18=0  # Deactivate relay K2
 
 WS2812 Addressable LEDs
 -----------------------
@@ -185,8 +182,9 @@ Build and run the piolib WS2812 example:
 Reprogramming the Onboard Microcontroller
 -----------------------------------------
 
-Make sure solder jumpers R27, R28, R29 are bridged. In this configuration, the
-MAX32662 microcontroller's SWD signals are exposed on the Pi's GPIOs:
+Make sure solder jumpers R27, R28, R29 are bridged. See
+:ref:`adrd4161_swd_jumpers` for details. In this configuration, the MAX32662
+microcontroller's SWD signals are exposed on the Pi's GPIOs:
 
 * GPIO 6: SWD_IO
 * GPIO 20: SWD_CLK
@@ -205,4 +203,4 @@ modes. With ``openocd``, use the following options:
 Replace ``/path/to/adrd4161-fw/openocd/`` with the path to a local copy of the
 adrd4161-fw/openocd folder.
 
-.. todo:: Link to adrd4161-fw repository when released
+.. TODO: Link to adrd4161-fw repository when released
