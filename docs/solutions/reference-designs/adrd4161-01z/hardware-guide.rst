@@ -3,6 +3,8 @@
 ADRD4161-01Z Hardware Guide
 ===========================
 
+.. todo:: Add annotated board image res/adrd4161-01z-annotated.svg
+
 .. TODO: Add annotated board image
    .. figure:: res/adrd4161-01z-annotated.svg
       :align: center
@@ -10,22 +12,25 @@ ADRD4161-01Z Hardware Guide
 
       ADRD4161-01Z Perception Carrier Board
 
-.. TODO: Add component annotation table
-   ========== ========= ==================================================================
-   Annotation Component Function
-   ========== ========= ==================================================================
-   1          P1        Power input, 9-70 V DC
-   2          J1        Raspberry Pi 40-pin header
-   3          P7        UART header (UART4 + switchable 5 V)
-   4          P8, P9    CAN bus connections
-   5          P10       GPIO header
-   6          P12       Relay header (2x SPDT)
-   7          J2        14-pin IMU connector
-   8          J3        16-pin IMU connector
-   ========== ========= ==================================================================
+.. todo:: Update component annotation table
+
+========== ========= ==================================================================
+Annotation Component Function
+========== ========= ==================================================================
+1          P1        Power input, 9-70 V DC
+2          J1        Raspberry Pi 40-pin header
+3          P7        UART header (UART4 + switchable 5 V)
+4          P8, P9    CAN bus connections
+5          P10       GPIO header
+6          P12       Relay header (2x SPDT)
+7          J2        14-pin IMU connector
+8          J3        16-pin IMU connector
+========== ========= ==================================================================
 
 Block Diagram
 -------------
+
+.. todo:: Add block diagram res/hw_block_diagram.png
 
 .. TODO: Add block diagram
    .. figure:: res/hw_block_diagram.png
@@ -69,6 +74,8 @@ UART Header (P7)
 Exposes the Raspberry Pi's UART4 interface and a switchable 5 V supply
 (controlled by GPIO 24).
 
+.. todo:: Add P7 pinout diagram
+
 .. TODO: Add P7 pinout diagram
 
 GPIO Header (P10)
@@ -76,6 +83,8 @@ GPIO Header (P10)
 
 Exposes general-purpose I/O pins, including GPIO 23 (pin 11) for WS2812 LED
 control.
+
+.. todo:: Add P10 pinout diagram
 
 .. TODO: Add P10 pinout diagram
 
@@ -99,6 +108,8 @@ CAN Cable
 The ADRDx161 board family communicates via CAN bus. The CAN interface on the
 ADRD4161-01Z is directly connected to the onboard MAX32662 MCU running slcan
 firmware.
+
+.. todo:: Add CAN cable diagram res/cable-can.lfs.svg
 
 .. TODO: Add CAN cable diagram
    .. image:: res/cable-can.lfs.svg

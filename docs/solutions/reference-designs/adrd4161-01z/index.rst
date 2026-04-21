@@ -47,6 +47,8 @@ Connections:
 * Relays: Header P12 (2x SPDT, 1 A)
 * Programming/debugging: SWD via solder jumpers
 
+.. todo:: Add board photo res/adrd4161-01z.jpg
+
 .. TODO: Add board photo
    .. figure:: res/adrd4161-01z.jpg
       :align: center
