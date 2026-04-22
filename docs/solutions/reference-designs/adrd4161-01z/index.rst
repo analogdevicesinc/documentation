@@ -9,6 +9,24 @@ Perception Carrier Board
 Introduction
 ------------
 
+.. figure:: res/ad4161_sideview_rpi.png
+   :width: 20em
+   :align: right
+
+   ADRD4161-01Z with Raspberry Pi (3D render)
+
+.. figure:: res/adrd_4161_01z_board.jpg
+   :width: 20em
+   :align: right
+
+   ADRD4161-01Z board
+
+.. figure:: res/adrd_4161_01z_board_imu_rpi.jpg
+   :width: 20em
+   :align: right
+
+   ADRD4161-01Z with IMU and Raspberry Pi
+
 The :adi:`ADRD4161-01Z` is a carrier board for embedded compute platforms
 (e.g. Raspberry Pi 5, Nvidia Jetson/Orin/AGX), featuring the Raspberry Pi
 40-pin header. It provides isolated power supplies and a number of connectivity
@@ -46,15 +64,6 @@ Connections:
 * GPIOs: Header P10
 * Relays: Header P12 (2x SPDT, 1 A)
 * Programming/debugging: SWD via solder jumpers
-
-.. todo:: Add board photo res/adrd4161-01z.jpg
-
-.. TODO: Add board photo
-   .. figure:: res/adrd4161-01z.jpg
-      :align: center
-      :width: 40em
-
-      ADRD4161-01Z connectors.
 
 Required Hardware
 -----------------

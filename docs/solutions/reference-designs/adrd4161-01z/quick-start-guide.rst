@@ -17,6 +17,12 @@ Required Hardware
 Getting Started
 ---------------
 
+.. figure:: res/adrd4161_topview_rpi.png
+   :width: 30em
+   :align: center
+
+   ADRD4161-01Z with Raspberry Pi mounted
+
 The ADRD4161-01Z module comes with slcan firmware already flashed on the
 MAX32662 MCU.
 
