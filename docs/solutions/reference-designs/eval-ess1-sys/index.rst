@@ -318,7 +318,7 @@ resistor on the EVAL-ADBMS2950-BASIC.
 #. Attach a current source to the shunt using crocodile clips, ensuring the positive terminal connects to the bat- port
    and the negative terminal to the shunt- port. Note that crocodile clips are appropriate only for low currents, primarily
    for checking hardware functionality. For high current evaluations, consult the
-   :dokuwiki:`EVAL-ADBMS2950-BASIC User Guide <resources/eval/user-guides/eval-adbms2950-basic>`.
+   :ref:`EVAL-ADBMS2950-BASIC User Guide <eval-adbms2950-basic>`.
 #. Configure the power supply to generate a 5A current.
 #. Open the **BMS_Browser** and select the correct COM port. Set ADBMSGEN6 in the Generation drop-down box. Then, add the
    ADBMS2950 from the product list to the Daisy Chain and click **Launch**.

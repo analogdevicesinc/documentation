@@ -193,7 +193,7 @@ The EVAL-ADBMS2950-BASIC battery pack monitoring evaluation board features the A
 
 The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI daisy-chain with other ADBMS2950B and ADBMS6830B devices.
 
-:dokuwiki:`Click here to see the EVAL-ADBMS2950-BASIC User Guide <resources/eval/user-guides/eval-adbms2950-basic>`
+:ref:`EVAL-ADBMS2950-BASIC User Guide <eval-adbms2950-basic>`
 
 **EVAL-ADBMS6822 Dual isoSPI Adapter**
 
