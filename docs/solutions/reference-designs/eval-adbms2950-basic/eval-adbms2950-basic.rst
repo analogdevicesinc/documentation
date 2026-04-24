@@ -1,5 +1,7 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adbms2950-basic
+
 EVAL-ADBMS2950-BASIC User Guide
-===============================
+================================
 
 .. image:: images/eval-adbms2950-basicangle.jpg
    :width: 600
@@ -54,20 +56,138 @@ Applications
 Performance Summary
 -------------------
 
-.. container:: center
-
-
-
 .. list-table::
    :header-rows: 1
+   :widths: 30 20 10 10 10 10 10
 
    * - Parameter
+     -
      - Type
      - Min
      - Typ
      - Max
      - Unit
-   * - See ADBMS2950B datasheet for full performance summary
+   * - **Low-Voltage Power Supply Input**
+     -
+     -
+     -
+     -
+     -
+     -
+   * -
+     - Wide Range LV Input (J1)
+     - P\ :sub:`IN`
+     - 6
+     -
+     - 15
+     - V
+   * -
+     - Alternative 5 V LV Input (J10, J12)
+     - P\ :sub:`IN`
+     - 4.5
+     -
+     - 5.5
+     - V
+   * - **Low-Voltage Digital Outputs**
+     -
+     -
+     -
+     -
+     -
+     -
+   * -
+     - Overcurrent Alert LVOCA, LVOCB
+     - D\ :sub:`OUT`
+     - 0
+     -
+     - 5.5
+     - V
+   * - **High-Voltage Shunt Sense Input**
+     -
+     -
+     -
+     -
+     -
+     -
+   * -
+     - Current
+     - A\ :sub:`IN`
+     - −131
+     -
+     - 131
+     - mV
+   * -
+     - Overcurrent
+     - A\ :sub:`IN`
+     - −300
+     -
+     - 300
+     - mV
+   * -
+     - Shunt Resistance
+     -
+     -
+     - 50
+     -
+     - μΩ
+   * - **High-Voltage Power Supply Output**
+     -
+     -
+     -
+     -
+     -
+     -
+   * -
+     - VDD to GND
+     - P\ :sub:`OUT`
+     -
+     - 14
+     -
+     - V
+   * -
+     - VREG to GND
+     - P\ :sub:`OUT`
+     -
+     - 5
+     -
+     - V
+   * - **High-Voltage Analog Input**
+     -
+     -
+     -
+     -
+     -
+     -
+   * -
+     - HVISO1 to GND
+     - HV\ :sub:`IN`
+     - 0
+     -
+     - 1000
+     - V
+   * -
+     - HV1 to GND
+     - HV\ :sub:`IN`
+     - 0
+     -
+     - 1000
+     - V
+   * -
+     - HV2 to GND
+     - HV\ :sub:`IN`
+     - −1000
+     -
+     - 1000
+     - V
+   * -
+     - HV3 to GND
+     - HV\ :sub:`IN`
+     - −1000
+     -
+     - 1000
+     - V
+   * - **HV to LV Isolation**
+     -
      -
      -
      -
@@ -77,13 +197,13 @@ Performance Summary
      - GND to LGND
      -
      -
+     -
      - 1000
      - V
 
-
-   -  P\ :sub:`IN` : Power Input ; P\ :sub:`OUT`: Power Output
-   -  A\ :sub:`IN` : Analog Input ; D\ :sub:`OUT`
-   -  HV\ :sub:`IN` : High-Voltage Input
+-  P\ :sub:`IN` : Power Input ; P\ :sub:`OUT`: Power Output
+-  A\ :sub:`IN` : Analog Input ; D\ :sub:`OUT`
+-  HV\ :sub:`IN` : High-Voltage Input
 
 
 System Architecture
@@ -377,11 +497,11 @@ Resources
 .. tip::
 
    Learn how to use the EVAL-ADBMS2950-BASIC board in conjunction other ADI
-   BMS Modules. Visit the AD-CELLPACKBM-SL Wiki Page:
-   `hardware <https://wiki.analog.com/resources/eval/user-guides/ad-cellpackbm-sl/hardware>`_.
+   BMS Modules. Visit the :ref:`AD-CELLPACKBM-SL Hardware User Guide
+   <ad-cellpackbm-sl hardware_guide>`.
 
 
-   For Software Setup instructions, visit the :doc:`EVAL-ADBMS2950-BASIC Software User Guide </solutions/reference-designs/eval-adbms2950-basic/software>`
+   For Software Setup instructions, visit the :doc:`software`.
 
 Design & Integration Files
 --------------------------
@@ -389,7 +509,7 @@ Design & Integration Files
 .. admonition:: Download
    :class: download
 
-   `EVAL-ADBMS2950-BASIC Design & Integration Files <resources/eval-adbms2950-basic-designsupport.zip>`_
+   :download:`EVAL-ADBMS2950-BASIC Design & Integration Files <resources/eval-adbms2950-basic-designsupport.zip>`
 
 
    -  Schematic

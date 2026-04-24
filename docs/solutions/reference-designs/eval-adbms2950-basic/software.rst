@@ -1,5 +1,7 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/eval-adbms2950-basic/software
+
 EVAL-ADBMS2950-BASIC Software User Guide
-========================================
+=========================================
 
 This software guide provides the essential steps for firmware installation,
 launching the GUI, configuring the launcher, establishing interface connections,
@@ -90,7 +92,7 @@ Installing the no-OS BMS Embedded Drivers
 1. Install the **no-OS-BMS-Examples-Rel1.0.0.exe** file. Default installation
    path will be on **C:\\Analog\\**
 
-2. Download and install `MaximSDK for Maxim MCUs <https://www.maximintegrated.com/en/design/software-description.html/swpart=SFW0010820A>`_.
+2. Download and install `MaximSDK for Maxim MCUs <https://www.analog.com/en/design/software-description.html/swpart=SFW0010820A>`_.
 
 .. container:: indent
 
@@ -349,7 +351,7 @@ until stopped. Toggle between lists using the corresponding buttons at the top.
 -  **Load Existing Sequence:**
 
    -  Use the Existing Sequence Files select bar to choose an existing sequence
-   file.
+      file.
    -  Select the desired sequence from the Existing Sequences select bar.
 
 -  **Save Sequence:**
