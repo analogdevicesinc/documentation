@@ -1,24 +1,36 @@
-.. _eval_adbms2950_basic eval:
+.. _eval-adbms2950-basic:
 
-EVAL ADBMS2950 BASIC
-=========================================================================================================================
+EVAL-ADBMS2950-BASIC
+====================
 
-.. TODO: Add a picture of the chip/board
+Battery Pack Monitoring Evaluation Board for Bidirectional Current Measurement.
 
 Overview
--------------------------------------------------------------------------------
+--------
 
-.. TODO: Describe in max 10 rows the main features and applications.
+The :adi:`EVAL-ADBMS2950-BASIC` is a full-featured evaluation board for the
+:adi:`ADBMS2950B`, a bidirectional current monitor with 12 buffered high
+impedance voltage sense inputs and a 2-wire isolated serial interface (isoSPI).
+It supports daisy-chaining with other ADBMS2950B and ADBMS6830B devices and
+includes reversible isoSPI for redundant communication.
 
-Features:
+Features
+~~~~~~~~
 
-- feature 1
-- feature 2
+- Bidirectional high accuracy current measurement with on-board shunt
+- Battery stack voltage, isolation, pre-charge, fuse, charger, and link voltage monitoring
+- Two isoSPI ports for daisy chain and reversible isoSPI support
+- On-board 2 kB EEPROM for persistent data storage
 
-Applications:
+Applications
+~~~~~~~~~~~~
 
-- application 1
-- application 2
+- Mobile Robot Systems
+- E-scooter / E-bikes / Light Electric Vehicles
+- Power Tools
+- Portable Energy Storage Systems
+- Backup Battery Systems
+- Grid Energy Storage
 
 .. toctree::
    :hidden:
@@ -26,21 +38,12 @@ Applications:
    eval-adbms2950-basic
    software
 
-Recommendations
--------------------------------------------------------------------------------
-
-People who follow the flow that is outlined, have a much better experience with
-things. However, like many things, documentation is never as complete as it
-should be. If you have any questions, feel free to ask on our
-:ref:`EngineerZone forums <help-and-support>`, but before that, please make
-sure you read our documentation thoroughly.
-
 Warning
--------------------------------------------------------------------------------
+-------
 
 .. esd-warning::
 
 Help and support
--------------------------------------------------------------------------------
+----------------
 
 Please go to :ref:`Help and Support <help-and-support>` page.
