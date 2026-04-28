@@ -3,6 +3,8 @@
 AD485X-FMCZ
 ===================================
 
+Buffered, 8-Channel Simultaneous Sampling, 20-Bit 1 MSPS DAS
+
 .. image:: ./images/AD485x-chip-illustration.png
    :align: left
    :width: 150
