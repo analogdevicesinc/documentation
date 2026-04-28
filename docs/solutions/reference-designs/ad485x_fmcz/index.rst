@@ -63,41 +63,53 @@ should be. If you have any questions, feel free to
 Table of Contents
 -----------------
 
-#. Getting started with the EVAL_AD4858
+#. Using the evaluation board/full stack reference design that we offer:
 
-   #. :ref:`What you need to get started <ad485x_fmcz prerequisites>`
-   #. :ref:`EVAL-AD485X-FMCZ Quick Start Guide <ad485x_fmcz quickstart>`
-      #. :dokuwiki:`Configure a pre-existing SD-Card <resources/tools-software/linux-software/kuiper-linux>`
-      #. :dokuwiki:`Update the old card you received with your hardware <resources/tools-software/linux-software/kuiper-linux>`
+   #. :ref:`Prerequisites <ad485x_fmcz prerequisites>` - what you need to get started
+   #. :ref:`Quick start guides <ad485x_fmcz quickstart>`:
+
+      #. Using the :ref:`ZedBoard <ad485x_fmcz quickstart zed>` (FPGA)
+
+   #. Use the board to better understand the :adi:`EVAL-AD4858`
+
+      #. :external+kuiper:ref:`Configure a SD Card <use-kuiper-image>`
+      #. :external+kuiper:ref:`package-management`
 
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
+      #. :external+scopy:doc:`Scopy <index>`
 
    #. :dokuwiki:`FRU EEPROM Utility <resources/tools-software/linux-software/fru_dump>`
 
-   #. Design with the AD485X
+#. Design with the EVAL-AD485X-FMCZ
 
-      #. Understanding the AD485X
+   #. :ref:`ad485x_fmcz block-diagram`
 
-         #. :adi:`AD4858` Product page
-         #. `EVAL-AD485X-FMCZ User Guide <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad4858-ug-2142.pdf>`__
+      #. :adi:`AD4858` Product page
+      #. `EVAL-AD485X-FMCZ User Guide <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad4858-ug-2142.pdf>`__
 
-      #. Hardware in the Loop / How to design your own custom BaseBand
+   #. Design a custom EVAL-AD485X-FMCZ-based platform
+
+      #. HDL software
+
+         #. :git-hdl:`AD485x-FMC HDL Reference Design <projects/ad485x_fmcz>`
+
+      #. No-OS software
+
+         #. :git-no-OS:`AD485x No-OS Project <projects/ad485x_fmcz>`
+
+      #. Linux software
+
+         #. :git-linux:`AD485x Linux driver source code <drivers/iio/adc/ad4858.c>`
+         #. :git-linux:`EVAL-AD4858FMCZ Linux device tree <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad4858.dts>`
+
+      #. More information
 
          #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-         #. :dokuwiki:`Board Support Package for MathWorks Tools <resources/tools-software/transceiver-toolbox>`
+         #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
 
-      #. Design with the EVAL-AD485X-FMCZ based platform
-
-         #. Linux software
-
-            .. #. :dokuwiki:`AD485X Linux Device Driver <TBD>`
-
-            #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-            #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-
-         #. :external+hdl:ref:`HDL Reference Design <ad485x_fmc>`
+#. :ref:`Help and Support <help-and-support>`
 
 Pre-requisites and quickstart
 -------------------------------------------------------------------------------
@@ -118,7 +130,25 @@ Functional Block Diagram
 .. image:: ./images/ad4858-fbl.png
    :width: 600
 
+More Information and Useful Links
+-------------------------------------------------------------------------------
+
+- :adi:`AD4858 Product Page <AD4858>`
+- `EVAL-AD485X-FMCZ User Guide <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad4858-ug-2142.pdf>`__
+
+Software Projects and Platforms
+-------------------------------------------------------------------------------
+
+- :ref:`EVAL-AD4858 + ZedBoard <ad485x_fmcz quickstart zed>`
+- :git-hdl:`AD485x-FMC HDL project <projects/ad485x_fmcz>`
+- :git-no-OS:`AD485x No-OS project <projects/ad485x_fmcz>`
+
 Warning
 -------------------------------------------------------------------------------
 
 .. esd-warning::
+
+Help and Support
+-------------------------------------------------------------------------------
+
+Please go to :ref:`Help and Support <help-and-support>` page.
