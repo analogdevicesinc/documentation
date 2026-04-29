@@ -50,6 +50,7 @@ Applications:
    user-guide
    prerequisites
    quickstart/index
+   ad9695-1300ebz
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -80,6 +81,8 @@ Table of contents
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
+
+#. :ref:`Evaluating the AD9695/AD9697 Analog-to-Digital Converter <ad9695-1300ebz>`
 
 #. Design with the AD9695/AD9697
 
