@@ -20,7 +20,7 @@ real-world system development.
 
 ADI MxFE, SDR, MEMS and power solutions integrated into validated system architectures.
 
-```{image} resources/Signal_Chain_Hardware_transparent.png
+```{image} resources/signal-chain-hardware.png
 ```
 ````
 
@@ -28,7 +28,7 @@ ADI MxFE, SDR, MEMS and power solutions integrated into validated system archite
 
 COTS FPGA platforms with production-grade HDL reference designs.
 
-```{image} resources/FPGA_Reference_HDL_transparent.png
+```{image} resources/fpga-reference-hdl.png
 ```
 ````
 
@@ -36,7 +36,7 @@ COTS FPGA platforms with production-grade HDL reference designs.
 
 Embedded Linux builds with native [IIO](https://www.kernel.org/doc/html/latest/driver-api/iio/index.html) support.
 
-```{image} resources/Linux_IIO_transparent.png
+```{image} resources/linux-iio.png
 ```
 ````
 
@@ -44,7 +44,7 @@ Embedded Linux builds with native [IIO](https://www.kernel.org/doc/html/latest/d
 
 System-level control via Python, MATLAB, or QIQ using libIIO APIs.
 
-```{image} resources/Application_Software_transparent.png
+```{image} resources/application-software.png
 ```
 ````
 `````
@@ -81,7 +81,7 @@ Low-cost SDR system based on the AD9361
 
 16T/16R X-Band System Platform
 
-```{image} resources/ADXBAND16EBZ_top-angle-evaluation-board.png
+```{image} triton/images/adxband16ebz-top-angle-evaluation-board.png
 ```
 ````
 `````  
