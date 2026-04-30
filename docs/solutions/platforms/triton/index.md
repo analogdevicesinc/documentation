@@ -3,7 +3,7 @@
 
 The Quad-Apollo MxFE™ (mixed-signal front-end) X-band direct sampling digital beamforming platform is an advanced, every-element digital, direct RF-sampling solution that serves as a complete reference architecture for next-generation digital beamforming systems. Designed to highlight the capabilities of Analog Devices’ MxFE® technology, the platform integrates all critical subsystems—RF signal conditioning, precision clocking, multichip synchronization, and DC power management—into a unified, high performance environment that supports coherent, scalable signal processing across multiple channels.
 
-The platform enables quick time-to-market development programs for: Phased-Array, RADAR, Electronic Warfare and SATCOM
+The platform enables quick time-to-market development programs for: Phased-Array, RADAR, Electronic Warfare, and SATCOM
 
 The system is designed to mate with a [VCU118](https://www.xilinx.com/VCU118) Evaluation Board from Xilinx®, featuring the Virtex™ UltraScale+™ XCVU9P-L2FLGA2104E FPGA, with provided reference software, HDL code, and MATLAB/Python system-level interfacing.
 
@@ -44,11 +44,12 @@ Below are the links to the two images and the user should reference the Bring Up
 
 ## Triton System Platforms - Demo & Pilots
 
-The System Platform team are here to support customers in the integration of this platform, whether that is as a standalone system or a sub-assembly in a larger system, we can help. To this end, we have generated the following pilot we believe you will find useful
+The System Platform team are here to support customers in the integration of this platform, whether that is as a standalone system or a sub-assembly in a larger system, we can help. There are two sections below for the user to review; one for bring up of a standalone Triton Platform and the second outlined the steps required for dual Triton Multi-Chip Synchronisation utilising an Aion Evaluation Board
 
 
 ```{toctree}
 :maxdepth: 2
+Standalone Triton Bring-Up <triton-bring-up/index>
 
 Dual Triton MultiChip Sync (MCS) Pilot <dual-triton-mcs/index>
 ```

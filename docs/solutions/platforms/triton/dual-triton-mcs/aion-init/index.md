@@ -88,7 +88,7 @@ The following are the steps to install the software correctly:
 :align: center
 ```
 ```{attention}
- The Aion EVB and Interposer Board is now configured as needed and you can move to the Triton Initialization steps
+ The Aion EVB and Interposer Board is now configured as needed and you can move to the Triton Initialisation steps
 ```
 
 ## Additional Links

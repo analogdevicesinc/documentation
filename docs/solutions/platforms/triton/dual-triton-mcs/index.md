@@ -41,8 +41,8 @@ As there are two Triton Platforms used in this pilot, one as a Leader and the ot
 ```{toctree}
 :maxdepth: 4
 
-Aion EVB Initialization <aion-init/index>
-Triton Initialization <triton-init/index>
+Aion EVB Initialisation <aion-init/index>
+Triton Initialisation <triton-init/index>
 Python Script Execution <python-exe/index>
 
 ```
