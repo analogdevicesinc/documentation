@@ -42,7 +42,10 @@ Board Layout
 Block Diagram
 -------------
 
-.. todo:: Add block diagram res/hw_block_diagram.png
+.. figure:: res/hw_bd.png
+   :align: center
+
+   ADRD4161-01Z block diagram
 
 Connectors
 ----------
@@ -76,11 +79,16 @@ UART Header (P7)
 ~~~~~~~~~~~~~~~~
 
 Exposes the Raspberry Pi's UART4 interface and a switchable 5 V supply
-(controlled by GPIO 24).
+(controlled by GPIO 24). The 5 V supply is switched via an ADP198 load switch.
 
-.. todo:: Add P7 pinout diagram
-
-.. TODO: Add P7 pinout diagram
+===== ============ ===========
+Pin   Signal       Description
+===== ============ ===========
+1     5V_SW        Switchable 5 V (GPIO 24 enable)
+2     GND          Ground
+3     UART4_TXD    GPIO 12 (UART4 TX)
+4     UART4_RXD    GPIO 13 (UART4 RX)
+===== ============ ===========
 
 PI-GPIO Header (P10)
 ~~~~~~~~~~~~~~~~~~~~
@@ -88,19 +96,62 @@ PI-GPIO Header (P10)
 Exposes Raspberry Pi GPIO pins, including GPIO 23 (pin 11) for WS2812 LED
 control.
 
-.. todo:: Add P10 pinout diagram
+===== ============ ===========
+Pin   Signal       Description
+===== ============ ===========
+1     5V           5 V supply
+2     3V3          3.3 V supply
+3     SDA          I2C data
+4     GPIO26       General purpose I/O
+5     GPIO22       General purpose I/O
+6     GPIO20       General purpose I/O
+7     GND          Ground
+8     GND          Ground
+9     SCL          I2C clock
+10    GPIO6        General purpose I/O
+11    GPIO23       WS2812 LED data
+12    GPIO21       General purpose I/O
+===== ============ ===========
 
 MCU-GPIO Header (P11)
 ~~~~~~~~~~~~~~~~~~~~~
 
 Exposes MAX32662 microcontroller GPIO pins.
 
-.. todo:: Add P11 pinout diagram
+===== ============ ===========
+Pin   Signal       Description
+===== ============ ===========
+1     5V           5 V supply
+2     3V3          3.3 V supply
+3     MCU_GPIO1    MCU general purpose I/O
+4     MCU_GPIO3    MCU general purpose I/O
+5     MCU_SDA      MCU I2C data
+6     NC           Not connected
+7     NC           Not connected
+8     MCU_SCL      MCU I2C clock
+9     MCU_GPIO2    MCU general purpose I/O
+10    NC           Not connected
+11    GND          Ground
+12    GND          Ground
+===== ============ ===========
 
 Relay Header (P12)
 ~~~~~~~~~~~~~~~~~~
 
-Exposes contacts for two SPDT relays (K1, K2), each rated for 1 A:
+Exposes contacts for two SPDT relays (K1, K2), each rated for 1 A.
+
+===== ======= ===========
+Pin   Signal  Description
+===== ======= ===========
+1     NC1     K1 Normally Closed
+2     COM1    K1 Common
+3     NO1     K1 Normally Open
+4     NC2     K2 Normally Closed
+5     COM2    K2 Common
+6     NO2     K2 Normally Open
+===== ======= ===========
+
+Relay control GPIOs:
 
 ========== ====== ============ ============== ===========
 Relay      GPIO   P12 NC Pin   P12 Common Pin P12 NO Pin
