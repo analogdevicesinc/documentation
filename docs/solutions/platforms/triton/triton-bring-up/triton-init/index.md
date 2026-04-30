@@ -16,7 +16,7 @@ Once this clock is connected to the Triton Platform, you can move to the next st
 
 ## Triton JTAG Programming & Boot Up
 
-With the 400 MHZ REF_CLK connected, you can now power up the VCU118 and the Triton Board. You should observe the Fans turning on above the Triton Heatsink and you should also see a blue LED illuminated confirming that the 400 MHz clock is connected correctly, **reference the image below**
+With the 400 MHz REF_CLK connected, you can now power up the VCU118 and the Triton Board. You should observe the Fans turning on above the Triton Heatsink and you should also see a blue LED illuminated confirming that the 400 MHz clock is connected correctly, **reference the image below**
 
 **Note:** From Triton Rev C boards onwards, the fans will be on once the 12VDC is applied, regardless of the switch position.
 
@@ -133,7 +133,7 @@ By default the digital step attenuators (DSA) on the Rx RF Front End are set to 
 *iio_attr -c dsa2 voltage0 hardwaregain 0*
 
 *iio_attr -c dsa3 voltage0 hardwaregain 0*
- 
+
 ```{attention}
  The Triton board is now initialised and configured as needed and you can move to the MATLAB configuration steps
 ```

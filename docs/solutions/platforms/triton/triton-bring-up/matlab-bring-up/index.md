@@ -28,7 +28,7 @@ Ahead of the execution of the demo, we must install a number of MATLAB Add-ons f
 **Step 1:** Open the MATLAB Application on your PC and you will see the menu bar has shown below.
 - We want to select Add-Ons over on the right hand side of the menu bar
 - Then select "Get Add-Ons" from the drop down to open the Add-Ons Explorer as shown in the second image
-  
+
   ```{image} images/triton-matlab-menubar.png
   :width: 700px
   :align: center
@@ -46,7 +46,7 @@ Ahead of the execution of the demo, we must install a number of MATLAB Add-ons f
   :align: center
   ```
 
-**Step 3:** Finally, we will link the *Triton Reference Files* and the *cots-adxband16ebz-classdev* folders to copied to the PC earlier in the MATLAB application.
+**Step 3:** Finally, we will link the *Triton Reference Files* and the *cots-adxband16ebz-classdev* folders that were copied to the PC earlier in the MATLAB application.
 - From the menu bar, we select *Set Path* and a new window will Open
 - We Select *"Add with Subfolders"*
 - Navigate to the *"C:\Triton_Customer_Demo\Triton_Reference_Files"* folder and Select Folder
@@ -65,8 +65,8 @@ In the MATLAB application, navigate to the *"C:\Triton_Customer_Demo\cots-adxban
 - Open the *Triton.m* script
 - Open the *test_system_SystemPlatformsDemo.m* script in the *test* sub-folder
 - **IMPORTANT:** Ensure the path is restored to *"C:\Triton_Customer_Demo\cots-adxband16ebz-classdev"* ahead of any execution as the MATLAB application needs direct access to the *rx_1tone_800MSPS.json* file there, otherwise it will error on execution
-  
-    ```{image} images/triton-matlab-script.png
+
+  ```{image} images/triton-matlab-script.png
   :width: 700px
   :align: center
   ```
@@ -79,9 +79,9 @@ The final item that needs to be set is the IP address of the Triton Platform in 
   :align: center
   ```
 
-- In the *Triton.m* script, there are 23 references to the IP address so we need to used the Search and Replace to address this
+- In the *Triton.m* script, there are 23 references to the IP address so we need to use Search and Replace to address this
   - Go to line 14 and see what the IP Address is currently configured to, e.g. 10.132.12.210
-  
+
   ```{image} images/triton-matlab-ipaddress-edit2.png
   :width: 300px
   :align: center
@@ -90,7 +90,7 @@ The final item that needs to be set is the IP address of the Triton Platform in 
   - Using *Ctrl-F* it will open a Find window which can be expanded to a Find and Replace window, see screenshot below
   - We set the 10.132.12.210 address as the Find and the new IP Address as the Replace, e.g. 10.132.12.143
   - Select Replace All and each of the 23 IP's in the script will be updated
-  
+
   ```{image} images/triton-matlab-ipaddress-find-replace.png
   :width: 300px
   :align: center

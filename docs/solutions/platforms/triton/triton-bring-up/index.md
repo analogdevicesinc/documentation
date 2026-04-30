@@ -30,7 +30,7 @@ For the purposes of this bring up there are a number of software applications th
 - **Xilinx Vivado**
   - 2023.1 is the version used for validation but later versions should work
   - We will use this application to program the HDL image to the VCU118
-- **PuTTY / MobeXterm**
+- **PuTTY / MobaXterm**
   - We will be monitoring the boot up of the Triton platform over UART so either of these applications will allow us to achieve these
 - **Python**
   - Version 3.12 is the suggested version
@@ -47,7 +47,7 @@ The user will require two packages to execute the bring up successfully, both th
 - [Triton HDL Image](https://analog-my.sharepoint.com/:f:/p/simon_walkin/IgAwBqKF2TWpTrEdJ2OhY5b8AXwQQ21b1Eq0NnqitqGFkOE?e=0nsfEW)
 - [Triton MATLAB Code](https://analog-my.sharepoint.com/:f:/p/simon_walkin/IgARwI_03HFDSblWbAEkV9g-AVyFdYatyI8sMBSCUDQ56ug?e=FVBWqs)
 
-## Bring Up Steps 
+## Bring Up Steps
 
 ```{toctree}
 :maxdepth: 4
