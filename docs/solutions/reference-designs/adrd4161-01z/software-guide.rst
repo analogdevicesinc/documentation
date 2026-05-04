@@ -201,8 +201,5 @@ modes. With ``openocd``, use the following options:
            ...rest of openocd command...
 
 Replace ``/path/to/adrd4161-fw/openocd/`` with the path to a local copy of the
-adrd4161-fw/openocd folder.
-
-.. todo:: Link to adrd4161-fw repository when released
-
-.. TODO: Link to adrd4161-fw repository when released
+`adrd4161-fw <https://github.com/analogdevicesinc/adrd4161-fw>`_ repository's
+openocd folder.

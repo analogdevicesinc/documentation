@@ -9,7 +9,7 @@ ADRD4161-01Z Hardware Guide
    * - .. figure:: res/adrd_4161_01z_annotated.jpg
           :align: center
 
-          ADRD4161-01Z Perception Carrier Board
+          ADRD4161-01Z Robotics Perception Compute Carrier
 
      - ========= ==============================================
        Component Function
@@ -169,10 +169,7 @@ The ADRDx161 board family communicates via CAN bus. The CAN interface on the
 ADRD4161-01Z is directly connected to the onboard MAX32662 MCU running slcan
 firmware. P1 (CAN-IN) and P3 (CAN-OUT) allow for daisy-chaining CAN devices.
 
-.. todo:: Add CAN cable diagram res/cable-can.lfs.svg
-
-.. TODO: Add CAN cable diagram
-   .. image:: res/cable-can.lfs.svg
+.. image:: res/cable-can.lfs.svg
 
 Solder Jumpers
 --------------

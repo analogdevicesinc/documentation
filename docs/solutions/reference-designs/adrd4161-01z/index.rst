@@ -3,8 +3,8 @@
 ADRD4161-01Z
 ============
 
-Perception Carrier Board
-""""""""""""""""""""""""
+Robotics Perception Compute Carrier
+""""""""""""""""""""""""""""""""""""
 
 Introduction
 ------------
@@ -27,9 +27,9 @@ Introduction
 
    ADRD4161-01Z with IMU and Raspberry Pi
 
-The :adi:`ADRD4161-01Z` is a carrier board for embedded compute platforms
-(e.g. Raspberry Pi 5, Nvidia Jetson/Orin/AGX), featuring the Raspberry Pi
-40-pin header. It provides isolated power supplies and a number of connectivity
+The :adi:`ADRD4161-01Z` is a robotics perception embedded compute carrier board
+designed for platforms such as Raspberry Pi 5 and Nvidia Jetson/Orin/AGX,
+featuring the Raspberry Pi 40-pin header. It provides isolated power supplies and a number of connectivity
 options: ADI IMU, CAN 2.0B, UART, GPIOs, and two SPDT relays.
 
 Its isolated DC-DC converter can be powered from 9-70 V DC, which it then
