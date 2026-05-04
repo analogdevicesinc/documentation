@@ -27,7 +27,7 @@ registers. This is optional and typically application specific.
 
 Below is a picture of what the CN0540 IIO Plugin looks like.
 
-.. image:: ../images/cn0540_iio_oscilloscope_plugin_block_diagram.png
+.. image:: images/cn0540_iio_oscilloscope_plugin_block_diagram.png
    :align: center
    :width: 500
 

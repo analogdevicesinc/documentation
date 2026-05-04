@@ -148,14 +148,14 @@ Before you can start gathering data, you first must locate the
 #. The command output will include the network information for the DE10‑Nano.
    From there, locate the **inet** address of `eth0`.
 
-   .. image:: ../../images/cn0540_serial_terminal_linux_ifconfig_inet.png
+   .. image:: ../images/cn0540_serial_terminal_linux_ifconfig_inet.png
       :align: center
       :width: 500
 
 #. Open up the IIO-Oscilloscope application on your PC
 #. Set the radio button for "Remote Devices" and type the inet address you just found, hit the "Refresh" button, and then click "Ok".
 
-   .. image:: ../../images/cn0540_iio_oscilloscope_board_found.png
+   .. image:: ../images/cn0540_iio_oscilloscope_board_found.png
       :align: center
       :width: 500
 
