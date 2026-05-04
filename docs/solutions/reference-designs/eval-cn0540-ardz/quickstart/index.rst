@@ -12,6 +12,8 @@ program or boot a Linux distribution.
 
    CoraZ7-07s <coraz7s>
    DE10-Nano <de10nano>
+   SDP-K1 <sdp-k1>
+   STM Discovery Kit <stm-discovery>
 
 .. _eval-cn0540-ardz carriers:
 

@@ -150,8 +150,8 @@ Software Projects and Platforms
 
 - :ref:`CN0540 + DE10-Nano FPGA <eval-cn0540-ardz quickstart de10nano>`
 - :ref:`CN0540 + Cora Z7s FPGA <eval-cn0540-ardz quickstart coraz7s>`
-- :dokuwiki:`CN0540 + SDP-K1 <resources/eval/user-guides/circuits-from-the-lab/cn0540/sdp-k1>`
-- :dokuwiki:`CN0540 + STM Discovery Kit <resources/eval/user-guides/circuits-from-the-lab/cn0540/stm-discovery>`
+- :ref:`CN0540 + SDP-K1 <eval-cn0540-ardz quickstart sdp-k1>`
+- :ref:`CN0540 + STM Discovery Kit <eval-cn0540-ardz quickstart stm-discovery>`
 
 Warning
 -------------------------------------------------------------------------------
