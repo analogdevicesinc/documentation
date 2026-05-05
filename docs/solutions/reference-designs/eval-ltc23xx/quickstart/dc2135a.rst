@@ -1,0 +1,125 @@
+.. _eval ltc23xx quickstart dc2135a:
+
+DC2135A + MAX32666FTHR Quick Start
+===============================================================================
+
+.. figure:: ../images/dc2135a_eval_board.jpeg
+   :alt: DC2135A demonstration board for the LTC2378-20 ADC
+   :align: center
+   :width: 800
+
+   DC2135A Evaluation Board
+
+.. figure:: ../images/max32666fthr_pinout.jpeg
+   :alt: MAX32666FTHR microcontroller board pinout
+   :align: center
+   :width: 800
+
+   MAX32666FTHR Microcontroller Board
+
+.. esd-warning::
+
+This guide covers no-OS evaluation of the :adi:`LTC2378-20` using the
+:adi:`DC2135A` demonstration board and the :adi:`MAX32666FTHR` microcontroller
+platform.
+
+Overview
+-------------------------------------------------------------------------------
+
+The :adi:`DC2135A` operates from ±16V supplies. The :adi:`LTC2378-20`
+ADC itself runs from a 2.5V regulated supply generated on-board.
+The board provides all signal conditioning and reference circuitry needed
+to evaluate the ADC at up to 800 kSPS.
+
+Hardware needed
+-------------------------------------------------------------------------------
+
+- :adi:`DC2135A` evaluation board
+- :adi:`MAX32666FTHR` microcontroller board
+- External ±16V DC power supply
+- USB cable (host PC to :adi:`MAX32666FTHR`)
+- Low-noise signal source for the analog input (J4 SMA, ±10V range)
+- Jumper wires for SPI interconnect
+
+DC2135A jumper settings
+-------------------------------------------------------------------------------
+
+For full jumper details refer to the :adi:`DC2135A` product page.
+
+.. warning::
+
+   Set JP3 to 3.3V when interfacing the :adi:`DC2135A` with the
+   :adi:`MAX32666FTHR`. Using the wrong VCCIO setting may damage the
+   connected hardware.
+
+Hardware connections
+-------------------------------------------------------------------------------
+
+For detailed hardware connection information between the :adi:`DC2135A` and
+the :adi:`MAX32666FTHR`, refer to the
+:git-no-os:`no-OS ltc2378 project <projects/ltc2378>`.
+
+After making the connections:
+
+#. Apply ±16V to the :adi:`DC2135A` power terminals
+#. Connect the USB cable from the :adi:`MAX32666FTHR` to the host PC
+#. Connect the analog signal source to the J4 SMA connector on :adi:`DC2135A`
+
+Using no-OS
+-------------------------------------------------------------------------------
+
+The no-OS ltc2378 project supports two example configurations: a basic
+example for verifying ADC operation, and an IIO example that launches a
+server for remote connection with IIO Oscilloscope.
+
+Building the no-OS project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Clone the no-OS repository and navigate to the project directory:
+
+.. shell::
+
+   $cd no-OS/projects/ltc2378
+
+The project common initialization data is located at
+:git-no-os:`projects/ltc2378/src/common` and platform-specific configuration
+macros are in :git-no-os:`projects/ltc2378/src/platform`.
+
+Basic example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The basic example initializes the :adi:`LTC2378-20` and performs the start-up
+sequence, printing raw ADC samples over the serial console.
+
+To build and flash:
+
+.. shell::
+
+   ~/no-OS/projects/ltc2378
+   $make EXAMPLE=basic PLATFORM=maxim TARGET=max32665
+
+IIO example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The IIO example launches an IIOD server on the :adi:`MAX32666FTHR` so that IIO
+Oscilloscope can connect remotely and capture data.
+
+To build and flash:
+
+.. shell::
+
+   ~/no-OS/projects/ltc2378
+   $make EXAMPLE=iio PLATFORM=maxim TARGET=max32665
+
+Once the firmware is running, open IIO Oscilloscope on the host PC and
+connect to the board using its serial or network URI. For information on
+using IIO Oscilloscope with no-OS servers, see:
+
+- :git-no-os:`no-OS <>`
+- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+
+.. note::
+
+   The no-OS IIO application and the :adi:`LTC2378-20` IIO driver handle all
+   back-end logic for the IIO server. The IIO example source is at
+   :git-no-os:`projects/ltc2378/src/examples/iio`.
