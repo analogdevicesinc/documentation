@@ -97,9 +97,9 @@ Installing the 32F746 Discovery Board driver
    .. image:: ../images/cn0540_f746gdiscopc.png
       :align: center
 
-#. Download the AD7768_demo.bin firmware.
-#. Copy and paste or drag and drop the AD7768_demo.bin file into the
-   DIS_F746NG device/folder. This will load the firmware onto the board.
+#. Copy and paste or drag and drop the compiled .bin file (from the MBED
+   project compiled earlier) into the DIS_F746NG device/folder. This will
+   load the firmware onto the board.
 #. If the download fails, a FAIL.TXT file will appear on the DIS_F746NG
    device.
 #. If the download is successful the .bin file will disappear from the
