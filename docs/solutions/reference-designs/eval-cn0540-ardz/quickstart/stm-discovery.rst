@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0540/stm-discovery
+
 .. _eval-cn0540-ardz quickstart stm-discovery:
 
 CN0540 and the STM Discovery Kit

@@ -3,10 +3,10 @@
 Quickstart
 ===============================================================================
 
-The Quick Start Guides provide a simple step by step instruction on how to do
-an initial system setup for the :adi:`EVAL-CN0540-ARDZ` board on various FPGA
-development boards. They will discuss how to program the bitstream, run a no-OS
-program or boot a Linux distribution.
+The Quick Start Guides provide step by step instructions on how to set up the
+:adi:`EVAL-CN0540-ARDZ` board on various supported platforms, including FPGA
+development boards (HDL/Linux) and MCU boards running a bare-metal MBED
+application.
 
 .. toctree::
 
@@ -24,6 +24,8 @@ The carriers we support are:
 
 - `Cora Z7S <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development>`__ on Arduino shield connector
 - :intel:`DE10-Nano <content/www/us/en/developer/topic-technology/edge-5g/hardware/fpga-de10-nano.html>` on Arduino shield connector
+- :adi:`SDP-K1` on Arduino shield connector
+- `32F746GDISCOVERY <https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/32f746gdiscovery.html>`__ on Arduino shield connector
 
 Supported Environments
 -------------------------------------------------------------------------------
@@ -37,13 +39,26 @@ The supported OS are:
      - HDL
      - Linux Software
      - No-OS Software
+     - MBED
    - - `Cora Z7S <https://digilent.com/shop/cora-z7-zynq-7000-single-core-for-arm-fpga-soc-development>`__
      - Yes
      - Yes
      - Yes
+     - No
    - - :intel:`DE10-Nano <content/www/us/en/developer/topic-technology/edge-5g/hardware/fpga-de10-nano.html>`
      - Yes
      - Yes
+     - Yes
+     - No
+   - - :adi:`SDP-K1`
+     - No
+     - No
+     - No
+     - Yes
+   - - `32F746GDISCOVERY <https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mcu-mpu-eval-tools/stm32-mcu-mpu-eval-tools/stm32-discovery-kits/32f746gdiscovery.html>`__
+     - No
+     - No
+     - No
      - Yes
 
 Hardware Setup

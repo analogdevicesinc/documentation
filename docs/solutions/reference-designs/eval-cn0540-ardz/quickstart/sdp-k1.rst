@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/cn0540/sdp-k1
+
 .. _eval-cn0540-ardz quickstart sdp-k1:
 
 CN0540 and the SDP-K1

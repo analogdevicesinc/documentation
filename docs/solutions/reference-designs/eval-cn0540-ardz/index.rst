@@ -126,7 +126,7 @@ Table of Contents
 
       #. More information
 
-         #. :dokuwiki:`SPI Engine Framework <resources/fpga/peripherals/spi_engine>`
+         #. :external+hdl:ref:`spi_engine`
 
 .. _eval-cn0540-ardz block-diagram:
 
