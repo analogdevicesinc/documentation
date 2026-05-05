@@ -99,24 +99,24 @@ Table of contents
 
 #. Using the evaluation board:
 
-   #. :ref:`Prerequisites <eval-ad463x prerequisites>` - what you need to get
+   #. :ref:`Prerequisites <eval-ad463x-prerequisites>` - what you need to get
       started
-   #. :ref:`Quick start guide <eval-ad463x quickstart>`:
+   #. :ref:`Quick start guide <eval-ad463x-quickstart>`:
 
-      #. Using the :ref:`ZedBoard <eval-ad463x quickstart zedboard>`
+      #. Using the :ref:`ZedBoard <eval-ad463x-quickstart-zedboard>`
 
    #. Configure an SD Card with
       :doc:`ADI Kuiper Linux </linux/kuiper/index>`
 
 #. Design with the AD4630/AD4030
 
-   - :ref:`eval-ad463x block-diagram`
+   - :ref:`eval-ad463x-block-diagram`
 
      - :adi:`AD4630-24 Product Page <en/products/AD4630-24.html>`
      - :adi:`AD4630-16 Product Page <en/products/AD4630-16.html>`
      - :adi:`AD4030-24 Product Page <en/products/AD4030-24.html>`
 
-   - :ref:`eval-ad463x user-guide`
+   - :ref:`eval-ad463x-user-guide`
 
    - Resources for designing a custom AD4630/AD4030-based platform software
 
@@ -135,7 +135,7 @@ Table of contents
 
 #. :ref:`Help and Support <help-and-support>`
 
-.. _eval-ad463x block-diagram:
+.. _eval-ad463x-block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------

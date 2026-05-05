@@ -1,18 +1,19 @@
-.. _eval-ad463x quickstart:
+.. _eval-ad463x-quickstart:
 
 Quick start guide
 ===============================================================================
 
 The Quick start guides provide simple step-by-step instructions on how to do
-an initial system setup for the EVAL-AD463x-FMCZ / EVAL-AD4030-24FMCZ boards
-on various FPGA development boards. In these guides, we will discuss how to
-program the bitstream, run a no-OS program or boot a Linux distribution.
+an initial system setup for the :adi:`EVAL-AD4630-24` / :adi:`EVAL-AD4630-16` /
+:adi:`EVAL-AD4030-24` boards on various FPGA development boards. In these
+guides, we will discuss how to program the bitstream, run a no-OS program or
+boot a Linux distribution.
 
 .. toctree::
 
    On ZedBoard <zynq>
 
-.. _eval-ad463x carriers:
+.. _eval-ad463x-carriers:
 
 Supported carriers
 -------------------------------------------------------------------------------
@@ -73,4 +74,4 @@ ZedBoard, other 3rd party boards that have an FMC form factor may also be used
 with the AD463x/AD403x family of boards.
 
 Go to
-:ref:`the setup guide <eval-ad463x quickstart zedboard>`.
+:ref:`the setup guide <eval-ad463x-quickstart-zedboard>`.

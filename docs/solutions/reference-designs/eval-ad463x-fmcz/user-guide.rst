@@ -1,4 +1,4 @@
-.. _eval-ad463x user-guide:
+.. _eval-ad463x-user-guide:
 
 User guide
 ===============================================================================
@@ -8,11 +8,11 @@ Evaluation boards available
 
 Two different EVAL board revisions have been released on the market for
 AD4630-24
-and AD4630-16, the old Rev C which is obsoleted and the new revision, Rev E. On
+and AD4630-16, the old Rev C which is obsolete and the new revision, Rev E. On
 the other hand, there is only one existing revision for AD4030-24, Rev A/B,
 which is still available:
 
-AD4630-24 and AD4630-16 Rev C (Obsoleted)
+AD4630-24 and AD4630-16 Rev C (Obsolete)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  Two differential input channels with SMA connectors
@@ -29,11 +29,11 @@ AD4630-24 and AD4630-16 Rev C (Obsoleted)
 -  Full power supply solution that provides all the necessary voltage rails from
    a 12 V supply that is provided from the ZedBoard through the FMC connector.
 
-.. image:: images/eval_ad4630_16_top.jpg
+.. figure:: images/eval_ad4630_16_top.jpg
    :align: center
    :width: 600
 
-**Figure 1a. EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ. Rev C**
+   EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ, Rev C
 
 AD4630-24 and AD4630-16 Rev E
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,11 +63,11 @@ AD4630-24 and AD4630-16 Rev E
    New boards EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ REV E have a date code
    bigger than DC>2435
 
-.. image:: images/cb_ad464030_24fmcz_top_evaluation_board.jpg
+.. figure:: images/cb_ad464030_24fmcz_top_evaluation_board.jpg
    :align: center
    :width: 600
 
-**Figure 1b. New EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ. Rev E**
+   EVAL-AD4630-24FMCZ and EVAL-AD4630-16FMCZ, Rev E
 
 AD4030-24 Rev A/B
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,11 +86,11 @@ AD4030-24 Rev A/B
 -  Full power supply solution that provides all the necessary voltage rails from
    a 12 V supply that is provided from the ZedBoard through the FMC connector.
 
-.. image:: images/eval_ad4030_24_top.jpg
+.. figure:: images/eval_ad4030_24_top.jpg
    :align: center
    :width: 400
 
-**Figure 1c. EVAL-AD4030-24FMCZ. Rev A/B**
+   EVAL-AD4030-24FMCZ, Rev A/B
 
 Full descriptions of these products are available in their respective data
 sheets, which should be consulted when using the evaluation board.
@@ -132,11 +132,11 @@ Hardware guide
 Evaluation Board Hardware (Rev C and AD4030-24 Rev A/B)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: images/zedboard_ad4630_16_setup.jpg
+.. figure:: images/zedboard_ad4630_16_setup.jpg
    :align: center
    :width: 600
 
-**Figure 2. EVAL-AD4630-XXFMCZ Evaluation System**
+   EVAL-AD4630-XXFMCZ Evaluation System
 
 Power Supplies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -230,13 +230,13 @@ internal buffer, it can be attached to the EXT REF SMA connector (see figure
 below). R137 should be populated with a zero ohm resistor, and R136 should be
 open. The internal buffer can be bypassed by attaching an external reference to
 the REF turret on the board. To reduce the ADC power consumption, the internal
-reference buffer can be disabled (see respective products data sheet).
+reference buffer can be disabled (see respective product's data sheet).
 
-.. image:: images/ad4630_ref_ckt.png
+.. figure:: images/ad4630_ref_ckt.png
    :align: center
    :width: 400
 
-**Figure 3. EVAL-AD4X30-XXFMCZ reference circuit (AD4630-24 shown)**
+   EVAL-AD4X30-XXFMCZ reference circuit (AD4630-24 shown)
 
 Clock Circuit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -251,17 +251,18 @@ frequency must be < 100 MHz**. The user should take care to use a low jitter
 clock source to achieve best system performance. The external clock level should
 be 10 to 12 dBm.
 
-.. image:: images/eval_ad4630_24_clk_ckt.png
+.. figure:: images/eval_ad4630_24_clk_ckt.png
    :align: center
    :width: 400
 
-**Figure 4. EVAL-AD4X30-XXFMCZ clock circuit (AD4630-24 shown)**
+   EVAL-AD4X30-XXFMCZ clock circuit (AD4630-24 shown)
 
 Analog Front End
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The EVAL-AD4X30-XXFMCZ has a flexible driver network that can be configured for
-a variety of topologies. The default network is shown in Figure 5, in which the
+a variety of topologies. The default network is shown in
+:numref:`fig-differential-afe-rev-c`, in which the
 ADA4945-1 fully differential amplifier is driving the ADC. It can accommodate
 both single-ended and differential signal sources, and drives the ADC
 differentially. As populated, it has a unity gain. When using a single-ended
@@ -277,11 +278,12 @@ impedance.
    likewise, a negative DC signal should be attached to IN_A/B+ to preserve the
    signal polarity.
 
-.. image:: images/ad4630_fda_ckt.svg
+.. figure:: images/ad4630_fda_ckt.svg
    :align: center
    :width: 600
+   :name: fig-differential-afe-rev-c
 
-**Figure 5. Differential Driver AFE, default (AD4630-24 shown)**
+   Differential Driver AFE, default (AD4630-24 shown)
 
 .. list-table:: Default AFE Configuration
    :header-rows: 1
@@ -294,7 +296,8 @@ impedance.
    * - Required changes from default configuration
      - No changes required
 
-A second topology can be seen in Figure 6. This topology consists of a pair of
+A second topology can be seen in
+:numref:`fig-dual-buffer-afe-rev-c`. This topology consists of a pair of
 unity gain buffers, the ADA4896-2. It also can be driven by either a
 single-ended or differential source. This network is ideal for observing the
 best noise performance of the AD4630-16, due to the low voltage and current
@@ -308,11 +311,12 @@ voltage range of -4.9 V to +4.1 V (when using +/- 5 V supplies).
    preserve polarity when measuring DC voltages, connect a positive voltage to
    IN_A/B-. Likewise, a negative DC voltage should be connected to IN_A/B+.
 
-.. image:: images/ad4630_dual_buf_ckt.svg
+.. figure:: images/ad4630_dual_buf_ckt.svg
    :align: center
    :width: 600
+   :name: fig-dual-buffer-afe-rev-c
 
-**Figure 6. Dual Buffer AFE (AD4630-24 shown)**
+   Dual Buffer AFE (AD4630-24 shown)
 
 .. list-table:: Unity Gain Dual Buffer Configuration
    :header-rows: 1
@@ -327,17 +331,19 @@ voltage range of -4.9 V to +4.1 V (when using +/- 5 V supplies).
        R124, R125 and R126 (Ch. B). Install: R31, R33, R47 and R49 (Ch. A);
        R60, R62, R75 and R78 (Ch. B)
 
-Figure 7 shows a driver network which combines the ADA4896-2 with the
+:numref:`fig-high-impedance-afe-rev-c` shows a driver network which combines
+the ADA4896-2 with the
 ADA4945-1. This circuit is ideal for applications that require a high input
 impedance along with gain to maximize the input range of the ADC. The gain of
 the ADA4945-1 can be modified by changing either the feedback resistors or input
 resistors.
 
-.. image:: images/ad4630_cascaded_buf_fda_ckt.svg
+.. figure:: images/ad4630_cascaded_buf_fda_ckt.svg
    :align: center
    :width: 800
+   :name: fig-high-impedance-afe-rev-c
 
-**Figure 7. High Impedance Buffer with Gain AFE (AD4630-24 shown)**
+   High Impedance Buffer with Gain AFE (AD4630-24 shown)
 
 .. list-table:: High Impedance with Gain Configuration
    :header-rows: 1
@@ -351,15 +357,16 @@ resistors.
      - Remove: R120, R121 (Ch. A); R124, R125 (Ch. B). Install: R31, R127, R28,
        R47, R128 and R43 (Ch. A); R60, R129, R57, R78, R130 and R72 (Ch. B)
 
-Figure 8 shows an input configuration that allows the AD4630-16 to be directly
-driven from the SMA connectors. This enables testing with alternative driver
-configurations mounted on an external PCB.
+:numref:`fig-direct-drive-rev-c` shows an input configuration that allows
+the AD4630-16 to be directly driven from the SMA connectors. This enables
+testing with alternative driver configurations mounted on an external PCB.
 
-.. image:: images/ad4630_direct_drive_ckt.png
+.. figure:: images/ad4630_direct_drive_ckt.png
    :align: center
    :width: 600
+   :name: fig-direct-drive-rev-c
 
-**Figure 8. Direct Driven Inputs (AD4630-24 shown)**
+   Direct Driven Inputs (AD4630-24 shown)
 
 .. list-table:: Direct Drive Configuration
    :header-rows: 1
@@ -377,11 +384,11 @@ configurations mounted on an external PCB.
 Evaluation Board Hardware (Rev E)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: images/zedboard_ad4630_24_setup.png
+.. figure:: images/zedboard_ad4630_24_setup.png
    :align: center
    :width: 600
 
-**Figure 9. EVAL-AD4630-XXFMCZ Evaluation System (Rev E)**
+   EVAL-AD4630-XXFMCZ Evaluation System (Rev E)
 
 Power Supplies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -469,11 +476,11 @@ supply all the LDOs directly with external power supplies via J7 and J8. There
 are also two different options to generate the -3.3 V although only the LT3093
 is mounted on the board.
 
-.. image:: images/powertree.png
+.. figure:: images/powertree.png
    :align: center
    :width: 600
 
-**Figure 10. Power-tree**
+   Power-tree
 
 Reference Circuit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -487,15 +494,15 @@ can be attached to the J5 SMA connector (see figure below). R124 should be
 populated with a zero ohm resistor, and R116 and R123 should be open. The
 internal buffer can be bypassed by attaching an external reference to the REF
 turret on the board. To reduce the ADC power consumption, the internal reference
-buffer can be disabled (see respective products data sheet). There is also the
+buffer can be disabled (see respective product's data sheet). There is also the
 option to mount the LTC6655 or the LTC6655LN reference which is suitable to use
 together with the unbuffered input of the ADC.
 
-.. image:: images/reference2.png
+.. figure:: images/reference2.png
    :align: center
    :width: 600
 
-**Figure 11. EVAL-AD4630-XXFMCZ reference circuit (AD4630-24 shown)**
+   EVAL-AD4630-XXFMCZ reference circuit (AD4630-24 shown)
 
 Clock Circuit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -510,17 +517,18 @@ frequency must be < 100 MHz**. The user should take care to use a low jitter
 clock source to achieve best system performance. The external clock level should
 be 10 to 12 dBm.
 
-.. image:: images/clock_diagram.png
+.. figure:: images/clock_diagram.png
    :align: center
    :width: 600
 
-**Figure 12. EVAL-AD4630-XXFMCZ clock circuit (AD4630-24 shown)**
+   EVAL-AD4630-XXFMCZ clock circuit (AD4630-24 shown)
 
 Analog Front End
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The EVAL-AD4630-XXFMCZ has a flexible driver network that can be configured for
-a variety of topologies. The default network is shown in Figure 13, in which the
+a variety of topologies. The default network is shown in
+:numref:`fig-differential-afe-rev-e`, in which the
 ADA4945-1 fully differential amplifier is driving the ADC. It can accommodate
 both single-ended and differential signal sources, and drives the ADC
 differentially. As populated, it has a unity gain. When using a single-ended
@@ -536,11 +544,12 @@ impedance.
    likewise, a negative DC signal should be attached to IN_A/B+ to preserve the
    signal polarity.
 
-.. image:: images/differential.png
+.. figure:: images/differential.png
    :align: center
    :width: 600
+   :name: fig-differential-afe-rev-e
 
-**Figure 13. Differential Driver AFE, default (AD4630-24 shown)**
+   Differential Driver AFE, default (AD4630-24 shown)
 
 .. list-table:: Default AFE Configuration (Rev E)
    :header-rows: 1
@@ -557,13 +566,14 @@ There is one buffer used to generate common mode voltage, U26. The voltage can
 be adjusted from 0 V to Vref by selecting correctly the ratio between R98,
 (or R122 or R99) and R5.
 
-.. image:: images/vocm.png
+.. figure:: images/vocm.png
    :align: center
    :width: 600
 
-**Figure 14. Common mode voltage generation**
+   Common mode voltage generation
 
-A second topology can be seen in Figure 15. This topology consists of a pair of
+A second topology can be seen in
+:numref:`fig-dual-buffer-afe-rev-e`. This topology consists of a pair of
 unity gain buffers, the ADA4896-2. It also can be driven by either a
 single-ended or differential source. This network is ideal for observing the
 best noise performance of the AD4630-16, due to the low voltage and current
@@ -573,11 +583,12 @@ voltage range of -4.9 V to +4.1 V (when using +/- 5 V supplies). To use the
 full span of the ADC the input signal of each buffer needs to be centered at
 2.5 V.
 
-.. image:: images/single_ended_config1.png
+.. figure:: images/single_ended_config1.png
    :align: center
    :width: 600
+   :name: fig-dual-buffer-afe-rev-e
 
-**Figure 15. Dual Buffer AFE**
+   Dual Buffer AFE
 
 .. list-table:: Unity Gain Dual Buffer Configuration (Rev E)
    :header-rows: 1
@@ -593,13 +604,15 @@ full span of the ADC the input signal of each buffer needs to be centered at
 
 If the signal generator connected to the inputs of the ADC cannot generate a DC
 offset, there is the option to use the VOCM buffer to create a DC offset and
-connect it to the non-inverting input of the ADA4896 amplifiers like Figure 16.
+connect it to the non-inverting input of the ADA4896 amplifiers like
+:numref:`fig-vocm-buffer-rev-e`.
 
-.. image:: images/config2.png
+.. figure:: images/config2.png
    :align: center
    :width: 600
+   :name: fig-vocm-buffer-rev-e
 
-**Figure 16. High Impedance Buffer with VOCM generated internally**
+   High Impedance Buffer with VOCM generated internally
 
 .. list-table:: High Impedance Buffer with VOCM
    :header-rows: 1
@@ -614,17 +627,19 @@ connect it to the non-inverting input of the ADA4896 amplifiers like Figure 16.
        R112, R106, R139, R136, R137, R134, R120, R119, R103, R102, R142, R141,
        R132 and R131
 
-Another option available (Figure 17) on the board is to use the ADA4896 in an
+Another option available (:numref:`fig-inverting-buffer-rev-e`) on the board
+is to use the ADA4896 in an
 inverting configuration with the possibility of connecting a DC offset on the
 non-inverting pin. In this case it is necessary to have two input signals
 delayed 180 degrees and select the correct resistor values to generate a 2.5 V
 (R98 and R3) as VOCM.
 
-.. image:: images/config3.png
+.. figure:: images/config3.png
    :align: center
    :width: 600
+   :name: fig-inverting-buffer-rev-e
 
-**Figure 17. Inverting Buffer with VOCM generated internally**
+   Inverting Buffer with VOCM generated internally
 
 .. list-table:: Inverting Buffer with VOCM
    :header-rows: 1
@@ -639,15 +654,16 @@ delayed 180 degrees and select the correct resistor values to generate a 2.5 V
        R112, R106, R145, R129, R137, R134, R120, R119, R103, R102, R142, R141,
        R132 and R131
 
-Figure 18 shows an input configuration that allows the AD4630-16 to be directly
-driven from the SMA connectors. This enables testing with alternative driver
-configurations mounted on an external PCB.
+:numref:`fig-direct-drive-rev-e` shows an input configuration that allows
+the AD4630-16 to be directly driven from the SMA connectors. This enables
+testing with alternative driver configurations mounted on an external PCB.
 
-.. image:: images/ad4630_direct_drive_ckt.png
+.. figure:: images/ad4630_direct_drive_ckt.png
    :align: center
    :width: 600
+   :name: fig-direct-drive-rev-e
 
-**Figure 18. Direct Driven Inputs (AD4630-24 shown)**
+   Direct Driven Inputs (AD4630-24 shown)
 
 .. list-table:: Direct Drive Configuration (Rev E)
    :header-rows: 1
@@ -677,6 +693,23 @@ Processors and a Series-7 FPGA with 85k Programmable Logic cells. A Linux OS
 runs on the host processor system. It communicates with the PC through either a
 USB 2.0 high speed port or a 10/100/1000 Ethernet port. The default software
 configuration uses USB.
+
+Schematic, PCB Layout, Bill of Materials
+-------------------------------------------------------------------------------
+
+-  :adi:`EVAL-AD4630-24 Rev E Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4630-24-fmcz-design-files.zip>`
+-  :adi:`EVAL-AD4630-16/24 Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4630-24-design-files.zip>`
+-  :adi:`EVAL-AD4030-24 Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4030-24-design-files.zip>`
+
+The design file package contains the following:
+
+-  Schematics
+-  PCB Layout
+-  Bill of Materials
+
+The evaluation board schematic and other board files can also be found on the
+:adi:`EVAL-AD4630-16`, :adi:`EVAL-AD4630-24` and :adi:`EVAL-AD4030-24` web
+pages.
 
 Software guide
 -------------------------------------------------------------------------------
@@ -761,13 +794,15 @@ More information on the general Kuiper Linux distribution can be found at
    per channel (1, 2, or 4), and data rate (SDR vs. DDR). **The boot.bin must
    be synchronized to the ADC attributes in the device tree**. Unique boot.bin
    files have been pre-generated and stored on the SD card for several different
-   configurations. Table 13 lists the available configurations (boot.bin files)
-   that correspond to clocking modes, lanes, data rate mode. These files are
+   configurations. :numref:`table-bootbin-configurations` lists the available
+   configurations (boot.bin files) that correspond to clocking modes, lanes,
+   data rate mode. These files are
    available on the SD card in sub-directories that are labeled according to the
    configuration. This simplifies the HDL architecture and avoids the
    introduction of bugs due to unnecessary complexity.
 
 .. list-table:: BOOT.BIN configurations for AD4630/AD4030
+   :name: table-bootbin-configurations
    :header-rows: 1
    :widths: 20 30 20 30
 
@@ -829,10 +864,11 @@ HDL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The AD463x HDL user guide can be found here:
-:external+hdl:ref:`AD463x HDL User Guide <ad4630_fmc>`.
+:external+hdl:ref:`ad4630_fmc`.
 The HDL user guide provides a high level description of the AD4630 HDL
 architecture, functionality, a link to the source file repository, and how to
-build a desired boot.bin configuration. Table 13 above lists all of the
+build a desired boot.bin configuration.
+:numref:`table-bootbin-configurations` lists all of the
 preconfigured modes, so in most cases it is not necessary for the user to build
 a unique boot.bin file.
 
@@ -848,7 +884,7 @@ No-OS Drivers
 The No-OS driver can be used in a bare metal application or in a non-Linux RTOS
 environment. Some customization, or creation of an adaptation layer for the
 specific platform may be required. The
-:external+no-OS:doc:`AD463x No-OS user guide <projects/adc/ad463x_fmcz>`
+:external+no-OS:doc:`projects/adc/ad463x_fmcz`
 provides a general description of the driver, code documentation, and source
 code links.
 
@@ -857,14 +893,15 @@ How to modify the SD card image
 
 Users that are developing a custom application for the AD4630/AD4030 outside the
 ACE environment, using the ZedBoard running Linux, can modify the boot image to
-match one of the existing configurations listed in Table 13. You can alter the
+match one of the existing configurations listed in
+:numref:`table-bootbin-configurations`. You can alter the
 configuration inside of the board view of the AD4630-24 ACE plugin, click apply,
 wait 30 seconds and the new configuration will load.
 
 If SD card contents have been corrupted, or the user desires to create another
 copy of the SD card image, instructions on how to program the SD card with a
 replacement/new image can be found at
-:dokuwiki:`ADI Kuiper Linux with support for ACE <resources/tools-software/linux-software/adi-kuiper_images_for_ace>`.
+:external+kuiper:ref:`use-kuiper-image`.
 
 System operational constraints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -940,28 +977,21 @@ Zone 2 data transfers from the AD4630/AD4030.
 mode are limited by the FPGA SPI engine. This is not a limitation of the
 AD4630/AD4030 device.
 
-Schematic, PCB Layout, Bill of Materials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The hardware is controlled and configured through the
+:adi:`ACE Software <en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`.
+ACE is a desktop software application that allows the evaluation and control of
+multiple evaluation systems.
 
--  :adi:`EVAL-AD4630-24 Rev E Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4630-24-fmcz-design-files.zip>`
--  :adi:`EVAL-AD4630-16/24 Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4630-24-design-files.zip>`
--  :adi:`EVAL-AD4030-24 Design Files <media/en/evaluation-documentation/evaluation-design-files/eval-ad4030-24-design-files.zip>`
+The evaluation board is also supported with the Libiio library. This library is
+cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
+and others. Applications that can be used with it are:
 
-The design file package contains the following:
+.. include-template:: ../common/using-iio-osc.rst.jinja
 
--  Schematics
--  PCB Layout
--  Bill of Materials
+   has_linux: true
+   has_no_os: false
 
-The evaluation board schematic and other board files can also be found on the
-:adi:`EVAL-AD4630-16FMCZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-16.html>`,
-:adi:`EVAL-AD4630-24FMCZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4630-24.html>`
-and
-:adi:`EVAL-AD4030-24FMCZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4030-24.html>`
-web pages.
-
-Application frameworks
--------------------------------------------------------------------------------
+.. include-template:: ../common/using-scopy.rst.jinja
 
 Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1062,6 +1092,6 @@ Troubleshooting
 -------------------------------------------------------------------------------
 
 A troubleshooting guide can be found at:
-:dokuwiki:`Troubleshooting Guide for ADI Kuiper Linux for ACE Evaluation <resources/tools-software/linux-software/adi-kuiper_ace_troubleshooting>`.
+:external+kuiper:ref:`troubleshooting`.
 The latter covers some tips related to ZedBoard startup and the SD card
 containing the Kuiper Linux image.

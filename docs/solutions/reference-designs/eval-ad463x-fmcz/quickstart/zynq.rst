@@ -1,4 +1,4 @@
-.. _eval-ad463x quickstart zedboard:
+.. _eval-ad463x-quickstart-zedboard:
 
 ZedBoard Quick start
 ===============================================================================
@@ -53,7 +53,7 @@ can build them manually:
    tree. Multiple pre-configured ``BOOT.BIN`` files are available on the SD
    card in sub-directories labeled according to the clocking mode (SPI vs.
    Echo), number of active lanes per channel (1, 2, or 4), and data rate
-   (SDR vs. DDR). See the :ref:`User Guide <eval-ad463x user-guide>` for a
+   (SDR vs. DDR). See the :ref:`User Guide <eval-ad463x-user-guide>` for a
    full list of available configurations.
 
 Required software
@@ -61,7 +61,7 @@ Required software
 
 - SD Card 16GB imaged with :doc:`ADI Kuiper Linux </linux/kuiper/index>`
   (check out that guide on how to do it, then come back to this section)
-- :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
+- A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
 
 Required hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ Required hardware
 - Recommended: Band-pass filter centered on test signal frequency
 
 More details as to why you need these can be found at
-:ref:`eval-ad463x prerequisites`.
+:ref:`eval-ad463x-prerequisites`.
 
 Testing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -92,13 +92,13 @@ To avoid ESD damage, follow these steps in order:
 #. Connect the EVAL-AD463x-FMCZ / EVAL-AD4030-24FMCZ board to the ZedBoard
    FMC LPC connector.
 
-.. important::
+   .. important::
 
-   To avoid potential issues, ensure the ZedBoard VADJ SELECT = 2.5 V.
+      To avoid potential issues, ensure the ZedBoard VADJ SELECT = 2.5 V.
 
-   .. image:: ../images/zedboard_vadj.jpg
-      :align: center
-      :width: 100
+      .. image:: ../images/zedboard_vadj.jpg
+         :align: center
+         :width: 100
 
 #. Insert the SD card into the SD card slot (J12) on the underside of the
    ZedBoard.
@@ -107,7 +107,7 @@ To avoid ESD damage, follow these steps in order:
 
       If there is a need to re-image or create a new SD card, instructions are
       available here:
-      :dokuwiki:`ADI Kuiper Linux with support for ACE Evaluation <resources/tools-software/linux-software/adi-kuiper_images_for_ace>`.
+      :external+kuiper:ref:`use-kuiper-image`.
 
 #. Configure the ZedBoard boot jumpers for SD card boot as shown.
 
@@ -135,40 +135,752 @@ To avoid ESD damage, follow these steps in order:
 
       Linux versions prior to ADI Kuiper Linux for Evaluation version 2024-8-27
       will instead boot with the BLUE LD12/DONE LED blinking immediately and LD7
-      blinking after ~20-30 Seconds. This may indicate that an improved version
-      of the ACE plugin is available if the SD-Card is updated to the latest
+      blinking after ~20-30 seconds. This may indicate that an improved version
+      of the ACE plugin is available if the SD card is updated to the latest
       version.
 
-#. Launch the ACE software from the Analog Devices folder in the Windows Start
-   menu. The Evaluation Board should appear in the ACE Start Tab >> Attached
-   Hardware view.
+.. seealso::
+   For more detailed information on ZedBoard jumper settings, check the
+   *ZedBoard Hardware User Guide* (chapter "Configuration modes")
+   `here <https://digilent.com/reference/_media/zedboard/zedboard_ug.pdf>`__.
 
-   .. image:: ../images/ace_attached_hw_screen.png
-      :align: center
-      :width: 600
+Boot messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-ACE evaluation software
+The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:
+
+.. collapsible:: Complete boot log
+
+   ::
+
+      U-Boot 2018.01-21442-gf06dec3cab (Oct 17 2024 - 08:59:33 +0300), Build: jenkins-development-build_uboot-35
+
+      Model: Zynq Zed Development Board
+      Board: Xilinx Zynq
+      Silicon: v3.1
+      DRAM:  ECC disabled 512 MiB
+      MMC:   sdhci@e0100000: 0 (SD)
+      SF: Detected s25fl256s_64k with page size 256 Bytes, erase size 64 KiB, total 32 MiB
+      In:    serial@e0001000
+      Out:   serial@e0001000
+      Err:   serial@e0001000
+      Net:   ZYNQ GEM: e000b000, phyaddr 0, interface rgmii-id
+      eth0: ethernet@e000b000
+      reading uEnv.txt
+      407 bytes read in 24 ms (15.6 KiB/s)
+      Importing environment from SD ...
+      Hit any key to stop autoboot:  0
+      Device: sdhci@e0100000
+      Manufacturer ID: 1d
+      OEM: 4144
+      Name: 00000
+      Tran Speed: 50000000
+      Rd Block Len: 512
+      SD version 3.0
+      High Capacity: Yes
+      Capacity: 29.1 GiB
+      Bus Width: 4-bit
+      Erase Group Size: 512 Bytes
+      reading uEnv.txt
+      407 bytes read in 24 ms (15.6 KiB/s)
+      Loaded environment from uEnv.txt
+      Importing environment from SD ...
+      Running uenvcmd ...
+      Copying Linux from SD to RAM...
+      reading uImage
+      8412448 bytes read in 486 ms (16.5 MiB/s)
+      reading devicetree.dtb
+      21884 bytes read in 29 ms (736.3 KiB/s)
+      ** Unable to read file uramdisk.image.gz **
+      ## Booting kernel from Legacy Image at 03000000 ...
+         Image Name:   Linux-6.1.70-284114-g2e8908932df
+         Image Type:   ARM Linux Kernel Image (uncompressed)
+         Data Size:    8412384 Bytes = 8 MiB
+         Load Address: 00008000
+         Entry Point:  00008000
+         Verifying Checksum ... OK
+      ## Flattened Device Tree blob at 02a00000
+         Booting using the fdt blob at 0x2a00000
+         Loading Kernel Image ... OK
+         Loading Device Tree to 1eb12000, end 1eb1a57b ... OK
+
+      Starting kernel ...
+
+      Booting Linux on physical CPU 0x0
+      Linux version 6.1.70-284114-g2e8908932dfd (jenkins@romlxbuild1) (arm-xilinx-linux-gnueabi-gcc.real (GCC) 12.2.0, GNU ld (GNU Binutils) 2.39.0.20220819) #1060 SMP PREEMPT Tue Mar 18 16:11:24 EET 2025
+      CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=18c5387d
+      CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+      OF: fdt: Machine model: Xilinx Zynq ZED
+      OF: fdt: earlycon: stdout-path /amba@0/uart@E0001000 not found
+      Memory policy: Data cache writealloc
+      cma: Reserved 128 MiB at 0x16800000
+      Zone ranges:
+        Normal   [mem 0x0000000000000000-0x000000001fffffff]
+        HighMem  empty
+      Movable zone start for each node
+      Early memory node ranges
+        node   0: [mem 0x0000000000000000-0x000000001fffffff]
+      Initmem setup node 0 [mem 0x0000000000000000-0x000000001fffffff]
+      percpu: Embedded 11 pages/cpu s14420 r8192 d22444 u45056
+      Built 1 zonelists, mobility grouping on.  Total pages: 130048
+      Kernel command line: console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlycon rootfstype=ext4 rootwait clk_ignore_unused cpuidle.off=1
+      Dentry cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+      Inode-cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+      mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+      Memory: 361888K/524288K available (12288K kernel code, 818K rwdata, 10376K rodata, 1024K init, 470K bss, 31328K reserved, 131072K cma-reserved, 0K highmem)
+      rcu: Preemptible hierarchical RCU implementation.
+      rcu:    RCU event tracing is enabled.
+      rcu:    RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+      rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+      rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+      NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+      efuse mapped to (ptrval)
+      slcr mapped to (ptrval)
+      L2C: platform modifies aux control register: 0x72360000 -> 0x72760000
+      L2C: DT/platform modifies aux control register: 0x72360000 -> 0x72760000
+      L2C-310 erratum 769419 enabled
+      L2C-310 enabling early BRESP for Cortex-A9
+      L2C-310 full line of zeros enabled for Cortex-A9
+      L2C-310 ID prefetch enabled, offset 1 lines
+      L2C-310 dynamic clock gating enabled, standby mode enabled
+      L2C-310 cache controller enabled, 8 ways, 512 kB
+      L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x76760001
+      rcu: srcu_init: Setting srcu_struct sizes based on contention.
+      zynq_clock_init: clkc starts at (ptrval)
+      Zynq clock init
+      sched_clock: 64 bits at 167MHz, resolution 6ns, wraps every 4398046511103ns
+      clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x26703d7dd8, max_idle_ns: 440795208065 ns
+      Switching to timer-based delay loop, resolution 6ns
+      clocksource: ttc_clocksource: mask: 0xffff max_cycles: 0xffff, max_idle_ns: 537538477 ns
+      timer #0 at (ptrval), irq=25
+      Console: colour dummy device 80x30
+      Calibrating delay loop (skipped), value calculated using timer frequency.. 333.33 BogoMIPS (lpj=1666666)
+      CPU: Testing write buffer coherency: ok
+      CPU0: Spectre v2: using BPIALL workaround
+      pid_max: default: 32768 minimum: 301
+      Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+      Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+      CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+      Setting up static identity map for 0x100000 - 0x100060
+      rcu: Hierarchical SRCU implementation.
+      rcu:    Max phase no-delay instances is 1000.
+      smp: Bringing up secondary CPUs ...
+      CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+      CPU1: Spectre v2: using BPIALL workaround
+      smp: Brought up 1 node, 2 CPUs
+      SMP: Total of 2 processors activated (666.66 BogoMIPS).
+      CPU: All CPU(s) started in SVC mode.
+      devtmpfs: initialized
+      VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+      clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+      futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+      pinctrl core: initialized pinctrl subsystem
+      NET: Registered PF_NETLINK/PF_ROUTE protocol family
+      DMA: preallocated 256 KiB pool for atomic coherent allocations
+      thermal_sys: Registered thermal governor 'step_wise'
+      platform axi: Fixed dependency cycle(s) with /axi/interrupt-controller@f8f01000
+      amba f8801000.etb: Fixed dependency cycle(s) with /replicator/out-ports/port@1/endpoint
+      amba f8803000.tpiu: Fixed dependency cycle(s) with /replicator/out-ports/port@0/endpoint
+      amba f8804000.funnel: Fixed dependency cycle(s) with /replicator/in-ports/port/endpoint
+      amba f889c000.ptm: Fixed dependency cycle(s) with /axi/funnel@f8804000/in-ports/port@0/endpoint
+      amba f889d000.ptm: Fixed dependency cycle(s) with /axi/funnel@f8804000/in-ports/port@1/endpoint
+      hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+      hw-breakpoint: maximum watchpoint size is 4 bytes.
+      e0001000.serial: ttyPS0 at MMIO 0xe0001000 (irq = 27, base_baud = 3125000) is a xuartps
+      printk: console [ttyPS0] enabled
+      debugfs: Directory 'fixed-supply' with parent 'regulator' already present!
+      debugfs: Directory 'fixed-supply' with parent 'regulator' already present!
+      SCSI subsystem initialized
+      usbcore: registered new interface driver usbfs
+      usbcore: registered new interface driver hub
+      usbcore: registered new device driver usb
+      mc: Linux media interface: v0.10
+      videodev: Linux video capture interface: v2.00
+      pps_core: LinuxPPS API ver. 1 registered
+      pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+      PTP clock support registered
+      jesd204: found 0 devices and 0 topologies
+      FPGA manager framework
+      Advanced Linux Sound Architecture Driver Initialized.
+      clocksource: Switched to clocksource arm_global_timer
+      NET: Registered PF_INET protocol family
+      IP idents hash table entries: 8192 (order: 4, 65536 bytes, linear)
+      tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+      Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+      TCP established hash table entries: 4096 (order: 2, 16384 bytes, linear)
+      TCP bind hash table entries: 4096 (order: 4, 65536 bytes, linear)
+      TCP: Hash tables configured (established 4096 bind 4096)
+      UDP hash table entries: 256 (order: 1, 8192 bytes, linear)
+      UDP-Lite hash table entries: 256 (order: 1, 8192 bytes, linear)
+      NET: Registered PF_UNIX/PF_LOCAL protocol family
+      RPC: Registered named UNIX socket transport module.
+      RPC: Registered udp transport module.
+      RPC: Registered tcp transport module.
+      RPC: Registered tcp NFSv4.1 backchannel transport module.
+      armv7-pmu f8891000.pmu: hw perfevents: no interrupt-affinity property, guessing.
+      hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+      workingset: timestamp_bits=30 max_order=17 bucket_order=0
+      NFS: Registering the id_resolver key type
+      Key type id_resolver registered
+      Key type id_legacy registered
+      nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+      nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+      fuse: init (API version 7.37)
+      io scheduler mq-deadline registered
+      io scheduler kyber registered
+      zynq-pinctrl 700.pinctrl: zynq pinctrl initialized
+      dma-pl330 f8003000.dma-controller: Loaded driver for PL330 DMAC-241330
+      dma-pl330 f8003000.dma-controller:      DBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16
+      brd: module loaded
+      loop: module loaded
+      Registered mathworks_ip class
+      SPI driver spidev has no spi_device_id for adi,swspi
+      spi-nor spi1.0: found s25fl256s1, expected n25q128a11
+      spi-nor spi1.0: s25fl256s1 (32768 Kbytes)
+      5 fixed-partitions partitions found on MTD device spi1.0
+      Creating 5 MTD partitions on "spi1.0":
+      0x000000000000-0x000000500000 : "boot"
+      0x000000500000-0x000000520000 : "bootenv"
+      0x000000520000-0x000000540000 : "config"
+      0x000000540000-0x000000fc0000 : "image"
+      0x000000fc0000-0x000002000000 : "spare"
+      MACsec IEEE 802.1AE
+      tun: Universal TUN/TAP device driver, 1.6
+      hwmon hwmon0: temp1_input not attached to any thermal zone
+      macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq 44 (00:0a:35:00:01:28)
+      usbcore: registered new interface driver asix
+      usbcore: registered new interface driver ax88179_178a
+      usbcore: registered new interface driver cdc_ether
+      usbcore: registered new interface driver net1080
+      usbcore: registered new interface driver cdc_subset
+      usbcore: registered new interface driver zaurus
+      usbcore: registered new interface driver cdc_ncm
+      usbcore: registered new interface driver r8153_ecm
+      usbcore: registered new interface driver uas
+      usbcore: registered new interface driver usb-storage
+      usbcore: registered new interface driver usbserial_generic
+      usbserial: USB Serial support registered for generic
+      usbcore: registered new interface driver ftdi_sio
+      usbserial: USB Serial support registered for FTDI USB Serial Device
+      usbcore: registered new interface driver upd78f0730
+      usbserial: USB Serial support registered for upd78f0730
+      ULPI transceiver vendor/product ID 0x0451/0x1507
+      Found TI TUSB1210 ULPI transceiver.
+      ULPI integrity check: passed.
+      ci_hdrc ci_hdrc.0: EHCI Host Controller
+      ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 1
+      ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00
+      usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.01
+      usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+      usb usb1: Product: EHCI Host Controller
+      usb usb1: Manufacturer: Linux 6.1.70-284114-g2e8908932dfd ehci_hcd
+      usb usb1: SerialNumber: ci_hdrc.0
+      hub 1-0:1.0: USB hub found
+      hub 1-0:1.0: 1 port detected
+      SPI driver ads7846 has no spi_device_id for ti,tsc2046
+      SPI driver ads7846 has no spi_device_id for ti,ads7843
+      SPI driver ads7846 has no spi_device_id for ti,ads7845
+      SPI driver ads7846 has no spi_device_id for ti,ads7873
+      i2c_dev: i2c /dev entries driver
+      i2c 0-0039: Fixed dependency cycle(s) with /fpga-axi@0/axi_hdmi@70e00000/port/endpoint
+      adv7511 0-0039: supply avdd not found, using dummy regulator
+      adv7511 0-0039: supply dvdd not found, using dummy regulator
+      adv7511 0-0039: supply pvdd not found, using dummy regulator
+      adv7511 0-0039: supply bgvdd not found, using dummy regulator
+      adv7511 0-0039: supply dvdd-3v not found, using dummy regulator
+      at24 1-0050: supply vcc not found, using dummy regulator
+      at24 1-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+      gspca_main: v2.14.0 registered
+      usbcore: registered new interface driver uvcvideo
+      cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer with timeout 10s
+      Xilinx Zynq CpuIdle Driver started
+      failed to register cpuidle driver
+      sdhci: Secure Digital Host Controller Interface driver
+      sdhci: Copyright(c) Pierre Ossman
+      sdhci-pltfm: SDHCI platform and OF driver helper
+      ledtrig-cpu: registered to indicate activity on CPUs
+      hid: raw HID events driver (C) Jiri Kosina
+      usbcore: registered new interface driver usbhid
+      usbhid: USB HID core driver
+      SPI driver fb_seps525 has no spi_device_id for syncoam,seps525
+      mmc0: SDHCI controller on e0100000.mmc [e0100000.mmc] using ADMA
+      SPI driver adis16475 has no spi_device_id for adi,adis16470
+      SPI driver adis16475 has no spi_device_id for adi,adis16475-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16475-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16475-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16477-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16477-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16477-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16465-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16465-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16465-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16467-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16467-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16467-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16500
+      SPI driver adis16475 has no spi_device_id for adi,adis16501
+      SPI driver adis16475 has no spi_device_id for adi,adis16505-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16505-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16505-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16507-1
+      SPI driver adis16475 has no spi_device_id for adi,adis16507-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16507-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16575-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16575-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16576-2
+      SPI driver adis16475 has no spi_device_id for adi,adis16576-3
+      SPI driver adis16475 has no spi_device_id for adi,adis16577-2
+      mmc0: new high speed SDHC card at address 0001
+      SPI driver adis16475 has no spi_device_id for adi,adis16577-3
+      mmcblk0: mmc0:0001 00000 29.1 GiB
+      axi_sysid 45000000.axi-sysid-0: AXI System ID core version (1.01.a) found
+      axi_sysid 45000000.axi-sysid-0: [ad4630_fmc] [CLK_MODE=0 NUM_OF_SDI=4 CAPTURE_ZONE=2 DDR_EN=0] on [zed] git branch <hdl_2023_r2> git <2156ac7e874a1dc321d9f64a325009fafe563419> clean [2024-11-01 14:24:00] UTC
+       mmcblk0: p1 p2 p3
+      fpga_manager fpga0: Xilinx Zynq FPGA Manager registered
+      usbcore: registered new interface driver snd-usb-audio
+      axi-i2s 77600000.axi-i2s: probed, capture enabled, playback enabled
+      NET: Registered PF_INET6 protocol family
+      Segment Routing with IPv6
+      In-situ OAM (IOAM) with IPv6
+      sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+      NET: Registered PF_PACKET protocol family
+      NET: Registered PF_IEEE802154 protocol family
+      Key type dns_resolver registered
+      zynq_pm_remap_ocm: OCM pool is not available
+      zynq_pm_suspend_init: Unable to map OCM.
+      Registering SWP/SWPB emulation handler
+      of-fpga-region fpga-full: FPGA Region probed
+      [drm] Initialized axi_hdmi_drm 1.0.0 20120930 for 70e00000.axi_hdmi on minor 0
+      axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+      axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+      axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+      debugfs: File 'Capture' in directory 'dapm' already present!
+      of_cfs_init
+      of_cfs_init: OK
+      clk: Not disabling unused clocks
+      ALSA device list:
+        #0: HDMI monitor
+        #1: ZED ADAU1761
+      EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Quota mode: disabled.
+      VFS: Mounted root (ext4 filesystem) on device 179:2.
+      devtmpfs: mounted
+      Freeing unused kernel image (initmem) memory: 1024K
+      Run /sbin/init as init process
+      systemd[1]: System time before build time, advancing clock.
+      systemd[1]: systemd 247.3-7+rpi1+deb11u6 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +ZSTD +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=unified)
+      systemd[1]: Detected architecture arm.
+
+      Welcome to Kuiper GNU/Linux 11.2 (bullseye)!
+
+      systemd[1]: Set hostname to <analog>.
+      systemd[1]: /lib/systemd/system/plymouth-start.service:16: Unit configured to use KillMode=none. This is unsafe, as it disables systemd's process lifecycle management for the service. Please update your service to use a safer KillMode=, such as 'mixed' or 'control-group'. Support for KillMode=none is deprecated and will eventually be removed.
+      systemd[1]: Queued start job for default target Graphical Interface.
+      random: crng init done
+      systemd[1]: system-getty.slice: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+      systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+      systemd[1]: Created slice system-getty.slice.
+      [  OK  ] Created slice system-getty.slice.
+      systemd[1]: Created slice system-modprobe.slice.
+      [  OK  ] Created slice system-modprobe.slice.
+      systemd[1]: Created slice system-serial\x2dgetty.slice.
+      [  OK  ] Created slice system-serial\x2dgetty.slice.
+      systemd[1]: Created slice system-systemd\x2dfsck.slice.
+      [  OK  ] Created slice system-systemd\x2dfsck.slice.
+      systemd[1]: Created slice User and Session Slice.
+      [  OK  ] Created slice User and Session Slice.
+      systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+      [  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+      systemd[1]: Condition check resulted in Arbitrary Executable File Formats File System Automount Point being skipped.
+      systemd[1]: Reached target Slices.
+      [  OK  ] Reached target Slices.
+      systemd[1]: Reached target Swap.
+      [  OK  ] Reached target Swap.
+      systemd[1]: Listening on Syslog Socket.
+      [  OK  ] Listening on Syslog Socket.
+      systemd[1]: Listening on fsck to fsckd communication Socket.
+      [  OK  ] Listening on fsck to fsckd communication Socket.
+      systemd[1]: Listening on initctl Compatibility Named Pipe.
+      [  OK  ] Listening on initctl Compatibility Named Pipe.
+      systemd[1]: Condition check resulted in Journal Audit Socket being skipped.
+      systemd[1]: Listening on Journal Socket (/dev/log).
+      [  OK  ] Listening on Journal Socket (/dev/log).
+      systemd[1]: Listening on Journal Socket.
+      [  OK  ] Listening on Journal Socket.
+      systemd[1]: Listening on udev Control Socket.
+      [  OK  ] Listening on udev Control Socket.
+      systemd[1]: Listening on udev Kernel Socket.
+      [  OK  ] Listening on udev Kernel Socket.
+      systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+      systemd[1]: Condition check resulted in POSIX Message Queue File System being skipped.
+      systemd[1]: Mounting RPC Pipe File System...
+               Mounting RPC Pipe File System...
+      systemd[1]: Mounting Kernel Debug File System...
+               Mounting Kernel Debug File System...
+      systemd[1]: Condition check resulted in Kernel Trace File System being skipped.
+      systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+      systemd[1]: Starting Restore / save the current clock...
+               Starting Restore / save the current clock...
+      systemd[1]: Starting Set the console keyboard layout...
+               Starting Set the console keyboard layout...
+      systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+      systemd[1]: Starting Load Kernel Module configfs...
+               Starting Load Kernel Module configfs...
+      systemd[1]: Starting Load Kernel Module drm...
+               Starting Load Kernel Module drm...
+      systemd[1]: Starting Load Kernel Module fuse...
+               Starting Load Kernel Module fuse...
+      systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+      systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+      systemd[1]: Starting Journal Service...
+               Starting Journal Service...
+      systemd[1]: Starting Load Kernel Modules...
+               Starting Load Kernel Modules...
+      systemd[1]: Starting Remount Root and Kernel File Systems...
+               Starting Remount Root and Kernel File Systems...
+      systemd[1]: Starting Coldplug All udev Devices...
+               Starting Coldplug All udev Devices...
+      systemd[1]: Mounted RPC Pipe File System.
+      [  OK  ] Mounted RPC Pipe File System.
+      systemd[1]: Mounted Kernel Debug File System.
+      [  OK  ] Mounted Kernel Debug File System.
+      systemd[1]: Finished Restore / save the current clock.
+      [  OK  ] Finished Restore / save the current clock.
+      systemd[1]: modprobe@configfs.service: Succeeded.
+      systemd[1]: Finished Load Kernel Module configfs.
+      [  OK  ] Finished Load Kernel Module configfs.
+      systemd[1]: modprobe@drm.service: Succeeded.
+      systemd[1]: Finished Load Kernel Module drm.
+      [  OK  ] Finished Load Kernel Module drm.
+      systemd[1]: modprobe@fuse.service: Succeeded.
+      systemd[1]: Finished Load Kernel Module fuse.
+      [  OK  ] Finished Load Kernel Module fuse.
+      systemd[1]: Started Journal Service.
+      [  OK  ] Started Journal Service.
+      [FAILED] Failed to start Load Kernel Modules.
+      See 'systemctl status systemd-modules-load.service' for details.
+               Mounting FUSE Control File System...
+               Mounting Kernel Configuration File System...
+               Starting Apply Kernel Variables...
+      [  OK  ] Finished Set the console keyboard layout.
+      [  OK  ] Mounted FUSE Control File System.
+      [  OK  ] Finished Remount Root and Kernel File Systems.
+      [  OK  ] Mounted Kernel Configuration File System.
+      [  OK  ] Finished Apply Kernel Variables.
+               Starting Flush Journal to Persistent Storage...
+               Starting Load/Save Random Seed...
+               Starting Create System Users...
+      [  OK  ] Finished Load/Save Random Seed.
+      [  OK  ] Finished Coldplug All udev Devices.
+      [  OK  ] Finished Create System Users.
+               Starting Helper to synchronize boot up for ifupdown...
+               Starting Create Static Device Nodes in /dev...
+               Starting Wait for udev To …plete Device Initialization...
+      [  OK  ] Finished Flush Journal to Persistent Storage.
+      [  OK  ] Finished Helper to synchronize boot up for ifupdown.
+      [  OK  ] Finished Create Static Device Nodes in /dev.
+      [  OK  ] Reached target Local File Systems (Pre).
+               Starting Rule-based Manage…for Device Events and Files...
+      [  OK  ] Started Rule-based Manager for Device Events and Files.
+               Starting Show Plymouth Boot Screen...
+      [  OK  ] Started Show Plymouth Boot Screen.
+      [  OK  ] Started Forward Password R…s to Plymouth Directory Watch.
+      [  OK  ] Reached target Local Encrypted Volumes.
+      [  OK  ] Found device /dev/ttyPS0.
+      [  OK  ] Found device /dev/disk/by-partuuid/a22286d2-01.
+      [  OK  ] Finished Wait for udev To Complete Device Initialization.
+               Starting File System Check…isk/by-partuuid/a22286d2-01...
+               Starting Load Kernel Modules...
+      [  OK  ] Started File System Check Daemon to report status.
+      [FAILED] Failed to start Load Kernel Modules.
+      See 'systemctl status systemd-modules-load.service' for details.
+      [  OK  ] Finished File System Check…/disk/by-partuuid/a22286d2-01.
+               Mounting /boot...
+      [  OK  ] Mounted /boot.
+      [  OK  ] Reached target Local File Systems.
+               Starting Set console font and keymap...
+               Starting Raise network interfaces...
+               Starting Preprocess NFS configuration...
+               Starting Tell Plymouth To Write Out Runtime Data...
+               Starting Create Volatile Files and Directories...
+      [  OK  ] Finished Set console font and keymap.
+      [  OK  ] Finished Tell Plymouth To Write Out Runtime Data.
+      [  OK  ] Finished Preprocess NFS configuration.
+      [  OK  ] Reached target NFS client services.
+      [  OK  ] Reached target Remote File Systems (Pre).
+      [  OK  ] Reached target Remote File Systems.
+      [  OK  ] Finished Create Volatile Files and Directories.
+               Starting Network Time Synchronization...
+               Starting Update UTMP about System Boot/Shutdown...
+      [  OK  ] Finished Update UTMP about System Boot/Shutdown.
+               Starting Load Kernel Modules...
+      [  OK  ] Started Network Time Synchronization.
+      [  OK  ] Finished Raise network interfaces.
+      [  OK  ] Reached target System Time Set.
+      [  OK  ] Reached target System Time Synchronized.
+      [FAILED] Failed to start Load Kernel Modules.
+      See 'systemctl status systemd-modules-load.service' for details.
+      [  OK  ] Reached target System Initialization.
+      [  OK  ] Started CUPS Scheduler.
+      [  OK  ] Started Daily apt download activities.
+      [  OK  ] Started Daily apt upgrade and clean activities.
+      [  OK  ] Started Periodic ext4 Onli…ata Check for All Filesystems.
+      [  OK  ] Started Discard unused blocks once a week.
+      [  OK  ] Started Daily rotation of log files.
+      [  OK  ] Started Daily man-db regeneration.
+      [  OK  ] Started Daily Cleanup of Temporary Directories.
+      [  OK  ] Reached target Paths.
+      [  OK  ] Reached target Timers.
+      [  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+      [  OK  ] Listening on CUPS Scheduler.
+      [  OK  ] Listening on D-Bus System Message Bus Socket.
+      [  OK  ] Listening on Erlang Port Mapper Daemon Activation Socket.
+      [  OK  ] Listening on GPS (Global P…ioning System) Daemon Sockets.
+      [  OK  ] Listening on triggerhappy.socket.
+      [  OK  ] Reached target Sockets.
+      [  OK  ] Reached target Basic System.
+               Starting Analog Devices power up/down sequence...
+               Starting Save/Restore Sound Card State...
+               Starting Avahi mDNS/DNS-SD Stack...
+      [  OK  ] Started Regular background program processing daemon.
+      [  OK  ] Started D-Bus System Message Bus.
+               Starting dphys-swapfile - …unt, and delete a swap file...
+               Starting Remove Stale Onli…t4 Metadata Check Snapshots...
+      [  OK  ] Started fan-control.
+               Starting Fix DP audio and X11 for Jupiter...
+               Starting Creating IIOD Context Attributes......
+               Starting Authorization Manager...
+               Starting DHCP Client Daemon...
+               Starting LSB: Switch to on…nless shift key is pressed)...
+               Starting LSB: rng-tools (Debian variant)...
+               Starting System Logging Service...
+               Starting User Login Management...
+               Starting triggerhappy global hotkey daemon...
+               Starting Disk Manager...
+               Starting WPA supplicant...
+      [  OK  ] Started triggerhappy global hotkey daemon.
+      [  OK  ] Started System Logging Service.
+      [  OK  ] Finished Save/Restore Sound Card State.
+      [  OK  ] Finished Fix DP audio and X11 for Jupiter.
+      [  OK  ] Started DHCP Client Daemon.
+      [  OK  ] Finished dphys-swapfile - …mount, and delete a swap file.
+      [  OK  ] Started Authorization Manager.
+      [  OK  ] Finished Remove Stale Onli…ext4 Metadata Check Snapshots.
+      [  OK  ] Started WPA supplicant.
+      [  OK  ] Started Avahi mDNS/DNS-SD Stack.
+      [  OK  ] Reached target Network.
+      [  OK  ] Reached target Network is Online.
+      [  OK  ] Reached target Sound Card.
+               Starting Modem Manager...
+               Starting CUPS Scheduler...
+      [  OK  ] Started Erlang Port Mapper Daemon.
+               Starting HTTP based time synchronization tool...
+               Starting Internet superserver...
+               Starting /etc/rc.local Compatibility...
+               Starting OpenBSD Secure Shell server...
+               Starting Permit User Sessions...
+      [  OK  ] Started LSB: Switch to ond…(unless shift key is pressed).
+      [  OK  ] Started LSB: rng-tools (Debian variant).
+      [  OK  ] Started /etc/rc.local Compatibility.
+      [  OK  ] Started User Login Management.
+      [  OK  ] Started Unattended Upgrades Shutdown.
+      [  OK  ] Started Internet superserver.
+      [  OK  ] Finished Permit User Sessions.
+               Starting Light Display Manager...
+               Starting Hold until boot process finishes up...
+      [  OK  ] Started HTTP based time synchronization tool.
+      [  OK  ] Started CUPS Scheduler.
+      [  OK  ] Started Make remote CUPS printers available locally.
+      [  OK  ] Finished Analog Devices power up/down sequence.
+      [FAILED] Failed to start VNC Server for X11.
+
+      Raspbian GNU/Linux 11 analog ttyPS0
+
+      analog login: root (automatic login)
+
+      Linux analog 6.1.70-284114-g2e8908932dfd #1060 SMP PREEMPT Tue Mar 18 16:11:24 EET 2025 armv7l
+
+      The programs included with the Debian GNU/Linux system are free software;
+      the exact distribution terms for each program are described in the
+      individual files in /usr/share/doc/*/copyright.
+
+      Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+      permitted by applicable law.
+      Last login: Tue Mar 17 13:27:58 GMT 2026 on ttyPS0
+      root@analog:~#
+
+Useful commands for the serial terminal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The below commands are to be run in the serial terminal connected to the FPGA.
+
+**Login Information**
+
+user: analog
+password: analog
+
+To find out the IP of the FPGA board, run the following command and take
+the IP specified at "eth0 inet":
+
+.. shell::
+
+   $ifconfig
+
+To see the IIO devices detected, run:
+
+.. shell::
+
+   $iio_info | grep iio:device
+   iio:device0: ad4630-24 (buffer capable)
+   iio:device1: xadc
+
+To power off the system, run the following command, and wait for the final
+message to be printed, then power off the FPGA board from the switch as
+well.
+
+.. shell::
+
+   $poweroff
+
+To reboot the system, run:
+
+.. shell::
+
+   $reboot
+
+.. important::
+
+   Even though this is Linux, this is a persistent file system. Care
+   should be taken not to corrupt the file system -- please shut down
+   things, don't just turn off the power switch. Depending on your monitor,
+   the standard power off could be hiding. You can do this from the
+   terminal as well with :code:`sudo shutdown -h now` or the
+   above-mentioned command for powering off.
+
+Using no-OS as software
+-------------------------------------------------------------------------------
+
+Necessary files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ADI ACE application provides a plug-and-play evaluation experience,
-enabling users to get up and running quickly with the product evaluation
-board. ACE can configure the embedded software on supported controller
-boards and provides a quick and easy way to get set up, configure the
-board and perform data capture and analysis and/or waveform generation.
-For ACE installation and documentation instructions see
-:adi:`ACE <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`.
-Make sure to follow the instructions to install the necessary evaluation board
-plug-in support.
+The following files are needed for the system to boot:
 
--  If the machine that ACE is installed on has internet access, you can
-   find/install/update plug-ins directly from the ACE application. For
-   environments without internet access, you can download these plug-ins from
-   the previous link to portable storage and install them into ACE.
+- HDL boot file: ``system_top.xsa``
+- no-OS project: :git-no-os:`projects/ad463x_fmcz`
 
-.. note::
+Instructions on how to build the boot files from source can be found below:
 
-   Product-specific documentation for the evaluation software can be found
-   within the ACE plug-in.
+- More no-OS build details at :external+no-OS:doc:`build_guide`.
 
-The controller board supported by ACE with this product evaluation
-board is the ZedBoard.
+- :external+hdl:ref:`ad4630_fmc`. More HDL build details at
+  :external+hdl:ref:`build_hdl`.
+
+Required software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado and Vitis (downloading Vitis from
+  `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
+  will include Vivado as well)
+- A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+
+Required hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+  Rev C or later
+- :adi:`EVAL-AD4630-24` / :adi:`EVAL-AD4630-16` / :adi:`EVAL-AD4030-24`
+  FMC evaluation board
+- 2x Micro-USB cables, one for UART and one for JTAG
+- SMA cables for input signal connections
+- Recommended: Band-pass filter centered on test signal frequency
+
+More details as to why you need these can be found at
+:ref:`eval-ad463x-prerequisites`.
+
+Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creating the setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/zedboard_ad4630_16_setup.jpg
+   :width: 900
+
+.. esd-warning::
+
+.. warning::
+
+   Before executing below steps, **VADJ must be set to 2.5 V**.
+   This can be done by changing VADJ jumper (JP18) to 2v5.
+
+In the following example, we will prepare the evaluation setup by
+connecting the AD463x evaluation board to the ZedBoard, configuring
+the board for JTAG boot, and applying a test input signal.
+
+Follow the steps in this order, to avoid damaging the components:
+
+#. Get the
+   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+#. Configure ZedBoard for JTAG boot:
+
+   .. image:: ../images/zed_jtag.jpg
+      :width: 800
+
+   The BOOT switches (JP7-JP11) and the MIO0 jumper (JP6) must be
+   set for JTAG boot mode. VADJ must be set to 2.5 V, as specified
+   in the HDL project's README at :external+hdl:ref:`ad4630_fmc`.
+   Optionally, to use USB peripheral devices with the ZedBoard,
+   install jumpers JP2 and JP3.
+
+#. Connect your signal generator to the analog inputs of the
+   evaluation board using the appropriate jumper wires or SMA
+   connectors.
+#. Plug the AD463x evaluation board into the FMC LPC Connector (J1)
+#. Plug the Power Supply into 12 V Power input connector (J20) (DO
+   NOT turn the device on).
+#. Connect the JTAG port of ZedBoard to a PC via MicroUSB
+#. Connect the UART port of ZedBoard (J14) to a PC via MicroUSB
+#. Turn on the power switch on the FPGA board
+
+Console output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:
+
+.. collapsible:: Complete boot log
+
+   ::
+
+      rx_clkgen: MMCM-PLL locked (160000000 Hz)
+      Spi engine v1.5.3 succesfully initialized.
+      Running IIOD server...
+      If successful, you may connect an IIO client application by:
+         1. Disconnecting the serial terminal you use to view this message.
+         2. Connecting the IIO client application using the serial backend configured as shown:
+            Baudrate: 115200
+            Data size: 8 bits
+            Parity: none
+            Stop bits: 1
+            Flow control: none
+
+IIO Oscilloscope
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+   Make sure to download/update to the latest version of
+   :git-iio-oscilloscope:`IIO Oscilloscope <releases>`.
+
+#. Once done with the installation or an update of the latest IIO
+   Oscilloscope, open the application. The user needs to supply a
+   URI which will be used in the context creation of the IIO
+   Oscilloscope.
+#. Press ``Refresh`` to display available IIO Devices and press
+   ``Connect``.
+#. After the board is connected and a channel is enabled, hit the
+   play button. Then the data capture window can be seen like in
+   the shown picture.
+
+.. image:: ../images/ad463x_osc.png
+   :width: 1000

@@ -1,4 +1,4 @@
-.. _eval-ad463x prerequisites:
+.. _eval-ad463x-prerequisites:
 
 Prerequisites
 ===============================================================================
@@ -37,5 +37,5 @@ Software prerequisites
 
 #. :adi:`ACE Software <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
    for plug-and-play evaluation, configuration and data analysis.
-#. An ACE Quickstart guide is available here:
+#. An ACE quick start guide is available here:
    :dokuwiki:`ACE Quickstart - Using ACE and Installing Plug-ins <resources/tools-software/ace/userguide/quickstart>`
