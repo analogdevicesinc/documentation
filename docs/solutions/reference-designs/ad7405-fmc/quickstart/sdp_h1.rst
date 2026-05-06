@@ -322,23 +322,25 @@ Connecting the Evaluation and SDP Boards to a PC
 Verifying the Board Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Allow the Found New Hardware Wizard to run after the EVAL-SDP-CH1Z
+#. Allow the Found New Hardware Wizard to run after the EVAL-SDP-CH1Z
    board is plugged into your PC. (If you are using Windows XP, you may
    need to search for the EVAL-SDP-CH1Z drivers. Choose to automatically
    search for the drivers for the EVAL-SDP-CH1Z board if prompted by the
    operating system.)
-2. Check that the board is connected to the PC correctly using the
+#. Check that the board is connected to the PC correctly using the
    Device Manager of the PC.
 
    a. Access the **Device Manager** as follows:
-     i. Right-click **My Computer** and then click **Manage**.
-     ii. A dialog box appears asking for permission to allow the program to
-       make changes to your computer. Click **Yes**.
-     iii. The **Computer Management** box appears. From the list of **System Tools**,
-       click **Device Manager**.
+
+      #. Right-click **My Computer** and then click **Manage**.
+      #. A dialog box appears asking for permission to allow the program to
+         make changes to your computer. Click **Yes**.
+      #. The **Computer Management** box appears. From the list of **System Tools**,
+         click **Device Manager**.
+
    b. Under **ADI Development Tools, Analog Devices SDP-H1** should appear
-     (see Figure 11), indicating that the EVAL-SDP-CH1Z driver software is
-     installed and that the board is connected to the PC correctly.
+      (see Figure 11), indicating that the EVAL-SDP-CH1Z driver software is
+      installed and that the board is connected to the PC correctly.
 
 .. figure:: ../images/device-manager.jpg
    :align: center

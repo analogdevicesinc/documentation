@@ -20,8 +20,9 @@ Hardware prerequisites
    within its specified input range.
 
 #. USB cables:
-  - USB cable provided with the SDP-H1 for connection to the host PC
-  - 12 V power adapter provided with the SDP-H1
+
+   - USB cable provided with the SDP-H1 for connection to the host PC
+   - 12 V power adapter provided with the SDP-H1
 
 #. A Windows-based host PC with an available USB port.
 

@@ -73,7 +73,8 @@ Table of contents
    #. :ref:`Prerequisites <ad7405 prerequisites>` - what you need to get
       started
    #. :ref:`Quick start guides <ad7405 quickstart>`:
-     - Using the :ref:`ad7405 quickstart sdp_h1` (SDP)
+
+      - Using the :ref:`ad7405 quickstart sdp_h1` (SDP)
 
 #. Design with the AD7405
 
