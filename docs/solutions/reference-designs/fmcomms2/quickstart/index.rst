@@ -16,6 +16,7 @@ distribution.
    On ZC706 <zc706>
    On ZC702 <zc702>
    On ZED <zed>
+   On KC705, VC707 (Obsolete) <microblaze>
 
 .. _fmcomms2/3/4 carriers:
 

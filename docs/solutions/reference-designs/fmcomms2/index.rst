@@ -69,46 +69,13 @@ Applications:
 .. toctree::
    :hidden:
 
-   common/gnuradio
-   common/introduction_to_ad9361_ad9364
-   common/ad9361_ad9363_ad9364_general_description
-   common/interface_timing_validation
-   common/math
-   common/iq_rotation
-   common/iq_correction
-   hardware/card_specification
-   hardware/certification
-   hardware/configuration_options
-   hardware/hardware
-   common/testing
-   hardware/tuning
+   common/index
+   hardware/index
    help_and_support
+   partial_reconfiguration
    prerequisites
    quickstart/index
-   quickstart/kcu105
-   quickstart/microblaze
-   quickstart/zc702
-   quickstart/zc706
-   quickstart/zed
-   quickstart/zcu102
-   software
-   software/ad9361_plugin
-   software/ad9361_adv_plugin
-   common/basic_iq_datafiles
-   common/datafiles
-   software/filters/baremetal-filter
-   software/filters/filters
-   software/filters/license
-   software/linux
-   software/linux/applications/fru_dump
-   software/linux/applications/shell_scripts
-   software/linux/zynq
-   software/linux/zynq_tips_tricks
-   software/matlab_bsp
-   software/matlab_bsp_modem
-   software/rfblkset_mdls_install
-   software/rfblkset_mdls_run_testbench
-   software/simrf
+   software/index
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -126,15 +93,13 @@ Table of contents
 -------------------------------------------------------------------------------
 
 #. :ref:`Introduction <fmcomms2 common introduction>`
-#. :ref:`Hardware <fmcomms2 hardware>`: This provides a brief description of
+#. Hardware: This provides a brief description of
    the board by itself, and is a good reference for those who want to
    understand a little more about the board. If you just want to use the board,
    you can skip this section, and come back to it when you want to incorporate
    the AD9361 into your product.
 
    #. :ref:`Hardware <fmcomms2 hardware>`
-      (including
-      :ref:`Hardware <fmcomms2 hardware>`)
 
       #. :ref:`Characteristics & Performance <fmcomms2 hardware card-specification>`
       #. :ref:`Configuration options <fmcomms2 hardware configuration-options>`
@@ -155,11 +120,10 @@ Table of contents
       #. :ref:`On KCU105 <fmcomms2 quickstart kcu105>`
       #. :ref:`On KC705, VC707 (Obsolete) <fmcomms2 quickstart microblaze>`
       #. :external+kuiper:doc:`Configure a pre-existing SD-Card <index>`
-      #. :external+kuiper:doc:`Update the old card you received with your hardware <index>`
 
    #. Linux Applications
 
-      #. :ref:`IIO Scope <iio-oscilloscope>`
+      #. :ref:`Using the IIO Oscilloscope <fmcomms2 software using-iio-osc>`
 
          #. :ref:`AD9361 Control in the IIO Scope Plugin <fmcomms2 software ad9361-plugin>`
          #. :ref:`Advanced AD9361 Control IIO Scope Plugin <fmcomms2 software ad9361-advanced-plugin>`
@@ -196,13 +160,13 @@ Table of contents
       #. MATLAB/Simulink Examples
 
          - :ref:`Stream data into/out of MATLAB <matlab transceiver-toolbox>`
-         - :dokuwiki:`Beacon Frame Receiver Example <resources/tools-software/linux-software/libiio/clients/beacon_frame_receiver_simulink>`
-         - :dokuwiki:`QPSK Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/qpsk_example>`
-         - :dokuwiki:`LTE Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/lte_example>`
-         - :dokuwiki:`ADS-B Airplane Tracking Example <resources/tools-software/linux-software/libiio/clients/adsb_example>`
+         - :ref:`Beacon Frame Receiver Example <fmcomms2 software beacon-frame-receiver>`
+         - :ref:`QPSK Transmit and Receive Example <fmcomms2 software qpsk-example>`
+         - :ref:`LTE Transmitter and Receiver Example <fmcomms2 software lte-example>`
+         - :ref:`ADS-B Airplane Tracking Example <fmcomms2 software adsb-example>`
 
       #. :ref:`GNU Radio <fmcomms2 common gnuradio>`
-      #. :dokuwiki:`FM Radio/Tuner <resources/tools-software/fm-radio>`
+      #. :ref:`FM Radio/Tuner <fmcomms2 software fm-radio>`
          (listen to FM signals on the HDMI monitor)
       #. :ref:`C example <libiio>`
 
@@ -213,7 +177,7 @@ Table of contents
 
    #. Complete Workflow
 
-      #. :dokuwiki:`ADS-B Airplane Tracking Tutorial <resources/eval/user-guides/picozed_sdr/tutorials/adsb>`
+      #. :ref:`ADS-B Airplane Tracking Tutorial <fmcomms2 software adsb-tutorial>`
 
    #. Design a custom AD9361 based platform
 
@@ -221,19 +185,21 @@ Table of contents
 
          - :ref:`AD-FMCOMMS2/3/4-EBZ on Microblaze <linux-kernel microblaze>`
          - :external+linux:doc:`Linux Device Driver <drivers/iio-transceiver/ad9361>`
-         - :ref:`Build the demo on ZC702, ZC706, ZED or Altera SoCKit from source <fmcomms2 software linux zynq>`
+         - :ref:`Build the demo on ZC702, ZC706, ZED from source <linux-kernel zynq>`
+         - :ref:`Linux with HDMI video output on Zynq <fmcomms2 software linux-zynq>`
          - :ref:`Build the demo on KC705 or VC707 for Microblaze from source <linux-kernel microblaze>`
          - :ref:`Build ZynqMP/MPSoC Linux kernel and devicetrees from source <linux-kernel zynqmp>`
          - :ref:`Customizing the devicetree on the target <fmcomms2 software zynq-tips-tricks>`
 
-      #. No-OS Driver
+      #. No-OS Software
 
-         - :dokuwiki:`No-OS Application Programming Interface <resources/eval/user-guides/ad-fmcomms2-ebz/software/baremetal>`
-         - :dokuwiki:`No-OS Setup <resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-setup>`
+         - :external+no-OS:doc:`No-OS AD9361 project <projects/rf-transceiver/ad9361>`
 
-      #. HDL Reference Design which you must use in your FPGA.
+      #. :external+hdl:ref:`HDL reference design <fmcomms2>` which you must use
+         in your FPGA.
 
          - :ref:`Digital Interface Timing Validation <fmcomms2 common interface-timing-validation>`
+         - :ref:`Partial Reconfiguration with FMCOMMS2 <fmcomms2 partial-reconfiguration>`
 
 #. Additional Documentation about SDR Signal Chains
 
