@@ -1,4 +1,4 @@
-.. _ad7405 quickstart sdp_h1:
+.. _ad7405 quickstart sdp-h1:
 
 Evaluating the AD7405 with the SDP-H1
 ===========================================================================================
@@ -61,7 +61,7 @@ To begin using the evaluation board, take the following steps:
    included CD. Ensure that the EVAL-SDP-CH1Z board is disconnected from the
    USB port of the PC while installing the software. (The PC may need to be
    restarted after the installation.)
--  Ensure that the various link options are configured as outlined in Table 2.
+-  Ensure that the various link options are configured as outlined in Table 1.
 -  Connect the EVAL-SDP-CH1Z board to the evaluation board as shown in Figure 1.
 -  Connect the EVAL-SDP-CH1Z board to the PC via the USB cable. For
    Windows® XP, you may need to search for the EVAL-SDP-CH1Z drivers.
@@ -125,7 +125,7 @@ Hardware Link Options
 On-Board Connectors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Table 2 provides information about the external on-board connectors on the 
+Table 2 provides information about the external on-board connectors on the
 EVAL-AD7405FMCZ evaluation board.
 
 **Table 2. On-Board Connectors**
@@ -183,7 +183,7 @@ Software Installation Procedures
 
 The EVAL-AD7405FMCZ evaluation kit includes a CD containing evaluation
 software to be installed on your PC before you begin using the
-evaluation board. 
+evaluation board.
 
 There are two parts to the installation:
 
@@ -208,7 +208,7 @@ To install the EVAL-AD7405FMCZ evaluation software, take the following steps:
 -  A dialog box appears asking for permission to allow the program to make
    changes to your computer. Click Yes to begin the installation process
    (see Figure 3).
- 
+
 .. figure:: ../images/evaluation-software-installation-user-account-control.jpg
    :align: center
    :width: 500
@@ -223,7 +223,7 @@ To install the EVAL-AD7405FMCZ evaluation software, take the following steps:
 
    Evaluation Software Installation—Destination Directory
 
--  A license agreement appears. Read the agreement and then select **I accept the 
+-  A license agreement appears. Read the agreement and then select **I accept the
    License Agreement** and click **Next**.
 -  A summary of the installation is displayed. Click Next to continue
    (see Figure 5).
@@ -345,7 +345,7 @@ Verifying the Board Connection
 .. figure:: ../images/device-manager.jpg
    :align: center
    :width: 500
-   
+
    Device Manager: Checking That the Board Is Connected to the PC Correctly
 
 Disconnecting the EVAL-AD7405FMCZ Board
@@ -362,8 +362,8 @@ Starting the Software
 After the EVAL-AD7405FMCZ and EVAL-SDP-CH1Z boards are correctly
 connected to your PC, the evaluation software can be started.
 
-1. From the Start menu, select **Programs > Analog Devices > AD7405**. 
-   The main window of the software then opens (see Figure 13). 
+1. From the Start menu, select **Programs > Analog Devices > AD7405**.
+   The main window of the software then opens (see Figure 13).
 2. If the EVAL-AD7405FMCZ is not connected to the USB port via the
    EVAL-SDP-CH1Z when the software is launched, a connectivity error
    displays (see Figure 12). Connect the evaluation board to the USB port
@@ -472,7 +472,7 @@ cursor, zooming, and panning (see Figure 15) within the graphs displayed.
 .. figure:: ../images/graph-tools.jpg
    :align: center
    :width: 500
-   
+
    Graph Tools
 
 1. Used for controlling the cursor, if present.
@@ -517,7 +517,7 @@ To perform a histogram test of ac input,
 
 1. Apply a quality signal source to the VIN+ input on the board.
 
-2. Select the **Histogram** tab in the evaluation software main window. 
+2. Select the **Histogram** tab in the evaluation software main window.
 
 3. Click the **Single Capture** or **Continuous Capture** button (labeled 1 in
    Figure 17).

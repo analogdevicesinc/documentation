@@ -14,16 +14,16 @@ Overview
 
 The :adi:`EVAL-AD7405FMCZ` is a full featured evaluation board designed to allow the
 user to easily evaluate all features of the AD7405 isolated analog-to-digital
-converter (ADC). The evaluation board can be controlled by the 
-:adi:`EVAL-SDP-CH1Z` via FMCZ connector (J9). The SDP-H1 board 
+converter (ADC). The evaluation board can be controlled by the
+:adi:`EVAL-SDP-CH1Z` via FMCZ connector (J9). The SDP-H1 board
 (:adi:`EVAL-SDP-CH1Z`) allows the evaluation board to be controlled through
-a USB port of a PC using the evaluation board software available for 
+a USB port of a PC using the evaluation board software available for
 download from the product page or from the included installer CD.
 
 Features:
 
 - 5 MHz to 20 MHz external clock input rate
-- 6 bits, no missing codes
+- 16 bits, no missing codes
 - Signal-to-noise ratio (SNR): 88 dB typical
 - Effective number of bits (ENOB): 14.2 bits typical
 - Typical offset drift vs. temperature: 1.6 µV/°C
@@ -74,7 +74,7 @@ Table of contents
       started
    #. :ref:`Quick start guides <ad7405 quickstart>`:
 
-      - Using the :ref:`ad7405 quickstart sdp_h1` (SDP)
+      - Using the :ref:`ad7405 quickstart sdp-h1` (SDP)
 
 #. Design with the AD7405
 

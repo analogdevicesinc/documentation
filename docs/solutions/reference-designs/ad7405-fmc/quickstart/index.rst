@@ -13,4 +13,4 @@ Use these guides when evaluating with the SDP-H1 system demonstration platform.
 
 .. toctree::
 
-   With SDP-H1 <sdp_h1>
+   With SDP-H1 <sdp-h1>

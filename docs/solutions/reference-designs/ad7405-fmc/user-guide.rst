@@ -18,7 +18,7 @@ EVAL-SDP-CH1Z provides the necessary power and control signals to
 the evaluation board, allowing users to evaluate the performance of
 the AD7405 isolated ADC.
 
-Refer to the :ref:`ad7405 quickstart sdp_h1` quick start guide for the exact jumper
+Refer to the :ref:`ad7405 quickstart sdp-h1` quick start guide for the exact jumper
 and switch settings corresponding to the selected boot mode.
 
 Power supply
@@ -67,8 +67,8 @@ data acquisition. When used with the SDP‑H1 platform, the evaluation
 board allows configuration, data capture, and analysis of the AD7405
 isolated ADC through the associated PC-based evaluation software. The
 EVAL‑SDP‑CH1Z software is available for download from the product page or
-from the installer CD included with the evaluation kit. 
+from the installer CD included with the evaluation kit.
 
 For a step-by-step walkthrough of connecting and using these tools with the
 :adi:`EVAL-AD7405` on the SDP-H1, see the
-:ref:`ad7405 quickstart sdp_h1` guide.
+:ref:`ad7405 quickstart sdp-h1` guide.
