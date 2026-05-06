@@ -9,7 +9,7 @@ env:
 
 jobs:
   build-doc:
-    runs-on: ${{ fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
     permissions:
       contents: read
 
@@ -44,7 +44,7 @@ jobs:
         path: docs/_build/html
 
   check-doc:
-    runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
     if: ${{ github.event_name == 'pull_request' }}
     permissions:
       contents: read
