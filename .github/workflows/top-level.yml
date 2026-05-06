@@ -9,25 +9,22 @@ env:
 
 jobs:
   build-doc:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
     permissions:
       contents: read
 
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.x"
-
     - uses: actions/checkout@v4
     - name: Install pip packages
-      working-directory: docs
       run: |
-        pip install pip --upgrade
-        pip install -r requirements.txt --upgrade
+        python3 -m venv venv
+        source ./venv/bin/activate
+        python3 -m ensurepip
+        pip3 install -r docs/requirements.txt --upgrade
 
     - name: Build doc
       run: |
+        source ./venv/bin/activate
         source .github/scripts/sphinx-build.sh
 
         export GIT_LFS_TO_LINKS="true"
@@ -47,7 +44,7 @@ jobs:
         path: docs/_build/html
 
   check-doc:
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER || 'ubuntu-latest' }}
     if: ${{ github.event_name == 'pull_request' }}
     permissions:
       contents: read
@@ -56,7 +53,10 @@ jobs:
     - uses: analogdevicesinc/doctools/checkout@action
     - name: Check writing
       run: |
-        pip install docutils vale
+        python3 -m venv venv
+        source ./venv/bin/activate
+        python3 -m ensurepip
+        pip3 install docutils vale
 
         check_vale() {
           files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- 'docs/*.rst' 'docs/**/*.rst')
@@ -111,7 +111,7 @@ jobs:
         python3 .github/scripts/dangling.py || true
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: [build-doc]
     concurrency:
       group: gh-pages
