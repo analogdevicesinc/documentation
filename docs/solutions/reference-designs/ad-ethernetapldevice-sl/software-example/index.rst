@@ -19,9 +19,8 @@ Code Fusion Studio Installation
 
 Before working with any examples, you'll need to install Code Fusion Studio:
 
-* **Download Instructions**: `Code Fusion Studio Download
-  <https://www.analog.com/en/resources/evaluation-hardware-and-software/
-  embedded-development-software/codefusion-studio.html#software-overview>`_
+* **Download Instructions**: :adi:`Code Fusion Studio Download
+  <en/resources/evaluation-hardware-and-software/embedded-development-software/codefusion-studio.html>`
 
 * **User Guide**: `CFS Documentation
   <https://developer.analog.com/docs/codefusion-studio/2.0.0/user-guide/>`_
@@ -33,8 +32,7 @@ While the examples don't require TESA access, the board is fully compatible
 with additional security mechanisms. For enhanced security features:
 
 * **Security Resources**: `CFS Security Guide
-  <https://developer.analog.com/docs/codefusion-studio/latest/user-guide/
-  resources/security-resources/>`_
+  <https://developer.analog.com/docs/codefusion-studio/latest/user-guide/resources/security-resources/>`_
 
 MSDK Examples
 -------------
@@ -49,7 +47,7 @@ Loading MSDK Examples
 1. Open Visual Studio Code.
 2. Click **Browse MSDK examples**.
 
-    .. figure:: browse-MSDK.png
+    .. figure:: browse-msdk.png
 
 3. Navigate to the **MAX32690** folder.
 4. Select your desired example folder.
@@ -75,17 +73,16 @@ Loading MSDK Examples
 
 ----
 
-No-OS Examples
+no-OS Examples
 --------------
 
-The No-OS examples are specifically designed for the AD-EthernetAPLDevice-SL
+The no-OS examples are specifically designed for the AD-EthernetAPLDevice-SL
 board and utilize the no-OS HAL for direct hardware access.
 
-Loading No-OS Examples
+Loading no-OS Examples
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. Follow the build guide at:
-   https://analogdevicesinc.github.io/no-OS/build_guide.html
+1. Follow the :external+no-OS:doc:`build guide <build_guide>`.
 
 2. Switch to the appropriate branch using Git Bash:
 
@@ -93,7 +90,7 @@ Loading No-OS Examples
 
       git switch release/hockey_puck
 
-3. Refer to the repository's README file for specific Code Fusion Studio
+3. Refer to the repository's readme file for specific Code Fusion Studio
    loading instructions
 
 .. note::

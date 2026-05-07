@@ -1,4 +1,4 @@
-.. _ethernet-apl instrinsic-safety:
+.. _ethernet-apl intrinsic-safety:
 
 Intrinsic Safety Design
 =======================
@@ -16,9 +16,9 @@ by IEC TS 60079-47.
    AD-EthernetAPLDevice-SL Intrinsic Safety Certificate
 
 .. admonition:: Tip
-   
-   The full copy of the certificate can be found here: 
-   `AD-EthernetAPLDevice-SL Intrinsic Safety Certificate <ad-ethernetapldevice-sl-intrinsic-safety-certificate>`_
+
+   The full copy of the certificate can be found here:
+   :download:`AD-EthernetAPLDevice-SL Intrinsic Safety Certificate <ad-ethernetapldevice-sl-intrisic-safety-certificate.pdf>`
 
 Key Parameters
 ~~~~~~~~~~~~~~
