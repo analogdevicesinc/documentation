@@ -5,7 +5,7 @@ EVAL-CN0511-RPIZ
 
 DC to 5.5 GHz Signal Generator with +/-0.5 dB Calibrated Output Power
 
-.. image:: images/cn0511_angle_view.png
+.. image:: cn0511_angle_view.png
    :align: center
    :width: 400
 
@@ -53,7 +53,7 @@ Applications
    To get started with setup, configuration, and example use cases, 
    please proceed to the Quick Start Guide and follow the provided demo pages.
 
-   - :doc:`Quick Start Guide <cn0511>`
+   - :ref:`Quick Start Guide <cn0511>`
    - :ref:`Software Requirements <cn0511-software-req>`
 
 Recommendations
@@ -76,7 +76,8 @@ Help and Support
 Please go to :ez:`Help and Support <help-and-support>` page.
 
 .. toctree::
-   :hidden:
+   :titlesonly:
+   :maxdepth: 2
+   :glob:
 
-   cn0511
-   software_update
+   */index

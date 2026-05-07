@@ -26,7 +26,7 @@ automatic test equipment. Its small size makes it particularly attractive when
 multiple channels are required. This Raspberry Pi compatible solution makes high
 speed signal generation more accessible and economical.
 
-.. figure:: images/cn0511_angle_view.png
+.. figure:: cn0511_angle_view.png
    :align: center
    :width: 400
 
@@ -38,7 +38,7 @@ Hardware Configuration
 Block Assignments
 ~~~~~~~~~~~~~~~~~
 
-.. figure:: images/block_terminal_assignment_v2.png
+.. figure:: block_terminal_assignment_v2.png
    :align: center
    :width: 400
 
@@ -60,7 +60,7 @@ jumper (JP1) which configures different settings for the clock source, as shown
 below. The default position of JP1 is set at A-COM, which is the onboard
 clocking option.
 
-.. figure:: images/clock_source.png
+.. figure:: clock_source.png
    :align: center
    :width: 800
 
@@ -86,7 +86,7 @@ RF Output
 A spectrum analyzer can be can be used to observe the generated RF output from
 J1 on the EVAL-CN0511-RPIZ.
 
-.. figure:: images/cn0511_sma_input_output_v2.jpg
+.. figure:: cn0511_sma_input_output_v2.jpg
    :align: center
    :width: 600
 
@@ -100,7 +100,7 @@ user application and configuration. The EVAL-CN0511-RPIZ has a high cooling
 requirement; therefore, the fan should always be on to regulate the temperature
 below 60 degrees Celsius.
 
-.. figure:: images/heat_sink_v2.jpg
+.. figure:: heat_sink_v2.jpg
    :align: center
    :width: 600
 
@@ -114,7 +114,7 @@ provided by the USB cable. There is an optional +5V external supply coming from
 the two-pole screw terminal (P1). Only one input power supply is required and the
 Raspberry Pi USB cable is the recommended method.
 
-.. figure:: images/cn0511_power_supply_options.png
+.. figure:: cn0511_power_supply_options.png
    :width: 600
 
    CN0511 Input Power Supply Connection Options
@@ -138,16 +138,16 @@ Equipment Required
 
 **Software**
 
--  Analog Devices Kuiper Linux image
+-  :dokuwiki:`Analog Devices Kuiper Linux image </resources/tools-software/linux-software/kuiper-linux>`
 
 **Documentation**
 
--  :adi:`cn0511 Circuit Note <cn0511>`
+-  :adi:`CN0511 Circuit Note <cn0511>`
 
 System Block Diagram
 ~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: images/eval-cn0511_test_block_diagram.jpg
+.. figure:: eval-cn0511_test_block_diagram.jpg
    :align: center
    :width: 500
 
@@ -160,7 +160,7 @@ To set up the complete system, follow these steps:
 
 -  Connect the EVAL-CN0511-RPIZ to the Raspberry Pi through the 40-pin connector.
 
-   .. figure:: images/cn0511_rpi_v1.jpg
+   .. figure:: cn0511_rpi_v1.jpg
       :width: 600
 
       Hardware Connection of EVAL-CN0511-RPIZ and Raspberry Pi 3 Model B+
@@ -175,7 +175,7 @@ To set up the complete system, follow these steps:
    section for detailed instructions. Make sure to reboot the RPi after saving
    the config.txt file.
 
-   .. figure:: images/sample_setup_v2.jpg
+   .. figure:: sample_setup_v2.jpg
       :align: center
       :width: 600
 
@@ -206,7 +206,7 @@ and how to configure the system are provided at
 :dokuwiki:`Kuiper Images </resources/tools-software/linux-software/kuiper-linux>`. 
 Write the image and follow the system configuration procedure.
 
-.. image:: images/command_prompt.png
+.. image:: command_prompt.png
    :align: center
    :width: 400
 
@@ -260,7 +260,7 @@ CN0511 IIO Oscilloscope Plug-in
 The CN0511 plug-in tab provides a simple user interface to control the
 EVAL-CN0511-RPIZ as a signal generator.
 
-.. figure:: images/iio_scope_v1.jpg
+.. figure:: iio_scope_v1.jpg
    :width: 600
 
    Graphical User Interface (GUI) window of ADI IIO Oscilloscope with CN0511 Plug-in Single Tone Mode
@@ -321,7 +321,7 @@ frequency with calibrated output power in dBm.
 
    .../pyadi-iio/examples $ python3 cn0511_example.py
 
-.. image:: images/cn0511_example_output.jpg
+.. image:: cn0511_example_output.jpg
    :align: center
    :width: 600
 
