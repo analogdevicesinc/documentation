@@ -68,9 +68,9 @@ system together and get it up and running in no time.
 
 This is what you’ll find in the development kit box:
 
-- 1x AD-EthernetAPLDevice-SL intrinsic safety certify kit (Power and Comms +
+- 1x AD-EthernetAPLDevice-SL intrinsic safety certified kit (Power and Comms +
   Digital IS boards)
-- 1x Digital NON-IS board. This board is not IS certify and enables access to
+- 1x Digital NON-IS board. This board is not IS certified and enables access to
   the RISC-V JTAG for debugging purposes (Digital NON-IS board)
 - 1x MAX32650PICO programmer (ARM) + cable
 - 1x OLIMEX programmer (RISC-V)
@@ -91,11 +91,20 @@ connectivity via the 10BASE-T1L interface for system configuration and data
 transfer.
 
 Additionally, a proprietary PROFINET stack software application is available to
-enable easy evaluation and system prototyping (https://myanalog.com
-registration required).
+enable easy evaluation and system prototyping 
+(`MyAnalog account <https://myanalog.com>`_ required).
 
-The board is fully supported in Code Fusion Studio {{ soon to be available }}
+.. admonition:: Software Request
+   :class: tip
 
+   To request for the software package, please accomplish this form:
+   https://form.analog.com/form_pages/softwaremodules/SRF.aspx
+   
+   Under Target Technology, please select ``Industrial Sensing``
+   and check the box for ``Ethernet-APL Device Reference Design/Profinet – FreeRTOS Demo (TMG)``.
+
+   .. figure:: software-request.png
+      
 Hardware Components and Connections
 -----------------------------------
 
@@ -116,7 +125,6 @@ Digital NON-IS Board Connections
 
 .. csv-table:: Pin Description
    :file: pin-descriptions.csv
-
 
 Hardware Setup
 --------------
@@ -190,7 +198,7 @@ Complementary Documentation
 
   .. toctree::
      :titlesonly:
-     :maxdepth: 1
+     :maxdepth: 2
      :glob:
 
      */index
