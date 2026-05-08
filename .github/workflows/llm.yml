@@ -101,9 +101,11 @@ jobs:
           And use adoc-search to search all repository documentations.
           To build just one part of the doc, you can use `adoc serve --sparse`, for example:
           ```
-          adoc serve --sparse docs/learning docs/solutions/reference-designs/ad4052-ardz
+          adoc serve --once --sparse docs/learning docs/solutions/reference-designs/ad4052-ardz
           ```
           It is more efficient than calling sphinx-build and building all pages.
+          Always use `--once` to build once and exit, without `--once` will
+          spawn a live server.
 
           This documentation is currently being imported from dokuwiki.
           You can fetch dokuwiki pages by suffixing `?do=export_raw`, for example
