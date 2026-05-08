@@ -320,7 +320,7 @@ Build the one that fits your FPGA carrier and FMC card
    - - zynq-zc706-adv7511-fmcdaq3
      - :xilinx:`ZC706`
      - | :adi:`ADV7511` (on-board) and the
-       | :dokuwiki:`AD-FMCDAQ3-EBZ <resources/eval/user-guides/ad-fmcdaq3-ebz>` board
+       | :ref:`AD-FMCDAQ3-EBZ <ad_fmcdaq3_ebz>` board
    - - zynq-zc706-adv7511-fmcjesdadc1
      - :xilinx:`ZC706`
      - | :adi:`ADV7511` (on-board) and the
