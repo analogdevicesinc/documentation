@@ -82,28 +82,28 @@ To better understand the :adi:`AD9680` / :adi:`AD9152`, we recommend using the
 Table of contents
 -----------------
 
-#. :doc:`Introduction </solutions/reference-designs/ad-fmcdaq3-ebz/introduction>`
+#. :doc:`Introduction <introduction>`
 
-#. :doc:`Quick Start Guides </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/index>`:
+#. :doc:`Quick Start Guides <quickstart/index>`:
 
-   #. :doc:`On ZC706 </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/zc706>`
-   #. :doc:`On ZCU102 </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/zcu102>`
-   #. :doc:`On KCU105 </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/kcu105>`
-   #. :doc:`On VCU118 </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/vcu118>`
-   #. :doc:`On A10GX </solutions/reference-designs/ad-fmcdaq3-ebz/quickstart/a10gx>`
+   #. :doc:`On ZC706 <quickstart/zc706>`
+   #. :doc:`On ZCU102 <quickstart/zcu102>`
+   #. :doc:`On KCU105 <quickstart/kcu105>`
+   #. :doc:`On VCU118 <quickstart/vcu118>`
+   #. :doc:`On A10GX <quickstart/a10gx>`
 
-#. :doc:`Hardware </solutions/reference-designs/ad-fmcdaq3-ebz/hardware>`
+#. :doc:`Hardware <hardware>`
 
-   #. :doc:`Functional Overview & Specifications </solutions/reference-designs/ad-fmcdaq3-ebz/hardware/functional_overview>`
+   #. :doc:`Functional Overview & Specifications <hardware/functional_overview>`
 
 #. :external+hdl:doc:`projects/daq3/index`
 
-#. :doc:`Software </solutions/reference-designs/ad-fmcdaq3-ebz/software>`
+#. :doc:`Software <software>`
 
-   #. :doc:`no-OS drivers </solutions/reference-designs/ad-fmcdaq3-ebz/software/baremetal>`
-   #. :doc:`Linux </solutions/reference-designs/ad-fmcdaq3-ebz/software/linux>`
+   #. :doc:`no-OS drivers <software/baremetal>`
+   #. :doc:`Linux <software/linux>`
 
-      #. :doc:`ZC706, and related platforms </solutions/reference-designs/ad-fmcdaq3-ebz/software/linux>`
+      #. :doc:`ZC706, and related platforms <software/linux>`
       #. :ref:`linux-kernel microblaze`
       #. Applications
 
