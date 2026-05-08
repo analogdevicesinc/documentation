@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/vcu118
+
 .. _ad_fmcdaq3_ebz quickstart vcu118:
 
 VCU118 Quickstart
@@ -39,7 +41,7 @@ Required software
 ~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx Vivado and Vitis (downloading Vitis from `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
-  will include Vivado as well)- Xilinx Software Commandline Tool(XCST)
+  will include Vivado as well) - AMD Xilinx Software Command-Line Tool (XSCT)
 - Bitfile and Linux ELF image
 - A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
 
@@ -64,7 +66,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^
 
-  .. image:: ./../images/vcu118_daq3.jpg
+.. image:: ./../images/vcu118_daq3.jpg
    :width: 900
 
 .. caution::
@@ -84,8 +86,8 @@ Follow the steps in this order, to avoid damaging the components:
 #. Set the jumpers of SW16 - which controls the JTAG Mode: 1: **off**, 2:
    **on**, 3: **off**, 4: **on** as seen in the below picture:
 
-    .. image:: ./../images/sw16_vcu118.jpg
-     :width: 900
+   .. image:: ./../images/sw16_vcu118.jpg
+      :width: 900
 
 #. Plug the Power Supply into 12V Power input connector (J15)
 #. Turn it on
@@ -102,8 +104,8 @@ bit file and the Linux image.
 1. Loading the design using XSCT command line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Windows, you can run the XSCT terminal from start menu → Xilinx Design Tools
-→ Xilinx Software Command Line Tool.
+In Windows, you can run the XSCT terminal from start menu → AMD Xilinx Design Tools
+→ AMD Xilinx Software Command Line Tool.
 
 Boot messages
 ^^^^^^^^^^^^^
@@ -186,7 +188,7 @@ Boot messages
 2. Loading the design using tcl script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado →
+Run Vivado TCL Shell from Windows start menu → AMD Xilinx Design Suite → Vivado →
 Vivado TCL Shell. (In Linux, source the settings.sh file first)
 
 Boot messages

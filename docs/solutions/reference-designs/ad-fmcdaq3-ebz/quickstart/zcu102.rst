@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/zcu102
+
 .. _ad_fmcdaq3_ebz quickstart zcu102:
 
 ZCU102 Quickstart
@@ -1001,7 +1003,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ./../images/ad-fmcdaq3-ebz_zcu102_no-OS.jpg
+.. image:: ./../images/ad-fmcdaq3-ebz_zcu102_no-os.jpg
    :width: 900
 
 .. caution::
@@ -1015,7 +1017,7 @@ Follow the steps in this order, to avoid damaging the components:
 #. Configure :xilinx:`ZCU102` for JTAG boot mode (mode SW6[4:1] switch in the
    position **ON,ON,ON,ON**)
 
-.. image:: ./../images/sw6_zcu102_no-OS.png
+.. image:: ./../images/sw6_zcu102_no-os.png
    :width: 900
 
 #. Connect USB UART J83 (Micro USB) to your host PC

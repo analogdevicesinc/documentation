@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/help_and_support
+
 .. _ad_fmcdaq3_ebz help and support:
 
 AD-FMCDAQ3-EBZ Help and Support

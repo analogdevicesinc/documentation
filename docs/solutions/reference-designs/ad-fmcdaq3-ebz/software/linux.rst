@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/software/linux
+
 .. _ad_fmcdaq3_ebz linux support:
 
 AD-FMCDAQ3-EBZ Linux support
@@ -11,7 +13,7 @@ which FPGA platform you are using the steps to perform to setup the system
 slightly differ:
 
 -  :ref:`linux-kernel microblaze`
--  :ref:`AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ on Zynq ZC706 <ad-fmcdaq2-ebz zynq>`
+-  :ref:`AD-FMCDAQ3-EBZ on Zynq ZC706 <ad_fmcdaq3_ebz quickstart zc706>`
 
 Descriptions of the individual Linux device drivers for the different parts on
 the AD-FMCDAQ3-EBZ can be found at:

@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz
+
 .. _ad_fmcdaq3_ebz:
 
 AD-FMCDAQ3-EBZ
@@ -98,7 +100,7 @@ Table of contents
 
 #. :doc:`Software </solutions/reference-designs/ad-fmcdaq3-ebz/software>`
 
-   #. :doc:`No-OS drivers </solutions/reference-designs/ad-fmcdaq3-ebz/software/baremetal>`
+   #. :doc:`no-OS drivers </solutions/reference-designs/ad-fmcdaq3-ebz/software/baremetal>`
    #. :doc:`Linux </solutions/reference-designs/ad-fmcdaq3-ebz/software/linux>`
 
       #. :doc:`ZC706, and related platforms </solutions/reference-designs/ad-fmcdaq3-ebz/software/linux>`

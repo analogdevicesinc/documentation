@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/zynq
+
 .. _ad_fmcdaq3_ebz quickstart zc706:
 
 ZC706 Quickstart
@@ -840,7 +842,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^
 
-.. image:: ./../images/ad-fmcdaq3-ebz_zc706_no-OS.jpg
+.. image:: ./../images/ad-fmcdaq3-ebz_zc706_no-os.jpg
    :width: 900
 
 .. caution::

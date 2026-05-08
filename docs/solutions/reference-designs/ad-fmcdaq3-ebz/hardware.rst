@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware
+
 .. _ad_fmcdaq3_ebz hardware:
 
 AD-FMCDAQ3-EBZ Hardware

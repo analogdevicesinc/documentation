@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/software/baremetal
+
 .. _ad_fmcdaq3_ebz baremetal:
 
 AD-FMCDAQ3-EBZ Baremetal (no-OS) Guide
@@ -14,11 +16,11 @@ Altera Platform(s)
 
 - `Arria 10 GX FPGA Development Kit <https://www.intel.com/content/www/us/en/products/details/fpga/development-kits/arria/10-gx.html>`__
 
-Xilinx Platform(s)
-------------------
+AMD Xilinx Platform(s)
+----------------------
 
--  `ZC706 <https://www.xilinx.com/ZC706>`_
--  `KCU105 <https://www.xilinx.com/KCU105>`_
+-  :xilinx:`ZC706`
+-  :xilinx:`KCU105`
 
 Downloads
 ~~~~~~~~~
@@ -107,7 +109,7 @@ defaults using SOPCINFO-FILE or HDF-FILE variables.
 Running no-OS
 ~~~~~~~~~~~~~
 
-If your carrier is a Xilinx board, you will need to setup a UART terminal
+If your carrier is an AMD Xilinx board, you will need to setup a UART terminal
 (115200). Altera carriers uses the nios2-terminal. Make the JTAG/UART
 connections as per your carrier instructions and run the software on hardware.
 

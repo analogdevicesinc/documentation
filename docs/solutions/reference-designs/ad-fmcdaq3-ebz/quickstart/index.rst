@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart
+
 .. _ad_fmcdaq3_ebz quickstart:
 
 Quickstart

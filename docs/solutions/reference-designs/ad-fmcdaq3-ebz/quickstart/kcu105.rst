@@ -1,3 +1,5 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq3-ebz/quickstart/kcu105
+
 .. _ad_fmcdaq3_ebz quickstart kcu105:
 
 KCU105 Quickstart
@@ -39,7 +41,7 @@ Required software
 ~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx Vivado and Vitis (downloading Vitis from `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
-  will include Vivado as well)- Xilinx Software Commandline Tool(XCST)
+  will include Vivado as well) - AMD Xilinx Software Command-Line Tool (XSCT)
 - A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
 
 Required hardware
@@ -105,8 +107,8 @@ If **no target** is shown, then check the following:
 1. Loading the design using XSCT command line
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In Windows, run the XSCT terminal as **Administrator** from start menu → Xilinx
-Design Tools → Xilinx Software Command Line Tool → Run as Administrator.
+In Windows, run the XSCT terminal as **Administrator** from start menu → AMD Xilinx
+Design Tools → AMD Xilinx Software Command Line Tool → Run as Administrator.
 
 Boot messages
 ^^^^^^^^^^^^^
@@ -173,7 +175,7 @@ Boot messages
 2. Loading the design using tcl script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Run Vivado TCL Shell from Windows start menu → Xilinx Design Suite → Vivado →
+Run Vivado TCL Shell from Windows start menu → AMD Xilinx Design Suite → Vivado →
 Vivado TCL Shell. (In Linux, source the settings.sh file first)
 
 Boot messages
