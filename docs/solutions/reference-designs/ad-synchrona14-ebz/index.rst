@@ -287,9 +287,9 @@ Software
 Drivers
 ~~~~~~~
 
-:dokuwiki:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <resources/tools-software/linux-drivers/iio-pll/hmc7044>`
+:external+linux:ref:`hmc7044`
 
-:dokuwiki:`AD9545 Quad Input, 10-Output, Dual DPLL/IEEE 1588, 1 pps Synchronizer and Jitter Cleaner <resources/tools-software/linux-drivers/clk/adi/clk-ad9545.c>`
+:external+linux:ref:`ad9545`
 
 GUI
 ---

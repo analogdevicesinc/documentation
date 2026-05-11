@@ -83,24 +83,24 @@ If you have any questions, feel free to :ref:`ask <help-and-support>`.
             #. :ref:`ADRV9009/ADRV9008 Device Driver Customization <iio-transceiver adrv9009 customization>`
             #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
 
-         #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
-         #. :dokuwiki:`AD9528 Low Jitter Clock Generator Linux Driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
-         #. :dokuwiki:`AD7291 IIO ADC Linux Driver <resources/tools-software/linux-drivers/iio-adc/ad7291>`
-         #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
-         #. :dokuwiki:`JESD204B Transmit Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+         #. :external+linux:ref:`jesd204-fsm-framework`
+         #. :external+linux:ref:`ad9528`
+         #. :external+linux:ref:`ad7291`
+         #. :external+linux:ref:`axi-dmac`
+         #. :external+linux:ref:`axi_jesd204_tx`
 
             #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
 
-         #. :dokuwiki:`JESD204B Receive Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+         #. :external+linux:ref:`axi_jesd204_rx`
 
             #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
 
-         #. :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+         #. :external+linux:ref:`axi_adxcvr`
 
             #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
 
-         #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-         #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+         #. :external+linux:ref:`axi-adc-hdl`
+         #. :external+linux:ref:`axi-dac-dds-hdl`
 
       #. :dokuwiki:`Changing the VCXO frequency and updating the default RF Transceiver Profile <resources/eval/user-guides/rf-trx-vcxo-and-profiles>`
       #. :dokuwiki:`ADRV9009/ADRV9008 No-OS System Level Design Setup <resources/eval/user-guides/adrv9009/no-os-setup>`

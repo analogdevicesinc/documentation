@@ -104,10 +104,10 @@ feel free to ask.
      #. :ref:`pyadi-iio`
      #. :ref:`libiio cli`
 - Embedded Resources
-     #. :dokuwiki:`ADRV9001/2 Linux Device Driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
-     #. :dokuwiki:`ADRV9001/2 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
-     #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
-     #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+     #. :external+linux:ref:`adrv9002`
+     #. :external+linux:ref:`adrv9002-customization`
+     #. :external+linux:ref:`axi-dmac`
+     #. :external+linux:ref:`axi-adc-hdl`
      #. :ref:`matlab transceiver-toolbox`
      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
      #. :ref:`pyadi-iio`

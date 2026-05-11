@@ -123,7 +123,7 @@ the :adi:`EVAL-AD5593R-PMDZ`:
 
 #. **AD5593R Linux Driver**
 
-   - The :dokuwiki:`AD5593R Linux driver <resources/tools-software/linux-drivers/iio-dac/ad5593r>`
+   - The :external+linux:ref:`ad5593r`
      is used in applications running the Linux operating system,
      typically on larger processors and SoC devices.
 

@@ -109,12 +109,12 @@ Table of contents
 
            - :external+linux:ref:`AXI ADC HDL Linux driver <axi-adc-hdl>`
            - :external+linux:ref:`AXI-DMAC DMA Controller Linux driver <axi-dmac>`
-           - :external+linux:ref:`AXI_ADXCVR High-speed transceivers Linux driver <axi_adxcvr>`
-           - :external+linux:ref:`JESD204B Receive Linux driver <axi_jesd204_rx>`
+           - :external+linux:ref:`axi_adxcvr`
+           - :external+linux:ref:`axi_jesd204_rx`
 
         #. About the JESD204 utilities:
 
-           - :external+linux:ref:`JESD204 (FSM) interface Linux Kernel framework <jesd204-fsm-framework>`
+           - :external+linux:ref:`jesd204-fsm-framework`
 
      #. :external+hdl:ref:`HDL reference design <ad9213_evb>` which you
         must use in your FPGA.

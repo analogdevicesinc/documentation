@@ -469,7 +469,7 @@ Additional Information and Useful Links
 - :adi:`ADT75 Product Page <ADT75>`
 - :adi:`LTC9111 Product Page <LTC9111>`
 - :adi:`LT8304 Product Page <LT8304>`
-- :dokuwiki:`ADIN1110 Linux Driver <resources/tools-software/linux-drivers/net-mac-phy/adin1110>`
+- :external+linux:ref:`adin1110`
 - `ADT75 Linux Driver <https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/hwmon/lm75.c?id=HEAD>`_
 
 Hardware Registration

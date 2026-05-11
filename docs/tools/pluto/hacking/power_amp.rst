@@ -89,7 +89,7 @@ Software
 
 There is a setup portion (if you are unsure of what these attributes do, check
 out the
-:dokuwiki:`documentation </resources/tools-software/linux-drivers/iio-transceiver/ad9361-customization>` [1]_ :
+:external+linux:ref:`ad9361-customization` [1]_ :
 
 #. set up the part in TDD mode (``0`` is TDD mode, ``1`` is FDD mode):
 

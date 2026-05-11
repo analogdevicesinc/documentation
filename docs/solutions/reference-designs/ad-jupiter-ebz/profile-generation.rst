@@ -32,7 +32,7 @@ other ADI software tools not described here
     version during boot for reference.
 
 For more information about profiles and how to load please see here:
-:dokuwiki:`Profile section on the ADRV9002 Linux driver documentation <resources/tools-software/linux-drivers/iio-transceiver/adrv9002#profiles>`
+:external+linux:ref:`adrv9002`
 
 .. note::
     
@@ -87,7 +87,7 @@ Enable NCO Frequency offset
 .. note::
     
     Enabling this setting, enables the IIO attribute
-    :dokuwiki:`in_voltage0_nco_frequency <resources/tools-software/linux-drivers/iio-transceiver/adrv9002#nco_frequency>`.
+    :external+linux:ref:`adrv9002`.
     These settings are on by default on **jupiter** default profile.
 
 Enable Antenna Diversity

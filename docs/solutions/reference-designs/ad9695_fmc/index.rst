@@ -98,10 +98,10 @@ Table of contents
         #. About the device driver:
 
            - :dokuwiki:`AD9695 Linux IIO ADC driver <resources/tools-software/linux-drivers/iio-adc/ad9695>`
-           - :dokuwiki:`JESD204B Receive Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
-           - :dokuwiki:`JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
-           - :dokuwiki:`AXI ADC HDL Linux driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-           - :dokuwiki:`AXI-DMAC DMA Controller Linux driver <resources/tools-software/linux-drivers/axi-dmac>`
+           - :external+linux:ref:`axi_jesd204_rx`
+           - :external+linux:ref:`axi_adxcvr`
+           - :external+linux:ref:`axi-adc-hdl`
+           - :external+linux:ref:`axi-dmac`
 
         #. About the device tree:
 
@@ -109,7 +109,7 @@ Table of contents
 
         #. About the JESD204 utilities:
 
-           - :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+           - :external+linux:ref:`jesd204-fsm-framework`
            - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
            - :external+hdl:ref:`jesd204`
 

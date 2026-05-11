@@ -149,7 +149,7 @@ the EVAL-ADXL355-PMDZ:
 
 **ADXL355 Linux Driver**
 
-* The :dokuwiki:`ADXL355 Linux driver <resources/tools-software/linux-drivers/iio-accelerometer/adxl355>` is used in
+* The :external+linux:ref:`adxl355` is used in
   applications running the Linux operating system, typically on larger processors
   and SoC devices.
 * The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework,

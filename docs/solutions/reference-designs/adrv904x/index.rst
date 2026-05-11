@@ -60,23 +60,23 @@ People who follow the flow that is outlined, have a much better experience with 
             -   `ADRV904x Device Driver Customization <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/adrv904x-customization>`_
             -   `Customizing the devicetree on the target <https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`_
 
-         -  `JESD204 (FSM) Interface Linux Kernel Framework <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`_
+         -  :external+linux:ref:`jesd204-fsm-framework`
          -  `AD9528 Low Jitter Clock Generator Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/ad9528>`_
-         -  `AXI-DMAC DMA Controller Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/axi-dmac>`_
-         -  `JESD204B Transmit Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`_
+         -  :external+linux:ref:`axi-dmac`
+         -  :external+linux:ref:`axi_jesd204_tx`
 
             -  `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_
 
-         -  `JESD204B Receive Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`_
+         -  :external+linux:ref:`axi_jesd204_rx`
 
             -  `JESD204B Status Utility <https://wiki.analog.com/resources/tools-software/linux-software/jesd_status>`_
 
-         -  `JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`_
+         -  :external+linux:ref:`axi_adxcvr`
 
             -  `JESD204 Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_
 
-         -  `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_
-         -  `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_
+         -  :external+linux:ref:`axi-adc-hdl`
+         -  :external+linux:ref:`axi-dac-dds-hdl`
 
       -  `Changing the VCXO frequency and updating the default RF Transceiver Profile <https://wiki.analog.com/resources/eval/user-guides/rf-trx-vcxo-and-profiles>`_
 

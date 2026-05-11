@@ -91,11 +91,11 @@ Table of Contents
          #. About the device driver:
 
             #. :external+linux:doc:`AD9371/AD9375 Linux Device Driver <drivers/iio-transceiver/ad9371>`
-            #. :external+linux:ref:`JESD204B Transmit Linux Driver <axi_jesd204_tx>`
+            #. :external+linux:ref:`axi_jesd204_tx`
             #. :external+linux:ref:`JESD204B Receive Linux Driver <axi_jesd204_rx>`
             #. :external+linux:ref:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <axi_adxcvr>`
             #. :external+linux:ref:`AXI ADC HDL Linux Driver <axi-adc-hdl>`
-            #. :external+linux:ref:`AXI DAC HDL Linux Driver <axi-dac-dds-hdl>`
+            #. :external+linux:ref:`axi-dac-dds-hdl`
 
          #. About the device tree:
 
@@ -103,7 +103,7 @@ Table of Contents
 
          #. About the JEDS204 utilities:
 
-            #. :external+linux:ref:`JESD204 (FSM) interface Linux Kernel framework <jesd204-fsm-framework>`
+            #. :external+linux:ref:`jesd204-fsm-framework`
             #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
             #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
             #. :external+hdl:ref:`jesd204`

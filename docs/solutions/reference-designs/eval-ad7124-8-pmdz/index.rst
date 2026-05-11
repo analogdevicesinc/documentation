@@ -219,7 +219,7 @@ Reference Demos & Software
 --------------------------
 
 - :ref:`eval-ad7124-8-pmdz demo`
-- :dokuwiki:`AD7124 IIO Sigma-Delta ADC Linux Driver </resources/tools-software/linux-drivers/iio-adc/ad7124>`
+- :external+linux:ref:`ad7124`
 - :dokuwiki:`AD7124 No-OS Software </resources/tools-software/uc-drivers/ad7124>`
 - :git-no-OS:`projects/ad7124-8pmdz`
 

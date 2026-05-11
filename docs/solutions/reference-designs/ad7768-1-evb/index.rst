@@ -115,8 +115,8 @@ Table of contents
         #. About the device driver:
 
            - :external+linux:doc:`AD7768-1 Linux IIO ADC driver <drivers/iio-adc/ad7768-1>`
-           - :external+linux:doc:`AXI ADC HDL Linux driver <drivers/iio-adc/axi-adc-hdl>`
-           - :external+linux:doc:`AXI-DMAC DMA Controller Linux driver <drivers/dma/axi-dmac>`
+           - :external+linux:ref:`axi-adc-hdl`
+           - :external+linux:ref:`axi-dmac`
 
         #. About the device tree:
 

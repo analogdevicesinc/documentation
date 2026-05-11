@@ -36,7 +36,7 @@ Linux Driver or libiio or Application Questions
 For questions regarding the the ADI Linux distribution used in PlutoSDR (which
 is based `buildroom <https://buildroot.org/>`__ with
 :ref:`libiio` library, the Linux
-drivers (including the :dokuwiki:`AD936x driver </resources/tools-software/linux-drivers/iio-transceiver/ad9361>`, or
+drivers (including the :external+linux:ref:`ad9361`, or
 the device trees for PlutoSDR, please use the
 :ez:`Linux Software Drivers <community/linux-device-drivers/linux-software-drivers>`
 sub-community.

@@ -124,22 +124,22 @@ Table of Contents
 
             .. #. `AD9084 Device Driver Customization <TODO>`__
 
-         #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
-         #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver <resources/tools-software/linux-drivers/axi-dmac>`
-         #. :dokuwiki:`JESD204B Transmit Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
+         #. :external+linux:ref:`jesd204-fsm-framework`
+         #. :external+linux:ref:`axi-dmac`
+         #. :external+linux:ref:`axi_jesd204_tx`
 
             #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
 
-         #. :dokuwiki:`JESD204B Receive Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
+         #. :external+linux:ref:`axi_jesd204_rx`
 
             #. :dokuwiki:`JESD204B Status Utility <resources/tools-software/linux-software/jesd_status>`
 
-         #. :dokuwiki:`JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
+         #. :external+linux:ref:`axi_adxcvr`
 
             #. :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
 
-         #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-         #. :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
+         #. :external+linux:ref:`axi-adc-hdl`
+         #. :external+linux:ref:`axi-dac-dds-hdl`
 
       .. #. :dokuwiki:`HDL Reference Design <resources/eval/user-guides/ad9084/reference_hdl>` which you must use in your FPGA.
 

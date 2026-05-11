@@ -408,8 +408,8 @@ Reference Demos & Software
 
 - :external+hdl:ref:`axi_ad35xxr`
 - :external+hdl:ref:`axi_ltc2387`
-- :dokuwiki:`AD3552R Dual Channel, 16-Bit, 33 MUPS, Multispan, Multi-IO SPI DAC Linux device driver <resources/tools-software/linux-drivers/iio-dac/axi-ad3552r>`
-- :dokuwiki:`LTC2387 SAR ADC IIO Linux Driver <resources/tools-software/linux-drivers/iio-adc/ltc2387>`
+- :external+linux:ref:`axi-ad3552r`
+- :external+linux:ref:`ltc2387`
 - :ref:`hsx-toolbox`
 - :ref:`pyadi-iio`
 - :ref:`iio-oscilloscope`

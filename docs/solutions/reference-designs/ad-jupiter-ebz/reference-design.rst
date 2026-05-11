@@ -359,8 +359,8 @@ More Information
 ----------------
 
 - :external+hdl:ref:`user_guide`
-- :dokuwiki:`ADRV9002 Device Driver Customization <resources/tools-software/linux-drivers/iio-transceiver/adrv9002-customization>`
-- :dokuwiki:`ADRV9002 Integrated Dual RF Transceiver Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv9002>`
+- :external+linux:ref:`adrv9002-customization`
+- :external+linux:ref:`adrv9002`
 - :ref:`ad-jupiter-ebz`
 
 Support

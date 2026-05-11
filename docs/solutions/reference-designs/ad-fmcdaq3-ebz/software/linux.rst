@@ -19,8 +19,8 @@ Descriptions of the individual Linux device drivers for the different parts on
 the AD-FMCDAQ3-EBZ can be found at:
 
 -  :external+linux:ref:`AD9528 Low Jitter Clock Generator Linux Driver <ad9528>`
--  :external+linux:ref:`AXI ADC HDL Linux Driver <axi-adc-hdl>`
--  :external+linux:ref:`AXI DAC HDL Linux Driver <axi-dac-dds-hdl>`
--  :external+linux:ref:`ADI JESD204B/C Transmit Peripheral Linux Driver <axi_jesd204_tx>`
--  :external+linux:ref:`ADI JESD204B/C Receive Peripheral Linux Driver <axi_jesd204_rx>`
--  :external+linux:ref:`ADI JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux Driver <axi_adxcvr>`
+-  :external+linux:ref:`axi-adc-hdl`
+-  :external+linux:ref:`axi-dac-dds-hdl`
+-  :external+linux:ref:`axi_jesd204_tx`
+-  :external+linux:ref:`axi_jesd204_rx`
+-  :external+linux:ref:`axi_adxcvr`

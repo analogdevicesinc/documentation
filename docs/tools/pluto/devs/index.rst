@@ -44,9 +44,9 @@ Content
 
    #. `AD9361 high performance, highly integrated RF Agile Transceiver™ Linux
       device driver </resources/tools-software/linux-drivers/iio-transceiver/ad9361>`__
-   #. :dokuwiki:`AXI ADC HDL Linux Driver </resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-   #. :dokuwiki:`AXI DAC HDL Linux Driver </resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-   #. :dokuwiki:`AXI-DMAC DMA Controller Linux Driver </resources/tools-software/linux-drivers/axi-dmac>`
+   #. :external+linux:ref:`axi-adc-hdl`
+   #. :external+linux:ref:`axi-dac-dds-hdl`
+   #. :external+linux:ref:`axi-dmac`
    #. :adi:`ADM1177` Digital Power Monitor Linux Driver
    #. etc.
 
@@ -57,7 +57,7 @@ Content
 #. Accessing the AD9363 inside Pluto from userspace
 
    #. :git-libiio:`libiio local mode example <examples/ad9361-iiostream.c>`
-   #. :dokuwiki:`Linux driver </resources/tools-software/linux-drivers/iio-transceiver/ad9361>`
+   #. :external+linux:ref:`ad9361`
 
 #. :dokuwiki:`Connecting the Pluto to the Internet <university/tools/m2k/devs/port_forwarding>`
 #. :dokuwiki:`Using U-Boot's DFU modes </university/tools/pluto/users/firmware#dfu_update>`

@@ -477,7 +477,7 @@ Additional Information and Useful Links
 - :adi:`MAX77958 Product Page <MAX77958>`
 - :adi:`LTC4296 Product Page <LTC4296-1>`
 - :adi:`LT3757A Product Page <LT3757>`
-- :dokuwiki:`ADIN2111 Linux Driver <resources/tools-software/linux-drivers/net-mac-phy/adin2111>`
+- :external+linux:ref:`adin2111`
 
 Hardware Registration
 ---------------------

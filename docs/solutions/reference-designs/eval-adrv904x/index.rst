@@ -116,17 +116,17 @@ Table of contents
 
         #. About the device driver:
 
-           - :dokuwiki:`JESD204B Transmit Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_tx>`
-           - :dokuwiki:`JESD204B Receive Linux driver <resources/tools-software/linux-drivers/jesd204/axi_jesd204_rx>`
-           - :dokuwiki:`JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver <resources/tools-software/linux-drivers/jesd204/axi_adxcvr>`
-           - :dokuwiki:`AXI ADC HDL Linux driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
-           - :dokuwiki:`AXI DAC HDL Linux driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`
-           - :dokuwiki:`AD9528 Low Jitter Clock Generator Linux driver <resources/tools-software/linux-drivers/iio-pll/ad9528>`
-           - :dokuwiki:`AXI-DMAC DMA Controller Linux driver <resources/tools-software/linux-drivers/axi-dmac>`
-           - :dokuwiki:`ADRV904x Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv904x>`
+           - :external+linux:ref:`axi_jesd204_tx`
+           - :external+linux:ref:`axi_jesd204_rx`
+           - :external+linux:ref:`axi_adxcvr`
+           - :external+linux:ref:`axi-adc-hdl`
+           - :external+linux:ref:`axi-dac-dds-hdl`
+           - :external+linux:ref:`ad9528`
+           - :external+linux:ref:`axi-dmac`
+           - :external+linux:ref:`adrv904x`
              (not yet mainlined; source at
              :git-linux:`staging/koror_support:drivers/iio/adc/koror/adrv904x.c`)
-             and :dokuwiki:`how to customize it <resources/tools-software/linux-drivers/iio-transceiver/adrv904x-customization>`
+             and :external+linux:ref:`adrv904x-customization`
 
         #. About the device tree:
 
@@ -134,7 +134,7 @@ Table of contents
 
         #. About the JESD204 utilities:
 
-           - :dokuwiki:`JESD204 (FSM) interface Linux Kernel framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+           - :external+linux:ref:`jesd204-fsm-framework`
            - :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`
            - :dokuwiki:`JESD204 Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
            - :external+hdl:ref:`jesd204`

@@ -105,7 +105,7 @@ Linux Driver
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For details on how to customize the driver for a specific use case, see the
-:dokuwiki:`ADRV904x driver customization guide <resources/tools-software/linux-drivers/iio-transceiver/adrv904x-customization>`.
+:external+linux:ref:`adrv904x-customization`.
 
 Kernel configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -185,7 +185,7 @@ IIO attributes
 
 The ``adrv904x-phy`` IIO device exposes sysfs attributes under
 ``/sys/bus/iio/devices/iio:deviceN/``. For a full attribute reference, see the
-:dokuwiki:`ADRV904x Linux device driver <resources/tools-software/linux-drivers/iio-transceiver/adrv904x>`
+:external+linux:ref:`adrv904x`
 wiki page.
 
 Channel naming

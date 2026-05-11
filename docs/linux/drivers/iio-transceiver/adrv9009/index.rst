@@ -90,7 +90,7 @@ Files
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
+-  :external+linux:ref:`jesd204-fsm-framework`
 -  :dokuwiki:`JESD204 Interface Framework <resources/fpga/peripherals/jesd204>`
 
 Receive AXI-ADC driver
