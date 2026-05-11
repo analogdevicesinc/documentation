@@ -244,8 +244,8 @@ Datasheets
 Evaluation Software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :doc:`/software/iio-oscilloscope/index`
-- :doc:`/software/pyadi-iio/index`
+- :ref:`iio-oscilloscope`
+- :ref:`pyadi-iio`
 
 Project Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
