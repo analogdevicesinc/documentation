@@ -1,10 +1,10 @@
-ZedBoard Quick Start Guide
+Zedboard Quick Start Guide
 ================================================================================
 
 This guide provides some quick instructions on how to set up the
 :adi:`EVAL-AD4080-FMC`, :adi:`EVAL-AD4083-FMC` or :adi:`EVAL-AD4086-FMC` on:
 
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
+- `Zedboard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
 
 .. image:: ../../images/ZedBoard.png
    :width: 800
@@ -71,7 +71,7 @@ Required Software
 Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
+- `Zedboard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
   FPGA board and its power supply
 - :adi:`EVAL-AD4080-FMC`, :adi:`EVAL-AD4083-FMC` or :adi:`EVAL-AD4086-FMC` FMC
   evaluation board
@@ -100,10 +100,10 @@ Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the :adi:`EVAL-AD4080-FMC`, :adi:`EVAL-AD4083-FMC` or
    :adi:`EVAL-AD4086-FMC` FMC board to the
-   `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
+   `Zedboard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
    **FMC LPC** connector
 #. Insert SD card into the SD card socket on the FPGA (J12)
-#. Configure the ZedBoard for SD card boot mode (set jumpers **JP11-JP7**
+#. Configure the Zedboard for SD card boot mode (set jumpers **JP11-JP7**
    (MIO6-MIO2) to **GND**, **3V3**, **3V3**, **GND**, **GND**, and make sure
    that **JP6** is shorted, as shown in the picture shown below)
 
@@ -117,15 +117,15 @@ Follow the steps in this order, to avoid damaging the components:
 
    .. note::
 
-      To use USB peripheral devices with ZedBoard, install jumpers JP2 and JP3.
+      To use USB peripheral devices with Zedboard, install jumpers JP2 and JP3.
 
 #. Plug in the power supply and turn on the power switch on the FPGA board
 #. Observe Kernel and serial console output messages on your terminal (use the
    first ttyUSB or COM port registered)
 
 .. seealso::
-   For more detailed information on ZedBoard jumper settings, check the
-   `ZedBoard Hardware User Guide <https://digilent.com/reference/_media/zedboard/zedboard_ug.pdf>`_.
+   For more detailed information on Zedboard jumper settings, check the
+   `Zedboard Hardware User Guide <https://digilent.com/reference/_media/zedboard/zedboard_ug.pdf>`_.
 
 Booting the System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

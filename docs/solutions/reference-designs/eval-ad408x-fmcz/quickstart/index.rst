@@ -10,7 +10,7 @@ distribution.
 .. toctree::
    :maxdepth: 1
 
-   On ZedBoard <zed>
+   On Zedboard <zed>
 
 .. _ad408x-fmcz carriers:
 
@@ -28,7 +28,7 @@ carrier to plug into. The carriers we support are:
      - EVAL-AD4080-FMC
      - EVAL-AD4083-FMC
      - EVAL-AD4086-FMC
-   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
+   * - `Zedboard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - FMC LPC
      - FMC LPC
      - FMC LPC
@@ -44,8 +44,8 @@ The supported environments are:
    * - FPGA board
      - HDL
      - Linux software
-     - No-OS software
-   * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
+     - no-OS software
+   * - `Zedboard <https://digilent.com/reference/programmable-logic/zedboard/start>`_
      - Yes
      - Yes
      - ---
@@ -58,7 +58,7 @@ In most carriers, the :adi:`EVAL-AD4080-FMC`, :adi:`EVAL-AD4083-FMC` and
 noted). The carrier setup requires power, UART (115200), ethernet (Linux), and
 HDMI (if available). A few typical setups are shown below.
 
-ZedBoard + EVAL-AD4080-FMC
+Zedboard + EVAL-AD4080-FMC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/zed_ad4080.jpeg

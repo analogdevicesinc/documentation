@@ -250,7 +250,7 @@ Evaluation Software
 Project Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :external+hdl:ref:`AD408x HDL documentation <ad4080_fmc_evb>`
+- :external+hdl:ref:`ad4080_fmc_evb`
 - :git+hdl:`AD408x HDL repository <projects/ad4080_fmc_evb>`
 - :git+pyadi-iio:`AD408x Pyadi-IIO example <examples/ad4080_example.py>`
 

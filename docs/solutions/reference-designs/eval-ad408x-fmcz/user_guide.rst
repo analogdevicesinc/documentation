@@ -10,7 +10,7 @@ Software guide
 -------------------------------------------------------------------------------
 
 The :adi:`EVAL-AD4080-FMC`, :adi:`EVAL-AD4083-FMC`, and :adi:`EVAL-AD4086-FMC`
-evaluation boards are supported within the :ref:`Libiio` library. This library
+evaluation boards are supported within the :ref:`libiio` library. This library
 is cross-platform (Windows, Linux, Mac) with language bindings for C, C#,
 Python, MATLAB, and others. The following software can be used for the
 evaluation of the boards:
