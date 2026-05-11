@@ -61,5 +61,5 @@ HDMI (if available). A few typical setups are shown below.
 Zedboard + EVAL-AD4080-FMC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/zed_ad4080.jpeg
+.. image:: ../images/zed_ad4080.jpg
    :width: 800

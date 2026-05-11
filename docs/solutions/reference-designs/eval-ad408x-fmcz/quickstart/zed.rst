@@ -89,7 +89,7 @@ Testing
 Creating the setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. image:: ../images/zed_ad4080.jpeg
+.. image:: ../images/zed_ad4080.jpg
    :width: 800
 
 .. caution::
