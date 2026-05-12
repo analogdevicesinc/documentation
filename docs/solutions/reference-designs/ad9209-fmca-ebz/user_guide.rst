@@ -7,6 +7,7 @@ The complete user guides of the evaluation boards can be found at:
 
 Software Guide
 -------------------------------------------------------------------------------
+
 The :adi:`EVAL-AD9081`, :adi:`EVAL-AD9082`, :adi:`EVAL-AD9986`, and
 :adi:`EVAL-AD9988` evaluation boards are supported within the :ref:`libiio`
 library. This library is cross-platform (Windows, Linux, Mac) with language

@@ -11,13 +11,13 @@ similar to ADCs found in the :adi:`AD9081`, :adi:`AD9082`, :adi:`AD9986`, and
 only the Rx path of the :adi:`EVAL-AD9081`, :adi:`EVAL-AD9082`,
 :adi:`EVAL-AD9986`, and :adi:`EVAL-AD9988` evaluation boards.
 
-The :adi:`AD9209` input features an on-chip wideband buffer with overload protection. This
-device is designed to support applications capable of direct sampling wideband
-signals up to 8 GHz. An on-chip, low phase noise, phase-locked loop (PLL) clock
-synthesizer is available to generate the ADC sampling clock, simplifying the
-printed circuit board (PCB) distribution of a high frequency clock signal. A
-clock output buffer is available to transmit the ADC sampling clock to other
-devices.
+The :adi:`AD9209` input features an on-chip wideband buffer with overload
+protection. This device is designed to support applications capable of direct
+sampling wideband signals up to 8 GHz. An on-chip, low phase noise, phase-locked
+loop (PLL) clock synthesizer is available to generate the ADC sampling clock,
+simplifying the printed circuit board (PCB) distribution of a high frequency
+clock signal. A clock output buffer is available to transmit the ADC sampling
+clock to other devices.
 
 Features:
 
@@ -135,7 +135,7 @@ Project Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - :external+hdl:ref:`ad9209_fmca_ebz`
-- :git+hdl:`projects/ad9209_fmca_ebz`
+- :git+hdl:`AD9209 HDL repository <projects/ad9209_fmca_ebz>`
 
 Help and Support
 --------------------------------------------------------------------------------
