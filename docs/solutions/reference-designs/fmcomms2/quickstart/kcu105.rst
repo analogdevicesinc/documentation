@@ -323,24 +323,9 @@ message to be printed, then power off the FPGA board from the switch as well.
 
    $poweroff
 
-To reboot the system, run:
-
-.. shell::
-
-   $reboot
-
 To disconnect XSDB when done:
 
 .. shell::
    :show-user:
 
    xsdb% disconnect
-
-.. important::
-
-   Even though this is Linux, this is a persistent file system. Care should
-   be taken not to corrupt the file system -- please shut down things, don't
-   just turn off the power switch. Depending on your monitor, the standard
-   power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering
-   off.

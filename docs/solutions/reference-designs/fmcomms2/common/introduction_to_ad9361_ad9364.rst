@@ -78,28 +78,83 @@ Specifications & Features
 Available Hardware
 -------------------------------------------------------------------------------
 
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| Board                                                                        | AD936x Device | Simultaneous | Tx                  | Rx                  | Purpose                                                  | Connector   |
-|                                                                              |               | Tx / Rx      | (Ranges)            | (Ranges)            |                                                          |             |
-+==============================================================================+===============+==============+=====================+=====================+==========================================================+=============+
-| :dokuwiki:`ARRADIO <resources/eval/user-guides/arradio>`                     | 1 x AD9361    | 2 x 2        | 2 (2400 - 2500 MHz) | 2 (2400 - 2500 MHz) | Best RF performance in a narrow range                    | HSMC        |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :dokuwiki:`ADALM-PLUTO <university/tools/pluto>`                             | 1 x AD9363    | 1 x 1        | 1 (325 - 3800 MHz)  | 1 (325 - 3800 MHz)  | Active Learning Module                                   | HSMC        |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :dokuwiki:`ADRV9364-Z7020 <resources/eval/user-guides/adrv9364-z7020>`       | 1 x AD9364    | 1 x 1        | 1 (2400 - 2500 MHz) | 1 (2400 - 2500 MHz) | Highly Integrated System on Module                       | HSMC        |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :dokuwiki:`ADRV9361-Z7035 <resources/eval/user-guides/adrv936x_rfsom>`       | 1 x AD9361    | 2 x 2        | 2 (2400 - 2500 MHz) | 2 (2400 - 2500 MHz) | Highly Integrated System on Module                       | HSMC        |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :ref:`AD-FMCOMMS2-EBZ <fmcomms2>`                                            | 1 x AD9361    | 2 x 2        | 2 (2400 - 2500 MHz) | 2 (2400 - 2500 MHz) | Best RF performance in a narrow range                    | FMC-LPC     |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`                                     | 1 x AD9361    | 2 x 2        | 2 (70 - 6000 MHz)   | 2 (70 - 6000 MHz)   | Software test and waveform development                   | FMC-LPC     |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :dokuwiki:`AD-FMCOMMS4-EBZ <resources/eval/user-guides/ad-fmcomms4-ebz>`     | 1 x AD9364    | 1 x 1        | 1 (2400 - 2500 MHz) | 1 (2400 - 2500 MHz) |                                                          | FMC-LPC     |
-|                                                                              |               |              | 1 (70 - 6000 MHz)   | 1 (70 - 6000 MHz)   |                                                          |             |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
-| :dokuwiki:`AD-FMCOMMS5-EBZ <resources/eval/user-guides/ad-fmcomms5-ebz>`     | 2 x AD9361    | 4 x 4        | 4 (2400 - 2500 MHz) | 4 (2400 - 2500 MHz) | MIMO test platform, can be synchronized in the RF domain | 2 x FMC-LPC |
-|                                                                              |               |              | 4 (70 - 6000 MHz)   | 4 (70 - 6000 MHz)   |                                                          |             |
-+------------------------------------------------------------------------------+---------------+--------------+---------------------+---------------------+----------------------------------------------------------+-------------+
+Standalone Platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - AD936x Device
+     - Simultaneous Tx / Rx
+     - Tx (Ranges)
+     - Rx (Ranges)
+     - Purpose
+   * - :dokuwiki:`ADALM-PLUTO <university/tools/pluto>`
+     - 1 x AD9363
+     - 1 x 1
+     - 1 (325 - 3800 MHz)
+     - 1 (325 - 3800 MHz)
+     - Active Learning Module
+
+The :dokuwiki:`ADALM-PLUTO <university/tools/pluto>` is just the AD9363 in a 1 x
+1 RF configuration with on-board Z7010 FPGA. PlutoSDR is a self contained RF lab
+in your hand, powered through USB. The board includes a narrow tuning range
+balun, which is performance optimized for 2.4 GHz. It is a stand alone unit
+requiring only USB for power and communications; it does not connect to a
+carrier board.
+
+FMC/HSMC Evaluation Boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - AD936x Device
+     - Simultaneous Tx / Rx
+     - Tx (Ranges)
+     - Rx (Ranges)
+     - Purpose
+     - Connector
+   * - :ref:`ARRADIO <arradio>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (2400 - 2500 MHz)
+     - 2 (2400 - 2500 MHz)
+     - Best RF performance in a narrow range
+     - HSMC
+   * - :ref:`AD-FMCOMMS2-EBZ <fmcomms2>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (2400 - 2500 MHz)
+     - 2 (2400 - 2500 MHz)
+     - Best RF performance in a narrow range
+     - FMC-LPC
+   * - :ref:`AD-FMCOMMS3-EBZ <ad-fmcomms3-ebz>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (70 - 6000 MHz)
+     - 2 (70 - 6000 MHz)
+     - Software test and waveform development
+     - FMC-LPC
+   * - :dokuwiki:`AD-FMCOMMS4-EBZ <resources/eval/user-guides/ad-fmcomms4-ebz>`
+     - 1 x AD9364
+     - 1 x 1
+     - 1 (2400 - 2500 MHz), 1 (70 - 6000 MHz)
+     - 1 (2400 - 2500 MHz), 1 (70 - 6000 MHz)
+     -
+     - FMC-LPC
+   * - :dokuwiki:`AD-FMCOMMS5-EBZ <resources/eval/user-guides/ad-fmcomms5-ebz>`
+     - 2 x AD9361
+     - 4 x 4
+     - 4 (2400 - 2500 MHz), 4 (70 - 6000 MHz)
+     - 4 (2400 - 2500 MHz), 4 (70 - 6000 MHz)
+     - MIMO test platform, can be synchronized in the RF domain
+     - 2 x FMC-LPC
+
+These evaluation boards connect to FPGA carrier boards through FMC or HSMC
+connectors.
 
 .. important::
 
@@ -117,36 +172,43 @@ Available Hardware
    CMOS mode is known to work on platforms without connectors between the
    AD936x and the Digital BaseBand device (like PicoZed SDR).
 
+System on Modules (SOMs)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table::
+   :header-rows: 1
+
+   * - Board
+     - AD936x Device
+     - Simultaneous Tx / Rx
+     - Tx (Ranges)
+     - Rx (Ranges)
+     - Purpose
+   * - :dokuwiki:`ADRV9364-Z7020 <resources/eval/user-guides/adrv9364-z7020>`
+     - 1 x AD9364
+     - 1 x 1
+     - 1 (2400 - 2500 MHz)
+     - 1 (2400 - 2500 MHz)
+     - Highly Integrated System on Module
+   * - :dokuwiki:`ADRV9361-Z7035 <resources/eval/user-guides/adrv936x_rfsom>`
+     - 1 x AD9361
+     - 2 x 2
+     - 2 (2400 - 2500 MHz)
+     - 2 (2400 - 2500 MHz)
+     - Highly Integrated System on Module
+
+These SOMs integrate the AD936x transceiver with a Zynq FPGA on a single
+module, and connect to dedicated SOM carrier boards.
+
 A detailed list of things that can be done with these boards can be found in
 each board page:
 
-The :dokuwiki:`ARRADIO <resources/eval/user-guides/arradio>` board, in simple
+The :ref:`ARRADIO <arradio>` board, in simple
 terms, is just the AD9361 in a 2 x 2 RF configuration. Hence the features and
 capabilities of the device extend to the board. The board includes a narrow
 tuning range balun, which is performance optimized for 2.4 GHz, and provides
 datasheet specifications. If you want a different range, you can change baluns
 (footprint compatible options are available). This board has an HSMC connector.
-
-The :dokuwiki:`ADALM-PLUTO <university/tools/pluto>` is just the AD9363 in a 1 x
-1 RF configuration with on-board Z7010 FPGA. PlutoSDR is a self contained RF lab
-in your hand, powered through USB. The board includes a narrow tuning range
-balun, which is performance optimized for 2.4 GHz.
-
-The :dokuwiki:`ADRV9364-Z7020 <resources/eval/user-guides/adrv9364-z7020>`
-board, in simple terms, is just the AD9364 in a 1 x 1 RF configuration with
-on-board Z7020 FPGA. Hence the features and capabilities of the device extend to
-the board. The board includes a narrow tuning range balun, which is performance
-optimized for 2.4 GHz. If you want a different range, you can change baluns
-(footprint compatible options are available). This board has four FCI 0.8mm
-connectors.
-
-The :dokuwiki:`ADRV9361-Z7035 <resources/eval/user-guides/adrv936x_rfsom>`
-board, in simple terms, is just the AD9361 in a 2 x 2 RF configuration with
-on-board Z7035 FPGA. Hence the features and capabilities of the device extend to
-the board. The board includes a narrow tuning range balun, which is performance
-optimized for 2.4 GHz. If you want a different range, you can change baluns
-(footprint compatible options are available). This board has four FCI 0.8mm
-connectors.
 
 The :ref:`AD-FMCOMMS2-EBZ <fmcomms2>` board, in simple terms, is just the AD9361
 in a 2 x 2 RF configuration. Hence the features and capabilities of the device
@@ -173,115 +235,98 @@ demonstrates how to synchronize multiple devices together. The features and
 capabilities of the device extend to the board. The board includes both narrow
 and wide tuning range baluns on different SMA connectors.
 
+The :dokuwiki:`ADRV9364-Z7020 <resources/eval/user-guides/adrv9364-z7020>`
+board, in simple terms, is just the AD9364 in a 1 x 1 RF configuration with
+on-board Z7020 FPGA. Hence the features and capabilities of the device extend to
+the board. The board includes a narrow tuning range balun, which is performance
+optimized for 2.4 GHz. If you want a different range, you can change baluns
+(footprint compatible options are available). This board has four FCI 0.8mm
+connectors.
+
+The :dokuwiki:`ADRV9361-Z7035 <resources/eval/user-guides/adrv936x_rfsom>`
+board, in simple terms, is just the AD9361 in a 2 x 2 RF configuration with
+on-board Z7035 FPGA. Hence the features and capabilities of the device extend to
+the board. The board includes a narrow tuning range balun, which is performance
+optimized for 2.4 GHz. If you want a different range, you can change baluns
+(footprint compatible options are available). This board has four FCI 0.8mm
+connectors.
+
 Carrier Boards
 -------------------------------------------------------------------------------
+
+SOM Carrier Boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following carrier boards are compatible with the ADRV9364-Z7020 and
+ADRV9361-Z7035 System on Modules:
 
 .. list-table::
    :header-rows: 1
 
-   * - Board
-     - ADALM-Pluto
+   * - Carrier Board
      - ADRV9364-Z7020
      - ADRV9361-Z7035
+   * - :dokuwiki:`FMC Carrier <resources/eval/user-guides/pzsdr/carriers/fmc>`
+     - Yes
+     - Yes
+   * - :dokuwiki:`Breakout Board <resources/eval/user-guides/pzsdr/carriers/brk>`
+     - Yes
+     - Yes
+   * - :dokuwiki:`PCIe Carrier <resources/eval/user-guides/pzsdr/carriers/pcie>`
+     - Yes
+     - Yes
+   * - :dokuwiki:`PackRF Carrier <resources/eval/user-guides/pzsdr/carriers/packrf>`
+     - Yes
+     - Yes
+
+FPGA Carrier Boards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following FPGA development boards can be used as carriers for the
+FMC/HSMC evaluation boards:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Carrier Board
      - FMCOMMS2/3/4
      - FMCOMMS5
      - Arradio
-   * - :dokuwiki:`FMC Carrier <resources/eval/user-guides/pzsdr/carriers/fmc>`
-     -
-     - Yes
-     - Yes
+   * - :xilinx:`KC705` \*
      - Yes
      -
      -
-   * - :dokuwiki:`Breakout Board <resources/eval/user-guides/pzsdr/carriers/brk>`
-     -
-     - Yes
-     - Yes
-     - Yes
-     -
-     -
-   * - :dokuwiki:`PCIe Carrier <resources/eval/user-guides/pzsdr/carriers/pcie>`
-     -
-     - Yes
-     - Yes
-     - Yes
-     -
-     -
-   * - :dokuwiki:`PackRF Carrier <resources/eval/user-guides/pzsdr/carriers/packrf>`
-     -
-     - Yes
-     - Yes
-     - Yes
-     -
-     -
-   * - :xilinx:`AC701`
-     -
-     -
-     -
-     -
-     -
-     -
-   * - :xilinx:`KC705`
-     -
-     -
-     -
-     - Yes
-     -
-     -
-   * - :xilinx:`VC707`
-     -
-     -
-     -
+   * - :xilinx:`VC707` \*
      - Yes
      -
      -
    * - :xilinx:`ZC702`
-     -
-     -
-     -
      - Yes
      - Yes
      -
    * - :xilinx:`ZC706`
-     -
-     -
-     -
      - Yes
      - Yes
      -
    * - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-     -
-     -
-     -
      - Yes
      -
      -
    * - :xilinx:`ZCU102`
-     -
-     -
-     -
      - Yes
      - Yes
-     -
-   * - `MITX045 <https://www.avnet.com/americas/products/avnet-boards/avnet-board-families/mini-itx/>`_
-     -
-     -
-     -
-     -
-     -
      -
    * - `SoCKit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`_
      -
      -
-     -
-     -
-     -
      - Yes
 
-.. note::
+.. admonition:: Legend
+   :class: note
 
-   The :dokuwiki:`ADALM-Pluto <university/tools/pluto>` is a stand alone unit
-   requiring only USB for power and communications.
+   - ``*`` removed; last release that supports this project on this carrier is
+     :git-hdl:`hdl_2023_r2 <hdl_2023_r2:projects/fmcomms2/kc705>`
+     :git-hdl:`hdl_2023_r2 <hdl_2023_r2:projects/fmcomms2/vc707>`
 
 Getting started
 -------------------------------------------------------------------------------
