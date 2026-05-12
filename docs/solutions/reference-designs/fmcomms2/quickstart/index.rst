@@ -112,7 +112,7 @@ Early versions of the ZC702 carriers need to work around `AR# 51438, PG signal
 does not assert by default <https://www.xilinx.com/support/answers/51438.html>`_
 errata.
 
-.. image:: ../images/fmcomms2_zc702.jpeg
+.. image:: ../images/fmcomms2_zc702_linux.jpeg
    :width: 800
 
 Go to :ref:`the setup guide <fmcomms2 quickstart zc702>`.
@@ -120,7 +120,7 @@ Go to :ref:`the setup guide <fmcomms2 quickstart zc702>`.
 ZC706 + FMCOMMS2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/fmcomms2_zc706.jpeg
+.. image:: ../images/fmcomms2_zc706_linux.jpeg
    :width: 800
 
 Go to :ref:`the setup guide <fmcomms2 quickstart zc706>`.
@@ -128,7 +128,7 @@ Go to :ref:`the setup guide <fmcomms2 quickstart zc706>`.
 ZED + FMCOMMS2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/fmcomms2_zed.jpeg
+.. image:: ../images/fmcomms2_zed_linux.jpeg
    :width: 800
 
 Go to :ref:`the setup guide <fmcomms2 quickstart zed>`.
@@ -136,7 +136,7 @@ Go to :ref:`the setup guide <fmcomms2 quickstart zed>`.
 ZCU102 + FMCOMMS2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/fmcomms2_zcu102.jpeg
+.. image:: ../images/fmcomms2_zcu102_linux.jpeg
    :width: 800
 
 Go to :ref:`the setup guide <fmcomms2 quickstart zcu102>`.
@@ -144,7 +144,7 @@ Go to :ref:`the setup guide <fmcomms2 quickstart zcu102>`.
 KCU105 + FMCOMMS2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/fmcomms2_kcu105.jpeg
+.. image:: ../images/fmcomms2_kcu105_linux.jpeg
    :width: 800
 
 Go to :ref:`the setup guide <fmcomms2 quickstart kcu105>`.

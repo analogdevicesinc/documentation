@@ -80,11 +80,9 @@ Applications:
 Recommendations
 -------------------------------------------------------------------------------
 
-People who follow the flow that is outlined have a much better experience with
+People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it
-should be. If you have any questions, feel free to ask on our
-:ref:`EngineerZone forums <fmcomms2 help-and-support>`, but before that, please make
-sure you read our documentation thoroughly.
+should be. If you have any questions, check the :ref:`Help and Support <fmcomms2 help-and-support>` page.
 
 To better understand the :adi:`AD9361`, we recommend to use the
 :adi:`EVAL-AD-FMCOMMS2` evaluation board.
@@ -208,15 +206,6 @@ Table of contents
    - :ref:`IQ rotation and phase sync <fmcomms2 common iq-rotation>`
 
 #. :ref:`Help and Support <fmcomms2 help-and-support>`
-
-.. _fmcomms2 block-diagram:
-
-Block diagram
--------------------------------------------------------------------------------
-
-.. image:: images/ad9361_block_diagram.png
-   :align: center
-   :width: 800
 
 Videos
 -------------------------------------------------------------------------------

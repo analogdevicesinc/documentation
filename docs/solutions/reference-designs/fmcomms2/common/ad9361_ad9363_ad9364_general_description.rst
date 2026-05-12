@@ -39,8 +39,11 @@ systems. This programmability also allows the device to be interfaced to various
 baseband processors (BBPs) using a single 12-bit parallel data port, dual 12-bit
 parallel data ports, or a 12-bit low voltage differential signaling (LVDS)
 interface. The LVDS interface is used on the :adi:`AD-FMCOMMS2-EBZ`,
-:adi:`AD-FMCOMMS3-EBZ`, :adi:`AD-FMCOMMS4-EBZ` and :adi:`AD-FMCOMMS5-EBZ`, as
-the CMOS drive strength is too weak to go through a connector.
+:adi:`AD-FMCOMMS3-EBZ`, :adi:`AD-FMCOMMS4-EBZ` and :adi:`AD-FMCOMMS5-EBZ`.
+Configuring the digital interface in CMOS mode is not tested nor supported on
+these platforms. This is due to the purposefully weak CMOS drivers (to keep the
+noise off the part as much as possible) that are part of the digital interface
+and the large capacitance of the FMC connector.
 
 The AD9361 and AD9364 also provide self-calibration and automatic gain control
 (AGC) systems to maintain a high performance level under varying temperatures

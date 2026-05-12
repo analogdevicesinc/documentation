@@ -274,11 +274,12 @@ root   analog
 analog analog
 ====== ========
 
-If your FPGA carrier board (:xilinx:`KC705`, :xilinx:`VC707`)
-features a LCD display and the board is connected to a DHCP enabled
-network, you should also see its IP address printed on the display.
-This allows you to connect remotely to the board as well (SSH,
-libiio remote).
+If your FPGA carrier board (:xilinx:`KC705`, :xilinx:`VC707`) features a LCD
+display and the board is connected to a DHCP enabled network, the IP address may
+be printed on the display. This feature might not work with the latest releases.
+If the IP address is not shown on the display, it can be obtained via the UART
+console by running ``ifconfig``. This allows you to connect remotely to the
+board as well (SSH, libiio remote).
 
 .. image:: ../images/ml605-lcd.png
    :alt: LCD image
