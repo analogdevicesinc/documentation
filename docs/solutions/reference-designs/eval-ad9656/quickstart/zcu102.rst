@@ -1,0 +1,128 @@
+.. _ad9656_fmc quickstart zcu102:
+
+ZCU102 Quick start
+===============================================================================
+
+This guide provides quick instructions on how to setup the :adi:`EVAL-AD9656`
+on:
+
+- :xilinx:`ZCU102` on FMC HPC0
+
+.. image:: ../../images/zcu102.jpg
+   :width: 800
+
+Using no-OS as software
+-------------------------------------------------------------------------------
+
+Necessary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following files are needed for the system to boot:
+
+- HDL boot file: ``system_top.xsa``
+- no-OS project: :git-no-os:`projects/ad9656_fmc`
+
+Instructions on how to build the boot files from source can be found here:
+
+- :external+no-OS:doc:`projects/adc/ad9656_fmc`. More no-OS build details at
+  :external+no-OS:doc:`build_guide`.
+
+- :external+hdl:ref:`ad9656_fmc`. More HDL build details at
+  :external+hdl:ref:`build_hdl`.
+
+Required software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado and Vitis (downloading Vitis from
+  `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
+  will include Vivado as well)
+- An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
+
+Required hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx :xilinx:`ZCU102` Rev 1.0 FPGA board and its power supply
+- :adi:`EVAL-AD9656` FMC evaluation board
+- 2x Micro-USB cables, one for UART and one for JTAG
+- Signal generator
+
+More details as to why you need these, can be found at
+:ref:`ad9656_fmc prerequisites`.
+
+Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creating the setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/ad9656_zcu102_no_os_setup.png
+   :width: 900
+
+.. esd-warning::
+
+Follow the steps in this order, to avoid damaging the components:
+
+#. Get the :xilinx:`ZCU102`.
+#. Configure :xilinx:`ZCU102` for JTAG boot mode (mode SW6[4:1] switch in the
+   position **ON,ON,ON,ON**).
+#. Connect Pin 1 to Pin 2 on both P101 and P103 to power the :adi:`EVAL-AD9656`
+   through the FMC connector. For other power modes,
+   take a look :ref:`here <ad9656_fmc user-guide hardware-configuration>`.
+#. Connect the :adi:`EVAL-AD9656` FMC board to the FPGA carrier FMC **HPC0**
+   socket (J5).
+#. Connect USB UART (Micro-USB) to your host PC (J83).
+#. Connect USB JTAG (Micro-USB) to your host PC (J2).
+#. Plug the Power Supply into 12V Power input connector (J52).
+#. Turn on the power switch on the FPGA board.
+#. Build and run the project using the steps shown in
+   :external+no-OS:doc:`here <projects/adc/ad9656_fmc>`.
+#. Observe console output messages on your terminal (use the first ttyUSB or COM
+   port registered).
+
+.. seealso::
+   For more detailed information on ZCU102 switch configuration, check the
+   *ZCU102 Hardware User Guide* (chapter "MPSoC Device Configuration")
+   `here <https://docs.amd.com/v/u/en-US/ug1182-zcu102-eval-bd>`__.
+
+Console output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:
+
+.. collapsible:: Complete boot log
+
+   ::
+
+    Zynq MP First Stage Boot Loader
+    Release 2023.2   Feb 25 2026  -  08:49:19
+    PMU-FW is not running, certain applications may not be supported.
+    The ad9508 chip successfully configured
+    The ad9553 chip successfully configured
+    The ad9656 chip successfully configured
+    ad9656_xcvr: OK (2500000 kHz)
+    ad9656_jesd status:
+            Link is enabled
+            Measured Link Clock: 62.498 MHz
+            Reported Link Clock: 62.500 MHz
+            Lane rate: 2500.000 MHz
+            Lane rate / 40: 62.500 MHz
+            LMFC rate: 3.906 MHz
+            Link status: DATA
+            SYSREF captured: disabled
+            SYSREF alignment error: disabled
+    ad9656_adc: Successfully initialized (124996948 Hz)
+    main ad9656 - PN9 sequence checked!
+    main ad9656 - PN23 sequence checked!
+    User input test sequence started!
+    DMA_EXAMPLE: address=0x800000 samples=32768 channels=4 bits=16
+    ad9656: setup, configuration and test program is done
+    Running IIOD server...
+    If successful, you may connect an IIO client application by:
+    1. Disconnecting the serial terminal you use to view this message.
+    2. Connecting the IIO client application using the serial backend configured as shown:
+       Baudrate: 115200
+       Data size: 8 bits
+       Parity: none
+       Stop bits: 1
+       Flow control: none
