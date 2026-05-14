@@ -95,7 +95,7 @@ Required hardware
 - Micro-USB cable (UART)
 - LAN cable (Ethernet)
 - 4x SMA cables (optional, but recommended)
-- (Optional) USB keyboard & mouse and a HDMI compatible monitor
+
 
 .. More details as to why you need these, can be found at
 .. :ref:`template prerequisites`.
