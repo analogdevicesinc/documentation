@@ -41,8 +41,7 @@ a boot partition with the following files:
 
    Pre-built Kuiper Linux SD card images with the LTC2378 FMC support
    are available from the
-   `ADI Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
-   page. If you want to build the files yourself, refer to the
+   :ref:`kuiper` page. If you want to build the files yourself, refer to the
    :external+hdl:ref:`Build an HDL project <build_hdl>` guide.
 
 Required software

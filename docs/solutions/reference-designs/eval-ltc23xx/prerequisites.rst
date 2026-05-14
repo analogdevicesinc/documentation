@@ -44,8 +44,7 @@ files are required on the SD card boot partition:
 
    Pre-built Kuiper Linux images that include the LTC2378 FMC bitstream
    are available as part of the
-   `ADI Kuiper Linux <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
-   distribution. For custom builds, see:
+   :ref:`kuiper` distribution. For custom builds, see:
 
    :external+hdl:ref:`Build an HDL project <build_hdl>`
 
@@ -78,8 +77,6 @@ Hardware prerequisites
 Software prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `no-OS build environment
-  <https://analogdevicesinc.github.io/no-OS/build_guide.html>`_ set up on the
-  host PC
+- :external+no-OS:doc:`build_guide` set up on the host PC
 - The ltc project for your device from :git-no-os:`no-OS projects <projects/>`
 - Maxim/ADI toolchain for the :adi:`MAX32666FTHR` target

@@ -78,7 +78,7 @@ Recommendations
 To better understand the LTC23xx family, we recommend using the evaluation
 board with the `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 FPGA development kit for Linux-based evaluation. For no-OS, you can use a
-demonstration board. 
+demonstration board.
 
 .. important::
 
@@ -120,15 +120,14 @@ Table of contents
 
         #. About the device driver:
 
-           - :external+linux:ref:`AXI ADC HDL Linux driver <axi-adc-hdl>`
-           - :external+linux:ref:`AXI-DMAC DMA Controller Linux driver
-             <axi-dmac>`
+           - :external+linux:ref:`axi-adc-hdl`
+           - :external+linux:ref:`axi-dmac`
 
         #. About the SPI Engine framework:
 
-           - :external+hdl:ref:`SPI Engine Framework <spi_engine>`
+           - :external+hdl:ref:`spi_engine`
 
-     #. :external+hdl:ref:`HDL reference design <ltc2378_fmc>` for the
+     #. :external+hdl:ref:`ltc2378_fmc` for the
         ZedBoard.
 
 #. :ref:`Help and Support <help-and-support>`
@@ -159,7 +158,7 @@ Supported devices
      - 16-bit
      - 2 MSPS
      - 2.5V
-     - Fully differential
+     - Pseudo-differential unipolar
    * - :adi:`LTC2378-20`
      - 20-bit
      - 1 MSPS
