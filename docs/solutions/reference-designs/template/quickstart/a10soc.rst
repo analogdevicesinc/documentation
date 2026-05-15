@@ -96,7 +96,6 @@ Required hardware
 - LAN cable (Ethernet)
 - 4x SMA cables (optional, but recommended)
 
-
 .. More details as to why you need these, can be found at
 .. :ref:`template prerequisites`.
 
