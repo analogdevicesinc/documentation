@@ -314,3 +314,7 @@ Help and Support
 
 For questions and more information about this product, connect with us through
 the Analog Devices :ez:`sw-interface-tools/robot-operating-system-ros-sdk`.
+
+.. toctree::
+   
+   hardware-assembly
