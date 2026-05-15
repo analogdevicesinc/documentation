@@ -1,12 +1,238 @@
 Contents
 ========
 
+Bill of Materials
+=================
+
+.. list-table:: AD-R1M Bill of Materials
+   :name: table-bom
+   :header-rows: 1
+   :widths: auto
+
+   * - Ref
+     - Qty
+     - P/N
+     - Description
+     - Link
+   * - 3D1
+     - 4
+     - N/A
+     - 16 mm caster raiser
+     -
+   * - 3D2
+     - 2
+     - N/A
+     - Motor mounts
+     -
+   * - 3D3
+     - 2
+     - N/A
+     - 3D printed camera mount brackets
+     -
+   * - 3D4
+     - 1
+     - N/A
+     - 3D printed camera housing
+     -
+   * - 3D5
+     - 2
+     - N/A
+     - Wheel assembly
+     -
+   * - 3D6
+     - 1
+     - N/A
+     - Electronics sub-assemblies mounting plate
+     -
+   * - 3D7
+     - 1
+     - N/A
+     - 3D Printed Front Panel
+     -
+   * - ADI1
+     - 2
+     - QSH5718-51-28-101-10K
+     - NEMA 23 stepper motor 55Ncm, 2.8A
+     - .. image:: res/qsh5718-51-28-101-10k.jpg
+          :width: 120px
+
+       :adi:`qsh5718`
+   * - ADI2
+     - 1
+     - EVAL-ADTF3175
+     - Time-of-Flight depth camera for perception
+     - .. image:: res/eval_adtf3175.png
+          :width: 120px
+
+       :adi:`EVAL-ADTF3175`
+   * - ADI3
+     - 1
+     - ADRD3161
+     - Motor Control PCB
+     - .. image:: res/adrd3161.jpg
+          :width: 120px
+
+       :adi:`ADRD3161-01Z`
+   * - ADI4
+     - 1
+     - ADRD5161
+     - BMS
+     - .. image:: res/adrd5161.png
+          :width: 120px
+
+       :adi:`ADRD5161-01Z`
+   * - ADI5
+     - 1
+     - ADRD4161
+     - Compute Carrier
+     - .. image:: res/adrd4161_board.jpg
+          :width: 120px
+
+       :adi:`ADRD4161-01Z`
+   * - ADI6
+     - 1
+     - N/A
+     - Battery Holder
+     -
+   * - E1
+     - 1
+     - RPi 5
+     - Raspberry Pi 5 SBC
+     -
+   * - E2
+     - 1
+     - IND16-12B-C
+     - Status LED
+     -
+   * - E3
+     - 1
+     - 82-4151.1000
+     - SPDT Button
+     -
+   * - E4
+     - 1
+     - 82-4151.1123
+     - SPDT Button
+     -
+   * - M1
+     - 6
+     - FA-093W201N05S01
+     - Angle bracket
+     -
+   * - M2
+     - 6
+     - A-094411M4
+     - Panel holder
+     -
+   * - M3
+     - 1
+     - K2020-I5 KRAFTBERG
+     - 340mm Aluminum 20X20 profile
+     -
+   * - M4
+     - 2
+     - K2040-I5 KRAFTBERG
+     - 530mm Aluminum 20X40 profile
+     -
+   * - M5
+     - 1
+     - K2040-I5 KRAFTBERG
+     - 340mm Aluminum 20X40 profile
+     -
+   * - M6
+     - 12
+     - M5X8/D912-A4
+     - Screw
+     -
+   * - M7
+     - 28
+     - FA-096215
+     - M5 Profile nut
+     -
+   * - M8
+     - 4
+     - JDPE-0501-1001
+     - Casters
+     -
+   * - M9
+     - 8
+     - B5X25/BN3
+     - M5 25mm screw
+     -
+   * - M10
+     - 8
+     - B5/BN715
+     - 5mm washer
+     -
+   * - M11
+     - 8
+     - B5X10/BN3
+     - M5 10mm screw
+     -
+   * - M12
+     - 8
+     - B5/BN161
+     - M5 nut lock
+     -
+   * - M13
+     - 2
+     - B4X8/BN3
+     - M4 x 8 HEX
+     -
+   * - M14
+     - 2
+     - B4/BN1074
+     - M4 Washer
+     -
+   * - M15
+     - 8
+     - M3X15/DR213
+     - Standoff TFF
+     -
+   * - M16
+     - 4
+     - M3X20/DR113
+     - Standoff TFM
+     -
+   * - M17
+     - 8
+     - M3X25/DR213
+     - Standoff TFF
+     -
+   * - M18
+     - 16
+     - M3X5/D7985
+     - Screw
+     -
+   * - M19
+     - 16
+     - B3X5/BN610
+     - HEX Screw
+     -
+   * - M20
+     - 8
+     - B5X16/BN3
+     - M5 x 16 screw
+     -
 
 Tools needed
 ============
 
-.. csv-table:: Board Performance Summary
-   :file: BOM.csv
+.. list-table:: Tools Required
+   :name: table-tools
+   :header-rows: 1
+   :widths: auto
+
+   * - Item
+     - Description
+   * - Tape measure
+     - For measuring frame dimensions and diagonals
+   * - Allen Key set
+     - For tightening hex screws
+   * - Pliers
+     - For general assembly
+   * - Crimping tools
+     - For wire harness assembly
 
 .. _section-1:
 
@@ -25,7 +251,7 @@ Make sure it results in a rectangular shape by measuring the diagonals.
 
 Use 2 angle brackets to connect two K2040 profiles.
 
-Place the A-094411M4 holders 30mm away from the interior of the profile.
+Place 4 "M2" holders 30mm away from the interior of the profile and 2 in the middle of the 530mm profiles.
 
 .. list-table:: Frame Step 1 - Frame Assembly
    :name: table-frame-step1
@@ -36,30 +262,35 @@ Place the A-094411M4 holders 30mm away from the interior of the profile.
      - Qty
      - P/N
      - Description
-   * -
+   * - M1
      - 6
      - FA-093W201N05S01
      - Angle bracket
-   * -
+   * - M2
      - 6
      - A-094411M4
-     - Holder
-   * -
+     - Panel holder
+   * - M3
+     - 1
+     - K2020-I5 KRAFTBERG
+     - 340mm Aluminum 20X20 profile
+   * - M4
+     - 2
+     - K2040-I5 KRAFTBERG
+     - 530mm Aluminum 20X40 profile
+   * - M5
+     - 1
+     - K2040-I5 KRAFTBERG
+     - 340mm Aluminum 20X40 profile
+   * - M6
      - 12
      - M5X8/D912-A4
      - Screw
-   * -
+   * - M7
      - 12
      - FA-096215
-     - Profile nut
-   * -
-     - 1 X 340mm
-     - K2020-I5 KRAFTBERG
-     - Aluminum 20X20 profile
-   * -
-     - 2 X 530mm, 1X 340mm
-     - K2040-I5 KRAFTBERG
-     - Aluminum 20X40 profile
+     - M5 Profile nut
+
 
 .. image:: ./media/image2.jpeg
    :width: 5.45347in
@@ -68,7 +299,7 @@ Place the A-094411M4 holders 30mm away from the interior of the profile.
 Step 2:
 ^^^^^^^
 
-Place the wheels using the 3D printed 15mm caster raiser.
+Place the wheels using the 3D printed 15mm caster raiser "3D1".
 
 .. list-table:: Frame Step 2 - Wheels
    :name: table-frame-step2
@@ -79,30 +310,30 @@ Place the wheels using the 3D printed 15mm caster raiser.
      - Qty
      - P/N
      - Description
-   * -
+   * - M8
      - 4
      - JDPE-0501-1001
      - casters
-   * -
-     - 2
-     - JPPF-1001-5100
-     - wheels
-   * -
+   * - 3D1
      - 4
      - N/A
      - 16 mm caster raiser
-   * -
+   * - M7
      - 8
      - FA-096215
      - M5 profile nut
-   * -
+   * - M9
      - 8
      - B5X25/BN3
      - M5 25mm screw
-   * -
+   * - M10
      - 8
      - B5/BN715
      - 5mm washer
+..   * - 
+..     - 2
+..    - JPPF-1001-5100
+..     - wheels
 
 .. image:: ./media/image3.jpeg
    :width: 5.88333in
@@ -111,8 +342,8 @@ Place the wheels using the 3D printed 15mm caster raiser.
 Step 3:
 ^^^^^^^
 
-Install the motor mounts. The motor mounts need to be placed the center
-of the profile.
+Install the motor mounts "3D2". The motor mounts need to be placed in the center
+of the 530mm longitudinal profiles.
 
 .. list-table:: Frame Step 3 - Motor Mounts
    :name: table-frame-step3
@@ -123,15 +354,15 @@ of the profile.
      - Qty
      - P/N
      - Description
-   * -
-     -
+   * - 3D2
+     - 2
      - N/A
      - Motor mounts
-   * -
+   * - M7
      - 8
      - FA-096215
      - M5 profile nut
-   * -
+   * - M11
      - 8
      - B5X10/BN3
      - M5 10mm screw
@@ -152,14 +383,18 @@ Step 4:
      - Qty
      - P/N
      - Description
-   * -
+   * - M20
      - 8
      - B5X16/BN3
-     - M5 x 16
-   * -
+     - M5 x 16 screw
+   * - M12
      - 8
      - B5/BN161
      - M5 nut lock
+   * - ADI1
+     - 2
+     - QSH5718-51-28-101-10K
+     - NEMA 23 stepper motor 55Ncm, 2.8A
 
 Install the motors.
 
@@ -183,26 +418,49 @@ Camera mounts and camera housing are 3D printed.
      - Qty
      - P/N
      - Description
-   * -
+   * - M13
      - 2
      - B4X8/BN3
      - M4 x 8 HEX
-   * -
+   * - M14
      - 2
      - B4/BN1074
      - M4 Washer
-   * -
+   * - 3D3
      - 2
      - NA
-     - Camera mount
-   * -
+     - 3D printed camera mount brackets
+   * - 3D4
      - 1
      - NA
-     - Camera housing
+     - 3D printed camera housing
+   * - ADI2
+     - 1
+     - EVAL-ADTF3175
+     - Time-of-Flight depth camera for perception
 
 .. image:: ./media/image6.jpeg
    :width: 6.48958in
    :height: 4.90625in
+
+Step 6:
+^^^^^^^
+
+Install the wheel assembly on the motor
+
+.. list-table:: Frame Step 6 - Wheel Assembly
+   :name: table-frame-step6
+   :header-rows: 1
+   :widths: auto
+
+   * - Ref
+     - Qty
+     - P/N
+     - Description
+   * - 3D5
+     - 2
+     - N/A
+     - Wheel assembly
 
 .. _section-2:
 
@@ -212,27 +470,15 @@ Camera mounts and camera housing are 3D printed.
 
 .. _section-5:
 
-Board assembly
+Electronic modules
 --------------
-
-Board list:
-
-2 X **ADRD3161** – MOTOR CONTROL
-
-1 X **ADRD5161** – BMS
-
-1 X **ADRD4161** – COMPUTE CARRIER
-
-1 X COMPUTE MODULE ( Rapberry Pi )
-
-1X BATTERY HOLDER
 
 Step 1:
 ^^^^^^^
 
 Place board spacers.
 
-.. list-table:: Board Assembly Step 1 - Spacers
+.. list-table:: Electronics Assembly Step 1 - Spacers
    :name: table-board-step1
    :header-rows: 1
    :widths: auto
@@ -241,19 +487,23 @@ Place board spacers.
      - Qty
      - P/N
      - Description
-   * -
+   * - 3D6
+     - 1
+     - N/A
+     - Electronics sub-assemblies mounting plate
+   * - M15
      - 8
      - M3X15/DR213
      - Standoff TFF
-   * -
+   * - M16
      - 4
      - M3X20/DR113
      - Standoff TFM
-   * -
+   * - M17
      - 4
      - M3X25/DR213
      - Standoff TFF
-   * -
+   * - M18
      - 16
      - M3X5/D7985
      - Screw
@@ -272,14 +522,18 @@ Place board spacers.
    :width: 5.31319in
    :height: 2.5625in
 
+.. image:: ./media/image23.png
+   :width: 3.16528in
+   :height: 4.59375in
+
 Step 2:
 ^^^^^^^
 
-Place boards.
+Place PCB sub-assemblies.
 
 The BMS board goes above the battery holder on 4 M3X25 standoffs.
 
-.. list-table:: Board Assembly Step 2 - Boards
+.. list-table:: Electronics Assembly Step 2 - Boards
    :name: table-board-step2
    :header-rows: 1
    :widths: auto
@@ -288,14 +542,34 @@ The BMS board goes above the battery holder on 4 M3X25 standoffs.
      - Qty
      - P/N
      - Description
-   * -
+   * - M19
      - 16
      - B3X5/BN610
      - HEX Screw
-   * -
+   * - M17
      - 4
      - M3X25/DR213
      - Standoff TFF
+   * - ADI3
+     - 1
+     - ADRD3161
+     - Motor Control PCB
+   * - ADI4
+     - 1
+     - ADRD5161 
+     - BMS
+   * - ADI5
+     - 1
+     - ADRD4161
+     - Compute Carrier
+   * - ADI6
+     - 1
+     - N/A
+     - Battery Holder
+   * - E1
+     - 1
+     - RPi 5
+     - Raspberry Pi 5 SBC
 
 .. _section-9:
 
@@ -319,18 +593,22 @@ Control Panel
      - Qty
      - P/N
      - Description
-   * -
+   * - E2
      - 1
      - IND16-12B-C
      - Status LED
-   * -
+   * - E3
      - 1
      - 82-4151.1000
      - SPDT Button
-   * -
+   * - E4
      - 1
      - 82-4151.1123
      - SPDT Button
+   * - 3D7
+     - 1
+     - N/A
+     - 3D Printed Front Panel
 
 .. image:: ./media/image10.png
    :width: 3.36458in
@@ -365,7 +643,8 @@ Main wiring diagram:
 
 Wire assemblies:
 
-1. CAN
+CAN
+^^^
 
 Twisted pair + GND with Molex Micro-Fit 3.0 **43025-0400** connectors on
 both sides.
@@ -374,7 +653,8 @@ both sides.
    :width: 6.5in
    :height: 1.59444in
 
-2. Motor encoder
+Motor encoder
+^^^^^^^^^^^^^
 
 Wire assembly with Molex Micro-Fit 3.0 **43025-0800** connector on the
 motor control board side. For more details check ADRD3161 documentation.
@@ -383,7 +663,8 @@ motor control board side. For more details check ADRD3161 documentation.
    :width: 5.85694in
    :height: 3.29306in
 
-3. Battery balancing
+Battery balancing
+^^^^^^^^^^^^^^^^^
 
 Wire assembly, 4 wires with JST **XHP-4** connectors on both sides.
 
@@ -395,7 +676,8 @@ Wire assembly, 4 wires with JST **XHP-4** connectors on both sides.
    :width: 2.27778in
    :height: 6.55972in
 
-4. Power wires
+Power wires
+^^^^^^^^^^^
 
 - 2.5mm wires with bootlace ferrule.
 
@@ -408,10 +690,6 @@ Wire assembly, 4 wires with JST **XHP-4** connectors on both sides.
 .. image:: ./media/image22.png
    :width: 5.89583in
    :height: 1.96528in
-
-.. image:: ./media/image23.png
-   :width: 3.16528in
-   :height: 4.59375in
 
 .. image:: ./media/image24.png
    :width: 6.5in
