@@ -255,7 +255,7 @@ Equipment Needed
    .. figure:: max32670-lr-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
-:dokuwiki:`ADI Long Range Wireless Radio Software User Guide </resources/eval/user-guides/longrangewirelessradio/software>`.
+:ref:`ADI Long Range Wireless Radio Software User Guide <lora_software>`.
 
 Resources
 ---------

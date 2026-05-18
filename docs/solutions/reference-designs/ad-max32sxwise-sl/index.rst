@@ -285,17 +285,7 @@ Equipment Needed
    .. figure:: max32670-sx-ardz_to_maxpico.png
 
 **Once you have completed this setup, proceed to PHASE 2 found in**
-:dokuwiki:`ADI Long Range Wireless Radio Software User Guide </resources/eval/user-guides/longrangewirelessradio/software>`.
-
-Resources
----------
-
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
-   :glob:
-
-   */index
+:ref:`ADI Long Range Wireless Radio Software User Guide <lora_software>`.
 
 FAQs
 ----
@@ -326,3 +316,13 @@ Help and Support
 
 For questions and more information about this product, connect with us through
 the :ez:`Analog Devices Engineer Zone </>`.
+
+.. toctree::
+   :hidden:
+  
+   lora-software/index
+   max32670-sx-ardz/index
+   ev-structural-ardz/index
+   ev-flowmeter-ardz/index
+   eval-ade9000shieldz/index
+   
