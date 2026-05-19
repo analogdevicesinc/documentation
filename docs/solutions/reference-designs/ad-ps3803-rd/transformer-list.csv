@@ -1,0 +1,5 @@
+﻿**Part Number**,**Manufacturer**,**Primary Winding Inductance**,**Turns Ratio**,**Saturation Current** ,**Output Voltage**,**Output Current**
+750319036,Wurth Elektroniks,16 µH,2.33,10.4 A,12 V,6 A
+750319021,Wurth Elektroniks,22 µH,2.4,10.8 A,12 V,8 A
+POE71F-12ED,Coilcraft,15.5 µH,2,6.6 A,12 V,5.4 A
+POE120PL-12L,Coilcraft,50 µH,2,--,12 V,10 A

@@ -1,0 +1,6 @@
+﻿**Power from PSE**,**Maximum PD Power**,**PD Type**,**PD Class**,**RCLS**,**Odd Jumper**,**RCLS++**,**Even Jumper**,**Notes**
+30W,25.5W,Type 2-IEEE 802.3at,Class 4,34.8Ω,JP9,Open,JP10,
+45W,40W,Type 3-IEEE 802.3bt,Class 5,1.0kΩ,JP11,37.4Ω,JP12,"Add RCLS = 1.0kΩ, and Add RCLS++ = 37.4Ω"
+60W,51W,Type 3-IEEE 802.3bt,Class 6,140Ω,JP13,46.4Ω,JP14,
+75W,62W,Type 4-IEEE 802.3bt,Class 7,76.8Ω,JP15,64.9Ω,JP16,
+90W,71.3W,Type 4-IEEE 802.3bt,Class 8,49.9Ω,JP17,118Ω,JP18,
