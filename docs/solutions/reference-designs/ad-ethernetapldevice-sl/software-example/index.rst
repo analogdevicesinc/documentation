@@ -14,8 +14,51 @@ compatibility and ease of use.
 Prerequisites
 -------------
 
+Updating the Firmware
+---------------------
+
+The on-board MAX32690 microcontroller's firmware must be updated to ensure compatibility 
+with the latest software examples. To update the firmware, use the MAX32625PICO programmer 
+before programming the AD-EthernetAPLDevice-SL board itself.
+
+Requirements:
+
+- MAX32625PICO programmer
+- Micro-USB cable
+- Host PC with USB port
+- 10-pin ribbon cable (for connecting the MAX32625PICO to the AD-EthernetAPLDevice-SL)
+
+First, flash a new bootloader onto the MAX32625PICO:
+
+#. Download the firmware image: 
+   `MAX32625PICO firmware <https://github.com/MaximIntegrated/max32625pico-firmware-images/raw/master/bin/max32625_max32650fthr_if_crc_swd_v1.0.6.bin>`__
+#. Enter MAINTENANCE mode on the MAX32625PICO:
+
+   * Ensure the MAX32625PICO is disconnected from both the PC and the AD-EthernetAPLDevice-SL.
+   * Connect only the micro-USB cable to the MAX32625PICO.
+   * Press and hold the button on the MAX32625PICO.
+   * While holding the button, connect the USB cable to the PC.
+   * Release the button once the MAINTENANCE drive appears.
+
+#. Copy the downloaded firmware image to the MAINTENANCE drive.
+#. Wait until the MAINTENANCE drive disappears and is replaced by a drive named DAPLINK. 
+   The bootloader update is complete.
+
+Programming the AD-EthernetAPLDevice-SL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Connect the MAX32625PICO to the PC using the micro-USB cable.
+#. Connect the MAX32625PICO to the AD-EthernetAPLDevice-SL board using the 10-pin ribbon cable.
+#. Power on the AD-EthernetAPLDevice-SL.
+#. Verify that a DAPLINK drive appears on the PC.
+#. Copy the new firmware image to the DAPLINK drive and wait for the drive to remount.
+#. Open the DAPLINK drive and check for a FAIL.TXT file. If FAIL.TXT is present, repeat the copy step. 
+   If not, safely disconnect the MAX32625PICO from the AD-EthernetAPLDevice-SL; the firmware update is complete.
+
+----
+
 Code Fusion Studio Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Before working with any examples, you'll need to install Code Fusion Studio:
 
@@ -33,6 +76,8 @@ with additional security mechanisms. For enhanced security features:
 
 * **Security Resources**: `CFS Security Guide
   <https://developer.analog.com/docs/codefusion-studio/latest/user-guide/resources/security-resources/>`_
+
+----
 
 MSDK Examples
 -------------
