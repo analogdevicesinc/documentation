@@ -75,21 +75,21 @@ The AD-R1M platform is built from modular ADI reference design boards:
 
        :adi:`ADRD3161-01Z`
      - CAN-based motor driver with encoder interface (x2)
-     - :doc:`ADRD3161-01Z </solutions/reference-designs/adrd3161-01z/index>`
-   * - Power Distribution
+     - :ref:`adrd3161-01z`
+   * - Compute Carrier
      - .. image:: res/adrd4161_board.jpg
           :width: 120px
 
        :adi:`ADRD4161-01Z`
      - Robotics perception compute carrier for Raspberry Pi
-     - :doc:`ADRD4161-01Z </solutions/reference-designs/adrd4161-01z/index>`
+     - :ref:`adrd4161-01z`
    * - Battery Management
      - .. image:: res/adrd5161.png
           :width: 120px
 
        :adi:`ADRD5161-01Z`
      - BMS board with CAN interface (3S or 12S variants)
-     - :doc:`ADRD5161-01Z </solutions/reference-designs/adrd5161-01z/index>`
+     - :ref:`adrd5161-01z`
    * - IMU
      - :adi:`ADIS16470`
      - High-precision 6-axis IMU for localization
@@ -100,7 +100,7 @@ The AD-R1M platform is built from modular ADI reference design boards:
 
        :adi:`EVAL-ADTF3175`
      - Time-of-Flight depth camera for perception
-     - `adi_3dtof <https://analogdevicesinc.github.io/adi_ros2/humble/adi_3dtof_adtf31xx/index.html>`_
+     - `adi_3dtof <https://analogdevicesinc.github.io/adi_ros2/humble/adi_3dtof_adtf31xx/index.html>`__
 
 
 System Applications
@@ -110,7 +110,7 @@ SLAM Mapping
 ~~~~~~~~~~~~
 
 The AD-R1M uses the ADIS16470 IMU and EVAL-ADTF3175 ToF camera for real-time
-Simultaneous Localization and Mapping (SLAM). The platform can supports multiple
+Simultaneous Localization and Mapping (SLAM). The platform supports multiple
 SLAM algorithms.
 
 .. figure:: res/do_mapping.gif
@@ -142,9 +142,9 @@ Multi-robot Fleet
 ~~~~~~~~~~~~~~~~~
 
 The AD-R1M supports multi-robot deployments using `ROS 2 Zenoh middleware
-<https://docs.ros.org/en/humble/Installation/RMW-Implementations/Non-DDS-Implementations/Working-with-Zenoh.html>`_
+<https://docs.ros.org/en/humble/Installation/RMW-Implementations/Non-DDS-Implementations/Working-with-Zenoh.html>`__
 and namespacing for swarm robotics management. Fleet coordination enables
-sensor data aquisition, task distribution, and control across multiple
+sensor data acquisition, task distribution, and control across multiple
 robots operating in shared environments.
 
 .. figure:: res/amr_multi_robot.gif
@@ -192,21 +192,23 @@ AGX Orin integration with NVIDIA Isaac ROS cuVSLAM and Intel RealSense cameras.
 The Jetson AGX Orin is powered by the ADRD5161 BMS and communicates with the
 AD-R1M via Ethernet using ROS 2 middleware wrappers.
 
-.. list-table::
-   :widths: 33 33 33
+.. grid::
+   :widths: 33% 33% 33%
 
-   * - .. image:: res/robot_power_connection.jpg
-          :width: 200px
+   .. figure:: res/robot_power_connection.jpg
+      :width: 200px
 
-       BMS power connection
-     - .. image:: res/robot_ethernet_connection.jpg
-          :width: 200px
+      BMS power connection
 
-       RPi Ethernet
-     - .. image:: res/orin_ethernet_and_power.jpg
-          :width: 200px
+   .. figure:: res/robot_ethernet_connection.jpg
+      :width: 200px
 
-       AGX Orin power & Ethernet
+      RPi Ethernet
+
+   .. figure:: res/orin_ethernet_and_power.jpg
+      :width: 200px
+
+      AGX Orin power & Ethernet
 
 See the `AGX Orin cuVSLAM Guide <https://analogdevicesinc.github.io/ad_r1m_ros2/agx-orin-cuvslam/index.html>`__
 for full setup instructions.
@@ -223,13 +225,13 @@ perception capabilities in robotics and autonomous systems:
 
    * - Board
      - Description
-   * - :doc:`AD-GMSL716MIPI-EVK </solutions/reference-designs/ad-gmsl716mipi-evk/index>`
+   * - :ref:`ad-gmsl716mipi-evk`
      - GMSL2-to-MIPI deserializer for multi-camera vision systems
-   * - :doc:`AD-GMSL717MIPI-EVK </solutions/reference-designs/ad-gmsl717mipi-evk/index>`
+   * - :ref:`ad-gmsl717mipi-evk`
      - GMSL2 serializer for Raspberry Pi cameras
-   * - :doc:`AD-GMSL792MIPI-EVK </solutions/reference-designs/ad-gmsl792mipi-evk/index>`
+   * - :ref:`ad-gmsl792mipi-evk`
      - GMSL3/2 quad deserializer for surround-view applications
-   * - :doc:`AD-GMSL793MIPI-EVK </solutions/reference-designs/ad-gmsl793mipi-evk/index>`
+   * - :ref:`ad-gmsl793mipi-evk`
      - GMSL3/2 octal deserializer for advanced multi-camera systems
 
 Image Processing
@@ -256,7 +258,7 @@ and class labels for obstacle avoidance.
 
    Object detection with YOLO
 
-See the `ad_r1m_image_processing package <https://github.com/analogdevicesinc/ad_r1m_ros2/tree/image_processing_pkg/ad_r1m_image_processing>`_
+See the `ad_r1m_image_processing package <https://github.com/analogdevicesinc/ad_r1m_ros2/tree/image_processing_pkg/ad_r1m_image_processing>`__
 for setup and configuration.
 
 
@@ -274,11 +276,11 @@ Full documentation and guides are available in the project repository:
 ADI ROS 2 Ecosystem
 -------------------
 
-The `adi_ros2 <https://github.com/analogdevicesinc/adi_ros2>`_ meta-repository
+The `adi_ros2 <https://github.com/analogdevicesinc/adi_ros2>`__ meta-repository
 streamlines the use of ADI packages within ROS 2 by providing a single entry point
 for all ADI-supported packages. It includes CI scripts for building system
 dependencies from source, centralized within a Docker wrapper for reproducible
-builds. See the `official documentation <https://analogdevicesinc.github.io/adi_ros2/>`_
+builds. See the `official documentation <https://analogdevicesinc.github.io/adi_ros2/>`__
 for getting started.
 
 **Related ROS 2 Packages:**
@@ -300,7 +302,7 @@ Resources
 ---------
 
 - AD-R1M Repository: `ad_r1m_ros2 <https://github.com/analogdevicesinc/ad_r1m_ros2>`__
-- ADI ROS 2 Meta-repo: `adi_ros2 <https://github.com/analogdevicesinc/adi_ros2>`_
+- ADI ROS 2 Meta-repo: `adi_ros2 <https://github.com/analogdevicesinc/adi_ros2>`__
 
 Related Products
 ----------------

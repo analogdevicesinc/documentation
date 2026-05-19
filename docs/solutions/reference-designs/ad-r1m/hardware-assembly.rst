@@ -629,16 +629,16 @@ Wiring Harness
 Wiring Overview
 ^^^^^^^^^^^^^^^
 
-.. list-table::
-   :widths: 50 50
+.. grid::
+   :widths: 50% 50%
 
-   * - .. figure:: res/assembly/image13.png
+   .. figure:: res/assembly/image13.png
 
-          System wiring overview
+      System wiring overview
 
-     - .. figure:: res/assembly/image14.png
+   .. figure:: res/assembly/image14.png
 
-          Connection routing
+      Connection routing
 
 .. figure:: res/assembly/image15.png
    :width: 400px
@@ -703,27 +703,27 @@ control board side. See ADRD3161 documentation for details.
 
    Power distribution diagram
 
-.. list-table::
-   :widths: 50 50
+.. grid::
+   :widths: 50% 50%
 
-   * - .. figure:: res/assembly/image22.png
+   .. figure:: res/assembly/image22.png
 
-          Wire gauge reference
+      Wire gauge reference
 
-     - .. figure:: res/assembly/image24.png
+   .. figure:: res/assembly/image24.png
 
-          Power cable routing
+      Power cable routing
 
-.. list-table::
-   :widths: 50 50
+.. grid::
+   :widths: 50% 50%
 
-   * - .. figure:: res/assembly/image25.png
+   .. figure:: res/assembly/image25.png
 
-          Terminal connection detail
+      Terminal connection detail
 
-     - .. figure:: res/assembly/image26.png
+   .. figure:: res/assembly/image26.png
 
-          Completed power connections
+      Completed power connections
 
 Completed Assembly
 ------------------

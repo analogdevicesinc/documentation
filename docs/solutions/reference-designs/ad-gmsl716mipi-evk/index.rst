@@ -1,5 +1,7 @@
 .. imported from: https://wiki.analog.com/resources/eval/user-guides/ad-gmsl716mipi-evk
 
+.. _ad-gmsl716mipi-evk:
+
 AD-GMSL716MIPI-EVK
 ==================
 
