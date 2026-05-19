@@ -73,12 +73,12 @@ Table of Contents
    - :ref:`arradio quick-start`
 
       - :doc:`Linux on Altera SoCKit </solutions/reference-designs/arradio/quickstart/alterasockit>`
-      - :doc:`Configure a pre-existing SD-Card </linux/kuiper/index>`
-      - :doc:`Update the old card you received with your hardware </linux/kuiper/index>`
+      - :ref:`kuiper`
+      - :ref:`kuiper`
 
    - Linux Applications
 
-      - :doc:`IIO Scope </software/iio-oscilloscope/index>`
+      - :ref:`iio-oscilloscope`
       - :dokuwiki:`AD9361 Control in the IIO Scope Plugin <resources/tools-software/linux-software/fmcomms2_plugin>`
       - :dokuwiki:`Advanced AD9361 Control IIO Scope Plugin <resources/tools-software/linux-software/fmcomms2_advanced_plugin>`
       - :dokuwiki:`Command Line/Shell scripts <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/applications/shell_scripts>`

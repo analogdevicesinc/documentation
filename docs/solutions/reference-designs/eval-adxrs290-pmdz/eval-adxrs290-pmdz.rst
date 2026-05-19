@@ -236,7 +236,7 @@ The Libiio is a library for interfacing with IIO devices.
 
    Install the :git-libiio:`Libiio package <releases+>` on your machine.
 
-The :doc:`iio_info </software/libiio/cli>` command is a part of the
+The :ref:`libiio iio_info` command is a part of the
 libIIO package that reports all IIO attributes.
 
 Upon installation, simply enter the command on the terminal command line to
@@ -288,7 +288,7 @@ IIO Commands
 ^^^^^^^^^^^^
 
 There are different commands that can be used to manage the device being used.
-The :doc:`iio_attr </software/libiio/cli>` command reads and writes IIO attributes.
+The :ref:`libiio iio_attr` command reads and writes IIO attributes.
 
 .. code-block::
 
@@ -302,7 +302,7 @@ Example:
 
    analog@analog:~$ iio_attr -a -C
 
-The :doc:`iio_reg </software/libiio/cli>` command reads or writes SPI or I2C
+The :ref:`libiio iio_reg` command reads or writes SPI or I2C
 registers in an IIO device. This is generally not needed for end
 applications, but can be useful in debugging drivers. Note that you
 need to specify a context using the *-u* qualifier when you are not

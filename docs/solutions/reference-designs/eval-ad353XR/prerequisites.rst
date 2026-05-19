@@ -56,7 +56,7 @@ For capturing and visualizing data from the device:
 
 #. :external+scopy:doc:`Scopy <index>` v2.0 or later
    (must contain the IIO plugin)
-#. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`, a graphical
+#. :ref:`iio-oscilloscope`, a graphical
    tool for capturing and visualizing IIO device data
 
 .. note::

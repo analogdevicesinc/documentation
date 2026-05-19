@@ -48,5 +48,5 @@ subsystem, which provides a standardized interface for data acquisition.
 Once the board has booted, the following IIO-based tools can be used to
 interact with and capture data from the device:
 
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+- :ref:`iio-oscilloscope`
 - :external+scopy:doc:`Scopy <index>` v2.0 or later (must include IIO plugin)

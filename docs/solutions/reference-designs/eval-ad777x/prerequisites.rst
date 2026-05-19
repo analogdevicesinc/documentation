@@ -47,7 +47,7 @@ Kuiper Linux SD card image:
 Normally, for basic functionalities regarding visualizing the data
 received from the FPGA, we use the following:
 
-#. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`, a
+#. :ref:`iio-oscilloscope`, a
    graphical tool for capturing and visualizing IIO device data
 #. :external+scopy:doc:`Scopy <index>` v2.0 or later
    (must contain the IIO plugin)

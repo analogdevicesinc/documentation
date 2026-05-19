@@ -116,7 +116,7 @@ connect to the board using its serial or network URI. For information on
 using IIO Oscilloscope with no-OS servers, see:
 
 - :git-no-os:`no-OS <>`
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+- :ref:`iio-oscilloscope`
 
 .. note::
 

@@ -4,7 +4,7 @@ AD9371/AD9375 Advanced Plugin
 ================================================================================
 
 The AD9371/AD9375 Advanced plugin works with the
-:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`.
+:ref:`iio-oscilloscope`.
 You should always use the latest version if possible. Changing any field will
 immediately write changes which have been made to the AD9371 settings to the
 driver, but not to the HW unless the Save Settings button is pressed.

@@ -985,7 +985,7 @@ Using IIO Oscilloscope
 -------------------------------------------------------------------------------
 
 After booting process is complete, you can open IIO-Oscilloscope. Learn more
-about it :doc:`here </software/iio-oscilloscope/index>`. You can interact with
+about it :ref:`iio-oscilloscope`. You can interact with
 the IIO-Osc GUI either directly or over the network.
 
 Once the board is booted and you have the IP address:

@@ -4,7 +4,7 @@ AD9371/AD9375 Plugin Description
 ================================================================================
 
 The AD9371 plugin works with the
-:doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`. You should always
+:ref:`iio-oscilloscope`. You should always
 use the latest version if possible. Changing any field will immediately write
 changes which have been made to the AD9371 settings to the hardware, and then
 read it back to make sure the setting is valid. If you want to set something

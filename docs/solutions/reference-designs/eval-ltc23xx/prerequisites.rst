@@ -50,8 +50,8 @@ files are required on the SD card boot partition:
 
 For visualizing captured data from the FPGA board, use one of:
 
-#. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` - a
-   graphical tool for capturing and displaying IIO device data
+#. :ref:`iio-oscilloscope` - a graphical tool for capturing and displaying IIO
+   device data
 #. :external+scopy:doc:`Scopy <index>` v2.0 or later (must include
    the IIO plugin)
 

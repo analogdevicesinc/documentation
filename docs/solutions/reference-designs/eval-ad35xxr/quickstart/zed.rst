@@ -17,7 +17,7 @@ Required software
 
 - A UART terminal (PuTTY / Tera Term / Minicom) at 115200 baud, 8N1
 - :git-libiio:`libiio </>` installed on the host PC
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` and/or
+- :ref:`iio-oscilloscope` and/or
   :external+scopy:doc:`Scopy <index>` installed on the host PC
 
 Required hardware

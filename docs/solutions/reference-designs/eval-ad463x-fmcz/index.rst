@@ -106,7 +106,7 @@ Table of contents
       #. Using the :ref:`ZedBoard <eval-ad463x-quickstart-zedboard>`
 
    #. Configure an SD Card with
-      :doc:`ADI Kuiper Linux </linux/kuiper/index>`
+      :ref:`kuiper`
 
 #. Design with the AD4630/AD4030
 

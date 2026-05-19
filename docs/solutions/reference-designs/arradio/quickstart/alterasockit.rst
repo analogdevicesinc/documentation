@@ -48,7 +48,7 @@ Creating the Micro-SD Card
 
 .. tip::
 
-   :doc:`Create SD Image for Terasic C5 SoCkit board(it is a single image for all boards). </linux/kuiper/index>`
+   :ref:`kuiper`
 
 Required files
 ~~~~~~~~~~~~~~

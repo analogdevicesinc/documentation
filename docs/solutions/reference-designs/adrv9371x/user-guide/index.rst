@@ -31,13 +31,13 @@ MATLAB Support
 --------------------------------------------------------------------------------
 
 MATLAB support is provided through the
-:doc:`/software/matlab/transceiver-toolbox/index`, with unique classes for
+:ref:`matlab transceiver-toolbox`, with unique classes for
 transmit and receive functionality. The :adi:`AD9371` can be controlled via
 MATLAB using example scripts which are available as part of the
 :git-TransceiverToolbox:`Transceiver Toolbox <>`. The toolbox can either be
 manually downloaded from the Releases section of the GitHub page, or downloaded
 and installed via MATLAB Add-On Explorer. MATLAB is used to exercise the board
-through :doc:`LibIIO </software/libiio/index>` objects and provide higher level
+through :ref:`libiio` objects and provide higher level
 application functionality.
 
 Additionally, a :doc:`Filter Design Wizard</solutions/reference-designs/adrv9371x/user-guide/filters>`

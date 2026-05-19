@@ -59,7 +59,7 @@ can build them manually:
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- SD Card 16GB imaged with :doc:`ADI Kuiper Linux </linux/kuiper/index>`
+- SD Card 16GB imaged with :ref:`kuiper`
   (check out that guide on how to do it, then come back to this section)
 - A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
 

@@ -38,7 +38,7 @@ Kuiper Linux image:
 
 For basic data visualization and DAC control we use:
 
-#. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` - graphical
+#. :ref:`iio-oscilloscope` - graphical
    tool for capturing and visualizing IIO device data
 #. :external+scopy:doc:`Scopy <index>` - oscilloscope and waveform
    generator application

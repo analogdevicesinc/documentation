@@ -67,5 +67,5 @@ using standard IIO tools over the network.
 The evaluation board is supported through the Linux IIO subsystem.
 Once booted, IIO-based tools can be used to interact with the device:
 
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>`
+- :ref:`iio-oscilloscope`
 - :external+scopy:doc:`Scopy <index>`

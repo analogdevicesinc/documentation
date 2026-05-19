@@ -50,7 +50,7 @@ Required software
 On the host PC:
 
 - A UART terminal (e.g. PuTTY, Tera Term, or Minicom) at 115200 baud (8N1)
-- :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` for data
+- :ref:`iio-oscilloscope` for data
   capture and visualization
 
 Required hardware

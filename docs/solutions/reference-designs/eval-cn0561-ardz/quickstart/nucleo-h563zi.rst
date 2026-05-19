@@ -18,8 +18,7 @@ Hardware Connection
 
 The basic test setup requires the EVAL-CN0561-ARDZ board to be plugged into the
 Nucleo-H563ZI board. The Nucleo H563ZI board is required to capture and display
-the data. Software is available on this page: :doc:`IIO Oscilloscope
-</software/iio-oscilloscope/index>`
+the data. Software is available on this page: :ref:`iio-oscilloscope`
 
 .. figure:: ../images/cn0561_test_setup_Nucleo-H563ZI.png
    :width: 600

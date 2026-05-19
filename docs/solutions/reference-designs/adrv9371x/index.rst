@@ -56,7 +56,7 @@ Table of Contents
    #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/index`
    #. Linux Applications
 
-      #. :doc:`/software/iio-oscilloscope/index`
+      #. :ref:`iio-oscilloscope`
 
          #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_osc_main`
          #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_plugin`
@@ -67,8 +67,8 @@ Table of Contents
    #. Push custom data into/out of the AD9371/AD9375
 
       #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/basic_iq_datafiles`
-      #. :doc:`/software/matlab/transceiver-toolbox/index`
-      #. :doc:`/software/pyadi-iio/index`
+      #. :ref:`matlab transceiver-toolbox`
+      #. :ref:`pyadi-iio`
 
 #. Design with the AD9371/AD9375
 
@@ -82,7 +82,7 @@ Table of Contents
    #. Hardware in the Loop / How to design your own custom Baseband
 
       #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-      #. :doc:`/software/matlab/transceiver-toolbox/index`
+      #. :ref:`matlab transceiver-toolbox`
 
    #. Design a custom AD9371/AD9375 based platform
 

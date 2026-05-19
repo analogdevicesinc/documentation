@@ -43,7 +43,7 @@ from the FPGA, we use the following:
 
 #. A Host PC (Linux) for initial setup and configuration
 #. A UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)
-#. :doc:`IIO Oscilloscope </software/iio-oscilloscope/index>` for data
+#. :ref:`iio-oscilloscope` for data
    visualization and device control
 
 .. note::

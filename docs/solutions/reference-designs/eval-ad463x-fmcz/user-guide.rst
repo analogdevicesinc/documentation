@@ -771,14 +771,14 @@ these files.
 
    -  **LibIIO subsystem** - a library of IIO functions that are used to create
       custom device drivers that run within the Linux system (see
-      :doc:`LibIIO </software/libiio/index>`
+      :ref:`libiio`
       for more details). These drivers have already been generated for the
       AD463x/AD4030x and incorporated in the uImage file.
    -  **IIOD** - An IIO daemon that exposes IIO devices over a network
       connection to a remote host.
 
 More information on the general Kuiper Linux distribution can be found at
-:doc:`ADI Kuiper Linux </linux/kuiper/index>`.
+:ref:`kuiper`.
 
 -  **Device tree file** that describes the attributes of the AD4630/AD4030
    configuration. The attributes of the ADC node in the device tree set the
@@ -1030,7 +1030,7 @@ These instructions assume a fresh installation of all required software:
 -  Install **pyadi-iio**. If running Anaconda in Windows, run the Anaconda
    prompt and enter ``pip install pyadi-iio``. Detailed py-adi installation
    guide can be found
-   :doc:`here </software/pyadi-iio/index>`.
+   :ref:`pyadi-iio`.
 -  PyADI-IIO updates are published quarterly. It is recommended to run **pip**
    quarterly to get the latest updates.
 
