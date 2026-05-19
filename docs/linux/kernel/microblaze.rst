@@ -180,30 +180,72 @@ devicetree, build the simpleImage:
 
 .. shell::
 
-   $printf "/dts-v1/;\n\n/ { };\n" > arch/microblaze/boot/dts/generic.dts
-   $make simpleImage.generic
+   /path/to/linux
+   $ printf "/dts-v1/;\n\n/ { };\n" > arch/microblaze/boot/dts/generic.dts
+   $ make simpleImage.generic
 
-And patch the device tree into the strip simpleImage:
+Locate the embedded empty DTB slot using a helper script:
+
+.. code-block:: python
+   :caption: find_empty_dtb.py
+
+   import struct, sys
+
+   # 'Empty' DTB struct block: FDT_BEGIN_NODE, '', FDT_END_NODE, FDT_END
+   EMPTY_STRUCT = bytes.fromhex('00000001000000000000000200000009')
+   DTB_MAGIC = 0xd00dfeed
+   OFF_DT_STRUCT = 56
+
+   with open(sys.argv[1], 'rb') as f:
+       data = f.read()
+
+   pos = 0
+   while True:
+       pos = data.find(EMPTY_STRUCT, pos)
+       if pos == -1:
+           break
+       dtb_start = pos - OFF_DT_STRUCT
+       if dtb_start < 0:
+           pos += 1
+           continue
+       magic = struct.unpack('>I', data[dtb_start:dtb_start+4])[0]
+       if magic != DTB_MAGIC:
+           pos += 1
+           continue
+       if struct.unpack('>I', data[dtb_start+8:dtb_start+12])[0] != OFF_DT_STRUCT:
+           pos += 1
+           continue
+       dtb_size = struct.unpack('>I', data[dtb_start+4:dtb_start+8])[0]
+       dtb_end = dtb_start + dtb_size
+       boundary = dtb_end
+       while boundary < len(data) and data[boundary] == 0:
+           boundary += 1
+       print(f'{dtb_start} {dtb_size} {boundary} {boundary - dtb_start}')
+       sys.exit(0)
+
+   sys.exit(1)
+
+Then build the target DTB, zero the slot, and write the new DTB in place:
 
 .. shell::
+   :no-path:
 
+   $ image=arch/microblaze/boot/simpleImage.generic.strip
    $ dtb=vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.dtb
-   # Set dtb address and length
-   $ dtb_start=$((16#84e5c8))
-   $ dtb_end=$((16#85f000))
-   $ dtb_length=$((dtb_end - dtb_start))
-   # Build
+   $ read dtb_start dtb_size dtb_boundary dtb_available < <(python3 find_empty_dtb.py "$image")
    $ make $dtb
-   # Clear any previous devicetree
+   # Copy generic image and patch the copy
+   $ dtb_length=$((dtb_boundary - dtb_start))
+   $ image_out="$(dirname $image)/simpleImage.${dtb%.dtb}.strip"
+   $ cp "$image" "$image_out"
    $ dd if=/dev/zero \
-        of="arch/microblaze/boot/simpleImage.generic.strip" \
-        bs=1 seek=$dtb_start conv=notrunc count=$dtb_length
-     68152 bytes (68 kB, 67 KiB) copied, 0.0198292 s, 3.4 MB/s
-   # Write new
+       of="$image_out" \
+       bs=1 seek=$dtb_start conv=notrunc count=$dtb_length
+    68152 bytes (68 kB, 67 KiB) copied, 0.0198292 s, 3.4 MB/s
    $ dd if="arch/microblaze/boot/dts/$dtb" \
-        of="arch/microblaze/boot/simpleImage.generic.strip" \
+        of="$image_out" \
         bs=1 seek=$dtb_start conv=notrunc
-     31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
+    31787 bytes (32 kB, 31 KiB) copied, 0.0111866 s, 2.8 MB/s
 
 .. _linux-kernel microblaze boot:
 
@@ -224,6 +266,24 @@ bitstream and download the Image.
    **\*.sdk/system_top.xsa**, use the **\*.runs/impl_1/system_top.bit**.
 
 With ``xsdb``/``xsct``:
+
+
+.. tab-set::
+
+   .. tab-item:: Linux
+
+      .. shell:: sh
+
+         $ source /path/to/Xilinx/2025.1/Vivado/settings64.sh
+         $ xsdb
+
+   .. tab-item:: Windows
+
+      .. shell:: ps1
+
+         $ c:/Xilinx/Vivado_Lab/2025.1/bin/xsdb.bat
+
+Then use the commands to program the FPGA:
 
 ::
 
