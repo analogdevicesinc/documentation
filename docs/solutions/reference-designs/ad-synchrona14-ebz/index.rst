@@ -610,3 +610,12 @@ Design and Integration Files
   | :download:`schematic ad-synchrona14-ebz.pdf`
   | :download:`schematic add-on board.pdf`
 
+User Guides
+-----------
+
+.. toctree::
+   :caption: The following user guides are available:
+   :titlesonly:
+   :glob:
+
+   */index
