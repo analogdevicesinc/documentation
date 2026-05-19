@@ -1,3 +1,17 @@
+.. collection:: AD9084-FMCA-EBZ
+   :subtitle: Evaluating the Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC
+   :image: ../images/ad9084.png
+   :label: eval user-guide
+
+   documentation:
+     - User guide <.>
+
+   hdl:
+     - HDL Project (ad9084_ardz) <projects/ad9084_ebz>
+
+   linux:
+     - Linux driver (ad9084) <drivers/iio-trx-rf/ad9088>
+
 .. _ad9084:
 
 AD9084-FMCA-EBZ (Apollo)
