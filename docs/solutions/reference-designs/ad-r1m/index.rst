@@ -109,6 +109,10 @@ System Applications
 SLAM Mapping
 ~~~~~~~~~~~~
 
+The AD-R1M uses the ADIS16470 IMU and EVAL-ADTF3175 ToF camera for real-time
+Simultaneous Localization and Mapping (SLAM). The platform can supports multiple
+SLAM algorithms.
+
 .. figure:: res/do_mapping.gif
    :width: 500px
    :align: center
@@ -117,6 +121,10 @@ SLAM Mapping
 
 Nav2 Navigation
 ~~~~~~~~~~~~~~~
+
+Autonomous navigation is powered by the ROS 2 Nav2 stack, providing path planning,
+obstacle avoidance, and waypoint following. The platform integrates sensor fusion
+from the IMU and depth camera.
 
 .. figure:: res/navigate.gif
    :width: 500px
@@ -133,8 +141,11 @@ Nav2 Navigation
 Multi-robot Fleet
 ~~~~~~~~~~~~~~~~~
 
-The AD-R1M supports multi-robot deployments using  `ROS 2 Zenoh middleware <https://docs.ros.org/en/humble/Installation/RMW-Implementations/Non-DDS-Implementations/Working-with-Zenoh.html>`_ and
-namespacing for swarm robotics management.
+The AD-R1M supports multi-robot deployments using `ROS 2 Zenoh middleware
+<https://docs.ros.org/en/humble/Installation/RMW-Implementations/Non-DDS-Implementations/Working-with-Zenoh.html>`_
+and namespacing for swarm robotics management. Fleet coordination enables
+sensor data aquisition, task distribution, and control across multiple
+robots operating in shared environments.
 
 .. figure:: res/amr_multi_robot.gif
    :width: 500px
@@ -146,6 +157,8 @@ Gazebo Simulation
 ~~~~~~~~~~~~~~~~~
 
 Full simulation environment for development and testing without hardware.
+The Gazebo models include sensor simulation for the ToF camera
+and IMU, enabling algorithm development and validation before deployment.
 
 
 Capability Expansion
@@ -216,6 +229,8 @@ perception capabilities in robotics and autonomous systems:
      - GMSL2 serializer for Raspberry Pi cameras
    * - :doc:`AD-GMSL792MIPI-EVK </solutions/reference-designs/ad-gmsl792mipi-evk/index>`
      - GMSL3/2 quad deserializer for surround-view applications
+   * - :doc:`AD-GMSL793MIPI-EVK </solutions/reference-designs/ad-gmsl793mipi-evk/index>`
+     - GMSL3/2 octal deserializer for advanced multi-camera systems
 
 Image Processing
 ~~~~~~~~~~~~~~~~
