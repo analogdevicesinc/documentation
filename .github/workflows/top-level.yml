@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - main
-      - land_page
   pull_request:
 
 env:
@@ -120,7 +119,6 @@ jobs:
       contents: write
     if: >
       github.ref == 'refs/heads/main' ||
-      github.ref == 'refs/heads/land_page' ||
       github.event_name == 'pull_request' ||
       github.ref_type == 'tag'
 
