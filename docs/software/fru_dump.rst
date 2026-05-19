@@ -1,4 +1,4 @@
-.. _fmcomms2 software fru-dump:
+.. _software fru-dump:
 
 FMC EEPROM Programming
 ===============================================================================

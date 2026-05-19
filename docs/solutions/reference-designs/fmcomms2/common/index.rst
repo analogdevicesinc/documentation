@@ -12,4 +12,3 @@ Additional Documentation
    Production Testing Process <testing>
    Basic IQ data files and formats <basic_iq_datafiles>
    Create and analyze data files in MATLAB <datafiles>
-   GNU Radio <gnuradio>

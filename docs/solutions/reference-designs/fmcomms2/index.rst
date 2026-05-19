@@ -126,8 +126,8 @@ Table of contents
          #. :ref:`AD9361 Control in the IIO Scope Plugin <fmcomms2 software ad9361-plugin>`
          #. :ref:`Advanced AD9361 Control IIO Scope Plugin <fmcomms2 software ad9361-advanced-plugin>`
 
-      #. :ref:`Shell scripts <fmcomms2 software shell-scripts>`
-      #. :ref:`FRU EEPROM Utility <fmcomms2 software fru-dump>`
+      #. :ref:`Shell scripts <software shell-scripts>`
+      #. :ref:`FRU EEPROM Utility <software fru-dump>`
 
    #. Push custom data into/out of the AD9361
 
@@ -163,7 +163,7 @@ Table of contents
          - :ref:`LTE Transmitter and Receiver Example <fmcomms2 software lte-example>`
          - :ref:`ADS-B Airplane Tracking Example <fmcomms2 software adsb-example>`
 
-      #. :ref:`GNU Radio <fmcomms2 common gnuradio>`
+      #. :ref:`GNU Radio <software gnuradio>`
       #. :ref:`FM Radio/Tuner <fmcomms2 software fm-radio>`
          (listen to FM signals on the HDMI monitor)
       #. :ref:`C example <libiio>`
@@ -184,10 +184,10 @@ Table of contents
          - :ref:`AD-FMCOMMS2/3/4-EBZ on Microblaze <linux-kernel microblaze>`
          - :external+linux:doc:`Linux Device Driver <drivers/iio-transceiver/ad9361>`
          - :ref:`Build the demo on ZC702, ZC706, ZED from source <linux-kernel zynq>`
-         - :ref:`Linux with HDMI video output on Zynq <fmcomms2 software linux-zynq>`
+         - :ref:`Linux with HDMI video output on Zynq <linux-kernel zynq-hdmi>`
          - :ref:`Build the demo on KC705 or VC707 for Microblaze from source <linux-kernel microblaze>`
          - :ref:`Build ZynqMP/MPSoC Linux kernel and devicetrees from source <linux-kernel zynqmp>`
-         - :ref:`Customizing the devicetree on the target <fmcomms2 software zynq-tips-tricks>`
+         - :ref:`Customizing the devicetree on the target <linux-kernel zynq-tips-tricks>`
 
       #. No-OS Software
 

@@ -1,4 +1,4 @@
-.. _fmcomms2 software shell-scripts:
+.. _software shell-scripts:
 
 Shell scripts
 ===============================================================================

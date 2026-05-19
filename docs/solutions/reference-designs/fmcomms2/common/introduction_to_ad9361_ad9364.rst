@@ -353,7 +353,7 @@ Once you have a working platform, you may be interested in investigating:
 - How the part performs in specific algorithms, streaming data to
   :dokuwiki:`MATLAB, Simulink <resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`,
   or
-  :ref:`GNU Radio <fmcomms2 common gnuradio>`
+  :ref:`GNU Radio <software gnuradio>`
 - How the :external+linux:doc:`Linux <drivers/iio-transceiver/ad9361>` or
   :dokuwiki:`no-OS <resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions>`
   driver works, or can be integrated into your system
