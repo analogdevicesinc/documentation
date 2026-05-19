@@ -36,6 +36,10 @@ Release versions include the upstream version and a ADI specific release number
       :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
       :git-linux:`Release 2 <releases/tag/6.12.0-2+>`
       :git-linux:`Release 3 <releases/tag/6.12.0-3+>`
+    - v6.12.89:
+      :git-linux:`Commits <commits/adsp-6.12.89-y+>`
+    - v6.18.31:
+      :git-linux:`Commits <commits/adsp-6.18.31-y+>`
 
 ..
     - v6.12.38:
