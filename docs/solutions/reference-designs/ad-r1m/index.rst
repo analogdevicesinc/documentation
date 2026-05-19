@@ -191,7 +191,7 @@ AD-R1M via Ethernet using ROS 2 middleware wrappers.
 
        AGX Orin power & Ethernet
 
-See the `AGX Orin cuVSLAM Guide <https://solid-doodle-k5gpwk1.pages.github.io/agx-orin-cuvslam/index.html>`__
+See the `AGX Orin cuVSLAM Guide <https://analogdevicesinc.github.io/ad_r1m_ros2/agx-orin-cuvslam/index.html>`__
 for full setup instructions.
 
 GMSL Camera Integration
@@ -237,21 +237,20 @@ and class labels for obstacle avoidance.
 
    Object detection with YOLO
 
-See the `ad_r1m_image_processing package <https://github.com/adi-innersource/adrd_demo_ros2/tree/image_processing_pkg/ad_r1m_image_processing>`_
+See the `ad_r1m_image_processing package <https://github.com/analogdevicesinc/ad_r1m_ros2/tree/image_processing_pkg/ad_r1m_image_processing>`_
 for setup and configuration.
 
 
 Getting Started
 ---------------
 
-.. todo:: ADD ASSEMBLY/OTHER GUIDES
-
 Full documentation and guides are available in the project repository:
 
-- `Quick Start Guide <https://solid-doodle-k5gpwk1.pages.github.io/quick-start-guide.html>`__
-- `Hardware Setup Guide <https://solid-doodle-k5gpwk1.pages.github.io/hardware-guide.html>`__
-- `Software Guide (ROS 2, Docker) <https://solid-doodle-k5gpwk1.pages.github.io/software-guide.html>`__
-- `Use Cases and Examples <https://solid-doodle-k5gpwk1.pages.github.io/use-cases.html>`__
+- :doc:`Hardware Assembly Guide <hardware-assembly>`
+- `Quick Start Guide <https://analogdevicesinc.github.io/ad_r1m_ros2/quick-start-guide.html>`__
+- `Hardware Setup Guide <https://analogdevicesinc.github.io/ad_r1m_ros2/hardware-guide.html>`__
+- `Software Guide (ROS 2, Docker) <https://analogdevicesinc.github.io/ad_r1m_ros2/software-guide.html>`__
+- `Use Cases and Examples <https://analogdevicesinc.github.io/ad_r1m_ros2/use-cases.html>`__
 
 ADI ROS 2 Ecosystem
 -------------------
@@ -275,13 +274,13 @@ for getting started.
      - ROS 2 driver for ADI IMUs (ADIS16470, ADIS16475, etc.)
    * - `adi_3dtof_adtf31xx <https://github.com/analogdevicesinc/adi_3dtof_adtf31xx>`__
      - ROS 2 driver for ADI Time-of-Flight cameras (ADTF3175D)
-   * - `adrd_demo_ros2 <https://github.com/adi-innersource/adrd_demo_ros2>`__
+   * - `ad_r1m_ros2 <https://github.com/analogdevicesinc/ad_r1m_ros2>`__
      - AD-R1M platform packages and documentation
 
 Resources
 ---------
 
-- AD-R1M Repository: `adrd_demo_ros2 <https://github.com/adi-innersource/adrd_demo_ros2>`__
+- AD-R1M Repository: `ad_r1m_ros2 <https://github.com/analogdevicesinc/ad_r1m_ros2>`__
 - ADI ROS 2 Meta-repo: `adi_ros2 <https://github.com/analogdevicesinc/adi_ros2>`_
 
 Related Products
@@ -314,7 +313,3 @@ Help and Support
 
 For questions and more information about this product, connect with us through
 the Analog Devices :ez:`sw-interface-tools/robot-operating-system-ros-sdk`.
-
-.. toctree::
-   
-   hardware-assembly
