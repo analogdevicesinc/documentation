@@ -12,7 +12,7 @@ PoE+ with Ideal Diode Bridge to Isolated Flyback DC/DC (12V, 2A).
   AD-PS3803-RD Board
 
 The :adi:`AD-PS3803-RD` reference design is a power converter
-capable of harnessing any IEEE802.3at (PoE+, Type 2)-compliant downstream
+capable of harnessing any IEEE802.3at (PoE+, Type 2) - compliant downstream
 power over Ethernet (PoE) supply to provide a galvanically isolated DC power.
 
 At the core of this solution is the :adi:`LT8306` 60V no-opto flyback
