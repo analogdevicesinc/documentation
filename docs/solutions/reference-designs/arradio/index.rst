@@ -3,7 +3,7 @@
 ARRADIO
 =======
 
-The `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`_
+The `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
 board is an `HSMC <http://www.altera.com/literature/ds/hsmc_spec.pdf>`_ board by
 `Arrow <https://www.arrow.com/en/manufacturers/analog-devices>`_ & `Terasic <http://arradio.terasic.com/>`_
 for the :adi:`AD9361`, a highly integrated RF Agile Transceiver™. While the
@@ -61,7 +61,7 @@ Table of Contents
 
 - :dokuwiki:`Introduction <resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
 - :doc:`Prerequisites </solutions/reference-designs/arradio/prerequisites>`
-- Hardware (Schematics) see `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`_
+- Hardware (Schematics) see `ARRADIO <https://www.arrow.com/en/products/arradio/terasic-technologies>`__
 
    - :external+hdl:ref:`Functional Overview & Specifications <fmcomms2>`
    - :dokuwiki:`Configuration options <resources/eval/user-guides/ad-fmcomms2-ebz/hardware/configuration_options>`
