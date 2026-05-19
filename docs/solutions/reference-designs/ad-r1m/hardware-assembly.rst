@@ -724,3 +724,12 @@ control board side. See ADRD3161 documentation for details.
      - .. figure:: res/assembly/image26.png
 
           Completed power connections
+
+Completed Assembly
+------------------
+
+.. figure:: res/assembly/image1.jpeg
+   :width: 600px
+   :align: center
+
+   AD-R1M fully assembled robot platform
