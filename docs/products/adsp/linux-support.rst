@@ -15,13 +15,16 @@ To set up new ADSP evaluation boards see :ref:`Getting Started <adsp setup>`.
 Upstream forks
 ^^^^^^^^^^^^^^
 
-The ADSP Linux team maintains branches based on upstream releases. Changes made
-to support ADI hardware is upstreamed as quickly as possible. Until those
-changes have been accepted upstream, they are maintained in the following ADI
-forks.
+The ADSP Linux team maintains branches based on upstream releases (see
+:external+linux:ref:`mainline`).
+
+Changes made to support ADI hardware is upstreamed as quickly as possible.
+Until those changes have been accepted upstream, they are maintained in the
+following ADI forks.
 
 Release versions include the upstream version and a ADI specific release number
-(e.g.  ``1``, ``2``, ...).
+(e.g.  ``1``, ``2``, ...). Current development branches are found by looking
+for the the Commits link with the newest version and at least one Release.
 
 - Deprecated :git-lnxdsp-linux:`+`:
     - v4.19
