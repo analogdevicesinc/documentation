@@ -22,4 +22,6 @@ SoC FPGA based platforms.
    :titlesonly:
 
    petalinux
+   Linux with HDMI video output on Zynq <zynq_hdmi>
+   zynq_tips_tricks
 

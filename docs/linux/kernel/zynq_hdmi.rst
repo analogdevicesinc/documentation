@@ -1,4 +1,4 @@
-.. _fmcomms2 software linux-zynq:
+.. _linux-kernel zynq-hdmi:
 
 Embedded ARM and AD9361/AD9364
 ===============================================================================
@@ -14,7 +14,7 @@ ZC706
 
 The default slot for the AD9361 based boards is the LPC FMC slot, as shown:
 
-.. image:: ../../images/fmcomm2_zc706photo2.jpg
+.. image:: images/fmcomm2_zc706photo2.jpg
    :width: 600
 
 Linux with HDMI video output on the ZED, ZC702 and ZC706 boards
@@ -45,7 +45,7 @@ Supported carriers
 Overview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../../images/adv7511.png
+.. image:: images/adv7511.png
    :width: 400
 
 Preparing the SD-card
@@ -63,7 +63,7 @@ partition needs to be formatted with a FAT filesystem. It will hold the
 bootloader, devicetree and kernel images. The second partition needs to be
 formatted with a ext4 filesystem. It will store the systems root filesystem.
 
-.. image:: ../../images/linux-zynq-gparted-sdcard.png
+.. image:: images/linux-zynq-gparted-sdcard.png
    :width: 600
 
 Obtain the HDL reference design
@@ -105,7 +105,7 @@ is done by clicking the "Export to SDK" button in the Platform Studio GUI.
 
 Export project to SDK:
 
-.. image:: ../../images/linux-zynq-export-xps.png
+.. image:: images/linux-zynq-export-xps.png
    :width: 600
 
 Once the project has been exported create a new FSBL project in the SDK. To do
@@ -115,13 +115,13 @@ this right-click on the newly exported hardware platform specification in left
 choose a name for the project (zynq_fsbl for example) and on the third page
 select "Zynq FSBL" template.
 
-.. image:: ../../images/linux-zynq-xsdk-fsbl1.png
+.. image:: images/linux-zynq-xsdk-fsbl1.png
    :width: 400
 
-.. image:: ../../images/linux-zynq-xsdk-fsbl2.png
+.. image:: images/linux-zynq-xsdk-fsbl2.png
    :width: 400
 
-.. image:: ../../images/linux-zynq-xsdk-fsbl3.png
+.. image:: images/linux-zynq-xsdk-fsbl3.png
    :width: 400
 
 The project should build automatically. If not a manual build can be started by
@@ -138,7 +138,7 @@ files:
 
 Add these files to partitions list in the dialog, then select an output folder.
 
-.. image:: ../../images/linux-zynq-bootgen.png
+.. image:: images/linux-zynq-bootgen.png
    :width: 400
 
 Clicking "Create Image" will now generate in the chosen location a new boot

@@ -1,4 +1,4 @@
-.. _fmcomms2 common gnuradio:
+.. _software gnuradio:
 
 GNU Radio and IIO Devices: gr-iio
 ===============================================================================

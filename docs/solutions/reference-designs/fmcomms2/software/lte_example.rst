@@ -95,7 +95,7 @@ In order to run this example, you need:
 
 If you want to enable a static IP, use the
 :ref:`script found here
-<fmcomms2 software shell-scripts>`.
+<software shell-scripts>`.
 
 Methods
 -------------------------------------------------------------------------------

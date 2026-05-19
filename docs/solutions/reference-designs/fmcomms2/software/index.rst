@@ -17,10 +17,6 @@ AD-FMCOMMS5-EBZ.
    MATLAB Filter Design Wizard <filters/filters>
    Filter Design license <filters/license>
    Linux support <linux>
-   FRU EEPROM Utility <linux/applications/fru_dump>
-   Shell scripts <linux/applications/shell_scripts>
-   Embedded ARM and AD9361/AD9364 <linux/zynq>
-   Zynq Tips & Tricks <linux/zynq_tips_tricks>
 
    Installing RF Blockset Models <rfblkset_mdls_install>
    AD9361 Receive Testbench <rfblkset_mdls_run_testbench>

@@ -1,4 +1,4 @@
-.. _fmcomms2 software zynq-tips-tricks:
+.. _linux-kernel zynq-tips-tricks:
 
 Tips & Tricks
 ===============================================================================
@@ -19,7 +19,7 @@ permanently.
 
 For example a custom board has a different reference clock.
 
-.. image:: ../../images/dts-dtb.png
+.. image:: images/dts-dtb.png
    :align: center
    :width: 800
 

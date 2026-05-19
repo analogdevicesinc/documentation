@@ -36,6 +36,9 @@ Contents
    :glob:
 
    software/*/index
+   software/shell_scripts
+   software/fru_dump
+   software/gnuradio
 
 .. toctree::
    :caption: Devices
