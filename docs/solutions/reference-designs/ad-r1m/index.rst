@@ -6,6 +6,11 @@ AD-R1M
 Open Mobile Robot Platform Reference Design
 """"""""""""""""""""""""""""""""""""""""""""
 
+.. toctree::
+   :hidden:
+
+   hardware-assembly
+
 Introduction
 ------------
 
@@ -142,7 +147,6 @@ Gazebo Simulation
 
 Full simulation environment for development and testing without hardware.
 
-.. todo:: Add Gazebo simulation demo GIF
 
 Capability Expansion
 --------------------
