@@ -96,4 +96,3 @@ To use the NLS profile, copy ``system.dtb`` built from
 renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
 
 .. include-template:: ../common/using-scopy.rst.jinja
-   

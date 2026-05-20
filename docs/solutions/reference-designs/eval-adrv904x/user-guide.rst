@@ -355,4 +355,3 @@ To access HDL core registers, set bit 31 of the address.
    $echo 0x80000000 > /sys/kernel/debug/iio/iio:device1/direct_reg_access
    $cat /sys/kernel/debug/iio/iio:device1/direct_reg_access
     0x80062
-    

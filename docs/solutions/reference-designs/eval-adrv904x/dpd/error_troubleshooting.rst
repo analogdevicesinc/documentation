@@ -20,7 +20,7 @@ ADRV904x DPD ERROR TROUBLESHOOTING
 -  Check for any discontinuities in the input signal. The DPD capture data can
    be obtained through the API DfeDpdCaptureDataFromBufMemGet(). Ensure that DPD
    tracking calibration is disabled before calling this API.
--  Review Low Phy or source signal to look for any discontiuities.
+-  Review Low Phy or source signal to look for any discontinuities.
 
 **ADI_ADRV904X_DFE_APP_ERR_CODE_DPD_MODEL_DESCRIPTOR_ERROR(0xE002)**
 **ADI_ADRV904X_DFE_APP_ERR_CODE_DPD_MODEL_DDR_DELAY_ERROR (0xE003)**

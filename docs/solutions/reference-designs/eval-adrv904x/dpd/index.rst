@@ -1,4 +1,4 @@
-.. _dpd user_guide:
+.. _adrv904x dpd user-guide:
 
 ADRV904x DPD USER GUIDE
 =======================
@@ -9,7 +9,7 @@ supporting 400MHz iBW.
 
 .. toctree::
    :hidden:
-   
+
    dpd_principle_of_operation
    dfe_system_overview
    adrv904x_dpd_capabilities

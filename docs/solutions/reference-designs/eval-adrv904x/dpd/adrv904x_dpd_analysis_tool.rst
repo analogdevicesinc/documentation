@@ -27,7 +27,7 @@ the DPD tracking calibration.
 The following code snippet shows how to configure the DPD to engage the actuator
 in bypass mode (output = input)
 
-.. code:: python
+.. code-block:: python
 
    def dpdRobustnessConfigSet(channel = adi_adrvgen6_TxChannels_e.ADI_ADRVGEN6_TX0):
        dpdStabilityConfig = adi_adrvgen6_DfeAppCalDpdStabilityCfg_t()
@@ -52,7 +52,7 @@ and enabling the DPD tracking calibration via **DfeTrackingCalsEnableSet()**
 API, the user can now proceed to dump the DPD open loop data for PA response
 analysis by executing the code snippet shown below.
 
-.. code:: python
+.. code-block:: python
 
    #Utility Function to write data to a file
    def fileDataWriter(fileHandle, numSamples, iData = None, qData = None):
