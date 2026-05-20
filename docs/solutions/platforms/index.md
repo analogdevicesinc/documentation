@@ -55,7 +55,7 @@ For more information on each of ADC Platforms, please click on the links below:
 
 
 `````{grid}
-:columns: 3
+:columns: 2
 
 ````{card} Phaser (CN0566)
 :ref: adc adalm-phaser
@@ -82,6 +82,16 @@ Low-cost SDR system based on the AD9361
 16T/16R X-Band System Platform
 
 ```{image} triton/images/adxband16ebz-top-angle-evaluation-board.png
+```
+````
+
+
+````{card} X-Band Dev
+:ref: adc x-band-dev-kit
+
+X-Band Development Kit
+
+```{image} x-band/xbdev-box.png
 ```
 ````
 `````  
@@ -147,6 +157,7 @@ We have a Catalyst centres in:
 Phaser (CN0566)<phaser/index>
 Pluto SDR<pluto/index>
 Triton <triton/index>
+X-Band Dev <x-band/index>
 ```
 
 
