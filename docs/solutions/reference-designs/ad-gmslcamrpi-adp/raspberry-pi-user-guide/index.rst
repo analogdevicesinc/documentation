@@ -280,21 +280,48 @@ Raspberry Pi Configuration
 Running the Evaluation Application
 ----------------------------------
 
-Once Linux boots, you will see the Linux desktop on the HDMI monitor. Double-click
-the **Home** icon and navigate to the **Workspace** folder. Right-click inside this
-folder and select the **Open Terminal Here** option. Inside the terminal, type the
-following command and hit Enter:
+Once Linux boots, you will see the Linux desktop on the HDMI monitor.
+
+**1. Configuring Cameras**
+
+You can either run the configuration command directly (option a) or create a
+reusable script (option b).
+
+**a) Running the configuration command directly**
+
+Double-click the **Home** icon and navigate to the
+**Workspace/pyv4l2/utils/cam** folder. Right-click inside this folder and
+select the **Open Terminal Here** option. Inside the terminal, type the
+following command and hit Enter. Make sure to change the command parameters 
+according to your setup:
+
+   - ``RPI_MODEL`` (specifies the model of the Raspberry Pi):
+                                                            - ``rpi4``
+                                                            - ``rpi5``
+   - ``CAM_MODEL`` (specifies the model of the camera):
+                                                      - ``imx219``
+                                                      - ``ov5640``
+   - ``CAM_LIST`` (specifies the list of cameras in the setup):
+                                                              - ``cam0``
+                                                              - ``cam0,cam1``
+                                                              - ``cam0,cam1,cam2``
+                                                              - ``cam0,cam1,cam2,cam3``
+                                                              - ``cam1,cam2``
+                                                              - ``cam0,cam3``
 
 .. shell::
+   
+   $ ./cam.py -p -c <RPI_MODEL>-gmsl-<CAM_MODEL>:<CAM_LIST>
 
-   $ ./video_cfg.sh
+.. figure:: rpi_cam_config.png
 
-.. figure:: rpi_video_cfg.png
+   Camera Configuration Command
 
-   Raspberry Pi Video Configuration Script
+**b) Creating a video configuration script**
 
-This script configures the Linux V4L2 (Video4Linux2) media pipeline for a GMSL
-multi-camera system on a Raspberry Pi:
+Alternatively, you can create a reusable script. Double-click the **Home** icon
+and navigate to the **Workspace** folder. Create a new file named
+``video_cfg.sh`` and copy-paste the following content into the file:
 
 .. code-block:: bash
 
@@ -318,6 +345,10 @@ multi-camera system on a Raspberry Pi:
 
    $PYV4L2_PATH/utils/cam.py -c -p "$RPI_MODEL"-gmsl-"$CAM_MODEL":$CAM_LIST
 
+This script configures the Linux V4L2 (Video4Linux2) media pipeline for a GMSL
+multi-camera system on a Raspberry Pi. It detects the Raspberry Pi model, sets
+the camera configuration, and runs a Python script to apply the settings.
+
 The following variables can be changed (if needed) inside the script:
 
    - ``CAM_LIST`` (specifies the list of cameras in the setup): 
@@ -330,22 +361,44 @@ The following variables can be changed (if needed) inside the script:
    - ``CAM_MODEL`` (specifies the model of the camera): 
                                                       - ``imx219`` (default)
                                                       - ``ov5640``
-
+                                                      
 The model of the Raspberry Pi does not need to be explicitly specified because the script detects it automatically.
 
-After the script is done running, click on **Applications** (found in the top
-left corner), which will open a dropdown list of items. From this list, select
-**Multimedia** and then **Qt V4L2 test Utility** in order to start the video
-capture application. After the application opens, press the green play button
-to start capturing video.
+Make sure to change the permissions of the file to make it executable. To do
+this, right-click inside this folder and select the **Open Terminal Here**
+option. Inside the terminal, type the following command and hit Enter:
 
-.. figure:: rpi_qv4l2.png
+.. shell::
+
+   $ chmod +x ./video_cfg.sh
+
+To run the script, type the following command in the terminal and hit Enter:
+
+.. shell::
+
+   $ ./video_cfg.sh
+
+.. figure:: rpi_video_cfg.png
+
+   Raspberry Pi Video Configuration Script
+
+**2. Starting Video Capture**
+
+After the camera configuration is done, click on **Applications** (found in the
+top left corner), which will open a dropdown list of items. From this list,
+select **Multimedia** and then **Qt V4L2 test Utility** in order to start the
+video capture application. After the application opens, press the green play
+button to start capturing video.
+
+.. figure:: rpi_running_qv4l2.png
 
    Video Capture Utility
 
+**3. Viewing the Capture**
+
 The capture window will look as shown below.
 
-.. figure:: rpi_running_qv4l2.png
+.. figure:: rpi_qv4l2.png
 
    Sample Video Capture
 
