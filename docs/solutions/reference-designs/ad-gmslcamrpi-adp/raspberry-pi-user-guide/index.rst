@@ -292,10 +292,12 @@ reusable script (option b).
 Double-click the **Home** icon and navigate to the
 **Workspace/pyv4l2/utils/cam** folder. Right-click inside this folder and
 select the **Open Terminal Here** option. Inside the terminal, type the
-following command and hit Enter. Make sure to change the command parameters according to your setup:
+following command and hit Enter. Make sure to change the command parameters 
+according to your setup:
+
    - ``RPI_MODEL`` (specifies the model of the Raspberry Pi):
-                                                      - ``rpi4``
-                                                      - ``rpi5``
+                                                            - ``rpi4``
+                                                            - ``rpi5``
    - ``CAM_MODEL`` (specifies the model of the camera):
                                                       - ``imx219``
                                                       - ``ov5640``
@@ -306,6 +308,7 @@ following command and hit Enter. Make sure to change the command parameters acco
                                                               - ``cam0,cam1,cam2,cam3``
                                                               - ``cam1,cam2``
                                                               - ``cam0,cam3``
+
 .. shell::
    
    $ ./cam.py -p -c <RPI_MODEL>-gmsl-<CAM_MODEL>:<CAM_LIST>
@@ -358,6 +361,7 @@ The following variables can be changed (if needed) inside the script:
    - ``CAM_MODEL`` (specifies the model of the camera): 
                                                       - ``imx219`` (default)
                                                       - ``ov5640``
+                                                      
 The model of the Raspberry Pi does not need to be explicitly specified because the script detects it automatically.
 
 Make sure to change the permissions of the file to make it executable. To do
