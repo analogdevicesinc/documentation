@@ -72,7 +72,7 @@ line or in the V+ to V- line. The evaluation board also features reversible
 isoSPI that can access either path to do measurement functions and serve as a
 redundant communication path.
 
-:ref:`EVAL-ADBMS6830BMSW User Guide <eval-adbms6830bmsw>`
+:ref:`eval-adbms6830bmsw`
 
 EVAL-ADBMS2950-BASIC Battery Pack Monitor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,7 +86,7 @@ communication path.
 The EVAL-ADBMS2950-BASIC board can be operated on the same isoSPI daisy-chain
 with other ADBMS2950B and ADBMS6830B devices.
 
-:doc:`EVAL-ADBMS2950-BASIC User Guide </solutions/reference-designs/eval-adbms2950-basic/eval-adbms2950-basic>`
+:ref:`eval-adbms2950-basic`
 
 EVAL-ADBMS6822 Dual isoSPI Adapter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +151,7 @@ Material Requirements
 | 1 pc   | Type C-to-USB Cable                                        |
 +--------+------------------------------------------------------------+
 
-.. image:: 48v_demo_requirements.png
+.. image:: images/48v_demo_requirements.png
 
 Setup Guide
 -----------
@@ -159,7 +159,7 @@ Setup Guide
 This section details the entire setup procedure broken down into hardware and
 software steps.
 
-.. image:: hardware-setup.png
+.. image:: images/hardware-setup.png
 
 Hardware Setup
 ~~~~~~~~~~~~~~
@@ -178,9 +178,9 @@ In this demo, 39 batteries will be assembled to create a 48V battery pack.
      a total of 39 batteries for the entire pack.
    - Arrange the batteries according to the picture below.
 
-    .. image:: battery_arrangement.png
+    .. image:: images/battery_arrangement.png
 #. **Connecting the Batteries**
-    .. image:: series-parallel_connection.png
+    .. image:: images/series-parallel_connection.png
 
    #. Make a **Parallel Connection**. Connect 3 batteries in parallel by
       linking all positive terminals and all negative terminals using the
@@ -199,7 +199,7 @@ In this demo, 39 batteries will be assembled to create a 48V battery pack.
    - Solder a single wire cable on each nickel strip terminal except for
      **Vbat+** and **Vbat-**.
 
-    .. image:: battery_terminal_strips.png
+    .. image:: images/battery_terminal_strips.png
 #. **Insulation and Final Assembly**
 
    - Ensure all connections are secure and properly insulated to prevent
@@ -254,7 +254,7 @@ Connection Setup
    battery cell to the cell connector block. Refer to the diagram to short
    any unused ports in the block.
    
-   .. image:: battery_to_j1.png
+   .. image:: images/battery_to_j1.png
 #. Using the test leads alligator double-ended crocodile clips, connect the
    **Shunt-** of the EVAL-ADBMS2950-BASIC to one end of the resistor load.
 #. Using another crocodile clip, connect the **Bat-** of
@@ -264,7 +264,7 @@ Connection Setup
    port. Once attached, connect the **Vbat+** of the battery pack to the
    other end of the resistor load. Refer to the diagram below.
    
-   .. image:: hardware-setup(1).png
+   .. image:: images/hardware-setup-1.png
 
 .. warning::
 
@@ -274,7 +274,7 @@ Connection Setup
 Software Setup
 ~~~~~~~~~~~~~~
 
-.. image:: broadmarket_gui_home_page.png
+.. image:: images/broadmarket_gui_home_page.png
     :align: center
 
 .. note::
@@ -282,13 +282,12 @@ Software Setup
   application GUI.
   
   Access the software resources and see the setup procedure in the
-  
-  :ref:`AD-CELLPACKBM-SL Software Guide <ad-cellpackbm-sl software_guide>`
+  :ref:`ad-cellpackbm-sl software_guide`
 
 Software Stack
 ^^^^^^^^^^^^^^
 
-.. image:: software_stack.png
+.. image:: images/software_stack.png
     :align: center
 
 Demo Results
@@ -319,12 +318,12 @@ Running the Setup
    and add it as well in the daisy chain. **Settings** can remain as default.
 #. Click **Launch**.
 
-   .. image:: browser_launch.png
+   .. image:: images/browser_launch.png
 #. Upon launching, the Quick Measure tab will open. Note: this utility only
    supports a single BMS product in a Daisy Chain. Click **Start Quick
    Measure** to begin measurements.
    
-   .. image:: start-quick-measure.png
+   .. image:: images/start-quick-measure.png
 #. Check the **Total PEC Status** under the Memory Map. This indicates the
    status of the isoSPI link between the EVAL-ADBMS6822 and the
    EVAL-ADBMS6830BMSW and EVAL-ADBMS2950-BASIC.
@@ -337,7 +336,7 @@ Running the Setup
    Quick Measure Utility graph. Select which signals to display on the graph
    under the **Plot All Devices** column.
    
-   .. image:: plot-all-devices.png
+   .. image:: images/plot-all-devices.png
 
 .. note::
 
@@ -359,11 +358,11 @@ The Quick Measure tab simplifies metric measurement with a preloaded command
 sequence. Note that it supports a single device in the daisy chain, and key
 features enhance configuration and visualization.
 
-.. image:: quick_meausre_tab_.png
+.. image:: images/quick-measure-tab.png
 
 **Battery Cell Voltage Monitoring**
 
-.. image:: battery_pack_current_.png
+.. image:: images/battery_pack_current.png
 
 **Battery Pack Current Monitoring**
 
@@ -386,7 +385,7 @@ I1ADC voltage of 0.000088V, the current is determined as:
 This calculation provides the actual current flowing through the battery pack
 based on the measured voltage across the shunt resistor.
 
-.. image:: battery_pack_voltage.png
+.. image:: images/battery_pack_voltage.png
 
 Battery Pack Voltage Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -417,7 +416,7 @@ The Memory Map tab provides a numerical output for the active command loop,
 organized into tables for user convenience. It offers customization and error
 highlighting for effective data analysis.
 
-.. image:: memory-map-tab.png
+.. image:: images/memory-map-tab.png
 
 Plots Tab
 ~~~~~~~~~
@@ -426,14 +425,14 @@ The Plots tab provides a graphical representation of data collected through
 the running command loop. It offers customization options for focused analysis
 and allows for the export of captured data for further analysis.
 
-.. image:: plots-tab.png
+.. image:: images/plots-tab.png
 
 .. note::
   
   Refer to the **GUI Tabs** section of the
   
-  :ref:`AD-CELLPACKBM-SL Software Guide <ad-cellpackbm-sl software_guide>`
-  for a comprehensive overview of each tab's functions and descriptions.
+  :ref:`ad-cellpackbm-sl software_guide` for a comprehensive overview of each
+   tab's functions and descriptions.
 
 Notes
 -----
