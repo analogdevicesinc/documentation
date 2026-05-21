@@ -128,7 +128,7 @@ Table of Contents
          #. :dokuwiki:`QPSK Transmit and Receive Example </resources/tools-software/linux-software/libiio/clients/qpsk_example>`
          #. :dokuwiki:`LTE Transmit and Receive Example </resources/tools-software/linux-software/libiio/clients/lte_example>`
 
-      #. :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
+      #. :ref:`GNU Radio <software gnuradio>`
       #. :dokuwiki:`FM Radio/Tuner </resources/tools-software/fm-radio>` (listen to FM signals on the HDMI monitor)
       #. :dokuwiki:`C example </resources/tools-software/linux-software/libiio>`
 

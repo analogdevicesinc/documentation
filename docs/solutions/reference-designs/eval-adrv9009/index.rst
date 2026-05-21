@@ -71,7 +71,7 @@ If you have any questions, feel free to :ref:`ask <help-and-support>`.
 
    #. Hardware in the Loop / How to design your own custom BaseBand
 
-      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+      #. :ref:`GNU Radio <software gnuradio>`
       #. :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
 
    #. Design a custom ADRV9009/ADRV9008 based platform

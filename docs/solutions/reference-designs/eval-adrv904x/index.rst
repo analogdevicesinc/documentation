@@ -114,7 +114,7 @@ Table of contents
 
    #. Hardware in the Loop / How to design your own custom BaseBand
 
-     #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     #. :ref:`GNU Radio <software gnuradio>`
      #. :ref:`Transceiver Toolbox <matlab transceiver-toolbox>`
 
    #. Resources for designing a custom ADRV9040/ADRV9044-based platform software

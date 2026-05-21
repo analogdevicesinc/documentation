@@ -96,11 +96,11 @@ feel free to ask.
 - Software Solutions
      #. :ref:`iio-oscilloscope`
          #. :dokuwiki:`ADRV9001/2 IIO Scope View <resources/tools-software/linux-software/adrv9002_osc_main>`
-         #. :dokuwiki:`ADRV9001/2 Control IIO Scope Plugin <resources/tools-software/linux-software/adrv9002_plugin>`
+         #. :ref:`ADRV9001/2 Control IIO Scope Plugin <adrv9002-plugin>`
          #. :dokuwiki:`ADRV9001/2 Profile Generator Plugin <resources/tools-software/linux-software/adrv9002_profile_generator_plugin>`
      #. :external+scopy:ref:`adrv9002`
      #. :ref:`matlab transceiver-toolbox`
-     #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     #. :ref:`GNU Radio <software gnuradio>`
      #. :ref:`pyadi-iio`
      #. :ref:`libiio cli`
 - Embedded Resources
@@ -109,7 +109,7 @@ feel free to ask.
      #. :external+linux:ref:`axi-dmac`
      #. :external+linux:ref:`axi-adc-hdl`
      #. :ref:`matlab transceiver-toolbox`
-     #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     #. :ref:`GNU Radio <software gnuradio>`
      #. :ref:`pyadi-iio`
      #. :ref:`libiio cli`
      #. :external+no-OS:doc:`projects/rf-transceiver/adrv9001`

@@ -81,7 +81,7 @@ Table of Contents
 
    #. Hardware in the Loop / How to design your own custom Baseband
 
-      #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+      #. :ref:`GNU Radio <software gnuradio>`
       #. :ref:`matlab transceiver-toolbox`
 
    #. Design a custom AD9371/AD9375 based platform

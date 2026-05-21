@@ -75,7 +75,7 @@ use the ADALM-PLUTO.
 
    - PlutoSDR users normally interact with RF signals with
      :mw:`MATLAB, Simulink <hardware-support/adalm-pluto-radio.html>`,
-     :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>` or
+     :ref:`GNU Radio <software gnuradio>` or
      :ref:`custom C, C++ <pluto transceiver_transferring_data>`,
      :git-libiio:`C# <bindings/csharp/examples/ExampleProgram.cs>`,
      or :ref:`Python environment <pyadi-iio>` on a
