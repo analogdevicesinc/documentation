@@ -5,7 +5,7 @@
 AD-JUPITER-EBZ
 ==============
 
-Software-Defined Radio.
+Software-Defined Radio Module.
 
 Overview
 --------
@@ -147,15 +147,18 @@ feel free to ask.
    known-issues
    reference-design
    profile-generation
+   production_testing/production-testing
 
 Downloads
 ---------
 
-Binaries:
-
 Osc for windows can be downloaded directly from Github. Go to to the following link and download the latest release.
 
  - :git-iio-oscilloscope:`IIO-Scope <releases+>`
+
+Scopy can be downloaded directly from Github. Go to the following link and download the latest release.
+
+ - :git-scopy:`Scopy <releases+>`
 
 The latest boot files for adrv9002 (for all supported carriers) can be found in the latest Kuiper Image release (note one can choose between downloading the full image or just the boot partition):
 
