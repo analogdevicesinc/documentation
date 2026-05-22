@@ -36,7 +36,7 @@ Features
 - Galvanically isolated 12 V flyback DC output with up to 24 W of output power
   capability
 - No transformer third winding or opto-isolator for output regulation
-- Supports multiple POE power classes, interfacing and power supply control 
+- Supports multiple PoE power classes, interfacing and power supply control 
   via a configurable jumper array:
    
       - IEEE802.3at & PoE+, (Type 2),  
@@ -360,7 +360,7 @@ PD controller, and the redesign of critical parts for higher power.
 
 The hot-plug or inrush protection FET selected must be capable of higher parameters if it operates 
 at higher power class, specifically the current that will flow from its drain to source |I_DS|, 
-which is the same input current of the POE main line that may fluctuate as worst case to the peak 
+which is the same input current of the PoE main line that may fluctuate as worst case to the peak 
 current of the primary winding of the transformer |I_PRI|. Improper selection of FET will 
 cause overcurrent or failure of the FET.
 
@@ -374,9 +374,11 @@ cause overcurrent or failure of the FET.
     For Higher Current FET selection,
     it must satisfy Equation (1):
 
-   .. image:: ids-greater-ipri.png
-      :width: 100 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{I_{DS} \ge I_{PRI}}
+   
+
    
 .. csv-table:: Recommended High Current MOSFETs for Hot-Input Protection
    :file: high-current-fet.csv
@@ -390,20 +392,20 @@ If using the reference design AD-PS3803-RD, the same accessible jumper circuit c
 the power class. If designing on a new board, the correct resistor values for RCLS and RCLS++ must be 
 applied, indicated on Table 6. 
 
-Technically the LTPOE++ proprietary specs of :adi:`LT4275` can work on the IEEE802.3bt when set at 
+Technically the LTPoE++ proprietary specs of :adi:`LT4275` can work on the IEEE802.3bt when set at 
 higher power class, like 90W for 71.3W for example, but the user may want a PD controller part 
 that will negotiate on the specific power class indicated by the IEEE 802.3, because the class 
 naming and PD power are not entirely the same. In which the user can replace it with :adi:`LT4294` 
-PD controller specifically compliant to IEEE 802.3 POE standards. 
+PD controller specifically compliant to IEEE 802.3 PoE standards. 
 
 The :adi:`LT4294` is pin compatible with :adi:`LT4275`, use Table 7 for the appropriate power class and resistor 
 configuration of :adi:`LT4294`. Take note of the slight differences in the PD power and resistor values.
 
-.. csv-table:: LT4275 POE+ Power Classes 
+.. csv-table:: LT4275 PoE+ Power Classes 
    :file: lt4275-poe-power-class.csv
    :widths: 3, 3, 3, 3, 3, 3, 3, 5
     
-* An LTPOE++ PD will be classified as class 4 by an IEEE 802.3 compliant PSE
+* An LTPoE++ PD will be classified as class 4 by an IEEE 802.3 compliant PSE
 
 .. csv-table:: LT4294 IEEE 802.3 Power Classes 
    :file: lt4294-poe-power-class.csv
@@ -413,7 +415,7 @@ configuration of :adi:`LT4294`. Take note of the slight differences in the PD po
 Flyback Converter at Higher Power
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The isolated DC-DC converter must be re-designed in the appropriate power delivery of the POE circuit. 
+The isolated DC-DC converter must be re-designed in the appropriate power delivery of the PoE circuit. 
 For the flyback converter using the :adi:`LT8306`, the power class requirement will dictate the input 
 power of the flyback and its entire design, especially the flyback transformer. 
 
@@ -431,7 +433,7 @@ are considered, translated to the output of 12V and 2A maximum as stated by the 
 
    Simplified DC-DC Flyback using LT8306
 
-For higher power classes like the 70W of Class 4 LTPOE++ and 71.3W of Type 4 Class 8 IEEE802.3bt, 
+For higher power classes like the 70W of Class 4 LTPoE++ and 71.3W of Type 4 Class 8 IEEE802.3bt, 
 a likely larger transformer with higher specification is required. The flyback circuit is designed 
 only for 25.5W which is expected will not work on higher power class because it can make the 
 transformer saturate, resulting in the DC-DC converter regulation collapsing.
@@ -479,15 +481,18 @@ the inductor peak current can go high enough for intended higher power.
     
    Switching Frequency is calculated by Equation (2):
 
-   .. image:: fsw-equation.png
-      :width: 450 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{F_{SW} = \frac{1}{T_{ON}+T_{DEMAG}} = \frac{1}{T} = \huge \frac{1}{\frac{L_{PRI} 
+      \ \bullet \ I_{LIM}}{V_{IN}}+\frac{L_{PRI} \ \bullet \ I_{LIM}}{N_{PS} \ \bullet \ (V_{OUT} \ + \ V_{F})}}}
+   
 
    Using the specs of 750316116, Switching frequency is 95.47 kHz
 
-   .. image:: fsw-answer-1.png
-      :width: 400 px
-      :align: center
+   .. math :: 
+      \Large \mathrm{ F_{SW} = \huge \frac{1}{\frac{(18µH) \ \bullet \ (10A)}{57V}+\frac{(18µH) \ \bullet 
+      \ (10A)}{(2) \ \bullet \ (12V \ + \ 0.3V)}} = \normalsize \Large 95.47kHz }
+      
 
 With the switching frequency calculated, the user can check if the selected transformer is applicable 
 to the IEEE 802.3bt high input power of 71.3W by calculating the primary winding peak current |I_PRI|, 
@@ -498,22 +503,22 @@ using equation 3.
    Flyback input power is presented by Equation (3):
 
 
-   .. image:: input-power-equation.png
-      :width: 220 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ P_{IN} = \frac{L_{PRI} \ \bullet F_{SW} \ \bullet \ (I_{PRI})^2}{2} }
+
 
    Given that the PD input power for IEEE 802.3bt is 71.3W,
    then |I_PRI| can be calculated:
 
+   .. math ::
 
-   .. image:: input-power-answer-1.png
-      :width: 300 px
-      :align: center
+     \Large \mathrm{ 71.3W = \frac{(18µH) \ \bullet \ (95.47kHz) \ \bullet \ (I_{PRI})^2}{2} }
 
 
-   .. image:: ipri-answer-1.png
-      :width: 200 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ Therefore, I_{PRI} = 9.13A }
 
 
 For a peak current of 9.13A, unfortunately it exceeds the saturation of the transformer of 7.7A.
@@ -525,15 +530,18 @@ can deliver by using equation 4 and equation 5.
     
    Duty Cycle is calculated by Equation (4):
 
-   .. image:: duty-equation.png
-      :width: 400 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ D = \frac{T_{ON}}{T} = \frac{T_{ON}}{T_{ON}+T_{DEMAG}} = \frac{(V_{OUT}+V_{F}) 
+     \ \bullet \ N_{PS}}{V_{IN}\ + \ (V_{OUT} \ + \ V_{F}) \ \bullet \ N_{PS}} }
+
 
    Output Current |I_OUT| is calculated by Equation (5):
 
-   .. image:: iout-equation.png
-      :width: 250 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ I_{OUT} = \frac{eff \ \bullet \ (1-D) \ \bullet \ \ N_{PS} 
+     \ \bullet \ I_{PRI}}{2} }
 
 
 Assuming efficiency is 85%, we selected the previously calculated peak current of |I_PRI| of 9.31A:
@@ -542,15 +550,18 @@ Assuming efficiency is 85%, we selected the previously calculated peak current o
     
    Duty Cycle is around 30.1%:
 
-   .. image:: duty-answer-1.png
-      :width: 300 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{ D = \frac{(12V \ + \ 0.3V) \ \bullet \ (2)}{57V \ \bullet 
+      \ (12V \ + \ 0.3V) \ \bullet \ (2)} = 0.301 }
 
    Calculated |I_OUT| is 4.75A, which is less then 5.4A output for PD of 71.3W:
 
-   .. image:: iout-answer-1.png
-      :width: 400 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{ I_{OUT} = \frac{(0.85) \ \bullet \ (1-0.301) \ \bullet 
+      \ (2) \ \bullet \ (9.31A)}{2} = 4.75A }
+
 
 .. |I_OUT| replace:: I\ :sub:`OUT`\ 
 
@@ -561,7 +572,7 @@ of 5.4A at full load for an output voltage of 12V. The flyback in AD-PS3803-RD u
 is not designed for this, as it is only capable of delivering up to 4.75A at maximum, and 
 it is not even optimized for that, because it is intentionally designed for 2A output (24W). 
 
-Therefore, the designer must select a new transformer that will not saturate at higher POE 
+Therefore, the designer must select a new transformer that will not saturate at higher PoE 
 power class, either picking a transformer with higher saturation current, or higher primary 
 winding inductance, appropriate turns ratio, or at least it indicates that it can produce 
 the maximum output current and output power if the saturation current specification is 
@@ -585,20 +596,21 @@ inductance.
     
    For primary winding inductance of 16µH, |F_SW| is  more than 12.5kHz minimum.
 
-   .. image:: fsw-answer-2.png
-      :width: 400 px
-      :align: center
+   .. math :: 
+      \Large \mathrm{ F_{SW} = \huge \frac{1}{\frac{(16µH) \ \bullet \ (10A)}{57V}+\frac{(16µH) \ \bullet 
+      \ (10A)}{(2) \ \bullet \ (12V \ + \ 0.3V)}} = \normalsize \Large 119.19kHz }
 
    Calculating the peak current again for the transfomer if it is capable for IEEE 802.3bt.
 
-   .. image:: input-power-answer-2.png
-      :width: 350 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ 71.3W = \frac{(16µH) \ \bullet \ (119.19kHz) \ \bullet \ (I_{PRI})^2}{2} }
 
 
-   .. image:: ipri-answer-2.png
-      :width: 220 px
-      :align: center
+   .. math ::
+
+     \Large \mathrm{ Therefore, I_{PRI} = 8.6472A }
+
 
 .. |F_SW| replace:: F\ :sub:`SW`\ 
 
@@ -610,19 +622,22 @@ can deliver.
     
    The duty cycle is around 33.46%.
 
-   .. image:: duty-answer-2.png
-      :width: 350 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{ D = \frac{(12V \ + \ 0.3V) \ \bullet \ (2.33)}{57V \ \bullet 
+      \ (12V \ + \ 0.3V) \ \bullet \ (2.33)} = 0.33457 }
+
 
    |I_OUT| is  5.7A, which is more than 5.4A.
 
-   .. image:: iout-answer-2.png
-      :width: 450 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{ I_{OUT} = \frac{(0.85) \ \bullet \ (1-0.33457) \ \bullet 
+      \ (2) \ \bullet \ (8.6472A)}{2} = 5.7A }
 
 The calculated |I_OUT| = 5.7A proves that the output capability is within the maximum load 
 that the flyback converter can deliver, so that the DC-DC supply can pull an input power 
-of what is specified on the POE power classes of 71.3W or 70W for the full load current 
+of what is specified on the PoE power classes of 71.3W or 70W for the full load current 
 of 5.4A (65W output). 
 
 The next checking will be the other parameters of the transformer, to ensure we select the 
@@ -633,21 +648,22 @@ and turns ratio using equations 6, 7 and 8.
     
    Sense Resistor for limiting current is Equation (6):
 
-   .. image:: rsense-equation.png
-      :width: 150 px
-      :align: center
+   .. math ::
+
+      \Large \mathrm{ R_{SENSE} = \frac{95mV}{I_{LIM}} }
    
    Maximum allowable turns-ratio is Equation (7):
 
-   .. image:: nmax-equation.png
-      :width: 300 px
-      :align: center
+   .. math ::
+      \Large \mathrm{ N_{PS} = \frac{D_{MAX} \ \bullet 
+      \ V_{IN}}{(1-D_{MAX}) \ \bullet \ (V_{OUT} \ + \ V_{F})} }
 
    Minimum inductance for primary winding of transformer is Equation (8):
 
-   .. image:: lmin-equation.png
-      :width: 300 px
-      :align: center
+   .. math ::
+      \Large \mathrm{ L_{PRI} \ge  \frac{V_{IN(MAX)} \ \bullet \ R_{SENSE} \ 
+      \bullet \ T_{ON(MIN)}}{V_{SENSE(MIN)}} }
+
 
 Calculating other parameters using input conditions given by the LT8306 datasheet,  
 
@@ -664,24 +680,24 @@ Where |D_MAX| = 0.65, |V_SENSE(MIN)| = 17mV, & |T_ON(MIN)| = 200ns.
     
    For a current limit of 10A, the sense resistor value must be 9.5mΩ.
 
-   .. image:: rsense-answer.png
-      :width: 250 px
-      :align: center
-   
+   .. math :: 
+      
+      \Large \mathrm{ R_{SENSE} = \frac{95mV}{10A} = 9.5m\Omega }
+
    The transformer's turns ratio of 2.33 did not exceeed the calculated maximum turns ratio:
 
-   .. image:: nmax-answer.png
-      :width: 350 px
-      :align: center
+   .. math ::
+      \Large \mathrm{ N_{PS} = \frac{0.65 \ \bullet 
+      \ 57V}{(1-0.65) \ \bullet \ (12V \ + \ 0.3V)} = 8.61 }
 
    The inductance of the transformer is 16µH, which is more than the minimum inductance:
 
-   .. image:: lmin-answer.png
-      :width: 350 px
-      :align: center
+   .. math ::
+      \Large \mathrm{ L_{PRI} \ge  \frac{57V \ \bullet \ 9.5m\Omega \ 
+      \bullet \ (200ns)}{17mV} \ge 6.37\mu H }
 
 Therefore, the selected transformer **750319036** from Wurth Elektroniks is a recommended part for 
-higher power flyback circuit for the application of higher power POE up to 72W. Other 
+higher power flyback circuit for the application of higher power PoE up to 72W. Other 
 alternative transformers are indicated in Table 10.
 
 .. csv-table::  Recommended Flyback Transformers for IEEE 802.3bt
