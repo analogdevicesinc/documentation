@@ -39,10 +39,14 @@ for the the Commits link with the newest version and at least one Release.
       :git-linux:`Release 1 <releases/tag/adsp-6.12.0-1+>`
       :git-linux:`Release 2 <releases/tag/6.12.0-2+>`
       :git-linux:`Release 3 <releases/tag/6.12.0-3+>`
+      :git-linux:`Release 4 <releases/tag/6.12.0-4+>`
+      :git-linux:`Release 5 <releases/tag/6.12.0-5+>`
     - v6.12.89:
       :git-linux:`Commits <commits/adsp-6.12.89-y+>`
+      :git-linux:`Release 1 <releases/tag/6.12.89-1+>`
     - v6.18.31:
       :git-linux:`Commits <commits/adsp-6.18.31-y+>`
+      :git-linux:`Release 1 <releases/tag/6.18.31-1+>`
 
 ..
     - v6.12.38:
