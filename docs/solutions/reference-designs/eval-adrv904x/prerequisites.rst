@@ -9,15 +9,15 @@ start out with:
 Hardware prerequisites
 -------------------------------------------------------------------------------
 
-#. The ADRV9040/ADRV9044-based evaluation board:
-   :adi:`EVAL-ADRV904x <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-adrv904x.html>`
+#. The ADRV9040/ADRV9044-based evaluation board and a power supply for it
+   that outputs at least 1.5A: :adi:`EVAL-ADRV904x`
 #. An FPGA carrier platform. Our recommended ones can be found
    :ref:`here <adrv904x carriers>`.
 
-   - There are a few more boards, which do work, but are currently not
-     supported by us. The experience with the fabric-only solutions is very
-     close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC
-     (Windows or Linux).
+   - There are a few more boards, which do work, but are currently not supported
+     by us. The experience with the fabric-only solutions is very close to the
+     ARM/FPGA SoC based solutions, but the GUI runs on a host PC (Windows or
+     Linux).
 
 #. Some way to interact with the FPGA platform:
 
@@ -36,6 +36,8 @@ Hardware prerequisites
    scripts/binaries on the SD card that came with the ADI FMC Card (firewalls
    are OK, proxies make things a pain).
 #. RF Test equipment
+
+   - SMA cables for loopbacks
 #. An SD card with at least 16GB of memory (in case you're using Linux). You
    should have received one when purchasing the evaluation board.
 
@@ -49,5 +51,5 @@ from the FPGA, we use the following:
 
 .. note::
 
-   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan; getting
-   one yourself is the normal part of development or evaluation.
+   :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan;
+   getting one yourself is the normal part of development or evaluation.

@@ -1,3 +1,5 @@
+.. _adrv904x dfe overview:
+
 ADRV904x DFE SYSTEM LEVEL OVERVIEW
 ==================================
 
@@ -26,11 +28,23 @@ The figure shown below is a simplified system level overview of the transceiver
 signal chain with DFE processing blocks highlighted. There are six main DFE
 processing blocks:
 
--  CFR and hard clipper are used to reduce peak to average power ratio (PAPR) of the baseband signal, especially for multi-carrier waveforms such as OFDM. With reduced PAPR, the PA can operate at a higher output power, increasing the PA efficiency. This function is explained in the Crest Factor Reduction (CFR) section.
--  There is also an optional post-CFR gain block that can be used to increase the gain of signals post CFR clipping to compensate for reduced peak amplitude post CFR.
--  There are two half band filters with a total interpolation factor of 4x before the DPD actuator. These blocks can provide a total of 1x, 2x or 4x interpolation.
--  There are three DPD capture buffers, which include the pre-DPD actuator data, post-DPD actuator data, and observation buffers. Each buffer can capture a maximum of 4096 samples.
--  DPD actuator (max rate of 2GHz), which applies the inverse PA model to the baseband signal for power amplifier linearization. The DPD Actuator on ADRV904x comes with dedicated Charge Trapping Correction HW for GaN PAs.
+-  CFR and hard clipper are used to reduce peak to average power ratio (PAPR) of
+   the baseband signal, especially for multi-carrier waveforms such as OFDM.
+   With reduced PAPR, the PA can operate at a higher output power, increasing
+   the PA efficiency. This function is explained in the Crest Factor Reduction
+   (CFR) section.
+-  There is also an optional post-CFR gain block that can be used to increase
+   the gain of signals post CFR clipping to compensate for reduced peak
+   amplitude post CFR.
+-  There are two half band filters with a total interpolation factor of 4x
+   before the DPD actuator. These blocks can provide a total of 1x, 2x or 4x
+   interpolation.
+-  There are three DPD capture buffers, which include the pre-DPD actuator data,
+   post-DPD actuator data, and observation buffers. Each buffer can capture a
+   maximum of 4096 samples.
+-  DPD actuator (max rate of 2GHz), which applies the inverse PA model to the
+   baseband signal for power amplifier linearization. The DPD Actuator on
+   ADRV904x comes with dedicated Charge Trapping Correction HW for GaN PAs.
 -  DFE Processor is a Quad core embedded ARM A55 processor on which the DPD,
    VSWR and CLGC algorithms are deployed. Additionally, there are dedicated HW
    accelerators for signal processing intensive tasks such as cross correlation

@@ -1,7 +1,10 @@
+.. _adrv904x dpd analysis tool:
+
 ADRV904x DPD Analysis Tool
 ==========================
 
-The ADRV904x DPD analysis tool can be downloaded from this link. :ez:`rf/wide-band-rf-transceivers/design-support-adrv904x/w/documents/32553/gen5-dpd-analysis-tool`
+The ADRV904x DPD analysis tool can be downloaded from this link.
+:ez:`rf/wide-band-rf-transceivers/design-support-adrv904x/w/documents/32553/gen5-dpd-analysis-tool`
 
 The v14 of the tool is capable of
 
@@ -24,7 +27,7 @@ the DPD tracking calibration.
 The following code snippet shows how to configure the DPD to engage the actuator
 in bypass mode (output = input)
 
-.. code:: python
+.. code-block:: python
 
    def dpdRobustnessConfigSet(channel = adi_adrvgen6_TxChannels_e.ADI_ADRVGEN6_TX0):
        dpdStabilityConfig = adi_adrvgen6_DfeAppCalDpdStabilityCfg_t()
@@ -44,9 +47,12 @@ in bypass mode (output = input)
 
        ret = adrv904x.dfe_dpd.DpdStabilityCfgSet(int(channel), dpdStabilityConfig)
 
-After setting up the actuator in bypass mode via \*\* DpdStabilityCfgSet( )*\* and enabling the DPD tracking calibration via **DfeTrackingCalsEnableSet()** API, the user can now proceed to dump the DPD open loop data for PA response analysis by executing the code snippet shown below.
+After setting up the actuator in bypass mode via \*\* DpdStabilityCfgSet( )*\*
+and enabling the DPD tracking calibration via **DfeTrackingCalsEnableSet()**
+API, the user can now proceed to dump the DPD open loop data for PA response
+analysis by executing the code snippet shown below.
 
-.. code:: python
+.. code-block:: python
 
    #Utility Function to write data to a file
    def fileDataWriter(fileHandle, numSamples, iData = None, qData = None):
@@ -116,9 +122,9 @@ Sweeping DPD Models
 -------------------
 
 ADI provides two methods of model selection: existing model sweep/search or a
-model pruning optimization. A DPD model library as part of the ADRV904x
-Software Package is provided in the default model sweep directory shown below.
-Also, attached :download:`here <../resources/dpd_models.zip>`
+model pruning optimization. A DPD model library as part of the ADRV904x Software
+Package is provided in the default model sweep directory shown below. Also,
+attached :download:`here <../resources/dpd_models.zip>`
 
 .. image:: ../images/adidpdanalysistool_modelsweep.png
    :align: center

@@ -1,3 +1,5 @@
+.. _adrv904x dpd capabilities:
+
 ADRV904x DPD Capabilities
 =========================
 
@@ -34,4 +36,5 @@ generation integrated DFE transceiver AD9029.
 |                                 |                                                     | \* Dedicated HW for Charge Trapping Correction on GaN PAs    |
 +---------------------------------+-----------------------------------------------------+--------------------------------------------------------------+
 
-**NOTE:** DDR Stands for Dynamic Deviation Reduction based Volterra Series that effectively compensates for memory effects in wide bandwidth PAs
+**NOTE:** DDR Stands for Dynamic Deviation Reduction based Volterra Series
+that effectively compensates for memory effects in wide bandwidth PAs
