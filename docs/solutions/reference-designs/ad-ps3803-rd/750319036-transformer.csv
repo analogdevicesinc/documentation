@@ -1,0 +1,5 @@
+﻿**Parameter**,**Value**
+Primary Winding Inductance |L_PRI| ,16 µH
+Turns Ratio |N_PS|,2.33
+Saturation Current |I_SAT|,10.4 A
+Primary Winding Resistance |DCR_PRI|,26.2 mΩ

@@ -1,0 +1,6 @@
+﻿**Component**,**Part Number**,**Manufacturer**,**Quantity**,**Description**
+Transformer,750319036,WURTH Elektroniks,1,POE Transformer for Flyback L = 16µH
+Flyback Diode,FSV12100V,ONSEMI,1,Schottky Diode 100V 12A TO2773 package
+Load Capacitor,CAA573X7R1H686M670LH,TDK,≥10,Multilayer Ceramic Capacitor 2232 X7R 50V 68uF ±20%
+Sense Resistor,WSL25129L500FEA,Vishay,1,9.5 mΩ ±1% 1W Resistor 2512
+MOSFET,BSC190N12NS3GATMA1,Infineon,1,N-Channel MOSFET 120V 8.6A / 44A TDSON package

@@ -1,0 +1,6 @@
+﻿**Maximum PD Power**,**PD Type**,**PD Class**,**RCLS**,**Odd Jumper**,**RCLS++**,**Even Jumper**,**Notes**
+25.5W,Type 2,Class 4,34.8Ω,JP9,Open,JP10,
+38.7W,LTPOE++,Class 4*,Open,JP11,34.8Ω,JP12,
+52.7W,LTPOE++,Class 4*,140Ω,JP13,46.4Ω,JP14,
+70W,LTPOE++,Class 4*,76.8Ω,JP15,64.9Ω,JP16,
+90W,LTPOE++,Class 4*,49.9Ω,JP17,118Ω,JP18,
