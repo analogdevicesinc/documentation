@@ -557,8 +557,8 @@ More Information
 -  `IIO Linux Kernel Documentation sysfs-bus-iio-\* <https://www.kernel.org/doc/Documentation/ABI/testing>`_
 -  `IIO Documentation <https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-bus-iio>`_
 -  :ref:`iio-oscilloscope`
--  :dokuwiki:`libiio - IIO system library <resources/tools-software/linux-software/libiio>`
--  :dokuwiki:`libiio - Internals <resources/tools-software/linux-software/libiio_internals>`
+-  :ref:`libiio - IIO system library <libiio>`
+-  :ref:`libiio - Internals <libiio internals>`
 -  :dokuwiki:`Pointers and good books <resources/tools-software/pointers>`
 -  `IIO High Speed <https://events.static.linuxfound.org/sites/events/files/slides/iio_high_speed.pdf>`_
 -  `Software Defined Radio using the IIO framework <http://video.fosdem.org/2015/devroom-software_defined_radio/iiosdr.mp4>`_
