@@ -101,6 +101,7 @@ User Guides
    quick-start-guide
    hardware-guide
    software-guide
+   production_testing/production-testing
 
 Help and Support
 ----------------
