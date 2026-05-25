@@ -98,6 +98,7 @@ User Guides
    hardware-guide
    software-guide
    canopen
+   production_testing/production-testing
 
 Help and Support
 ----------------
