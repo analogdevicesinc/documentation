@@ -137,6 +137,6 @@ HDL Projects
 ------------
 
 * :external+hdl:ref:`max96724`
-* :external+hdl:ref:`ad_gmsl2eth_sl`
+* :external+hdl:ref:`adrd8012_01z`
 
 The project and the project’s overview can be found at the following links:
