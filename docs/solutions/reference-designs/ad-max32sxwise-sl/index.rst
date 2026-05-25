@@ -325,4 +325,5 @@ the :ez:`Analog Devices Engineer Zone </>`.
    ev-structural-ardz/index
    ev-flowmeter-ardz/index
    eval-ade9000shieldz/index
+   smart-watermeter/index
    
