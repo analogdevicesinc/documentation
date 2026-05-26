@@ -305,18 +305,14 @@ Now open 8 instances of Gstreamer for each port(5004-5011).
     rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
     text-overlay=true sync=false
 
-..
-   Enable after adding new content
+User Guides
+-----------
 
-   User Guides
-   -----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
 
-   .. toctree::
-      :titlesonly:
-      :maxdepth: 1
-      :glob:
-
-      */index
+   production_testing/index
 
 Help and Support
 ----------------
