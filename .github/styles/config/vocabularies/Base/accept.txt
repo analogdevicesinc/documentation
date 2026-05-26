@@ -138,7 +138,7 @@ Yocto
 [Cc]ellpack
 [Cc]hibios
 [Cc]hipset
-[Cc]hirpstack
+[Cc]hirpStack
 [Cc]larkson
 [Cc]lk
 [Cc]mak
