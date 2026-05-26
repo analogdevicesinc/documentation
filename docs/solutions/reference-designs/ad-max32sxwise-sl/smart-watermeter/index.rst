@@ -70,13 +70,13 @@ Software Requirements
    - Microsoft .Net Framework 4.6.2
    - 1920 by 1080 or greater screen resolution (recommended)
 - Downloaded and installed:
-   - :download:`MAX32625PICO Firmware Image for MAX32670 <max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+   - :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
    - :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
    - :download:`ADI Wireless Sensor Hub Standalone Software for Flowmeter Application <wisehub_flowmeterversion.zip>`
-   - `UART serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`_
+   - `UART serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`__
       - This demo uses Real Term serial monitor, but other UART serial terminals may also be used.
-   - `Balena Etcher <https://etcher.balena.io>`_ image writing tool
-   - `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
+   - `Balena Etcher <https://etcher.balena.io>`__ image writing tool
+   - `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
 
 Demo Setup
 ----------
@@ -113,7 +113,7 @@ For the needed components for this phase, see **Microcontroller/Sensors** and
 
    .. image:: images/smart_water_meter_battery_attachment.png
       :align: center
-      
+
    To check for the battery polarity in the BT1 connector, refer to the
    figure above (right). The DS3 LED will light up indicating that you have
    inserted the battery correctly and that power is provided in the base board.
@@ -131,7 +131,7 @@ For the needed components for this phase, see **Microcontroller/Sensors** and
    below:
 
       #. Download the firmware image:
-         :download:`MAX32625PICO Firmware Image for MAX32670 <max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
+         :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
       #. Do not connect the :adi:`MAX32625PICO` to the :adi:`MAX32670-SX-ARDZ`
          Base Board yet.
       #. Press the button on the :adi:`MAX32625PICO`. **Do not release the
@@ -181,7 +181,7 @@ For the needed components for this phase, see **Gateway Essentials** under
 
 .. note::
 
-   To **configure the gateway**, you may proceed to 
+   To **configure the gateway**, you may proceed to
    `Imaging the SD Card with ChirpStack OS`_ and `Configuring the Gateway`_
    under `Software Setup`_.
 
@@ -205,7 +205,7 @@ For the needed components for this phase, see **Environment Setup** under
 
    .. image:: images/smart_water_meter_board_connections.png
       :align: center
-      
+
    Follow the connections shown above. Repeat this step for the other sensor
    board and transducer.
 
@@ -222,7 +222,7 @@ For the needed components for this phase, see **Environment Setup** under
       :align: center
 
    .. tip::
-      
+
       **The** :adi:`CN0508` **75 Watt, Single-Output Benchtop Power Supply** is connected
       to the water pump in order to vary water flow as needed for the demo.
 
@@ -260,8 +260,7 @@ board and accessing the GUI.
 
 .. tip::
 
-   Visit :ref:`ADI Long Range Wireless Radio Software User Guide <lora_software>`
-   for a more detailed software setup guide.
+   Visit :ref:`lora_software` for a more detailed software setup guide.
 
 Configuring the Sensor Board
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -271,8 +270,8 @@ Configuring the Sensor Board
    Make sure you have completed the steps described in `Sensor Board Assembly`_ before
    proceeding with the steps listed below.
 
-   This phase will require 
-   `Real Term serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`_ 
+   This phase will require
+   `Real Term serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`__
    and :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
    installed.
 
@@ -284,7 +283,7 @@ Configuring the Sensor Board
 
    .. image:: images/bin_files_2.png
       :align: center
-#. Go to My Computer and search for the **DAPLINK drive**. Drag and drop 
+#. Go to My Computer and search for the **DAPLINK drive**. Drag and drop
    (or copy and paste) the **.bin firmware file** directly into the DAPLINK drive.
 
    .. tip::
@@ -293,14 +292,14 @@ Configuring the Sensor Board
       make sure there is no **FAIL.TXT** file. In case there is, repeat the drag
       and drop step.
 #. Reset the :adi:`MAX32670-SX-ARDZ` Base Board by pressing the **S1 reset button**.
-#. Open the 
-   `Real Term serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`_
+#. Open the
+   `Real Term serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`__
    to check if the firmware has been loaded correctly. Make sure to use the
    following settings:
 
    - **Ports**: Take note of the COM port used by checking the **Device Manager**
    - **Baud Rates and Ports**: Set to **921600**
-     
+
       .. image:: images/2.png
          :align: center
    - **Display formatting**: Set to **ANSI**
@@ -325,20 +324,20 @@ Imaging the SD Card with ChirpStack OS
 
 .. note::
 
-   This phase will require `Balena Etcher <https://etcher.balena.io>`_ **image
-   writing tool** installed and 
-   `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
+   This phase will require `Balena Etcher <https://etcher.balena.io>`__ **image
+   writing tool** installed and
+   `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
    downloaded. This phase will also use the **micro SD card** listed under
    **Gateway Essentials**.
 
-#. Run the `Balena Etcher <https://etcher.balena.io>`_ **image writing tool**.
+#. Run the `Balena Etcher <https://etcher.balena.io>`__ **image writing tool**.
 #. Insert the micro SD card into the Host PC.
 #. Click **Flash from file** from the options shown in the interface.
 
    .. image:: images/flashing_sd_card.png
       :align: center
 #. Navigate to the location where the downloaded
-   `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`_
+   `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
    is saved.
 #. Select target and choose the targeted micro SD card drive.
 #. Click **Flash** to start the burning process of the image in the chosen SD card.
@@ -348,9 +347,9 @@ Imaging the SD Card with ChirpStack OS
       :align: center
 
    .. tip::
-      
+
       In case the **flashing fails**, consult this guide to resolve the issue:
-      `Balena Etcher FAQs <https://etcher.balena.io/#FAQs>`_.
+      `Balena Etcher FAQs <https://etcher.balena.io/#FAQs>`__.
 
 .. warning::
 
@@ -392,7 +391,7 @@ Configuring the Gateway
    .. image:: images/chirpstack_ip.png
       :align: center
 #. This will show all configs, look for **eth0** and **save the IP address** assigned to it.
-   
+
    .. image:: images/eth0_ip.png
       :align: center
 
@@ -419,7 +418,7 @@ Configuring the Gateway
 #. Quit the main menu.
 
    .. tip::
-      
+
       If you have properly configured the gateway and installed the required SD
       card image, then **you are ready to use the ChirpStack Network Server**.
 
@@ -446,7 +445,7 @@ Setting up a Self-Hosted Application Server
    .. image:: images/inbound_rule_1.png
       :align: center
 #. **Configure the Inbound Rule** as shown below.
-   
+
    Step-by-step configuration of a new ChirpStack Inbound Rule:
 
    .. image:: images/inbound_rule_2.png
@@ -466,7 +465,7 @@ Setting up a Self-Hosted Application Server
 
    .. image:: images/rule_config_5.png
       :align: center
-      
+
    .. image:: images/rule_config_6.png
       :align: center
 
@@ -486,7 +485,7 @@ Setting up a Self-Hosted Application Server
       .. image:: images/ip_address.png
          :align: center
 
-      This information will be used in **Setting up a Local Host URL for the 
+      This information will be used in **Setting up a Local Host URL for the
       Application Server** under `Connecting a Sensor Node to the Gateway`_
       to integrate data from the gateway to the GUI.
 #. Use the assigned ChirpStack IP address saved earlier to access its
@@ -527,7 +526,7 @@ validate that it can send data. This process is divided into three sections:
 #. Once you are in the ChirpStack landing page, navigate to the **Applications tab**.
 #. Click **Device profiles** under the **Tenant** category.
 #. Click on the **Add device profile** button.
-   
+
    .. image:: images/add_device_profile.png
       :align: center
 #. Answer all required information under the **General** tab, and then click **Submit** once done.
@@ -576,7 +575,7 @@ validate that it can send data. This process is divided into three sections:
       case-sensitive) to distinguish the sensor nodes shown on the GUI. In this
       case, the two sensor nodes can be named **flow-1** and **flow-2**
       respectively.
-   
+
    .. image:: images/device_details.png
       :align: center
 #. Once done, click **Submit**. Then, **repeat steps 5 and 6** for the other
@@ -624,12 +623,12 @@ validate that it can send data. This process is divided into three sections:
       ``http://169.254.178.157:5050/api/data/post``.
 
       If you haven't saved the IP address, **revisit steps 1 to 2** in
-      **Installing the GUI and Accessing the Gateway** under 
+      **Installing the GUI and Accessing the Gateway** under
       `Setting up a Self-Hosted Application Server`_.
 #. After updating the HTTP Integration endpoint URL, submit the changes by
    pressing **Submit**.
 #. A pop-up message will appear saying **HTTP Integration updated**.
-   
+
    .. image:: images/http_integration_success.png
       :align: center
 #. Open your browser and **enter the URL** ``http://localhost:5050``. Now
@@ -649,7 +648,7 @@ Custom GUI
 
 The custom GUI for this demo highlights the :adi:`EV-FLOWMETER-ARDZ` as a
 **smart water meter** with two main features:
-- **Water bill computation** 
+- **Water bill computation**
 - **Leakage detection**
 
 .. image:: images/smart_water_meter_draft_gui.png
@@ -665,9 +664,9 @@ Design and Integration Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. admonition:: Download
-   
+
    :download:`AD-MAX32SXWISE-SL Design Support Package <ad-max32sxwise-sl-designsupport.zip>`
-   
+
    - Schematic
    - Bill of Materials
    - Layout
