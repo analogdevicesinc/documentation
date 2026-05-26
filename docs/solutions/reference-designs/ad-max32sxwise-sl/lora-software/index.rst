@@ -30,7 +30,7 @@ Requirements
     * :download:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <wireless_sensor_hub.zip>`
     * `UART serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`__
     * `Balena Etcher image writing tool <https://etcher.balena.io>`__
-    * `Chirpstack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
+    * `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
 
 * `RAK5146 PiHAT Kit <https://store.rakwireless.com/products/rak5146-kit?variant=41577988161734>`__ consisting of
 
@@ -152,7 +152,7 @@ Software
 ^^^^^^^^
 
 - `Balena Etcher <https://etcher.balena.io>`__ image writing tool
-- `Chirpstack Gateway OS version 4.1.1 <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
+- `ChirpStack Gateway OS version 4.1.1 <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
 
 Documentation
 ^^^^^^^^^^^^^
@@ -192,7 +192,7 @@ Follow below steps to setup the concentrator hardware:
 Imaging the SD Card with ChirpStack OS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Download the `Chirpstack Gateway OS version 4.1.1 or
+#. Download the `ChirpStack Gateway OS version 4.1.1 or
    latest <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
 
     .. tip:: This setup uses the Raspberry Pi 4B Full Image
@@ -206,7 +206,7 @@ Imaging the SD Card with ChirpStack OS
 
    .. figure:: flashing_sd_card.png
 
-#. Navigate to the location where the downloaded Chirpstack Gateway OS is saved.
+#. Navigate to the location where the downloaded ChirpStack Gateway OS is saved.
 #. Select target and choose the targeted micro SD card drive.
 #. Click **Flash** to start the burning process of the
    image in the chosen SD card.
@@ -253,7 +253,7 @@ Gateway Configuration
 
    .. figure:: ssh_password_input.png
 
-      Chirpstack details
+      ChirpStack details
 
    .. code-block:: shell
 
@@ -535,7 +535,7 @@ Local Application Server GUI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you have successfully added a device (sensor node) and an application in
-the Chirpstack network, you will be able to view the graphical representation of
+the ChirpStack network, you will be able to view the graphical representation of
 the data collected by the sensor, as shown in the example below:
 
 **Smart Motor Sensor GUI**
