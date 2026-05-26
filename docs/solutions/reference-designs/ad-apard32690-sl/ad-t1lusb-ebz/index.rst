@@ -149,3 +149,8 @@ Analog Devices will provide **limited** online
 support for anyone using the reference design with Analog Devices components via
 the :ez:`EngineerZone Reference Designs <reference-designs>` forum.
 
+.. toctree::
+   :hidden:
+
+   production_testing/index
+
