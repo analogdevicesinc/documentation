@@ -256,18 +256,14 @@ Design and Integration Files
    - Bill of Materials
    - Allegro Project
 
-..
-  Enable this after adding content
+User Guides
+-----------
 
-  User Guides
-  -----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
 
-  .. toctree::
-     :titlesonly:
-     :maxdepth: 1
-     :glob:
-
-     */index
+   production_testing/index
 
 Support
 -------
