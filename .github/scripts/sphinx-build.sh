@@ -1,6 +1,8 @@
 #!/bin/bash
 
-_sparse_args() {
+_sparse_patch_conf() {
+	[[ "$GITHUB_EVENT_NAME" != "pull_request" ]] && return
+
 	local files
 	files=$(git diff --diff-filter=ACM --no-renames --name-only \
 		"$base_sha..$head_sha" 2>/dev/null \
@@ -8,20 +10,23 @@ _sparse_args() {
 	[[ -z "$files" ]] && return
 
 	mapfile -t file_arr <<< "$files"
-
 	python3 - "./docs" "${file_arr[@]}" <<'EOF'
 import sys
 from adi_doctools.cli.serve import compute_sparse_config
 
-directory = sys.argv[1]
-sparse    = sys.argv[2:]
+confoverrides = compute_sparse_config(sys.argv[1], sys.argv[2:], verbose=False)
+if not confoverrides:
+    sys.exit(0)
 
-confoverrides = compute_sparse_config(directory, sparse, verbose=False)
+lines = ["\n# sparse build overrides\n"]
 for key, value in confoverrides.items():
-    if isinstance(value, list):
-        print(f"-D {key}={','.join(value)}")
-    else:
-        print(f"-D {key}={value}")
+    lines.append(f"{key} = {repr(value)}\n")
+block = ''.join(lines)
+
+with open(f"{sys.argv[1]}/conf.py", 'a') as f:
+    f.write(block)
+
+print(block, end='')
 EOF
 }
 
@@ -36,23 +41,21 @@ sphinx_build() {
 	local step_name="sphinx"
 	local warnfile=$(mktemp -t sphinx.XXX)
 
-	local sparse_args=()
-	if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
-		while IFS=' ' read -r flag value; do
-			[[ -n "$flag" ]] && sparse_args+=("$flag" "$value")
-		done < <(_sparse_args)
-		echo "got sparse args: ${sparse_args[*]}"
+	local patch
+	patch=$(_sparse_patch_conf)
+	if [[ -n "$patch" ]]; then
+		echo "sphinx: sparse build overrides:"
+		echo "$patch"
 	fi
 
 	pushd ./docs
-	sphinx-build -b html $j_ -w "$warnfile" . _build/html --keep-going \
-		"${sparse_args[@]}" || err=$?
-        rm -rf _build/html/_sources
+	sphinx-build -b html $j_ -w "$warnfile" . _build/html --keep-going || err=$?
+	rm -rf _build/html/_sources
 	popd
 
 	# Filter false positives due to https://github.com/sphinx-doc/sphinx/pull/14325
 	if grep -q "toctree glob pattern.*didn't match any documents" "$warnfile"; then
-		echo "::notice ::Warning 'toctree glob pattern...' is a false positive, please ignore."
+		echo "::notice ::Sphinx's warning 'toctree glob pattern...' is a false positive, please ignore."
 	fi
 	sed -i "/toctree glob pattern.*didn't match any documents/d" "$warnfile"
 
