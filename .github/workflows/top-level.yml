@@ -14,7 +14,7 @@ jobs:
       contents: read
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: analogdevicesinc/doctools/checkout@action
     - name: Install pip packages
       run: |
         python3 -m venv venv
