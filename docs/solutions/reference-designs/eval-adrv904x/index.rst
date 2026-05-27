@@ -123,13 +123,13 @@ Table of contents
 
         #. About the device driver:
 
-           #. :external+hdl:ref:`axi_jesd204_tx` / :git-linux:`JESD204B Transmit Linux driver <drivers/iio/jesd204/axi_jesd204_tx.c>`
-           #. :external+hdl:ref:`axi_jesd204_rx` / :git-linux:`JESD204B Receive Linux driver <drivers/iio/jesd204/axi_jesd204_rx.c>`
-           #. :external+hdl:ref:`axi_adxcvr` / :git-linux:`AXI_ADXCVR High-speed transceivers Linux driver <drivers/iio/jesd204/axi_adxcvr.c>`
+           #. :external+hdl:ref:`axi_jesd204_tx` / :git-linux:`JESD204B Transmit Linux driver <main:drivers/iio/jesd204/axi_jesd204_tx.c>`
+           #. :external+hdl:ref:`axi_jesd204_rx` / :git-linux:`JESD204B Receive Linux driver <main:drivers/iio/jesd204/axi_jesd204_rx.c>`
+           #. :external+hdl:ref:`axi_adxcvr` / :git-linux:`AXI_ADXCVR High-speed transceivers Linux driver <main:drivers/iio/jesd204/axi_adxcvr.c>`
            #. :external+linux:ref:`AXI ADC HDL Linux driver <axi-adc-hdl>`
            #. :external+linux:ref:`AXI DAC HDL Linux driver <axi-dac-dds-hdl>`
            #. :external+linux:ref:`AD9528 Low Jitter Clock Generator Linux driver <ad9528>`
-           #. :external+hdl:ref:`axi_dmac` / :git-linux:`AXI-DMAC DMA Controller Linux driver <drivers/dma/dma-axi-dmac.c>`
+           #. :external+hdl:ref:`axi_dmac` / :git-linux:`AXI-DMAC DMA Controller Linux driver <main:drivers/dma/dma-axi-dmac.c>`
            #. :external+linux:ref:`ADRV904x Linux device driver <adrv904x>`
 
         #. About the device tree:
