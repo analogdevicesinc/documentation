@@ -676,7 +676,7 @@ Resources
 
 **Linux**
 
-:git-linux:`/`
+:git-linux:`main:/`
 
 `Linux Kernel Documentation <https://docs.kernel.org>`_
 

@@ -36,7 +36,7 @@ The supported OS and software environments are:
      - Linux software
    - - `Terasic C5 SoCkit <https://www.arrow.com/en/products/sockit/arrow-development-tools>`_
      - :git-hdl:`Yes <projects/arradio>`
-     - :git-linux:`Yes <arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_sockit_arradio.dts>`
+     - :git-linux:`Yes <main:arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_sockit_arradio.dts>`
 
 .. note::
 

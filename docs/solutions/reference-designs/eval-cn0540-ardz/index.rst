@@ -120,9 +120,9 @@ Table of Contents
 
       #. Linux software
 
-        #. :git-linux:`CN0540 Linux driver source code <drivers/iio/adc/ad7768-1.c>`
-        #. :git-linux:`CN0540/ CoraZ7S Linux device tree <arch/arm/boot/dts/xilinx/zynq-coraz7s-cn0540.dts>`
-        #. :git-linux:`CN0540/ DE-10Nano Linux device tree <arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_de10_nano_cn0540.dts>`
+        #. :git-linux:`CN0540 Linux driver source code <main:drivers/iio/adc/ad7768-1.c>`
+        #. :git-linux:`CN0540/ CoraZ7S Linux device tree <main:arch/arm/boot/dts/xilinx/zynq-coraz7s-cn0540.dts>`
+        #. :git-linux:`CN0540/ DE-10Nano Linux device tree <main:arch/arm/boot/dts/intel/socfpga/socfpga_cyclone5_de10_nano_cn0540.dts>`
 
       #. More information
 

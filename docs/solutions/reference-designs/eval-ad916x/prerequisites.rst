@@ -61,7 +61,7 @@ Software prerequisites
      -  :ref:`linux-kernel zynqmp`
 
    You can also check the available Linux driver Linux at
-   :git-linux:`AD9162 IIO driver <drivers/iio/frequency/ad9162.c>`
+   :git-linux:`AD9162 IIO driver <main:drivers/iio/frequency/ad9162.c>`
    and the HDL repository at :git-hdl:`EVAL-AD916X HDL <projects/ad916x_fmc>`.
 
 

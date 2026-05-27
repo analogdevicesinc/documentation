@@ -151,8 +151,8 @@ Table of Contents
 
       #. Linux software
 
-         #. :git-linux:`AD738x Linux driver source code <drivers/iio/adc/ad7380.c>`
-         #. :git-linux:`EVAL-AD7380FMCZ Linux device tree <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts>`
+         #. :git-linux:`AD738x Linux driver source code <main:drivers/iio/adc/ad7380.c>`
+         #. :git-linux:`EVAL-AD7380FMCZ Linux device tree <main:arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts>`
 
       #. More information
 

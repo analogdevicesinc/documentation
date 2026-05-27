@@ -62,13 +62,13 @@ Status
    -  - Source
       - Mainlined?
    -  - driver
-      - :git-linux:`drivers/iio/adc/adrv9009.c`
+      - :git-linux:`main:drivers/iio/adc/adrv9009.c`
    -  - driver
-      - :git-linux:`drivers/iio/adc/adrv9009_conv.c`
+      - :git-linux:`main:drivers/iio/adc/adrv9009_conv.c`
    -  - include
-      - :git-linux:`drivers/iio/adc/adrv9009.h`
+      - :git-linux:`main:drivers/iio/adc/adrv9009.h`
    -  - Talise API driver
-      - :git-linux:`drivers/iio/adc/talise`
+      - :git-linux:`main:drivers/iio/adc/talise`
 
 Files
 -----
@@ -79,13 +79,13 @@ Files
    - - Function
      - File
    - - driver
-     - :git-linux:`drivers/iio/adc/adrv9009.c`
+     - :git-linux:`main:drivers/iio/adc/adrv9009.c`
    - - driver
-     - :git-linux:`drivers/iio/adc/adrv9009_conv.c`
+     - :git-linux:`main:drivers/iio/adc/adrv9009_conv.c`
    - - include
-     - :git-linux:`drivers/iio/adc/adrv9009.h`
+     - :git-linux:`main:drivers/iio/adc/adrv9009.h`
    - - Talise API driver
-     - :git-linux:`drivers/iio/adc/talise`
+     - :git-linux:`main:drivers/iio/adc/talise`
 
 Interrelated Device Drivers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,11 +102,11 @@ Receive AXI-ADC driver
    - - Function
      - File
    - - driver
-     - :git-linux:`drivers/iio/adc/cf_axi_adc_core.c`
+     - :git-linux:`main:drivers/iio/adc/cf_axi_adc_core.c`
    - - driver
-     - :git-linux:`drivers/iio/adc/cf_axi_adc_ring_stream.c`
+     - :git-linux:`main:drivers/iio/adc/cf_axi_adc_ring_stream.c`
    - - include
-     - :git-linux:`drivers/iio/adc/cf_axi_adc.h`
+     - :git-linux:`main:drivers/iio/adc/cf_axi_adc.h`
 
 Transmit AXI-DAC / DDS driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -117,9 +117,9 @@ Transmit AXI-DAC / DDS driver
    - - Function
      - File
    - - driver
-     - :git-linux:`drivers/iio/frequency/cf_axi_dds.c`
+     - :git-linux:`main:drivers/iio/frequency/cf_axi_dds.c`
    - - include
-     - :git-linux:`drivers/iio/frequency/cf_axi_dds.h`
+     - :git-linux:`main:drivers/iio/frequency/cf_axi_dds.h`
 
 AXI JESD204B HDL driver
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -130,9 +130,9 @@ AXI JESD204B HDL driver
    - - Function
      - File
    - - driver
-     - :git-linux:`drivers/iio/jesd204/axi_jesd204_rx.c`
+     - :git-linux:`main:drivers/iio/jesd204/axi_jesd204_rx.c`
    - - driver
-     - :git-linux:`drivers/iio/jesd204/axi_jesd204_tx.c`
+     - :git-linux:`main:drivers/iio/jesd204/axi_jesd204_tx.c`
 
 AXI JESD204B GT (Gigabit Tranceiver) HDL driver (AMD XILINX/ALTERA-INTEL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -143,7 +143,7 @@ AXI JESD204B GT (Gigabit Tranceiver) HDL driver (AMD XILINX/ALTERA-INTEL)
    - - Function
      - File
    - - driver
-     - :git-linux:`drivers/iio/jesd204/axi_adxcvr.c`
+     - :git-linux:`main:drivers/iio/jesd204/axi_adxcvr.c`
 
 Device Driver Customization
 ===========================
@@ -196,7 +196,7 @@ standard ``TaliseStream.bin`` file.
    - - Function
      - File
    - - Steam
-     - :git-linux:`firmware/TaliseStream.bin`
+     - :git-linux:`main:firmware/TaliseStream.bin`
 
 .. _iio-transceiver adrv9009 devicetree:
 
@@ -217,13 +217,13 @@ Required devicetree properties:
    - - Function
      - File
    - - ADRV9009 Device Tree
-     - :git-linux:`arch/arm64/boot/dts/xilinx/adi-adrv9009.dtsi`
+     - :git-linux:`main:arch/arm64/boot/dts/xilinx/adi-adrv9009.dtsi`
    - - ADRV9009 Device Tree
-     - :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9009.dts`
+     - :git-linux:`main:arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9009.dts`
    - - ADRV9008-1 Device Tree
-     - :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9008-1.dts`
+     - :git-linux:`main:arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9008-1.dts`
    - - ADRV9008-2 Device Tree
-     - :git-linux:`arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9008-2.dts`
+     - :git-linux:`main:arch/arm64/boot/dts/xilinx/zynqmp-zcu102-rev10-adrv9008-2.dts`
 
 Enabling Linux driver support
 =============================
@@ -828,7 +828,7 @@ provided standard gain tables.
 Gain tables are stored in a human readable file, with the format specified
 below.
 
-Example: :git-linux:`firmware/adrv9009_std_gaintable`
+Example: :git-linux:`main:firmware/adrv9009_std_gaintable`
 
 ::
 

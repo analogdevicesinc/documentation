@@ -15,7 +15,7 @@ Linux Kernel image for the FMC board connected to a:
 * :xilinx:`VCU118`
 * :xilinx:`VCU128`
 
-The :git-linux:`/` contains the Linux Kernel flavor from Analog Devices Inc.
+The :git-linux:`main:/` contains the Linux Kernel flavor from Analog Devices Inc.
 :download:`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`
 contains the files system to be used.
 As the compiler, the Microblaze GNU Tools are included on both
@@ -23,7 +23,7 @@ As the compiler, the Microblaze GNU Tools are included on both
 :xilinx:`AMD Vivis <en/products/software/adaptive-socs-and-fpgas/vivado.html>`, as well
 as the ``xsdb`` tool for booting.
 
-After ensuring all tools are installed, clone the :git-linux:`/`
+After ensuring all tools are installed, clone the :git-linux:`main:/`
 
 .. shell::
 

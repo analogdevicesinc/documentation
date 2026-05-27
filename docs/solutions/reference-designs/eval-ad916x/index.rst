@@ -111,8 +111,8 @@ Table of Contents
       #. For Linux software:
 
          - :external+linux:doc:`AD9161/AD9162/AD9163/AD9164 Linux support <drivers/iio-pll/ad9162>`
-         - :git-linux:`AD9162 IIO driver <drivers/iio/frequency/ad9162.c>`
-         - :git-linux:`AD916x IIO support <drivers/iio/frequency/ad916x>`
+         - :git-linux:`AD9162 IIO driver <main:drivers/iio/frequency/ad9162.c>`
+         - :git-linux:`AD916x IIO support <main:drivers/iio/frequency/ad916x>`
 
       #. HDL Software:
 

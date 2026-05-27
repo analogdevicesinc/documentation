@@ -239,7 +239,7 @@ Build Linux kernel
    - - Function
      - File
    - - PlutoSDR Linux Kernel Config
-     - :git-linux:`zynq_pluto_defconfig <arch/arm/configs/zynq_pluto_defconfig>`
+     - :git-linux:`zynq_pluto_defconfig <main:arch/arm/configs/zynq_pluto_defconfig>`
 
 .. shell::
    :no-path:
@@ -321,9 +321,9 @@ Build Devicetrees
    - - Function
      - File
    - - PlutoSDR Rev.A Device Tree
-     - :git-linux:`zynq-pluto-sdr.dts <arch/arm/boot/dts/xilinx/zynq-pluto-sdr.dts>`
+     - :git-linux:`zynq-pluto-sdr.dts <main:arch/arm/boot/dts/xilinx/zynq-pluto-sdr.dts>`
    - - PlutoSDR Rev.B Device Tree
-     - :git-linux:`zynq-pluto-sdr-revb.dts <arch/arm/boot/dts/xilinx/zynq-pluto-sdr-revb.dts>`
+     - :git-linux:`zynq-pluto-sdr-revb.dts <main:arch/arm/boot/dts/xilinx/zynq-pluto-sdr-revb.dts>`
 
 .. shell::
    :no-path:

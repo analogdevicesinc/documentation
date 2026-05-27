@@ -76,7 +76,7 @@ Devicetree
 
 The devicetree (``.dts`` file) describes how the chip is
 wired up. A complete example
-:git-linux:`devicetree for EVAL-AD7380FMCZ evaluation board <arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts>`
+:git-linux:`devicetree for EVAL-AD7380FMCZ evaluation board <main:arch/arm/boot/dts/xilinx/zynq-zed-adv7511-ad7380.dts>`
 can be found in the ADI Linux source code. This can be
 adapted for other evaluation boards by changing the
 ``compatible`` property.

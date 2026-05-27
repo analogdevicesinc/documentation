@@ -212,7 +212,7 @@ The software for the **ADuCM3029_demo_cn0503** can be found here:
    :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503.hex <releases/download/Latest/aducm3029_demo_cn0503.hex+>`
 
    Complete CN0503 Source Files :
-   :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503 Source Code <EVAL-ADICUP3029/tree/master/projects/ADuCM3029_demo_cn0503+>`
+   :git-EVAL-ADICUP3029:`AduCM3029_demo_cn0503 Source Code <master:projects/ADuCM3029_demo_cn0503>`
 
 How to Use the Tools
 --------------------

@@ -41,7 +41,7 @@ The following files are needed to boot the system:
 
    Linux driver:
    :git-linux:`drivers/iio/dac/ad3530r.c <64ec98ac2413d592e484d4cb206fbca93c419693:drivers/iio/dac/ad3530r.c>`
-   in :git-linux:`/`.
+   in :git-linux:`main:/`.
 
 Required software
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

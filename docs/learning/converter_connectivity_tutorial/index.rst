@@ -458,8 +458,8 @@ Hello, ADXL345, ADXL355, or LM75!
 
    The ADXL345 has two drivers:
 
-   - :git-linux:`drivers/iio/accel/adxl345.h` (``ADXL345_I2C/SPI``)
-   - :git-linux:`drivers/input/misc/adxl34x.h` (``INPUT_ADXL34X``)
+   - :git-linux:`main:drivers/iio/accel/adxl345.h` (``ADXL345_I2C/SPI``)
+   - :git-linux:`main:drivers/input/misc/adxl34x.h` (``INPUT_ADXL34X``)
 
    And the IIO driver ``ADXL345_I2C/SPI`` cannot be selected if the inputs
    ``INPUT_ADXL34X`` driver is selected! Make sure to do ``make menufconfig`` to

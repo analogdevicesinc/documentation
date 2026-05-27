@@ -108,8 +108,8 @@ Table of contents
 
       #. Linux software
 
-         #. :git-linux:`DC2677A Linux driver source code <drivers/iio/adc/>`
-         #. :git-linux:`DC2677A Linux device tree <arch/arm/boot/dts/>`
+         #. :git-linux:`DC2677A Linux driver source code <main:drivers/iio/adc/>`
+         #. :git-linux:`DC2677A Linux device tree <main:arch/arm/boot/dts/>`
 
       #. More information
 

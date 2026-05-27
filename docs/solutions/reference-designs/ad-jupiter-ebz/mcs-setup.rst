@@ -403,11 +403,11 @@ Resources
 
 - Branches:
 
-  - :git-pyadi-iio:`pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync <tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync+>`
+  - :git-pyadi-iio:`pyadi-iio/tree/tfcollins/jupiter-sync/examples/adrv9002_mcs_sync <tfcollins/jupiter-sync:examples/adrv9002_mcs_sync>`
 
-  - :git-linux:`linux/tree/staging/adrv9002-mcs-updates <tree/staging/adrv9002-mcs-updates+>`
+  - :git-linux:`linux/tree/staging/adrv9002-mcs-updates <adrv9002-mcs-updates:/>`
 
-  - :git-hdl:`hdl/tree/dev_jupiter_sdr_sync_update <tree/dev_jupiter_sdr_sync_update+>`
+  - :git-hdl:`hdl/tree/dev_jupiter_sdr_sync_update <dev_jupiter_sdr_sync_update:/>`
 
 - Jupiter SDR boot partition files for MCS sync example:
 

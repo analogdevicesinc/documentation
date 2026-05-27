@@ -15,7 +15,7 @@ Jump to your platform and preferred method:
    Build ZynqMP <zynqmp>
    Build MicroBlaze <microblaze>
 
-The :git-linux:`/` can also be compiled using Petalinux to be used on Xilinx
+The :git-linux:`main:/` can also be compiled using Petalinux to be used on Xilinx
 SoC FPGA based platforms.
 
 .. toctree::

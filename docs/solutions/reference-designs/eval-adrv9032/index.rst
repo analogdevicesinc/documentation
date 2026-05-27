@@ -118,7 +118,7 @@ Table of contents
            - :external+linux:ref:`axi-dac-dds-hdl`
            - :external+linux:ref:`ad9528`
            - :external+hdl:ref:`axi_dmac`
-           - ADRV9032/ADRV9032R Linux device driver (in-tree at :git-linux:`drivers/iio/adc/adrv903x/adrv903x.c`)
+           - ADRV9032/ADRV9032R Linux device driver (in-tree at :git-linux:`main:drivers/iio/adc/adrv903x/adrv903x.c`)
 
         #. About the device tree:
 

@@ -10,7 +10,7 @@ heavily interrelated the approach taken utilizes
 
 Firmware image components (Submodules):
 
-- :git-linux:`/`
+- :git-linux:`main:/`
 - :git-hdl:`/`
 - :git-buildroot:`buildroot <master:>`
 - :git-u-boot-xlnx:`u-boot Bootloader <pluto:>`
