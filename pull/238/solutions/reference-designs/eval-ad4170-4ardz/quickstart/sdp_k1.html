@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD4170-4 evaluation board can be controlled and evaluated using the EVAL-SDP-CK1Z (SDP-K1) System Demonstration Platform controller board with a USB-C connection to a Windows PC running the ACE Plugin software." name="description" />
+
+    <title>AD4170-4 on SDP-K1 (EVAL-SDP-CK1Z) &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="prev" title="Quick start guides" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD4170-4 on SDP-K1 (EVAL-SDP-CK1Z)</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#board-connection">Board Connection</a></li>
+<li><a class="reference internal" href="#power-and-connectivity">Power and Connectivity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-installation-and-configuration">Software Installation and Configuration</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#required-software-components">Required Software Components</a></li>
+<li><a class="reference internal" href="#step-1-install-ace-software">Step 1: Install ACE Software</a></li>
+<li><a class="reference internal" href="#step-2-install-sdp-controller-drivers">Step 2: Install SDP Controller Drivers</a></li>
+<li><a class="reference internal" href="#step-3-install-ad4170-plugin">Step 3: Install AD4170 Plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#launching-and-using-ace-with-sdp-k1">Launching and Using ACE with SDP-K1</a><ul>
+<li><a class="reference internal" href="#initial-launch">Initial Launch</a></li>
+<li><a class="reference internal" href="#board-view-window">Board View Window</a></li>
+<li><a class="reference internal" href="#configuration-interface">Configuration Interface</a></li>
+<li><a class="reference internal" href="#memory-map-tab">Memory Map Tab</a></li>
+<li><a class="reference internal" href="#analysis-tab">Analysis Tab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#demo-modes">Demo Modes</a><ul>
+<li><a class="reference internal" href="#demo-mode-access">Demo Mode Access</a></li>
+<li><a class="reference internal" href="#available-demo-modes">Available Demo Modes</a></li>
+<li><a class="reference internal" href="#running-noise-test-demo-example">Running Noise Test Demo (Example)</a></li>
+<li><a class="reference internal" href="#other-demo-modes">Other Demo Modes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#virtual-evaluation-tool">Virtual Evaluation Tool</a></li>
+<li><a class="reference internal" href="#reference-configuration">Reference Configuration</a></li>
+<li><a class="reference internal" href="#data-capture-best-practices">Data Capture Best Practices</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a><ul>
+<li><a class="reference internal" href="#device-not-recognized">Device Not Recognized</a></li>
+<li><a class="reference internal" href="#communication-errors">Communication Errors</a></li>
+<li><a class="reference internal" href="#software-crashes">Software Crashes</a></li>
+<li><a class="reference internal" href="#data-capture-issues">Data Capture Issues</a></li>
+<li><a class="reference internal" href="#no-data-display">No Data Display</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recommended-next-steps">Recommended Next Steps</a></li>
+<li><a class="reference internal" href="#technical-support">Technical Support</a></li>
+<li><a class="reference internal" href="#related-documentation">Related Documentation</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD4170-4ARDZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quick start guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD4170-4 on SDP-K1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD4170-4ARDZ</a></li><li><a href="index.html">Quick start guides</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad4170-4-on-sdp-k1-eval-sdp-ck1z">
+<span id="ad4170-sdp-k1"></span><h1>AD4170-4 on SDP-K1 (EVAL-SDP-CK1Z)<a class="headerlink" href="#ad4170-4-on-sdp-k1-eval-sdp-ck1z" title="Link to this heading"></a></h1>
+<p>The AD4170-4 evaluation board can be controlled and evaluated using the
+EVAL-SDP-CK1Z (SDP-K1) System Demonstration Platform controller board with a
+USB-C connection to a Windows PC running the ACE Plugin software.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The EVAL-SDP-CK1Z (SDP-K1) is a modern system demonstration platform featuring:</p>
+<ul class="simple">
+<li><p>USB-C connector for simplified connectivity</p></li>
+<li><p>Full ACE plugin support</p></li>
+<li><p>Arduino-compatible connectors for evaluation board attachment</p></li>
+<li><p>Compact form factor</p></li>
+<li><p>Universal driver support across Windows versions</p></li>
+</ul>
+</section>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="board-connection">
+<h3>Board Connection<a class="headerlink" href="#board-connection" title="Link to this heading"></a></h3>
+<p><strong>Critical Warning:</strong> The evaluation software and drivers must be installed
+<strong>BEFORE</strong> connecting both the EVAL-AD4170-4ARDZ evaluation board and the
+EVAL-SDP-CK1Z controller board to the PC USB port. This ensures the evaluation
+system is correctly recognized by Windows.</p>
+<p>Connection Procedure:</p>
+<ol class="arabic">
+<li><p><strong>Install all software first</strong> (see Software Installation section below)</p></li>
+<li><p><strong>Do not connect the SDP-K1 to USB yet</strong> - complete installation first</p></li>
+<li><p><strong>Connect the EVAL-AD4170-4ARDZ to the EVAL-SDP-CK1Z</strong> using Arduino
+connectors</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png" width="450" />
+</a>
+</li>
+<li><p><strong>Verify default link/jumper positions</strong> on the evaluation board
+(see Hardware Guide section of <a class="reference internal" href="../user-guide.html#ad4170-user-guide"><span class="std std-ref">User Guide</span></a>)</p></li>
+<li><p><strong>Connect USB-C cable</strong> to the EVAL-SDP-CK1Z board (after software installation)</p></li>
+<li><p><strong>Allow Windows to detect and install drivers</strong> if needed</p></li>
+<li><p><strong>Launch ACE Plugin</strong> software to begin evaluation</p></li>
+</ol>
+</section>
+<section id="power-and-connectivity">
+<h3>Power and Connectivity<a class="headerlink" href="#power-and-connectivity" title="Link to this heading"></a></h3>
+<p><strong>Power Supply:</strong></p>
+<ul class="simple">
+<li><p>The SDP-K1 is powered via USB-C connector</p></li>
+<li><p>Most standard USB 3.0/3.1 ports provide sufficient power</p></li>
+<li><p>Use a quality USB cable to ensure stable connection</p></li>
+<li><p>No additional external power supply is required</p></li>
+</ul>
+<p><strong>USB Connection:</strong></p>
+<ul class="simple">
+<li><p>Use the provided USB-C cable</p></li>
+<li><p>Supports USB 2.0 minimum (compatible with USB 3.0+ ports)</p></li>
+<li><p>Maintains backward compatibility with older USB hosts if adapter used</p></li>
+<li><p>Typical data communication rate: 12 Mbps (full-speed USB)</p></li>
+</ul>
+</section>
+</section>
+<section id="software-installation-and-configuration">
+<h2>Software Installation and Configuration<a class="headerlink" href="#software-installation-and-configuration" title="Link to this heading"></a></h2>
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h3>
+<p>Before installing software, you need:</p>
+<ul class="simple">
+<li><p>Windows 7 or later operating system</p></li>
+<li><p>Administrator privileges on the PC</p></li>
+<li><p>Minimum 500 MB free disk space</p></li>
+<li><p>USB 2.0 or higher port available</p></li>
+<li><p>Internet connection (for downloading software)</p></li>
+</ul>
+</section>
+<section id="required-software-components">
+<h3>Required Software Components<a class="headerlink" href="#required-software-components" title="Link to this heading"></a></h3>
+<p>Install in this order:</p>
+<ol class="arabic simple">
+<li><p><strong>ACE Software</strong> (Base platform)</p></li>
+<li><p><strong>SDP Controller Drivers</strong> (Universal for all SDP boards)</p></li>
+<li><p><strong>AD4170 Plugin</strong> (Device-specific plugin)</p></li>
+</ol>
+<p>Software Download Locations:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE Software</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/swdownloads.analog.com/ACE/SDP/SDPDrivers.exe" target="_blank">SDP Controller Drivers</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/AD4170" target="_blank">AD4170 ACE Plugin</a></p></li>
+</ul>
+</section>
+<section id="step-1-install-ace-software">
+<h3>Step 1: Install ACE Software<a class="headerlink" href="#step-1-install-ace-software" title="Link to this heading"></a></h3>
+<ol class="arabic">
+<li><p><strong>Download ACEInstall.exe</strong> to a temporary folder on your PC</p></li>
+<li><p><strong>Double-click ACEInstall.exe</strong> to begin installation</p>
+<ul class="simple">
+<li><p>The program requests administrator permissions</p></li>
+<li><p>Click “Yes” when the User Account Control (UAC) dialog appears</p></li>
+<li><p>Default installation path: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Analog</span> <span class="pre">Devices\ACE</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Follow the ACE Setup Wizard:</strong></p>
+<p><strong>Step 1.1: Welcome Screen</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_1.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Click “Next &gt;” to continue</p></li>
+</ul>
+<p><strong>Step 1.2: License Agreement</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_2.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Read the software license agreement</p></li>
+<li><p>Click “I Agree” to accept and continue</p></li>
+</ul>
+<p><strong>Step 1.3: Installation Location</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_3.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_3.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>The default location is recommended</p></li>
+<li><p>Click “Browse…” if you need to choose a different folder</p></li>
+<li><p>Click “Next &gt;” to continue</p></li>
+</ul>
+<p><strong>Step 1.4: Components Selection</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_4.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_4.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>All ACE software components are pre-selected</p></li>
+<li><p>Click “Install” to begin installation</p></li>
+</ul>
+<p><strong>Step 1.5: Windows Security Prompt</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_5.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_5.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Click “Install” to install required drivers and components</p></li>
+</ul>
+<p><strong>Step 1.6: Installation in Progress</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_6.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_6.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Wait for the installation to complete</p></li>
+<li><p>No action required during this phase</p></li>
+<li><p>This typically takes 1-3 minutes</p></li>
+</ul>
+<p><strong>Step 1.7: Installation Complete</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_7.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_7.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_page_7.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Click “Next &gt;” when installation finishes</p></li>
+<li><p>Click “Finish” to close the wizard</p></li>
+</ul>
+</li>
+<li><p><strong>ACE software is now installed</strong> and ready to use</p></li>
+</ol>
+</section>
+<section id="step-2-install-sdp-controller-drivers">
+<h3>Step 2: Install SDP Controller Drivers<a class="headerlink" href="#step-2-install-sdp-controller-drivers" title="Link to this heading"></a></h3>
+<p>The SDP controllers (K1 and B1) use the same universal drivers.</p>
+<ol class="arabic simple">
+<li><p><strong>Download SDPDrivers.exe</strong> from the link provided above</p></li>
+<li><p><strong>Double-click SDPDrivers.exe</strong> to begin driver installation</p></li>
+<li><p><strong>Follow the driver installation wizard:</strong></p>
+<ul class="simple">
+<li><p>Accept any UAC prompts</p></li>
+<li><p>Click “Yes” or “Next” through all screens</p></li>
+<li><p>Select “Automatically install drivers” if prompted</p></li>
+</ul>
+</li>
+<li><p><strong>Restart your PC</strong> if prompted by the installation wizard</p></li>
+<li><p><strong>Driver installation is complete</strong></p></li>
+</ol>
+</section>
+<section id="step-3-install-ad4170-plugin">
+<h3>Step 3: Install AD4170 Plugin<a class="headerlink" href="#step-3-install-ad4170-plugin" title="Link to this heading"></a></h3>
+<p>The AD4170 plugin extends ACE with device-specific features.</p>
+<p><strong>Option A: Direct Plugin Installation (Recommended)</strong></p>
+<ol class="arabic">
+<li><p><strong>Login to your myAnalog.com account</strong></p>
+<ul class="simple">
+<li><p>Navigate to <a class="icon link reference external" href="https://www.myanalog.com" target="_blank">myAnalog.com</a></p></li>
+</ul>
+</li>
+<li><p><strong>Access your Dashboard</strong></p>
+<ul class="simple">
+<li><p>Click on “Dashboard” or similar menu option</p></li>
+</ul>
+</li>
+<li><p><strong>Locate the AD4170 Plugin</strong></p>
+<ul class="simple">
+<li><p>Look under “Special Resources” section</p></li>
+<li><p>Find “AD4170 ACE Plug In V X.X Software Download”</p></li>
+<li><p>(Note: Version number may differ)</p></li>
+</ul>
+</li>
+<li><p><strong>Download the Plugin:</strong></p>
+<p><strong>Step 3A.1: Plugin Download Page</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_1.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>A new tab/window opens with the download link</p></li>
+</ul>
+<p><strong>Step 3A.2: Accept License</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_2.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Read the software license agreement</p></li>
+<li><p>Check the checkbox to accept terms</p></li>
+<li><p>Click “I Accept”</p></li>
+</ul>
+<p><strong>Step 3A.3: Start Download</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_3.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_download_page_3.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Click “Download”</p></li>
+<li><p>File downloads to your Downloads folder (typically)</p></li>
+</ul>
+</li>
+<li><p><strong>Install the Downloaded Plugin</strong></p>
+<ul class="simple">
+<li><p>Locate the downloaded file (usually named AD4170_PluginXXX.zip)</p></li>
+<li><p>Double-click the file to start installation</p></li>
+<li><p>Follow any installation prompts</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Option B: Manual Plugin Installation (Alternative)</strong></p>
+<p>If direct installation doesn’t work, install via ACE Plugin Manager:</p>
+<ol class="arabic">
+<li><p><strong>Open ACE Software</strong></p>
+<ul class="simple">
+<li><p>Click Start &gt; All Programs &gt; Analog Devices &gt; ACE &gt; ACE.exe</p></li>
+</ul>
+</li>
+<li><p><strong>Navigate to Plugin Manager</strong></p>
+<ul class="simple">
+<li><p>Click the “Plug-in Manager” tab in the top-left panel</p></li>
+</ul>
+</li>
+<li><p><strong>Configure Plugin Source</strong></p>
+<ul class="simple">
+<li><p>Click “Settings…” button</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_1.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Click the “+” button next to “Zipped Plug-in Sources”</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_install_page_2.png" width="400" />
+</a>
+</li>
+<li><p><strong>Add Plugin Path</strong></p>
+<ul class="simple">
+<li><p>In the “Name” field, enter: <code class="docutils literal notranslate"><span class="pre">AD4170</span></code></p></li>
+<li><p>Click the “…” button under “Source”</p></li>
+<li><p>Browse to the location where you extracted the AD4170 plugin</p></li>
+<li><p>Click “Ok”</p></li>
+<li><p>Click “Close”</p></li>
+</ul>
+</li>
+<li><p><strong>Plugin is now installed</strong> and will appear in ACE</p></li>
+</ol>
+</section>
+</section>
+<section id="launching-and-using-ace-with-sdp-k1">
+<h2>Launching and Using ACE with SDP-K1<a class="headerlink" href="#launching-and-using-ace-with-sdp-k1" title="Link to this heading"></a></h2>
+<section id="initial-launch">
+<h3>Initial Launch<a class="headerlink" href="#initial-launch" title="Link to this heading"></a></h3>
+<p><strong>Before launching ACE:</strong></p>
+<ol class="arabic simple">
+<li><p>Ensure software installation is complete (all three components)</p></li>
+<li><p>Ensure EVAL-AD4170-4ARDZ is connected to EVAL-SDP-CK1Z</p></li>
+<li><p>Ensure all jumpers/links are in default positions</p></li>
+<li><p>Do not connect USB yet if this is your first time</p></li>
+</ol>
+<p><strong>Launch ACE Software:</strong></p>
+<ol class="arabic">
+<li><p><strong>Start &gt; All Programs &gt; Analog Devices &gt; ACE &gt; ACE.exe</strong></p></li>
+<li><p><strong>ACE main window opens</strong> showing Plug-in Manager tab</p></li>
+<li><p><strong>Now connect the USB-C cable</strong> to your PC (if not already connected)</p></li>
+<li><p><strong>Windows detects the SDP-K1 device</strong> and prompts for driver confirmation</p>
+<ul class="simple">
+<li><p>Allow driver installation if prompted</p></li>
+<li><p>Windows will recognize the device</p></li>
+</ul>
+</li>
+<li><p><strong>Wait 5-10 seconds</strong> for device enumeration</p></li>
+<li><p><strong>The AD4170 Eval Board icon appears</strong> in “Attached Hardware” section</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_2.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>If the icon does not appear, see Troubleshooting section</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="board-view-window">
+<h3>Board View Window<a class="headerlink" href="#board-view-window" title="Link to this heading"></a></h3>
+<p>The Board View shows the hardware structure and provides access to all functions:</p>
+<ol class="arabic">
+<li><p><strong>Double-click the AD4170 Eval Board icon</strong> to open Board View</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_3.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_3.png" width="400" />
+</a>
+</li>
+<li><p><strong>The Board View window opens</strong> showing the system architecture</p></li>
+<li><p><strong>Apply default configuration</strong> to verify communication:</p>
+<ul class="simple">
+<li><p>Double-click the AD4170 chip icon</p></li>
+<li><p>Click “Software Defaults” button</p></li>
+<li><p>Click “Apply Changes”</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_4.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_launch_page_4.png" width="400" />
+</a>
+</li>
+<li><p><strong>Successful configuration</strong> indicates proper SDP-K1 communication</p></li>
+</ol>
+</section>
+<section id="configuration-interface">
+<h3>Configuration Interface<a class="headerlink" href="#configuration-interface" title="Link to this heading"></a></h3>
+<p>The Chip View window provides full access to AD4170 configuration:</p>
+<p><strong>Key Buttons and Functions:</strong></p>
+<ul class="simple">
+<li><p><strong>Programmable Blocks</strong> (dark blue icons) - Click to configure functional
+blocks</p>
+<ul>
+<li><p>Input channel configuration</p></li>
+<li><p>Reference voltage selection</p></li>
+<li><p>Data rate and filter settings</p></li>
+<li><p>Output channel configuration</p></li>
+</ul>
+</li>
+<li><p><strong>Proceed to Memory Map</strong> - Access low-level register configuration</p>
+<ul>
+<li><p>Direct register read/write</p></li>
+<li><p>Bitfield configuration</p></li>
+<li><p>Save/load register settings</p></li>
+</ul>
+</li>
+<li><p><strong>Proceed to Analysis</strong> - Access data capture and analysis</p>
+<ul>
+<li><p>Real-time waveform display</p></li>
+<li><p>Noise measurements</p></li>
+<li><p>FFT analysis</p></li>
+<li><p>Data export</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="memory-map-tab">
+<h3>Memory Map Tab<a class="headerlink" href="#memory-map-tab" title="Link to this heading"></a></h3>
+<p>Access detailed AD4170 register configuration:</p>
+<ol class="arabic">
+<li><p><strong>Click Memory Map button</strong> from Chip View</p></li>
+<li><p><strong>Register Tree</strong> displays on left side</p></li>
+<li><p><strong>Select any register</strong> to view/edit:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_memory_page_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_memory_page_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_memory_page_1.png" width="600" />
+</a>
+<ul class="simple">
+<li><p><strong>Register Value</strong> shows current value in hex</p></li>
+<li><p><strong>Individual Bits</strong> can be toggled or set directly</p></li>
+<li><p><strong>Bitfield Details</strong> show named fields and descriptions</p></li>
+<li><p><strong>Show Bitfield</strong> button expands field details</p></li>
+</ul>
+</li>
+<li><p><strong>Save/Load Registers:</strong></p>
+<ul class="simple">
+<li><p><strong>Save Button</strong> - Export all current register settings to file</p></li>
+<li><p><strong>Load Button</strong> - Import previously saved register configuration</p></li>
+<li><p>Useful for storing different measurement configurations</p></li>
+</ul>
+</li>
+<li><p><strong>Apply Changes</strong> - Write configuration to AD4170</p></li>
+<li><p><strong>Search Function</strong> - Find registers by name or address</p></li>
+</ol>
+</section>
+<section id="analysis-tab">
+<h3>Analysis Tab<a class="headerlink" href="#analysis-tab" title="Link to this heading"></a></h3>
+<p>The Analysis/Waveform tab displays real-time captured data:</p>
+<p><strong>Waveform Graph:</strong></p>
+<ul class="simple">
+<li><p>Shows each successive ADC sample</p></li>
+<li><p>Mouse scroll wheel zooms in/out</p></li>
+<li><p>Magnifying glass icon for zoom controls</p></li>
+<li><p>Pan controls for scrolling through data</p></li>
+</ul>
+<p><strong>Capture Controls:</strong></p>
+<ul class="simple">
+<li><p><strong>Samples field</strong> - Sets number of samples per batch</p></li>
+<li><p><strong>Run Once</strong> - Capture a single batch of samples</p></li>
+<li><p><strong>Run Continuously</strong> - Continuous data capture (click again to stop)</p></li>
+</ul>
+<p><strong>Data Display Options:</strong></p>
+<ul class="simple">
+<li><p><strong>Codes Dropdown</strong> - Display as voltage or raw binary codes</p></li>
+<li><p><strong>Axis Controls</strong> - Auto-scale or fixed axis ranges</p></li>
+<li><p><strong>AC/DC Analysis</strong> - Select measurement type</p></li>
+</ul>
+<p><strong>Results Section:</strong></p>
+<p>Displays measured parameters for selected channel:</p>
+<ul class="simple">
+<li><p>Peak-to-Peak Noise</p></li>
+<li><p>RMS Noise</p></li>
+<li><p>Effective Number of Bits (ENOB)</p></li>
+<li><p>Signal Histogram</p></li>
+<li><p>Signal Statistics (min, max, mean)</p></li>
+</ul>
+<p><strong>FFT Plot:</strong></p>
+<p>View frequency domain analysis:</p>
+<ul class="simple">
+<li><p>Frequency spectrum display</p></li>
+<li><p>Harmonic content identification</p></li>
+<li><p>Signal-to-Noise Ratio (SNR)</p></li>
+<li><p>Spurious-Free Dynamic Range (SFDR)</p></li>
+<li><p>Total Harmonic Distortion (THD)</p></li>
+</ul>
+<p><strong>Export Data:</strong></p>
+<ol class="arabic simple">
+<li><p>Click “Export” button in Results section</p></li>
+<li><p>Choose save location in dialog</p></li>
+<li><p>Data saved as Excel (.xlsx) file for further analysis</p></li>
+</ol>
+</section>
+</section>
+<section id="demo-modes">
+<h2>Demo Modes<a class="headerlink" href="#demo-modes" title="Link to this heading"></a></h2>
+<p>Demo modes provide pre-configured setups for common measurement applications.
+Each demo automatically configures all necessary AD4170 settings.</p>
+<section id="demo-mode-access">
+<h3>Demo Mode Access<a class="headerlink" href="#demo-mode-access" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p><strong>Open Chip View</strong> by double-clicking AD4170 in Board View</p></li>
+<li><p><strong>Locate Demo Wizard panel</strong> on left side of Chip View</p>
+<ul class="simple">
+<li><p>May be collapsed/minimized</p></li>
+<li><p>Click arrow to expand if needed</p></li>
+</ul>
+</li>
+<li><p><strong>Available demos appear</strong> as selectable options</p></li>
+</ol>
+</section>
+<section id="available-demo-modes">
+<h3>Available Demo Modes<a class="headerlink" href="#available-demo-modes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Noise Test Demo</strong> - ADC noise floor characterization</p></li>
+<li><p><strong>2-Wire RTD Demo</strong> - Two-wire resistance temperature detector</p></li>
+<li><p><strong>3-Wire RTD Demo</strong> - Three-wire RTD with better accuracy</p></li>
+<li><p><strong>4-Wire RTD Demo</strong> - Four-wire RTD highest accuracy measurement</p></li>
+<li><p><strong>Thermocouple Demo</strong> - Thermocouple temperature sensor</p></li>
+<li><p><strong>Thermistor Demo</strong> - Thermistor temperature measurement</p></li>
+<li><p><strong>4-Wire Bridge Demo</strong> - Four-wire load cell/bridge measurement</p></li>
+<li><p><strong>6-Wire Bridge Demo</strong> - Six-wire bridge with separate excitation</p></li>
+</ul>
+</section>
+<section id="running-noise-test-demo-example">
+<h3>Running Noise Test Demo (Example)<a class="headerlink" href="#running-noise-test-demo-example" title="Link to this heading"></a></h3>
+<p><strong>Step 1: Select Demo Mode</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_2.png" width="300" />
+</a>
+<ul class="simple">
+<li><p>Click “Noise Test” in the Demo Wizard</p></li>
+</ul>
+<p><strong>Step 2: Review Settings</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_3.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_3.png" width="300" />
+</a>
+<ul class="simple">
+<li><p>Pre-configured settings display</p></li>
+<li><p>These are optimized for noise measurement</p></li>
+<li><p>Click “Apply” to write to AD4170</p></li>
+</ul>
+<p><strong>Step 3: Configuration Complete</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_4.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_4.png" width="200" />
+</a>
+<ul class="simple">
+<li><p>Demo confirms settings have been applied</p></li>
+</ul>
+<p><strong>Step 4: Open Chip View</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_5.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_5.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_5.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Double-click AD4170 chip icon to open full Chip View</p></li>
+</ul>
+<p><strong>Step 5: Access Analysis Tools</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_6.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_6.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_6.png" width="600" />
+</a>
+<ul class="simple">
+<li><p><strong>Memory Map</strong> - Modify settings if needed</p></li>
+<li><p><strong>Analysis</strong> - Begin data capture</p></li>
+</ul>
+<p><strong>Step 6: Capture and Analyze Data</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_7.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_7.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4170_ace_plugin_noise_test_page_7.png" width="600" />
+</a>
+<ol class="arabic simple">
+<li><p>Set <strong>Sample Count</strong> to desired value (e.g., 1000 samples)</p></li>
+<li><p>Click <strong>Run Once</strong> to capture samples</p></li>
+<li><p>Results display in waveform graph and analysis section</p></li>
+<li><p>Measure noise metrics:</p>
+<ul class="simple">
+<li><p>Peak-to-Peak Noise (voltage)</p></li>
+<li><p>RMS Noise (voltage)</p></li>
+<li><p>Effective Resolution (bits)</p></li>
+<li><p>Noise Density (nV/√Hz)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="other-demo-modes">
+<h3>Other Demo Modes<a class="headerlink" href="#other-demo-modes" title="Link to this heading"></a></h3>
+<p>Similar procedure for other demos:</p>
+<ol class="arabic simple">
+<li><p><strong>Select the demo</strong> from Demo Wizard</p></li>
+<li><p><strong>Review and apply</strong> the pre-configured settings</p></li>
+<li><p><strong>Open Chip View</strong> to access Analysis tools</p></li>
+<li><p><strong>Capture data</strong> according to application requirements</p></li>
+<li><p><strong>Review results</strong> to verify proper configuration</p></li>
+</ol>
+<p>Each demo is optimized for its specific measurement type and provides
+good starting points for custom configurations.</p>
+</section>
+</section>
+<section id="virtual-evaluation-tool">
+<h2>Virtual Evaluation Tool<a class="headerlink" href="#virtual-evaluation-tool" title="Link to this heading"></a></h2>
+<p>ADI provides a Virtual Evaluation Tool for software-only exploration:</p>
+<p><strong>Access Virtual Evaluation:</strong></p>
+<ol class="arabic">
+<li><p>Open your browser and navigate to:</p>
+<p><a class="icon link reference external" href="http://beta-tools.analog.com/virtualeval/" target="_blank">Virtual Eval Tool</a></p>
+<p>OR</p>
+</li>
+<li><p>Visit the AD4170 product page at analog.com and find Virtual Eval link</p></li>
+</ol>
+<p><strong>Using Virtual Eval:</strong></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/v_eval_start.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/v_eval_start.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/v_eval_start.png" width="600" />
+</a>
+<ol class="arabic simple">
+<li><p>Navigate to “Precision ADC &lt; 10MSPS” category</p></li>
+<li><p>Find and select AD4170-4</p></li>
+<li><p>Explore features and configurations</p></li>
+<li><p>Simulate different measurement scenarios</p></li>
+<li><p>Preview ACE software interface before hardware testing</p></li>
+</ol>
+<p><strong>Benefits:</strong></p>
+<ul class="simple">
+<li><p>No hardware required</p></li>
+<li><p>Explore all features risk-free</p></li>
+<li><p>Preview what physical evaluation will show</p></li>
+<li><p>Plan measurements before running hardware tests</p></li>
+</ul>
+</section>
+<section id="reference-configuration">
+<h2>Reference Configuration<a class="headerlink" href="#reference-configuration" title="Link to this heading"></a></h2>
+<p><strong>Default Reference Voltage (On-board ADR4525):</strong></p>
+<ul class="simple">
+<li><p>Default setting: 2.5V external reference</p></li>
+<li><p>Set “Refin1(+/-)” field to 2.5V in Configuration tab</p></li>
+<li><p>Adjust this value if using different reference source</p></li>
+</ul>
+<p><strong>Reference Options:</strong></p>
+<p>See the Hardware Guide for detailed reference voltage options:</p>
+<ul class="simple">
+<li><p>Internal reference options</p></li>
+<li><p>External reference inputs</p></li>
+<li><p>Precision reference sources</p></li>
+<li><p>Reference bypassing and stability</p></li>
+</ul>
+</section>
+<section id="data-capture-best-practices">
+<h2>Data Capture Best Practices<a class="headerlink" href="#data-capture-best-practices" title="Link to this heading"></a></h2>
+<p><strong>Before Capturing Data:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Verify Reference Setting</strong> - Must match actual reference voltage</p></li>
+<li><p><strong>Check Input Range</strong> - Ensure signal is within configured range</p></li>
+<li><p><strong>Verify Connections</strong> - All sensor/signal connections secure</p></li>
+<li><p><strong>Allow Warm-up</strong> - Let system stabilize for 30-60 seconds after power-on</p></li>
+</ol>
+<p><strong>During Capture:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Set Appropriate Sample Count</strong> - 1000+ samples for noise analysis</p></li>
+<li><p><strong>Use Run Once First</strong> - Verify system is working before continuous capture</p></li>
+<li><p><strong>Monitor Results</strong> - Watch for unexpected patterns or errors</p></li>
+<li><p><strong>Save Configuration</strong> - Use Save button to preserve working setup</p></li>
+</ol>
+<p><strong>After Capture:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Review Results</strong> - Check noise, SNR, and other metrics</p></li>
+<li><p><strong>Export Data</strong> - Save to Excel for further analysis</p></li>
+<li><p><strong>Document Settings</strong> - Record successful configurations</p></li>
+<li><p><strong>Repeat Measurements</strong> - Verify reproducibility</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<section id="device-not-recognized">
+<h3>Device Not Recognized<a class="headerlink" href="#device-not-recognized" title="Link to this heading"></a></h3>
+<p><strong>Symptom:</strong> AD4170 Eval Board icon doesn’t appear in Attached Hardware</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Verify driver installation:</strong></p>
+<ul class="simple">
+<li><p>Check Windows Device Manager for unknown/error devices</p></li>
+<li><p>Re-run SDPDrivers.exe if needed</p></li>
+<li><p>Restart Windows if drivers were just installed</p></li>
+</ul>
+</li>
+<li><p><strong>Check USB connection:</strong></p>
+<ul class="simple">
+<li><p>Verify USB-C cable is firmly connected</p></li>
+<li><p>Try a different USB port (preferably USB 2.0 port)</p></li>
+<li><p>Try a different USB cable (known good cable)</p></li>
+<li><p>Avoid USB hubs - connect directly to PC</p></li>
+</ul>
+</li>
+<li><p><strong>Verify evaluation board connection:</strong></p>
+<ul class="simple">
+<li><p>Ensure EVAL-AD4170-4ARDZ is properly seated on SDP-K1</p></li>
+<li><p>Check that Arduino connectors are fully inserted</p></li>
+<li><p>No loose or missing jumpers</p></li>
+</ul>
+</li>
+<li><p><strong>Restart the system:</strong></p>
+<ul class="simple">
+<li><p>Disconnect USB cable</p></li>
+<li><p>Close ACE software completely</p></li>
+<li><p>Wait 10 seconds</p></li>
+<li><p>Reconnect USB</p></li>
+<li><p>Restart ACE</p></li>
+</ul>
+</li>
+<li><p><strong>Check Windows Logs:</strong></p>
+<ul class="simple">
+<li><p>Device Manager &gt; View &gt; Show hidden devices</p></li>
+<li><p>Look for unknown or error devices</p></li>
+<li><p>Right-click &gt; Update Driver</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="communication-errors">
+<h3>Communication Errors<a class="headerlink" href="#communication-errors" title="Link to this heading"></a></h3>
+<p><strong>Symptom:</strong> “Cannot communicate with device” or similar error message</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Verify power and connections:</strong></p>
+<ul class="simple">
+<li><p>Check USB power is adequate</p></li>
+<li><p>Verify all Arduino connector pins are aligned</p></li>
+<li><p>Ensure evaluation board is fully seated</p></li>
+</ul>
+</li>
+<li><p><strong>Check jumper settings:</strong></p>
+<ul class="simple">
+<li><p>Verify all hardware links are in default positions</p></li>
+<li><p>Review Hardware Guide for correct configurations</p></li>
+</ul>
+</li>
+<li><p><strong>Power cycle the system:</strong></p>
+<ul class="simple">
+<li><p>Disconnect USB cable</p></li>
+<li><p>Wait 5 seconds</p></li>
+<li><p>Reconnect USB and allow device detection</p></li>
+</ul>
+</li>
+<li><p><strong>Apply default settings:</strong></p>
+<ul class="simple">
+<li><p>Click “Software Defaults”</p></li>
+<li><p>Click “Apply Changes”</p></li>
+<li><p>Wait for confirmation</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="software-crashes">
+<h3>Software Crashes<a class="headerlink" href="#software-crashes" title="Link to this heading"></a></h3>
+<p><strong>Symptom:</strong> ACE software crashes or freezes</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Graceful shutdown:</strong></p>
+<ul class="simple">
+<li><p>Disconnect USB cable from SDP-K1</p></li>
+<li><p>Close all ACE windows</p></li>
+<li><p>Wait 5-10 seconds</p></li>
+<li><p>Restart ACE</p></li>
+<li><p>Reconnect USB after ACE opens</p></li>
+</ul>
+</li>
+<li><p><strong>Clear cached data:</strong></p>
+<ul class="simple">
+<li><p>Close ACE completely</p></li>
+<li><p>Delete ACE temporary files (if known location)</p></li>
+<li><p>Restart ACE and reconnect device</p></li>
+</ul>
+</li>
+<li><p><strong>Reinstall plugin:</strong></p>
+<ul class="simple">
+<li><p>If crashes persist, uninstall AD4170 plugin</p></li>
+<li><p>Restart ACE</p></li>
+<li><p>Reinstall AD4170 plugin fresh</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="data-capture-issues">
+<h3>Data Capture Issues<a class="headerlink" href="#data-capture-issues" title="Link to this heading"></a></h3>
+<p><strong>Symptom:</strong> No waveform appears or data looks incorrect</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Verify reference voltage:</strong></p>
+<ul class="simple">
+<li><p>Check “Refin1(+/-)” setting matches actual reference</p></li>
+<li><p>Default is 2.5V for on-board reference</p></li>
+<li><p>Measure reference voltage if uncertain</p></li>
+</ul>
+</li>
+<li><p><strong>Check input signal:</strong></p>
+<ul class="simple">
+<li><p>Verify signal is present at input connector</p></li>
+<li><p>Check signal is within configured input range</p></li>
+<li><p>Verify sensor/signal connections are secure</p></li>
+</ul>
+</li>
+<li><p><strong>Run demo mode first:</strong></p>
+<ul class="simple">
+<li><p>Use Noise Test demo to verify basic operation</p></li>
+<li><p>This confirms AD4170 is responding correctly</p></li>
+<li><p>Then configure custom measurements</p></li>
+</ul>
+</li>
+<li><p><strong>Check PGA setting:</strong></p>
+<ul class="simple">
+<li><p>Ensure gain is appropriate for signal level</p></li>
+<li><p>Lower gain if signal is too large</p></li>
+<li><p>Increase gain if signal is very small</p></li>
+</ul>
+</li>
+<li><p><strong>Review data rate setting:</strong></p>
+<ul class="simple">
+<li><p>Some data rates may cause display issues</p></li>
+<li><p>Try different data rate settings</p></li>
+<li><p>Refer to datasheet for recommended rates</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="no-data-display">
+<h3>No Data Display<a class="headerlink" href="#no-data-display" title="Link to this heading"></a></h3>
+<p><strong>Symptom:</strong> Waveform graph shows no data even after “Run Once”</p>
+<p><strong>Solutions:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Apply default settings:</strong></p>
+<ul class="simple">
+<li><p>Click “Software Defaults”</p></li>
+<li><p>Click “Apply Changes”</p></li>
+<li><p>Verify with Noise Test demo first</p></li>
+</ul>
+</li>
+<li><p><strong>Check sample count:</strong></p>
+<ul class="simple">
+<li><p>Ensure Samples field has reasonable value (e.g., 100)</p></li>
+<li><p>Very large values may take time to acquire</p></li>
+<li><p>Start with smaller samples (100-500) for testing</p></li>
+</ul>
+</li>
+<li><p><strong>Verify channel is enabled:</strong></p>
+<ul class="simple">
+<li><p>Check that input channel is enabled in configuration</p></li>
+<li><p>Verify in Memory Map that channel is active</p></li>
+</ul>
+</li>
+<li><p><strong>Check data rate:</strong></p>
+<ul class="simple">
+<li><p>Some data rates may prevent data display</p></li>
+<li><p>Try slower data rates first (e.g., 1 kSPS)</p></li>
+<li><p>Refer to AD4170 datasheet for valid combinations</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="recommended-next-steps">
+<h2>Recommended Next Steps<a class="headerlink" href="#recommended-next-steps" title="Link to this heading"></a></h2>
+<p>After successful evaluation with SDP-K1:</p>
+<ol class="arabic simple">
+<li><p><strong>Save your configuration:</strong></p>
+<ul class="simple">
+<li><p>Use Memory Map &gt; Save button</p></li>
+<li><p>Store register configuration files for future use</p></li>
+</ul>
+</li>
+<li><p><strong>Explore additional demo modes:</strong></p>
+<ul class="simple">
+<li><p>Test each demo relevant to your application</p></li>
+<li><p>Compare noise performance across configurations</p></li>
+</ul>
+</li>
+<li><p><strong>Create custom configurations:</strong></p>
+<ul class="simple">
+<li><p>Use Memory Map for register-level customization</p></li>
+<li><p>Design for your specific sensor/measurement type</p></li>
+</ul>
+</li>
+<li><p><strong>Consider Linux integration:</strong></p>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="index.html#ad4170-quickstart"><span class="std std-ref">Quick start guides</span></a> for Linux driver guides</p></li>
+<li><p>Plan transition to embedded system if needed</p></li>
+</ul>
+</li>
+<li><p><strong>Review complete documentation:</strong></p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4170-4.pdf" target="_blank">AD4170-4 Datasheet</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad4170-4-ug-2243.pdf" target="_blank">Evaluation Guide UG-2243</a></p></li>
+<li><p><a class="reference internal" href="../user-guide.html#ad4170-user-guide"><span class="std std-ref">User Guide</span></a></p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="technical-support">
+<h2>Technical Support<a class="headerlink" href="#technical-support" title="Link to this heading"></a></h2>
+<p>For additional assistance:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/common/help-and-support.html#help-and-support" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">EngineerZone Forums</span></a> - Community support</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD4170-4" target="_blank">AD4170-4 Product Page</a> - Product information</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4170-4.pdf" target="_blank">Technical Datasheet</a>
+- Device specifications</p></li>
+</ul>
+</section>
+<section id="related-documentation">
+<h2>Related Documentation<a class="headerlink" href="#related-documentation" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../user-guide.html#ad4170-user-guide"><span class="std std-ref">User Guide</span></a> - Hardware configuration details</p></li>
+<li><p><a class="reference internal" href="../prerequisites.html#ad4170-prerequisites"><span class="std std-ref">Prerequisites</span></a> - System requirements</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-B" target="_blank">SDP-B</a> - SDP-B1 alternative controller board</p></li>
+<li><p><a class="reference internal" href="index.html#ad4170-quickstart"><span class="std std-ref">Quick start guides</span></a> - Other platform guides</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quick start guides</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
