@@ -96,19 +96,18 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">User Guide</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a><ul>
-<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
 <li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
 <li><a class="reference internal" href="#connection-overview">Connection Overview</a></li>
-<li><a class="reference internal" href="#power-supply-configuration">Power Supply Configuration</a><ul>
+<li><a class="reference internal" href="#power-supply-configuration">Power Supply Configuration</a></li>
 <li><a class="reference internal" href="#board-connections">Board Connections</a></li>
 <li><a class="reference internal" href="#reference-and-clock-options">Reference and Clock Options</a></li>
 <li><a class="reference internal" href="#hardware-link-configuration">Hardware Link Configuration</a></li>
-<li><a class="reference internal" href="#sensor-configuration-examples">Sensor Configuration Examples</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#sensor-configuration-examples">Sensor Configuration Examples</a><ul>
 <li><a class="reference internal" href="#wire-configuration-rtd">2-Wire Configuration (RTD)</a></li>
 <li><a class="reference internal" href="#id1">3-Wire Configuration (RTD)</a></li>
 <li><a class="reference internal" href="#wire-configuration">4-Wire Configuration</a></li>
@@ -118,6 +117,8 @@
 <li><a class="reference internal" href="#rtd-thermistor-configuration">RTD Thermistor Configuration</a></li>
 <li><a class="reference internal" href="#accelerometer-configuration">Accelerometer Configuration</a></li>
 <li><a class="reference internal" href="#ac-dc-selection-for-channels">AC/DC Selection for Channels</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#mosfet-circuit-configuration">MOSFET Circuit Configuration</a></li>
 </ul>
 </li>
@@ -187,17 +188,16 @@ information about the <a class="icon adi reference external" href="https://www.a
 <a class="icon adi reference external" href="https://www.analog.com/AD4170-4" target="_blank">AD4170-4</a> device.
 This guide covers hardware setup, configuration, software procedures, and
 practical applications for evaluating the device.</p>
+</section>
 <section id="hardware-setup">
-<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
-</section>
-</section>
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
 <section id="block-diagram">
-<h2>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h2>
+<h3>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_board_block_diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_board_block_diagram.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_board_block_diagram.png" width="600" />
 </a>
 </section>
 <section id="connection-overview">
-<h2>Connection Overview<a class="headerlink" href="#connection-overview" title="Link to this heading"></a></h2>
+<h3>Connection Overview<a class="headerlink" href="#connection-overview" title="Link to this heading"></a></h3>
 <p>The evaluation board connects to a compatible controller board through
 Arduino-compatible connectors, providing a flexible and standardized interface
 for signal routing and control.</p>
@@ -210,9 +210,10 @@ for signal routing and control.</p>
 </figure>
 </section>
 <section id="power-supply-configuration">
-<h2>Power Supply Configuration<a class="headerlink" href="#power-supply-configuration" title="Link to this heading"></a></h2>
+<h3>Power Supply Configuration<a class="headerlink" href="#power-supply-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_power_supply.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_power_supply.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_power_supply.png" width="600" />
 </a>
+</section>
 <section id="board-connections">
 <h3>Board Connections<a class="headerlink" href="#board-connections" title="Link to this heading"></a></h3>
 <p>The evaluation board features multiple connectors for signal input:</p>
@@ -305,25 +306,25 @@ the available links:</p>
 <tr class="row-odd"><td><p>LK10</p></td>
 <td><p>Black</p></td>
 <td><p>A</p></td>
-<td><p>AD4595 AIN3+ AIN4. AVDD select. Pos A: Internal AVDD Pos B: External AVDD</p></td>
+<td><p>ADA4595-1 AIN3+ AIN4. AVDD select. Pos A: Internal AVDD Pos B: External AVDD</p></td>
 <td><p>Below of J5 (AMP34)</p></td>
 </tr>
 <tr class="row-even"><td><p>LK11</p></td>
 <td><p>Black</p></td>
 <td><p>A</p></td>
-<td><p>AD4595 AIN3+ AIN4. AVSS select. Pos A: Internal AVSS Pos B: External AVSS</p></td>
+<td><p>ADA4595-1 AIN3+ AIN4. AVSS select. Pos A: Internal AVSS Pos B: External AVSS</p></td>
 <td><p>Below of J5 (AMP34)</p></td>
 </tr>
 <tr class="row-odd"><td><p>LK12</p></td>
 <td><p>Black</p></td>
 <td><p>A</p></td>
-<td><p>AD4595 AIN7+ AIN8. AVDD select. Pos A: Internal AVDD Pos B: External AVDD</p></td>
+<td><p>ADA4595-1 AIN7+ AIN8. AVDD select. Pos A: Internal AVDD Pos B: External AVDD</p></td>
 <td><p>Below of J5 (AMP78)</p></td>
 </tr>
 <tr class="row-even"><td><p>LK13</p></td>
 <td><p>Black</p></td>
 <td><p>A</p></td>
-<td><p>AD4595 AIN7+ AIN8. AVSS select. Pos A: Internal AVSS Pos B: External AVSS</p></td>
+<td><p>ADA4595-1 AIN7+ AIN8. AVSS select. Pos A: Internal AVSS Pos B: External AVSS</p></td>
 <td><p>Below of J5 (AMP78)</p></td>
 </tr>
 <tr class="row-odd"><td><p>LK14</p></td>
@@ -503,67 +504,73 @@ the available links:</p>
 <tr class="row-even"><td><p>LKVOCM34</p></td>
 <td><p>Black</p></td>
 <td><p>4525</p></td>
-<td><p>VOCM ADA4945 Pos A: DACOUT Pos B: VBIAS Pos C: AD4525 Pos D: REFOUT</p></td>
+<td><p>VOCM ADA4945-1 Pos A: DACOUT Pos B: VBIAS Pos C: ADR4525 Pos D: REFOUT</p></td>
 <td><p>Right of Thermocouple Connection</p></td>
 </tr>
 <tr class="row-odd"><td><p>LKVOCM78</p></td>
 <td><p>Black</p></td>
 <td><p>4525</p></td>
-<td><p>VOCM ADA4945 Pos A: DACOUT Pos B: VBIAS Pos C: AD4525 Pos D: REFOUT</p></td>
+<td><p>VOCM ADA4945-1 Pos A: DACOUT Pos B: VBIAS Pos C: ADR4525 Pos D: REFOUT</p></td>
 <td><p>Middle of board</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/resources/ad4170_schematic.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Schematic</span></code></a></p></li>
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/resources/ad4170_evaluation_board_bill_of_materials.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Bill</span> <span class="pre">of</span> <span class="pre">Materials</span></code></a></p></li>
+</ul>
+</section>
+</section>
 <section id="sensor-configuration-examples">
-<h3>Sensor Configuration Examples<a class="headerlink" href="#sensor-configuration-examples" title="Link to this heading"></a></h3>
+<h2>Sensor Configuration Examples<a class="headerlink" href="#sensor-configuration-examples" title="Link to this heading"></a></h2>
 <p>The AD4170-4 evaluation board supports multiple sensor types through
 flexible input configuration.</p>
-</section>
-</section>
 <section id="wire-configuration-rtd">
-<h2>2-Wire Configuration (RTD)<a class="headerlink" href="#wire-configuration-rtd" title="Link to this heading"></a></h2>
+<h3>2-Wire Configuration (RTD)<a class="headerlink" href="#wire-configuration-rtd" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/2-wire_config_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/2-wire_config_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/2-wire_config_ch0.png" width="400" />
 </a>
 </section>
 <section id="id1">
-<h2>3-Wire Configuration (RTD)<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h3>3-Wire Configuration (RTD)<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/3-wire_config_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/3-wire_config_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/3-wire_config_ch0.png" width="400" />
 </a>
 </section>
 <section id="wire-configuration">
-<h2>4-Wire Configuration<a class="headerlink" href="#wire-configuration" title="Link to this heading"></a></h2>
+<h3>4-Wire Configuration<a class="headerlink" href="#wire-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_config_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_config_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_config_ch0.png" width="400" />
 </a>
 </section>
 <section id="wire-load-cell-dc-configuration">
-<h2>4-Wire Load Cell - DC Configuration<a class="headerlink" href="#wire-load-cell-dc-configuration" title="Link to this heading"></a></h2>
+<h3>4-Wire Load Cell - DC Configuration<a class="headerlink" href="#wire-load-cell-dc-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_dc_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_dc_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_dc_ch0.png" width="400" />
 </a>
 </section>
 <section id="wire-load-cell-ac-configuration">
-<h2>4-Wire Load Cell - AC Configuration<a class="headerlink" href="#wire-load-cell-ac-configuration" title="Link to this heading"></a></h2>
+<h3>4-Wire Load Cell - AC Configuration<a class="headerlink" href="#wire-load-cell-ac-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_ac_ch0b.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_ac_ch0b.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/4-wire_loadcell_ac_ch0b.png" width="400" />
 </a>
 </section>
 <section id="thermocouple-configuration">
-<h2>Thermocouple Configuration<a class="headerlink" href="#thermocouple-configuration" title="Link to this heading"></a></h2>
+<h3>Thermocouple Configuration<a class="headerlink" href="#thermocouple-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermocouple_ch0_ch2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermocouple_ch0_ch2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermocouple_ch0_ch2.png" width="400" />
 </a>
 </section>
 <section id="rtd-thermistor-configuration">
-<h2>RTD Thermistor Configuration<a class="headerlink" href="#rtd-thermistor-configuration" title="Link to this heading"></a></h2>
+<h3>RTD Thermistor Configuration<a class="headerlink" href="#rtd-thermistor-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermistor_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermistor_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/thermistor_ch0.png" width="400" />
 </a>
 </section>
 <section id="accelerometer-configuration">
-<h2>Accelerometer Configuration<a class="headerlink" href="#accelerometer-configuration" title="Link to this heading"></a></h2>
+<h3>Accelerometer Configuration<a class="headerlink" href="#accelerometer-configuration" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/accelerometer_config_ch0.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/accelerometer_config_ch0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/accelerometer_config_ch0.png" width="400" />
 </a>
 </section>
 <section id="ac-dc-selection-for-channels">
-<h2>AC/DC Selection for Channels<a class="headerlink" href="#ac-dc-selection-for-channels" title="Link to this heading"></a></h2>
+<h3>AC/DC Selection for Channels<a class="headerlink" href="#ac-dc-selection-for-channels" title="Link to this heading"></a></h3>
 <p>For AC or DC input selection on channels AIN3-AIN4 and AIN7-AIN8, modify the
 resistor jumpers according to the table below:</p>
 <div class="table-wrapper docutils container">
@@ -586,6 +593,7 @@ resistor jumpers according to the table below:</p>
 </div>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ain34_ain78_ac_dc_selection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ain34_ain78_ac_dc_selection.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad4170_landing/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ain34_ain78_ac_dc_selection.png" width="400" />
 </a>
+</section>
 </section>
 <section id="mosfet-circuit-configuration">
 <h2>MOSFET Circuit Configuration<a class="headerlink" href="#mosfet-circuit-configuration" title="Link to this heading"></a></h2>
