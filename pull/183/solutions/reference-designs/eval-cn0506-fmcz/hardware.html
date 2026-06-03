@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The FMC connector connects to the LPC connector of the carrier board." name="description" />
+
+    <title>Hardware User Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Quick Start Guides" href="quickstart/index.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Hardware User Guide</a><ul>
+<li><a class="reference internal" href="#connectors-and-jumper-configurations">Connectors and Jumper Configurations</a><ul>
+<li><a class="reference internal" href="#fmc-connector">FMC Connector</a></li>
+<li><a class="reference internal" href="#rj45-connectors">RJ45 Connectors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration-resistors">Configuration Resistors</a><ul>
+<li><a class="reference internal" href="#mac-interface">MAC Interface</a></li>
+<li><a class="reference internal" href="#configuration-modes">Configuration Modes</a></li>
+<li><a class="reference internal" href="#phy-interface">PHY Interface</a></li>
+<li><a class="reference internal" href="#auto-mdix">Auto-MDIX</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#led-indicators">LED Indicators</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+<li><a class="reference internal" href="#additional-information-and-useful-links">Additional Information and Useful Links</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-CN0506-FMCZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Hardware User Guide</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">ZC706 Quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">ZCU102 Quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zed.html">ZedBoard Quickstart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/a10soc.html">Arria 10 SoC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-CN0506-FMCZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="hardware-user-guide">
+<span id="eval-cn0506-fmcz-hardware"></span><h1>Hardware User Guide<a class="headerlink" href="#hardware-user-guide" title="Link to this heading"></a></h1>
+<section id="connectors-and-jumper-configurations">
+<h2>Connectors and Jumper Configurations<a class="headerlink" href="#connectors-and-jumper-configurations" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/image_1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/image_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/image_1.png" width="500" />
+</a>
+<section id="fmc-connector">
+<h3>FMC Connector<a class="headerlink" href="#fmc-connector" title="Link to this heading"></a></h3>
+<p>The FMC connector connects to the LPC connector of the carrier board.</p>
+</section>
+<section id="rj45-connectors">
+<h3>RJ45 Connectors<a class="headerlink" href="#rj45-connectors" title="Link to this heading"></a></h3>
+<p>The RJ45 connectors M1 for Channel A and M2 for Channel B have built-in
+magnetics that help reduce the size of the board. Each is dedicated to a PHY
+interface (ADIN1300), allowing each channel to operate independently.</p>
+</section>
+</section>
+<section id="configuration-resistors">
+<h2>Configuration Resistors<a class="headerlink" href="#configuration-resistors" title="Link to this heading"></a></h2>
+<section id="mac-interface">
+<h3>MAC Interface<a class="headerlink" href="#mac-interface" title="Link to this heading"></a></h3>
+<p>The pins for selecting the MAC interface are shared with the
+RX_CTL/RX_DV/CRS_DV pin and RXC/RX_CLK pin, which have weak internal pull-down
+resistors and are configured to RGMII mode with 2ns delay by default. The
+ADIN1300 MAC interface selection can be done via software but can also be
+hardware configured upon device power-up using the table below.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">MAC Interface Selection</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>MAC Interface Selection</p></th>
+<th class="head"><p>MACIF_SEL1 (Phy A / Phy B)</p></th>
+<th class="head"><p>MACIF_SEL0 (Phy A / Phy B)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RGMII RXC/TXC 2 ns delay</p></td>
+<td><p>R12 / R78</p></td>
+<td><p>R9 / R75</p></td>
+</tr>
+<tr class="row-odd"><td><p>RGMII RXC/TXC 2 ns delay</p></td>
+<td><p>R11 / R77</p></td>
+<td><p>R9 / R75</p></td>
+</tr>
+<tr class="row-even"><td><p>MII</p></td>
+<td><p>R17 / R78</p></td>
+<td><p>R8 / R74</p></td>
+</tr>
+<tr class="row-odd"><td><p>RMII</p></td>
+<td><p>R11 / R77</p></td>
+<td><p>R8 / R74</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="configuration-modes">
+<h3>Configuration Modes<a class="headerlink" href="#configuration-modes" title="Link to this heading"></a></h3>
+<p>These configuration modes are used to set Auto-MDIX and PHY speed
+configurations for both PHY channels A and B.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Configuration Modes</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 35.0%" />
+<col style="width: 35.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode</p></th>
+<th class="head"><p>R_LO</p></th>
+<th class="head"><p>R_HI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MODE_1</p></td>
+<td><p>10k</p></td>
+<td><p>Open</p></td>
+</tr>
+<tr class="row-odd"><td><p>MODE_2</p></td>
+<td><p>10k</p></td>
+<td><p>56k</p></td>
+</tr>
+<tr class="row-even"><td><p>MODE_3</p></td>
+<td><p>56k</p></td>
+<td><p>10k</p></td>
+</tr>
+<tr class="row-odd"><td><p>MODE_4</p></td>
+<td><p>Open</p></td>
+<td><p>10k</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="phy-interface">
+<h3>PHY Interface<a class="headerlink" href="#phy-interface" title="Link to this heading"></a></h3>
+<p>Both channels are configured upon power-up for:</p>
+<ul class="simple">
+<li><p>10 Mbps Half/Full Duplex</p></li>
+<li><p>100 Mbps Half/Full Duplex</p></li>
+<li><p>1000 Mbps Full Duplex (Slave mode)</p></li>
+</ul>
+</section>
+<section id="auto-mdix">
+<h3>Auto-MDIX<a class="headerlink" href="#auto-mdix" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Auto-MDIX Configuration</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 70.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Configuration</p></th>
+<th class="head"><p>MDIX_MODE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Manual MDI</p></td>
+<td><p>MODE_1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manual MDIX</p></td>
+<td><p>MODE_2</p></td>
+</tr>
+<tr class="row-even"><td><p>Auto MDIX – Prefer MDIX</p></td>
+<td><p>MODE_3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Auto MDIX – Prefer MDI</p></td>
+<td><p>MODE_4</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="led-indicators">
+<h2>LED Indicators<a class="headerlink" href="#led-indicators" title="Link to this heading"></a></h2>
+<p>These LEDs indicate when a link is established and blink when there is activity.</p>
+<ul class="simple">
+<li><p>PHY Channel A LED: <strong>DS4</strong></p></li>
+<li><p>PHY Channel B LED: <strong>DS2</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/cn0506-silkscreen.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/cn0506-silkscreen.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_cn0506_docs/docs/solutions/reference-designs/eval-cn0506-fmcz/images/cn0506-silkscreen.jpg" width="500" />
+</a>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h2>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h2>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/cn0506-designsupport" target="_blank">EVAL-CN0506-FMCZ Design &amp; Integration Files</a></p>
+<ul class="simple">
+<li><p>Schematics</p></li>
+<li><p>Gerber Files</p></li>
+<li><p>Bill of Materials</p></li>
+<li><p>Allegro Layout Files</p></li>
+<li><p>Assembly Files</p></li>
+</ul>
+</div>
+</section>
+<section id="additional-information-and-useful-links">
+<h2>Additional Information and Useful Links<a class="headerlink" href="#additional-information-and-useful-links" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/adin1300.html" target="_blank">ADIN1300 Product Page</a></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <a href="quickstart/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Quick Start Guides</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
