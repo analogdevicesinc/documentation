@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD9361 transceiver has no built-in functionality to provide phase synchronization, but through external equipment and additional software and HDL phase alignment can be achieved across multiple transceiver chips. The calibration process is documented on the Synchronizing multiple AD9361 devices page and as well in this whitepaper in the “Phase Alignment” discussion." name="description" />
+<meta content="The AD9361 transceiver has no built-in functionality to provide phase synchronization, but through external equipment and additional software and HDL phase alignment can be achieved across multiple transceiver chips. The calibration process is documented on the Synchronizing multiple AD9361 devices page and as well in a whitepaper (may be available on the AD-FMCOMMS5-EBZ product page) in the “Phase Alignment” discussion." name="description" />
 
     <title>FMComms5 Phase Synchronization &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -180,9 +180,10 @@ Content on this topic
 <p>The AD9361 transceiver has no built-in functionality to provide phase
 synchronization, but through external equipment and additional software and HDL
 phase alignment can be achieved across multiple transceiver chips. The
-calibration process is documented on the <a class="reference internal" href="multi-chip-sync.html"><span class="doc">Synchronizing multiple AD9361 devices</span></a> page and
-as well in this <a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/resources/doa_whitepaper.pdf"><code class="xref download docutils literal notranslate"><span class="pre">whitepaper</span></code></a> in the
-“Phase Alignment” discussion.</p>
+calibration process is documented on the <a class="reference internal" href="multi-chip-sync.html"><span class="doc">Synchronizing multiple AD9361 devices</span></a>
+page and as well in a whitepaper (may be available on the
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS5-EBZ" target="_blank">AD-FMCOMMS5-EBZ</a> product page) in the “Phase
+Alignment” discussion.</p>
 <p>The calibration procedures are implemented in both IIO-Scope and in a C library
 libad9361. It can be useful to see how they are implemented, or if end-users
 want additional debug to be extracted start at the following linked lines:</p>
