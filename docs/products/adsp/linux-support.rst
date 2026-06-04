@@ -111,3 +111,5 @@ For Yocto support see ``lxndsp-adi-meta`` below.
     - v2025.05:
       :git-br2-external:`Release 0.1.0 <releases/tag/2025.05-0.1.0+>`
       :git-br2-external:`Release 0.2.0 <releases/tag/2025.05-0.2.0+>`
+    - v2026.02:
+      :git-br2-external:`Release 0.1.0 <releases/tag/2026.02-0.1.0+>`
