@@ -5,8 +5,9 @@ Getting started
 
 ADSP evaluation boards do not ship with pre-installed software. The chips also
 do not support booting directly from SD cards. Therefore the evaluation boards
-need to be bootstrapped over JTAG using a :adi:`ADI ICE-1000 or ICE-2000 JTAG
-debugger <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`.
+need to be bootstrapped over JTAG using either an external JTAG debugger such
+as the :adi:`ADI ICE-1000 or ICE-2000 <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html>`
+or a JTAG debugger embedded on supported carrier boards.
 
 JTAG & OpenOCD Setup
 -----------------------------
@@ -61,16 +62,45 @@ On Windows, the resulting ``openocd.exe`` can be run directly.
 Run OpenOCD
 ~~~~~~~~~~~
 
-Run ``openocd`` from the cloned repository. For the ICE-1000 and EV-SC598-SOM run the following:
+Run ``openocd`` from the cloned repository. Select the interface configuration
+that matches your JTAG connection.
 
-.. shell:: sh
+.. tab-set::
 
-    ~/openocd
-    $ sudo src/openocd -f ice1000.cfg \
-           -f adspsc59x_a55.cfg \
-           --search tcl/ \
-           --search tcl/interface/ \
-           --search tcl/target/
+   .. tab-item:: External Debugger (ICE-1000/ICE-2000)
+
+      For the EV-SC598-SOM with an ICE-1000, run:
+
+      .. shell:: sh
+
+         ~/openocd
+         $ sudo src/openocd -f ice1000.cfg \
+                -f adspsc59x_a55.cfg \
+                --search tcl/ \
+                --search tcl/interface/ \
+                --search tcl/target/
+
+      Use ``ice2000.cfg`` instead of ``ice1000.cfg`` when using an ICE-2000.
+
+   .. tab-item:: Embedded JTAG Debugger (On Carrier Board)
+
+      For the EV-SC598-SOM with a carrier board, run:
+
+      .. shell:: sh
+
+         ~/openocd
+         $ sudo src/openocd -f adi-dbgagent.cfg \
+                -f adspsc59x_a55.cfg \
+                --search tcl/ \
+                --search tcl/interface/ \
+                --search tcl/target/
+
+      The EV-SOMCRR-EZKIT and EV-SOMCRR-EZLITE carrier boards include an
+      embedded JTAG debugger, referred to as the Debug Agent in the OpenOCD
+      configuration and on the documentation, which provides JTAG connectivity over USB.
+
+      To use the debug agent, set all positions on the carrier board ``SW1`` to
+      ``ON``.
 
 * For the ADSP-SC594 (Cortex-A5) use ``adspsc59x.cfg``
 * For the ADSP-SC598 (Cortex-A55) use  ``adspsc59x_a55.cfg``
