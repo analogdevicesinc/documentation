@@ -64,6 +64,18 @@ Template Variables
        for projects that are not part of the release. Note that
        ``agilex7soc`` and ``stratix10`` are never on Kuiper
        regardless of this flag.
+   * - ``hdl_branch``
+     - string
+     - (Required if ``in_kuiper`` is ``false``) HDL git branch
+       path for the project (e.g., ``projects/ad4080_fmc_evb``).
+       Must be quoted if it contains YAML special characters
+       (e.g., ``:``).
+   * - ``linux_branch``
+     - string
+     - (Required if ``in_kuiper`` is ``false``) Linux git branch
+       path for the project (e.g.,
+       ``staging/ad4080_clean_adf4350:``). Must be quoted if it
+       contains YAML special characters (e.g., ``:``).
    * - ``carrier``
      - string
      - (Optional) Carrier board identifier. Currently used to add
@@ -91,6 +103,8 @@ Usage Example
       fpga_family: zynq
       hdl_project_doc: adrv9009
       in_kuiper: false
+      hdl_branch: "projects/ad4080_fmc_evb"
+      linux_branch: "staging/ad4080_clean_adf4350:"
 
 ----
 

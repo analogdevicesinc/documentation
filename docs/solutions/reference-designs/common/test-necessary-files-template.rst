@@ -84,3 +84,5 @@ Zynq (not in Kuiper)
    fpga_family: zynq
    hdl_project_doc: adrv9009
    in_kuiper: false
+   hdl_branch: "projects/ad4080_fmc_evb"
+   linux_branch: "staging/ad4080_clean_adf4350:"
