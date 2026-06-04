@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The complete user guide of the evaluation board can be found at REV C USER GUIDE." name="description" />
+
+    <title>User guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="Pulsar ADC" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">User guide</a><ul>
+<li><a class="reference internal" href="#hardware-guide">Hardware guide</a><ul>
+<li><a class="reference internal" href="#hardware-versions">Hardware Versions</a><ul>
+<li><a class="reference internal" href="#rev-c-current">REV C (Current)</a></li>
+<li><a class="reference internal" href="#pmod-compatible">PMOD Compatible</a></li>
+<li><a class="reference internal" href="#rev-a-legacy">REV A (Legacy)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#power-supplies">Power Supplies</a><ul>
+<li><a class="reference internal" href="#reference">Reference</a></li>
+<li><a class="reference internal" href="#serial-interface">Serial Interface</a></li>
+<li><a class="reference internal" href="#solder-links">Solder Links</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#analog-inputs">Analog Inputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-guide">Software guide</a><ul>
+<li><a class="reference internal" href="#windows-evaluation-software-sdp">Windows Evaluation Software (SDP)</a><ul>
+<li><a class="reference internal" href="#board-operation">Board Operation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-software-fpga-carriers">Linux Software (FPGA Carriers)</a></li>
+<li><a class="reference internal" href="#no-os-software">No-OS Software</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Pulsar ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zedboard.html">ZedBoard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/coraz7s.html">CoraZ7-07s</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">Pulsar ADC</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<span id="pulsar-adc-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<p>The complete user guide of the evaluation board can be found at
+<a class="icon adi reference external" href="https://www.analog.com/static/imported-files/user_guides/UG-340.pdf" target="_blank">REV C USER GUIDE</a>.</p>
+<section id="hardware-guide">
+<h2>Hardware guide<a class="headerlink" href="#hardware-guide" title="Link to this heading"></a></h2>
+<section id="hardware-versions">
+<h3>Hardware Versions<a class="headerlink" href="#hardware-versions" title="Link to this heading"></a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Note that we are only shipping REV C boards as of now. Please click on the
+link to the REV C user guide for this board in the section below. Rev A
+information is only here for legacy purposes.</p>
+</div>
+<section id="rev-c-current">
+<h4>REV C (Current)<a class="headerlink" href="#rev-c-current" title="Link to this heading"></a></h4>
+<p>The REV C board is the current board that is available for purchase. This board
+contains the on-board power supplies to power all portions of the board - the
+ADC, Reference, Amplifiers and SDP board. This board operates from a simple +9V
+wall adaptor which is included as part of the evaluation board kit. This board
+interfaces to the SDP controller board.</p>
+<p><strong>All documentation for this version of hardware is contained in the USER
+GUIDE</strong><a class="icon adi reference external" href="https://www.analog.com/static/imported-files/user_guides/UG-340.pdf" target="_blank">REV C USER GUIDE</a></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar_revc.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar_revc.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar_revc.jpg" width="500" />
+</a>
+</section>
+<section id="pmod-compatible">
+<h4>PMOD Compatible<a class="headerlink" href="#pmod-compatible" title="Link to this heading"></a></h4>
+<p>PMOD compatible hardware is a very simple board which plugs directly into
+microprocessor and FPGA boards which have PMOD peripherals.</p>
+<p>Complete details about the PulSAR ADC PMOD boards can be found by visiting our
+<a class="icon link reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods" target="_blank">PulSAR ADC PMOD Page</a>.</p>
+<ul class="simple">
+<li><p><strong>SOFTWARE NOTE:</strong> If using the PMOD compatible version of the hardware,
+please install this version of the software.
+<a class="icon link reference external" href="https://wiki.analog.com/ftp/ftp.analog.com/pub/cftl/eval-adxxxx-pmdz/1.0.0" target="_blank">PMOD Evaluation Boards Software</a></p></li>
+<li><p><strong>HARDWARE NOTE:</strong> If using the PMOD compatible version of the hardware, you
+will need to use the PMOD to SDP interposer board to fully evaluate the
+system. This PMOD to SDP interposer board can be used to connect any of the
+10 PulSAR PMOD compatible boards to the PC or laptop. All detailed user
+information along with schematic, bill of materials, and layout files for
+this board can be found at our
+<a class="icon link reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods" target="_blank">PulSAR ADC PMOD Page</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_pmod.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_pmod.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_pmod.jpg" width="500" />
+</a>
+</section>
+<section id="rev-a-legacy">
+<h4>REV A (Legacy)<a class="headerlink" href="#rev-a-legacy" title="Link to this heading"></a></h4>
+<p>REV A hardware is a very simple board which requires power supply rails from a
+bench-top power supply to power the board. This board interfaces to the SDP
+controller board. This board is no longer available to purchase and is shown
+here for legacy purposes.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/10_lead_pulsar.jpg" width="300" />
+</a>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All detail which follows in this section applies to REV A hardware.</p>
+</div>
+</section>
+</section>
+<section id="general-description">
+<h3>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h3>
+<p>This evaluation board covers for the following 10 lead PulSAR analog to digital
+converters (ADCs): <a class="icon adi reference external" href="https://www.analog.com/AD7685" target="_blank">AD7685</a> (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7686" target="_blank">AD7686</a> (16-bit),
+<a class="icon adi reference external" href="https://www.analog.com/AD7687" target="_blank">AD7687</a> (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7688" target="_blank">AD7688</a> (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7690" target="_blank">AD7690</a> (18-bit),
+<a class="icon adi reference external" href="https://www.analog.com/AD7691" target="_blank">AD7691</a> (18-bit), AD7693 (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7942" target="_blank">AD7942</a> (14-bit),
+<a class="icon adi reference external" href="https://www.analog.com/AD7946" target="_blank">AD7946</a> (14-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7980" target="_blank">AD7980</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7988-1" target="_blank">AD7988-1</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7988-5" target="_blank">AD7988-5</a>
+(16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7982" target="_blank">AD7982</a> (18-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7983" target="_blank">AD7983</a> (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7984" target="_blank">AD7984</a>
+(16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7915" target="_blank">AD7915</a> (16-bit), <a class="icon adi reference external" href="https://www.analog.com/AD7916" target="_blank">AD7916</a> (16-bit). These low power ADCs
+offer very high performance of up to 18 bits with throughputs ranging from
+100 kSPS to 1 MSPS. The evaluation board is designed to demonstrate the ADC’s
+performance and to provide an easy to understand interface for a variety of
+system applications. A full description of these products is available in their
+respective data sheets and should be consulted when utilizing this evaluation
+board.</p>
+<p>On-board components include a high precision buffered band gap 5.0V reference
+(<a class="icon adi reference external" href="https://www.analog.com/ADR435" target="_blank">ADR435</a>), reference buffers (<a class="icon adi reference external" href="https://www.analog.com/AD8032" target="_blank">AD8032</a>), a signal conditioning
+circuit with two op-amps (<a class="icon adi reference external" href="https://www.analog.com/ADA4841-1" target="_blank">ADA4841-1</a>) and regulators to derive necessary
+voltage levels on board (<a class="icon adi reference external" href="https://www.analog.com/ADP3334" target="_blank">ADP3334</a>, <a class="icon adi reference external" href="https://www.analog.com/ADP3303" target="_blank">ADP3303</a>). This evaluation board
+interfaces to the SDP board via a 120 pin connector. SMB connectors, J3 and J4,
+are provided for the low noise analog signal source.</p>
+</section>
+<section id="power-supplies">
+<h3>Power Supplies<a class="headerlink" href="#power-supplies" title="Link to this heading"></a></h3>
+<p>The evaluation board requires power from an external bench top supply, applied
+to J1 connector.</p>
+<p><strong>Table 1. External Power Supply Required (max 12V across +Vs to -Vs)</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Power Supply</p></th>
+<th class="head"><p>Voltage Range</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+Vs</p></td>
+<td><p>+7.5V</p></td>
+<td><p>Supplies <a class="icon adi reference external" href="https://www.analog.com/ADR435" target="_blank">ADR435</a>, regulator
+<a class="icon adi reference external" href="https://www.analog.com/ADP3334" target="_blank">ADP3334</a> which supplies +7V to +Vs of
+<a class="icon adi reference external" href="https://www.analog.com/ADA4841-1" target="_blank">ADA4841-1</a>, regulator <a class="icon adi reference external" href="https://www.analog.com/ADP3303" target="_blank">ADP3303</a>
+which supplies +5V to SDP</p></td>
+</tr>
+<tr class="row-odd"><td><p>-Vs</p></td>
+<td><p>-2V</p></td>
+<td><p>Amplifier <a class="icon adi reference external" href="https://www.analog.com/ADA4841-1" target="_blank">ADA4841-1</a> negative rail</p></td>
+</tr>
+<tr class="row-even"><td><p>Vdd</p></td>
+<td><p>2.5V</p></td>
+<td><p>ADC Supply Rail for following ADCs AD7980,
+AD7982, AD7983, AD7984, AD7988-5</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>5V</p></td>
+<td><p>ADC Supply Rail for following ADCs AD7685,
+AD7686, AD7687, AD7688, AD7690, AD7691,
+AD7693, AD7694, AD7942, AD7946</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>On board regulators generate required levels from the applied +Vs rail. The
+regulators used are the ADP3334 (U9) which supplies +7V for the +Vs of the ADC
+driver amplifier (ADA4841), while the ADP3303-5 delivers 5V to the SDP board
+connector, J2 to power the SDP board. The SDP in turn provides a 3.3V V_DRIVE
+which supplies the IOVDD of the ADC in addition to the logic gates (U1, U3, U4).
+Each supply is decoupled where it enters the board and again at each device. A
+single ground plane is used on this board to minimize the effect of high
+frequency noise interference.</p>
+<section id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Link to this heading"></a></h4>
+<p>An external 5V reference (<a class="icon adi reference external" href="https://www.analog.com/ADR435" target="_blank">ADR435</a> U6) is used to supply the ADCs. This
+reference is buffered by the <a class="icon adi reference external" href="https://www.analog.com/AD8032" target="_blank">AD8032</a>.</p>
+</section>
+<section id="serial-interface">
+<h4>Serial Interface<a class="headerlink" href="#serial-interface" title="Link to this heading"></a></h4>
+<p>The evaluation board uses the SPORT interface from the SDP BF527 DSP. A number
+of AND gates are used to clock and gate the SPORT transfer to the ADC device.
+See U1, U3, U4.</p>
+</section>
+<section id="solder-links">
+<h4>Solder Links<a class="headerlink" href="#solder-links" title="Link to this heading"></a></h4>
+<p>There is one 3 Solder Link Option on the board. It is configured depending on
+which generic of ADC is on the specific evaluation board as described below.</p>
+<p><strong>Table 2. Solder Link Default Setting</strong></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Link</p></th>
+<th class="head"><p>Setting</p></th>
+<th class="head"><p>Configuration</p></th>
+<th class="head"><p>Generic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SL1</p></td>
+<td><p>A</p></td>
+<td><p>Differential Input</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7687" target="_blank">AD7687</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7688" target="_blank">AD7688</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7690" target="_blank">AD7690</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7691" target="_blank">AD7691</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7982" target="_blank">AD7982</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7984" target="_blank">AD7984</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7915" target="_blank">AD7915</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7916" target="_blank">AD7916</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>SL1</p></td>
+<td><p>B</p></td>
+<td><p>Single Ended Input</p></td>
+<td><p><a class="icon adi reference external" href="https://www.analog.com/AD7685" target="_blank">AD7685</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7686" target="_blank">AD7686</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7942" target="_blank">AD7942</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7946" target="_blank">AD7946</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD7980" target="_blank">AD7980</a>, <a class="icon adi reference external" href="https://www.analog.com/AD7983" target="_blank">AD7983</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="analog-inputs">
+<h3>Analog Inputs<a class="headerlink" href="#analog-inputs" title="Link to this heading"></a></h3>
+<p>The analog inputs to the evaluation board are J3 and J4 SMB (push on)
+connectors. These inputs are buffered with dedicated amplifier circuitry (U8
+and U12) and discrete as shown in the schematic. The circuit allows for
+different configurations, input range scaling, filtering, addition of a DC
+component, use of different op-amp and supplies. The analog input amplifiers are
+set as unity gain buffers at the factory.</p>
+<p>The default configuration sets both U8 and U12 at mid-scale generated from a
+buffered reference voltage divider (VCM). The evaluation board is factory
+configured for providing either a single ended path or a fully differential
+path as described in Table 2.</p>
+</section>
+</section>
+<section id="software-guide">
+<h2>Software guide<a class="headerlink" href="#software-guide" title="Link to this heading"></a></h2>
+<section id="windows-evaluation-software-sdp">
+<h3>Windows Evaluation Software (SDP)<a class="headerlink" href="#windows-evaluation-software-sdp" title="Link to this heading"></a></h3>
+<p>The evaluation board software is available to download from the product webpage.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The software install is a two part install, user should proceed through both
+parts prior to connecting board for first time.</p>
+</div>
+<section id="board-operation">
+<h4>Board Operation<a class="headerlink" href="#board-operation" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Connect SDP controller board to the evaluation board with the J2 connector
+(screw into place as required). The software is configured to find the
+evaluation board on either connector of the SDP board.</p></li>
+<li><p>Power board with appropriate supply as described.</p></li>
+<li><p>Connect to PC with USB cable provided.</p></li>
+<li><p>Launch software. Click Start &gt; All Programs &gt; Analog Devices &gt; 10 Lead
+PulSAR ADCs.</p></li>
+<li><p>Apply signal source and capture data.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad7980_sdp1z.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad7980_sdp1z.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad7980_sdp1z.jpg" width="300" />
+</a>
+</section>
+</section>
+<section id="linux-software-fpga-carriers">
+<h3>Linux Software (FPGA Carriers)<a class="headerlink" href="#linux-software-fpga-carriers" title="Link to this heading"></a></h3>
+<p>The PulSAR ADC evaluation boards are supported with the following Linux drivers
+depending on the carrier/connector variant:</p>
+<ul class="simple">
+<li><p><strong>PMOD variant (CoraZ7S):</strong>
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/ci/drivers/iio/adc/ad_pulsar.c" target="_blank">PulSAR ADC Linux driver (ad_pulsar.c)</a></p></li>
+<li><p><strong>FMC variant (ZedBoard):</strong>
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/ci/drivers/iio/adc/ad4000.c" target="_blank">AD400x Linux driver (ad4000.c)</a></p></li>
+</ul>
+</section>
+<section id="no-os-software">
+<h3>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h3>
+<p>The No-OS driver and project for PulSAR ADC can be found at:</p>
+<ul class="simple">
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc" target="_blank">PulSAR ADC No-OS driver</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc" target="_blank">PulSAR ADC No-OS project</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Pulsar ADC</a>
+    <a href="prerequisites.html" title="Next document (Alt+Shift+RightArrow)" class="next">Prerequisites</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
