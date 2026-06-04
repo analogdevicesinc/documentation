@@ -799,7 +799,7 @@ Instructions on how to build the boot files from source can be found below:
  - :external+no-OS:doc:`projects/adc/ad6676-ebz`. More no-OS build
    details at :external+no-OS:doc:`build_guide`.
 
- - :external+hdl:ref:`ad6676`. More HDL build details at
+ - :external+hdl:ref:`ad6676evb`. More HDL build details at
    :external+hdl:ref:`build_hdl`.
 
 Required software
