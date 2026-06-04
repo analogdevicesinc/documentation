@@ -87,6 +87,8 @@ AD-FMCOMMS2-EBZ/ZED
 .. image:: ../images/fmcomms2_zed_linux.jpeg
    :width: 800
 
+.. esd-warning::
+
 In the following example, we will make a physical loopback between the ADC
 and the DAC channels on the evaluation board, using SMA cables.
 
