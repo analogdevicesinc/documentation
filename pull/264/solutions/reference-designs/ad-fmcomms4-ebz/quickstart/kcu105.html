@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides quick instructions on how to set up the AD-FMCOMMS4-EBZ on:" name="description" />
+
+    <title>KCU105 Quickstart &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ZC706 Quickstart" href="zc706.html" />
+    <link rel="prev" title="ZCU102 Quickstart" href="zcu102.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">KCU105 Quickstart</a><ul>
+<li><a class="reference internal" href="#using-linux-as-software">Using Linux as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
+<li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
+<li><a class="reference internal" href="#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#id1">Necessary files</a></li>
+<li><a class="reference internal" href="#id2">Required Software</a></li>
+<li><a class="reference internal" href="#id3">Required Hardware</a></li>
+<li><a class="reference internal" href="#id4">Testing</a><ul>
+<li><a class="reference internal" href="#id5">Creating the setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/common/index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS4-EBZ</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="kcu105-quickstart">
+<span id="fmcomms4-quickstart-kcu105"></span><h1>KCU105 Quickstart<a class="headerlink" href="#kcu105-quickstart" title="Link to this heading"></a></h1>
+<p>This guide provides quick instructions on how to set up the
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> on FMC LPC</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/kcu105.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/kcu105.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/kcu105.png" width="800" />
+</a>
+<section id="using-linux-as-software">
+<h2>Using Linux as software<a class="headerlink" href="#using-linux-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This carrier only has programming logic (PL) and, thus, a MicroBlaze soft core
+is necessary to run Linux. As such, the files required for running Linux need
+to be manually built.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL bitstream file: <code class="docutils literal notranslate"><span class="pre">system_top.bit</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">simpleImage.strip</span></code></p></li>
+</ul>
+<p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze" target="_blank" title="(in System Level Documentation)"><span>Build MicroBlaze Linux kernel</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span>FMCOMMS2/3/4 HDL Project</span></a> build documentation. More HDL build details
+at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p></li>
+</ul>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files. Make sure you select the
+devicetree that matches your specific use case when building the
+<strong>simpleImage</strong>.</p>
+</div>
+</section>
+<section id="required-software">
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+will include Vivado as well)</p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h3>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> FMC evaluation board</p></li>
+<li><p>Micro-USB cable (JTAG)</p></li>
+<li><p>Micro-USB cable (UART)</p></li>
+<li><p>(Optional) 2x SMA cable for analog signal loopback</p></li>
+<li><p>(Optional) Ethernet cable for remote IIO access</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#fmcomms4-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" width="900" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>In the following example, we will make a physical loopback between the ADC
+and the DAC channels on the evaluation board, using SMA cables.</p>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> FMC board to the
+<a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> FMC <strong>LPC</strong> socket</p></li>
+<li><p>Connect USB UART J4 (Micro-USB) to your host PC</p></li>
+<li><p>Connect USB JTAG J87 (Micro-USB) to your host PC</p></li>
+<li><p>(Optional) Connect the external clock generator and/or loopback cables</p></li>
+<li><p>(Optional) Plug-in an Ethernet cable from your router/switch to the Ethernet
+port on the FPGA board</p></li>
+<li><p>Plug in the power supply and turn on the power switch on the FPGA board</p></li>
+<li><p>Program the FPGA using the steps shown
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze-boot" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">here</span></a>.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or
+COM port registered)</p></li>
+</ol>
+</section>
+<section id="boot-messages">
+<h4>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h4>
+<p>After running the <code class="docutils literal notranslate"><span class="pre">con</span></code> command in
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze-boot" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">XSDB</span></a>, the Linux kernel
+begins booting and its messages appear on the serial console.
+Make sure a UART terminal is open at 115200, 8N1 before issuing
+<code class="docutils literal notranslate"><span class="pre">con</span></code>.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="ee88ef9b177f0684c961c6523f881374a7856b4f" name="ee88ef9b177f0684c961c6523f881374a7856b4f" type="checkbox"></input><label for="ee88ef9b177f0684c961c6523f881374a7856b4f"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ramdisk addr 0x00000000,
+Compiled-in FDT at 0x80854fe0
+earlycon: uartlite_a0 at MMIO 0x40600000 (options &#39;115200n8&#39;)
+printk: legacy bootconsole [uartlite_a0] enabled
+cma: Reserved 512 MiB at 0x8fc00000 on node -1
+Linux version 6.12.0-27342-gc37b1d7e85e3 (ehadarau@romlx6) (microblazeel-amd-linux-gcc.real (GCC) 13.3.0, GNU ld (GNU Binutils) 2.42.0.20240723) #1 Fri May 22 15:18:47 EEST 2026
+setup_memory: max_mapnr: 0x7ffff
+setup_memory: min_low_pfn: 0x80000
+setup_memory: max_low_pfn: 0xb0000
+setup_memory: max_pfn: 0xfffff
+Zone ranges:
+  DMA      [mem 0x0000000080000000-0x00000000afffffff]
+  Normal   empty
+  HighMem  [mem 0x00000000b0000000-0x00000000ffffefff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000080000000-0x00000000ffffefff]
+Initmem setup node 0 [mem 0x0000000080000000-0x00000000ffffefff]
+setup_cpuinfo: initialising
+setup_cpuinfo: Using full CPU PVR support
+wt_msr_noirq
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+pcpu-alloc: [0] 0
+Kernel command line: earlycon
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+Built 1 zonelists, mobility grouping on.  Total pages: 524287
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+irq-xilinx: mismatch in kind-of-intr param
+irq-xilinx: /amba_pl/interrupt-controller@41200000: num_irq=16, edge=0xffffc5f0
+/amba_pl/timer@41c00000: irq=1
+clocksource: xilinx_clocksource: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+xilinx_timer_shutdown
+xilinx_timer_set_periodic
+sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+Console: colour dummy device 80x25
+printk: legacy console [tty0] enabled
+printk: legacy bootconsole [uartlite_a0] disabled
+Ramdisk addr 0x00000000,
+Compiled-in FDT at 0x80854fe0
+earlycon: uartlite_a0 at MMIO 0x40600000 (options &#39;115200n8&#39;)
+printk: legacy bootconsole [uartlite_a0] enabled
+cma: Reserved 512 MiB at 0x8fc00000 on node -1
+Linux version 6.12.0-27342-gc37b1d7e85e3 (ehadarau@romlx6) (microblazeel-amd-linux-gcc.real (GCC) 13.3.0, GNU ld (GNU Binutils) 2.42.0.20240723) #1 Fri May 22 15:18:47 EEST 2026
+setup_memory: max_mapnr: 0x7ffff
+setup_memory: min_low_pfn: 0x80000
+setup_memory: max_low_pfn: 0xb0000
+setup_memory: max_pfn: 0xfffff
+Zone ranges:
+  DMA      [mem 0x0000000080000000-0x00000000afffffff]
+  Normal   empty
+  HighMem  [mem 0x00000000b0000000-0x00000000ffffefff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000080000000-0x00000000ffffefff]
+Initmem setup node 0 [mem 0x0000000080000000-0x00000000ffffefff]
+setup_cpuinfo: initialising
+setup_cpuinfo: Using full CPU PVR support
+wt_msr_noirq
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+pcpu-alloc: [0] 0
+Kernel command line: earlycon
+Dentry cache hash table entries: 32768 (order: 5, 131072 bytes, linear)
+Inode-cache hash table entries: 16384 (order: 4, 65536 bytes, linear)
+Built 1 zonelists, mobility grouping on.  Total pages: 524287
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+irq-xilinx: mismatch in kind-of-intr param
+irq-xilinx: /amba_pl/interrupt-controller@41200000: num_irq=16, edge=0xffffc5f0
+/amba_pl/timer@41c00000: irq=1
+clocksource: xilinx_clocksource: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+xilinx_timer_shutdown
+xilinx_timer_set_periodic
+sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+Console: colour dummy device 80x25
+printk: legacy console [tty0] enabled
+printk: legacy bootconsole [uartlite_a0] disabled
+Calibrating delay loop... 49.35 BogoMIPS (lpj=246784)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Memory: 1533248K/2097148K available (8531K kernel code, 694K rwdata, 7156K rodata, 209K init, 193K bss, 39136K reserved, 524288K cma-reserved, 1310716K highmem)
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 256 (order: -1, 3072 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+PTP clock support registered
+jesd204: found 0 devices and 0 topologies
+vgaarb: loaded
+clocksource: Switched to clocksource xilinx_clocksource
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 4096 (order: 3, 32768 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 2048 (order: 1, 8192 bytes, linear)
+TCP bind hash table entries: 2048 (order: 2, 16384 bytes, linear)
+TCP: Hash tables configured (established 2048 bind 2048)
+UDP hash table entries: 256 (order: 0, 4096 bytes, linear)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp-with-tls transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+PCI: CLS 0 bytes, default 32
+workingset: timestamp_bits=30 max_order=19 bucket_order=0
+Key type cifs.idmap registered
+jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+romfs: ROMFS MTD (C) 2007 Red Hat, Inc.
+bounce: pool size: 64 pages
+io scheduler mq-deadline registered
+io scheduler kyber registered
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 4, base_baud = 0) is a uartlite
+printk: legacy console [ttyUL0] enabled
+uartlite 41400000.serial: error -EINVAL: could not read current-speed
+uartlite 41400000.serial: probe with driver uartlite failed with error -22
+brd: module loaded
+xilinx_axienet 40e00000.ethernet: missing/invalid xlnx,addrwidth property, using default
+process &#39;/bin/busybox&#39; started with executable stack
+i2c_dev: i2c /dev entries driver
+pca954x 0-0075: supply vdd not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 1
+i2c i2c-0: Added multiplexed i2c bus 2
+at24 3-0050: supply vcc not found, using dummy regulator
+at24 3-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+i2c i2c-0: Added multiplexed i2c bus 3
+i2c i2c-0: Added multiplexed i2c bus 4
+pca954x 0-0075: registered 4 multiplexed busses for I2C mux pca9544
+ad9361 spi0.0: ad9361_probe : enter (ad9364)
+ad9361 spi0.0: ad9361_probe : AD936x Rev 0 successfully initialized
+cf_axi_dds 79024000.cf-ad9361-dds-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.02.b) at 0x79024000 mapped to 0x(ptrval), probed DDS AD9364
+axi_sysid 45000000.axi-sysid-0: AXI System ID core version (1.01.a) found
+axi_sysid 45000000.axi-sysid-0: [fmcomms2] on [kcu105] git branch &lt;main&gt; git &lt;5b6a3af7bcb6c253739fa68b4b3e026808e0a93d&gt; clean [2026-05-20 15:41:58] UTC
+Initializing XFRM netlink socket
+NET: Registered PF_INET6 protocol family
+Segment Routing with IPv6
+In-situ OAM (IOAM) with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered PF_PACKET protocol family
+NET: Registered PF_KEY protocol family
+Key type dns_resolver registered
+Key type encrypted registered
+cf_axi_adc 79020000.cf-ad9361-lpc: ADI AIM (10.03.) probed ADC AD9364 as MASTER
+clk: Disabling unused clocks
+Freeing unused kernel image (initmem) memory: 208K
+This architecture does not have kernel memory protection.
+Run /init as init process
+  with arguments:
+    /init
+  with environment:
+    HOME=/
+    TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Saving random seed: random: crng init done
+OK
+Starting network: udhcpc: started, v1.31.1
+xilinx_axienet 40e00000.ethernet eth0: PHY [axienet-40e00000:07] driver [Marvell 88E1111] (irq=POLL)
+xilinx_axienet 40e00000.ethernet eth0: configuring for phy/sgmii link mode
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: sending discover
+udhcpc: no lease, failing
+Starting dropbear sshd: OK
+Starting IIO Server Daemon
+
+Welcome to Buildroot
+buildroot login:
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="useful-commands-for-the-serial-terminal">
+<h4>Useful commands for the serial terminal<a class="headerlink" href="#useful-commands-for-the-serial-terminal" title="Link to this heading"></a></h4>
+<p>The below commands are to be run in the serial terminal connected to the FPGA.</p>
+<p>When prompted for login, use the following credentials:</p>
+<ul class="simple">
+<li><p>username: <strong>root</strong></p></li>
+<li><p>password: <strong>analog</strong></p></li>
+</ul>
+<p>To find out the IP of the FPGA board, run the following command and take the
+IP specified at “eth0 inet”:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To see the IIO devices detected, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iio:device
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio:device0: ad7291
+iio:device1: ad9361-phy
+iio:device2: cf-ad9361-dds-core-lpc (buffer capable)
+iio:device3: cf-ad9361-lpc (buffer capable)
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To power off the system, run the following command, and wait for the final
+message to be printed, then power off the FPGA board from the switch as well.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poweroff
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To disconnect XSDB when done:</p>
+<div class="code-shell"><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>xsdb% disconnect
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+</section>
+</section>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Necessary files<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot file: <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code></p></li>
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad9361" target="_blank">projects/ad9361</a></p></li>
+</ul>
+<p>Instructions on how to build the boot files from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span>FMCOMMS2/3/4 HDL Project</span></a>. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/rf-transceiver/ad9361.html" target="_blank" title="(in no-OS)"><span>AD9361 no-OS Example Project</span></a>. More no-OS build
+details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a></p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Required Software<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+will include Vivado as well)</p></li>
+<li><p>An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Required Hardware<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> FMC evaluation board</p></li>
+<li><p>2x Micro-USB cables, one for UART and one for JTAG</p></li>
+<li><p>2x SMA cable or Antenna</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#fmcomms4-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="id4">
+<h3>Testing<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id5">
+<h4>Creating the setup<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" width="800" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>In the following example, we will make a physical loopback between the ADC
+and the DAC channels on the evaluation board, using SMA cables.</p>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> FMC board to the
+<a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> FMC <strong>LPC</strong> socket</p></li>
+<li><p>Connect USB UART J4 (Micro-USB) to your host PC</p></li>
+<li><p>Connect USB JTAG J87 (Micro-USB) to your host PC</p></li>
+<li><p>Plug in the power supply and turn on the power switch on the FPGA board</p></li>
+<li><p>Build and run the project using the steps shown
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/rf-transceiver/ad9361.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">here</span></a>.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or
+COM port registered)</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
+    <a href="zc706.html" title="Next document (Alt+Shift+RightArrow)" class="next">ZC706 Quickstart</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD9361, AD9364, and AD9363 are high performance, highly integrated RF Agile Transceiver™. Their programmability and wideband capability make them ideal for a broad range of transceiver applications. The devices combine an RF front end with a flexible mixed-signal baseband section and integrated frequency synthesizers, simplifying design-in by providing a configurable digital interface to a processor. Both the AD9361 and AD9364 operate in the 70 MHz to 6.0 GHz range, and the AD9363 operates in the 380 MHz to 3.8 GHz range, all covering most licensed and unlicensed bands. Channel bandwidths on the AD9361 and AD9364 are from 200 kHz to 56 MHz, and the AD9363 has 200 kHz to 20 MHz. Both the AD9361 and the AD9363 are a 2 Rx, 2 Tx device, and the AD9364 is a 1 Rx, 1 Tx device." name="description" />
+
+    <title>AD9361, AD9364 and AD9363 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Digital Interface Timing Verification" href="interface_timing_validation.html" />
+    <link rel="prev" title="Introduction to boards based on the AD9361/AD9363/AD9364" href="introduction_to_ad9361_ad9364.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD9361, AD9364 and AD9363</a><ul>
+<li><a class="reference internal" href="#block-diagram">Block Diagram</a></li>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#receive-chain">Receive Chain</a><ul>
+<li><a class="reference internal" href="#iq-correction">IQ Correction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transmit-chain">Transmit Chain</a></li>
+<li><a class="reference internal" href="#plls">PLLs</a><ul>
+<li><a class="reference internal" href="#arbitrary-precision">Arbitrary Precision</a></li>
+<li><a class="reference internal" href="#integer-spurs">Integer Spurs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rx-and-tx-filtering">Rx and Tx Filtering</a></li>
+<li><a class="reference internal" href="#clock-options">Clock Options</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad9361-ad9364-and-ad9363">
+<span id="fmcomms2-common-ad9361"></span><h1>AD9361, AD9364 and AD9363<a class="headerlink" href="#ad9361-ad9364-and-ad9363" title="Link to this heading"></a></h1>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a>, <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>, and <a class="icon adi reference external" href="https://www.analog.com/AD9363" target="_blank">AD9363</a> are high performance, highly
+integrated RF Agile Transceiver™. Their programmability and wideband capability
+make them ideal for a broad range of transceiver applications. The devices
+combine an RF front end with a flexible mixed-signal baseband section and
+integrated frequency synthesizers, simplifying design-in by providing a
+configurable digital interface to a processor. Both the AD9361 and AD9364
+operate in the 70 MHz to 6.0 GHz range, and the AD9363 operates in the 380 MHz
+to 3.8 GHz range, all covering most licensed and unlicensed bands. Channel
+bandwidths on the AD9361 and AD9364 are from 200 kHz to 56 MHz, and the AD9363
+has 200 kHz to 20 MHz. Both the AD9361 and the AD9363 are a 2 Rx, 2 Tx device,
+and the AD9364 is a 1 Rx, 1 Tx device.</p>
+<p>The AD9361, AD9364 and AD9363 are all packaged in the same 10 mm × 10 mm,
+144-ball chip scale package ball grid array (CSP_BGA), with a common footprint
+making transition from 1 x 1 channels to 2 x 2 channels very easy.</p>
+<section id="block-diagram">
+<h2>Block Diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="../../../../_images/ad9361.svg"><img alt="../../../../_images/ad9361.svg" src="../../../../_images/ad9361.svg" style="height: 650px;" width="950" />
+</a>
+</section>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading"></a></h2>
+<p>The AD9361 and AD9364 are highly integrated radio frequency (RF) transceivers
+capable of being configured for a wide range of applications. The device
+integrates all RF, mixed signal, and digital blocks necessary to provide all
+transceiver functions in a single device. Programmability allows this broadband
+transceiver to be adapted for use with multiple communication standards,
+including frequency division duplex (FDD) and time division duplex (TDD)
+systems. This programmability also allows the device to be interfaced to various
+baseband processors (BBPs) using a single 12-bit parallel data port, dual 12-bit
+parallel data ports, or a 12-bit low voltage differential signaling (LVDS)
+interface. The LVDS interface is used on the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS2-EBZ" target="_blank">AD-FMCOMMS2-EBZ</a>,
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS3-EBZ" target="_blank">AD-FMCOMMS3-EBZ</a>, <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> and <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS5-EBZ" target="_blank">AD-FMCOMMS5-EBZ</a>.
+Configuring the digital interface in CMOS mode is not tested nor supported on
+these platforms. This is due to the purposefully weak CMOS drivers (to keep the
+noise off the part as much as possible) that are part of the digital interface
+and the large capacitance of the FMC connector.</p>
+<p>The AD9361 and AD9364 also provide self-calibration and automatic gain control
+(AGC) systems to maintain a high performance level under varying temperatures
+and input signal conditions. In addition, the device includes several test modes
+that allow system designers to insert test tones and create internal loopback
+modes that can be used by designers to debug their designs during prototyping
+and optimize their radio configuration for a specific application.</p>
+<p>More information can be found in the AD9361 Reference Manual
+<a class="icon ez reference external" href="https://ez.analog.com/cfs-file/__key/telligent-evolution-components-attachments/00-441-00-00-00-07-91-97/AD9361_5F00_Reference_5F00_Manual_5F00_UG_2D00_570.pdf" target="_blank">UG 570</a>.</p>
+</section>
+<section id="receive-chain">
+<h2>Receive Chain<a class="headerlink" href="#receive-chain" title="Link to this heading"></a></h2>
+<p>The receiver section contains all blocks necessary to receive RF signals and
+convert them to digital data that is usable by a BBP. There are two
+independently controlled channels that can receive signals from different
+sources, allowing the device to be used in multiple input, multiple output
+(MIMO) systems while sharing a common frequency synthesizer.</p>
+<p>Each channel has three inputs that can be multiplexed to the signal chain,
+making the AD9361 suitable for use in diversity systems with multiple antenna
+inputs. The receiver is a direct conversion system that contains a low noise
+amplifier (LNA), followed by matched in-phase (I) and quadrature (Q) amplifiers,
+mixers, and band shaping filters that down convert received signals to baseband
+for digitization. External LNAs can also be interfaced to the device, allowing
+designers the flexibility to customize the receiver front end for their specific
+application.</p>
+<p>The AD9361 RX signal path passes downconverted signals (I and Q) to the baseband
+receiver section. The baseband RX signal path is composed of two programmable
+analog low-pass filters, a 12-bit ADC, and four stages of digital decimating
+filters. Each of the four decimating filters can be bypassed. The corner
+frequency for each low-pass filter is programmable. Note that both the I and Q
+paths are schematically identical to each other.</p>
+<p>Gain control is achieved by following a preprogrammed gain index map that
+distributes gain among the blocks for optimal performance at each level. This
+can be achieved by enabling the internal AGC in either fast or slow mode or by
+using manual gain control, allowing the BBP to make the gain adjustments as
+needed. Additionally, each channel contains independent RSSI measurement
+capability, dc offset tracking, and all circuitry necessary for
+self-calibration.</p>
+<p>The receivers include 12-bit, sigma-delta (Σ-Δ) ADCs and adjustable sample rates
+that produce data streams from the received signals. The digitized signals can
+be conditioned further by a series of decimation filters and a fully
+programmable 128-tap FIR filter with additional decimation settings. The sample
+rate of each digital filter block is adjustable by changing decimation factors
+to produce the desired output data rate.</p>
+<section id="iq-correction">
+<h3>IQ Correction<a class="headerlink" href="#iq-correction" title="Link to this heading"></a></h3>
+<p>The AD936x includes an IQ correction, based on a static and dynamic RX
+quadrature calibration which minimizes the phase and gain error in the receive
+path. RX quadrature continuous tracking will use RX data to minimize the
+quadrature error continuously. The tracking which minimizes quadrature error
+assumes a complex quadrature signal, and when receiving real-only signals will
+need to be turned off, by controlling the <a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9361.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">Tracking Controls</span></a>, or may cause the Rx signal to oscillate.</p>
+</section>
+</section>
+<section id="transmit-chain">
+<h2>Transmit Chain<a class="headerlink" href="#transmit-chain" title="Link to this heading"></a></h2>
+<p>The transmitter section consists of two identical and independently controlled
+channels that provide all digital processing, mixed signal, and RF blocks
+necessary to implement a direct conversion system while sharing a common
+frequency synthesizer.</p>
+<p>The TX signal path receives 12-bit 2s complement data in I-Q format from the
+digital interface, and each channel (I and Q) passes this data through a fully
+programmable 128-tap FIR filter with interpolation options. The FIR output is
+sent to a series of additional interpolation filters that provide additional
+filtering and data rate interpolation prior to reaching the 12-bit DAC. The FIR
+filter, and of the three interpolating filters can individually be controlled
+and bypassed if desired. Each 12-bit DAC has an adjustable sampling rate.</p>
+<p>The DAC’s analog output is passed through two low pass filters (to remove
+sampling artifacts) prior to the RF mixer. The corner frequency for each
+low-pass filter is programmable. At this point, the I and Q signals are
+recombined and modulated on the carrier frequency for transmission to the output
+stage. The combined signal also passes through analog filters that provide
+additional band shaping, and then the signal is transmitted to the output
+amplifier. Each transmit channel provides a wide attenuation adjustment range
+with fine granularity to help designers optimize signal-to-noise ratio (SNR).</p>
+<p>Note that both the I and the Q paths are schematically identical to each other.</p>
+<p>Self-calibration circuitry is built into each transmit channel to provide
+automatic real-time adjustment. The transmitter block also provides a TX monitor
+block for each channel. This block monitors the transmitter output and routes it
+back through an unused receiver channel to the BBP for signal monitoring. The TX
+monitor blocks are available only in TDD mode operation while the receiver is
+idle.</p>
+</section>
+<section id="plls">
+<h2>PLLs<a class="headerlink" href="#plls" title="Link to this heading"></a></h2>
+<p>There are three main PLLs in the system, two RF PLLs and one baseband PLL. The
+two RF PLLs (Rx and Tx) have identical architectures. The PLL frequencies are
+governed by the following equations:</p>
+<p><span class="math notranslate nohighlight">\(F_{RFPLL} = F_{REF} \times (N_{Integer} + N_{Fractional}/8388593 )\)</span></p>
+<p><span class="math notranslate nohighlight">\(F_{BB} = F_{REF} \times (N_{Integer} + N_{Fractional}/2088960)\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(N_{Integer}\)</span> and <span class="math notranslate nohighlight">\(N_{Fractional}\)</span> are user configurable and
+unique to each PLL.</p>
+<section id="arbitrary-precision">
+<h3>Arbitrary Precision<a class="headerlink" href="#arbitrary-precision" title="Link to this heading"></a></h3>
+<p>While both are commonly known as “Fractional” PLLs, they are not “Floating
+point” PLLs. The smallest step size they have is based on the reference clock
+<span class="math notranslate nohighlight">\(F_{REF}\)</span>. For a <span class="math notranslate nohighlight">\(F_{REF} = 40.000 MHz\)</span>, that would mean that the
+<em>step size</em>, or <em>resolution</em> of:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F_{RFPLL}\)</span> would be 4.7683801085593257415158894942215 Hz. (this comes
+from <span class="math notranslate nohighlight">\(\displaystyle \frac{40000000}{8388593}\)</span>) (or about 0.068 ppm at 70
+MHz, and 0.011 ppb at 6.0 GHz)</p></li>
+<li><p><span class="math notranslate nohighlight">\(F_{BB}\)</span> would be 19.148284313725490196078431372549 Hz. (this comes from
+<span class="math notranslate nohighlight">\(\displaystyle \frac{40000000}{2088960}\)</span>). (or about 36.76 ppm at
+520833.3 kSPS or 0.311 ppm at 61.44 MSPS)</p></li>
+</ul>
+<p>The implications of this are that if you need to tune an LO exactly to
+2.400000002 GHz - you can not use a 40.000 MHz crystal. The practical
+implications of this are small, as frequency correction algorithms in
+implementations such as modems will normally take care of these small offsets.</p>
+</section>
+<section id="integer-spurs">
+<h3>Integer Spurs<a class="headerlink" href="#integer-spurs" title="Link to this heading"></a></h3>
+<p>Because both PLLs use a fractional technique based on a modulator, the
+modulators constantly trying to correct for instantaneous phase errors. The
+heavy digital activity can cause spurious components at the output when there is
+no averaging needed. (when the fractional part is close to zero, where “close
+to” is defined as 0 ±100000. That would be within ±1.25% of the integer).</p>
+<p>As can be seen by the figure that was created by measuring EVM, and modifying
+the LO only. Here you can see the -48 dB (0.39 %) nominal (non-integer spur),
+degrading to -40 dB (1.0 %) when exactly on the integer spur. Moving the slope
+of the line is quite steep (so moving off the integer spur by nearly any amount
+is better than nothing), and once you are more than ±1.25% off, you should not
+see any effects of integer boundary spurs.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9361_integer_spur.png"><img alt="ad9361_integer_spur.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9361_integer_spur.png" width="400" />
+</a>
+</section>
+</section>
+<section id="rx-and-tx-filtering">
+<h2>Rx and Tx Filtering<a class="headerlink" href="#rx-and-tx-filtering" title="Link to this heading"></a></h2>
+<p>In both the receive and transmit chains, there are:</p>
+<ul class="simple">
+<li><p>analog low pass filters either to remove sampling artifacts on the Tx side, or
+to band shape to reduce <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Adjacent-channel_interference" target="_blank">adjacent-channel interference</a>
+on the Rx side.</p></li>
+<li><p>Digital interpolation/decimation filters to up/down convert from the digital
+baseband rate (64.11 MSPS max) to the actual ADC (640 MSPS) or DAC (320 MSPS)
+rates.</p></li>
+</ul>
+<p>No matter the implementation (analog or digital) these filters impact the
+magnitude and phase in the passband. This must be compensated somewhere in the
+system. It can easily be done (and therefore is normally done) inside the 128
+tap FIR filter. The FIR filter is not only used to implement a low pass filter,
+but also to compensate for the magnitude and phase impacts the analog and
+digital half band filters create in the baseband area of interest.</p>
+<p>These filters depend on sample rates, clocks, and data rates (which sets the
+digital half band filters), and the RF bandwidth (which sets the analog
+filters). Loading a filter, and then changing anything in the system, will
+negatively affect overall baseband performance.</p>
+<p>This is why we have created an <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fmcomms2/software/filters/filters.html#fmcomms2-software-filters" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">AD9361/AD9364 Filter tool</span></a>. It will
+design a low pass filter, and ensure that any magnitude and phase effects of the
+analog or digital half bands are compensated for properly inside the FIR
+coefficients.</p>
+<p>The <a class="icon link reference external" href="http://github.com/analogdevicesinc/libad9361-iio" target="_blank">libad9361-iio</a>
+libraries provide a standard set of filters, which can be used to enable the
+additional decimation to reach the lower data rates of the transceiver if a user
+does not want to design a filter on their own. This is provided in the
+<a class="icon link reference external" href="https://codedocs.xyz/analogdevicesinc/libad9361-iio/group__TopLevel.html#ga56c31cc700d410be9bdeea3040e62eb3" target="_blank">ad9361_set_bb_rate</a>
+function. These are also available in MATLAB R2019b when custom filters are not
+designed. These filters are generally wideband, and can provide a reasonably
+flat response to the overall signal chains. For optimal performance, users
+should utilize the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fmcomms2/software/filters/filters.html#fmcomms2-software-filters" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">AD9361/AD9364 Filter tool</span></a>, and design a
+filter specific for their waveform.</p>
+<p>Below are the responses of the filters provided in the
+<a class="icon link reference external" href="https://codedocs.xyz/analogdevicesinc/libad9361-iio/group__TopLevel.html#ga56c31cc700d410be9bdeea3040e62eb3" target="_blank">ad9361_set_bb_rate</a>
+function. All four filters decimate by at least 2, which means their passbands
+extend close to the entire output bandwidth of the FIR. Since these filters do
+not account for the responses of the upstream halfbands, ADC, and analog
+filters, the overall amplitude response of the transceiver can taper as these
+other filters are set with tighter bandwidths.</p>
+<a class="reference internal image-reference" href="../../../../_images/setbb_filters.svg"><img alt="ad9361_set_bb_rate Filter Responses" class="align-right" src="../../../../_images/setbb_filters.svg" width="800" />
+</a>
+</section>
+<section id="clock-options">
+<h2>Clock Options<a class="headerlink" href="#clock-options" title="Link to this heading"></a></h2>
+<p>The AD9361 uses fractional-n phase locked loops (PLLs) to generate the
+transmitter and receiver local oscillator (LO) frequencies as well as the
+oscillator (the baseband PLL) used for the data converters, digital filters, and
+I/O port. These PLLs all require a reference clock input, that includes a
+digitally controlled crystal oscillator (DCXO) function, an on-chip
+programmable/variable capacitor. This capacitor can tune the crystal frequency
+variance out of the system, resulting in a more accurate reference clock from
+which all other frequency signals are generated. The input for the DCXO can be
+provided by two different sources:</p>
+<ul class="simple">
+<li><p>The first option is to connect an external oscillator or clock distribution
+device (such as the <a class="icon adi reference external" href="https://www.analog.com/AD9548" target="_blank">AD9548</a>) to the XTALN pin (with the XTALP pin
+remaining unconnected). If an external oscillator is used, the frequency can
+vary between 10 MHz and 80 MHz. This is for applications such as wireless
+basestations, which require that the reference clock lock to a system master
+clock.</p></li>
+<li><p>The second option is to use a dedicated crystal <a class="footnote-reference brackets" href="#id3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> with a frequency between
+19 MHz and 50 MHz connected between the XTALP and XTALN pins. This is
+typically used in wireless user equipment (UE), which do not typically need to
+be locked to a master clock but they do need to adjust the LO frequency
+periodically to maintain connection with a basestation (BTS). The BTS
+occasionally informs the UE of its frequency error relative to the BTS, and
+the baseband processor can adjust the reference clock frequency and thus the
+LO frequency as needed.</p></li>
+</ul>
+<p>The DCXO tuning function can also be used with the on-chip temperature sensor to
+provide oscillator frequency temperature compensation during normal operation.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>AT cut fundamental mode of vibration with a load capacitance of 10 pF</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="introduction_to_ad9361_ad9364.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Introduction to boards based on the AD9361/AD9363/AD9364</a>
+    <a href="interface_timing_validation.html" title="Next document (Alt+Shift+RightArrow)" class="next">Digital Interface Timing Verification</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

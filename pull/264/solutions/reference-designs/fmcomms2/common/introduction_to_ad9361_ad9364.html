@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD-FMCOMMS[2345]-EBZ and ARRADIO cards are high-speed analog modules designed to showcase the AD9361 or AD9364, a high performance, highly integrated RF agile transceiver intended for use in RF applications, such as 3G and 4G base station applications and software defined radios. Its programmability and wideband capability make it ideal for a broad range of transceiver applications. The device combines an RF front end with a flexible mixed-signal baseband section and integrated frequency synthesizers, simplifying design-in by providing a configurable digital interface to a processor or FPGA. The AD9361 and AD9364 operate in the 70 MHz to 6 GHz range, covering most licensed and unlicensed bands. The boards, due to discrete external components, may have less performance on some of the RF input/output connectors (for example - the FMCOMMS2 and specific connectors on the FMCOMMS5 are specifically tuned to 2.4 GHz). The AD9361 and AD9364 both support channel bandwidths from less than 200 kHz to 56 MHz by both changing sample rate, and by changing digital filters and decimation inside the device itself." name="description" />
+
+    <title>Introduction to boards based on the AD9361/AD9363/AD9364 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD9361, AD9364 and AD9363" href="ad9361_ad9363_ad9364_general_description.html" />
+    <link rel="prev" title="Additional Documentation" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Introduction to boards based on the AD9361/AD9363/AD9364</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+<li><a class="reference internal" href="#specifications-features">Specifications &amp; Features</a></li>
+<li><a class="reference internal" href="#available-hardware">Available Hardware</a><ul>
+<li><a class="reference internal" href="#standalone-platform">Standalone Platform</a></li>
+<li><a class="reference internal" href="#fmc-hsmc-evaluation-boards">FMC/HSMC Evaluation Boards</a></li>
+<li><a class="reference internal" href="#system-on-modules-soms">System on Modules (SOMs)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#carrier-boards">Carrier Boards</a><ul>
+<li><a class="reference internal" href="#som-carrier-boards">SOM Carrier Boards</a></li>
+<li><a class="reference internal" href="#fpga-carrier-boards">FPGA Carrier Boards</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started">Getting started</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="introduction-to-boards-based-on-the-ad9361-ad9363-ad9364">
+<span id="fmcomms2-common-introduction"></span><h1>Introduction to boards based on the AD9361/AD9363/AD9364<a class="headerlink" href="#introduction-to-boards-based-on-the-ad9361-ad9363-ad9364" title="Link to this heading"></a></h1>
+<div class="grid grid-flex" style="grid-template-columns: 33% 33% 33%;"><figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9361_chip.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9361_chip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9361_chip.png" width="150" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">AD9361</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9363_chip.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9363_chip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9363_chip.png" width="150" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD9363</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9364_chip.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9364_chip.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ad9364_chip.png" width="150" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">AD9364</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The AD-FMCOMMS[2345]-EBZ and ARRADIO cards are high-speed analog modules
+designed to showcase the <a class="icon adi reference external" href="https://www.analog.com/AD9361" target="_blank">AD9361</a> or <a class="icon adi reference external" href="https://www.analog.com/AD9364" target="_blank">AD9364</a>, a high performance,
+highly integrated RF agile transceiver intended for use in RF applications,
+such as 3G and 4G base station applications and software defined radios. Its
+programmability and wideband capability make it ideal for a broad range of
+transceiver applications. The device combines an RF front end with a flexible
+mixed-signal baseband section and integrated frequency synthesizers,
+simplifying design-in by providing a configurable digital interface to a
+processor or FPGA. The AD9361 and AD9364 operate in the 70 MHz to 6 GHz range,
+covering most licensed and unlicensed bands. The boards, due to discrete
+external components, may have less performance on some of the RF input/output
+connectors (for example - the FMCOMMS2 and specific connectors on the FMCOMMS5
+are specifically tuned to 2.4 GHz). The AD9361 and AD9364 both support channel
+bandwidths from less than 200 kHz to 56 MHz by both changing sample rate, and
+by changing digital filters and decimation inside the device itself.</p>
+<p>The difference between the AD9361 (2 Rx, 2 Tx) and AD9364 (1 Rx, 1 Tx) is the
+number of channels. Software, HDL, pinout, etc - is all exactly the same.</p>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Wireless communications demonstration and learning tool</p></li>
+<li><p>Remote radio head</p></li>
+<li><p>Software-defined radio</p></li>
+<li><p>Satellite modems</p></li>
+<li><p>Test and measurement equipment</p></li>
+<li><p>Radar and advanced imaging</p></li>
+<li><p>General purpose data acquisition</p></li>
+</ul>
+</section>
+<section id="specifications-features">
+<h2>Specifications &amp; Features<a class="headerlink" href="#specifications-features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>General purpose design suitable for any application</p></li>
+<li><p>Software tunable across wide frequency range (70 MHz to 6 GHz)</p></li>
+<li><p>Less than 200 kHz to 56 MHz channel bandwidth</p></li>
+<li><p>Powered from single FMC connector</p></li>
+<li><p>Supports MIMO radio, with less than 1 sample sync on both ADC and DAC</p></li>
+<li><p>Includes schematics, layout, BOM, HDL, Linux drivers and application
+software</p></li>
+<li><p>Supports add on cards for spectrum specific designs (PA, LNA etc)</p>
+<ul>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-freqcvt1-ebz" target="_blank">AD-FREQCVT1-EBZ</a>
+is frequency up and down conversion to allow the AD9361 to operate down
+to 1 MHz.</p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-trxboost1-ebz" target="_blank">AD-TRXBOOST1-EBZ</a>
+is to add a pre-amp to the TX output and an LNA to the RX input of the
+AD9361.</p></li>
+</ul>
+</li>
+<li><p>SPI access for all device registers</p></li>
+</ul>
+</section>
+<section id="available-hardware">
+<h2>Available Hardware<a class="headerlink" href="#available-hardware" title="Link to this heading"></a></h2>
+<section id="standalone-platform">
+<h3>Standalone Platform<a class="headerlink" href="#standalone-platform" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>AD936x Device</p></th>
+<th class="head"><p>Simultaneous Tx / Rx</p></th>
+<th class="head"><p>Tx (Ranges)</p></th>
+<th class="head"><p>Rx (Ranges)</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto" target="_blank">ADALM-PLUTO</a></p></td>
+<td><p>1 x AD9363</p></td>
+<td><p>1 x 1</p></td>
+<td><p>1 (325 - 3800 MHz)</p></td>
+<td><p>1 (325 - 3800 MHz)</p></td>
+<td><p>Active Learning Module</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto" target="_blank">ADALM-PLUTO</a> is just the AD9363 in a 1 x
+1 RF configuration with on-board Z7010 FPGA. PlutoSDR is a self contained RF lab
+in your hand, powered through USB. The board includes a narrow tuning range
+balun, which is performance optimized for 2.4 GHz. It is a stand alone unit
+requiring only USB for power and communications; it does not connect to a
+carrier board.</p>
+</section>
+<section id="fmc-hsmc-evaluation-boards">
+<h3>FMC/HSMC Evaluation Boards<a class="headerlink" href="#fmc-hsmc-evaluation-boards" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>AD936x Device</p></th>
+<th class="head"><p>Simultaneous Tx / Rx</p></th>
+<th class="head"><p>Tx (Ranges)</p></th>
+<th class="head"><p>Rx (Ranges)</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Connector</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/arradio/index.html#arradio" target="_blank" title="(in HDL)"><span class="xref std std-ref">ARRADIO</span></a></p></td>
+<td><p>1 x AD9361</p></td>
+<td><p>2 x 2</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>Best RF performance in a narrow range</p></td>
+<td><p>HSMC</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../index.html#fmcomms2"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a></p></td>
+<td><p>1 x AD9361</p></td>
+<td><p>2 x 2</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>Best RF performance in a narrow range</p></td>
+<td><p>FMC-LPC</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">AD-FMCOMMS3-EBZ</span></a></p></td>
+<td><p>1 x AD9361</p></td>
+<td><p>2 x 2</p></td>
+<td><p>2 (70 - 6000 MHz)</p></td>
+<td><p>2 (70 - 6000 MHz)</p></td>
+<td><p>Software test and waveform development</p></td>
+<td><p>FMC-LPC</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms4-ebz" target="_blank">AD-FMCOMMS4-EBZ</a></p></td>
+<td><p>1 x AD9364</p></td>
+<td><p>1 x 1</p></td>
+<td><p>1 (2400 - 2500 MHz), 1 (70 - 6000 MHz)</p></td>
+<td><p>1 (2400 - 2500 MHz), 1 (70 - 6000 MHz)</p></td>
+<td></td>
+<td><p>FMC-LPC</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz" target="_blank">AD-FMCOMMS5-EBZ</a></p></td>
+<td><p>2 x AD9361</p></td>
+<td><p>4 x 4</p></td>
+<td><p>4 (2400 - 2500 MHz), 4 (70 - 6000 MHz)</p></td>
+<td><p>4 (2400 - 2500 MHz), 4 (70 - 6000 MHz)</p></td>
+<td><p>MIMO test platform, can be synchronized in the RF domain</p></td>
+<td><p>2 x FMC-LPC</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These evaluation boards connect to FPGA carrier boards through FMC or HSMC
+connectors.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>While the AD9361 digital interface supports both LVDS and CMOS mode, all
+the FMCOMMS boards have been verified in LVDS mode only. Configuring the
+digital interface in CMOS mode is not tested nor supported on these
+platforms. This is due to the purposefully weak CMOS drivers (to keep the
+noise off the part as much as possible) that are part of the digital
+interface and the large capacitance of the FMC connector.</p>
+<p>If you configure any board to work in CMOS mode, and it does not, this is
+expected. If it does work, it just means the combination of AD9361 board,
+AD9361, connectors, carrier layout and FPGA are barely working.</p>
+<p>CMOS mode is known to work on platforms without connectors between the
+AD936x and the Digital BaseBand device (like PicoZed SDR).</p>
+</div>
+</section>
+<section id="system-on-modules-soms">
+<h3>System on Modules (SOMs)<a class="headerlink" href="#system-on-modules-soms" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Board</p></th>
+<th class="head"><p>AD936x Device</p></th>
+<th class="head"><p>Simultaneous Tx / Rx</p></th>
+<th class="head"><p>Tx (Ranges)</p></th>
+<th class="head"><p>Rx (Ranges)</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv9364-z7020" target="_blank">ADRV9364-Z7020</a></p></td>
+<td><p>1 x AD9364</p></td>
+<td><p>1 x 1</p></td>
+<td><p>1 (2400 - 2500 MHz)</p></td>
+<td><p>1 (2400 - 2500 MHz)</p></td>
+<td><p>Highly Integrated System on Module</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv936x_rfsom" target="_blank">ADRV9361-Z7035</a></p></td>
+<td><p>1 x AD9361</p></td>
+<td><p>2 x 2</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>2 (2400 - 2500 MHz)</p></td>
+<td><p>Highly Integrated System on Module</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>These SOMs integrate the AD936x transceiver with a Zynq FPGA on a single
+module, and connect to dedicated SOM carrier boards.</p>
+<p>A detailed list of things that can be done with these boards can be found in
+each board page:</p>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/arradio/index.html#arradio" target="_blank" title="(in HDL)"><span class="xref std std-ref">ARRADIO</span></a> board, in simple
+terms, is just the AD9361 in a 2 x 2 RF configuration. Hence the features and
+capabilities of the device extend to the board. The board includes a narrow
+tuning range balun, which is performance optimized for 2.4 GHz, and provides
+datasheet specifications. If you want a different range, you can change baluns
+(footprint compatible options are available). This board has an HSMC connector.</p>
+<p>The <a class="reference internal" href="../index.html#fmcomms2"><span class="std std-ref">AD-FMCOMMS2-EBZ</span></a> board, in simple terms, is just the AD9361
+in a 2 x 2 RF configuration. Hence the features and capabilities of the device
+extend to the board. The board includes a narrow tuning range balun, which is
+performance optimized for 2.4 GHz, and provides datasheet specifications. If you
+want a different range, you can change baluns (footprint compatible options are
+available). This board has an FMC connector.</p>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">AD-FMCOMMS3-EBZ</span></a> board, in simple terms, is just the
+AD9361 in a 2 x 2 RF configuration. Hence the features and capabilities of the
+device extend to the board. The board includes a wide tuning range RF
+transformer, which is close to datasheet specifications, but may not meet all
+specs over the entire 70 - 6000 MHz RF range.</p>
+<p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms4-ebz" target="_blank">AD-FMCOMMS4-EBZ</a>
+board, in simple terms, is just the AD9364 in a 1 x 1 RF configuration. Hence
+the features and capabilities of the device extend to the board. The board
+includes both a narrow and wide tuning range balun on a multiplexed
+input/output.</p>
+<p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz" target="_blank">AD-FMCOMMS5-EBZ</a>
+board, in simple terms, is two AD9361s in a 4 x 4 RF configuration, which
+demonstrates how to synchronize multiple devices together. The features and
+capabilities of the device extend to the board. The board includes both narrow
+and wide tuning range baluns on different SMA connectors.</p>
+<p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv9364-z7020" target="_blank">ADRV9364-Z7020</a>
+board, in simple terms, is just the AD9364 in a 1 x 1 RF configuration with
+on-board Z7020 FPGA. Hence the features and capabilities of the device extend to
+the board. The board includes a narrow tuning range balun, which is performance
+optimized for 2.4 GHz. If you want a different range, you can change baluns
+(footprint compatible options are available). This board has four FCI 0.8mm
+connectors.</p>
+<p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/adrv936x_rfsom" target="_blank">ADRV9361-Z7035</a>
+board, in simple terms, is just the AD9361 in a 2 x 2 RF configuration with
+on-board Z7035 FPGA. Hence the features and capabilities of the device extend to
+the board. The board includes a narrow tuning range balun, which is performance
+optimized for 2.4 GHz. If you want a different range, you can change baluns
+(footprint compatible options are available). This board has four FCI 0.8mm
+connectors.</p>
+</section>
+</section>
+<section id="carrier-boards">
+<h2>Carrier Boards<a class="headerlink" href="#carrier-boards" title="Link to this heading"></a></h2>
+<section id="som-carrier-boards">
+<h3>SOM Carrier Boards<a class="headerlink" href="#som-carrier-boards" title="Link to this heading"></a></h3>
+<p>The following carrier boards are compatible with the ADRV9364-Z7020 and
+ADRV9361-Z7035 System on Modules:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Carrier Board</p></th>
+<th class="head"><p>ADRV9364-Z7020</p></th>
+<th class="head"><p>ADRV9361-Z7035</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/fmc" target="_blank">FMC Carrier</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/brk" target="_blank">Breakout Board</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/pcie" target="_blank">PCIe Carrier</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf" target="_blank">PackRF Carrier</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="fpga-carrier-boards">
+<h3>FPGA Carrier Boards<a class="headerlink" href="#fpga-carrier-boards" title="Link to this heading"></a></h3>
+<p>The following FPGA development boards can be used as carriers for the
+FMC/HSMC evaluation boards:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Carrier Board</p></th>
+<th class="head"><p>FMCOMMS2/3/4</p></th>
+<th class="head"><p>FMCOMMS5</p></th>
+<th class="head"><p>Arradio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a> *</p></td>
+<td><p>Yes</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a> *</p></td>
+<td><p>Yes</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></td>
+<td><p>Yes</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.arrow.com/en/products/sockit/arrow-development-tools" target="_blank">SoCKit</a></p></td>
+<td></td>
+<td></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Legend</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> removed; last release that supports this project on this carrier is
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2023_r2/projects/fmcomms2/kc705" target="_blank">hdl_2023_r2</a>
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2023_r2/projects/fmcomms2/vc707" target="_blank">hdl_2023_r2</a></p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>The items needed to get started are detailed in the
+<a class="reference internal" href="../prerequisites.html#fmcomms2-prerequisites"><span class="std std-ref">prerequisites</span></a>, and the
+<a class="reference internal" href="../quickstart/index.html#fmcomms2-quickstart"><span class="std std-ref">quickstart</span></a>. They detail supported carriers,
+external equipment requirements and how to set the boot switches.</p>
+<p>Once you have a working platform, you may be interested in investigating:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html#fmcomms2-common-ad9361"><span class="std std-ref">Introduction</span></a> to the
+AD9361/AD9364</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fmcomms2/software/filters/filters.html#fmcomms2-software-filters" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Tuning</span></a> the
+AD9361/AD9364 FIR Filters for your application</p></li>
+<li><p>How to
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fmcomms2/software/simrf.html#fmcomms2-software-simrf" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">simulate</span></a> the
+part with
+<a class="icon link reference external" href="https://www.mathworks.com/hardware-support/analog-devices-rf-transceivers.html" target="_blank">MathWorks RF Blockset (formerly SimRF)</a>,
+to see if it is appropriate for your application</p></li>
+<li><p>Measuring actual RF performance, either with the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope</span></a>,
+or with test equipment</p></li>
+<li><p>How the part performs in specific algorithms, streaming data to
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink" target="_blank">MATLAB, Simulink</a>,
+or
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/gnuradio.html#software-gnuradio" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">GNU Radio</span></a></p></li>
+<li><p>How the <a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9361.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">Linux</span></a> or
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions" target="_blank">no-OS</a>
+driver works, or can be integrated into your system</p></li>
+<li><p>Create your own
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/matlab/transceiver-toolbox/index.html#matlab-transceiver-toolbox" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">custom HDL from Simulink</span></a>
+and insert it into the ADI design to see how it works</p></li>
+<li><p>Modifying the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/fpga/docs/hdl" target="_blank">ADI provided HDL</a></p></li>
+<li><p>Tuning other parameters, like AGC for your application/waveform</p></li>
+<li><p>Review a real world example using the part (ADS-B)
+<a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Part 1</a>,
+<a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-10/four-step-sdr-02.html" target="_blank">Part 2</a>,
+<a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-11/four-step-sdr-03.html" target="_blank">Part 3</a>
+and
+<a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-12/four-step-sdr-04.html" target="_blank">Part 4</a></p></li>
+<li><p>Look at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/fmcomms2/hardware/hardware.html#fmcomms2-hardware" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">FMCOMMS2</span></a>,
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">FMCOMMS3</span></a>,
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms4-ebz/hardware" target="_blank">FMCOMMS4</a>,
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/hardware" target="_blank">FMCOMMS5</a>
+schematics and layout to see how to get the best performance in your
+hardware design.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Additional Documentation</a>
+    <a href="ad9361_ad9363_ad9364_general_description.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9361, AD9364 and AD9363</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

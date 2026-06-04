@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is work in progress, and is not yet 100% complete." name="description" />
+
+    <title>AD-FMCOMMS2/3/4 Datafiles &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Help and Support for ADI FMC Cards &amp; RF SoMs" href="../help_and_support.html" />
+    <link rel="prev" title="AD-FMCOMMS2/3/4/5 Basic IQ Datafiles" href="basic_iq_datafiles.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS2/3/4 Datafiles</a><ul>
+<li><a class="reference internal" href="#data-transfer">Data transfer</a></li>
+<li><a class="reference internal" href="#qpsk">QPSK</a><ul>
+<li><a class="reference internal" href="#qpsk-without-pulse-shaping">QPSK without Pulse Shaping</a><ul>
+<li><a class="reference internal" href="#model">Model</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#qpsk-with-pulse-shaping">QPSK with Pulse Shaping</a><ul>
+<li><a class="reference internal" href="#id1">Model</a></li>
+<li><a class="reference internal" href="#id3">Data</a></li>
+<li><a class="reference internal" href="#data-verification">Data Verification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#qam">16-QAM</a><ul>
+<li><a class="reference internal" href="#id5">Model</a></li>
+<li><a class="reference internal" href="#id6">Data</a></li>
+<li><a class="reference internal" href="#id7">Data Verification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#msk">MSK</a><ul>
+<li><a class="reference internal" href="#id9">Model</a></li>
+<li><a class="reference internal" href="#id10">Data</a></li>
+<li><a class="reference internal" href="#id11">Data Verification</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lte">LTE</a><ul>
+<li><a class="reference internal" href="#id12">Model</a></li>
+<li><a class="reference internal" href="#id14">Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms2-3-4-datafiles">
+<span id="fmcomms2-common-datafiles"></span><h1>AD-FMCOMMS2/3/4 Datafiles<a class="headerlink" href="#ad-fmcomms2-3-4-datafiles" title="Link to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This is work in progress, and is not yet 100% complete.</p>
+</div>
+<p>In this section, we provide the reference data files of several frequently used
+digital baseband modulation schemes and their corresponding Simulink models.
+With these data files, you are ready to transmit them using the AD9361 found on
+the AD-FMCOMMS2-EBZ / AD-FMCOMMS3-EBZ and test your board. By changing the given
+Simulink models, you can easily generate your own data files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to run the models on this page, your MATLAB license needs to include
+the following components:</p>
+<ul class="simple">
+<li><p>MATLAB Version 8.2</p></li>
+<li><p>Simulink Version 8.2</p></li>
+<li><p>Communications System Toolbox Version 5.5</p></li>
+<li><p>DSP System Toolbox Version 8.5</p></li>
+</ul>
+</div>
+<section id="data-transfer">
+<h2>Data transfer<a class="headerlink" href="#data-transfer" title="Link to this heading"></a></h2>
+<p>Once files have been created by MATLAB/Simulink, they can be
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">transferred to the target</span></a>.</p>
+</section>
+<section id="qpsk">
+<h2>QPSK<a class="headerlink" href="#qpsk" title="Link to this heading"></a></h2>
+<p>PSK is one type of the phase modulation (PM) schemes. In this section, two
+flavors of QPSK data are generated, one with raised cosine pulse shaping
+filters, and the other one without.</p>
+<p>Since we would like to transmit the QPSK at a sample rate of 20 M Symbols/s with
+AD9361, the sample time specified in “Random-Integer Generator” block is
+1/(20e6). The users can specify their own sample rate.</p>
+<section id="qpsk-without-pulse-shaping">
+<h3>QPSK without Pulse Shaping<a class="headerlink" href="#qpsk-without-pulse-shaping" title="Link to this heading"></a></h3>
+<p>The figure below shows a QPSK transmission model without any pulse shaping
+filter. Since there are two independent channels on the Tx paths, we model both
+of them. However, for simplicity, we make them identical. The transmitted
+signals are saved to workspace.</p>
+<section id="model">
+<h4>Model<a class="headerlink" href="#model" title="Link to this heading"></a></h4>
+<img alt="QPSKnofilt.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsknofilt.png" />
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpsknofilt_model.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpsknofilt_model.zip</span></code></a></p></li>
+</ul>
+</div>
+<p>In order to observe the transmitted spectrum, we use a “Spectrum Analyzer”
+block. Since there is no pulse shaping on the Tx path, observe how
+rectangular-pulse QPSK symbols occupy the entire signal bandwidth in the
+frequency domain, potentially disturbing adjacent channels in the RF spectrum.
+Clearly this is not an efficient use of signal bandwidth.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/resultnofilt.png"><img alt="resultnofilt.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/resultnofilt.png" width="900" />
+</a>
+</section>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once the transmitted signals are in workspace, we use the following two lines
+to write them to a text file:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">newdata</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">I1</span><span class="w"> </span><span class="n">Q1</span><span class="w"> </span><span class="n">I2</span><span class="w"> </span><span class="n">Q2</span><span class="p">];</span>
+
+<span class="n">dlmwrite</span><span class="p">(</span><span class="s">&#39;qpsk.txt&#39;</span><span class="p">,</span><span class="n">newdata</span><span class="p">,</span><span class="s">&#39;,&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You open this text file and manually add the word “TEXT” at the very
+beginning, and then save the file.</p>
+</div>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the generated data from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpsknofilt_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpsknofilt_data.zip</span></code></a></p></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>For each line, the data is in the order of [I1, Q1, I2, Q2].</p></li>
+<li><p>The first line must be the word “TEXT”.</p></li>
+<li><p>In Windows, you are suggested to open the txt file using WordPad to show
+the line breaks properly.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="qpsk-with-pulse-shaping">
+<h3>QPSK with Pulse Shaping<a class="headerlink" href="#qpsk-with-pulse-shaping" title="Link to this heading"></a></h3>
+<p>The QPSK symbols observed in the previous model cannot be transmitted over the
+air as perfect rectangular pulses, which would require infinite signal
+bandwidth. They must first be smoothed in the time domain, in order to limit the
+signal bandwidth in the frequency domain. Consequently, the first stage of the
+Tx signal chain is often a pulse-shaping filter, followed by subsequent stages
+of interpolation filters to increase the sampling rate to the DAC.</p>
+<p>In this section, we will employ a root-raised cosine pulse-shaping filter to
+smooth the QPSK pulses in the time domain, limiting the signal bandwidth to 10
+MHz in the frequency domain.</p>
+<section id="id1">
+<h4>Model<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<p>The figure below shows a QPSK transmission model with the pulse shaping filters.
+Since pulse shaping filters are often distributed as a matched pair between
+transmitter and receiver, we use the filter shape of ‘Square root’ <a class="footnote-reference brackets" href="#id15" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpskwithfilter.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpskwithfilter.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpskwithfilter.png" width="900" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpskwithfilt_model.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpskwithfilt_model.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>When the ‘square root raised cosine’ response of the transmit filter is
+convolved in the time domain with that of the receive filter, the aggregate
+response is a ‘raised cosine’.</p></li>
+<li><p>It is the ‘raised cosine’ that has the desirable quality of mitigating
+inter-symbol interference in the time domain.</p></li>
+</ul>
+</div>
+<p>In order to observe the effect of the pulse shaping filters, we use a “Spectrum
+Analyzer” block, as well as several “Constellation” blocks.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/resultwithfilt.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/resultwithfilt.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/resultwithfilt.png" width="900" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have the following observations:</p>
+<ul class="simple">
+<li><p>The transmitted signal bandwidth is constrained to 10 MHz in the frequency
+domain.</p></li>
+<li><p>Given the transmit filter, if there is no matched receive filter, the
+received symbols are completely noise (refer to “Rx Without Receive
+Filter”).</p></li>
+<li><p>Given the transmit filter, if there exists matched receive filter, the
+received symbols are perfect (refer to “Rx With Receive Filter”).</p></li>
+</ul>
+</div>
+</section>
+<section id="id3">
+<h4>Data<a class="headerlink" href="#id3" title="Link to this heading"></a></h4>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the generated data from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpskwithfilt_txt.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpskwithfilt_txt.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is 30.72 MSPS.</p>
+<p>It is in the same format as the data in previous section.</p>
+</div>
+</section>
+<section id="data-verification">
+<h4>Data Verification<a class="headerlink" href="#data-verification" title="Link to this heading"></a></h4>
+<p>Before you look at the IIO Oscilloscope <a class="footnote-reference brackets" href="#id16" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, make sure the sampling rate of ADC
+and DAC is set at 30.72 MSPS, as shown in the figure below. Otherwise, it may
+incur some problems. In this panel, there are quite a few other parameters you
+can tune (DCXO, RF Bandwidth, LO Frequency), in order to get the optimal
+transmission and reception performance for your system.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/iiosetting_new.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/iiosetting_new.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/iiosetting_new.png" width="500" />
+</a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The DCXO setting can be different from board to board. You are suggested to
+find a proper setting using signal generator and spectrum analyzer in the
+lab.</p>
+</div>
+<p>Since there is no match filter on AD9361 receive path, the data obtained from
+AD9361 receiver side does not show the constellation of QPSK clearly. Therefore,
+by simply looking at the ADI IIO Oscilloscope, it is difficult to see whether
+the received data is valid or not, as shown in the figure below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsk_osc_new.png"><img alt="qpsk_osc_new.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsk_osc_new.png" width="500" />
+</a>
+<p>However, with the <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">data</span></code> function of the IIO application, we can now save
+the received data in MATLAB compatible format (.mat file), let the data pass
+through a match filter in Simulink, and then verify whether the received data is
+a QPSK or not. The <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">data</span></code> function can be accessed via “File”-“Save As”,
+as shown in the figure below. There are several data formats available. Since we
+want the data to be used in MATLAB, we will pick up the .mat format.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/savedata.png"><img alt="savedata.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/savedata.png" width="450" />
+</a>
+<p>Given the received data, we can now proceed to the Simulink receiver model to
+verify the data. After you launch MATLAB and the receiver model
+<code class="docutils literal notranslate"><span class="pre">qpsk_receiver.slx</span></code>, the next step is to load the .mat file in workspace,
+because the <code class="docutils literal notranslate"><span class="pre">Signal</span> <span class="pre">From</span> <span class="pre">Workspace</span></code> blocks use the data as input. In this
+model, the data rate is the same as the generated data rate (30.72 MSPS), and
+the receive filter is the match of the transmit filter. When looking at the IIO
+scope, we found the constellation of the received signal from the AD9361 shows a
+rotation compared to the transmitted signal, so a <code class="docutils literal notranslate"><span class="pre">Phase/Frequency</span> <span class="pre">Offset</span></code>
+block is employed here to compensate for the phase offset. The value of the
+phase offset is calculated in Simulink Callbacks. According to the constellation
+plot below, it is very clear that the received data is a QPSK, so the AD9361
+Tx/Rx chain gets verified.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsk_waveform_verify_new.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsk_waveform_verify_new.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qpsk_waveform_verify_new.png" width="450" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the saved mat data file from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpskwithfilt_mat.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpskwithfilt_mat.zip</span></code></a></p></li>
+</ul>
+<p>You can download the receiver model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qpsk_receiver_new.zip"><code class="xref download docutils literal notranslate"><span class="pre">qpsk_receiver_new.zip</span></code></a></p></li>
+</ul>
+<p>Make sure you load the mat data file in the workspace first. Otherwise, the
+model will not run.</p>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code> and the phase offset is
+defined in the parameter <code class="docutils literal notranslate"><span class="pre">PhaseOffset</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A few tips for verification, which can be applied to the other modulation
+cases:</p>
+<ul class="simple">
+<li><p>Make the data rate consistent in data generation and receiver.</p></li>
+<li><p>Set the IIO parameters properly, such as ADC and DAC sample rate.</p></li>
+<li><p>Compensate for the phase offset occurred in AD9361.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section id="qam">
+<h2>16-QAM<a class="headerlink" href="#qam" title="Link to this heading"></a></h2>
+<p>QAM is one type of the amplitude modulation (AM) schemes. In this section, we
+use “Rectangular QAM Modulator Baseband” block to modulate the input random
+integer. If you would like a lower or higher order of QAM modulation, you only
+need to change the “M-ary number” of this block.</p>
+<section id="id5">
+<h3>Model<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>The figure below shows a 16-QAM transmission model with the square root raised
+cosine pulse shaping filters. In order to observe the effect of the pulse
+shaping filters, we use a “Spectrum Analyzer” block, as well as several
+“Constellation” blocks on one of the channels.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/16qam.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/16qam.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/16qam.png" width="900" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qam16_model.zip"><code class="xref download docutils literal notranslate"><span class="pre">qam16_model.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code>.</p>
+</div>
+</section>
+<section id="id6">
+<h3>Data<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the generated 16-QAM data from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qam16_20mdata.zip"><code class="xref download docutils literal notranslate"><span class="pre">qam16_20mdata.zip</span></code></a></p></li>
+</ul>
+<p>It is in the same format as the data in previous sections and the data rate
+is 20 M.</p>
+</div>
+</section>
+<section id="id7">
+<h3>Data Verification<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>Since there is no match filter on AD9361 receive path, the data obtained from
+AD9361 receiver side does not show a clear constellation of 16-QAM. Actually,
+since the order of 16-QAM is higher than that of QPSK in the previous section,
+the constellation here is even more noisy compared to QPSK, as shown in the
+figure below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qam16.png"><img alt="qam16.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qam16.png" width="600" />
+</a>
+<p>However, with the <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">data</span></code> function of the IIO application, we can now save
+the received data in MATLAB compatible format (.mat file), let the data pass
+through a match filter in Simulink, and then verify whether the received data is
+a 16-QAM or not. Before you save the data, make sure the sampling rate of ADC
+and DAC is set properly. In this example, we set the sample rate of ADC and DAC
+5 times of the generated data rate (20 MSPS), which is 100 MSPS.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the saved mat data file from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qam16_20.zip"><code class="xref download docutils literal notranslate"><span class="pre">qam16_20.zip</span></code></a></p></li>
+</ul>
+</div>
+<p>Given the received data, we can now proceed to the Simulink receiver model to
+verify the data. After you launch MATLAB and the receiver model
+<code class="docutils literal notranslate"><span class="pre">qam16_receiver.slx</span></code>, the next step is to load the .mat file in workspace,
+because the <code class="docutils literal notranslate"><span class="pre">Signal</span> <span class="pre">From</span> <span class="pre">Workspace</span></code> blocks use the data as input. In this
+model, the data rate is the same as the generated data rate (20 MSPS), and the
+receive filter is the match of the transmit filter. When looking at the IIO
+scope, we found the received signal from AD9361 shows a 45 degree rotation
+compared to the transmitted signal, so a <code class="docutils literal notranslate"><span class="pre">Phase/Frequency</span> <span class="pre">Offset</span></code> block is
+employed here to compensate for the phase offset. According to the constellation
+plot, it is very clear that the received data is a 16-QAM, so the AD9361 Tx/Rx
+chain gets verified.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qam16_verified.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qam16_verified.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qam16_verified.png" width="700" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the receiver model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/qam16_receiver.zip"><code class="xref download docutils literal notranslate"><span class="pre">qam16_receiver.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code> and the phase offset is
+defined in the parameter <code class="docutils literal notranslate"><span class="pre">PhaseOffset</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="msk">
+<h2>MSK<a class="headerlink" href="#msk" title="Link to this heading"></a></h2>
+<p>MSK stands for minimum shift keying. It is one type of the continuous phase
+modulation (CPM) schemes <a class="footnote-reference brackets" href="#id17" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. In this section, we use “MSK Modulator Baseband”
+block to modulate the input random binary bits. In other words, the input is
+either 0 or 1.</p>
+<section id="id9">
+<h3>Model<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<p>The figure below shows a MSK transmission model with the square root raised
+cosine pulse shaping filters. In order to observe the effect of the pulse
+shaping filters, we use a “Spectrum Analyzer” block, as well as several
+“Constellation” blocks on one of the channels.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk.png" width="900" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/msk_model.zip"><code class="xref download docutils literal notranslate"><span class="pre">msk_model.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code>.</p>
+</div>
+</section>
+<section id="id10">
+<h3>Data<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the generated MSK data from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/msk_20mdata.zip"><code class="xref download docutils literal notranslate"><span class="pre">msk_20mdata.zip</span></code></a></p></li>
+</ul>
+<p>It is in the same format as the data in previous sections and the data rate
+is 20 M.</p>
+</div>
+</section>
+<section id="id11">
+<h3>Data Verification<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>Since there is no match filter on AD9361 receive path, the data obtained from
+AD9361 receiver side does not show a clear constellation of MSK signals, as
+shown in the figure below. However, it matches the “Rx Without Receive Filter”
+plot from Simulink.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk_osc.png"><img alt="msk_osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk_osc.png" width="600" />
+</a>
+<p>With the <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">data</span></code> function of the IIO application, we can now save the
+received data in MATLAB compatible format (.mat file), let the data pass through
+a match filter in Simulink, and then verify whether the received data is a MSK
+or not. Before you save the data, make sure the sampling rate of ADC and DAC is
+set properly. In this example, we set the sample rate of ADC and DAC 5 times of
+the generated data rate (20 MSPS), which is 100 MSPS.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the saved mat data file from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/msk_20.zip"><code class="xref download docutils literal notranslate"><span class="pre">msk_20.zip</span></code></a></p></li>
+</ul>
+</div>
+<p>Given the received data, we can now proceed to the Simulink receiver model to
+verify the data. After you launch MATLAB and the receiver model
+<code class="docutils literal notranslate"><span class="pre">msk_receiver.slx</span></code>, the next step is to load the .mat file in workspace,
+because the <code class="docutils literal notranslate"><span class="pre">Signal</span> <span class="pre">From</span> <span class="pre">Workspace</span></code> blocks use the data as input. In this
+model, the data rate is the same as the generated data rate (20 MSPS), and the
+receive filter is the match of the transmit filter. According to the
+constellation plot, it is very clear that the received data is a MSK, so the
+AD9361 Tx/Rx chain gets verified.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk_receiver.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk_receiver.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/msk_receiver.png" width="700" />
+</a>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the receiver model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/msk_receiver.zip"><code class="xref download docutils literal notranslate"><span class="pre">msk_receiver.zip</span></code></a></p></li>
+</ul>
+<p>The data rate is defined in the parameter <code class="docutils literal notranslate"><span class="pre">Fs</span></code> and the phase offset is
+defined in the parameter <code class="docutils literal notranslate"><span class="pre">PhaseOffset</span></code>. In this example, there is no
+rotation shown by the received signal, so <code class="docutils literal notranslate"><span class="pre">PhaseOffset=0</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="lte">
+<h2>LTE<a class="headerlink" href="#lte" title="Link to this heading"></a></h2>
+<p>Besides the data generated by the basic modulation schemes, it is also possible
+to transmit the data from some more advanced wireless communication standards.
+In this section, we will generate some LTE (Long Term Evolution) data from an
+existing Simulink example.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>You can open the example by typing “LTEPDSCHExample” in the command window.</p></li>
+<li><p>You must have Communications System Toolbox license in order to run this
+example.</p></li>
+</ul>
+</div>
+<section id="id12">
+<h3>Model<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p>The figure below shows a LTE example according to the specifications developed
+by the Third Generation Partnership Project (3GPP). It highlights only the
+downlink physical channel (PDSCH) processing. In order to obtain the transmitted
+data, we add a “Signal to Workspace” block on the transmitter side (circled in
+red). By double clicking the “Model Parameters” block, we can change the model
+settings such as channel bandwidth, antenna configuration and etc.</p>
+<p>Since LTE is a sophisticated standard, you are encouraged to read the Help
+Document of this example and its related references to get more information
+<a class="footnote-reference brackets" href="#id18" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/lte.png"><img alt="Subsystem diagram" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/lte.png" width="900" />
+</a>
+<p>After you run the model, the transmitted data named “Tx” will be saved in
+workspace. Since it is a Nx2 complex vector, we need to do some processing on it
+to make the data format compatible with AD9361 transmission.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model and the post-processing m-file from
+below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/lte_model.zip"><code class="xref download docutils literal notranslate"><span class="pre">lte_model.zip</span></code></a></p></li>
+</ul>
+</div>
+<p>When the data is transmitted and received by real-world hardware, like AD9361,
+it is difficult to observe the clear constellation without proper
+synchronization techniques. However, even with the basic settings, you are still
+expected to observe the transmit and receive spectrum, which is similar to the
+following:</p>
+<img alt="LTEspectrum.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/ltespectrum.png" />
+<p>Note that the bandwidth shown in the spectrum is approximately 10 MHz, which is
+consistent with the “Channel bandwidth” setting of the model parameters.</p>
+</section>
+<section id="id14">
+<h3>Data<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the generated LTE data from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/lte_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">lte_data.zip</span></code></a></p></li>
+</ul>
+<p>It is in the same format as the data in previous sections.</p>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Root-raised-cosine_filter" target="_blank">Root-raised-cosine filter</a></p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">ADI IIO Oscilloscope</span></a></p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">3</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Minimum-shift_keying" target="_blank">Minimum-shift keying</a></p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">4</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.mathworks.com/help/comm/examples/lte-phy-downlink-with-spatial-multiplexing.html" target="_blank">LTE PHY Downlink with Spatial Multiplexing</a></p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="basic_iq_datafiles.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS2/3/4/5 Basic IQ Datafiles</a>
+    <a href="../help_and_support.html" title="Next document (Alt+Shift+RightArrow)" class="next">Help and Support for ADI FMC Cards &amp; RF SoMs</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

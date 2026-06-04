@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The production testing is quite simple. Since each board has been completely characterized, and we know the layout is good, we can just look for gross errors." name="description" />
+
+    <title>Production testing of the AD-FMCOMMS2 / AD-FMCOMMS3 / AD-FMCOMMS4 / AD-FMCOMMS5 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS2/3/4/5 Basic IQ Datafiles" href="basic_iq_datafiles.html" />
+    <link rel="prev" title="I/Q Correction" href="iq_correction.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Production testing of the AD-FMCOMMS2 / AD-FMCOMMS3 / AD-FMCOMMS4 / AD-FMCOMMS5</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
+<li><a class="reference internal" href="#required-software">Required software</a></li>
+<li><a class="reference internal" href="#required-setup">Required setup</a></li>
+<li><a class="reference internal" href="#test-process">Test process</a><ul>
+<li><a class="reference internal" href="#rf-loopback-cable-placement">RF loopback cable placement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="production-testing-of-the-ad-fmcomms2-ad-fmcomms3-ad-fmcomms4-ad-fmcomms5">
+<span id="fmcomms2-common-testing"></span><h1>Production testing of the AD-FMCOMMS2 / AD-FMCOMMS3 / AD-FMCOMMS4 / AD-FMCOMMS5<a class="headerlink" href="#production-testing-of-the-ad-fmcomms2-ad-fmcomms3-ad-fmcomms4-ad-fmcomms5" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The production testing is quite simple. Since each board has been completely
+characterized, and we know the layout is good, we can just look for gross
+errors.</p>
+<p>There are multiple test files for the different boards (all in GitHub):</p>
+<ul class="simple">
+<li><p>test_fmcomms2-3_prod: used to test AD-FMCOMMS2-EBZ and AD-FMCOMMS3-EBZ</p></li>
+<li><p>test_fmcomms4_prod: used to test AD-FMCOMMS4-EBZ</p></li>
+<li><p>test_fmcomms5_prod: used to test AD-FMCOMMS5-EBZ</p></li>
+</ul>
+<p>The tests and test parameters are in the
+<strong>pyadi-iio/tests/test_fmcomms2-3_prod.py</strong> file. This is broken down into
+the following sections:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Temperature</span>
+<span class="o">-</span> <span class="n">Voltage</span>
+<span class="o">-</span> <span class="n">RF</span>
+<span class="o">-</span> <span class="n">Peaks</span>
+<span class="o">-</span> <span class="n">DCXO</span>
+<span class="o">-</span> <span class="n">Loopback</span>
+</pre></div>
+</div>
+</section>
+<section id="required-hardware">
+<h2>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
+<li><p>Raspberry Pi4</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS2-EBZ" target="_blank">AD-FMCOMMS2-EBZ</a> or <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS3-EBZ" target="_blank">AD-FMCOMMS3-EBZ</a> or
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> or <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS5-EBZ" target="_blank">AD-FMCOMMS5-EBZ</a> card</p></li>
+<li><p>RF loopback cables (2x for FMCOMMS2/3/4, 4x for FMCOMMS5)</p></li>
+<li><p>External monitor connected to the Raspberry Pi via micro HDMI</p></li>
+<li><p>Keyboard and mouse (with USB hub if they aren’t part of a combo
+device)</p></li>
+<li><p>Ethernet cable (needs to be plugged into the internet)</p></li>
+<li><p>QR code scanner</p></li>
+<li><p>For the FMCOMMS2/3/4: Frequency counter with a USB-GPIB port (tested
+with an HAMEG Instruments, HM8123,5.12) and with a probe and grounding
+clip attachment</p></li>
+</ul>
+</section>
+<section id="required-software">
+<h2>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<p><strong>Creating a ZC706 carrier SD test card</strong></p>
+<ul class="simple">
+<li><p>First, write the latest available SD card image found to a spare card
+and prepare the card to boot into Linux.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Different boards use different test scripts as seen in the following
+mapping:</p>
+<ul class="simple">
+<li><p>test_fmcomms2-3_prod.py - FMCOMMS2/FMCOMMS3</p></li>
+<li><p>test_fmcomms4_prod.py - FMCOMMS4</p></li>
+<li><p>test_fmcomms5_prod.py - FMCOMMS5</p></li>
+</ul>
+</div>
+<p><strong>Creating a Raspberry Pi SD test card</strong></p>
+<ul class="simple">
+<li><p>The SD image used is based on Raspbian with desktop.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To write an image on a SD card you can follow the instructions
+<a class="icon link reference external" href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Installing Pi Images</a>.</p>
+</div>
+</section>
+<section id="required-setup">
+<h2>Required setup<a class="headerlink" href="#required-setup" title="Link to this heading"></a></h2>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/setup_1.1.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/setup_1.1.png" />
+<ol class="arabic simple">
+<li><p>Attach the RF loopback cables to the board. The images at the bottom
+of the page show the correct placement for each type of AD-FMCOMMS
+board.</p></li>
+<li><p>Insert the SD card into the carrier board.</p></li>
+<li><p>Insert the FMCOMMS board onto the carrier.</p></li>
+<li><p>Connect the HDMI cable to Raspberry Pi.</p></li>
+<li><p>Connect USB keyboard to Raspberry Pi.</p></li>
+<li><p>Insert SD card into Raspberry Pi.</p></li>
+<li><p>Connect Ethernet cable between Raspberry Pi and the carrier.</p></li>
+<li><p>Connect the scanner to Raspberry Pi.</p></li>
+<li><p>Connect the frequency counter to Raspberry Pi.</p></li>
+<li><p>Power the carrier board and Raspberry Pi.</p></li>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/picture2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/picture2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Test setup overview</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/frequency_counter.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/frequency_counter.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Frequency counter connection</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before testing the board, please make sure to add a QR code sticker
+with the serial number as shown below.</p>
+</div>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qr_code.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qr_code.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/qr_code.png" width="600" />
+</a>
+<p>Make sure to connect to your WIFI Network before testing. You can exit
+the test window by pressing CTRL+C in order to access the connection.
+Reboot the system in order to return to the test window.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/wifi_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/wifi_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/wifi_connection.png" width="600" />
+</a>
+</section>
+<section id="test-process">
+<h2>Test process<a class="headerlink" href="#test-process" title="Link to this heading"></a></h2>
+<p>Firstly, make sure all the required steps from the setup explained above
+are completed. Once the setup is ready, testing should be done using the
+following steps:</p>
+<ul class="simple">
+<li><p>Power the carrier board and the Raspberry Pi. The following screen
+will appear once the system has booted.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_1.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_1.png" />
+<ul class="simple">
+<li><p>The testing sequence can be started by selecting one of the menu
+items. <strong>In order to start testing, an Ethernet cable should be
+connected between Raspberry Pi and DUT</strong>.</p></li>
+<li><p>Start the DCXO test by writing the following command in the terminal: 1</p></li>
+<li><p>At the beginning of every test, the connection with DUT is checked.
+If the connection is correctly established, the following message will
+be printed.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_2.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_2.png" />
+<ul class="simple">
+<li><p>Use the scanner to scan the QR code on the board</p></li>
+<li><p>If the DCXO test has been completed, the PASSED message will appear
+on the screen</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_4.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_4.png" />
+<ul class="simple">
+<li><p>Secondly, start the FMCOMMS4 test by writing the following command in the
+terminal: 2</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_5.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_5.png" />
+<ul class="simple">
+<li><p>In the beginning, scan the QR code on the board</p></li>
+<li><p>If connections are OK, the test will begin. Below is an example of a
+test running:</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_6.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_6.png" />
+<ul class="simple">
+<li><p>If the FMCOMMS test has been completed, the PASSED message will be
+printed on the screen. This means that the DUT passed all the
+assigned tests.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_7.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_7.png" />
+<ul class="simple">
+<li><p>If one of the tests failed, the FAILED message will be printed as in
+the screen capture below:</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_8.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/test_8.png" />
+<ul class="simple">
+<li><p>In case of a failed test, the tester can repeat the test immediately.
+The test can be repeated an undefined number of times.</p></li>
+<li><p>After completing the test, power off the carrier by typing 4. After
+several seconds, power off the carrier board using the physical
+switch.</p></li>
+<li><p>In order to power off Linux, please type 3 and enter.</p></li>
+<li><p>Remove the FMCOMMS card and previously used board. Return to step 1
+with the next board.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When testing is finished, ZC706 and the Raspberry Pi should always be
+powered off from terminal before power is unplugged, otherwise the SD
+cards can be corrupted. First select item 4 to power off the carrier.
+After a few seconds, turn off the switch. After the ZC706 is off, the
+Raspberry Pi can be turned off selecting item 3.</p>
+</div>
+<section id="rf-loopback-cable-placement">
+<h3>RF loopback cable placement<a class="headerlink" href="#rf-loopback-cable-placement" title="Link to this heading"></a></h3>
+<div class="grid grid-flex" style="grid-template-columns: 33% 33% 33%;"><figure class="align-default" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms3-loopback.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms3-loopback.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">FMCOMMS2/3</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms4-loopback.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms4-loopback.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">FMCOMMS4</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms5-loopback.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms5-loopback.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">FMCOMMS5</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="iq_correction.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">I/Q Correction</a>
+    <a href="basic_iq_datafiles.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS2/3/4/5 Basic IQ Datafiles</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

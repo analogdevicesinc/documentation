@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides quick instructions on how to setup the AD-FMCOMMS2-EBZ or AD-FMCOMMS3-EBZ or AD-FMCOMMS4-EBZ on:" name="description" />
+
+    <title>ZED Quickstart &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Microblaze Quickstart (Obsolete)" href="microblaze.html" />
+    <link rel="prev" title="ZC702 Quickstart" href="zc702.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ZED Quickstart</a><ul>
+<li><a class="reference internal" href="#using-linux-as-software">Using Linux as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a><ul>
+<li><a class="reference internal" href="#ad-fmcomms2-ebz-zed">AD-FMCOMMS2-EBZ/ZED</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
+<li><a class="reference internal" href="#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="../common/index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../common/introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../common/datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html">On ZC702</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="zed-quickstart">
+<span id="fmcomms2-quickstart-zed"></span><h1>ZED Quickstart<a class="headerlink" href="#zed-quickstart" title="Link to this heading"></a></h1>
+<p>This guide provides quick instructions on how to setup the
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS2-EBZ" target="_blank">AD-FMCOMMS2-EBZ</a> or <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS3-EBZ" target="_blank">AD-FMCOMMS3-EBZ</a> or <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+FMC LPC</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/ZedBoard.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/ZedBoard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/images/ZedBoard.png" width="800" />
+</a>
+<section id="using-linux-as-software">
+<h2>Using Linux as software<a class="headerlink" href="#using-linux-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">uImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code></p></li>
+</ul>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul class="simple">
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html#linux-kernel-zynq" target="_blank" title="(in System Level Documentation)"><span>Build Zynq Linux kernel and devicetree</span></a> (the only difference compared to the ZynqMP is
+that instead of running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">adi_zynqmp_defconfig</span></code>,
+you must run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">zynq_xcomm_adv7511_defconfig</span></code>)</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span>FMCOMMS2/3/4 HDL Project</span></a> build documentation. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+<section id="required-software">
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>SD Card 16GB imaged with <a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper</span></a>
+(check out that guide on how to do it, then come back to this section)</p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a>
+FPGA board and its power supply (12V)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS2-EBZ" target="_blank">AD-FMCOMMS2-EBZ</a> / <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS3-EBZ" target="_blank">AD-FMCOMMS3-EBZ</a> / <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS4-EBZ" target="_blank">AD-FMCOMMS4-EBZ</a> FMC
+evaluation board</p></li>
+<li><p>2x SMA cable orAntenna</p></li>
+<li><p>Micro-USB cable (UART)</p></li>
+<li><p>LAN cable (Ethernet)</p></li>
+<li><p>(Optional) USB keyboard &amp; mouse and a HDMI compatible monitor (Full HD only)</p></li>
+</ul>
+<p>More details as to why you need these can be found at
+<a class="reference internal" href="../prerequisites.html#fmcomms2-prerequisites"><span class="std std-ref">Prerequisites for AD9361/AD9364 based boards</span></a>.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<section id="ad-fmcomms2-ebz-zed">
+<h5>AD-FMCOMMS2-EBZ/ZED<a class="headerlink" href="#ad-fmcomms2-ebz-zed" title="Link to this heading"></a></h5>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms2_zed_linux.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms2_zed_linux.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/fmcomms2_zed_linux.jpeg" width="800" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>In the following example, we will make a physical loopback between the ADC
+and the DAC channels on the evaluation board, using SMA cables.</p>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic">
+<li><p>Get the <a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
+<li><p>Configure ZedBoard for SD BOOT:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/zed_sdcard_jumpers.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/zed_sdcard_jumpers.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/zed_sdcard_jumpers.jpg" width="800" />
+</a>
+<p>The BOOT switches (JP7-JP11) and the MIO0 jumper (JP6) must be set for
+SD-card boot mode. VADJ must be set to 2.5V, as specified in the HDL
+project’s README at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span>FMCOMMS2/3/4 HDL Project</span></a>.
+Optionally, to use USB peripheral devices with the ZedBoard, install
+jumpers JP2 and JP3.</p>
+</div></blockquote>
+</li>
+<li><p>Insert the SD card into the SD Card Interface Connector (J12)</p></li>
+<li><p>Connect your signal generator to the analog inputs of the evaluation board
+using the appropriate jumper wires or SMB connectors.</p></li>
+<li><p>Plug the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS2-EBZ" target="_blank">AD-FMCOMMS2-EBZ</a> into the FMC LPC Connector (J1)</p></li>
+<li><p>Plug the Power Supply into 12V Power input connector (J20) (DO NOT turn the
+device on).</p></li>
+<li><p>Plug-in an Ethernet cable from your router/switch to the Ethernet port on
+the FPGA board</p></li>
+<li><p>Connect the UART port of ZedBoard (J14) to a PC via MicroUSB</p></li>
+<li><p>Turn on the power switch on the FPGA board</p></li>
+<li><p>Observe Kernel and serial console output messages on your terminal</p></li>
+</ol>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="39a86077b1ce5dcae5e9bbe1a6c7931fa7c170ce" name="39a86077b1ce5dcae5e9bbe1a6c7931fa7c170ce" type="checkbox"></input><label for="39a86077b1ce5dcae5e9bbe1a6c7931fa7c170ce"><p>Optional: Local display connection (keyboard, mouse, monitor)</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<p>You can also connect a monitor, keyboard and mouse directly to the board
+for a local connection. The UART connection is still recommended for
+debugging purposes. For the local connection, follow these additional
+steps:</p>
+<ul class="simple">
+<li><p>Plug your HDMI display device into the HDMI Video Connector (J9).</p></li>
+<li><p>Plug your USB mouse/keyboard into the USB OTG Micro-B Connector (J13).
+You will have to use a USB hub to connect both mouse and
+keyboard. Some keyboards have a mouse or touch pad sharing the same USB
+connection or wireless dongle. This can be used to eliminate the use of a
+USB hub.</p></li>
+<li><p>Wait another ~30 seconds for the HDMI display device to start showing
+signs of life.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The USB OTG circuit requires specific jumper settings for Host mode.
+Ensure the following jumper settings on the ZedBoard
+(these are the defaults; verify them if USB is not working):</p>
+<ul class="simple">
+<li><p>JP2 → Short (enables 5V output to USB OTG connector)</p></li>
+<li><p>JP3 → Short (Host mode)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div></section>
+</section>
+<section id="boot-messages">
+<h4>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h4>
+<p>The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="d57dd09a3e2add5eba5648ae92855901de2ae427" name="d57dd09a3e2add5eba5648ae92855901de2ae427" type="checkbox"></input><label for="d57dd09a3e2add5eba5648ae92855901de2ae427"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>U-Boot 2018.01-21442-gf06dec3cab (Oct 17 2024 - 08:59:33 +0300), Build: jenkins-development-build_uboot-35
+
+Model: Zynq Zerandom: crng init done
+systemd[1]: Initializing machine ID from random generator.
+systemd[1]: /lib/systemd/system/plymouth-start.service:16: Unit configured to use KillMode=none. This is unsafe, as it disables systemd&#39;s process lifecycle management for the service. Please update your service to use a safer KillMode=, such as &#39;mixed&#39; or &#39;control-group&#39;. Support for KillMode=none is deprecated and will eventually be removed.
+systemd[1]: Queued start job for default target Graphical Interface.
+systemd[1]: system-getty.slice: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+systemd[1]: Created slice system-getty.slice.
+[  OK  ] Created slice system-getty.slice.
+systemd[1]: Created slice system-modprobe.slice.
+[  OK  ] Created slice system-modprobe.slice.
+systemd[1]: Created slice system-serial\x2dgetty.slice.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+systemd[1]: Created slice system-systemd\x2dfsck.slice.
+[  OK  ] Created slice system-systemd\x2dfsck.slice.
+systemd[1]: Created slice User and Session Slice.
+[  OK  ] Created slice User and Session Slice.
+systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+systemd[1]: Condition check resulted in Arbitrary Executable File Formats File System Automount Point being skipped.
+systemd[1]: Reached target Slices.
+[  OK  ] Reached target Slices.
+systemd[1]: Reached target Swap.
+[  OK  ] Reached target Swap.
+systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+systemd[1]: Listening on fsck to fsckd communication Socket.
+[  OK  ] Listening on fsck to fsckd communication Socket.
+systemd[1]: Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+systemd[1]: Condition check resulted in Journal Audit Socket being skipped.
+systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+systemd[1]: Condition check resulted in POSIX Message Queue File System being skipped.
+systemd[1]: Mounting RPC Pipe File System...
+         Mounting RPC Pipe File System...
+systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+systemd[1]: Condition check resulted in Kernel Trace File System being skipped.
+systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+systemd[1]: Starting Restore / save the current clock...
+         Starting Restore / save the current clock...
+systemd[1]: Starting Set the console keyboard layout...
+         Starting Set the console keyboard layout...
+systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+systemd[1]: Starting Load Kernel Module drm...
+         Starting Load Kernel Module drm...
+systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+systemd[1]: Starting Load Kernel Modules...
+         Starting Load Kernel Modules...
+systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+systemd[1]: Mounted RPC Pipe File System.
+[  OK  ] Mounted RPC Pipe File System.
+systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+systemd[1]: Finished Restore / save the current clock.
+[  OK  ] Finished Restore / save the current clock.
+systemd[1]: modprobe@configfs.service: Succeeded.
+systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+systemd[1]: modprobe@drm.service: Succeeded.
+systemd[1]: Finished Load Kernel Module drm.
+[  OK  ] Finished Load Kernel Module drm.
+systemd[1]: modprobe@fuse.service: Succeeded.
+systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+systemd[1]: systemd-modules-load.service: Main process exited, code=exited, status=1/FAILURE
+systemd[1]: systemd-modules-load.service: Failed with result &#39;exit-code&#39;.
+systemd[1]: Failed to start Load Kernel Modules.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+systemd[1]: Finished Set the console keyboard layout.
+[  OK  ] Finished Set the console keyboard layout.
+systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+         Mounting FUSE Control File System...
+         Mounting Kernel Configuration File System...
+         Starting Apply Kernel Variables...
+[  OK  ] Mounted FUSE Control File System.
+EXT4-fs (mmcblk0p2): re-mounted. Quota mode: disabled.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Finished Apply Kernel Variables.
+         Starting Flush Journal to Persistent Storage...
+         Starting Load/Save Random Seed...
+         Starting Create System Users...
+[  OK  ] Finished Coldplug All udev Devices.
+[  OK  ] Finished Load/Save Random Seed.
+         Starting Helper to synchronize boot up for ifupdown...
+         Starting Wait for udev To …plete Device Initialization...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Finished Helper to synchronize boot up for ifupdown.
+[  OK  ] Finished Create System Users.
+         Starting Create Static Device Nodes in /dev...
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[  OK  ] Reached target Local File Systems (Pre).
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+         Starting Show Plymouth Boot Screen...
+[  OK  ] Started Show Plymouth Boot Screen.
+[  OK  ] Started Forward Password R…s to Plymouth Directory Watch.
+[  OK  ] Reached target Local Encrypted Volumes.
+[  OK  ] Found device /dev/ttyPS0.
+[  OK  ] Found device /dev/disk/by-partuuid/a22286d2-01.
+[  OK  ] Finished Wait for udev To Complete Device Initialization.
+         Starting File System Check…isk/by-partuuid/a22286d2-01...
+         Starting Load Kernel Modules...
+[  OK  ] Started File System Check Daemon to report status.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Finished File System Check…/disk/by-partuuid/a22286d2-01.
+         Mounting /boot...
+[  OK  ] Mounted /boot.
+[  OK  ] Reached target Local File Systems.
+         Starting Set console font and keymap...
+         Starting Raise network interfaces...
+         Starting Preprocess NFS configuration...
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Create Volatile Files and Directories...
+[  OK  ] Finished Set console font and keymap.
+[  OK  ] Finished Tell Plymouth To Write Out Runtime Data.
+[  OK  ] Finished Preprocess NFS configuration.
+[  OK  ] Reached target NFS client services.
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Finished Update UTMP about System Boot/Shutdown.
+         Starting Load Kernel Modules...
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Finished Raise network interfaces.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Reached target System Time Synchronized.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started CUPS Scheduler.
+[  OK  ] Started Daily apt download activities.
+[  OK  ] Started Daily apt upgrade and clean activities.
+[  OK  ] Started Periodic ext4 Onli…ata Check for All Filesystems.
+[  OK  ] Started Discard unused blocks once a week.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Daily man-db regeneration.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Paths.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on CUPS Scheduler.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on Erlang Port Mapper Daemon Activation Socket.
+[  OK  ] Listening on GPS (Global P…ioning System) Daemon Sockets.
+[  OK  ] Listening on triggerhappy.socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Analog Devices power up/down sequence...
+         Starting Save/Restore Sound Card State...
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Regular background program processing daemon.
+[  OK  ] Started D-Bus System Message Bus.
+         Starting dphys-swapfile - …unt, and delete a swap file...
+         Starting Remove Stale Onli…t4 Metadata Check Snapshots...
+         Starting LSB: Resize the r…ilesystem to fill partition...
+[  OK  ] Started fan-control.
+         Starting Fix DP audio and X11 for Jupiter...
+         Starting Creating IIOD Context Attributes......
+         Starting Authorization Manager...
+         Starting DHCP Client Daemon...
+         Starting LSB: Switch to on…nless shift key is pressed)...
+         Starting Regenerate SSH host keys...
+         Starting LSB: rng-tools (Debian variant)...
+         Starting System Logging Service...
+         Starting User Login Management...
+         Starting triggerhappy global hotkey daemon...
+         Starting Disk Manager...
+         Starting WPA supplicant...
+[  OK  ] Started System Logging Service.
+[  OK  ] Started triggerhappy global hotkey daemon.
+[  OK  ] Finished Save/Restore Sound Card State.
+[  OK  ] Reached target Sound Card.
+[  OK  ] Finished Fix DP audio and X11 for Jupiter.
+[  OK  ] Started DHCP Client Daemon.
+[  OK  ] Started User Login Management.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started LSB: Switch to ond…(unless shift key is pressed).
+[  OK  ] Started LSB: rng-tools (Debian variant).
+[  OK  ] Started Authorization Manager.
+         Starting Modem Manager...
+[  OK  ] Started WPA supplicant.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Network is Online.
+         Starting CUPS Scheduler...
+[  OK  ] Started Erlang Port Mapper Daemon.
+         Starting HTTP based time synchronization tool...
+         Starting Internet superserver...
+         Starting /etc/rc.local Compatibility...
+         Starting Permit User Sessions...
+[  OK  ] Started Unattended Upgrades Shutdown.
+[  OK  ] Started Internet superserver.
+[  OK  ] Finished dphys-swapfile - …mount, and delete a swap file.
+[  OK  ] Finished Permit User Sessions.
+         Starting Light Display Manager...
+[  OK  ] Started /etc/rc.local Compatibility.
+[  OK  ] Started HTTP based time synchronization tool.
+         Starting Hold until boot process finishes up...
+[  OK  ] Finished Creating IIOD Context Attributes....
+[  OK  ] Started IIO Daemon.
+[  OK  ] Started CUPS Scheduler.
+[  OK  ] Started Make remote CUPS printers available locally.
+[  OK  ] Finished Analog Devices power up/down sequence.
+[FAILED] Failed to start VNC Server for X11.
+
+Raspbian GNU/Linux 11 analog ttyPS0
+
+analog login: root (automatic login)
+
+Linux analog 6.1.70-284114-g2e8908932dfd #1060 SMP PREEMPT Tue Mar 18 16:11:24 EET 2025 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+root@analog:~#
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="useful-commands-for-the-serial-terminal">
+<h4>Useful commands for the serial terminal<a class="headerlink" href="#useful-commands-for-the-serial-terminal" title="Link to this heading"></a></h4>
+<p>The below commands are to be run in the serial terminal connected to the FPGA.</p>
+<p><strong>Login Information</strong></p>
+<p>user: analog
+password: analog</p>
+<p>To find out the IP of the FPGA board, run the following command and take the
+IP specified at “eth0 inet”:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To see the IIO devices detected, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iio:device
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio:device0: ad7291
+iio:device1: ad9361-phy
+iio:device2: xadc
+iio:device3: cf-ad9361-dds-core-lpc (buffer capable)
+iio:device4: cf-ad9361-lpc (buffer capable
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To power off the system, run the following command, and wait for the final
+message to be printed, then power off the FPGA board from the switch as well.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poweroff
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To reboot the system, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reboot
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Even though this is Linux, this is a persistent file system. Care should
+be taken not to corrupt the file system – please shut down things, don’t
+just turn off the power switch. Depending on your monitor, the standard
+power off could be hiding. You can do this from the terminal as well with
+<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> or the above-mentioned command for powering
+off.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zc702.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZC702 Quickstart</a>
+    <a href="microblaze.html" title="Next document (Alt+Shift+RightArrow)" class="next">Microblaze Quickstart (Obsolete)</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

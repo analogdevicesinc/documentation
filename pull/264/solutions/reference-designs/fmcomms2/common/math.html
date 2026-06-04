@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is still in a draft stage. If you have any comments, please comment on the forums." name="description" />
+
+    <title>FMCOMMS Math &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="I/Q Rotation" href="iq_rotation.html" />
+    <link rel="prev" title="Digital Interface Timing Verification" href="interface_timing_validation.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">FMCOMMS Math</a><ul>
+<li><a class="reference internal" href="#complex-modulation">Complex modulation</a></li>
+<li><a class="reference internal" href="#modulation">Modulation</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="fmcomms-math">
+<span id="fmcomms2-common-fmcomms-math"></span><h1>FMCOMMS Math<a class="headerlink" href="#fmcomms-math" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is still in a draft stage. If you have any comments, please comment
+on the <a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">forums</a>.</p>
+</div>
+<p>In a traditional radio transmit architecture, a baseband signal (voice or
+data), is modulated to an intermediate frequency (IF) and then modulated again
+to the transmit radio frequency (RF) and on the receive side, the opposite
+happened, from RF to IF to baseband. This was done since inexpensive
+up-converting modulators/down-converting demodulators only provide adequate
+performance over roughly one decade of frequency conversion, so it is often
+necessary to execute the complete up-conversion in two or more frequency hops.</p>
+<p>This is no longer the case using modern modulator devices, such as the
+<a class="icon adi reference external" href="https://www.analog.com/ADL5375" target="_blank">ADL5375</a> or <a class="icon adi reference external" href="https://www.analog.com/ADL5380" target="_blank">ADL5380</a>. These provide up to 200MHz of baseband
+bandwidth, (fig 64 in the ADL5375 datasheet and fig 6 of ADL5380) and allow
+up/down conversion from 400 to 6000MHz. In order to use these types of
+devices, a <em>complex</em> (real and imaginary, not difficult)
+modulation/demodulation scheme must be used.</p>
+<p>Like most mathematical derivations, we will ignore the real world
+imperfections, and these will be discussed at near the end.</p>
+<section id="complex-modulation">
+<h2>Complex modulation<a class="headerlink" href="#complex-modulation" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Quadrature_amplitude_modulation" target="_blank">Complex modulation</a>
+is not difficult to understand at the very basics. We take have 2 baseband
+signals - for now, <em>I</em> and <em>Q</em>, where one is sine, and the other is cosine.</p>
+<p><span class="math notranslate nohighlight">\(I = \sin(\omega \times t)\)</span> ;
+<span class="math notranslate nohighlight">\(Q = \cos(\omega \times t)\)</span></p>
+<figure class="align-right" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/500px-Sine_cosine_one_period.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/500px-Sine_cosine_one_period.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/500px-Sine_cosine_one_period.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Sine and cosine one period</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Since we know through trig identities (plus
+<a class="icon link reference external" href="https://en.wikipedia.org/wiki/Trigonometric_functions" target="_blank">Wikipedia</a> says it’s
+true) that:</p>
+<p><span class="math notranslate nohighlight">\(\cos(\omega \times t) = \sin(\pi/2 - (\omega \times t))\)</span></p>
+<p>then:</p>
+<p><span class="math notranslate nohighlight">\(I = \sin(\omega \times t)\)</span> ;
+<span class="math notranslate nohighlight">\(Q = \sin(\pi/2 - (\omega \times t))\)</span></p>
+<p>these are the two signals coming out of the DAC - two sine waves, phase offset
+from each other, which we call I and Q, like the picture. Whether we call them
+both sine, or sine and cosine, is immaterial. Sometimes both are used, whatever
+is easier for the (a) math, or (b) conceptual understanding, and many people
+will swap back and forth depending on what is being discussed at that time.</p>
+<figure class="align-right" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/adl5375-fbl.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/adl5375-fbl.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/adl5375-fbl.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">ADL5375 Block Diagram</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Most modern modulators, like the <a class="icon adi reference external" href="https://www.analog.com/ADL5375" target="_blank">ADL5375</a> will take the:</p>
+<ul class="simple">
+<li><p>I multiply it by a LO (local oscillator),</p></li>
+<li><p>Q multiply it by a LO (local oscillator) shifted by 90 degrees (which is
+the equivalent of cos())</p></li>
+<li><p>add the resulting waveforms together.</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(LO_{I} = \cos(\kappa)\)</span> ;
+<span class="math notranslate nohighlight">\(LO_{Q} = \sin(\kappa)\)</span></p>
+<p><span class="math notranslate nohighlight">\(LO_{I} \times I = \cos(\kappa) \times \sin(\omega)\)</span> ;
+<span class="math notranslate nohighlight">\(LO_{Q} \times Q = \sin(\kappa) \times \cos(\omega)\)</span></p>
+<p>And a little <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Trigonometric_functions#Identities" target="_blank">Summation Trig Identities</a>,
+turns into:</p>
+<p><span class="math notranslate nohighlight">\(\cos(\kappa) \times \sin(\omega) + \sin(\kappa) \times \cos(\omega) = \sin(\kappa + \omega)\)</span></p>
+<p>And you get single tone, which is multiplied by the carrier.</p>
+<p>You can derive the same using <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Euler's_formula#Relationship_to_trigonometry" target="_blank">Euler’s Formulas</a>,</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \sin(\omega \times t) = (e^{j \omega t} - e^{-j \omega t}) / (j2)\)</span> ;</p>
+<p>but we end up with the same thing – a single tone on the RF output by taking
+three tones (I, Q, and LO) and multiplying and adding them.</p>
+</section>
+<section id="modulation">
+<h2>Modulation<a class="headerlink" href="#modulation" title="Link to this heading"></a></h2>
+<p>Starting to modulating signal, just from an amplitude perspective:</p>
+<p><span class="math notranslate nohighlight">\(LO_{I} = A \times \cos(\kappa)\)</span> ;
+<span class="math notranslate nohighlight">\(LO_{Q} = B \times \sin(\kappa)\)</span></p>
+<p>We still have our carrier:</p>
+<p><span class="math notranslate nohighlight">\(LO_{I} = \cos(\kappa)\)</span> ;
+<span class="math notranslate nohighlight">\(LO_{Q} = \sin(\kappa)\)</span></p>
+<p>will have the resulting:</p>
+<p><span class="math notranslate nohighlight">\(LO_{I} \times I = A \times \cos(\kappa) \times \sin(\omega)\)</span> ;
+<span class="math notranslate nohighlight">\(LO_{Q} \times Q = B \times \sin(\kappa) \times \cos(\omega)\)</span></p>
+<p>That gives an output of:</p>
+<p><span class="math notranslate nohighlight">\(x(t) = A \times \cos(\kappa) \times \sin(\omega) + B \times \sin(\kappa) \times \cos(\omega)\)</span></p>
+<p>This doesn’t really match with Trig Identities, and it’s easier to use easier
+(and by that I mean possible) to use Euler’s Formulas</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle \sin(x) = (e^{-j x} - e^{j x}) / 2\)</span> ;
+<span class="math notranslate nohighlight">\(\displaystyle \cos(x) = (e^{-j x} + e^{j x}) / 2\)</span></p>
+<p>therefore:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x(t) = A \times ((e^{-j \kappa} + e^{j \kappa}) / 2) \times
+((e^{-j \omega} - e^{j \omega}) / 2) +
+B \times ((e^{-j \kappa} - e^{j \kappa}) / 2)
+\times ((e^{-j \omega} + e^{j \omega}) / 2)\]</div>
+</div>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x(t) = (A / 2) \times (e^{-j \kappa} + e^{j \kappa}) \times (e^{-j
+\omega} - e^{j \omega}) +
+(B / 2) \times (e^{-j \kappa} - e^{j \kappa}) \times (e^{-j
+\omega} + e^{j \omega})\]</div>
+</div>
+<p>If we expand this, we get:</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+\[x(t) = (1 / 2) \times ((Ae^{-j \kappa -j \omega} + Ae^{j \kappa -j
+\omega} - Ae^{-j \kappa + j \omega} - Ae^{j \kappa + j \omega}) +
+(Be^{-j \kappa -j \omega} - Be^{j \kappa -j \omega} + Be^{-j \kappa
++ j \omega} - Be^{j \kappa + j \omega}))\]</div>
+</div>
+<p>and then:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle x(t) = (1 / 2) \times (((A+B)e^{-j \kappa -j \omega} + (A - B)e^{j \kappa -j \omega} - (A - B)e^{-j \kappa + j \omega} - (A + B)e^{j \kappa + j \omega}))\)</span></p>
+<p>we can re-arrange this as:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle x(t) = (1 / 2) \times ((A+B)(e^{-j \kappa -j \omega} - e^{j \kappa + j \omega}) + (A - B)(e^{j \kappa -j \omega} - e^{-j \kappa + j \omega}))\)</span></p>
+<p>and then:</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle x(t) = ((A+B) / 2)(\sin(\kappa + \omega)) + ((A-B) / 2)(\sin(\kappa - \omega))\)</span></p>
+<p>If this is due to amplitude mismatch, this creates something (an image) on the
+other side of the local oscillator.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="interface_timing_validation.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Digital Interface Timing Verification</a>
+    <a href="iq_rotation.html" title="Next document (Alt+Shift+RightArrow)" class="next">I/Q Rotation</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

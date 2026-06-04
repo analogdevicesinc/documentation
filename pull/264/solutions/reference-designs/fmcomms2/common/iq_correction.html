@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="As shown in the previous section, in an FMCOMMS system, the complex modulation/demodulation scheme is used. In theory, the two baseband signals (in-phase and quadrature) should be orthogonal to each other with the same amplitude. However, due to the different channel environments and component properties 1, there is usually offset on the phase and the amplitude, which sets the context of I/Q correction." name="description" />
+
+    <title>I/Q Correction &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Production testing of the AD-FMCOMMS2 / AD-FMCOMMS3 / AD-FMCOMMS4 / AD-FMCOMMS5" href="testing.html" />
+    <link rel="prev" title="I/Q Rotation" href="iq_rotation.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">I/Q Correction</a><ul>
+<li><a class="reference internal" href="#why-i-q-correction">Why I/Q Correction</a></li>
+<li><a class="reference internal" href="#math-of-i-q-correction">Math of I/Q Correction</a></li>
+<li><a class="reference internal" href="#implementation">Implementation</a><ul>
+<li><a class="reference internal" href="#simulink-model">Simulink Model</a></li>
+<li><a class="reference internal" href="#hdl">HDL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#results">Results</a><ul>
+<li><a class="reference internal" href="#without-i-q-correction">Without I/Q Correction</a></li>
+<li><a class="reference internal" href="#with-i-q-correction">With I/Q Correction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms4-ebz/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms4-ebz/quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Additional Documentation</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="i-q-correction">
+<span id="fmcomms2-common-iq-correction"></span><h1>I/Q Correction<a class="headerlink" href="#i-q-correction" title="Link to this heading"></a></h1>
+<p>As shown in the previous section, in an FMCOMMS system, the complex
+modulation/demodulation scheme is used. In theory, the two baseband signals
+(in-phase and quadrature) should be orthogonal to each other with the same
+amplitude. However, due to the different channel environments and component
+properties <a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, there is usually offset on the phase and the amplitude, which
+sets the context of I/Q correction.</p>
+<section id="why-i-q-correction">
+<h2>Why I/Q Correction<a class="headerlink" href="#why-i-q-correction" title="Link to this heading"></a></h2>
+<p>The I/Q imbalance is commonly seen in any RF front-end that exploits analog
+quadrature down-mixing. With an imbalanced I/Q, there will be several problems.</p>
+<p>In contrast to an ideal down-converter that performs simple frequency shifting,
+a down-converter with I/Q imbalance not only down-converts the desired signal,
+but also introduces its image interference. Such image interference, if left
+uncorrected, presents an error floor which limits the demodulation performance.
+Moreover, although the I/Q imbalance introduced by the LO may be assumed
+constant over the signal bandwidth, the mismatches in the subsequent baseband
+I/Q amplifiers and filters tend to vary with frequencies. Such frequency
+dependent I/Q imbalance is particularly severe in a wideband direct-conversion
+receiver and the corresponding estimation and compensation process becomes more
+challenging. <a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>In order to overcome these problems and to realize a successful communication,
+it is necessary to implement the I/Q correction in the FMComms system.</p>
+</section>
+<section id="math-of-i-q-correction">
+<h2>Math of I/Q Correction<a class="headerlink" href="#math-of-i-q-correction" title="Link to this heading"></a></h2>
+<p>We will use the algorithm introduced in S.W. Ellingson’s paper Correcting I-Q
+Imbalance in Direct Conversion Receivers <a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> to conduct the I/Q correction.</p>
+<p>Given a single tone that converts the signal from RF to baseband, ideally, the
+two baseband signals (in-phase and quadrature) should be orthogonal to each
+other with the same amplitude. Without loss of generality, we normalize the
+magnitude and the phase, then the two signals can be expressed as:</p>
+<p><span class="math notranslate nohighlight">\(I(t) = \cos(\omega t)\)</span> and</p>
+<p><span class="math notranslate nohighlight">\(Q(t) = \sin(\omega t)\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the baseband frequency of the tone.</p>
+<p>However, due to the different channel environments and component properties,
+there is usually DC bias, as well as the offset on the phase and the amplitude,
+which makes the two signals as following:</p>
+<p><span class="math notranslate nohighlight">\(I'(t) = \alpha \cos(\omega t) + \beta_I\)</span> and</p>
+<p><span class="math notranslate nohighlight">\(Q'(t) = \sin(\omega t + \psi) + \beta_Q\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(\beta_I\)</span> and <span class="math notranslate nohighlight">\(\beta_Q\)</span> are DC biases on two channels,
+<span class="math notranslate nohighlight">\(\alpha\)</span> stands for the amplitude offset, and <span class="math notranslate nohighlight">\(\psi\)</span> stands for the
+phase offset.</p>
+<p>Since the DC biases can be easily found out by calculating the mean value of the
+signals, the main challenge is to correct the following two signals:</p>
+<p><span class="math notranslate nohighlight">\(I''(t) = \alpha \cos(\omega t)\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(Q''(t) = \sin(\omega t + \psi)\)</span>,</p>
+<p>and recover them back to <span class="math notranslate nohighlight">\(I(t)\)</span> and <span class="math notranslate nohighlight">\(Q(t)\)</span>. Using Trigonometric
+Identities, these two equations can be rewritten in the matrix format:</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}I''(t) \\ Q''(t)\end{bmatrix} = \begin{bmatrix}\alpha &amp; 0 \\ \sin(\psi) &amp; \cos(\psi)\end{bmatrix} \begin{bmatrix}I(t) \\ Q(t)\end{bmatrix}\)</span>.</p>
+<p>Then according to the linear algebra, <span class="math notranslate nohighlight">\(I(t)\)</span> and <span class="math notranslate nohighlight">\(Q(t)\)</span> can be
+obtained by doing a matrix inverse:</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}I(t) \\ Q(t)\end{bmatrix} = \begin{bmatrix}\alpha^{-1} &amp; 0 \\ -\alpha^{-1}\tan(\psi) &amp; \sec(\psi)\end{bmatrix} \begin{bmatrix}I''(t) \\ Q''(t)\end{bmatrix}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}I(t) \\ Q(t)\end{bmatrix} = \begin{bmatrix}A &amp; 0 \\ C &amp; D\end{bmatrix} \begin{bmatrix}I''(t) \\ Q''(t)\end{bmatrix} = \begin{bmatrix}A &amp; 0 \\ C &amp; D\end{bmatrix} \begin{bmatrix}I'(t) - \beta_I \\ Q'(t) - \beta_Q\end{bmatrix}\)</span>,</p>
+<p>where <span class="math notranslate nohighlight">\(I'(t)\)</span> and <span class="math notranslate nohighlight">\(Q'(t)\)</span> are observed signals, and
+<span class="math notranslate nohighlight">\(A, C, D\)</span> are correction matrix parameters.</p>
+</div>
+<p>Please refer to the S.W. Ellingson’s paper <a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> for the detailed procedures of
+finding out the correction matrix parameters.</p>
+</section>
+<section id="implementation">
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading"></a></h2>
+<p>Based on the theory introduced in the previous section, the implementation of
+I/Q correction is conducted in two steps, namely the correction matrix
+calculation and the matrix multiplication. Specifically, in the first step, we
+use some software, such as MATLAB or Simulink, to calculate the parameters of
+the correction matrix. Then in the second step, we use hardware to implement the
+matrix multiplication and obtain the corrected I and Q.</p>
+<section id="simulink-model">
+<h3>Simulink Model<a class="headerlink" href="#simulink-model" title="Link to this heading"></a></h3>
+<p>A Simulink model is created to calculate the parameters of the correction
+matrix. The top level of the model is shown in the figure below:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/model_top.jpg"><img alt="Model diagram" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/model_top.jpg" width="600" />
+</a>
+<p>In this model, the amplitude, phase and DC offset of the I and Q signals are
+specified by the users. These two signals are <span class="math notranslate nohighlight">\(I'(t)\)</span> and <span class="math notranslate nohighlight">\(Q'(t)\)</span>
+in the previous section, which serve as the input to the IQcorrect
+subsystem. In real-world application, these two inputs can be captured data from
+users’ systems. For example, the output data from ADC on the receiver side. The
+output of the IQcorrect subsystem are the parameters of the correction matrix
+(A, C, D). The structure of this subsystem is shown below:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/subsystem.jpg"><img alt="Subsystem diagram" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/subsystem.jpg" width="900" />
+</a>
+<p>Basically, this subsystem executes Step 2 through Step 7 of the algorithm in
+S.W. Ellingson’s paper. In order to facilitate the real-world application, this
+model supports fixed point data type and sample-based processing. It is noted
+that all the averaging operations are implemented by FIR filter.</p>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p>You can download the Simulink model from below:</p>
+<ul class="simple">
+<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/resources/iqcorrection.zip"><code class="xref download docutils literal notranslate"><span class="pre">iqcorrection.zip</span></code></a></p></li>
+</ul>
+<p>Pay attention to the output data type of each block. It should be defined
+according to the range of the data value of your system. Otherwise, you will
+not get the correct result.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In order to run this model, your MATLAB license needs to include the
+following components:</p>
+<ul class="simple">
+<li><p>MATLAB</p></li>
+<li><p>Simulink</p></li>
+<li><p>Communications System Toolbox</p></li>
+<li><p>DSP System Toolbox</p></li>
+<li><p>Fixed-Point Designer</p></li>
+</ul>
+<p>If you want to generate HDL code from this model, the following component is
+also required:</p>
+<ul class="simple">
+<li><p>HDL Coder</p></li>
+</ul>
+</div>
+</section>
+<section id="hdl">
+<h3>HDL<a class="headerlink" href="#hdl" title="Link to this heading"></a></h3>
+<p>The HDL is implemented for matrix multiplication on FPGA. It takes the
+correction matrix parameters as input, and multiplies them with the observed I
+and Q signals to get the corrected signals.</p>
+</section>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h2>
+<p>In this section, the time-domain and scatter plots of I and Q signals from the
+Simulink model are shown before and after I/Q correction. Comparing the figures,
+it is easy to find the impact of I/Q correction.</p>
+<section id="without-i-q-correction">
+<h3>Without I/Q Correction<a class="headerlink" href="#without-i-q-correction" title="Link to this heading"></a></h3>
+<p>Before the I/Q correction, it is obvious that the amplitude of the I and Q
+signals is very different, and their phase difference is not 90 degrees. The
+scatter plot shows an ellipse, which also reflects the imbalance of I and Q.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/before.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/before.png" />
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/scatter1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/scatter1.png" />
+</section>
+<section id="with-i-q-correction">
+<h3>With I/Q Correction<a class="headerlink" href="#with-i-q-correction" title="Link to this heading"></a></h3>
+<p>After the I/Q correction, the amplitude of the I and Q signals is identical, and
+they are orthogonal to each other. Therefore, the scatter plot shows a perfect
+circle centering in the origin.</p>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/after.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/after.png" />
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/scatter2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/fmcomms2/images/scatter2.png" />
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p>Questions? <a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">Ask Help &amp; Support</a>.</p></li>
+</ul>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This imbalance mainly attributes to the mismatched components in the in-phase
+(I) and the quadrature (Q) branches. Examples include but not limited to an
+imperfectly balanced local oscillator (LO) and/or baseband low pass filters
+(LPF) with mismatched frequency responses.</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Guanbin Xing, Manyuan Shen, and Hui Liu. Frequency Offset and I/Q Imbalance
+Compensation for Direct-Conversion Receivers. IEEE TRANSACTIONS ON WIRELESS
+COMMUNICATIONS, VOL. 4, NO. 2, MARCH 2005.</p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.faculty.ece.vt.edu/swe/argus/iqbal.pdf" target="_blank">S.W. Ellingson’s paper</a></p>
+</aside>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><a class="icon link reference external" href="https://www.faculty.ece.vt.edu/swe/argus/iqbal.pdf" target="_blank">S.W. Ellingson’s paper</a></p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="iq_rotation.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">I/Q Rotation</a>
+    <a href="testing.html" title="Next document (Alt+Shift+RightArrow)" class="next">Production testing of the AD-FMCOMMS2 / AD-FMCOMMS3 / AD-FMCOMMS4 / AD-FMCOMMS5</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

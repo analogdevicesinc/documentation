@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the EVAL-AD-FMCOMMS4 boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution." name="description" />
+
+    <title>Quickstart &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ZCU102 Quickstart" href="zcu102.html" />
+    <link rel="prev" title="Prerequisites" href="../prerequisites.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
+<li><a class="reference internal" href="#supported-environments">Supported environments</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware setup</a><ul>
+<li><a class="reference internal" href="#zc702-fmcomms4">ZC702 + FMCOMMS4</a></li>
+<li><a class="reference internal" href="#zc706-fmcomms4">ZC706 + FMCOMMS4</a></li>
+<li><a class="reference internal" href="#zed-fmcomms4">ZED + FMCOMMS4</a></li>
+<li><a class="reference internal" href="#zcu102-fmcomms4">ZCU102 + FMCOMMS4</a></li>
+<li><a class="reference internal" href="#kcu105-fmcomms4">KCU105 + FMCOMMS4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS4-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCOMMS4-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/common/index.html">Additional Documentation</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/datafiles.html">Create and analyze data files in MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-2" id="toctree-collapse-1-2-2"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS4-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="quickstart">
+<span id="fmcomms4-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
+<p>The Quick Start Guides provide a simple step by step instruction on how to do
+an initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD-FMCOMMS4" target="_blank">EVAL-AD-FMCOMMS4</a> boards on various FPGA
+development boards. They will discuss how to program the bitstream, run a no-OS
+program or boot a Linux distribution.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zcu102.html">On ZCU102</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zcu102.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#required-software">Required software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#required-hardware">Required hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zcu102.html#using-no-os-as-software">Using no-OS as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#id1">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#id2">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#id3">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#id4">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#id5">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="kcu105.html">On KCU105</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="kcu105.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#required-software">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#required-hardware">Required hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kcu105.html#using-no-os-as-software">Using no-OS as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#id1">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#id2">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#id3">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kcu105.html#id4">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kcu105.html#id5">Creating the setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zc706.html">On ZC706</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zc706.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#required-software">Required software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#required-hardware">Required hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zc706.html#using-no-os-as-software">Using no-OS as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#id1">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#id2">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#id3">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc706.html#id4">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html#id5">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zc702.html">On ZC702</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zc702.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#required-software">Required software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#required-hardware">Required hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zc702.html#using-no-os-as-software">Using no-OS as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#id1">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#id2">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#id3">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zc702.html#id4">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html#id5">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc702.html#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zed.html">On ZED</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zed.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#required-software">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#creating-the-setup">Creating the setup</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="zed.html#ad-fmcomms4-ebz-zed">AD-FMCOMMS4-EBZ/ZED</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="zed.html#using-no-os-as-software">Using no-OS as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#id1">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#id2">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#id3">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#id4">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#id5">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="supported-carriers">
+<h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<p>The AD-FMCOMMS4-EBZ is, by definition a “FPGA mezzanine card” (FMC), that
+means it needs a carrier to plug into. The supported carriers can be found
+<a class="reference internal" href="../../fmcomms2/quickstart/index.html#fmcomms2-3-4-carriers"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="supported-environments">
+<h2>Supported environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h2>
+<p>The supported environments can be found
+<a class="reference internal" href="../../fmcomms2/quickstart/index.html#fmcomms2-3-4-supported-env"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="hardware-setup">
+<h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>On most carriers, the AD-FMCOMMS4-EBZ board connects to the LPC connector
+(unless otherwise noted). The carrier setup requires power, UART (115200),
+ethernet (Linux), HDMI (if available) and/or JTAG (no-OS) connections. A few
+typical setups are shown below.</p>
+<section id="zc702-fmcomms4">
+<h3>ZC702 + FMCOMMS4<a class="headerlink" href="#zc702-fmcomms4" title="Link to this heading"></a></h3>
+<p>Early versions of the ZC702 carriers need to work around <a class="icon link reference external" href="https://www.xilinx.com/support/answers/51438.html" target="_blank">AR# 51438, PG signal
+does not assert by default</a>
+errata.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc702_linux.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc702_linux.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc702_linux.jpeg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="zc702.html#fmcomms4-quickstart-zc702"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
+<section id="zc706-fmcomms4">
+<h3>ZC706 + FMCOMMS4<a class="headerlink" href="#zc706-fmcomms4" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc706_linux.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc706_linux.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zc706_linux.jpeg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="zc706.html#fmcomms4-quickstart-zc706"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
+<section id="zed-fmcomms4">
+<h3>ZED + FMCOMMS4<a class="headerlink" href="#zed-fmcomms4" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zed_linux.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zed_linux.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zed_linux.jpeg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="zed.html#fmcomms4-quickstart-zed"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
+<section id="zcu102-fmcomms4">
+<h3>ZCU102 + FMCOMMS4<a class="headerlink" href="#zcu102-fmcomms4" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zcu102_linux.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zcu102_linux.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_zcu102_linux.jpeg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="zcu102.html#fmcomms4-quickstart-zcu102"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
+<section id="kcu105-fmcomms4">
+<h3>KCU105 + FMCOMMS4<a class="headerlink" href="#kcu105-fmcomms4" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms4-ebz_landing/docs/solutions/reference-designs/ad-fmcomms4-ebz/images/fmcomms4_kcu105.jpeg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="kcu105.html#fmcomms4-quickstart-kcu105"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <a href="zcu102.html" title="Next document (Alt+Shift+RightArrow)" class="next">ZCU102 Quickstart</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
