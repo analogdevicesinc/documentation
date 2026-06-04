@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The SD card includes several folders in the root directory of the BOOT partition. In order to configure the SD card to work with a specific FPGA board and ADI hardware, several files must be copied onto the root directory. Using the host PC, drag and drop the required files onto the BOOT partition, and use the EJECT function when removing the SD card from the reader." name="description" />
+
+    <title>Test Necessary Files Template &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Test Necessary Files Template</a><ul>
+<li><a class="reference internal" href="#zynq">Zynq</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zynqmp">ZynqMP</a><ul>
+<li><a class="reference internal" href="#id1">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#versal">Versal</a><ul>
+<li><a class="reference internal" href="#id2">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#versal-vck190">Versal (VCK190)</a><ul>
+<li><a class="reference internal" href="#id3">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#microblaze">Microblaze</a><ul>
+<li><a class="reference internal" href="#id4">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#agilex-7-soc">Agilex 7 SoC</a><ul>
+<li><a class="reference internal" href="#id5">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stratix-10-soc">Stratix 10 SoC</a><ul>
+<li><a class="reference internal" href="#id6">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#arria-10-soc">Arria 10 SoC</a><ul>
+<li><a class="reference internal" href="#id7">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cyclone-5-soc">Cyclone 5 SoC</a><ul>
+<li><a class="reference internal" href="#id8">Necessary files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zynq-not-in-kuiper">Zynq (not in Kuiper)</a><ul>
+<li><a class="reference internal" href="#id9">Necessary files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../eval-ad9081/quickstart/index.html">Quick start guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/a10soc.html">On A10SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vck190.html">On VCK190</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/vcu118.html">On VCU118</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval-ad9081/quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="test-necessary-files-template">
+<h1>Test Necessary Files Template<a class="headerlink" href="#test-necessary-files-template" title="Link to this heading"></a></h1>
+<section id="zynq">
+<h2>Zynq<a class="headerlink" href="#zynq" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>HDL boot image:  <code class="docutils literal notranslate"><span class="pre">BOOT.bin</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">uImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Instructions on how to choose the boot files from the SD card can be
+found in the <strong>Platform-Specific Manual Steps</strong> section from here
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be
+found here:</p>
+<ul>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html#linux-kernel-zynq" target="_blank" title="(in System Level Documentation)"><span>Build Zynq Linux kernel and devicetree</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+</section>
+<section id="zynqmp">
+<h2>ZynqMP<a class="headerlink" href="#zynqmp" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Necessary files<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">system.dtb</span></code></p></li>
+</ul>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynqmp.html#linux-kernel-zynqmp" target="_blank" title="(in System Level Documentation)"><span>Build ZynqMP / MPSoC Linux kernel and devicetree</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build
+documentation. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+</section>
+<section id="versal">
+<h2>Versal<a class="headerlink" href="#versal" title="Link to this heading"></a></h2>
+<section id="id2">
+<h3>Necessary files<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">system.dtb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boot.scr</span></code></p></li>
+</ul>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynqmp.html#linux-kernel-zynqmp" target="_blank" title="(in System Level Documentation)"><span>Build ZynqMP / MPSoC Linux kernel and devicetree</span></a> (the only difference compared to the ZynqMP is
+that instead of running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">adi_zynqmp_defconfig</span></code>,
+you must run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">adi_versal_defconfig</span></code>)</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+</section>
+<section id="versal-vck190">
+<h2>Versal (VCK190)<a class="headerlink" href="#versal-vck190" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>Necessary files<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul>
+<li><p>For ACAP:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">system.dtb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boot.scr</span></code></p></li>
+</ul>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynqmp.html#linux-kernel-zynqmp" target="_blank" title="(in System Level Documentation)"><span>Build ZynqMP / MPSoC Linux kernel and devicetree</span></a> (the only difference compared to the ZynqMP is
+that instead of running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">adi_zynqmp_defconfig</span></code>,
+you must run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">adi_versal_defconfig</span></code>)</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>For System Controller:</p>
+<blockquote>
+<div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This board also requires a second SD card for the System
+Controller. The System Controller card usually comes
+pre-written from the factory and only needs to be rewritten
+if the card is replaced or you want to update the system
+controller.</p>
+</div>
+<ul class="simple">
+<li><p>System controller
+<a class="icon link reference external" href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/2273738753/System+Controller+Updates" target="_blank">Image</a>
+(to be flashed on the System Controller SD card only if the
+card needs to be replaced or updated)</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="microblaze">
+<h2>Microblaze<a class="headerlink" href="#microblaze" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>Necessary files<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This carrier only has programming logic (PL) and, thus, a Microblaze soft core
+is necessary to run Linux. As such, the files required for running Linux need
+to be manually built.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL bitstream file: <code class="docutils literal notranslate"><span class="pre">system_top.bit</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">simpleImage.strip</span></code></p></li>
+</ul>
+<p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze" target="_blank" title="(in System Level Documentation)"><span>Build MicroBlaze Linux kernel</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build
+documentation. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a></p></li>
+</ul>
+</div></blockquote>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files. Make sure you select the
+devicetree that matches your specific use case when building the
+<strong>simpleImage</strong>.</p>
+</div>
+</section>
+</section>
+<section id="agilex-7-soc">
+<h2>Agilex 7 SoC<a class="headerlink" href="#agilex-7-soc" title="Link to this heading"></a></h2>
+<section id="id5">
+<h3>Necessary files<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Intel Agilex 7
+SoC is not supported on the Kuiper Linux image, so all
+boot files must be manually built.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>FPGA bitstream: <code class="docutils literal notranslate"><span class="pre">agilex.core.rbf</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">socfpga_agilex_socdk.dtb</span></code></p></li>
+<li><p>U-Boot image: <code class="docutils literal notranslate"><span class="pre">u-boot.itb</span></code></p></li>
+<li><p>Flash the <code class="docutils literal notranslate"><span class="pre">.jic</span></code> file to QSPI via JTAG using the Quartus Programmer.</p></li>
+</ul>
+<p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building the Intel SoC-FPGA kernel and
+devicetrees from source</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="stratix-10-soc">
+<h2>Stratix 10 SoC<a class="headerlink" href="#stratix-10-soc" title="Link to this heading"></a></h2>
+<section id="id6">
+<h3>Necessary files<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Intel Stratix 10
+SoC is not supported on the Kuiper Linux image, so all
+boot files must be manually built.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">Image</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">socfpga_stratix10_socdk.dtb</span></code></p></li>
+<li><p>U-Boot image: <code class="docutils literal notranslate"><span class="pre">u-boot.itb</span></code></p></li>
+<li><p>Program the FPGA with the <code class="docutils literal notranslate"><span class="pre">.sof</span></code> file via JTAG using the Quartus Programmer.</p></li>
+</ul>
+<p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building the Intel SoC-FPGA kernel and
+devicetrees from source</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="arria-10-soc">
+<h2>Arria 10 SoC<a class="headerlink" href="#arria-10-soc" title="Link to this heading"></a></h2>
+<section id="id7">
+<h3>Necessary files<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">fit_spl_fpga.itb</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">zImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">socfpga_arria10_socdk_sdmmc.dtb</span></code></p></li>
+<li><p>U-Boot image: <code class="docutils literal notranslate"><span class="pre">u-boot.img</span></code></p></li>
+<li><p>Boot configuration file: <code class="docutils literal notranslate"><span class="pre">extlinux.conf</span></code> in the <strong>extlinux</strong> folder from SD Card</p></li>
+<li><p>Secondary program loader: <code class="docutils literal notranslate"><span class="pre">u-boot-splx4.sfp</span></code> on <strong>third</strong> SD Card partition.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Intel SoC-FPGA boards, the secondary program loader must be written to
+the third SD card partition, which is not accessible from Windows. You will
+need either a native Linux system or WSL to properly configure the SD card.
+For detailed file placement instructions, refer to
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Using Kuiper Linux pre-built images</span></a>.</p>
+</div>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building the Intel SoC-FPGA kernel and
+devicetrees from source</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+</section>
+<section id="cyclone-5-soc">
+<h2>Cyclone 5 SoC<a class="headerlink" href="#cyclone-5-soc" title="Link to this heading"></a></h2>
+<section id="id8">
+<h3>Necessary files<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">soc_system.rbf</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">zImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">socfpga.dtb</span></code></p></li>
+<li><p>U-Boot script: <code class="docutils literal notranslate"><span class="pre">u-boot.scr</span></code></p></li>
+<li><p>Boot configuration file: <code class="docutils literal notranslate"><span class="pre">extlinux.conf</span></code> in the <strong>extlinux</strong> folder from SD Card</p></li>
+<li><p>Secondary program loader: <code class="docutils literal notranslate"><span class="pre">u-boot-with-spl.sfp</span></code> on <strong>third</strong> SD Card partition.</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Intel SoC-FPGA boards, the secondary program loader must be written to
+the third SD card partition, which is not accessible from Windows. You will
+need either a native Linux system or WSL to properly configure the SD card.
+For detailed file placement instructions, refer to
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Using Kuiper Linux pre-built images</span></a>.</p>
+</div>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found in
+the <strong>Platform-Specific Manual Steps</strong> section from here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_intel_boot_image.html#build-intel-boot-image" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building the Intel SoC-FPGA kernel and
+devicetrees from source</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/cn0540/index.html#cn0540" target="_blank" title="(in HDL)"><span>CN0540 HDL project</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+</section>
+<section id="zynq-not-in-kuiper">
+<h2>Zynq (not in Kuiper)<a class="headerlink" href="#zynq-not-in-kuiper" title="Link to this heading"></a></h2>
+<section id="id9">
+<h3>Necessary files<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This project is not part of the release and, as such, the
+boot files need to be manually built
+using <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects/ad4080_fmc_evb" target="_blank">this</a> HDL branch
+and <a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/staging/ad4080_clean_adf4350/" target="_blank">this</a> Linux branch.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>HDL boot image:  <code class="docutils literal notranslate"><span class="pre">BOOT.bin</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">uImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Instructions on how to manually build the boot files from source can be found
+here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html#linux-kernel-zynq" target="_blank" title="(in System Level Documentation)"><span>Build Zynq Linux kernel and devicetree</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9009/index.html#adrv9009" target="_blank" title="(in HDL)"><span>ADRV9009 HDL reference design</span></a> build documentation.
+More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
