@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Data Acquisition (DAQ) board connects to the FPGA carrier via an FMC HPC connector. This board is where the analog-to-digital conversion is completed and the result is sent to the FPGA via a JESD 204B interface. The low phase-noise and synchronized clock signals required by the ADC as well as all the signals needed for JESD Subclass 1 operation, ensuring deterministic latency, are also generated here. Additionally, low noise voltages are supplied to the ADC, PLL and clock buffer. All the digital signals between the FPGA carrier board and the AFE and Laser boards pass through the DAQ board going to two 100 pin high speed connectors that correspond to similar connectors on the other two boards. The digital connection between the boards is made with ribbon cables. The 4 ADC channels are exposed on SMA connectors to mate with the corresponding signal sources on the AFE and Laser boards. This modular design allows the AFE and Laser boards to be oriented in the desired direction as well as to use different variantes of these boards designed according to specific applications requirements." name="description" />
+
+    <title>DAQ Board Overview &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Laser Board Overview" href="hardware_laser.html" />
+    <link rel="prev" title="User guide" href="ad-fmclidar1-ebz.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">DAQ Board Overview</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCLIDAR1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ad-fmclidar1-ebz.html">User guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">DAQ Board Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware_laser.html">Laser Board Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware_afe.html">AFE Board Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_evaluation.html">Setting up the system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_evaluation.html#running-the-evaluation-software">Running the evaluation software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="system_evaluation.html#make-some-actual-distance-measurements">Make some actual distance measurements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCLIDAR1-EBZ (Obsolete)</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="daq-board-overview">
+<h1>DAQ Board Overview<a class="headerlink" href="#daq-board-overview" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_top_pic.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_top_pic.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_top_pic.jpg" width="350" />
+</a>
+<p>The Data Acquisition (DAQ) board connects to the FPGA carrier via an FMC HPC
+connector. This board is where the analog-to-digital conversion is completed and
+the result is sent to the FPGA via a JESD 204B interface. The low phase-noise
+and synchronized clock signals required by the ADC as well as all the signals
+needed for JESD Subclass 1 operation, ensuring deterministic latency, are also
+generated here. Additionally, low noise voltages are supplied to the ADC, PLL
+and clock buffer. All the digital signals between the FPGA carrier board and the
+AFE and Laser boards pass through the DAQ board going to two 100 pin high speed
+connectors that correspond to similar connectors on the other two boards. The
+digital connection between the boards is made with ribbon cables. The 4 ADC
+channels are exposed on SMA connectors to mate with the corresponding signal
+sources on the AFE and Laser boards. This modular design allows the AFE and
+Laser boards to be oriented in the desired direction as well as to use different
+variantes of these boards designed according to specific applications
+requirements.</p>
+<p>The ADC on the DAQ board is the <a class="icon adi reference external" href="https://www.analog.com/en/products/ad9094.html" target="_blank">AD9094</a>, a quad,
+8-bit, 1GSPS ADC. It supports JESD204B lane rate up to 15 Gbps, four integrated
+wideband decimation filters, numerically controlled oscillator blocks and it is
+programmable via an SPI interface.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_board.png"><img alt="DAQ Block Diagram" class="align-left" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_board.png" width="350" />
+</a>
+<p>The IC selection for clock signals generation ensures low phase-noise,
+programmable delays for proper deterministic latency and low power consumption.
+The <a class="icon adi reference external" href="https://www.analog.com/en/products/adf4360-7.html" target="_blank">ADF4360-7</a> is a PLL which takes a
+crystal generated 25MHz input and outputs a low phase-noise 1GHz clock signal.
+This signal is then fed to an <a class="icon adi reference external" href="https://www.analog.com/en/products/ad9528.html" target="_blank">AD9528</a>, which
+outputs five clock signals as required by the ADC and JESD204B interface. The
+AD9528 can divide frequencies and/or delay clock signals, thus ensuring
+synchronization for deterministic latency. The AD9528 is used in buffer mode to
+reduces power consumption. In this mode the internal PLLs are disabled and the
+AD9528 acts as a clock distribution chip, dividing the input clock to get the
+desired clock rates at the output.</p>
+<p>The stringent noise challenges posed by the 1GSPS analog-to-digital conversion
+are met by ultralow noise regulators such as the
+<a class="icon adi reference external" href="https://www.analog.com/en/products/adp7156.html" target="_blank">ADP7156</a> and
+<a class="icon adi reference external" href="https://www.analog.com/en/products/adp7159.html" target="_blank">ADP7159</a>. All the power for this board is
+derived for the 3.3V and 12V supplies coming off the FPGA board via the FMC
+connector.</p>
+<p>The DAQ board meets the VITA 57 design specs for width but not for length.</p>
+<p>The ADC input creates a 100Ω differential impedance. The external components
+account for the equivalent circuit of the analog inputs of the ADC. The user has
+the option to add capacitors and filter out both differential and common mode
+noise voltages.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/adc_input_1.jpg"><img alt="ADC Input" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/adc_input_1.jpg" width="600" />
+</a>
+<p>The clocking scheme on the DAQ board provides 5 clock signals: two for the ADC
+and three for the FPGA. They ensure the proper functioning of the system with
+deterministic latency. The five signals are generated according to the block
+diagram in the next figure. The AD9528 is used as a buffer only for low power
+consumption.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_clocking.jpg"><img alt="Clock Diagram" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_clocking.jpg" width="600" />
+</a>
+<p>The DAQ board allows for an alternative use of the AD9528 where both its PLL
+stages are used in addition to the output buffer. This option doesn’t use the
+separate PLL – ADF4360-7. The block diagram along with the higher power
+consumption are given in the next figure.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_clocking_option.jpg"><img alt="Clock Option" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmclidar1-ebz_landing/docs/solutions/reference-designs/ad-fmclidar1-ebz/images/daq_clocking_option.jpg" width="400" />
+</a>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="ad-fmclidar1-ebz.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">User guide</a>
+    <a href="hardware_laser.html" title="Next document (Alt+Shift+RightArrow)" class="next">Laser Board Overview</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
