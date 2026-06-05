@@ -34,9 +34,11 @@ Software:
 Preparing your PC/Laptop
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Install MATLAB onto your laptop
--  Install libiio onto your laptop
--  `Install the ADI Sensor Toolbox from GitHub <https://wiki.analog.com/resources/tools-software/sensor-toolbox>`_ or directly from within MATLAB using `Add-On explorer <https://www.mathworks.com/products/matlab/add-on-explorer.html>`_ by searching for the Analog Devices Sensor Toolbox
+Install the following software onto your PC or laptop:
+
+-  MATLAB
+-  Libiio
+-  `ADI Sensor Toolbox from GitHub <https://wiki.analog.com/resources/tools-software/sensor-toolbox>`_ or directly from within MATLAB using `Add-On explorer <https://www.mathworks.com/products/matlab/add-on-explorer.html>`_ by searching for the Analog Devices Sensor Toolbox
 
 System Setup
 ------------
@@ -45,7 +47,6 @@ System Setup
 
 .. tip::
 
-   
    The user guide shows the USB OTG connector and the HDMI cable installed, but
    those two steps will not be needed here since we are streaming data over the
    network into the laptop.
@@ -59,10 +60,9 @@ System Setup
 -  Plug the power supply into the wall outlet and use the DC barrel jack to
    power up the CN0549 setup.
 
-System Block Diagram
-~~~~~~~~~~~~~~~~~~~~
-
-PPT picture of high level block diagram for the hardware and software
+.. image:: images/cn0549_matlab_generic_sw_blk_dig.png
+   :align: center
+   :width: 1200
 
 Finding your DE10-Nano
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -70,22 +70,24 @@ Finding your DE10-Nano
 Before you can start gathering data, you first must locate the CN0549 system
 setup on your network.
 
--  Setup a UART serial communication between your PC and the DE10-Nano board using the micro USB cable to USB type A
+-  Setup a UART serial communication between your PC and the DE10-Nano board using the micro USB cable to USB type A.
 -  Using your device manager, locate the COM port assigned to the DE10-Nano
-   board
+   board.
 
 .. image:: images/com_port.png
    :align: center
    :width: 600
 
--  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the DE10-Nano board by setting the Baud rate to 115200, and connect.
+-  Open Putty, Tera Term, or other serial terminal program and open a terminal between the COM port the DE10-Nano board by setting the Baud rate to **115200**, and clicking "Connect".
 -  You'll now be prompted to provide a user name and password.
 
 .. note::
 
+   | Use the following credentials for Analog Devices Kuiper Linux
    
-   | For Analog Devices Kuiper Linux
-   | Username = analog and Password = analog.
+   | Username = analog 
+   | Password = analog
+
    | Press the Enter key between each.
 
 -  Type **ifconfig** into the terminal, hit "Enter"
@@ -96,13 +98,6 @@ setup on your network.
    :align: center
    :width: 600
 
-System Block Diagram
-~~~~~~~~~~~~~~~~~~~~
-
-.. image:: images/cn0549_matlab_generic_sw_blk_dig.png
-   :align: center
-   :width: 1200
-
 Connecting to the CN0549 via MATLAB
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,7 +105,7 @@ With your system fully setup, it's now time to stream data directly into MATLAB.
 
 Data streaming and device control are provided through the specialized classes called `MATLAB system objects <https://www.mathworks.com/help/matlab/matlab_prog/what-are-system-objects.html>`_ in `ADI's Sensor Toolbox <https://wiki.analog.com/resources/tools-software/sensor-toolbox>`_. Devices or sensors which connect through the CN0540, such as the CN0549, will share a common base class called `adi.CN0540Base.m <https://github.com/analogdevicesinc/SensorToolbox/blob/cn0540/%2Badi/CN0540Base.m>`_. However, each specific sensor will have its own class that will contain documentation, methods, and properties specific to it. Therefore, end-users should always use the python class associated with the sensor and not the CN0540.
 
-Below is a basic example where we will talk to a CN0540 with CN0549 attached. This is done remotely from a host PC, but can be done locally on the board or through another backend. See the `libiio doc for more information <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_. This example can be downloaded from `GitHub directly <https://github.com/analogdevicesinc/SensorToolbox/blob/cn0540/sensor_examples/cn0549.m>`_.
+Below is a basic example where we will talk to a CN0540 with CN0532 attached. This is done remotely from a host PC, but can be done locally on the board or through another backend. See the `libiio doc for more information <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_. This example can be downloaded from `GitHub directly <https://github.com/analogdevicesinc/SensorToolbox/blob/cn0540/sensor_examples/cn0549.m>`_.
 
 .. code:: matlab
 
@@ -133,8 +128,5 @@ Below is a basic example where we will talk to a CN0540 with CN0549 attached. Th
 Once run the return data ``data`` will be an array of 32-bit integers of shape ``(2^12,1)``. These are ADC codes as captured from the CN0540 board connected to the CN0532 sensor board.
 
 For further details about ADI's Sensor Toolbox consult the doc available directly in the toolbox, or look at more examples in the :git-SensorToolbox:`sensor_examples folder <sensor_examples>`.
-
-Machine Learning Examples
--------------------------
 
 *End of Document*

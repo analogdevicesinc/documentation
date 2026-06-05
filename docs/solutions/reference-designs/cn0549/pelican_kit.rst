@@ -1,16 +1,21 @@
 CN0549 CbM Pelican Kit
 ======================
 
-This wiki page will assist you in designing a standalone CN0549 CbM kit that can travel with you anywhere. The following steps assume that you have already completed the instructions for assembling the CN0549 system. If you have not configured the hardware or software, please visit the :doc:`CN0549 user guide </solutions/reference-designs/cn0549/cn0549>`, before continuing to build this kit.
+This page describes how to create a standalone CN0549 CbM kit that
+can travel with you anywhere. The following steps assume that you have
+already completed the instructions for assembling the CN0549 system. If
+you have not configured the hardware or software, please visit the
+:doc:`CN0549 User Guide </solutions/reference-designs/cn0549/cn0549>`
+before continuing with this kit.
 
 Required Materials
 ------------------
 
 Hardware:
 
--  :adi:`EVAL-CN0532-EBZ <en/design-center/reference-designs/circuits-from-the-lab/CN0532.html>`
--  :adi:`EVAL-CN0540-ARDZ <en/design-center/reference-designs/circuits-from-the-lab/CN0540.html>`
--  :adi:`EVAL-XLMOUNT1 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-xlmount1.html>`
+-  :adi:`EVAL-CN0532-EBZ`
+-  :adi:`EVAL-CN0540-ARDZ`
+-  :adi:`EVAL-XLMOUNT1`
 -  Cabling the CN0532 to the CN0540
 
    -  `1m Shielded male to male SMA cable <https://www.digikey.com/135101-02-M1.00>`_ or
@@ -18,11 +23,11 @@ Hardware:
 
 -  `DE10-Nano FPGA Board <https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English&No=1046>`_
 -  `Class 10 16GB SD Card <https://www.amazon.com/gp/product/B073K14CVB>`_
--  `USB OTG <https://www.amazon.com/Rankie-Female-Adapter-Convertor-3-Pack/dp/B00YOX4JU6>`_ (micro USB to USB Type A female USB 2.0 Compatible)
+-  `USB OTG <https://www.amazon.com/Rankie-Female-Adapter-Convertor-3-Pack/dp/B00YOX4JU6>`_ (micro USB to USB Type A female USB 2.0 compatible)
 -  `Pelican Case 1400 w/Foam <https://www.pelican.com/us/en/product/cases/protector/1400>`_
 -  `10.1 Inch HDMI Display <https://www.amazon.com/gp/product/B076GZVCP2>`_
--  `HDMI cable (male to male) <https://www.monoprice.com/product?p_id=24187>`_ (2ft length)
--  `USB Wireless Keyboard + Mouse <https://www.amazon.com/Wireless-Keyboard-Jelly-Comb-Portable/dp/B0756XFFJZ>`_ (Needs to be less than 11.5 inches width and 4.5 inches tall)
+-  `HDMI cable (male to male) <https://www.monoprice.com/product?p_id=24187>`_ (2 ft length)
+-  `USB Wireless Keyboard + Mouse <https://www.amazon.com/Wireless-Keyboard-Jelly-Comb-Portable/dp/B0756XFFJZ>`_ (must be less than 11.5 inches wide and 4.5 inches tall)
 
 Software:
 
@@ -31,63 +36,53 @@ Software:
 Creating a Pelican Kit
 ----------------------
 
-The following sections describe how to take the CN0549 and integrate it into a single pelican case for easy use, carry, and shipping. The following steps already assume that you have followed the instructions for setting up the CN0549 hardware, software, and system. If you have not configured the hardware or software, please visit the :doc:`CN0549 user guide </solutions/reference-designs/cn0549/cn0549>`.
+The following sections describe how to integrate the CN0549 into a single Pelican case for easy use, transport, and shipping. 
+These instructions assume that you have already completed the CN0549 hardware, software, and system setup. 
+If you have not configured the hardware or software, please visit the :doc:`CN0549 User Guide </solutions/reference-designs/cn0549/cn0549>`.
 
 Mount the HDMI Monitor
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Mount the HDMI monitor to the inside of the Pelican 1400 case, on the lid side.
-In order to do this, you MUST cut into the foam provided in the case.
+Mount the HDMI monitor inside the Pelican 1400 case on the lid side. To do this, you must cut into the foam provided in the case.
 
--  Align the edge of the monitor with the lefthand side of the case as shown in
-   the picture (assuming you are looking at it with the case open and the lid in
-   the air) This will leave about 2 inches of foam on the righthand side
+-  Align the edge of the monitor with the left-hand side of the case as shown in the picture. This will leave about 2 inches of foam on the right-hand side.
 
 .. image:: images/pelican_case_monitor_positioning.jpg
    :width: 400
 
--  Roughly locate the monitor about 1 inch from the top and 2 inches from the
-   bottom edge of the foam.
+-  Position the monitor approximately 1 inch from the top and 2 inches from the bottom edge of the foam.
 
 |image1|
 
 .. image:: images/pelican_case_monitor_foam_bottom_width.jpg
    :width: 400
 
--  Start cutting around the outline of the monitor with a very sharp knife.
+-  Cut around the outline of the monitor using a very sharp knife.
 
 .. image:: images/pelican_case_monitor_foam_cutting.jpg
    :align: center
    :width: 400
 
--  After you are done cutting out the space for the monitor, it should look like
-   this.
+-  After cutting out the monitor opening, it should look like this.
 
 .. image:: images/pelican_case_monitor_foam_outline.jpg
    :align: center
    :width: 400
 
--  After cutting out the placement for the monitor, its time to adhere it to the
-   Pelican case lid. Using velcro, cut 4 strips and place them down the back of
-   the monitor as shown below. Be careful not to cover venting holes or other
-   important things you might want access to later.
+-  After cutting the monitor placement, adhere it to the Pelican case lid. Cut 4 Velcro strips and place them on the back of the monitor as shown below. Do not cover venting holes or other important access points.
 
 .. image:: images/pelican_case_monitor_velcro.jpg
    :align: center
    :width: 400
 
--  Looking at the righthand side you'll see the connector panel. Connect the
-   HDMI cable and the DC barrel jack to the monitor.
+-  On the right-hand side, you will see the connector panel. Connect the HDMI cable and the DC barrel jack to the monitor.
 
 |image2|
 
 .. image:: images/monitor_input_power_connected.jpg
    :width: 410
 
--  Once complete, use the monitor to align the other side of the velcro to the
-   case. Remove the adhesive backing and insert the monitor into the Pelican
-   case lid. Apply light force as to ensure a safe, stable connection, but not
-   to hard as to damage the screen.
+-  Use the monitor to align the other side of the Velcro with the case. Remove the adhesive backing and insert the monitor into the Pelican case lid. Apply light pressure to ensure a stable connection, but not so much as to damage the screen.
 
 |image3|
 
@@ -97,92 +92,79 @@ In order to do this, you MUST cut into the foam provided in the case.
 Cutting the Foam
 ~~~~~~~~~~~~~~~~
 
-All the other items needed to run the demo must fit inside this Pelican case.
-There are probably several ways you could do this, but I believe I have
-determined the optimal way in the following steps.
+All other items needed to run the demo must fit inside this Pelican case. There are several possible layouts, but the following steps describe an optimal arrangement.
 
-Start out by prepping the foam. The Pelican case is sold with foam which is
-perforated into .5 inch squares. This allows you to customize how things are
-arranged and how they can best fit in the case.
+Begin by preparing the foam. The Pelican case includes foam that is perforated into 0.5 inch squares. This allows you to customize the layout and fit the components in the case.
 
--  Lift the foam block from the main basin of the Pelican case, and remove the thin single piece of foam located at the bottom. Place this aside for later use.
--  If you were to view the foam from the top, there is an outside layer of foam that is non-perforated along with an inner coordinate system of perforations.
--  Remove all the foam pieces colored in BLUE using the grid pattern outlined
-   below. Note the outside edge is non-perforated
+-  Lift the foam block from the main basin of the Pelican case and remove the thin, single piece of foam located at the bottom. Place it aside for later use.
+-  When viewed from the top, the foam has an outer non-perforated layer and an inner perforated grid.
+-  Remove all the foam pieces shown in blue using the grid pattern outlined below. Note that the outer edge is non-perforated.
 
 |image4| |image5|
 
 .. important::
 
-   Try to remove foam in 5 or 6 larger sections. You will need the foam later to
-   act as padding from the bottom of the case.
+   Remove the foam in 5 or 6 large sections. You will need this foam later as padding for the bottom of the case.
 
--  Next you are going to want to create padding using the foam you removed in the previous steps.
--  There are 3 different padding heights, which are broken up by equipment
-   section.
+-  Create padding using the foam removed in the previous steps.
+-  There are 3 different padding heights, divided by equipment section.
 
 .. image:: images/pelican_case_foam_cutout_grid_map2.png
    :align: center
    :width: 400
 
--  Keyboard == No Padding
--  HDMI and Power cords == 1 inch of padding
--  DAQ, FPGA, Sensor, Mounting block, USB OTG, Mouse == 1.5 inches of padding
+-  Keyboard == No padding
+-  HDMI and power cords == 1 inch of padding
+-  DAQ, FPGA, sensor, mounting block, USB OTG, mouse == 1.5 inches of padding
 
--  After you cut the padding, its now time to reinsert the padding back into the foam cutout. If you do everything correctly your Pelican case should look like this at the end
+-  After cutting the padding, reinsert it into the foam cutout. If you follow these steps correctly, your Pelican case should look like this.
 
 .. image:: images/cn0549_pelican_case_buildup_keyboard2.jpg
    :align: center
    :width: 400
 
-Equipping the Pelican case
+Equipping the Pelican ase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Now you can start adding the required items into your Pelican case for standalone operation.
--  The keyboard should be the first items you place into the assigned foam
-   slots.
+-  Begin placing the required items into your Pelican case for standalone operation.
+-  The keyboard should be the first item placed into the assigned foam slots.
 
 .. image:: images/cn0549_pelican_case_buildup_keyboard3.jpg
    :align: center
    :width: 400
 
--  Next, connect the DE10-Nano with the CN0540, CN0532, Mounting block, SMA
-   cable, and USB OTG and place them into their assigned position.
+-  Next, connect the DE10-Nano to the CN0540, CN0532, mounting block, SMA cable, and USB OTG adapter, then place them in their assigned positions.
 
 .. image:: images/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg2.jpg
    :align: center
    :width: 400
 
--  Nicely coil up the wires for the CN0532, mounting block, SMA cable, and USB OTG cable so that they fit into correct position. Add the wireless mouse on top of these.
--  Next attach the HDMI cable and the DC barrel jack into the correct connector
-   slots on the DE10-Nano, and make sure you coil the cables up so that
-   everything fits into its assigned position.
+-  Coil the wires for the CN0532, mounting block, SMA cable, and USB OTG cable neatly so they fit into the correct position. Place the wireless mouse on top of these.
+-  Attach the HDMI cable and the DC barrel jack to the DE10-Nano. Coil the cables so that everything fits into its assigned position.
 
 .. image:: images/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg_mouse_hdmi_power1.jpg
    :align: center
    :width: 400
 
--  When everything is all complete, the main basin of the Pelican case should
-   look something like this.
+-  When everything is complete, the main basin of the Pelican case should look like this.
 
 .. image:: images/cn0549_pelican_case_buildup_cn0540_cn0532_de10_otg_mouse_hdmi_power2.jpg
    :align: center
    :width: 400
 
--  The entire open CN0549 case will look similar to this.
+-  The entire open CN0549 case should look similar to this.
 
 .. image:: images/pelican_case_complete_open2.jpg
    :align: center
    :width: 400
 
--  Before closing the lid, the protective foam should be added as to not damage
-   the HDMI monitor.
+-  Before closing the lid, add the protective foam to prevent damage to the HDMI monitor.
 
 .. image:: images/pelican_case_complete_open_protected2.jpg
    :align: center
    :width: 400
 
--  Now you are ready to close the case and bring your setup along with you!
+-  You are now ready to close the case and transport your setup.
 
 .. image:: images/cn0549_pelican_case_complete_closed.jpg
    :align: center
