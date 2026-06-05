@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The Quick Start Guides provide step-by-step instructions on how to set up the ADRV9364-Z7020 SOM for initial evaluation." name="description" />
+<meta content="The Quick Start Guides provide step-by-step instructions on how to set up the ADRV9364-Z7020 SOM for initial evaluation. In these guides, we will discuss how to boot a Linux distribution." name="description" />
 
     <title>Quickstart &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
@@ -97,6 +97,11 @@
           <ul>
 <li><a class="reference internal" href="#">Quickstart</a><ul>
 <li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
+<li><a class="reference internal" href="#supported-environments">Supported environments</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware setup</a><ul>
+<li><a class="reference internal" href="#adrv9364-z7020-adrv1crr-bob">ADRV9364-Z7020 + ADRV1CRR-BOB</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -131,12 +136,12 @@ Content on this topic
 <ul class="current">
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADRV9364-Z7020 System on Module (SOM) SDR</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="adrv1crr-bob.html">PicoZed SDR (Zynq-7020)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="adrv1crr-bob.html">ADRV1CRR-BOB</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="adrv1crr-bob.html">ADRV1CRR-BOB Quick start</a></li>
 </ul>
 </li>
 </ul>
@@ -159,33 +164,11 @@ Content on this topic
   <section id="quickstart">
 <span id="adrv9364z7020-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
 <p>The Quick Start Guides provide step-by-step instructions on how to set up the
-<a class="icon adi reference external" href="https://www.analog.com/en/products/rf-microwave/integrated-transceivers-transmitters-receivers/wideband-transceivers-ic/adrv9364.html" target="_blank">ADRV9364-Z7020</a>
-SOM for initial evaluation.</p>
-<section id="supported-carriers">
-<h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Carrier</p></th>
-<th class="head"><p>CMOS</p></th>
-<th class="head"><p>LVDS</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADRV1CRR-BOB" target="_blank">ADRV1CRR-BOB</a></p></td>
-<td><p>Yes</p></td>
-<td><p>Yes</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf" target="_blank">ADRV1CRR-PACKRF</a> (OBSOLETE)</p></td>
-<td></td>
-<td><p>Yes</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<a class="icon adi reference external" href="https://www.analog.com/ADRV9364" target="_blank">ADRV9364-Z7020</a> SOM for initial evaluation. In these guides, we
+will discuss how to boot a Linux distribution.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="adrv1crr-bob.html">PicoZed SDR (Zynq-7020)</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="adrv1crr-bob.html">ADRV1CRR-BOB</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="adrv1crr-bob.html#using-linux-as-software">Using Linux as software</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="adrv1crr-bob.html#necessary-files">Necessary files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adrv1crr-bob.html#required-software">Required software</a></li>
@@ -209,6 +192,63 @@ SOM for initial evaluation.</p>
 </li>
 </ul>
 </div>
+<section id="supported-carriers">
+<h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Carrier</p></th>
+<th class="head"><p>CMOS</p></th>
+<th class="head"><p>LVDS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADRV1CRR-BOB" target="_blank">ADRV1CRR-BOB</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf" target="_blank">ADRV1CRR-PACKRF</a> (OBSOLETE)</p></td>
+<td></td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="supported-environments">
+<h2>Supported environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Carrier</p></th>
+<th class="head"><p>HDL</p></th>
+<th class="head"><p>Linux Software</p></th>
+<th class="head"><p>No-OS Software</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/ADRV1CRR-BOB" target="_blank">ADRV1CRR-BOB</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/pzsdr/carriers/packrf" target="_blank">ADRV1CRR-PACKRF</a> (OBSOLETE)</p></td>
+<td></td>
+<td><p>Yes</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hardware-setup">
+<h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<section id="adrv9364-z7020-adrv1crr-bob">
+<h3>ADRV9364-Z7020 + ADRV1CRR-BOB<a class="headerlink" href="#adrv9364-z7020-adrv1crr-bob" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/adrv9364z7020_landing/docs/solutions/reference-designs/adrv9364z7020/images/adrv9361z7020_adrv1crr-bob_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/adrv9364z7020_landing/docs/solutions/reference-designs/adrv9364z7020/images/adrv9361z7020_adrv1crr-bob_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/adrv9364z7020_landing/docs/solutions/reference-designs/adrv9364z7020/images/adrv9361z7020_adrv1crr-bob_setup.jpg" width="800" />
+</a>
+<p>Go to <a class="reference internal" href="adrv1crr-bob.html#adrv9364z7020-quickstart-adrv1crr-bob"><span class="std std-ref">the setup guide</span></a>.</p>
+</section>
 </section>
 </section>
 
