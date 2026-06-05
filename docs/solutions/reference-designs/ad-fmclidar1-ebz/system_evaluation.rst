@@ -1,9 +1,14 @@
 Setting up the system
-=====================
+================================================================================
 
 .. warning::
 
-   Support for the ad_fmclidar_ebz is discontinued on all supported carriers: Arria10 SOC, ZC706 and ZCU102. ad_fmclidar_ebz will not be supported in future releases, last release image in which pre-build files can be found is 2021_r1. (check the `Kuiper Linux release notes <https://analogdevicesinc.github.io/documentation/linux/kuiper/release_notes.html>`_ to see all available Kuiper Linux releases).
+   Support for the ad_fmclidar_ebz is discontinued on all supported carriers:
+   Arria10 SOC, ZC706 and ZCU102. ad_fmclidar_ebz will not be supported in
+   future releases, last release image in which pre-build files can be found is
+   2021_r1. (check the
+   :external+kuiper:doc:`Kuiper <index>`
+   to see all available Kuiper Linux releases).
 
 .. image:: images/lidar_system_1.jpg
    :alt: Complete system assembled including additional optics and FPGA board
@@ -11,45 +16,73 @@ Setting up the system
 
 To get the system up and running follow the steps below:
 
--  Connect the DAQ board to the FMC HPC connector on the FPGA carrier board
--  Connect the ribbon cables between the DAQ board and the Laser and AFE boards. The DAQ board has labels on the silkscreen next to the AFE and Laser board connectors indicating which board these correspond to
--  Connect the SMA cables between the DAQ and the AFE board. It is recommended to match the TIA outputs with the ADC inputs using the labeling on the SMA connectors so that they have the same letter (A, B, C, D). Make sure that the P (positive) and N (negative) are matched between the boards.
--  It is is also possible to use one of the ADC channels to sample the laser
-   dive signal by connecting the SMA outputs of the Laser board to one of the
-   ADC channels
+- Connect the DAQ board to the FMC HPC connector on the FPGA carrier board
+- Connect the ribbon cables between the DAQ board and the Laser and AFE boards.
+  The DAQ board has labels on the silkscreen next to the AFE and Laser board
+  connectors indicating which board these correspond to
+- Connect the SMA cables between the DAQ and the AFE board. It is recommended
+  to match the TIA outputs with the ADC inputs using the labeling on the SMA
+  connectors so that they have the same letter (A, B, C, D). Make sure that the
+  P (positive) and N (negative) are matched between the boards.
+- It is is also possible to use one of the ADC channels to sample the laser
+  dive signal by connecting the SMA outputs of the Laser board to one of the
+  ADC channels
 
 .. image:: images/lidar_lens.jpg
    :alt: Lens mount
    :align: right
    :width: 100
 
--  Insert the lens into the 1.5" lens tube (the longer one) with the spherical surface pointing outwards. The tube comes with a retaining ring that is used to set the position of the lens inside the tube. Position the lens such that top of the spherical surface is aligned with the edge of the tube. Use the retaining ring provided in the box to lock the lens in place.
--  It is recommended to use the 1" tube provided in the box to limit the field of view of the system by screwing it on the 1.5" tube in front of the lens.
--  Connect the external 12V power supply that comes with the kit to the Laser board
--  The SD card that comes with the kit contains the Linux files for multiple projects. Before it can be used all the files from the BOOT/zynq-zc706-adv7511-fmclidar1 must be copied onto the root of the SD card
--  Plug the SD card that comes with the kit in the FPGA carrier board
--  Connect to the FPGA board a HDMI monitor and a USB keyboard and mouse
--  Power up the FPGA board
--  After the FPGA board boots power the laser board by pressing the S1 switch
--  After the FPGA boots the `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_ will start allowing to configure the system, capture and visualize data from it
+- Insert the lens into the 1.5" lens tube (the longer one) with the spherical
+  surface pointing outwards. The tube comes with a retaining ring that is used
+  to set the position of the lens inside the tube. Position the lens such that
+  top of the spherical surface is aligned with the edge of the tube. Use the
+  retaining ring provided in the box to lock the lens in place.
+- It is recommended to use the 1" tube provided in the box to limit the field
+  of view of the system by screwing it on the 1.5" tube in front of the lens.
+- Connect the external 12V power supply that comes with the kit to the Laser
+  board
+- The SD card that comes with the kit contains the Linux files for multiple
+  projects. Before it can be used all the files from the
+  BOOT/zynq-zc706-adv7511-fmclidar1 must be copied onto the root of the SD
+  card
+- Plug the SD card that comes with the kit in the FPGA carrier board
+- Connect to the FPGA board a HDMI monitor and a USB keyboard and mouse
+- Power up the FPGA board
+- After the FPGA board boots power the laser board by pressing the S1 switch
+- After the FPGA boots the
+  :ref:`IIO Oscilloscope <iio-oscilloscope>`
+  will start allowing to configure the system, capture and visualize data from
+  it
 
 .. note::
 
-
-   -  See the :external+kuiper:doc:`Kuiper Linux instructions <index>` on how to burn the Linux image on the SD card. This might be useful if the SD card is corrupted or a new image needs to be written to the SD card.
-   -  The SD card in the box might not have the latest software release. It is recommended to update the software when using the system for the first time by following the :external+kuiper:doc:`Kuiper Linux instructions <index>`
-   -  To prevent the SD from getting corrupted at system power down it is recommended to run this command to safely power down the system: *sudo shutdown -h now*
-
-
---------------
+   - See the :external+kuiper:doc:`Kuiper Linux instructions <index>` on how to
+     burn the Linux image on the SD card. This might be useful if the SD card is
+     corrupted or a new image needs to be written to the SD card.
+   - The SD card in the box might not have the latest software release. It is
+     recommended to update the software when using the system for the first time
+     by following the
+     :external+kuiper:doc:`Kuiper Linux instructions <index>`
+   - To prevent the SD from getting corrupted at system power down it is
+     recommended to run this command to safely power down the system:
+     *sudo shutdown -h now*
 
 Running the evaluation software
-===============================
+================================================================================
 
-The IIO Oscilloscope enables viewing the raw data acquired on all the ADC channels as well as controlling some hardware settings through the LIDAR plugin. It uses the `libiio library <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_ to talk to the system and the functionality of the controls in the LIDAR plugin is implemented by reading and writing different attributes of the Linux drivers in the system. The source code of the plugin, showing how to access the available attributes, can be found :git-iio-oscilloscope:`here <plugins/lidar.c>`.
+The IIO Oscilloscope enables viewing the raw data acquired on all the ADC
+channels as well as controlling some hardware settings through the LIDAR plugin.
+It uses the
+:ref:`libiio library <libiio>`
+to talk to the system and the functionality of the controls in the LIDAR plugin
+is implemented by reading and writing different attributes of the Linux drivers
+in the system. The source code of the plugin, showing how to access the
+available attributes, can be found
+:git-iio-oscilloscope:`here <plugins/lidar.c>`.
 
 IIO Oscilloscope data capture window
-------------------------------------
+--------------------------------------------------------------------------------
 
 .. image:: images/liadr_iio_scope_plot.png
    :alt: LIDAR IIO Oscilloscope
@@ -74,23 +107,37 @@ always be multiplied with 0 using the Math function of the IIO oscilloscope.
    :width: 400
 
 IIO Oscilloscope LIDAR plugin
------------------------------
+--------------------------------------------------------------------------------
 
 .. image:: images/liadr_iio_scope_plugin.png
    :align: right
    :width: 350
 
 Sequencer Settings
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A TIA channel sequencer implemented in the LIDAR HDL design that controls the mux selection independently for all the TIAs. The sequencer's operation can be controller from the LIDAR plugin using the options in the *Sequencer Settings* section. The sequencer can run in **auto** mode, meaning that it will change the mux selection at every data capture based on the sequence specified in the *Auto Config* section, which defines what the mux selection is for all the TIAs for 4 consecutive data captures. The length of the data capture is specified in the IIO Oscilloscope main window and a data capture is always triggered by the start of a laser pulse so that the start of the data is aligned with the transmitted laser pulse, which is time 0 for time of flight measurement.
+A TIA channel sequencer implemented in the LIDAR HDL design that controls the
+mux selection independently for all the TIAs. The sequencer's operation can be
+controller from the LIDAR plugin using the options in the *Sequencer Settings*
+section. The sequencer can run in **auto** mode, meaning that it will change the
+mux selection at every data capture based on the sequence specified in the
+*Auto Config* section, which defines what the mux selection is for all the TIAs
+for 4 consecutive data captures. The length of the data capture is specified in
+the IIO Oscilloscope main window and a data capture is always triggered by the
+start of a laser pulse so that the start of the data is aligned with the
+transmitted laser pulse, which is time 0 for time of flight measurement.
 
-In **manual** mode the 4 *Manual Channel* controls correspond to the 4 TIAs on the AFE board, starting with U2 on the left and continuing with U3, U4, U5 to the right. The values are in the range 0:3 and control the setting of the CHSEL0 and CHSEL1 pins of the TIAs.
+In **manual** mode the 4 *Manual Channel* controls correspond to the 4 TIAs on
+the AFE board, starting with U2 on the left and continuing with U3, U4, U5 to
+the right. The values are in the range 0:3 and control the setting of the CHSEL0
+and CHSEL1 pins of the TIAs.
 
-The *Pulse delay* setting controls the delay between the time the TIA channel is changed a new laser pulse is generated. This delay is required to account for the time needed by the TIA to settle after the channel change.
+The *Pulse delay* setting controls the delay between the time the TIA channel is
+changed a new laser pulse is generated. This delay is required to account for
+the time needed by the TIA to settle after the channel change.
 
 Laser Pulse Generator Settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The HDL design contains a pulse generator that precisely controls the timing of
 the laser pulses. The generator must be enabled before the data capture is
@@ -100,30 +147,43 @@ width, which actually define the total optical power of the system.
 
 .. important::
 
-   The system was certified for Eye Safety Class 1 with 20ns pulse width and 50KHz laser settings. When operating the system above these settings eye safety class 1 is no longer guaranteed and laser safety glasses (e.g `LG2 laser safety glasses <https://www.thorlabs.com/thorproduct.cfm?partnumber=LG2>`_) must be worn all the time. It is recommended to wear laser safety glasses all the time irrespective of the laser setting to avoid any dangerous situations that might arise when modifying the software.
+   The system was certified for Eye Safety Class 1 with 20ns pulse width and
+   50KHz laser settings. When operating the system above these settings eye
+   safety class 1 is no longer guaranteed and laser safety glasses (e.g
+   `LG2 laser safety glasses <https://www.thorlabs.com/thorproduct.cfm?partnumber=LG2>`_)
+   must be worn all the time. It is recommended to wear laser safety glasses all
+   the time irrespective of the laser setting to avoid any dangerous situations
+   that might arise when modifying the software.
 
 AFE Settings
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The APD on the AFE board needs a negative bias voltage in the range 120V to 200V to work. This determines the sensitivity of the APD and is set through the *APD Bias* control.
+The APD on the AFE board needs a negative bias voltage in the range 120V to 200V
+to work. This determines the sensitivity of the APD and is set through the
+*APD Bias* control.
 
-The TIA output signal has an offset that can be compensated via the *Tilt* control. This helps bring the signal close to 0 and maximize the ADC range.
+The TIA output signal has an offset that can be compensated via the *Tilt*
+control. This helps bring the signal close to 0 and maximize the ADC range.
 
 .. note::
 
-   See the :doc:`AFE board wiki page </solutions/reference-designs/ad-fmclidar1-ebz/hardware_afe>` for a complete description of the signal chain.
+   See the :doc:`AFE board wiki page <hardware_afe>` for a complete description
+   of the signal chain.
 
 Monitoring the status of the JESD Link
---------------------------------------
+--------------------------------------------------------------------------------
 
-At system startup, besides the IIO Oscilloscope, the `JESD 204B Eye Scan <https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan>`_ app starts to allow monitoring the status of the JESD204B link to the AD9094 on the DAQ board.
-
---------------
+At system startup, besides the IIO Oscilloscope, the
+:dokuwiki:`JESD 204B Eye Scan <resources/tools-software/linux-software/jesd_eye_scan>`
+app starts to allow monitoring the status of the JESD204B link to the AD9094 on
+the DAQ board.
 
 Make some actual distance measurements
-======================================
+================================================================================
 
-:git-pyadi-iio:`examples/lidar.py` is a standalone GUI application developed on top of Analog Devices' `pyadi-iio library <https://github.com/analogdevicesinc/pyadi-iio>`_.
+:git-pyadi-iio:`examples/lidar.py` is a standalone GUI application developed on
+top of Analog Devices'
+:git-pyadi-iio:`pyadi-iio library </>`.
 
 Besides displaying the received signals, lidar.py can be used configure all the
 relevant board parameters, including the Pulse Width, APD Bias, Tilt Voltage,
