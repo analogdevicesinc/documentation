@@ -1,12 +1,12 @@
 .. _ethernet-apl functional-safety:
 
-Functional Safety Ready Features
-================================
+Functional Safety Features
+==========================
 
 Introduction
 ~~~~~~~~~~~~
 
-The AD-EthernetAPLDevice-SL has a failure modes, effects, and diagnostics analysis
+The :adi:`AD-ETHERNETAPLDEVICE-SL` has a failure modes, effects, and diagnostics analysis
 (FMEDA) document readily available upon request to support functional safety
 designs despite it not being assessed for functional safety. It also utilizes ADI
 functional safety certified components like the :adi:`MAX42500` and :adi:`ADFS7124-4` 
@@ -33,7 +33,7 @@ states, to verify that it will be at least functional safety ready.
 .. csv-table:: General FMEDA Definitions
    :file: fmeda-definition.csv
 
-All functional safety documentation like safety manuals and FMEDA are available
+All functional safety documentation like component safety manuals and FMEDA are available
 upon request and may require non-disclosure agreement as part of confidentiality
 terms.
 

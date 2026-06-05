@@ -16,17 +16,14 @@ Key Features
 
 - Certified for intrinsic safety (Ex ia IIC Ga)
 - Pre-certified Ethernet-APL
-- Functional safety ready (SIL2) with:
-
-  - :adi:`MAX42500` voltage monitor with integrated windowing watchdog
-  - :adi:`MAX66132` temperature sensor
-  - :adi:`ADFS7124-4` sigma-delta ADC (SC3 certified)
-  - Complete FMEDA documentation
-
+- :adi:`MAX42500` voltage monitor with integrated windowing watchdog
+- :adi:`MAX66132` temperature sensor
+- :adi:`ADFS7124-4` sigma-delta ADC (SC3 certified)
+- Complete FMEDA documentation
 - :adi:`MAX32690`  dual-core MCU (ARM Cortex-M4 with FPU + RISC-V co-processor)
 - External RAM (512 Mb) and Flash (64 Mb)
 - 10BASE-T1L Ethernet via :adi:`ADIN1110`  MAC/PHY
-- Powered via Single-Pair Power over Ethernet (SPoE), :adi:` ADIN1100D2Z` recommended
+- Powered via Single-Pair Power over Ethernet (SPoE), :adi:`ADIN1100D2Z` recommended
 - Open-source software stack with drivers and example applications
 - Zephyr RTOS support and integration with Code Fusion Studio
 
