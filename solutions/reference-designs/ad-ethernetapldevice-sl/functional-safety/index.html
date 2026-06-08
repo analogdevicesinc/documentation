@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-EthernetAPLDevice-SL has a failure modes, effects, and diagnostics analysis (FMEDA) document readily available upon request to support functional safety designs despite it not being assessed for functional safety. It also utilizes ADI functional safety certified components like the MAX42500 and ADFS7124-4 as diagnostics to further improve systematic capability and functional safety compliance. Furthermore, this reference design demonstrates how such FS-certified parts can be implemented in an actual system." name="description" />
+<meta content="The AD-ETHERNETAPLDEVICE-SL has a failure modes, effects, and diagnostics analysis (FMEDA) document readily available upon request to support functional safety designs despite it not being assessed for functional safety. It also utilizes ADI functional safety certified components like the MAX42500 and ADFS7124-4 as diagnostics to further improve systematic capability and functional safety compliance. Furthermore, this reference design demonstrates how such FS-certified parts can be implemented in an actual system." name="description" />
 
-    <title>Functional Safety Ready Features &#8212; System Level Documentation  documentation</title>
+    <title>Functional Safety Features &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
@@ -95,7 +95,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Functional Safety Ready Features</a><ul>
+<li><a class="reference internal" href="#">Functional Safety Features</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#fmeda-target-requirements-overview">FMEDA Target/Requirements Overview</a></li>
 <li><a class="reference internal" href="#diagnostic-circuit-for-safe-microcontroller-and-internal-power-supplies">Diagnostic Circuit for Safe Microcontroller and Internal Power Supplies</a></li>
@@ -423,7 +423,7 @@ Content on this topic
 </li>
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-5" id="toctree-collapse-14-5" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-ETHERNETAPLDEVICE-SL</a><label for="toctree-collapse-14-5"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../ethernet-apl/index.html">Ethernet-APL Considerations</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Functional Safety Ready Features</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Functional Safety Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intrinsic-safety/index.html">Intrinsic Safety Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../power/index.html">Power Description</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../software-example/index.html">Software Examples</a></li>
@@ -1264,11 +1264,11 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="functional-safety-ready-features">
-<span id="ethernet-apl-functional-safety"></span><h1>Functional Safety Ready Features<a class="headerlink" href="#functional-safety-ready-features" title="Link to this heading"></a></h1>
+  <section id="functional-safety-features">
+<span id="ethernet-apl-functional-safety"></span><h1>Functional Safety Features<a class="headerlink" href="#functional-safety-features" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The AD-EthernetAPLDevice-SL has a failure modes, effects, and diagnostics analysis
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-ETHERNETAPLDEVICE-SL" target="_blank">AD-ETHERNETAPLDEVICE-SL</a> has a failure modes, effects, and diagnostics analysis
 (FMEDA) document readily available upon request to support functional safety
 designs despite it not being assessed for functional safety. It also utilizes ADI
 functional safety certified components like the <a class="icon adi reference external" href="https://www.analog.com/MAX42500" target="_blank">MAX42500</a> and <a class="icon adi reference external" href="https://www.analog.com/ADFS7124-4" target="_blank">ADFS7124-4</a>
@@ -1310,25 +1310,25 @@ states, to verify that it will be at least functional safety ready.</p>
 <td><p>b) The Hockey Puck is indicating an internal error over the safe bus protocol and mark the transmitted temperature measurement as faulty.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Targets of safety parameter according to IEC-61508</p></td>
-<td><p>PFD (percentage) of SIL2 ? 35% of 10^-2</p></td>
+<td><p>PFD (percentage) of SIL2 ≤ 35% of 10^-2</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>PFD (avg) ? 3.5 x 10^-3</p></td>
+<td><p>PFD (avg) ≤ 3.5 x 10^-3</p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>Circuit parts with type-B components:</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>HFT=0 ? SFF ? 90%</p></td>
+<td><p>HFT=0 → SFF ≥ 90%</p></td>
 </tr>
 <tr class="row-odd"><td><p>Timing</p></td>
-<td><p>Proof test interval ? 12 months</p></td>
+<td><p>Proof test interval ≥ 12 months</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>Safe reaction time ? 1s</p></td>
+<td><p>Safe reaction time ≤ 1s</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>Max. internal diagnosis time ? 8h</p></td>
+<td><p>Max. internal diagnosis time ≤ 8h</p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>Low demand mode</p></td>
@@ -1358,7 +1358,7 @@ states, to verify that it will be at least functional safety ready.</p>
 </tbody>
 </table>
 </div>
-<p>All functional safety documentation like safety manuals and FMEDA are available
+<p>All functional safety documentation like component safety manuals and FMEDA are available
 upon request and may require non-disclosure agreement as part of confidentiality
 terms.</p>
 </section>
