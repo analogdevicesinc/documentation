@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz software i2c_to_spi_bridge:
+
 AD-FMCOMMS1-EBZ Register Access
 ===============================
 
@@ -151,13 +153,13 @@ Preprocessor defines
 Code Examples
 -------------
 
--  `No-OS driver <https://github.com/no-OS?master/fmcomms1/Common/spi_interface.c>`_
--  `Linux driver <https://github.com/linux?master/drivers/spi/spi-xcomm.c>`_
+- :git-no-OS:`No-OS driver <2016_R1:fmcomms1/Common/spi_interface.c>`
+- :git-linux:`Linux driver <master:drivers/spi/spi-xcomm.c>`
 
 Updating
-========
+--------
 
-The PIC firmware is not open source (sorry). It is released as a `Hex file <https://en.wikipedia.org/wiki/Intel_HEX>`_ on :git-no-OS:`Github <fmcomms1/PIC>`.
+The PIC firmware is not open source (sorry). It is released as a `Hex file <https://en.wikipedia.org/wiki/Intel_HEX>`_ on :git-no-OS:`Github <2016_R1:fmcomms1/PIC>`.
 
 +--------------+---------+----------------------------------------------------------------------------------------------------+
 | Release Date | Version | Reason                                                                                             |
@@ -182,9 +184,7 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
    a simple matter to do (This assumes you are using the Linux design - there
    isn't way to do this for the no-OS infrastructure):
 
-
    ::
-
 
       root@linaro-ubuntu-desktop:~# for eeprom in $(find /sys -name eeprom); do cat $eeprom > $(echo $eeprom | sed 's:/:_:g') ; done
 
@@ -192,7 +192,6 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
    each):
 
    ::
-
 
       root@linaro-ubuntu-desktop:~# ls -l _sys
       -rw-r--r-- 1 root root 256 Jan  1 00:04 _sys_devices_amba.1_41600000.i2c_i2c-1_1-0050_eeprom
@@ -202,14 +201,11 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
 
    ::
 
-
       root@linaro-ubuntu-desktop:~# for eeprom in $(ls _sys*) ; do cat $eeprom > $(echo $eeprom | sed 's:_:/:g') ; done
 
    To make sure things are OK, try:
 
    ::
-
-
 
       root@linaro-ubuntu-desktop:~# find /sys/ -name eeprom
       /sys/devices/amba.1/41600000.i2c/i2c-1/1-0050/eeprom
@@ -274,9 +270,9 @@ The microcontroller on the board is a `Microchip PIC18F24J50-I/ML <http://www.mi
       *
       00000100
 
-|FMComms1 programming header|\ |ADI DAC boards programming header|\ The FMComms1 board (left) uses a non-standard pinout for the PIC programming. It is on a 0.1 inch header with the configuration shown. This is almost the same as the program header found on the ADI DAC boards, shown on the right (if you have one of those cables, it's pretty easy to snip pin 4 out, and make it work). It's up to you to make sure the part is properly connected and programmed properly.
+|FMCOMMS1 programming header|\ |ADI DAC boards programming header|\ The FMCOMMS1 board (left) uses a non-standard pinout for the PIC programming. It is on a 0.1 inch header with the configuration shown. This is almost the same as the program header found on the ADI DAC boards, shown on the right (if you have one of those cables, it's pretty easy to snip pin 4 out, and make it work). It's up to you to make sure the part is properly connected and programmed properly.
 
-.. |FMComms1 programming header| image:: ../images/programming_header.png
+.. |FMCOMMS1 programming header| image:: ../images/programming_header.png
    :width: 300
 
 .. |ADI DAC boards programming header| image:: ../images/dac_programmer.png

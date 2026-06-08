@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz quickstart:
+
 AD-FMCOMMS1-EBZ Quick Start Guides
 ==================================
 
@@ -17,16 +19,32 @@ AD-FMCOMMS1-EBZ Quick Start Guides
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the :adi:`AD-FMCOMMS1-EBZ <en/evaluation/eval-fmcomms/eb.html>` on various FPGA development boards. They will discuss how to install the bitstream and how to boot a Linux distribution and give an basic introduction to the tools available.
+The Quick Start Guides provide a simple step by step instruction on how to do an
+initial system setup for the :adi:`AD-FMCOMMS1-EBZ <eval-fmcomms>`
+on various FPGA development boards. They will discuss how to install the
+bitstream and how to boot a Linux distribution and give an basic introduction to
+the tools available.
 
 Quick Start Guides are available for
 
--  :doc:`Linux on KC705, VC707 </solutions/reference-designs/ad-fmcomms1-ebz/quickstart/microblaze_kc705>`
--  :doc:`Linux on ZC702, ZC706, ZED </solutions/reference-designs/ad-fmcomms1-ebz/quickstart/zynq>`
--  :doc:`no-OS Drivers </solutions/reference-designs/ad-fmcomms1-ebz/quickstart/no_os_microblaze>`
+- :ref:`Linux on KC705, VC707 <ad_fmcomms1_ebz quickstart microblaze-kc705>`
+- :ref:`Linux on ZC702, ZC706, ZED <ad_fmcomms1_ebz quickstart zynq>`
+- :ref:`no-OS Drivers <ad_fmcomms1_ebz quickstart no-os-microblaze>`
 
-.. image:: images/xcomm_zed_linux.jpg
+.. image:: ../images/xcomm_zed_linux.jpg
    :alt: FMCOMMS1 on Zed board running linux
    :width: 800
 
-If you are looking for a quick check on the hardware, you may use the :doc:`No-OS software </solutions/reference-designs/ad-fmcomms1-ebz/software/baremetal>`. You will need to build the bit file then use the no-os sources to generate the elf file.
+If you are looking for a quick check on the hardware, you may use the
+:dokuwiki:`No-OS software <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/reference_design_no_os>`.
+You will need to build the bit file then use the no-os sources to generate the
+elf file.
+
+.. toctree::
+   :hidden:
+
+   zynq
+   microblaze_kc705
+   microblaze_ml605
+   no_os_microblaze
+   zynq_box

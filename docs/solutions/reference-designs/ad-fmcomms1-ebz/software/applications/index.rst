@@ -1,5 +1,7 @@
-Software for the AD-FMCOMMS1-EBZ
-================================
+.. _ad_fmcomms1_ebz software linux applications:
+
+Linux Applications for the AD-FMCOMMS1-EBZ
+===============================================================================
 
 .. warning::
 
@@ -17,6 +19,13 @@ Software for the AD-FMCOMMS1-EBZ
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
--  :doc:`Linux </solutions/reference-designs/ad-fmcomms1-ebz/software/linux>`
--  :doc:`No-OS drivers </solutions/reference-designs/ad-fmcomms1-ebz/software/baremetal>`
--  :doc:`I2C-to-SPI-bridge </solutions/reference-designs/ad-fmcomms1-ebz/software/i2c_to_spi_bridge>`
+.. toctree::
+   :hidden:
+
+   shell_scripts
+   xcomm_cal
+
+- :ref:`Command Line/Shell scripts <ad_fmcomms1_ebz software shell-scripts>`
+- :ref:`IIO Scope <iio-oscilloscope>`
+- :ref:`fru_dump <software fru-dump-tool>`
+- :ref:`xcomm_cal <ad_fmcomms1_ebz software xcomm-cal>`

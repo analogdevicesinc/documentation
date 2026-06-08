@@ -38,6 +38,7 @@ Contents
    software/*/index
    software/shell_scripts
    software/fru_dump
+   software/fru_dump_tool
    software/gnuradio
 
 .. toctree::

@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz software shell-scripts:
+
 Shell Scripts for the FMC RF boards
 ===================================
 
@@ -17,15 +19,17 @@ Shell Scripts for the FMC RF boards
    devices themselves may be Recommended for New Designs or in
    Production. This page is here for historical/reference purposes only.
 
-`Shell Scripts <https://en.wikipedia.org/wiki/Shell_script>`_ are scripts written for the shell (`dash <https://en.wikipedia.org/wiki/Debian_Almquist_shell>`_ or `bash <https://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ or `ash <https://en.wikipedia.org/wiki/Almquist_shell>`_) of an operating system. To find out which shell, you are using, try something like:
+`Shell Scripts <https://en.wikipedia.org/wiki/Shell_script>`_ are scripts
+written for the shell (`dash <https://en.wikipedia.org/wiki/Debian_Almquist_shell>`_
+or `bash <https://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ or
+`ash <https://en.wikipedia.org/wiki/Almquist_shell>`_) of an operating system.
+To find out which shell, you are using, try something like:
 
 .. container:: box bggreen
 
    This specifies any shell prompt running on the target
 
-
    ::
-
 
       rgetz@pinky ~ $ which sh
       /usr/bin/sh
@@ -35,8 +39,6 @@ Shell Scripts for the FMC RF boards
    OR
 
    ::
-
-
 
       rgetz@pinky ~ $ ps -p $$
         PID TTY          TIME CMD
@@ -125,7 +127,8 @@ Random data on the RF output
 Setting the amplitude
 ---------------------
 
-I don't like remembering what 1/32 is, so I just use :math:`1/(2^n)` . You just need to provide 'n'.
+I don't like remembering what 1/32 is, so I just use :math:`1/(2^n)` . You just
+need to provide 'n'.
 
 .. code:: bash
 

@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz quickstart microblaze-ml605:
+
 AD-FMCOMMS1-EBZ ML605 Quick Start Guide
 =======================================
 
@@ -25,105 +27,112 @@ AD-FMCOMMS1-EBZ ML605 Quick Start Guide
 This guide provides some quick instructions (still takes awhile to download, and
 set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
 
--  `ML605 <https://www.xilinx.com/ML605>`_
+- `ML605 <https://www.xilinx.com/ML605>`_
 
 Required Software
 -----------------
 
--  ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip (CF Card filesystem contents)
--  mkdosfs – utility used to format the CF Card with an appropriate FAT16 filesystem.
+- ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip (CF Card filesystem
+  contents)
+- mkdosfs – utility used to format the CF Card with an appropriate FAT16
+  filesystem.
 
-Downloads
----------
+.. Downloads
+.. ---------
 
--  `ml605_restoring_cf_flash_contents_ad-fmcomms1-ebz.zip OUTDATED <../resources/ml605_restoring_cf_flash_contents_ad-fmcomms1-ebz.zip>`_
--  `mkdosfs (Linux mkdosfs for Windows NT/2K/XP) <http://www1.mager.org/mkdosfs/>`_
--  `ad-fmcomms1-ebz_ml605.zip MARCH 5th 2014 <../resources/ad-fmcomms1-ebz_ml605_05052014.zip>`_
+.. - `ml605_restoring_cf_flash_contents_ad-fmcomms1-ebz.zip OUTDATED <../resources/ml605_restoring_cf_flash_contents_ad-fmcomms1-ebz.zip>`_
+.. - `mkdosfs (Linux mkdosfs for Windows NT/2K/XP) <http://www1.mager.org/mkdosfs/>`_
+.. - `ad-fmcomms1-ebz_ml605.zip MARCH 5th 2014 <../resources/ad-fmcomms1-ebz_ml605_05052014.zip>`_
 
 Required Hardware
 -----------------
 
--  Xilinx ML605
--  1GB or 2GB CompactFlash card (Sandisk Ulra II or similar)
--  AD-FMCOMMS1-EBZ FMC Board.
+- Xilinx ML605
+- 1GB or 2GB CompactFlash card (Sandisk Ulra II or similar)
+- AD-FMCOMMS1-EBZ FMC Board.
 
 Software Installs
 -----------------
 
--  Format and populate CF Card
+- Format and populate CF Card
 
-   -  In order to use a CF card with the Xilinx SystemACE it must be formatted with a FAT12 or FAT16 filesystem. You cannot format the Card using Windows XP or later. Please use the mkdosfs utlity.
-   -  Format instructions:
+   - In order to use a CF card with the Xilinx SystemACE it must be formatted
+     with a FAT12 or FAT16 filesystem. You cannot format the Card using Windows
+     XP or later. Please use the mkdosfs utility.
+   - Format instructions:
 
-      -  Put your empty CF card into a CF reader.
-      -  You will need to BACKUP ALL YOUR DATA ON THE CF CARD
-      -  Click Start -> Run
-      -  Enter cmd and click Run
-      -  cd to the directory where you extracted mkdosfs.exe
-      -  **MAKE SURE YOU HAVE SAVED ANY DATA FROM THE CF CARD!**
-      -  You will need to know the drive letter of your CF reader
-      -  Type mkdosfs –s 64 –F 16 –R 1 f:
-      -  Notice that f: should be replaced by the drive letter of your CF reader
+      - Put your empty CF card into a CF reader.
+      - You will need to BACKUP ALL YOUR DATA ON THE CF CARD
+      - Click Start -> Run
+      - Enter cmd and click Run
+      - cd to the directory where you extracted mkdosfs.exe
+      - **MAKE SURE YOU HAVE SAVED ANY DATA FROM THE CF CARD!**
+      - You will need to know the drive letter of your CF reader
+      - Type mkdosfs –s 64 –F 16 –R 1 f:
+      - Notice that f: should be replaced by the drive letter of your CF reader
          followed by a colon.
 
-   -  Now unzip ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip onto your
+   - Now unzip ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip onto your
       freshly formatted CF Card.
 
 Hardware Setup
 ~~~~~~~~~~~~~~
 
--  Connect the ML605 power and Ethernet cables.
--  Set SACE MODE switches (S1) (18c) to
+- Connect the ML605 power and Ethernet cables.
+- Set SACE MODE switches (S1) (18c) to
 
-   -  SYSACE MODE: ON
-   -  CFGAddr2: OFF
-   -  CFGAddr1: ON
-   -  CFGAddr0: OFF
+   - SYSACE MODE: ON
+   - CFGAddr2: OFF
+   - CFGAddr1: ON
+   - CFGAddr0: OFF
 
 Testing
-=======
+-------
 
 Testing the AD-FMComms1-EBZ board uses the ML605 board from Xilinx. You should
 be familiar with a few of the connectors as switches on the board:
 
-|ML605 Diagram|
+.. image:: ../images/ml605.png
+   :width: 500
 
--  Connect the AD-FMCOMMS1-EBZ FMC board to the ML605, on the LPC FMC connector (20).
--  Turn on the power switch on the ML605 board (18A)
+- Connect the AD-FMCOMMS1-EBZ FMC board to the ML605, on the LPC FMC connector
+  (20).
+- Turn on the power switch on the ML605 board (18A)
 
-   -  Wait ~11 seconds. The DS1 System ACE Status LED should be blinking. This
+   - Wait ~11 seconds. The DS1 System ACE Status LED should be blinking. This
       indicates that the ACE file in the CF card is being loaded.
 
-      -  Wait ~10 seconds more. The blue light on the AD-FMComms1-EBZ should start blinking, indicating that the card is being initialized.
-      -  Wait ~10 seconds more. The LCD should display the IP number of the board, and the line "XCOMM LPC", this indicates that the Linux kernel booted on the Microblaze is properly configured, and found all the devices on the card.
-      -  In total, this step should take ~30 seconds.
+      - Wait ~10 seconds more. The blue light on the AD-FMComms1-EBZ should
+        start blinking, indicating that the card is being initialized.
+      - Wait ~10 seconds more. The LCD should display the IP number of the
+        board, and the line "XCOMM LPC", this indicates that the Linux kernel
+        booted on the Microblaze is properly configured, and found all the
+        devices on the card.
+      - In total, this step should take ~30 seconds.
 
--  Observe LCD Display (17f).
+- Observe LCD Display (17f).
 
-|LCD image|
+   .. image:: ../images/ml605-lcd.png
+      :width: 200
 
-   -  Line 1: Target IP Address
-   -  Line2: XCOMM LPC if device is present
+   - Line 1: Target IP Address
+   - Line2: XCOMM LPC if device is present
 
--  Open up your favourite Web Browser and enter the XCOMM target IP address into
+- Open up your favourite Web Browser and enter the XCOMM target IP address into
    the URL/Address bar.\
 
-|image1|
+   .. image:: ../images/fmcomms1_netscope_fd.png
+      :align: center
+      :width: 600
 
-.. image:: ../images/fmcomms1_netscope_fd.png
-   :align: center
-   :width: 600
+- If you are interested in the Linux console messages and command line
+  interface, connect a USB cable to the ML605 port USB UART (12). Terminal
+  settings are 57600,8N1. You should see the kernel startup messages as follows.
+  (password is **root**)
 
--  If you are interested in the Linux console messages and command line interface, connect a USB cable to the ML605 port USB UART (12). Terminal settings are 57600,8N1. You should see the kernel startup messages as follows. (password is **root**)
-
-.. container:: box bggreen
-
-   This specifies any shell prompt running on the target
-
+.. collapsible:: Kernel start-up messages
 
    ::
-
-
 
       Ramdisk addr 0x00000000,
       Compiled-in FDT at c029f4d8
@@ -249,11 +258,3 @@ be familiar with a few of the connectors as switches on the board:
       Welcome to ADI Microblaze Buildroot
       buildroot login: root
       #
-.. |ML605 Diagram| image:: ../images/ml605.png
-   :width: 500
-
-.. |LCD image| image:: ../images/ml605-lcd.png
-   :width: 200
-
-.. |image1| image:: ../images/fmcomms1_netscope_td.png
-   :width: 600

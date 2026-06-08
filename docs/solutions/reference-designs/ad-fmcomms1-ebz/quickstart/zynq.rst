@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz quickstart zynq:
+
 AD-FMCOMMS1-EBZ Zynq Quick Start Guide
 ======================================
 
@@ -20,18 +22,19 @@ AD-FMCOMMS1-EBZ Zynq Quick Start Guide
 This guide provides some quick instructions (still takes awhile to download, and
 set things up) on how to setup the AD-FMCOMMS1-EBZ on either:
 
--  `ZC702 <https://www.xilinx.com/ZC702>`_
--  `ZC706 <https://www.xilinx.com/ZC706>`_
--  `ZED Board <http://zedboard.org/product/zedboard/>`_, Rev C or later
+- :xilinx:`ZC702`
+- :xilinx:`ZC706`
+- `ZED Board <https://digilent.com/reference/programmable-logic/zedboard/start>`__, Rev C or later
 
 Requirements
 ------------
 
--  You need a Host PC (Windows or Linux).
--  You need a SD card writer connected to above PC (Supported USB SD readers/writers are OK).
--  USB keyboard/mouse for the Zynq Device
--  HDMI Display (monitor or TV)
--  Antenna, or SMA cable for crossing Tx to Rx.
+- You need a Host PC (Windows or Linux).
+- You need a SD card writer connected to above PC (Supported USB SD
+  readers/writers are OK).
+- USB keyboard/mouse for the Zynq Device
+- HDMI Display (monitor or TV)
+- Antenna, or SMA cable for crossing Tx to Rx.
 
 Creating the SD Card
 --------------------
@@ -41,26 +44,26 @@ Creating the SD Card
 Booting the SD Card
 -------------------
 
--  ignore your PC, and now interact on the USB mouse/keyboard on the Zynq device
--  You should see the following screen:
+- ignore your PC, and now interact on the USB mouse/keyboard on the Zynq device
+- You should see the following screen:
 
-   -  IIO Scope tool:
+   - IIO Scope tool:
 
-   |image1|
+   .. image:: ../images/iio_scope.png
+      :width: 200
 
-   -  Learn more about the `IIO Scope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_.
+   - Learn more about the :ref:`IIO Scope <iio-oscilloscope>`.
 
--  You are done. You can interact with the GUI either over the network, or with
+- You are done. You can interact with the GUI either over the network, or with
    the HDMI monitor/USB keyboard mouse.
 
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. Care should be taken not to corrupt the file system -- please shut down things, don't just turn off the power switch. Depending on your monitor, the standard power off could be hiding. You can do this from the terminal as well with ``sudo shutdown -h now``
+   Even thought this is Linux, this is a persistent file systems. Care should be
+   taken not to corrupt the file system -- please shut down things, don't just
+   turn off the power switch. Depending on your monitor, the standard power off
+   could be hiding. You can do this from the terminal as well with ``sudo
+   shutdown -h now``
 
-   |image2|
-
-.. |image1| image:: ../images/iio_scope.png
-   :width: 200
-
-.. |image2| image:: ../images/shutdown.png
-   :width: 300
+   .. image:: ../images/shutdown.png
+      :width: 300

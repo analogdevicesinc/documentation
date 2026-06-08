@@ -1,3 +1,5 @@
+.. _ad_fmcomms1_ebz hardware card-specification:
+
 AD-FMCOMMS1-EBZ Specifications
 ==============================
 
@@ -12,17 +14,17 @@ AD-FMCOMMS1-EBZ Specifications
    `analog.com <https://www.analog.com/>`_, and should always be consulted
    before making any design decisions.
 
-   This particular article/document/design has been retired or deprecated,
-   which means it is no longer maintained or actively updated, even though the
-   devices themselves may be Recommended for New Designs or in
-   Production. This page is here for historical/reference purposes only.
+   This particular article/document/design has been retired or deprecated, which
+   means it is no longer maintained or actively updated, even though the devices
+   themselves may be Recommended for New Designs or in Production. This page is
+   here for historical/reference purposes only.
 
 Transmit Specs
 --------------
 
 There are many specifications on the Transmit side of a RF system
 
--  :adi:`Evaluating High Speed DAC Performance <static/imported-files/tutorials/MT-013.pdf>`
+- :adi:`Evaluating High Speed DAC Performance <MT-013>`
 
 Theoretical specs
 ~~~~~~~~~~~~~~~~~
@@ -35,10 +37,12 @@ don't have a meaningful (in this aspect) bandwidth number.
 
 |AD9122 Spurs| |ADL5375 Bandwidth|\ |ADL5602 Gain Flatness over frequency|
 
--  In the AD9122, the above figure shows an fDATA of 400MHz, creating a waveform over 350MHz.
--  The ADL5375 does include a baseband bandwidth specification - depending on the flatness you require, could be 200MHz (+/- 0.1dB) or 500MHz (+/- 0.5dB).
--  the ADL5602 has different gain, depending on the RF frequency (but over
-   250MHz, you will still notice).
+- In the AD9122, the above figure shows an fDATA of 400MHz, creating a waveform
+  over 350MHz.
+- The ADL5375 does include a baseband bandwidth specification - depending on the
+  flatness you require, could be 200MHz (+/- 0.1dB) or 500MHz (+/- 0.5dB).
+- the ADL5602 has different gain, depending on the RF frequency (but over
+  250MHz, you will still notice).
 
 So, transmit bandwidth can be as high as 250 MHz, depending on if the flatness
 of the ADL5602 and ADL5375 works for your application.
@@ -57,7 +61,7 @@ LO BW (Modified Board)
 Adjacent Channel Power (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`ACP <https://en.wikipedia.org/wiki/Adjacent_channel_power_ratio>`_
+`ACP <https://en.wikipedia.org/wiki/Adjacent_channel_power_ratio>`__
 
 +--------------------------------------------------------------+--------------------------------------------------------------+
 | |image4|                                                     | |image5|                                                     |
@@ -80,7 +84,7 @@ Adjacent Channel Power (Modified Board)
 Phase Noise (RevB unmodified Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Phase noise <https://en.wikipedia.org/wiki/Phase noise>`_
+`Phase noise <https://en.wikipedia.org/wiki/Phase_noise>`__
 
 +--------------------------------------------------------------------+--------------------------------------------------------------------+
 | |image16|                                                          | |image17|                                                          |
@@ -126,7 +130,7 @@ Phase Noise (RevB Modified Board & RevC)
 Output power (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Transmitter power output <https://en.wikipedia.org/wiki/Transmitter power output>`_
+`Transmitter power output <https://en.wikipedia.org/wiki/Transmitter_power_output>`__
 
 +-------------------------------------------------------------+
 | |image35|                                                   |
@@ -151,7 +155,7 @@ Output power (Modified Board)
 Intermodulation Distortion (Old Board)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Intermodulation_Distortion <https://en.wikipedia.org/wiki/Intermodulation#Measurement>`_ or IMD
+`Intermodulation_Distortion <https://en.wikipedia.org/wiki/Intermodulation#Measurement>`__ or IMD
 
 +--------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 | |image40|                                                                                  | |image41|                                                                                  |
@@ -238,7 +242,7 @@ Signal to Noise
 Noise floor
 ~~~~~~~~~~~
 
-`Noise floor <https://en.wikipedia.org/wiki/Noise floor>`_
+`Noise floor <https://en.wikipedia.org/wiki/Noise_floor>`__
 
 Input sensitivity
 ~~~~~~~~~~~~~~~~~
@@ -248,7 +252,7 @@ Input sensitivity
 Dynamic range
 ~~~~~~~~~~~~~
 
-`Dynamic range <https://en.wikipedia.org/wiki/Dynamic range>`_
+`Dynamic range <https://en.wikipedia.org/wiki/Dynamic_range>`__
 
 LO BW (Modified Board)
 ~~~~~~~~~~~~~~~~~~~~~~
