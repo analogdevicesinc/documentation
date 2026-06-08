@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The complete user guide of the evaluation board can be found at EVAL-AD4884 User Guide." name="description" />
+
+    <title>User guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="EVAL-AD488X-FMC" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">User guide</a><ul>
+<li><a class="reference internal" href="#hardware-guide">Hardware guide</a><ul>
+<li><a class="reference internal" href="#input-stage">Input stage</a></li>
+<li><a class="reference internal" href="#gain-configuration">Gain configuration</a></li>
+<li><a class="reference internal" href="#voltage-reference">Voltage reference</a></li>
+<li><a class="reference internal" href="#power-supply">Power supply</a><ul>
+<li><a class="reference internal" href="#adc-power-supplies">ADC power supplies</a></li>
+<li><a class="reference internal" href="#amplifier-power-supplies">Amplifier power supplies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#clock-generation">Clock generation</a></li>
+<li><a class="reference internal" href="#digital-interface">Digital interface</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB layout, bill of materials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-guide">Software guide</a><ul>
+<li><a class="reference internal" href="#adi-iio-oscilloscope">ADI IIO Oscilloscope</a><ul>
+<li><a class="reference internal" href="#for-linux">For Linux</a><ul>
+<li><a class="reference internal" href="#remote-run-on-host">Remote run on host</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scopy">Scopy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-AD488X-FMC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zed.html">On ZED</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-AD488X-FMC</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<span id="ad488x-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<p>The complete user guide of the evaluation board can be found at
+<a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad4884.pdf" target="_blank">EVAL-AD4884 User Guide</a>.</p>
+<section id="hardware-guide">
+<h2>Hardware guide<a class="headerlink" href="#hardware-guide" title="Link to this heading"></a></h2>
+<section id="input-stage">
+<h3>Input stage<a class="headerlink" href="#input-stage" title="Link to this heading"></a></h3>
+<p>The input stage for each <a class="icon adi reference external" href="https://www.analog.com/AD4884" target="_blank">AD4884</a> channel consists of a pair of
+<a class="icon adi reference external" href="https://www.analog.com/LT6236" target="_blank">LT6236</a> op amps. The LT6236 is selected for its wideband (90 MHz), low
+noise, favorable distortion performance and low power consumption. The op amps
+are set up as unity-gain buffers, ensuring that a preceding signal source or
+sensor is presented with a high impedance. With supply rail values of +5 V and
+-5 V, the valid range at each input of this stage is -3 V to +3.7 V.</p>
+<p>The input stage is designed to take in a fully-differential signal. With a
+differential voltage span of +/-2.91 V, the full span of the ADC is exercised.
+A single-ended signal can also be applied at the input, but modifications such
+as adding gain or a bias level to one of the op amps might be needed to
+exercise the full span of the ADC.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_input_stage.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_input_stage.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_input_stage.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Input stage simplified schematic for one channel</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following can be configured in the input stage:</p>
+<ul class="simple">
+<li><p>Stage bandwidth</p></li>
+<li><p>Additional band limiting through RC input filter and/or capacitors across
+amplifier feedback</p></li>
+<li><p>Stage gain (unity gain by default, non-inverting gain setting available)</p></li>
+<li><p>Stage bypass (no bypass by default, bypass via amplifier mezzanine card is
+an option for Channel A only)</p></li>
+</ul>
+</section>
+<section id="gain-configuration">
+<h3>Gain configuration<a class="headerlink" href="#gain-configuration" title="Link to this heading"></a></h3>
+<p>By default, the EVAL-AD488X-FMC is configured with a gain of 1.03x, and 220 pF
+capacitors fitted for noise filtering across the feedback network of the AD4884
+on-chip FDAs. In this default configuration, an SNR of around 91.9 dB is
+typically expected.</p>
+<p>Changing the gain at the AD4884 FDA stage requires light rework on the PCB
+(removing or adding 0402 SMD resistors and/or shorting 0402 solder pads). For
+the possible gain options and node shorting requirements, refer to the
+<a class="icon adi reference external" href="https://www.analog.com/AD4884" target="_blank">AD4884</a> data sheet.</p>
+</section>
+<section id="voltage-reference">
+<h3>Voltage reference<a class="headerlink" href="#voltage-reference" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD4884" target="_blank">AD4884</a> requires an external 3 V voltage reference. The ADC includes
+an internal reference buffer and capacitor, which simplifies reference
+selection and eliminates the need for an external buffer.</p>
+<p>The following references are available on the evaluation board:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LTC6655" target="_blank">LTC6655</a>-3 (default): exceptional noise performance (0.1 Hz to 10 Hz
+noise of 0.25 ppm p-p), initial accuracy of 0.025%, and low temperature drift
+of 2 ppm/C.</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/LT6657" target="_blank">LT6657</a>-3 (alternate option): also mounted on the board.</p></li>
+</ul>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">3 V reference comparison</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>LT6657</p></th>
+<th class="head"><p>LTC6655</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Accuracy</p></td>
+<td><p>0.10%</p></td>
+<td><p>0.025%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature coefficient (ppm/C)</p></td>
+<td><p>1.5</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>0.1 Hz to 10 Hz noise (ppm p-p)</p></td>
+<td><p>0.5</p></td>
+<td><p>0.25</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum load (mA)</p></td>
+<td><p>+/-10</p></td>
+<td><p>+/-5</p></td>
+</tr>
+<tr class="row-even"><td><p>Load regulation (ppm/mA)</p></td>
+<td><p>0.7</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Supply current (mA)</p></td>
+<td><p>1.2</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="power-supply">
+<h3>Power supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h3>
+<p>The EVAL-AD488X-FMC is designed to operate from the 12 V and 3.3 V supplies
+provided from the host controller board via the FMC connector. The FMC supplies
+are regulated down using a combination of switching regulators and low dropout
+(LDO) regulators to generate the necessary power rails for the on-board
+circuitry.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_power_tree.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_power_tree.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_power_tree.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Evaluation board power tree</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="adc-power-supplies">
+<h4>ADC power supplies<a class="headerlink" href="#adc-power-supplies" title="Link to this heading"></a></h4>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD4884" target="_blank">AD4884</a> requires three major power supplies:</p>
+<ul class="simple">
+<li><p>VDD33: 3.3 V analog supply rail</p></li>
+<li><p>VDD11: 1.1 V ADC core supply</p></li>
+<li><p>IOVDD: 1.1 V digital interface supply</p></li>
+</ul>
+<p>The 1.1 V rails can be sourced from:</p>
+<ul class="simple">
+<li><p>On-board <a class="icon adi reference external" href="https://www.analog.com/LT3045" target="_blank">LT3045</a> LDO regulators (default)</p></li>
+<li><p>Internal AD4884 LDO regulator</p></li>
+<li><p>Off-board external supply</p></li>
+</ul>
+<p>The 3.3 V rail can be sourced from:</p>
+<ul class="simple">
+<li><p>On-board LT3045 LDO regulator (default)</p></li>
+<li><p>Off-board external supply</p></li>
+</ul>
+</section>
+<section id="amplifier-power-supplies">
+<h4>Amplifier power supplies<a class="headerlink" href="#amplifier-power-supplies" title="Link to this heading"></a></h4>
+<p>A +5 V rail (VDDAFE) and a -5 V rail (VSSAFE) are generated on the evaluation
+board. These rails power all analog front-end circuitry, which includes the
+four LT6236 discrete operational amplifiers in the input stage as well as the
+on-chip fully differential amplifiers inside the AD4884 (via the +VS and -VS
+pins).</p>
+</section>
+</section>
+<section id="clock-generation">
+<h3>Clock generation<a class="headerlink" href="#clock-generation" title="Link to this heading"></a></h3>
+<p>The EVAL-AD488X-FMC contains the necessary circuits to generate low jitter data
+(CLK+/CLK-) and conversion (CNV+/CNV-) clocks across the full operating range
+of the AD4884.</p>
+<p>The circuit consists of:</p>
+<ul class="simple">
+<li><p>A 25 MHz CMOS reference oscillator</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/ADF4350" target="_blank">ADF4350</a> wideband synthesizer</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/AD9508" target="_blank">AD9508</a> clock fan-out buffer</p></li>
+</ul>
+<p>The synthesizer takes in the 25 MHz signal and produces a higher frequency
+output with a programmable multiplication factor. The output is then fed to
+the clock buffer, which generates the CLK and CNV signals with separate
+programmable frequency division factors.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_clock_circuit.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_clock_circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad488x_fmc_evb_docs/docs/solutions/reference-designs/eval-ad488x-fmc/images/eval_ad4884_clock_circuit.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Simplified diagram of the clock circuitry</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="digital-interface">
+<h3>Digital interface<a class="headerlink" href="#digital-interface" title="Link to this heading"></a></h3>
+<p>The EVAL-AD488X-FMC utilizes the FMC connector from the ZedBoard to support ADC
+device configuration via 4-wire SPI, conversion result access using the LVDS
+interface, and conversion control in LVDS mode.</p>
+<p>The AD4884 operates with a 1.1 V digital interface supply voltage. To translate
+between this 1.1 V level and the digital interface voltage level of the
+ZedBoard (VADJ), SN74AVC1T45DCKR bidirectional level translators are used on
+the evaluation board.</p>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB layout, bill of materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 60.0%" />
+<col style="width: 40.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Description</p></th>
+<th class="head"><p>Download</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Design files (schematics, PCB layout, bill of materials)</p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/eval-ad4884-fmcz-design-support-files.zip" target="_blank">eval_ad4884_fmcz_design_files.zip</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="software-guide">
+<h2>Software guide<a class="headerlink" href="#software-guide" title="Link to this heading"></a></h2>
+<p>The EVAL-AD488X-FMC hardware is controlled and configured through the
+<a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html" target="_blank">ACE Software</a>.
+ACE is a desktop software application that allows the evaluation and control of
+multiple evaluation systems. The controller board supported by ACE with the
+EVAL-AD488X-FMC is the ZedBoard.</p>
+<p>The evaluation board is also supported with the Libiio library. This library is
+cross-platform (Windows, Linux, Mac) with language bindings for C, C#, Python,
+and others. Applications that can be used with it are:</p>
+<section id="adi-iio-oscilloscope">
+<h3>ADI IIO Oscilloscope<a class="headerlink" href="#adi-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a> is a cross-platform application for interfacing
+with IIO devices, enabling you to configure device parameters and visualize
+data.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to download/update to the latest version of
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope</a>.</p>
+</div>
+<section id="for-linux">
+<h4>For Linux<a class="headerlink" href="#for-linux" title="Link to this heading"></a></h4>
+<section id="remote-run-on-host">
+<h5>Remote run on host<a class="headerlink" href="#remote-run-on-host" title="Link to this heading"></a></h5>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a> application can be used to connect to another
+platform that has a connected device, to configure the device and read data
+from it. This application is not for performance testing, but rather
+showcasing the basic features.</p>
+<p>Please see <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope documentation</span></a> for
+installation steps and more details.</p>
+<p>Build and start <code class="docutils literal notranslate"><span class="pre">osc</span></code> on a network-enabled Linux host.
+For Windows computers, open the application from the start menu.</p>
+<p>Once the application is launched, go to Settings &gt; Connect &gt; URI and type
+“ip:” then the IP address of the target in the pop-up window. This IP can
+be found out with a command from the previous section of this documentation.</p>
+</section>
+</section>
+</section>
+<section id="scopy">
+<h3>Scopy<a class="headerlink" href="#scopy" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">Scopy</span></a> is a cross-platform software toolbox for
+interfacing with ADI devices, enabling you to configure device parameters,
+visualize data, and perform advanced signal analysis.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-AD488X-FMC</a>
+    <a href="prerequisites.html" title="Next document (Alt+Shift+RightArrow)" class="next">Prerequisites</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
