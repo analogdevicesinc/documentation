@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This user guide describes the AD9656 evaluation board EVAL-AD9656, which provides the support circuitry required to operate the ADC in its various modes and configurations." name="description" />
+
+    <title>User guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="EVAL-AD9656" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">User guide</a><ul>
+<li><a class="reference internal" href="#evaluation-board-hardware">Evaluation board hardware</a><ul>
+<li><a class="reference internal" href="#hardware-configuration">Hardware configuration</a></li>
+<li><a class="reference internal" href="#power-supply">Power supply</a></li>
+<li><a class="reference internal" href="#analog-inputs">Analog inputs</a></li>
+<li><a class="reference internal" href="#clock">Clock</a></li>
+<li><a class="reference internal" href="#output-signals">Output signals</a></li>
+<li><a class="reference internal" href="#schematic-pcb-layout-bill-of-materials">Schematic, PCB Layout, Bill of Materials</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-guide">Software guide</a><ul>
+<li><a class="reference internal" href="#adi-iio-oscilloscope">ADI IIO Oscilloscope</a><ul>
+<li><a class="reference internal" href="#for-no-os">For no-OS</a></li>
+<li><a class="reference internal" href="#data-capture">Data capture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-AD9656</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/hsc-adc-evalez.html">On HSC-ADC-EVALEZ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-AD9656</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<span id="ad9656-fmc-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<p>This user guide describes the <a class="icon adi reference external" href="https://www.analog.com/AD9656" target="_blank">AD9656</a> evaluation board <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a>,
+which provides the support circuitry required to operate the ADC in its various
+modes and configurations.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9656" target="_blank">AD9656</a> data sheet provides additional information and should be
+consulted when using the evaluation board.</p>
+<section id="evaluation-board-hardware">
+<h2>Evaluation board hardware<a class="headerlink" href="#evaluation-board-hardware" title="Link to this heading"></a></h2>
+<p>The evaluation board provides the support circuitry required to operate the
+<a class="icon adi reference external" href="https://www.analog.com/AD9656" target="_blank">AD9656</a> in its various modes and configurations. It is critical that the
+signal sources used for the analog input and clock have very low phase noise
+(ideally ~100 fs rms jitter) to realize the optimum performance of the signal
+chain. Proper filtering of the analog input signal to remove harmonics and
+lower the integrated or broadband noise at the input is necessary to achieve
+the specified noise performance.</p>
+<section id="hardware-configuration">
+<span id="ad9656-fmc-user-guide-hardware-configuration"></span><h3>Hardware configuration<a class="headerlink" href="#hardware-configuration" title="Link to this heading"></a></h3>
+<p>Set the jumper settings/link options on the evaluation board for the required
+operating modes before powering on the board. The functions of the jumpers are
+described in the table below. The default jumper settings are shown in
+Figure 1.</p>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Jumper Settings</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 85.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>P101, P103</p></td>
+<td><p>These jumpers determine the power source for the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">AD9656EBZ</a>.</p>
+<ul class="simple">
+<li><p>Connect Pin 1 to Pin 2 on both P101 and P103 to power the ADC board
+through the FMC connector.</p></li>
+<li><p>Connect Pin 2 to Pin 3 on both P101 and P103 to power the ADC board
+from the wall supply connected to P102.</p></li>
+<li><p>Leave both P101 and P103 unjumpered if using headers P104 and P105.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>J304</p></td>
+<td><p>This jumper enables the on-board crystal oscillator. Remove this jumper
+(and optionally C302) if an external off-board clock source is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>J206</p></td>
+<td><p>This jumper selects between internal V<sub>REF</sub> and external
+V<sub>REF</sub>.</p>
+<ul class="simple">
+<li><p>To choose the ADC’s internal reference, connect Pin 3 (DUT_SENSE) to
+Pin 5 (GND) as shown in Figure 1. The default value of the internal
+reference is 1 V. SPI Register 0x18 Bits[7:6] can be used to program
+the internal reference voltage to values from 1 V to 1.4 V, in 0.1 V
+increments.</p></li>
+<li><p>To use the on-board <a class="icon adi reference external" href="https://www.analog.com/AD822" target="_blank">AD822</a> buffered reference, connect Pin 2
+(DUT_SENSE) to Pin 1 (AVDD), and connect Pin 4 (DUT_VREF) to Pin 6
+(EXT_REF). Adjust external VREF to the desired value (from 1.0 V to
+1.4 V) using potentiometer R247.</p></li>
+<li><p>To apply a reference voltage from an external off-board source, connect
+Pin 2 (DUT_SENSE) to Pin 1 (AVDD) and apply the reference voltage to
+Pin 4 (DUT_VREF). The AD9656 reference voltage is specified to be from
+1.0 V to 1.4 V.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_125ebz_default_jumpers.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_125ebz_default_jumpers.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_125ebz_default_jumpers.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Default Jumper Connections for <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> Board</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_jumper_location_wiki_figure_3_-_white_box.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_jumper_location_wiki_figure_3_-_white_box.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Silkscreen error on 9656CE01C board — the correct numbering is shown in the green box.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="power-supply">
+<h3>Power supply<a class="headerlink" href="#power-supply" title="Link to this heading"></a></h3>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> can be powered in one of three ways:</p>
+<p><strong>FMC connector power (default)</strong></p>
+<p>The default configuration powers the board through the FMC connector from the
+carrier board. P101 and P103 both need to have Pin 1 tied to Pin 2. If P101 and
+P103 have Pin 1 jumpered to Pin 2, do not connect the supplied 6V wall supply to
+the AD9656 evaluation board. When changing the configuration of P101 and P103,
+please remove both jumpers and then place them in their desired positions.</p>
+<p><strong>Wall supply power</strong></p>
+<p>Alternatively, the board can obtain its power from the wall-mountable 6V, 2A
+switching power supply. For this mode, P101 and P103 both need to have Pin 2
+tied to Pin 3. Connect the supply to a 100V ac to 240V ac, 47Hz to 63Hz wall
+outlet. The output from the supply is provided through a 2.1mm inner diameter
+jack that connects to the PCB at P102. The 6V supply is fused and conditioned
+on the PCB before connecting to the low dropout linear regulators that supply
+the proper bias to each of the various sections on the board.</p>
+<p><strong>External bench power supplies</strong></p>
+<p>The evaluation board can also be powered using external bench power supplies.
+To do this, remove the E104, E105, E106, and E108 ferrite beads to disconnect
+the on-board LDOs from the power planes. Note that in some board configurations
+some of these might already be uninstalled. P104 and P105 headers can be
+installed to facilitate connection of external bench supplies to the board.
+E110, E111, E112 and E113 need to be populated to connect P104 and P105 to the
+board power domains. A 1.8V, 0.5A supply is needed for 1.8V_DUT_AVDD,
+1.8V_DRVDD and 1.8V_DVDD. Although the voltage requirements are the same for
+these three, it is recommended that separate supplies be used for each of these.
+A 3.3V, 0.5A supply is needed for 3.3V_DIG, which is used to power additional
+on-board circuitry.</p>
+</section>
+<section id="analog-inputs">
+<h3>Analog inputs<a class="headerlink" href="#analog-inputs" title="Link to this heading"></a></h3>
+<p>The four channel inputs on the evaluation board are set up for a double
+balun-coupled analog input with a 50Ω impedance. When connecting the ADC clock
+and analog source, use clean signal generators with low phase noise, such as the
+Rohde &amp; Schwarz SMA, or an equivalent. Use a shielded, RG-58, 50Ω coaxial cable
+(optimally 1 m or shorter) for connecting to the evaluation board. Enter the
+desired frequency and amplitude (see the Specifications section in the data
+sheet). When connecting the analog input source, use of a multipole, narrow-band
+band-pass filter with 50Ω terminations is recommended. Analog Devices uses
+band-pass filters from TTE and K&amp;L Microwave, Inc. Connect the filters as close
+to the evaluation board as possible.</p>
+</section>
+<section id="clock">
+<h3>Clock<a class="headerlink" href="#clock" title="Link to this heading"></a></h3>
+<p>The default clock input circuit is derived from an on-board 125MHz crystal
+oscillator feeding through a transformer-coupled circuit using a high bandwidth
+1:1 impedance ratio transformer (T302) that adds negligible jitter to the clock
+path. The external clock input (J302) is 50Ω terminated and ac-coupled to handle
+single-ended sinusoidal inputs. The transformer converts the single-ended input
+to a differential signal that is clipped by CR301 before entering the ADC clock
+inputs. The <a class="icon adi reference external" href="https://www.analog.com/AD9656" target="_blank">AD9656</a> ADC is equipped with an internal clock divider
+(programmable divide ratios of 1 through 8) to facilitate usage with higher
+frequency clocks. When using the internal divider and a higher input clock
+frequency, remove CR301 to preserve the slew rate of the clock signal.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> board is set up to be clocked through the
+transformer-coupled input network from the 125MHz crystal oscillator, Y801. If
+an external clock source is desired, remove C302 (optionally) and Jumper J304 to
+disable the oscillator from running and connect the external clock source to the
+SMA connector, J302 (labeled CLOCK+).</p>
+<p>If an external clock source is used instead of the onboard crystal oscillator,
+it should also be supplied with a clean signal generator as previously specified
+for the analog input signals. Analog Devices evaluation boards typically can
+accept ~2.8V p-p or 13 dBm sine wave input for the clock at the board SMA
+clock connector.</p>
+</section>
+<section id="output-signals">
+<h3>Output signals<a class="headerlink" href="#output-signals" title="Link to this heading"></a></h3>
+<p>The JESD204B outputs from the ADC are routed to P2 using 100Ω differential
+traces.</p>
+</section>
+<section id="schematic-pcb-layout-bill-of-materials">
+<h3>Schematic, PCB Layout, Bill of Materials<a class="headerlink" href="#schematic-pcb-layout-bill-of-materials" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/evaluation-documentation/AD9656_Evaluation_Board_Design_Integration_Files.zip" target="_blank">Schematics, layout files, bill of materials</a></p></li>
+</ul>
+<p>These diagrams demonstrate the routing and grounding techniques that should be
+applied at the system level when designing application boards using these
+converters.</p>
+</section>
+</section>
+<section id="software-guide">
+<h2>Software guide<a class="headerlink" href="#software-guide" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> platform development environment supports no-OS
+applications and IIO interfaces.</p>
+<section id="adi-iio-oscilloscope">
+<h3>ADI IIO Oscilloscope<a class="headerlink" href="#adi-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a> is a cross-platform application for interfacing
+with IIO devices, enabling you to configure device parameters and visualize
+data.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to download/update to the latest version of
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope</a>.</p>
+</div>
+<section id="for-no-os">
+<h4>For no-OS<a class="headerlink" href="#for-no-os" title="Link to this heading"></a></h4>
+<p>For connecting IIO Oscilloscope to no-OS applications, they need to be built
+with the IIOD=y flag. This way, the no-OS applications will run an IIO daemon
+that is awaiting connections from the IIO Oscilloscope.</p>
+<p>As indicated in the boot log, the board runs an IIOD server over the serial
+(UART) connection.</p>
+<ol class="arabic">
+<li><p>Disconnect or close the serial terminal used to view the boot log.</p></li>
+<li><p>Once done with the installation or an update of the latest IIO Oscilloscope,
+open the application.</p></li>
+<li><p>Select the <strong>Serial</strong> backend and configure the connection with the settings
+shown at the end of the boot log.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio.png" width="600" />
+</a>
+</li>
+<li><p>Press <span class="guilabel">Refresh</span> to display the available IIO devices and press
+<span class="guilabel">Connect</span>.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The serial port is the COM port on Windows or <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSBx</span></code> on Linux.</p>
+</div>
+</section>
+<section id="data-capture">
+<h4>Data capture<a class="headerlink" href="#data-capture" title="Link to this heading"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Device names and channel definition may differ between no-OS and Linux.</p>
+</div>
+<p>Time domain:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_time_domain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_time_domain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_time_domain.png" width="600" />
+</a>
+<p>Frequency domain:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_frequency.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_frequency.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/no_os_ad9656_zcu102_iio_frequency.png" width="600" />
+</a>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-AD9656</a>
+    <a href="prerequisites.html" title="Next document (Alt+Shift+RightArrow)" class="next">Prerequisites</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

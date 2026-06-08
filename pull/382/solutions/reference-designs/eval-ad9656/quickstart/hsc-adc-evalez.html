@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides quick instructions on how to set up the EVAL-AD9656 with the HSC-ADC-EVALEZ FPGA-based data capture kit using VisualAnalog and SPIController software on a Windows PC." name="description" />
+
+    <title>HSC-ADC-EVALEZ Quick start &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="prev" title="ZCU102 Quick start" href="zcu102.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">HSC-ADC-EVALEZ Quick start</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment needed</a></li>
+<li><a class="reference internal" href="#required-software">Required software</a></li>
+<li><a class="reference internal" href="#configuring-the-board">Configuring the board</a></li>
+<li><a class="reference internal" href="#setting-up-the-adc-data-capture">Setting up the ADC data capture</a></li>
+<li><a class="reference internal" href="#setting-up-the-spi-controller-software">Setting up the SPI Controller software</a></li>
+<li><a class="reference internal" href="#adjusting-the-amplitude-of-the-input-signal">Adjusting the amplitude of the input signal</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#helpful-documents">Helpful documents</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD9656</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On HSC-ADC-EVALEZ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9656</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="hsc-adc-evalez-quick-start">
+<span id="ad9656-fmc-quickstart-hsc-adc-evalez"></span><h1>HSC-ADC-EVALEZ Quick start<a class="headerlink" href="#hsc-adc-evalez-quick-start" title="Link to this heading"></a></h1>
+<p>This guide provides quick instructions on how to set up the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a>
+with the <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> FPGA-based data capture kit
+using VisualAnalog and SPIController software on a Windows PC.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656-125ebz_top_level.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656-125ebz_top_level.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656-125ebz_top_level.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Evaluation Board Connection — <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> (on Left) and <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> (on Right)</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<section id="equipment-needed">
+<h2>Equipment needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Analog signal source(s) and antialiasing filter(s)</p></li>
+<li><p>Sample clock source (if not using the on-board crystal oscillator)</p></li>
+<li><p>Switching power supply (6.0V, 2.5A) for AD9656EBZ</p></li>
+<li><p>Switching power supply (12V, 3.3A) for HSC-ADC-EVALEZ</p></li>
+<li><p>PC running Windows</p></li>
+<li><p>USB 2.0 port</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> FPGA-based data capture kit</p></li>
+</ul>
+</section>
+<section id="required-software">
+<h2>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<p>Install the following software on the PC before proceeding:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/ftp/ftp.analog.com/pub/hssp_sw/visualanalog/visualanalog_setup.exe" target="_blank">VisualAnalog</a></p></li>
+<li><p><a class="icon link reference external" href="https://wiki.analog.com/ftp/ftp.analog.com/pub/adispi/a2dcomponents/install/spicontroller_setup.exe" target="_blank">SPIController</a></p></li>
+</ul>
+</section>
+<section id="configuring-the-board">
+<h2>Configuring the board<a class="headerlink" href="#configuring-the-board" title="Link to this heading"></a></h2>
+<p>Before using the software for testing, configure the evaluation board as
+follows:</p>
+<ol class="arabic simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> to the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> data capture board.</p></li>
+<li><p>Confirm that the jumpers are installed as shown in the
+<a class="reference internal" href="../user-guide.html#ad9656-fmc-user-guide"><span class="std std-ref">user guide</span></a>.</p></li>
+<li><p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> can be powered in one of three ways. The
+default is to have the board obtain its power from the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> through the FMC connector. For this
+configuration, jumper Pin 1 to Pin 2 on both P101 and P103. The other power
+configurations are described in the
+<a class="reference internal" href="../user-guide.html#ad9656-fmc-user-guide"><span class="std std-ref">user guide</span></a>.</p></li>
+<li><p>Connect the 12V, 3.3A switching power supply to the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> board.</p></li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> board (P702) to the PC
+using a USB cable.</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal to the desired channel(s). Use a shielded,
+RG-58, 50Ω coaxial cable (optimally 1 m or shorter) to connect the signal
+generator. For best results, use a narrow-band, band-pass filter with 50Ω
+terminations and an appropriate center frequency.</p></li>
+</ol>
+</section>
+<section id="setting-up-the-adc-data-capture">
+<h2>Setting up the ADC data capture<a class="headerlink" href="#setting-up-the-adc-data-capture" title="Link to this heading"></a></h2>
+<p>After configuring the board hardware, set up the ADC data capture using the
+following steps:</p>
+<ol class="arabic">
+<li><p>Start VisualAnalog on the connected PC. The appropriate part type should be
+listed in the status bar of the <strong>VisualAnalog — New Canvas</strong> window. Select
+the template that corresponds to the type of testing to be performed (see
+Figure 2). Average FFT is a good test to start with.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_new_canvas_window.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_new_canvas_window.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_new_canvas_window.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">VisualAnalog, New Canvas Window</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>After the template is selected, a message might appear asking if the default
+configuration can be used to program the FPGA (see Figure 3). If this message
+appears, click <strong>Yes</strong>, and the window will close.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/10235-005.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/10235-005.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/10235-005.png" width="400" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">VisualAnalog Default Configuration Message</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>To view the canvas and associated functional blocks, click the <strong>Expand
+Display</strong> button, located on the bottom right corner of the window (see
+Figure 4), to see what is shown in Figure 5.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">VisualAnalog Window Toolbar, Collapsed Display</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_avg_fft_window_2ch_expanded.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_avg_fft_window_2ch_expanded.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_avg_fft_window_2ch_expanded.png" width="700" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">VisualAnalog, Main Window Expanded Display</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>To configure VisualAnalog to operate with the AD9656, push the Settings
+button on the ADCDataCapture block, as shown in Figure 6.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_button.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_button.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_button.png" width="200" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">VisualAnalog ADC Data Capture Block</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the ADC Data Capture Settings Window, General Tab, select AD9656 to be the
+device, enter the sample clock frequency (125 is the default value), as shown
+in Figure 7. The sample frequency entered here is used for scaling of
+frequency values in test results and graphs. In the Output Data field, the
+channels to be tested are selected, as well as the FFT capture depth
+(“Length”). Note that the total of the capture depths for all selected
+channels cannot exceed 256k.</p>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_generaltab.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_generaltab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_generaltab.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">VisualAnalog ADC Data Capture Settings Window, General Tab</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the ADC Data Capture Settings Window, Capture Board Tab, enter 60 in the
+Fill Delay field. Push the Browse button to navigate to the FPGA program file
+for the AD9656. The default installation location and filename will be
+similar to: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\Analog</span> <span class="pre">Devices\VisualAnalog\Hardware\HADv6\AD9656_hadv6fmc.mcs</span></code>.
+Push the program button.</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_captureboardtab.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_captureboardtab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_captureboardtab.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">VisualAnalog ADC Data Capture Settings Window, Capture Board Tab</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the ADC Data Capture Settings Window, Device Tab, check the Enable Data
+Capture Controls checkbox. The capture control fields will be enabled.
+Select:</p>
+<ul class="simple">
+<li><p>GTX RX Equalization: 6</p></li>
+<li><p>Encode: 125MSPS (default configuration)</p></li>
+<li><p>Number of lanes: 2 Lanes (At least 2 lanes are required for 125MSPS. The
+single lane bitrate at 125MSPS would exceed the driver and FPGA
+capabilities.)</p></li>
+<li><p>Leave the other checkboxes unchecked.</p></li>
+</ul>
+<p>Though the AD9656 supports a wide variety of converter/lane/sample rate
+configurations, the software supports only the configurations in the software
+menu as an out-of-the-box functional kit. If other sample rates or
+configurations are required, an additional external clock is likely needed.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_devicetab.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_devicetab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_adc_datacapturesettings_devicetab.png" width="500" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">VisualAnalog ADC Data Capture Settings Window, Device Tab</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>VisualAnalog is now set up to work with the AD9656EBZ in the default
+configuration. Other VisualAnalog features and capture settings are
+documented in the <a class="icon adi reference external" href="https://www.analog.com/AN-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog
+Converter Evaluation Tool Version 1.0 User Manual</em>.</p></li>
+</ol>
+</section>
+<section id="setting-up-the-spi-controller-software">
+<h2>Setting up the SPI Controller software<a class="headerlink" href="#setting-up-the-spi-controller-software" title="Link to this heading"></a></h2>
+<p>After the ADC data capture board setup is complete, set up the SPI controller
+software using the following procedure:</p>
+<ol class="arabic">
+<li><p>Open the SPI controller software by going to the <strong>Start</strong> menu or by
+double-clicking the <strong>SPIController</strong> software desktop icon. If prompted for
+a configuration file, select the .cfg file whose name begins with AD9656. If
+not prompted, check the title bar of the window to determine which
+configuration is loaded. If necessary, choose <strong>Cfg Open</strong> from the <strong>File</strong>
+menu and select the appropriate file based on your part type. Note that the
+<strong>CHIP ID(1)</strong> box should be filled to indicate whether the correct SPI
+controller configuration file is loaded (see Figure 10).</p>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_chipid.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_chipid.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_chipid.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">SPI Controller, CHIP ID(1) Box</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Click the <strong>New DUT</strong> button in the <strong>SPIController</strong> window (see Figure 11).</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_newdut_button.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_newdut_button.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_global_tab_newdut_button.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">SPI Controller, New DUT Button</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the <strong>ADCBase0</strong> tab of the <strong>SPIController</strong> window, find the <strong>CLOCK
+DIVIDE(B)</strong> box (see Figure 12), and the <strong>MODES(8)</strong> box (see Figure 13). If
+using the clock divider, use the drop-down box to select the correct clock
+divide ratio, if necessary. If there is any interruption of the ADC clock
+during power-up or during operation, a Digital Reset may be needed to
+re-initialize the ADC (Figure 13). For additional information, refer to the
+data sheet, the <a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI
+Control Software</em>, and the <a class="icon adi reference external" href="https://www.analog.com/an-877" target="_blank">AN-877 Application Note</a>,
+<em>Interfacing to High Speed ADCs via SPI</em>.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_clkdiv.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_clkdiv.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_clkdiv.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">SPI Controller, CLOCK DIVIDE(B) Box</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_digreset.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_digreset.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase0_tab_digreset.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">SPI Controller, Chip Power Mode - Digital Reset Selection</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>In the <strong>ADCBase1</strong> tab of the <strong>SPIController</strong> window, set the number of
+lanes the AD9656 will be configured to. Note that the number of lanes
+selected here must match the settings made in VisualAnalog as shown in Step
+7, Figure 9 above.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase1_tab_quickconfig.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase1_tab_quickconfig.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adcbase1_tab_quickconfig.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">SPI Controller, Quick Configure Box</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Note that other settings can be changed on the <strong>ADCBase0</strong> tab (see Figure
+12) and the <strong>ADC A</strong> through <strong>ADC D</strong> tabs (see Figure 15) to set up the
+part in the desired mode. The <strong>ADCBase0</strong> tab settings affect the entire
+part, whereas the settings on the <strong>ADC A</strong> through <strong>ADC D</strong> tabs each
+affect the selected channel only. See the data sheet, the
+<a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control Software</em>,
+and the <a class="icon adi reference external" href="https://www.analog.com/an-877" target="_blank">AN-877 Application Note</a>, <em>Interfacing to High Speed
+ADCs via SPI</em>, for additional information on the available settings.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adca_tab.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adca_tab.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_spicontroller_adca_tab.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">SPI Controller, Example ADC A Page</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Invoke a Digital Reset as shown in Figure 13 before testing. After selecting
+Reset, select Chip Run to return to normal operation.</p></li>
+<li><p>To begin testing, click the <strong>Run</strong> or <strong>Continuous Run</strong> button in the
+<strong>VisualAnalog</strong> toolbar (see Figure 16).</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed_run_button.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed_run_button.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_va_toolbar_collapsed_run_button.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Run/Continuous Run Buttons (Encircled in Red) in VisualAnalog Toolbar, Collapsed Display</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+<section id="adjusting-the-amplitude-of-the-input-signal">
+<h2>Adjusting the amplitude of the input signal<a class="headerlink" href="#adjusting-the-amplitude-of-the-input-signal" title="Link to this heading"></a></h2>
+<p>Adjust the amplitude of the input signal for each channel as follows:</p>
+<ol class="arabic">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the
+desired level. Examine the <strong>Fund Power</strong> reading in the left panel of the
+<strong>VisualAnalog Graph - AD9656 FFT</strong> window (see Figure 17).</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_fft_example.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_fft_example.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_fft_example.png" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Graph Window of VisualAnalog</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>Repeat this procedure for the other channels, if desired.</p></li>
+<li><p>Click the floppy-disk icon within the <strong>VisualAnalog Graph - AD9656 FFT</strong>
+window to save the performance data as a .csv formatted file for plotting or
+analysis.</p></li>
+</ol>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<p>Lack of SPI communication will cause difficulty in configuring the ADC.</p>
+<ul class="simple">
+<li><p>Go to the <strong>Global</strong> tab of the <strong>SPIController</strong> window and push the <strong>Read</strong>
+button in the <strong>GENERIC READ/WRITE</strong> window. This will read the contents of
+ADC register 0x00. If SPI communication is working properly and the ADC is
+powered up, the value 0x18 hexadecimal will appear. If the contents show 0x00,
+the ADC is not powered up or SPI communication is not working.</p></li>
+<li><p>Check that there is correct power to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> board,
+and to the <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a>.</p></li>
+<li><p>Check that the USB cable is properly connected from the PC to the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a>.</p></li>
+<li><p>The LED on the <strong>VisualAnalog ADCDataCapture</strong> block should be green. If it is
+red, push the USB button on the same block to refresh the connection.</p></li>
+</ul>
+<p>If the FFT plot appears abnormal, do the following:</p>
+<ul class="simple">
+<li><p>If you see an abnormal noise floor, go to the <strong>ADCBase0</strong> tab of the
+<strong>SPIController</strong> window and toggle the <strong>Chip Power Mode</strong> in <strong>MODES(8)</strong>
+from <strong>Chip Run</strong> to <strong>Reset</strong> and back (Figure 13).</p></li>
+<li><p>If you see a normal noise floor when you disconnect the signal generator from
+the analog input, be sure that you are not overdriving the ADC. Reduce the
+input level, if necessary.</p></li>
+<li><p>In <strong>VisualAnalog</strong>, click the <strong>Settings</strong> icon in the <strong>Input Formatter</strong>
+block. Check that <strong>Number Format</strong> is set to the correct encoding (twos
+complement by default). Check that the <strong>Number Format</strong> in the <strong>VisualAnalog
+Input Formatter</strong> matches the data format selected in the <strong>SPIController
+ADCBase0 OUTPUT MODE(14)</strong> window. Repeat for the other channels.</p></li>
+</ul>
+<p>If the FFT appears normal but the performance is poor, check the following:</p>
+<ul class="simple">
+<li><p>Make sure that an appropriate filter is used on the analog input.</p></li>
+<li><p>Make sure that the signal generators for the clock and the analog input are
+clean (low phase noise).</p></li>
+<li><p>Change the analog input frequency slightly if noncoherent sampling is being
+used.</p></li>
+<li><p>Make sure that the SPI configuration file matches the product being evaluated.</p></li>
+</ul>
+<p>If the FFT window remains blank after <strong>Run</strong> in VisualAnalog (see Figure 16) is
+clicked, do the following:</p>
+<ul class="simple">
+<li><p>Make sure that the evaluation board is securely connected to the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a> board.</p></li>
+<li><p>Make sure that the correct FPGA program was installed by clicking the
+<strong>Settings</strong> icon in the <strong>ADC Data Capture</strong> block in VisualAnalog. Then
+select the <strong>FPGA</strong> tab and verify that the proper FPGA .mcs file (one
+containing “AD9656” in the filename) is selected for the part.</p></li>
+<li><p>Make sure that the FPGA has been programmed by verifying that the
+<strong>CONFIG_DONE</strong> LED is illuminated on the <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a>
+board. If the <strong>CONFIG_DONE</strong> LED is not illuminated, click the <strong>Settings</strong>
+icon in the <strong>ADC Data Capture</strong> block in VisualAnalog. Then select the
+<strong>FPGA</strong> tab and verify that the proper FPGA .mcs file (one containing
+“AD9656” in the filename) is selected for the part. Then push the <strong>Program</strong>
+button. The LED should light up.</p></li>
+<li><p>On the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> there is an LED next to a reset button (S501). If
+this LED is not lit, push the reset button and try running again.</p></li>
+</ul>
+</section>
+<section id="helpful-documents">
+<h2>Helpful documents<a class="headerlink" href="#helpful-documents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9656" target="_blank">AD9656</a> data sheet</p></li>
+<li><p>High speed ADC FIFO evaluation kit (<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">HSC-ADC-EVALEZ</a>)</p></li>
+<li><p>HSC-ADC-EVALEZ Wiki Guide <a class="icon link reference external" href="https://wiki.analog.com/resources/eval/hsc-adc-evale" target="_blank">hsc-adc-evale</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog Converter Evaluation
+Tool Version 1.0 User Manual</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control Software</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-877" target="_blank">AN-877 Application Note</a>, <em>Interfacing to High Speed ADCs via
+SPI</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-835" target="_blank">AN-835 Application Note</a>, <em>Understanding ADC Testing and
+Evaluation</em></p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quick start</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

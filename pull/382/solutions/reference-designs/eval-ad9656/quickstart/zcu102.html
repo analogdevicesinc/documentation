@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides quick instructions on how to setup the EVAL-AD9656 on:" name="description" />
+
+    <title>ZCU102 Quick start &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="HSC-ADC-EVALEZ Quick start" href="hsc-adc-evalez.html" />
+    <link rel="prev" title="Quickstart" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ZCU102 Quick start</a><ul>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+<li><a class="reference internal" href="#required-software">Required software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
+<li><a class="reference internal" href="#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD9656</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hsc-adc-evalez.html">On HSC-ADC-EVALEZ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9656</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="zcu102-quick-start">
+<span id="ad9656-fmc-quickstart-zcu102"></span><h1>ZCU102 Quick start<a class="headerlink" href="#zcu102-quick-start" title="Link to this heading"></a></h1>
+<p>This guide provides quick instructions on how to setup the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a>
+on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> on FMC HPC0</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/images/zcu102.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/images/zcu102.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/images/zcu102.jpg" width="800" />
+</a>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot file: <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code></p></li>
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad9656_fmc" target="_blank">projects/ad9656_fmc</a></p></li>
+</ul>
+<p>Instructions on how to build the boot files from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/adc/ad9656_fmc.html" target="_blank" title="(in no-OS)"><span>AD9656_FMC no-OS Example Project</span></a>. More no-OS build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a>.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/ad9656_fmc/index.html#ad9656-fmc" target="_blank" title="(in HDL)"><span>AD9656-FMC HDL project</span></a>. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</section>
+<section id="required-software">
+<h3>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+will include Vivado as well)</p></li>
+<li><p>An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h3>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> Rev 1.0 FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> FMC evaluation board</p></li>
+<li><p>2x Micro-USB cables, one for UART and one for JTAG</p></li>
+<li><p>Signal generator</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#ad9656-fmc-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_zcu102_no_os_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_zcu102_no_os_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9656_extra_pages/docs/solutions/reference-designs/eval-ad9656/images/ad9656_zcu102_no_os_setup.png" width="900" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Get the <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a>.</p></li>
+<li><p>Configure <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> for JTAG boot mode (mode SW6[4:1] switch in the
+position <strong>ON,ON,ON,ON</strong>).</p></li>
+<li><p>Connect Pin 1 to Pin 2 on both P101 and P103 to power the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a>
+through the FMC connector. For other power modes,
+take a look <a class="reference internal" href="../user-guide.html#ad9656-fmc-user-guide-hardware-configuration"><span class="std std-ref">here</span></a>.</p></li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9656" target="_blank">EVAL-AD9656</a> FMC board to the FPGA carrier FMC <strong>HPC0</strong>
+socket (J5).</p></li>
+<li><p>Connect USB UART (Micro-USB) to your host PC (J83).</p></li>
+<li><p>Connect USB JTAG (Micro-USB) to your host PC (J2).</p></li>
+<li><p>Plug the Power Supply into 12V Power input connector (J52).</p></li>
+<li><p>Turn on the power switch on the FPGA board.</p></li>
+<li><p>Build and run the project using the steps shown in
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/adc/ad9656_fmc.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">here</span></a>.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or COM
+port registered).</p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more detailed information on ZCU102 switch configuration, check the
+<em>ZCU102 Hardware User Guide</em> (chapter “MPSoC Device Configuration”)
+<a class="icon link reference external" href="https://docs.amd.com/v/u/en-US/ug1182-zcu102-eval-bd" target="_blank">here</a>.</p>
+</div>
+</section>
+<section id="console-output">
+<h4>Console output<a class="headerlink" href="#console-output" title="Link to this heading"></a></h4>
+<p>The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="bb13686d081d1369646ae785ed46aaac39d229aa" name="bb13686d081d1369646ae785ed46aaac39d229aa" type="checkbox"></input><label for="bb13686d081d1369646ae785ed46aaac39d229aa"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Zynq MP First Stage Boot Loader
+Release 2023.2   Feb 25 2026  -  08:49:19
+PMU-FW is not running, certain applications may not be supported.
+The ad9508 chip successfully configured
+The ad9553 chip successfully configured
+The ad9656 chip successfully configured
+ad9656_xcvr: OK (2500000 kHz)
+ad9656_jesd status:
+        Link is enabled
+        Measured Link Clock: 62.498 MHz
+        Reported Link Clock: 62.500 MHz
+        Lane rate: 2500.000 MHz
+        Lane rate / 40: 62.500 MHz
+        LMFC rate: 3.906 MHz
+        Link status: DATA
+        SYSREF captured: disabled
+        SYSREF alignment error: disabled
+ad9656_adc: Successfully initialized (124996948 Hz)
+main ad9656 - PN9 sequence checked!
+main ad9656 - PN23 sequence checked!
+User input test sequence started!
+DMA_EXAMPLE: address=0x800000 samples=32768 channels=4 bits=16
+ad9656: setup, configuration and test program is done
+Running IIOD server...
+If successful, you may connect an IIO client application by:
+1. Disconnecting the serial terminal you use to view this message.
+2. Connecting the IIO client application using the serial backend configured as shown:
+   Baudrate: 115200
+   Data size: 8 bits
+   Parity: none
+   Stop bits: 1
+   Flow control: none
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quickstart</a>
+    <a href="hsc-adc-evalez.html" title="Next document (Alt+Shift+RightArrow)" class="next">HSC-ADC-EVALEZ Quick start</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
