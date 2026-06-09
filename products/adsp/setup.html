@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="ADSP evaluation boards do not ship with pre-installed software. The chips also do not support booting directly from SD cards. Therefore the evaluation boards need to be bootstrapped over JTAG using a ADI ICE-1000 or ICE-2000 JTAG debugger." name="description" />
+<meta content="ADSP evaluation boards do not ship with pre-installed software. The chips also do not support booting directly from SD cards. Therefore the evaluation boards need to be bootstrapped over JTAG using either an external JTAG debugger such as the ADI ICE-1000 or ICE-2000 or a JTAG debugger embedded on supported carrier boards." name="description" />
 
     <title>Getting started &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
@@ -1293,8 +1293,9 @@ Content on this topic
 <span id="adsp-setup"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
 <p>ADSP evaluation boards do not ship with pre-installed software. The chips also
 do not support booting directly from SD cards. Therefore the evaluation boards
-need to be bootstrapped over JTAG using a <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html" target="_blank">ADI ICE-1000 or ICE-2000 JTAG
-debugger</a>.</p>
+need to be bootstrapped over JTAG using either an external JTAG debugger such
+as the <a class="icon adi reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/emulators.html" target="_blank">ADI ICE-1000 or ICE-2000</a>
+or a JTAG debugger embedded on supported carrier boards.</p>
 <section id="jtag-openocd-setup">
 <h2>JTAG &amp; OpenOCD Setup<a class="headerlink" href="#jtag-openocd-setup" title="Link to this heading"></a></h2>
 <p>To communicate with the board, you must build and run the ADI fork of OpenOCD.</p>
@@ -1372,7 +1373,9 @@ debugger</a>.</p>
 </section>
 <section id="run-openocd">
 <h3>Run OpenOCD<a class="headerlink" href="#run-openocd" title="Link to this heading"></a></h3>
-<p>Run <code class="docutils literal notranslate"><span class="pre">openocd</span></code> from the cloned repository. For the ICE-1000 and EV-SC598-SOM run the following:</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">openocd</span></code> from the cloned repository. Select the interface configuration
+that matches your JTAG connection.</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-444d08c32466710c2a90f0509a836072191e0420-0" name="tab-set-444d08c32466710c2a90f0509a836072191e0420" type="radio"></input><label class="tab-label" for="tab-item-444d08c32466710c2a90f0509a836072191e0420-0">External Debugger (ICE-1000/ICE-2000)</label><div class="tab-content docutils"><p>For the EV-SC598-SOM with an ICE-1000, run:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/openocd$
 </pre></div>
 </div>
@@ -1383,7 +1386,24 @@ debugger</a>.</p>
 <span class="w">      </span>--search<span class="w"> </span>tcl/target/
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><ul class="simple">
+<div class="clear-left"></div></div></div><p>Use <code class="docutils literal notranslate"><span class="pre">ice2000.cfg</span></code> instead of <code class="docutils literal notranslate"><span class="pre">ice1000.cfg</span></code> when using an ICE-2000.</p>
+</div><input id="tab-item-444d08c32466710c2a90f0509a836072191e0420-1" name="tab-set-444d08c32466710c2a90f0509a836072191e0420" type="radio"></input><label class="tab-label" for="tab-item-444d08c32466710c2a90f0509a836072191e0420-1">Embedded JTAG Debugger (On Carrier Board)</label><div class="tab-content docutils"><p>For the EV-SC598-SOM with a carrier board, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/openocd$
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>src/openocd<span class="w"> </span>-f<span class="w"> </span>adi-dbgagent.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>-f<span class="w"> </span>adspsc59x_a55.cfg<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/interface/<span class="w"> </span><span class="se">\</span>
+<span class="w">      </span>--search<span class="w"> </span>tcl/target/
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>The EV-SOMCRR-EZKIT and EV-SOMCRR-EZLITE carrier boards include an
+embedded JTAG debugger, referred to as the Debug Agent in the OpenOCD
+configuration and on the documentation, which provides JTAG connectivity over USB.</p>
+<p>To use the debug agent, set all positions on the carrier board <code class="docutils literal notranslate"><span class="pre">SW1</span></code> to
+<code class="docutils literal notranslate"><span class="pre">ON</span></code>.</p>
+</div></div><ul class="simple">
 <li><p>For the ADSP-SC594 (Cortex-A5) use <code class="docutils literal notranslate"><span class="pre">adspsc59x.cfg</span></code></p></li>
 <li><p>For the ADSP-SC598 (Cortex-A55) use  <code class="docutils literal notranslate"><span class="pre">adspsc59x_a55.cfg</span></code></p></li>
 </ul>
