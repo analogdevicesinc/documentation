@@ -5,6 +5,10 @@
 AD-FMCOMMS5-EBZ
 ===============
 
+.. image:: ../images/ad9361_chip_illustration.png
+   :align: left
+   :width: 150
+
 For many Broadband Wireless Access (BWA) systems, Multi Input – Multi Output
 (`SIMO / MISO / SU-MIMO / MU-MIMO <https://en.wikipedia.org/wiki/MIMO>`_)
 operation and RF beamforming are proven techniques for maximizing throughput and
@@ -63,6 +67,10 @@ Note that the AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base
 board requires two adjacent FMC connectors. Suitable base boards for example are
 ZC702, ZC706, and ZCU102.
 
+.. image:: ../images/fmcomms5_board.jpg
+   :align: center
+   :width: 500
+
 User Guide
 ----------
 
@@ -75,8 +83,6 @@ User Guide
 
 Table of Contents
 -----------------
-
-`ad-fmcomms5-ebz.ashx <http://www.analog.com/-/media/analog/en/evaluation-board-images/images/ad-fmcomms5-ebz.ashx>`_
 
 #. :dokuwiki:`Introduction </resources/eval/user-guides/ad-fmcomms2-ebz/introduction>`
 #. Hardware

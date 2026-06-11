@@ -101,7 +101,10 @@ with a matched splitter feeding into 3 channels driven by a single receiver.
 SMA 4 was left disconnected. Standard SMA cables were used, not matched length
 cables which will provide better performance.
 
-|image1|
+.. image:: images/screenshot_20190530_141142.png
+   :alt: Capture window showing relative phase sync across channels
+   :align: center
+   :width: 1000
 
 libad9361 Example Implementation
 --------------------------------
@@ -128,7 +131,10 @@ specific revision to get the actual trace lengths for specific channels, which
 will determine :math:`D` . Below is a plot of possible offsets across frequency
 and trace distance deltas.
 
-|Phase difference over frequency and distance|
+.. image:: images/phasediff.png
+   :alt: Phase difference over frequency and distance
+   :align: center
+   :width: 600
 
 MATLAB code for plot
 
@@ -185,8 +191,3 @@ External LO Rev C with ADF5355
 .. image:: images/fm5_phase_performance_rev_c_ext_lo.svg
    :alt: Rev C External LO
    :align: center
-
-.. |image1| image:: images/screenshot_20190530_141142.png
-   :width: 1000
-.. |Phase difference over frequency and distance| image:: images/phasediff.png
-   :width: 600
