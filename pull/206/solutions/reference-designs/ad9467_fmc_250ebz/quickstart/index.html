@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Quick start guides provide simple step by step instructions on how to do an initial system setup for the EVAL-AD9467 boards on various FPGA development boards. In these guides, we will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution." name="description" />
+
+    <title>Quick start &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ZedBoard Quick start" href="zed.html" />
+    <link rel="prev" title="Prerequisites" href="../prerequisites.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Quick start</a><ul>
+<li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
+<li><a class="reference internal" href="#supported-environments">Supported Environments</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a><ul>
+<li><a class="reference internal" href="#zedboard-eval-ad9467">ZedBoard + EVAL-AD9467</a></li>
+<li><a class="reference internal" href="#zcu102-eval-ad9467">ZCU102 + EVAL-AD9467</a></li>
+<li><a class="reference internal" href="#clock-and-analog-input-connections">Clock and analog input connections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD9467-FMC-250EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quick start</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="zed.html">On ZedBoard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9467-FMC-250EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="quick-start">
+<span id="ad9467-fmc-250ebz-quickstart"></span><h1>Quick start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h1>
+<p>The Quick start guides provide simple step by step instructions on how to do
+an initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9467" target="_blank">EVAL-AD9467</a>
+boards on various FPGA development boards. In these guides, we will discuss how
+to program the bitstream, run a no-OS program or boot a Linux distribution.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zed.html">On ZedBoard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zed.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#required-software">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zed.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html#about-the-iio-devices">About the IIO devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="zcu102.html">On ZCU102</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="zcu102.html#using-linux-as-software">Using Linux as software</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#necessary-files">Necessary files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#required-software">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zcu102.html#testing">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#creating-the-setup">Creating the setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#boot-messages">Boot messages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html#about-the-iio-devices">About the IIO devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="supported-carriers">
+<span id="ad9467-fmc-250ebz-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9467" target="_blank">EVAL-AD9467</a>, is, by definition a “FPGA
+mezzanine card” (FMC); that means it needs a carrier to plug into.</p>
+<p>The carriers we support are listed below, as well as the FMC port where to
+connect the evaluation board:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>FPGA board</p></th>
+<th class="head"><p>EVAL-AD9467</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZedBoard" target="_blank">ZedBoard</a></p></td>
+<td><p>FMC LPC</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
+<td><p>FMC HPC0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="supported-environments">
+<h2>Supported Environments<a class="headerlink" href="#supported-environments" title="Link to this heading"></a></h2>
+<p>The supported OS are:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>FPGA board</p></th>
+<th class="head"><p>HDL</p></th>
+<th class="head"><p>Linux software</p></th>
+<th class="head"><p>No-OS software</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZedBoard" target="_blank">ZedBoard</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
+<td><p>Yes</p></td>
+<td><p>Yes</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>The carrier setup requires power, UART
+(115200), Ethernet (Linux), HDMI (if available) and/or JTAG connections.
+A few typical setups are shown below.</p>
+<section id="zedboard-eval-ad9467">
+<h3>ZedBoard + EVAL-AD9467<a class="headerlink" href="#zedboard-eval-ad9467" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zedboard_setup.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zedboard_setup.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zedboard_setup.png" width="800" />
+</a>
+</section>
+<section id="zcu102-eval-ad9467">
+<h3>ZCU102 + EVAL-AD9467<a class="headerlink" href="#zcu102-eval-ad9467" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zcu102_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zcu102_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad9467_fmc_m/docs/solutions/reference-designs/ad9467_fmc_250ebz/images/ad9467_zcu102_setup.jpg" width="800" />
+</a>
+</section>
+<section id="clock-and-analog-input-connections">
+<h3>Clock and analog input connections<a class="headerlink" href="#clock-and-analog-input-connections" title="Link to this heading"></a></h3>
+<p>The EVAL-AD9467 requires:</p>
+<ul class="simple">
+<li><p>Clock input (J201): 250 MHz clock signal
+- Can use transformer-coupled, crystal oscillator, or AD9517 clock generator
+- 50 Ω terminated, AC-coupled single-ended input</p></li>
+<li><p>Analog input: Configurable through ADL5565 differential amplifier
+- Multiple input coupling options available</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <a href="zed.html" title="Next document (Alt+Shift+RightArrow)" class="next">ZedBoard Quick start</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
