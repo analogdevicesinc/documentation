@@ -257,7 +257,8 @@ connected receivers. The figure below was created with a FMComms5 configuration
 with a matched splitter feeding into 3 channels driven by a single receiver.
 SMA 4 was left disconnected. Standard SMA cables were used, not matched length
 cables which will provide better performance.</p>
-<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/screenshot_20190530_141142.png"><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/screenshot_20190530_141142.png" width="1000" /></a></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/screenshot_20190530_141142.png"><img alt="Capture window showing relative phase sync across channels" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/screenshot_20190530_141142.png" width="1000" />
+</a>
 </section>
 <section id="libad9361-example-implementation">
 <h2>libad9361 Example Implementation<a class="headerlink" href="#libad9361-example-implementation" title="Link to this heading"></a></h2>
@@ -281,7 +282,8 @@ FMComms5 <span class="math notranslate nohighlight">\(c=15 cm/nsec\)</span> whic
 specific revision to get the actual trace lengths for specific channels, which
 will determine <span class="math notranslate nohighlight">\(D\)</span> . Below is a plot of possible offsets across frequency
 and trace distance deltas.</p>
-<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/phasediff.png"><img alt="Phase difference over frequency and distance" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/phasediff.png" width="600" /></a></p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/phasediff.png"><img alt="Phase difference over frequency and distance" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms5_landing/docs/solutions/reference-designs/fmcomms5/images/phasediff.png" width="600" />
+</a>
 <p>MATLAB code for plot</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dmils</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;;</span>
 <span class="n">meters</span> <span class="o">=</span> <span class="n">dmils</span>\<span class="o">*</span><span class="mf">2.54e-5</span><span class="p">;</span>
