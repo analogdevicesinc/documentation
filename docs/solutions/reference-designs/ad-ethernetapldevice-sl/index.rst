@@ -16,14 +16,20 @@ Key Features
 
 - Certified for intrinsic safety (Ex ia IIC Ga)
 - Pre-certified Ethernet-APL
+- Extensive security features: built-in security for hardware root-of-trust, 
+  data confidentiality and integrity, and secure communications.
+
+   - Designed with IEC 62443 and EUCRA requirements in mind.
+     Support available for security certification.
+
 - :adi:`MAX42500` voltage monitor with integrated windowing watchdog
 - :adi:`MAX66132` temperature sensor
-- :adi:`ADFS7124-4` sigma-delta ADC (SC3 certified)
+- :adi:`ADFS7124-4` sigma-delta AfDC (SC3 certified)
 - Complete FMEDA documentation
 - :adi:`MAX32690`  dual-core MCU (ARM Cortex-M4 with FPU + RISC-V co-processor)
 - External RAM (512 Mb) and Flash (64 Mb)
 - 10BASE-T1L Ethernet via :adi:`ADIN1110`  MAC/PHY
-- Powered via Single-Pair Power over Ethernet (SPoE), :adi:`ADIN1100D2Z` recommended
+- Supports APL class A, :adi:`ADIN1100D2Z` recommended
 - Open-source software stack with drivers and example applications
 - Zephyr RTOS support and integration with Code Fusion Studio
 
@@ -132,13 +138,12 @@ Required Hardware
 - **Development kit**: AD-EthernetAPLDevice-SL
 - **Debugging board**: If RISC-V co-processor needs to be debugged, replace the
   IS digital board with the NON-IS Digital board
-- **Power supply**: Single-Pair Power over Ethernet (SPoE) via DEMO-ADIN1100D2Z
-  supplied from external power connector (from 9V to 15V), or a Ethernet-APL
-  field switch
+- **Power supply**: Powered via DEMO-ADIN1100D2Z supplied from external power connector 
+  (from 9V to 15V), or an Ethernet-APL field switch
 - **ARM programmer**: MAX32625PICO or any SWD-compatible programmer
 - **RISC-V programmer**: Olimex ARM-USB-OCD
 - **Media converter**: 10BASE-T1L to 10BASE-T or similar. DEMO-ADIN1100D2Z
-  includes a media converter and can be used for both power and data, or a
+  includes a media converter and can be used for both power and data, or an
   Ethernet-APL field switch
 
 Setup Instructions
@@ -158,8 +163,8 @@ Setup Instructions
 
 #. Connect the DEMO-ADIN1100D2Z to your PC via Ethernet.
 
-#. Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The
-   AD-EthernetAPLDevice-SL will be powered via SPoE.
+#. Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The AD-EthernetAPLDevice-SL 
+   will be powered via Ethernet.
 
 .. figure:: config.png
    :width: 600 px
