@@ -67,7 +67,7 @@ Note that the AD-FMCOMMS5-EBZ uses a dual FMC connector. This means the base
 board requires two adjacent FMC connectors. Suitable base boards for example are
 ZC702, ZC706, and ZCU102.
 
-.. image:: ../images/fmcomms5_board.jpg
+.. image:: images/fmcomms5_board.jpg
    :align: center
    :width: 500
 
