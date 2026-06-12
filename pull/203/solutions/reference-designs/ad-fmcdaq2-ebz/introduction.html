@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD-FMCDAQ2-EBZ module is comprised of the AD9680 dual, 14-bit, 1.0 GSPS, JESD204B ADC, the AD9144 quad, 16-bit, 2.8 GSPS, JESD204B DAC, the AD9523-1 clock, and power management components. It is clocked by an internally generated carrier platform via the FMC connector, comprising a completely self contained data acquisition and signal synthesis prototyping platform. In an FMC footprint (84 mm × 69 mm), the module’s combination of wideband data conversion, clocking, and power closely approximates real-world hardware and software for system prototyping and design, with no compromise in signal chain performance. For additional information or to purchase the AD-FMCDAQ2-EBZ, please visit the product page." name="description" />
+
+    <title>Introduction &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AD-FMCDAQ2-EBZ Hardware" href="hardware.html" />
+    <link rel="prev" title="AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide" href="quickstart/microblaze.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#ad9680-1000-adc">AD9680-1000 ADC</a></li>
+<li><a class="reference internal" href="#ad9144-dac">AD9144 DAC</a></li>
+<li><a class="reference internal" href="#applications">Applications</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCDAQ2-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/a10soc.html">On A10SOC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/a10gx.html">On A10GX (OBSOLETE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/microblaze.html">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCDAQ2-EBZ (Rev E) Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="clocking.html">AD-FMCDAQ2-EBZ Clocking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Production testing of the AD-FMCDAQ2 / AD-FMCDAQ3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="help_and_support.html">AD-FMCDAQ2-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCDAQ2-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<span id="ad-fmcdaq2-ebz-introduction"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h1>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/eval-ad-fmcdaq2-ebz" target="_blank">AD-FMCDAQ2-EBZ</a>
+module is comprised of the <a class="icon adi reference external" href="https://www.analog.com/ad9680" target="_blank">AD9680</a>
+dual, 14-bit, 1.0 GSPS, JESD204B ADC, the <a class="icon adi reference external" href="https://www.analog.com/ad9144" target="_blank">AD9144</a> quad,
+16-bit, 2.8 GSPS, JESD204B DAC, the <a class="icon adi reference external" href="https://www.analog.com/ad9523-1" target="_blank">AD9523-1</a>
+clock, and power management components. It is clocked by an internally
+generated carrier platform via the FMC connector, comprising a completely self
+contained data acquisition and signal synthesis prototyping platform. In an
+FMC footprint (84 mm × 69 mm), the module’s combination of wideband data
+conversion, clocking, and power closely approximates real-world hardware and
+software for system prototyping and design, with no compromise in signal chain
+performance. For additional information or to purchase the
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a>, please visit the product page.</p>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Includes schematics, layout, BOM, Gerber files, HDL, Linux® drivers, IIO
+Oscilloscope, VisualANALOG,…</p></li>
+<li><p>FMC-compatible form factor</p></li>
+<li><p>Powered from single FMC connector</p></li>
+<li><p>Provides two channels of ADC and two channels of DAC with full
+synchronization capabilities</p></li>
+</ul>
+</section>
+<section id="ad9680-1000-adc">
+<h2>AD9680-1000 ADC<a class="headerlink" href="#ad9680-1000-adc" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>JESD204B (subclass 1) 4-lane coded serial digital outputs</p></li>
+<li><p>SFDR: 80 dBc at 1 GHz AIN, 1.0 GSPS</p></li>
+<li><p>Noise density: –154 dBFS/Hz &#64; 1.0 GSPS</p></li>
+<li><p>2 GHz of usable analog input full power bandwidth</p></li>
+<li><p>Two integrated DDCs per channel</p></li>
+</ul>
+</section>
+<section id="ad9144-dac">
+<h2>AD9144 DAC<a class="headerlink" href="#ad9144-dac" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>JESD204B (subclass 1) coded serial digital outputs</p></li>
+<li><p>Supports complex signal bandwidths up to 800 MHz</p></li>
+<li><p>6-carrier GSM IMD = 75 dBc at 75 MHz IF</p></li>
+<li><p>SFDR = 85 dBc (BW = 300 MHz) at DC IF</p></li>
+<li><p>Selectable 2×, 4×, 8× interpolation filters</p></li>
+</ul>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Electronic test and measurement equipment</p></li>
+<li><p>General-purpose software radios</p></li>
+<li><p>Radar systems</p></li>
+<li><p>Ultra wideband satellite receivers</p></li>
+<li><p>Signals intelligence (SIGINT)</p></li>
+<li><p>Point to point communication systems</p></li>
+<li><p>DOCSIS 3.0 CMTS and HFC networks</p></li>
+<li><p>Multiple input/multiple output (MIMO) radios</p></li>
+<li><p>Automated test equipment</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="quickstart/microblaze.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide</a>
+    <a href="hardware.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCDAQ2-EBZ Hardware</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
