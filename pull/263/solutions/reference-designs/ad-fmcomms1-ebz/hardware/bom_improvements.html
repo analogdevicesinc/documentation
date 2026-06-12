@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>BOM Improvements &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Digital Interface Timing Verification" href="../interface_timing_validation.html" />
+    <link rel="prev" title="AD-FMCOMMS1-EBZ Configuration Options" href="configuration_options.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">BOM Improvements</a><ul>
+<li><a class="reference internal" href="#transmit-path">Transmit Path</a></li>
+<li><a class="reference internal" href="#receive-path">Receive Path</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="../software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="index.html">Hardware</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="bom-improvements">
+<span id="ad-fmcomms1-ebz-hardware-bom-improvements"></span><h1>BOM Improvements<a class="headerlink" href="#bom-improvements" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated,
+which means it is no longer maintained or actively updated, even though the
+devices themselves may be Recommended for New Designs or in
+Production. This page is here for historical/reference purposes only.</p>
+</div>
+<section id="transmit-path">
+<h2>Transmit Path<a class="headerlink" href="#transmit-path" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Changing the ADF4351 output filter by changing the values of L17 and L18 from 3.9nH to 10nH will remove the Notch at 450 MHz when sweeping LO |</div>
+</div>
+<p>+===============================================================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_tx_l17_18.png"><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_tx_l17_18.png" width="200" /></a>                                                                                                                                      |
++———————————————————————————————————————————————–+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                                                   |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_l17_18_22_23.png"><img alt="image2" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_l17_18_22_23.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Changing the loop filter of the ADF4351 by changing the component values as shown in this figure, will improve the phase noise by about 20 dB up to 1MHz within the whole range except between 2.14GHz and 2.19GHz |</div>
+</div>
+<p>+====================================================================================================================================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_tx_r40_42_c81_86_92.png"><img alt="image3" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_tx_r40_42_c81_86_92.png" width="200" /></a>                                                                                                                                                                                                           |
++——————————————————————————————————————————————————————————————————————–+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                                                                                                                        |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r40_42_c81_86_92.png"><img alt="image4" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r40_42_c81_86_92.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Here is the phase noise we get with these changes around 2.19GHz                                                                                                                                                   |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.19_ghz_tx_lo_40mhz_tone_1.png"><img alt="image5" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.19_ghz_tx_lo_40mhz_tone_1.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="receive-path">
+<h2>Receive Path<a class="headerlink" href="#receive-path" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Changing the ADF4351 output filter by changing the values of L22 and L23 from 3.9nH to 10nH will remove the Notch at 650 MHz when sweeping LO |</div>
+</div>
+<p>+===============================================================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_l22_23.png"><img alt="image6" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_l22_23.png" width="200" /></a>                                                                                                                                      |
++———————————————————————————————————————————————–+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                                                   |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_l17_18_22_23.png"><img alt="image7" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_l17_18_22_23.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Changing the loop filter of the ADF4351 by changing the component values as shown in this figure, will improve the phase noise throughout the whole range except between 2.11GHz and 2.19GHz</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r48_108_c110_113_263.png"><img alt="image12" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r48_108_c110_113_263.png" width="200" /></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>The location of these components on the board is highlighted in these two figures</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r48_c110_113.png"><img alt="image13" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r48_c110_113.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/top_r108_c263.png"><img alt="image14" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/top_r108_c263.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Here is the phase noise we get with these changes around 2.19GHz</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/lo_instability_rx_lo_2.19ghz.png"><img alt="image15" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/lo_instability_rx_lo_2.19ghz.png" width="200" /></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Removing the ADL5380 output filter by removing the capacitors C115, C116, C142 and C143 will increase the receive path bandwidth |</div>
+</div>
+<p>+==================================================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_c115_116_142_143.png"><img alt="image16" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_c115_116_142_143.png" width="200" /></a>                                                                                                                        |
++———————————————————————————————————————————-+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                                      |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_c115_116_142_143.png"><img alt="image17" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_c115_116_142_143.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Removing R56 and making R55 200 Ohms will set the output common mode voltage of the ADL5380 to 2.3V which is in the input common mode range of the AD8366 |</div>
+</div>
+<p>+===========================================================================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r55_56.png"><img alt="image18" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r55_56.png" width="200" /></a>                                                                                                                                                 |
++———————————————————————————————————————————————————–+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                                                               |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r55_56.png"><img alt="image19" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r55_56.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Replacing R51, R57, R66 and R70 with an 82.5 Ohms will set the input common mode voltage of the ADC to 0.9V |</div>
+</div>
+<p>+=============================================================================================================+
+| <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r51_57_66_70.png"><img alt="image20" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ppp_rx_r51_57_66_70.png" width="200" /></a>                                                                                                   |
++————————————————————————————————————-+</p>
+<div class="line-block">
+<div class="line">The location of these components on the board is highlighted in this figure                                 |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r51_57_66_70.png"><img alt="image21" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bottom_r51_57_66_70.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="configuration_options.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS1-EBZ Configuration Options</a>
+    <a href="../interface_timing_validation.html" title="Next document (Alt+Shift+RightArrow)" class="next">Digital Interface Timing Verification</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

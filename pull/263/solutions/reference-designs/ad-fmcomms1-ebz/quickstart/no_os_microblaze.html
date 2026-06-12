@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="FMCOMMS1 Demo System" href="zynq_box.html" />
+    <link rel="prev" title="AD-FMCOMMS1-EBZ ML605 Quick Start Guide" href="microblaze_ml605.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a><ul>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#downloads">Downloads</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+<li><a class="reference internal" href="#software-setup-for-vivado">Software Setup for Vivado</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2"/><div class="collapse"><a class="reference internal" href="../hardware/index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/bom_improvements.html">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="../software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms1-ebz-quick-start-guide-on-xilinx-fpga-boards-without-os">
+<span id="ad-fmcomms1-ebz-quickstart-no-os-microblaze"></span><h1>AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS<a class="headerlink" href="#ad-fmcomms1-ebz-quick-start-guide-on-xilinx-fpga-boards-without-os" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated,
+which means it is no longer maintained or actively updated, even though the
+devices themselves may be Recommended for New Designs or in
+Production. This page is here for historical/reference purposes only.</p>
+</div>
+<p>This guide provides some quick instructions on how to setup the AD-FMCOMMS1-EBZ
+on either:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/AC701" target="_blank">AC701</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
+<li><p><a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZED Board</a></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The ML605 XPS project remain on this website only for legacy purposes. The
+support for XPS projects has been discontinued.</p>
+</div>
+<section id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>The supported Xilinx tools version for each release can be found on the
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/releases" target="_blank">HDL releases page</a>.</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>AD-FMCOMMS1-EBZ FMC Board</p></li>
+<li><dl class="simple">
+<dt>Xilinx ML605 / Xilinx AC701 / Xilinx KC705 / Xilinx VC707 / Xilinx ZC702 /</dt><dd><p>Xilinx ZC706 / Digilent ZED</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="downloads">
+<h2>Downloads<a class="headerlink" href="#downloads" title="Link to this heading"></a></h2>
+<div class="download admonition">
+<p class="admonition-title">Download</p>
+<p><strong>no-OS Drivers (last supported release):</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/2016_R1/fmcomms1" target="_blank">fmcomms1</a></p>
+<p><strong>ML605 HDL Reference Design for ISE:</strong> <a class="icon link reference external" href="https://github.com/analogdevicesinc/fpgahdl_xilinx/tree/master/cf_xcomm" target="_blank">cf_xcomm</a></p>
+<p><strong>HDL Reference Design for Vivado 2015.4 (last supported release):</strong> <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/hdl_2016_r1/projects/fmcomms1" target="_blank">projects/fmcomms1</a></p>
+</div>
+</section>
+<section id="hardware-setup">
+<h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Connect the power and UART cables of the Xilinx FPGA board</p></li>
+<li><p>Connect the AD-FMCOMMS1-EBZ FMC board to the Xilinx FPGA board on the:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>LPC FMC connector for KC705, ZC706, ZED;</p></li>
+<li><p>LPC FMC1 connector for ZC702;</p></li>
+<li><p>HPC FMC connector for AC701, ML605;</p></li>
+<li><p>HPC FMC2 connector for VC707.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p>The transmit signal may be observed using a spectrum analyzer. The receive side
+may be sourced by either the transmit side or a signal source. If it is the
+transmit side, connect an SMA cable from the transmit to receive or connect
+antennae on both. If it is a signal source the frequency needs to be 2.4G<em>+</em>f, 0 dBm where f is the baseband.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default RX gain in case of no-OS software is 10 dB. This could be too
+high, when an SMA cable is used for external loop-back. In this case the user
+should reduce the RX gain to its minimum value: 4.5 dB, in order to prevent
+saturation.</p>
+</div>
+</section>
+<section id="software-setup-for-vivado">
+<h2>Software Setup for Vivado<a class="headerlink" href="#software-setup-for-vivado" title="Link to this heading"></a></h2>
+<p>Example for a ZC702 board:</p>
+<ul class="simple">
+<li><p>After <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span class="xref std std-ref">building the project in Vivado</span></a>
+for the used FPGA board, a <strong>SDK_Export</strong> folder will be created in
+<strong>../fmcomms1_board.sdk/SDK</strong></p></li>
+<li><p>Open the Xilinx SDK for Vivado. When the SDK starts it asks to provide a
+folder where to store the workspace. Any folder can be provided.</p></li>
+<li><p>Go to <strong>File-&gt;New-&gt;Application project</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/new_app_project.png"><img alt="New Application Project" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/new_app_project.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Use a new hardware platform, so choose <strong>New</strong> in <strong>Target Hardware</strong> section</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/new_platform.png"><img alt="New Platform" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/new_platform.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>At the <strong>Target Hardware Specification</strong> section browse the location of the
+hardware description file. This file’s extension should be <strong>.xml</strong> or
+<strong>.hdf</strong>, and is located in the directory of the hdl design. <strong>Note:</strong> If the
+file does not exist, probably you forgot to make an <strong>Export hardware</strong> (in
+Vivado <strong>File</strong> -&gt; <strong>Export</strong> -&gt; <strong>Export Hardware…</strong>)</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_new_hw_project.png"><img alt="New Hardware Project" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_new_hw_project.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Then give a name to the project and click <strong>Next</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/project_name.png"><img alt="Project Name" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/project_name.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>In the next window choose <strong>Empty Application</strong> and click <strong>Finish</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/templates.png"><img alt="Available Templates" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/templates.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Now the project without source code looks like this</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/empty_project_zynq.png"><img alt="Empty Project" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/empty_project_zynq.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Then the source code(all folders from <strong>no-OS Drivers</strong>, except Chipscope,
+Evaluate and PIC) must be added from Github to <strong>src</strong> folder.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_project_without_include_directories_paths.png"><img alt="Project without directories paths" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_project_without_include_directories_paths.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Afterwards click right on project name and go to <strong>Properties</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/project_properties.png"><img alt="Project properties" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/project_properties.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>In the window that appears go to <strong>Settings-&gt;Directories</strong> and include the
+paths of the directories from <strong>src</strong> for both <strong>Debug</strong> and <strong>Release</strong>
+configurations.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_settings_include_directories_paths.png"><img alt="Include paths" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_settings_include_directories_paths.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>The <em>Project Explorer</em> window now shows the projects that exist in the
+workspace and the files for each project. The SDK should automatically build
+the projects and the <em>Console</em> window will display the result of the build. If
+the build is not done automatically select the <strong>Project-&gt;Build
+Automatically</strong> menu option.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_project_explorer_zynq.png"><img alt="Project Explorer" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_project_explorer_zynq.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>The default project configuration assumes that a Xilinx ML605 FPGA board is
+used and that the FMCOMMS1 is connected to this board on the FMC LPC
+connector. In the file <em>Common/main.c</em> change the <em>XCOMM_DefaultInit</em>
+initialization structure so that the FPGA board and the FMC port used to
+connect the FMCOMMS1 to the FPGA board correspond to your actual hardware
+setup.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/board_config.png"><img alt="Board Configuration" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/board_config.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>At this point the software project setup is complete, the FPGA can be
+programmed and the software can be downloaded into the system. You can program
+the FPGA by going to <strong>Xilinx Tools</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga.png"><img alt="Program FPGA" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Then choose this bitstream and press <strong>Program</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga_with_bitstream.png"><img alt="Program FPGA with bitstream" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga_with_bitstream.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>This window will appear next.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga_progress.png"><img alt="Program FPGA progress" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_program_fpga_progress.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Afterwards a <em>Run Configuration</em> must be created and then press <strong>Run</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_run_configuration.png"><img alt="Run Configuration" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_run_configuration.png" width="600" />
+</a>
+<p>The no-OS drivers source code contains an example on how to:</p>
+<ul class="simple">
+<li><p>initialize the board</p></li>
+<li><p>test the ADC communication</p></li>
+<li><p>test the DAC communication</p></li>
+<li><p>set the VGA gain</p></li>
+<li><p>set the receive and transmit frequencies</p></li>
+<li><p>send a sinewave over the air and receive it back</p></li>
+</ul>
+<p>The example code outputs on the UART the status of each operation as shown
+below.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_test_uart.png"><img alt="UART Test" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_test_uart.png" width="300" />
+</a>
+<p>The output of the example program can be viewed in the SDK console by enabling
+the <em>Connect STDIO Console</em> option and setting the baud rate of the UART port to
+115200.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/stdio_config_vivado.png"><img alt="Baud rate" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/stdio_config_vivado.png" width="600" />
+</a>
+<p>As an alternative an UART terminal can be used to capture the output of the
+example program. The number of used UART port depends on the computer’s
+configuration. The following settings must be used in the UART terminal:</p>
+<ul class="simple">
+<li><p>Baud Rate: 115200bps</p></li>
+<li><p>Data: 8 bit</p></li>
+<li><p>Parity: None</p></li>
+<li><p>Stop bits: 1 bit</p></li>
+<li><p>Flow Control: none</p></li>
+</ul>
+<p>The example code is located in the “<em>Common/main.c</em>” file and the
+implementations of the ADC and DAC test routines can be found in the
+“<em>Common/test.c</em>” file.</p>
+<p>After running the example program the system is configured to generate a
+sinewave and send it over the air using a 2.4GHz carrier. The signal is received
+back, brought to baseband again and digitized by the ADC on the FMCOMMS1. The I
+and Q samples generated by the ADC can be viewed using the <em>Vivado Hardware
+Manager</em>. These are the steps than need to be followed to view the sine waves:</p>
+<ul class="simple">
+<li><p>First make sure that the board is programmed and the program is currently
+running</p></li>
+<li><p>Then open Vivado and go to <strong>Flow-&gt;Open Hardware manager</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_hardware_manager.png"><img alt="Open Hardware Manager" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_hardware_manager.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>In the new window select <strong>Open a new hardware target</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target.png"><img alt="Open New Hardware Target" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Then click <strong>Next</strong> 4 times and then <strong>Finish</strong></p></li>
+</ul>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardaware_target_start.png"><img alt="Open New Hardware Target" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardaware_target_start.png" width="290" /></a><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardaware_target_server_name.png"><img alt="Server name" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardaware_target_server_name.png" width="290" /></a><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_select_target.png"><img alt="Select Target" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_select_target.png" width="290" /></a> <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_set_properties.png"><img alt="Set Properties" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_set_properties.png" width="290" /></a><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_finish.png"><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_open_new_hardware_target_finish.png" width="290" /></a></p>
+<ul class="simple">
+<li><p>This is how the <em>Vivado Hardware Manager</em> looks like. Now go to Probes files.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hardware_device_properties.png"><img alt="Device Properties" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hardware_device_properties.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>And browse for the folder where the project was compiled
+<strong>../fmcomms1_board.runs/impl_1/debug_nets.ltx</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_specify_probes_file.png"><img alt="Specify Probes File" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_specify_probes_file.png" width="400" />
+</a>
+<ul class="simple">
+<li><p>Then do a right click on the active target and choose <strong>Refresh Device</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hw_refresh_device.png"><img alt="Refresh Device" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hw_refresh_device.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Afterwards do another right click on the active target and choose <strong>Run
+Trigger</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hw_run_trigger.png"><img alt="Run Trigger" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/vivado_hw_run_trigger.png" width="600" />
+</a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This is how the 56 digital signals look like. Now we have to compose the</dt><dd><p>sinewaves.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals.png"><img alt="ILA Signals" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>First select the first 14 signals, do a right click and choose <strong>New Virtual
+Bus</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_new_virtual_bus.png"><img alt="New Virtual Bus" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_new_virtual_bus.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Then give a name to that virtual bus</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_new_virtual_bus_specify_name.png"><img alt="Specify Virtual Bus Name" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_new_virtual_bus_specify_name.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>In order to see a sinewave you have to right click on the name of the virtual
+bus, choose <strong>Analog</strong> for <strong>Waveform Style</strong> option.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_waveform_style_analog.png"><img alt="Analog Waveform Style" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_waveform_style_analog.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Now you can see a sinewave, but the radix is not the good one. In order to
+have the right radix, you must choose <strong>Signed Decimal</strong> for <strong>Radix</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_radix_signed_decimal.png"><img alt="Signed Decimal Radix" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_radix_signed_decimal.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>Now the signal looks like a sinewave</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_one_virtual_bus_forms_a_sinewave.png"><img alt="One Virtual Bus Sinewave" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_one_virtual_bus_forms_a_sinewave.png" width="600" />
+</a>
+<ul class="simple">
+<li><p>And after you did the same steps for the other 3x14 remaining signals, you
+should have 4 sinewaves composed of 56 signals. Because of the working
+frequency of the ILA core, data has been split into 2 buses, so the actual
+data from the Evaluation board would be I_0 interleaved with I_1, and Q_0
+interleaved with Q_1.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_4_virtual_buses_form_sinewaves.png"><img alt="4 Virtual Buses Sinewaves" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_vivado_hw_ila_signals_4_virtual_buses_form_sinewaves.png" width="600" />
+</a>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="microblaze_ml605.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a>
+    <a href="zynq_box.html" title="Next document (Alt+Shift+RightArrow)" class="next">FMCOMMS1 Demo System</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

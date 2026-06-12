@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>Shell Scripts for the FMC RF boards &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="Xcomm Cal" href="xcomm_cal.html" />
+    <link rel="prev" title="Linux Applications for the AD-FMCOMMS1-EBZ" href="index.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Shell Scripts for the FMC RF boards</a><ul>
+<li><a class="reference internal" href="#dds-passing-by">DDS passing by</a></li>
+<li><a class="reference internal" href="#random-data-on-the-rf-output">Random data on the RF output</a></li>
+<li><a class="reference internal" href="#setting-the-amplitude">Setting the amplitude</a></li>
+<li><a class="reference internal" href="#sweeping-the-tx">Sweeping the Tx</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../../../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../../../quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2"/><div class="collapse"><a class="reference internal" href="../../../hardware/index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../hardware/bom_improvements.html">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l6 current"><a class="current reference internal" href="#">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../../../index.html">Reference Designs</a></li><li><a href="../../../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="../../index.html">Software</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ Linux support</a></li><li><a href="index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="shell-scripts-for-the-fmc-rf-boards">
+<span id="ad-fmcomms1-ebz-software-shell-scripts"></span><h1>Shell Scripts for the FMC RF boards<a class="headerlink" href="#shell-scripts-for-the-fmc-rf-boards" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated,
+which means it is no longer maintained or actively updated, even though the
+devices themselves may be Recommended for New Designs or in
+Production. This page is here for historical/reference purposes only.</p>
+</div>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Shell_script" target="_blank">Shell Scripts</a> are scripts
+written for the shell (<a class="icon link reference external" href="https://en.wikipedia.org/wiki/Debian_Almquist_shell" target="_blank">dash</a>
+or <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank">bash</a> or
+<a class="icon link reference external" href="https://en.wikipedia.org/wiki/Almquist_shell" target="_blank">ash</a>) of an operating system.
+To find out which shell, you are using, try something like:</p>
+<div class="box bggreen docutils container">
+<p>This specifies any shell prompt running on the target</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rgetz@pinky ~ $ which sh
+/usr/bin/sh
+rgetz@pinky ~ $ ls -l /usr/bin/sh
+lrwxrwxrwx 1 root root 9 2009-05-13 20:39 /usr/bin/sh -&gt; /bin/bash
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rgetz@pinky ~ $ ps -p $$
+  PID TTY          TIME CMD
+ 1321 pts/0    00:00:00 bash
+</pre></div>
+</div>
+</div>
+<section id="dds-passing-by">
+<h2>DDS passing by<a class="headerlink" href="#dds-passing-by" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># find the DAC</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/sys<span class="w"> </span>-name<span class="w"> </span>name<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`cat </span><span class="nv">$i</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cf-ad9122-core-lpc&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="nv">dac_path</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s:/name$::&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="c1">#save the current settings</span>
+<span class="nv">init</span><span class="o">=</span><span class="sb">`</span>cat<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage0_1A_frequency<span class="sb">`</span>
+
+<span class="c1"># Set DDSn_A</span>
+freq_A<span class="o">(){</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage0_1A_frequency
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage2_2A_frequency
+<span class="o">}</span>
+
+<span class="c1"># Set DDSn_B</span>
+freq_B<span class="o">(){</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage1_1B_frequency
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage3_2B_frequency
+<span class="o">}</span>
+
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">90</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">110</span>
+<span class="k">do</span>
+<span class="w">  </span>freq_A<span class="w"> </span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="se">\\</span>*<span class="w"> </span><span class="m">1000000</span><span class="sb">`</span>
+<span class="w">  </span>freq_B<span class="w"> </span><span class="sb">`</span>expr<span class="w"> </span><span class="se">\(</span><span class="w"> </span><span class="m">120</span><span class="w"> </span>-<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="se">\)</span><span class="w"> </span><span class="se">\\</span>*<span class="w"> </span><span class="m">1000000</span><span class="sb">`</span>
+<span class="w">  </span>sleep<span class="w"> </span><span class="m">1</span>
+<span class="k">done</span>
+
+freq_A<span class="w"> </span><span class="nv">$init</span>
+freq_B<span class="w"> </span><span class="nv">$init</span>
+</pre></div>
+</div>
+</section>
+<section id="random-data-on-the-rf-output">
+<h2>Random data on the RF output<a class="headerlink" href="#random-data-on-the-rf-output" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="c1"># buffer size, let&#39;s use 512 samples, or 1024 bytes</span>
+<span class="nv">buffer_size</span><span class="o">=</span><span class="m">1024</span>
+
+<span class="c1"># find the DAC</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/sys<span class="w"> </span>-name<span class="w"> </span>name<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`cat </span><span class="nv">$i</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cf-ad9122-core-lpc&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="nv">dac_path</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s:/name$::&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="c1"># Get the associated dev file</span>
+<span class="nv">dev</span><span class="o">=</span>/dev/<span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$dac_path</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>awk<span class="w"> </span>-F<span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="s1">&#39;{print $NF}&#39;</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-c<span class="w"> </span><span class="nv">$dev</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Can&#39;t find device </span><span class="nv">$dev</span><span class="s2">&quot;</span>
+<span class="w">  </span><span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="c1"># set the buffer size</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$buffer_size</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/buffer/length
+
+<span class="c1"># generate the random data, and give it to the DAC</span>
+dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/urandom<span class="w"> </span><span class="nv">of</span><span class="o">=</span><span class="nv">$dev</span><span class="w"> </span><span class="nv">bs</span><span class="o">=</span><span class="nv">$buffer_size</span><span class="w"> </span><span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1">#enable things</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/buffer/enable
+
+<span class="c1">#Wait 5 seconds</span>
+sleep<span class="w"> </span><span class="m">5</span>
+
+<span class="c1">#turn if off before we bring down everyone&#39;s WiFi</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/buffer/enable
+</pre></div>
+</div>
+</section>
+<section id="setting-the-amplitude">
+<h2>Setting the amplitude<a class="headerlink" href="#setting-the-amplitude" title="Link to this heading"></a></h2>
+<p>I don’t like remembering what 1/32 is, so I just use <span class="math notranslate nohighlight">\(1/(2^n)\)</span> . You just
+need to provide ‘n’.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/sh</span>
+
+<span class="c1">#check in the input</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-le<span class="w"> </span>-1<span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;input out of range, (needs to be 0-4)&quot;</span>
+<span class="w">  </span><span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>-ge<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;input out of range (needs to be 0-4)&quot;</span>
+<span class="w">  </span><span class="nb">exit</span>
+<span class="k">fi</span>
+
+<span class="c1"># find the DAC</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/sys<span class="w"> </span>-name<span class="w"> </span>name<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`cat </span><span class="nv">$i</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;cf-ad9122-core-lpc&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="nv">dac_path</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s:/name$::&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;scale=4; 1 / ( 2 ^ </span><span class="nv">$1</span><span class="s2"> )&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bc<span class="k">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage0_1A_scale
+<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;scale=4; 1 / ( 2 ^ </span><span class="nv">$1</span><span class="s2"> )&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bc<span class="k">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage1_1B_scale
+<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;scale=4; 1 / ( 2 ^ </span><span class="nv">$1</span><span class="s2"> )&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bc<span class="k">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage2_2A_scale
+<span class="nb">echo</span><span class="w"> </span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;scale=4; 1 / ( 2 ^ </span><span class="nv">$1</span><span class="s2"> )&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bc<span class="k">)</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage3_2B_scale
+
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;amplitude set to &quot;</span>
+cat<span class="w"> </span><span class="nv">$dac_path</span>/out_altvoltage0_1A_scale
+</pre></div>
+</div>
+</section>
+<section id="sweeping-the-tx">
+<h2>Sweeping the Tx<a class="headerlink" href="#sweeping-the-tx" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># find the TX LO generator</span>
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>find<span class="w"> </span>/sys<span class="w"> </span>-name<span class="w"> </span>name<span class="k">)</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;`cat </span><span class="nv">$i</span><span class="s2">`&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;adf4351-tx-lpc&quot;</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">     </span><span class="nv">tx_lo_path</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s:/name$::&#39;</span><span class="k">)</span>
+<span class="w">  </span><span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$tx_lo_path</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Can&#39;t find adf4351-tx-lpc&quot;</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="nv">start</span><span class="o">=</span><span class="nv">$1</span>
+<span class="nv">end</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nv">inc</span><span class="o">=</span><span class="nv">$3</span>
+<span class="nv">pause</span><span class="o">=</span><span class="nv">$4</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$start</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">start</span><span class="o">=</span><span class="m">400</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$end</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">end</span><span class="o">=</span><span class="m">4000</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$inc</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">inc</span><span class="o">=</span><span class="m">5</span>
+<span class="k">fi</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="nv">$pause</span><span class="w"> </span><span class="o">]</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nv">pause</span><span class="o">=</span><span class="m">1</span>
+<span class="k">fi</span>
+
+freq_tx<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$1</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$tx_lo_path</span>/out_altvoltage0_frequency
+<span class="o">}</span>
+
+<span class="k">for</span><span class="w"> </span><span class="o">((</span><span class="w"> </span><span class="nv">i</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">$start</span><span class="p">;</span><span class="w"> </span><span class="nv">$i</span><span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="nv">$end</span><span class="p">;</span><span class="w"> </span><span class="nv">i</span><span class="o">+=</span><span class="nv">$inc</span><span class="o">))</span><span class="p">;</span>
+<span class="k">do</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$i</span>
+<span class="w">  </span>freq_tx<span class="w"> </span><span class="sb">`</span>expr<span class="w"> </span><span class="nv">$i</span><span class="w"> </span><span class="se">\\</span>*<span class="w"> </span><span class="m">1000000</span><span class="sb">`</span>
+<span class="w">  </span>sleep<span class="w"> </span><span class="nv">$pause</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Linux Applications for the AD-FMCOMMS1-EBZ</a>
+    <a href="xcomm_cal.html" title="Next document (Alt+Shift+RightArrow)" class="next">Xcomm Cal</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

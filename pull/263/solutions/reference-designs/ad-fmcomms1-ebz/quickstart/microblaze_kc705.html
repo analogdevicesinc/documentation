@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS1-EBZ ML605 Quick Start Guide" href="microblaze_ml605.html" />
+    <link rel="prev" title="AD-FMCOMMS1-EBZ Zynq Quick Start Guide" href="zynq.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#xilinx-xmd-command-console">Xilinx XMD command console</a></li>
+<li><a class="reference internal" href="#xilinx-xsct-command-console">Xilinx XSCT command console</a></li>
+<li><a class="reference internal" href="#vivado-tcl-shell-or-linux-console">Vivado TCL shell or Linux console</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#messages">Messages</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-remote">IIO Oscilloscope Remote</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2"/><div class="collapse"><a class="reference internal" href="../hardware/index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/bom_improvements.html">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="../software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms1-ebz-kc705-vc707-quick-start-guide">
+<span id="ad-fmcomms1-ebz-quickstart-microblaze-kc705"></span><h1>AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide<a class="headerlink" href="#ad-fmcomms1-ebz-kc705-vc707-quick-start-guide" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated, which
+means it is no longer maintained or actively updated, even though the devices
+themselves may be Recommended for New Designs or in Production. This page is
+here for historical/reference purposes only.</p>
+</div>
+<p>This guide provides some quick instructions (still takes awhile to download, and
+set things up) on how to setup the AD-FMCOMMS1-EBZ on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
+</ul>
+<section id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Bitfile and Linux ELF image.</p></li>
+<li><p>Xilinx ISE Microprocessor Debugger (XMD) is sufficient for the demo.</p></li>
+<li><p>A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 (8N1).</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a> or <a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-fmcomms" target="_blank">AD-FMCOMMS1-EBZ</a> FMC Board.</p></li>
+<li><p>Micro / Mini-USB Cable</p></li>
+</ul>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Connect the AD-FMCOMMS1-EBZ FMC board to the FPGA carrier, on the KC705: FMC</dt><dd><p>LPC or VC707: FMC2 connector.</p>
+</dd>
+</dl>
+</li>
+<li><p>Connect USB JTAG (Micro USB) to your host PC.</p></li>
+<li><p>Turn on the power switch on the FPGA board.</p></li>
+<li><p>Open XMD console to configure the FPGA and download the elf image.</p></li>
+</ul>
+<p>There are two ways of loading the design. One is using the XMD command line.
+Open a xmd command window/shell and enter the commands manually.</p>
+<p>Below is just a example and the file-names may vary.</p>
+<section id="xilinx-xmd-command-console">
+<h3>Xilinx XMD command console<a class="headerlink" href="#xilinx-xmd-command-console" title="Link to this heading"></a></h3>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="b36cec89781a7b9416223e10ac79849a0035e287" name="b36cec89781a7b9416223e10ac79849a0035e287" type="checkbox"></input><label for="b36cec89781a7b9416223e10ac79849a0035e287"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dave@HAL9000:~$ xmd
+
+* Xilinx Microprocessor Debugger (XMD) Engine
+* XMD v2014.2 (64-bit)
+  *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+XMD% fpga -f download.bit
+Configuring Device 1 (xcku040) with Bitstream -- download.bit
+....10....20....30....40....50....60.....70....80....90....Done
+Successfully downloaded bit file.
+
+JTAG chain configuration
+Device   ID Code        IR Length    Part Name
+ 1       03822093           6        xcku040
+
+0
+XMD% connect mb mdm
+
+JTAG chain configuration
+Device   ID Code        IR Length    Part Name
+ 1       03822093           6        xcku040
+
+MicroBlaze Processor Configuration :
+Version............................9.3
+Optimization.......................Performance
+Interconnect.......................AXI-LE
+MMU Type...........................Full_MMU
+No of PC Breakpoints...............1
+No of Read Addr/Data Watchpoints...0
+No of Write Addr/Data Watchpoints..0
+Instruction Cache Support..........on
+Instruction Cache Base Address.....0x80000000
+Instruction Cache High Address.....0xbfffffff
+Data Cache Support.................on
+Data Cache Base Address............0x80000000
+Data Cache High Address............0xbfffffff
+Exceptions  Support................on
+FPU  Support.......................off
+Hard Divider Support...............on
+Hard Multiplier Support............on - (Mul64)
+Barrel Shifter Support.............on
+MSR clr/set Instruction Support....on
+Compare Instruction Support........on
+PVR Supported......................on
+PVR Configuration Type.............Full
+Data Cache Write-back Support......off
+Fault Tolerance Support............off
+Stack Protection Support...........off
+
+Connected to &quot;mb&quot; target. id = 0
+Starting GDB server for &quot;mb&quot; target (id = 0) at TCP port no 1234
+
+XMD% dow /home/dace/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
+System Reset .... DONE
+Downloading Program -- /home/michael/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
+    section, .text: 0x80000000-0x8031cda7
+    section, .init.text: 0x803fc000-0x804185eb
+    section, .init.ivt: 0x8041afac-0x8041afd3
+    section, __fdt_blob: 0x8031cda8-0x80324da7
+    section, .rodata: 0x80325000-0x803b950f
+    section, __ksymtab: 0x803b9510-0x803be90f
+    section, __ksymtab_gpl: 0x803be910-0x803c1e27
+    section, __ksymtab_strings: 0x803c1e28-0x803d4dd7
+    section, __param: 0x803d4dd8-0x803d5147
+    section, __modver: 0x803d5148-0x803d5fff
+    section, __ex_table: 0x803d6000-0x803d75df
+    section, .notes: 0x803d75e0-0x803d7603
+    section, .sdata2: 0x803d7604-0x803d7fff
+    section, .data: 0x803d8000-0x803fbc5f
+    section, .init.data: 0x804185ec-0x8041afab
+    section, .init.setup: 0x8041afd4-0x8041b327
+    section, .initcall.init: 0x8041b328-0x8041b683
+    section, .con_initcall.init: 0x8041b684-0x8041b68b
+    section, .init.ramfs: 0x8041b68c-0x806f97b3
+    section, .bss: 0x806fa000-0x8070f8db
+Download Progress........10.......20.......30.......40.......50........60.......70.......80.......90........Done
+Setting PC with Program Start Address 0x80000000
+XMD% con
+Processor started. Type &quot;stop&quot; to stop processor
+
+RUNNING&gt; XMD%
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows,
+you can run the XSCT terminal from start menu -&gt; Xilinx Design Tools -&gt; Xilinx
+Software Command Line Tool…</p>
+</section>
+<section id="xilinx-xsct-command-console">
+<h3>Xilinx XSCT command console<a class="headerlink" href="#xilinx-xsct-command-console" title="Link to this heading"></a></h3>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="40a3cb112f4169b7a286820e20f6e1165c1e3b90" name="40a3cb112f4169b7a286820e20f6e1165c1e3b90" type="checkbox"></input><label for="40a3cb112f4169b7a286820e20f6e1165c1e3b90"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Xilinx</span> <span class="n">System</span> <span class="n">Debugger</span> <span class="p">(</span><span class="n">XSDB</span><span class="p">)</span> <span class="n">v2021</span><span class="mf">.1</span>
+  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">58</span>
+    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2020</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">connect</span>
+<span class="n">attempting</span> <span class="n">to</span> <span class="n">launch</span> <span class="n">hw_server</span>
+
+<span class="o">*</span> <span class="n">Xilinx</span> <span class="n">hw_server</span> <span class="n">v2021</span><span class="mf">.1</span>
+  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span> <span class="n">at</span> <span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">57</span>
+    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2021</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">hw_server</span> <span class="n">application</span> <span class="n">started</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Use</span> <span class="n">Ctrl</span><span class="o">-</span><span class="n">C</span> <span class="n">to</span> <span class="n">exit</span> <span class="n">hw_server</span> <span class="n">application</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">To</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">this</span> <span class="n">hw_server</span> <span class="n">instance</span> <span class="n">use</span> <span class="n">url</span><span class="p">:</span> <span class="n">TCP</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">3121</span>
+
+<span class="n">tcfchan</span><span class="c1">#0</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">fpga</span> <span class="o">-</span><span class="n">f</span> <span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
+<span class="mi">100</span><span class="o">%</span>    <span class="mi">4</span><span class="n">MB</span>   <span class="mf">1.7</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">targets</span>
+  <span class="mi">1</span>  <span class="n">xc7k325t</span>
+     <span class="mi">2</span>  <span class="n">MicroBlaze</span> <span class="n">Debug</span> <span class="n">Module</span> <span class="n">at</span> <span class="n">USER2</span>
+        <span class="mi">3</span>  <span class="n">MicroBlaze</span> <span class="c1">#0 (Running)</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">target</span> <span class="mi">3</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
+<span class="n">Downloading</span> <span class="n">Program</span> <span class="o">--</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">liacob</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80000000</span> <span class="o">-</span> <span class="mh">0x804763ab</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__fdt_blob</span><span class="p">:</span> <span class="mh">0x804763ac</span> <span class="o">-</span> <span class="mh">0x804863ab</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">rodata</span><span class="p">:</span> <span class="mh">0x80487000</span> <span class="o">-</span> <span class="mh">0x808b110f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">builtin_fw</span><span class="p">:</span> <span class="mh">0x808b1110</span> <span class="o">-</span> <span class="mh">0x808b1133</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab</span><span class="p">:</span> <span class="mh">0x808b1134</span> <span class="o">-</span> <span class="mh">0x808b746b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_gpl</span><span class="p">:</span> <span class="mh">0x808b746c</span> <span class="o">-</span> <span class="mh">0x808bc483</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_strings</span><span class="p">:</span> <span class="mh">0x808bc484</span> <span class="o">-</span> <span class="mh">0x808d6973</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__param</span><span class="p">:</span> <span class="mh">0x808d6974</span> <span class="o">-</span> <span class="mh">0x808d6e5f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__modver</span><span class="p">:</span> <span class="mh">0x808d6e60</span> <span class="o">-</span> <span class="mh">0x808d6fff</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ex_table</span><span class="p">:</span> <span class="mh">0x808d7000</span> <span class="o">-</span> <span class="mh">0x808d844f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">notes</span><span class="p">:</span> <span class="mh">0x808d8450</span> <span class="o">-</span> <span class="mh">0x808d848b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">sdata2</span><span class="p">:</span> <span class="mh">0x808d848c</span> <span class="o">-</span> <span class="mh">0x808d8fff</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x808d9000</span> <span class="o">-</span> <span class="mh">0x8095893f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80959000</span> <span class="o">-</span> <span class="mh">0x8097a75b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x8097a75c</span> <span class="o">-</span> <span class="mh">0x8097c053</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ivt</span><span class="p">:</span> <span class="mh">0x8097c054</span> <span class="o">-</span> <span class="mh">0x8097c07b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">setup</span><span class="p">:</span> <span class="mh">0x8097c07c</span> <span class="o">-</span> <span class="mh">0x8097c3f3</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c3f4</span> <span class="o">-</span> <span class="mh">0x8097c80f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">con_initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c810</span> <span class="o">-</span> <span class="mh">0x8097c813</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ramfs</span><span class="p">:</span> <span class="mh">0x8097c814</span> <span class="o">-</span> <span class="mh">0x80c2a9fb</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">bss</span><span class="p">:</span> <span class="mh">0x80c2b000</span> <span class="o">-</span> <span class="mh">0x80c4225b</span>
+<span class="mi">100</span><span class="o">%</span>   <span class="mi">12</span><span class="n">MB</span>   <span class="mf">0.2</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">56</span>
+<span class="n">Setting</span> <span class="n">PC</span> <span class="n">to</span> <span class="n">Program</span> <span class="n">Start</span> <span class="n">Address</span> <span class="mh">0x80000000</span>
+<span class="n">Successfully</span> <span class="n">downloaded</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">liacob</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Stopped at 0x0 (Stop)</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">con</span>
+<span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Running</span>
+<span class="n">xsdb</span><span class="o">%</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The second method is to run the tcl script which takes care of loading the bit
+file and the linux image. Run Vivado TCL Shell from Windows start menu -&gt; Xilinx
+Design Suite -&gt; Vivado -&gt; Vivado TCL Shell. (In Linux, source the settings.sh
+file first)</p>
+<p>Then run the tcl script:</p>
+</section>
+<section id="vivado-tcl-shell-or-linux-console">
+<h3>Vivado TCL shell or Linux console<a class="headerlink" href="#vivado-tcl-shell-or-linux-console" title="Link to this heading"></a></h3>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="08e2f3b014828b34f5cb253435a57f9617fd451c" name="08e2f3b014828b34f5cb253435a57f9617fd451c" type="checkbox"></input><label for="08e2f3b014828b34f5cb253435a57f9617fd451c"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Xilinx</span> <span class="n">System</span> <span class="n">Debugger</span> <span class="p">(</span><span class="n">XSDB</span><span class="p">)</span> <span class="n">v2021</span><span class="mf">.1</span>
+  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">58</span>
+    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2020</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">source</span> <span class="n">run</span><span class="o">.</span><span class="n">tcl</span>
+<span class="n">attempting</span> <span class="n">to</span> <span class="n">launch</span> <span class="n">hw_server</span>
+
+<span class="o">*</span> <span class="n">Xilinx</span> <span class="n">hw_server</span> <span class="n">v2021</span><span class="mf">.1</span>
+  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span> <span class="n">at</span> <span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">57</span>
+    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2021</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">hw_server</span> <span class="n">application</span> <span class="n">started</span>
+<span class="n">INFO</span><span class="p">:</span> <span class="n">Use</span> <span class="n">Ctrl</span><span class="o">-</span><span class="n">C</span> <span class="n">to</span> <span class="n">exit</span> <span class="n">hw_server</span> <span class="n">application</span>
+
+<span class="n">INFO</span><span class="p">:</span> <span class="n">To</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">this</span> <span class="n">hw_server</span> <span class="n">instance</span> <span class="n">use</span> <span class="n">url</span><span class="p">:</span> <span class="n">TCP</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">3121</span>
+
+<span class="mi">100</span><span class="o">%</span>    <span class="mi">4</span><span class="n">MB</span>   <span class="mf">1.7</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span>
+<span class="n">Downloading</span> <span class="n">Program</span> <span class="o">--</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">liacob</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80000000</span> <span class="o">-</span> <span class="mh">0x804763ab</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__fdt_blob</span><span class="p">:</span> <span class="mh">0x804763ac</span> <span class="o">-</span> <span class="mh">0x804863ab</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">rodata</span><span class="p">:</span> <span class="mh">0x80487000</span> <span class="o">-</span> <span class="mh">0x808b110f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">builtin_fw</span><span class="p">:</span> <span class="mh">0x808b1110</span> <span class="o">-</span> <span class="mh">0x808b1133</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab</span><span class="p">:</span> <span class="mh">0x808b1134</span> <span class="o">-</span> <span class="mh">0x808b746b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_gpl</span><span class="p">:</span> <span class="mh">0x808b746c</span> <span class="o">-</span> <span class="mh">0x808bc483</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_strings</span><span class="p">:</span> <span class="mh">0x808bc484</span> <span class="o">-</span> <span class="mh">0x808d6973</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__param</span><span class="p">:</span> <span class="mh">0x808d6974</span> <span class="o">-</span> <span class="mh">0x808d6e5f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__modver</span><span class="p">:</span> <span class="mh">0x808d6e60</span> <span class="o">-</span> <span class="mh">0x808d6fff</span>
+        <span class="n">section</span><span class="p">,</span> <span class="n">__ex_table</span><span class="p">:</span> <span class="mh">0x808d7000</span> <span class="o">-</span> <span class="mh">0x808d844f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">notes</span><span class="p">:</span> <span class="mh">0x808d8450</span> <span class="o">-</span> <span class="mh">0x808d848b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">sdata2</span><span class="p">:</span> <span class="mh">0x808d848c</span> <span class="o">-</span> <span class="mh">0x808d8fff</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x808d9000</span> <span class="o">-</span> <span class="mh">0x8095893f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80959000</span> <span class="o">-</span> <span class="mh">0x8097a75b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x8097a75c</span> <span class="o">-</span> <span class="mh">0x8097c053</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ivt</span><span class="p">:</span> <span class="mh">0x8097c054</span> <span class="o">-</span> <span class="mh">0x8097c07b</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">setup</span><span class="p">:</span> <span class="mh">0x8097c07c</span> <span class="o">-</span> <span class="mh">0x8097c3f3</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c3f4</span> <span class="o">-</span> <span class="mh">0x8097c80f</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">con_initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c810</span> <span class="o">-</span> <span class="mh">0x8097c813</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ramfs</span><span class="p">:</span> <span class="mh">0x8097c814</span> <span class="o">-</span> <span class="mh">0x80c2a9fb</span>
+        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">bss</span><span class="p">:</span> <span class="mh">0x80c2b000</span> <span class="o">-</span> <span class="mh">0x80c4225b</span>
+<span class="mi">100</span><span class="o">%</span>   <span class="mi">12</span><span class="n">MB</span>   <span class="mf">0.2</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">56</span>
+<span class="n">Setting</span> <span class="n">PC</span> <span class="n">to</span> <span class="n">Program</span> <span class="n">Start</span> <span class="n">Address</span> <span class="mh">0x80000000</span>
+<span class="n">Successfully</span> <span class="n">downloaded</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">liacob</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcomms2</span><span class="o">-</span><span class="mf">3.</span><span class="n">strip</span>
+<span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Running</span>
+<span class="n">xsdb</span><span class="o">%</span> <span class="n">Info</span><span class="p">:</span> <span class="n">tcfchan</span><span class="c1">#0 closed</span>
+<span class="n">xsdb</span><span class="o">%</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+</section>
+<section id="messages">
+<h2>Messages<a class="headerlink" href="#messages" title="Link to this heading"></a></h2>
+<p>If you are interested in the Linux console messages and command line interface,
+connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.</p>
+<p>There are two users:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>user</p></th>
+<th class="head"><p>password</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>root</p></td>
+<td><p>analog</p></td>
+</tr>
+<tr class="row-odd"><td><p>analog</p></td>
+<td><p>analog</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you FPGA carrier board (<a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a>, <a class="icon link reference external" href="https://www.xilinx.com/vc707" target="_blank">vc707</a>, <a class="icon link reference external" href="https://www.xilinx.com/ml605" target="_blank">ml605</a>) features a LCD display and the board is connected to a DHCP enabled network. You should also see it’s IP address printed on the display. This allows you to connect remote to the board as well. (ssh, libiio remote)</p>
+<p>Unlike shown in the picture below you won’t see the second line. In case the IP
+address is 192.168.2.2, this indicates that DHCP failed and it’s now using it’s
+default address. This address may not be within your subnet, and things
+therefore may fail.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605-lcd.png"><img alt="LCD image" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605-lcd.png" width="200" />
+</a>
+<p>You should see the kernel start-up messages as follows:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="c3bb48fbc2418bca0bd8931d8669aff182193bef" name="c3bb48fbc2418bca0bd8931d8669aff182193bef" type="checkbox"></input><label for="c3bb48fbc2418bca0bd8931d8669aff182193bef"><p>Kernel start-up messages</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Early console on uartlite at 0x40600000
+bootconsole [earlyser0] enabled
+Ramdisk addr 0x00000000,
+Compiled-in FDT at 80323fe8
+Linux version 3.17.0-126736-gdf1ca8f-dirty (michael@mhenneri-D04) (gcc version 4.8.3 20140131 (prerelease) (crosstool-NG 1.18.0) ) #1944 Wed Dec 17 11:03:31 CET 2014
+setup_cpuinfo: initialising
+setup_cpuinfo: Using full CPU PVR support
+wt_msr_noirq
+setup_memory: max_mapnr: 0x30000
+setup_memory: min_low_pfn: 0x80000
+setup_memory: max_low_pfn: 0xb0000
+setup_memory: max_pfn: 0xb0000
+Zone ranges:
+  DMA      [mem 0x80000000-0xafffffff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x80000000-0xbfffffff]
+On node 0 totalpages: 196608
+free_area_init_node: node 0, pgdat 8040751c, node_mem_map 81000000
+  DMA zone: 1536 pages used for memmap
+  DMA zone: 0 pages reserved
+  DMA zone: 196608 pages, LIFO batch:31
+early_printk_console remapping from 0x40600000 to 0xffffd000
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+pcpu-alloc: [0] 0
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 195072
+Kernel command line: console=ttyUL0,115200
+PID hash table entries: 4096 (order: 2, 16384 bytes)
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+Memory: 768432K/786432K available (3215K kernel code, 148K rwdata, 724K rodata, 5988K init, 86K bss, 18000K reserved)
+Kernel virtual memory layout:
+  * 0xffffe000..0xfffff000  : fixmap
+  * 0xffffd000..0xffffe000  : early ioremap
+  * 0xb0000000..0xffffd000  : vmalloc &amp; ioremap
+NR_IRQS:128
+/axi@0/axi-intc@41200000: num_irq=32, edge=0xffff001e
+/axi@0/axi-timer@41c00000: irq=1
+xilinx_timer_set_mode: shutdown
+xilinx_timer_set_mode: periodic
+sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 42949672950ns
+Calibrating delay loop... 49.56 BogoMIPS (lpj=247808)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+devtmpfs: initialized
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+Switched to clocksource xilinx_clocksource
+xilinx_timer_set_mode: oneshot
+NET: Registered protocol family 2
+TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+TCP: Hash tables configured (established 8192 bind 8192)
+TCP: reno registered
+UDP hash table entries: 512 (order: 1, 8192 bytes)
+UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+XGpio: /axi@0/gpio@40020000: registered, base is 247
+XGpio: /axi@0/gpio@40020000: dual channel registered, base is 239
+Skipping unavailable RESET gpio -2 (reset)
+futex hash table entries: 256 (order: -1, 3072 bytes)
+jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+msgmni has been set to 1500
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 4, base_baud = 0) is a uartlite
+console [ttyUL0] enabled
+console [ttyUL0] enabled
+bootconsole [earlyser0] disabled
+bootconsole [earlyser0] disabled
+of_serial 41400000.serial: FAILED to find out alias id
+of_serial 41400000.serial: Unknown serial port found, ignored
+brd: module loaded
+Xilinx SystemACE device driver, major=254
+xilinx_lcd 40010000.gpio_lcd: Device Tree Probing &#39;gpio_lcd&#39;
+xilinx_lcd 40010000.gpio_lcd: LCD 0x40010000 mapped to 0xb0140000
+libphy: Fixed MDIO Bus: probed
+xilinx_emaclite 40e00000.network: Device Tree Probing
+libphy: Xilinx Emaclite MDIO: probed
+xilinx_emaclite 40e00000.network: MAC address is now 00:0a:35:00:00:07
+xilinx_emaclite 40e00000.network: Xilinx EmacLite at 0x40E00000 mapped to 0xB0034000, irq=2
+i2c /dev entries driver
+i2c i2c-0: Added multiplexed i2c bus 1
+i2c i2c-0: Added multiplexed i2c bus 2
+at24 3-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+at24 3-0054: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+i2c i2c-0: Added multiplexed i2c bus 3
+i2c i2c-0: Added multiplexed i2c bus 4
+i2c i2c-0: Added multiplexed i2c bus 5
+i2c i2c-0: Added multiplexed i2c bus 6
+i2c i2c-0: Added multiplexed i2c bus 7
+i2c i2c-0: Added multiplexed i2c bus 8
+pca954x 0-0074: registered 8 multiplexed busses for I2C switch pca9548
+platform 79020000.cf-ad9643-core-lpc: Driver cf_axi_adc requests probe deferral
+spi spi32766.1: Driver ad9467 requests probe deferral
+spi32766.6 supply vcc not found, using dummy regulator
+spi32766.3 supply vcc not found, using dummy regulator
+ad9523 spi32766.3: probed ad9523-lpc
+ad9548 spi32766.2: Rev. 0xC6 probed
+spi32766.4 supply vcc not found, using dummy regulator
+spi32766.5 supply vcc not found, using dummy regulator
+platform 74204000.cf-ad9122-core-lpc: Driver cf_axi_dds requests probe deferral
+TCP: cubic registered
+NET: Registered protocol family 17
+platform 79020000.cf-ad9643-core-lpc: Driver cf_axi_adc requests probe deferral
+o|oo DCI 1
+cf_axi_dds 74204000.cf-ad9122-core-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (8.00.b) at 0x74204000 mapped to 0xb01a0000, probed DDS AD9122
+o--------------------------------
+-----ooooooooooo|oooooooooo------ INVERT DCO 0x8F CLK 245760000 Hz
+cf_axi_adc 79020000.cf-ad9643-core-lpc: ADI AIM (8.00.b) at 0x79020000 mapped to 0xb01c0000, probed ADC AD9643 as MASTER
+Freeing unused kernel memory: 5988K (80409000 - 809e2000)
+Starting logging: OK
+Starting network...
+Starting network...
+udhcpc (v1.22.1) started
+Sending discover...
+xilinx_emaclite 40e00000.network eth0: Link is Down
+Sending discover...
+xilinx_emaclite 40e00000.network eth0: Link is Up - 100Mbps/Full - flow control off
+Sending discover...
+Sending select for 10.44.2.146...
+Lease of 10.44.2.146 obtained, lease time 86400
+deleting routers
+adding dns 10.32.51.110
+adding dns 10.64.53.110
+random: ssh-keygen urandom read with 75 bits of entropy available
+Starting sshd: OK
+Starting IIO Server Daemon: OK
+
+Welcome to Buildroot
+
+buildroot login: random: nonblocking pool is initialized
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="iio-oscilloscope-remote">
+<h2>IIO Oscilloscope Remote<a class="headerlink" href="#iio-oscilloscope-remote" title="Link to this heading"></a></h2>
+<p>Please see also here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Oscilloscope</span></a></p>
+<p>The IIO Oscilloscope application can be used to connect to another platform that
+has a connected device in order to configure the device and read data from it.</p>
+<p>Build and start osc on a network enabled Linux host.</p>
+<p>Once the application is launched goto Settings -&gt; Connect and enter the IP
+address of the target in the popup window.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zynq.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a>
+    <a href="microblaze_ml605.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

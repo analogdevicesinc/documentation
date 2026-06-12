@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>Testing the AD-FMCOMMS1-EBZ Board &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS1-EBZ Help and Support" href="help_and_support.html" />
+    <link rel="prev" title="AD-FMCOMMS1-EBZ Register Access" href="software/i2c_to_spi_bridge.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Testing the AD-FMCOMMS1-EBZ Board</a><ul>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#software-installs">Software Installs</a><ul>
+<li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2"/><div class="collapse"><a class="reference internal" href="hardware/index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hardware/bom_improvements.html">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l6"><a class="reference internal" href="software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="testing-the-ad-fmcomms1-ebz-board">
+<span id="ad-fmcomms1-ebz-testing"></span><h1>Testing the AD-FMCOMMS1-EBZ Board<a class="headerlink" href="#testing-the-ad-fmcomms1-ebz-board" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated, which
+means it is no longer maintained or actively updated, even though the devices
+themselves may be Recommended for New Designs or in Production. This page is
+here for historical/reference purposes only.</p>
+</div>
+<p>Testing this board, is based on data/algorithms which can be found at:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AN-1039" target="_blank">Correcting Imperfections in IQ Modulators to Improve RF Signal Fidelity</a> by Eamon Nash.</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AN-1100" target="_blank">Wireless Transmitter IQ Balance and Sideband Suppression</a> by
+Yi Zhang.</p></li>
+</ul>
+<section id="required-software">
+<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip (CF Card filesystem
+contents)</p></li>
+<li><p>FMCOMMS1_TEST_ACE.TAR.BZ2</p></li>
+<li><p>mkdosfs.zip – utility used to format the CF Card with an appropriate FAT16
+filesystem.</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Xilinx ML605</p></li>
+<li><p>1GB or 2GB CompactFlash card (Sandisk Ulra II or similar)</p></li>
+<li><p>AD-FMCOMMS1-EBZ FMC Board.</p></li>
+<li><p>Rohde &amp; Schwarz FSEA30, FSEA20, FSEB20, FSEB30, or similar. (These are not
+available new anymore, but can be purchased or rented from your</p></li>
+<li><p><a class="icon link reference external" href="http://prologix.biz/gpib-usb-controller.html" target="_blank">Prologix GPIB-USB Controller</a></p></li>
+<li><p>HF SMA Cables, Adaptors, etc.</p></li>
+</ul>
+</section>
+<section id="software-installs">
+<h2>Software Installs<a class="headerlink" href="#software-installs" title="Link to this heading"></a></h2>
+<ul>
+<li><p>The test application is written in Linux - so you must have a Linux PC. If you
+don’t:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Install Ubuntu Linux</p></li>
+<li><p>Install required packages (gnuplot, glade).</p></li>
+<li><p>Since the date of manufacture is programmed into the boards, make sure that
+the day and time on the computer is set correctly.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Format and populate CF Card</p>
+<blockquote>
+<div><ul>
+<li><p>In order to use a CF card with the Xilinx SystemACE it must be formatted
+with a FAT12 or FAT16 filesystem. You cannot format the Card using Windows
+XP or later. Please use the mkdosfs utility.</p></li>
+<li><p>Format instructions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Put your empty CF card into a CF reader.</p></li>
+<li><p>You will need to BACKUP ALL YOUR DATA ON THE CF CARD</p></li>
+<li><p>Click Start -&gt; Run</p></li>
+<li><p>Enter cmd and click Run</p></li>
+<li><p>cd to the directory where you extracted mkdosfs.exe</p></li>
+<li><p><strong>MAKE SURE YOU HAVE SAVED ANY DATA FROM THE CF CARD!</strong></p></li>
+<li><p>You will need to know the drive letter of your CF reader</p></li>
+<li><p>Type mkdosfs –s 64 –F 16 –R 1 f:</p></li>
+<li><p>Notice that f: should be replaced by the drive letter of your CF reader
+followed by a colon.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Now unzip ml605_restoring_CF_flash_contents_AD-FMCOMMS1-EBZ.zip onto your</dt><dd><p>freshly formatted CF Card.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<section id="hardware-setup">
+<h3>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Connect the ML605 power and Ethernet cables.</p></li>
+<li><p>Set SACE MODE switches (S1) to</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>SYSACE MODE: ON</p></li>
+<li><p>CFGAddr2: OFF</p></li>
+<li><p>CFGAddr1: ON</p></li>
+<li><p>CFGAddr0: OFF</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>Testing the AD-FMCOMMS1-EBZ board uses the ML605 board from Xilinx. You should
+be familiar with a few of the connectors as switches on the board:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605.png" width="500" />
+</a>
+<ul>
+<li><p>Connect the AD-FMCOMMS1-EBZ FMC board to the ML605, on the LPC FMC connector
+(20).</p></li>
+<li><p>Turn on the power switch on the ML605 board (18A)</p>
+<blockquote>
+<div><ul>
+<li><p>Wait ~11 seconds. The DS1 System ACE Status LED should be blinking. This
+indicates that the ACE file in the CF card is being loaded.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Wait ~10 seconds more. The blue light on the AD-FMComms1-EBZ should
+start blinking, indicating that the card is being initialized.</p></li>
+<li><p>Wait ~10 seconds more. The LCD should display the IP number of the
+board, and the line “XCOMM LPC”, this indicates that the Linux kernel
+booted on the Microblaze is properly configured, and found all the
+devices on the card.</p></li>
+<li><p>In total, this step should take ~30 seconds.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Observe LCD Display (17f).</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605-lcd.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605-lcd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ml605-lcd.png" width="200" />
+</a>
+<ul>
+<li><p>Line 1: Target IP Address</p></li>
+<li><p>Line 2: XCOMM LPC if device is present (chip id reads correctly)</p></li>
+<li><p>On the Linux development system open dactune application</p></li>
+<li><p>Under the Setting TAB</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>IP NETWORK: Enter target IP Address (same as printed on the display)</p></li>
+<li><p>IEEE 488 / IEC625 GPIB Interface: Enter GPIB Address (FSEA instrument
+settings specific)</p></li>
+<li><p>IEEE 488 / IEC625 GPIB Interface: Enter GPIB tty (use dmesg on your Linux
+box after you plugged in the Prologix GPIB-USB Interface, typically
+/dev/ttyUSB0 or /dev/ttyUSB1)</p></li>
+<li><p>IEEE 488 / IEC625 GPIB Interface: You may want to enable the calibrate
+checkbox as well.</p></li>
+<li><p>Files: Set path to CalPlan2.ini located within the dactune source
+directory.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Under the DAC TAB</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the CONNECT button. (observe messages in the box below)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>In case a programmed board is detected a dialog will be displayed and you are</dt><dd><p>prompted to enter the PCB serial number.</p>
+<ul class="simple">
+<li><p>Get the Serial number from the sticker on the board and enter it into the
+dialog text entry field. Press OK.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Observe the LCD display: Make sure that the Serial number printed on Line2
+reflects the value previously entered.</p></li>
+<li><p>Now click on the big AutoTunePlan button and wait.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>You will be prompted to connect XCOMM DAC out to the Spectrum Analyzer RF
+Input.</p></li>
+<li><p>Do so and press OK.</p></li>
+<li><p>Wait</p></li>
+<li><p>Now you will be prompted to connect XCOMM DAC out to ADC Input using a
+straight SMA to SMA Male cable.</p></li>
+<li><p>Do so and press OK.</p></li>
+<li><p>Wait (less) after a few seconds the calibration finished (please observe
+message box for an error)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Click CONNECT again to disconnect the board.</p></li>
+<li><p>Repeat steps 6..18 for additional boards.</p></li>
+<li><p>In the dactune source directory there should exist a results.SN####.tar file
+for every tested board.</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="software/i2c_to_spi_bridge.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS1-EBZ Register Access</a>
+    <a href="help_and_support.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS1-EBZ Help and Support</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

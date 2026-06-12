@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
+
+    <title>AD-FMCOMMS1-EBZ Specifications &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS1-EBZ Configuration Options" href="configuration_options.html" />
+    <link rel="prev" title="AD-FMCOMMS1-EBZ Functional Overview" href="functional_overview.html" />
+   
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS1-EBZ Specifications</a><ul>
+<li><a class="reference internal" href="#transmit-specs">Transmit Specs</a><ul>
+<li><a class="reference internal" href="#theoretical-specs">Theoretical specs</a><ul>
+<li><a class="reference internal" href="#bandwidth">Bandwidth</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lo-bw-modified-board">LO BW (Modified Board)</a></li>
+<li><a class="reference internal" href="#adjacent-channel-power-modified-board">Adjacent Channel Power (Modified Board)</a></li>
+<li><a class="reference internal" href="#phase-noise-revb-unmodified-board">Phase Noise (RevB unmodified Board)</a></li>
+<li><a class="reference internal" href="#phase-noise-revb-modified-board-revc">Phase Noise (RevB Modified Board &amp; RevC)</a></li>
+<li><a class="reference internal" href="#output-power-modified-board">Output power (Modified Board)</a></li>
+<li><a class="reference internal" href="#intermodulation-distortion-old-board">Intermodulation Distortion (Old Board)</a></li>
+<li><a class="reference internal" href="#intermodulation-distortion-modified-board">Intermodulation Distortion (Modified Board)</a></li>
+<li><a class="reference internal" href="#bandwidth-modified-board">bandwidth (Modified Board)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#receive-specs">Receive Specs</a><ul>
+<li><a class="reference internal" href="#response-to-a-chirp">Response to a “chirp”</a></li>
+<li><a class="reference internal" href="#signal-to-noise">Signal to Noise</a></li>
+<li><a class="reference internal" href="#noise-floor">Noise floor</a></li>
+<li><a class="reference internal" href="#input-sensitivity">Input sensitivity</a></li>
+<li><a class="reference internal" href="#dynamic-range">Dynamic range</a></li>
+<li><a class="reference internal" href="#id3">LO BW (Modified Board)</a></li>
+<li><a class="reference internal" href="#id4">Intermodulation Distortion (Modified Board)</a></li>
+<li><a class="reference internal" href="#id5">Bandwidth (Modified Board)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-2" id="toctree-collapse-1-1-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Hardware</a><label for="toctree-collapse-1-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bom_improvements.html">BOM Improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
+<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="../software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="index.html">Hardware</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms1-ebz-specifications">
+<span id="ad-fmcomms1-ebz-hardware-card-specification"></span><h1>AD-FMCOMMS1-EBZ Specifications<a class="headerlink" href="#ad-fmcomms1-ebz-specifications" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated, which
+means it is no longer maintained or actively updated, even though the devices
+themselves may be Recommended for New Designs or in Production. This page is
+here for historical/reference purposes only.</p>
+</div>
+<section id="transmit-specs">
+<h2>Transmit Specs<a class="headerlink" href="#transmit-specs" title="Link to this heading"></a></h2>
+<p>There are many specifications on the Transmit side of a RF system</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/MT-013" target="_blank">Evaluating High Speed DAC Performance</a></p></li>
+</ul>
+<section id="theoretical-specs">
+<h3>Theoretical specs<a class="headerlink" href="#theoretical-specs" title="Link to this heading"></a></h3>
+<section id="bandwidth">
+<h4>Bandwidth<a class="headerlink" href="#bandwidth" title="Link to this heading"></a></h4>
+<p>Determining overall channel bandwidth is a little complex, since many devices
+don’t have a meaningful (in this aspect) bandwidth number.</p>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ad9122_fig10.png"><img alt="AD9122 Spurs" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/ad9122_fig10.png" width="250" /></a> <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/adl5375-05_fig63.png"><img alt="ADL5375 Bandwidth" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/adl5375-05_fig63.png" width="250" /></a><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/adl5602.png"><img alt="ADL5602 Gain Flatness over frequency" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/adl5602.png" width="250" /></a></p>
+<ul class="simple">
+<li><p>In the AD9122, the above figure shows an fDATA of 400MHz, creating a waveform
+over 350MHz.</p></li>
+<li><p>The ADL5375 does include a baseband bandwidth specification - depending on the
+flatness you require, could be 200MHz (+/- 0.1dB) or 500MHz (+/- 0.5dB).</p></li>
+<li><p>the ADL5602 has different gain, depending on the RF frequency (but over
+250MHz, you will still notice).</p></li>
+</ul>
+<p>So, transmit bandwidth can be as high as 250 MHz, depending on if the flatness
+of the ADL5602 and ADL5375 works for your application.</p>
+</section>
+</section>
+<section id="lo-bw-modified-board">
+<h3>LO BW (Modified Board)<a class="headerlink" href="#lo-bw-modified-board" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/tx_bw_0.4to4ghz_scale_0.5.png"><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/tx_bw_0.4to4ghz_scale_0.5.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">LO BW with full output power |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</section>
+<section id="adjacent-channel-power-modified-board">
+<h3>Adjacent Channel Power (Modified Board)<a class="headerlink" href="#adjacent-channel-power-modified-board" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Adjacent_channel_power_ratio" target="_blank">ACP</a></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_1.24ghz_rx_lo_off_scale0.5.png"><img alt="image4" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_1.24ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_1.24ghz_rx_lo_off_scale0.25.png"><img alt="image5" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_1.24ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ACP with LO of 1.2GHZ and Tone of 40MHz with full power out.</p></td>
+<td><p>ACP with LO of 1.2GHZ and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_2.44ghz_rx_lo_off_scale0.5.png"><img alt="image8" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_2.44ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_2.44ghz_rx_lo_off_scale0.25.png"><img alt="image9" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_2.44ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ACP with LO of 2.4GHZ and Tone of 40MHz with full power out.</p></td>
+<td><p>ACP with LO of 2.4GHZ and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_3.64ghz_rx_lo_off_scale0.5.png"><img alt="image12" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_3.64ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_3.64ghz_rx_lo_off_scale0.25.png"><img alt="image13" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/acp_3.64ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ACP with LO of 3.6GHZ and Tone of 40MHz with full power out.</p></td>
+<td><p>ACP with LO of 3.6GHZ and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="phase-noise-revb-unmodified-board">
+<h3>Phase Noise (RevB unmodified Board)<a class="headerlink" href="#phase-noise-revb-unmodified-board" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Phase_noise" target="_blank">Phase noise</a></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_440mhz_rx_lo_off.png"><img alt="image16" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_440mhz_rx_lo_off.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_940mhz_rx_lo_off.png"><img alt="image17" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_940mhz_rx_lo_off.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Phase Noise at LO of 400MHz and Tone of 40MHz with full power out.</p></td>
+<td><p>Phase Noise at LO of 900MHz and Tone of 40MHz with full power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_1.84ghz_rx_lo_off.png"><img alt="image20" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_1.84ghz_rx_lo_off.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_2.44ghz_rx_lo_off.png"><img alt="image21" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_2.44ghz_rx_lo_off.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Phase Noise at LO of 1.8GHz and Tone of 40MHz with full power out.</p></td>
+<td><p>Phase Noise at LO of 2.4GHz and Tone of 40MHz with full power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_3.54ghz_rx_lo_off.png"><img alt="image22" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_at_3.54ghz_rx_lo_off.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">Phase Noise at LO of 3.5GHz and Tone of 40MHz with full power out. |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</section>
+<section id="phase-noise-revb-modified-board-revc">
+<h3>Phase Noise (RevB Modified Board &amp; RevC)<a class="headerlink" href="#phase-noise-revb-modified-board-revc" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_1.24ghz_rx_lo_off_scale0.5_new.png"><img alt="image25" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_1.24ghz_rx_lo_off_scale0.5_new.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_1.24ghz_rx_lo_off_scale0.25_new.png"><img alt="image26" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_1.24ghz_rx_lo_off_scale0.25_new.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Phase Noise at LO of 1.2GHz and Tone of 40MHz with full power out.</p></td>
+<td><p>Phase Noise at LO of 1.2GHz and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.44ghz_rx_lo_off_scale0.5_new.png"><img alt="image29" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.44ghz_rx_lo_off_scale0.5_new.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.44ghz_rx_lo_off_scale0.25_new.png"><img alt="image30" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_2.44ghz_rx_lo_off_scale0.25_new.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Phase Noise at LO of 2.4GHz and Tone of 40MHz with full power out.</p></td>
+<td><p>Phase Noise at LO of 2.4GHz and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_3.64ghz_rx_lo_off_scale0.5_new.png"><img alt="image33" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_3.64ghz_rx_lo_off_scale0.5_new.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_3.64ghz_rx_lo_off_scale0.25_new.png"><img alt="image34" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/phase_noise_3.64ghz_rx_lo_off_scale0.25_new.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Phase Noise at LO of 3.6GHz and Tone of 40MHz with full power out.</p></td>
+<td><p>Phase Noise at LO of 3.6GHz and Tone of 40MHz with half power out.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="output-power-modified-board">
+<h3>Output power (Modified Board)<a class="headerlink" href="#output-power-modified-board" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Transmitter_power_output" target="_blank">Transmitter power output</a></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_1.24ghz_rx_lo_off_scale0.5.png"><img alt="image35" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_1.24ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">CP with LO of 1.2GHZ and Tone of 40MHz with full power out. |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_2.44ghz_rx_lo_off_scale0.5.png"><img alt="image36" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_2.44ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">CP with LO of 2.4GHZ and Tone of 40MHz with full power out. |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_3.64ghz_rx_lo_off_scale0.5.png"><img alt="image37" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/cp_3.64ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">CP with LO of 3.6GHZ and Tone of 40MHz with full power out. |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</section>
+<section id="intermodulation-distortion-old-board">
+<h3>Intermodulation Distortion (Old Board)<a class="headerlink" href="#intermodulation-distortion-old-board" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Intermodulation#Measurement" target="_blank">Intermodulation_Distortion</a> or IMD</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_450mhz_vs_output_power.png"><img alt="image40" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_450mhz_vs_output_power.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_950mhz_vs_output_power.png"><img alt="image41" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_950mhz_vs_output_power.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Intermodulation Distortion showing 3rd and 5th order products at 450MHz for 3 power levels</p></td>
+<td><p>Intermodulation Distortion showing 3rd and 5th order products at 950MHz for 3 power levels</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_1.85ghz_vs_output_power.png"><img alt="image44" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_1.85ghz_vs_output_power.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_2.45ghz_vs_output_power.png"><img alt="image45" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd_2.45ghz_vs_output_power.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Intermodulation Distortion showing 3rd and 5th order products at 1.85GHz for 3 power levels</p></td>
+<td><p>Intermodulation Distortion showing 3rd and 5th order products at 2.45GHz for 3 power levels</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="intermodulation-distortion-modified-board">
+<h3>Intermodulation Distortion (Modified Board)<a class="headerlink" href="#intermodulation-distortion-modified-board" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.5.png"><img alt="image55" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.25.png"><img alt="image56" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.125.png"><img alt="image57" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_1.24ghz_rx_lo_off_scale0.125.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 1.2GHz, Scale of 0.5</p></td>
+<td><p>1MHz Offset, LO 1.2GHz, Scale of 0.25</p></td>
+<td><p>1MHz Offset, LO 1.2GHz, Scale of 0.125</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.5.png"><img alt="image58" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.25.png"><img alt="image59" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.125.png"><img alt="image60" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_2.44ghz_rx_lo_off_scale0.125.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 2.4GHz, Scale of 0.5</p></td>
+<td><p>1MHz Offset, LO 2.4GHz, Scale of 0.25</p></td>
+<td><p>1MHz Offset, LO 2.4GHz, Scale of 0.125</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.5.png"><img alt="image61" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.5.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.25.png"><img alt="image62" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.25.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.125.png"><img alt="image63" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_3.64ghz_rx_lo_off_scale0.125.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 3.6GHz, Scale of 0.5</p></td>
+<td><p>1MHz Offset, LO 3.6GHz, Scale of 0.25</p></td>
+<td><p>1MHz Offset, LO 3.6GHz, Scale of 0.125</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="bandwidth-modified-board">
+<h3>bandwidth (Modified Board)<a class="headerlink" href="#bandwidth-modified-board" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)" target="_blank">Bandwidth</a></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_1.2ghz.png"><img alt="image64" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_1.2ghz.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">BW with LO of 1.2GHZ with full power out. (20dB external attenuation) |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_2.4ghz.png"><img alt="image65" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_2.4ghz.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">BW with LO of 2.4GHZ with full power out. (20dB external attenuation) |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_3.6ghz.png"><img alt="image66" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/bw_rx_lo_off_scale0.5_tx_lo_3.6ghz.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">BW with LO of 3.6GHZ with full power out. (20dB external attenuation) |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="receive-specs">
+<h2>Receive Specs<a class="headerlink" href="#receive-specs" title="Link to this heading"></a></h2>
+<section id="response-to-a-chirp">
+<h3>Response to a “chirp”<a class="headerlink" href="#response-to-a-chirp" title="Link to this heading"></a></h3>
+<p>Although this doesn’t have a specific number associated with it, many RF systems
+are “chirpy” - and linear response to these RF pulses is very important.</p>
+<p>Here is a 2.4GHz waveform, input at -60dbB, with the VGA gain turned up to
++20dB. Although this does have some DC offset (the card was not calibrated), the
+response is very linear over time, even when zoomed in. (Clicking on either
+picture will open it up in a larger window)</p>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz.png"><img alt="image67" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz.png" width="200" /></a> <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_zoom_2.4ghz.png"><img alt="image68" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_zoom_2.4ghz.png" width="200" /></a></p>
+<p>And with a larger input - it looks similar. This is with an input of +6.0dBm,
+with the VGA set to 4.5dB.|</p>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz_6dbm.png"><img alt="image69" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz_6dbm.png" width="200" /></a> <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz_6dbm_zoom.png"><img alt="image70" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/chirp_2.4ghz_6dbm_zoom.png" width="200" /></a></p>
+<p>The results are similar at different frequencies.|</p>
+</section>
+<section id="signal-to-noise">
+<h3>Signal to Noise<a class="headerlink" href="#signal-to-noise" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Signal-to-noise_ratio" target="_blank">SNR</a></p>
+</section>
+<section id="noise-floor">
+<h3>Noise floor<a class="headerlink" href="#noise-floor" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Noise_floor" target="_blank">Noise floor</a></p>
+</section>
+<section id="input-sensitivity">
+<h3>Input sensitivity<a class="headerlink" href="#input-sensitivity" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Sensitivity_(electronics)" target="_blank">Input sensitivity</a></p>
+</section>
+<section id="dynamic-range">
+<h3>Dynamic range<a class="headerlink" href="#dynamic-range" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Dynamic_range" target="_blank">Dynamic range</a></p>
+</section>
+<section id="id3">
+<h3>LO BW (Modified Board)<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_lo_bw_0.4to4ghz.png"><img alt="image71" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_lo_bw_0.4to4ghz.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">LO Sweep from 400 MHz to 4GHz, with 0dBm input signal (Low frequency roll-off is due to Balun 3600BL14M050) |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/with_new_balun_tc1-1-43a.png"><img alt="image72" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/with_new_balun_tc1-1-43a.png" width="200" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">LO Sweep from 400 MHz to 4GHz, with 0dBm input signal (With new Balun TC1-1-43A) |</div>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id4">
+<h3>Intermodulation Distortion (Modified Board)<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_1.2ghzlo.png"><img alt="image82" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_1.2ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_1.2ghzlo.png"><img alt="image83" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_1.2ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_1.2ghzlo.png"><img alt="image84" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_1.2ghzlo.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 1.2GHz, 0dBm input</p></td>
+<td><p>1MHz Offset, LO 1.2GHz, -6dBm input</p></td>
+<td><p>1MHz Offset, LO 1.2GHz, -12dBm input</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_2.4ghzlo.png"><img alt="image85" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_2.4ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_2.4ghzlo.png"><img alt="image86" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_2.4ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_2.4ghzlo.png"><img alt="image87" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_2.4ghzlo.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 2.4GHz, 0dBm input</p></td>
+<td><p>1MHz Offset, LO 2.4GHz, -6dBm input</p></td>
+<td><p>1MHz Offset, LO 2.4GHz, -12dBm input</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_3.6ghzlo.png"><img alt="image88" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_0dbm_3.6ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_3.6ghzlo.png"><img alt="image89" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-6dbm_3.6ghzlo.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_3.6ghzlo.png"><img alt="image90" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/imd3_rx_-12dbm_3.6ghzlo.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>1MHz Offset, LO 3.6GHz, 0dBm input</p></td>
+<td><p>1MHz Offset, LO 3.6GHz, -6dBm input</p></td>
+<td><p>1MHz Offset, LO 3.6GHz, -12dBm input</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id5">
+<h3>Bandwidth (Modified Board)<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Bandwidth_(signal_processing)" target="_blank">Bandwidth</a></p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_1.2ghz_0dbm_input.png"><img alt="image93" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_1.2ghz_0dbm_input.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_1.2ghz_0dbm_input_ch2.png"><img alt="image94" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_1.2ghz_0dbm_input_ch2.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>BW with 1.2GHz LO and 0dBm input (Ch1).</p></td>
+<td><p>BW with 1.2GHz LO and 0dBm input (Ch2).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_2.4ghz_0dbm_input.png"><img alt="image97" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_2.4ghz_0dbm_input.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_2.4ghz_0dbm_input_ch2.png"><img alt="image98" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_2.4ghz_0dbm_input_ch2.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>BW with 2.4GHz LO and 0dBm input (Ch1).</p></td>
+<td><p>BW with 2.4GHz LO and 0dBm input (Ch2).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_3.6chz_0dbm_input.png"><img alt="image101" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_3.6chz_0dbm_input.png" width="200" /></a></p></td>
+<td><p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_3.6ghz_0dbm_input_ch2.png"><img alt="image102" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/rx_bw_lo_3.6ghz_0dbm_input_ch2.png" width="200" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p>BW with 3.6GHz LO and 0dBm input (Ch1).</p></td>
+<td><p>BW with 3.6GHz LO and 0dBm input (Ch2).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="functional_overview.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS1-EBZ Functional Overview</a>
+    <a href="configuration_options.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS1-EBZ Configuration Options</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
