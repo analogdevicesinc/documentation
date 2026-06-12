@@ -170,14 +170,9 @@ Content on this topic
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/interface_timing_validation.html">Digital Interface Timing Verification</a></li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/index.html">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l5"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
-<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l6"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
-<li class="toctree-l6"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/applications/xcomm_cal.html">Xcomm Cal</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../solutions/reference-designs/ad-fmcomms1-ebz/software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
@@ -211,12 +206,12 @@ definition information through FRU (Field Replaceable Unit) Information storage,
 as defined in the “Intel Platform Management FRU Information Storage Definition
 V1.1.”</p>
 <p>The FRU Information is used primarily to provide inventory information about the
-boards, including part numbers, version numbers, and serial numbers. FMC-specific
-MultiRecords define connector requirements, power requirements, and I2C devices
-to ensure carrier platform compatibility before power application.</p>
+boards, including part numbers, version numbers, and serial numbers.
+FMC-specific MultiRecords define connector requirements, power requirements, and
+I2C devices to ensure carrier platform compatibility before power application.</p>
 <p>Analog Devices developed the <code class="docutils literal notranslate"><span class="pre">fru-dump</span></code> utility to dump and modify FRU files,
-particularly for production testing of ADI FMC cards. Source code is available at
-<a class="icon git reference external" href="https://github.com/analogdevicesinc/fru_tools/" target="_blank">GitHub</a>.</p>
+particularly for production testing of ADI FMC cards. Source code is available
+at <a class="icon git reference external" href="https://github.com/analogdevicesinc/fru_tools/" target="_blank">GitHub</a>.</p>
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fru</span><span class="o">-</span><span class="n">dump</span> <span class="p">[</span><span class="o">-</span><span class="n">b</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">o</span> <span class="n">OUTPUT_FILE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">SERIAL_NUMBER</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span> <span class="n">DATE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="n">INPUT_FILE</span>
@@ -308,8 +303,8 @@ particularly for production testing of ADI FMC cards. Source code is available a
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># fru-dump -i /sys/bus/i2c/devices/0-0051/eeprom -o /sys/bus/i2c/devices/0-0051/eeprom -t 0b10db</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">read</span> <span class="mi">256</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">i2c</span><span class="o">/</span><span class="n">devices</span><span class="o">/</span><span class="mi">0</span><span class="o">-</span><span class="mi">0051</span><span class="o">/</span><span class="n">eeprom</span>
-<span class="n">changing</span> <span class="n">tuning</span> <span class="n">parameter</span> <span class="n">to</span> <span class="mb">0b10</span><span class="n">db</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">read</span> <span class="mi">256</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">i2c</span><span class="o">/</span><span class="n">devices</span><span class="o">/</span><span class="mi">0</span><span class="o">-</span><span class="mi">0051</span><span class="o">/</span><span class="n">eeprom</span> <span class="n">changing</span> <span class="n">tuning</span>
+<span class="n">parameter</span> <span class="n">to</span> <span class="mb">0b10</span><span class="n">db</span>
 </pre></div>
 </div>
 </section>

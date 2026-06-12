@@ -14,7 +14,7 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="AD-FMCOMMS1-EBZ Linux support" href="linux/index.html" />
+    <link rel="next" title="Linux Applications for the AD-FMCOMMS1-EBZ" href="applications/index.html" />
     <link rel="prev" title="Digital Interface Timing Verification" href="../interface_timing_validation.html" />
    
   
@@ -157,14 +157,9 @@ Content on this topic
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3" id="toctree-collapse-1-1-3" checked=""/><div class="collapse"><a class="current reference internal" href="#">Software</a><label for="toctree-collapse-1-1-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="linux/index.html">AD-FMCOMMS1-EBZ Linux support</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l5"><a class="reference internal" href="linux/microblaze_kc705.html">Linux on the Xilinx KC705 Kintex™-7 FPGA development Board</a></li>
-<li class="toctree-l5"><a class="reference internal" href="linux/microblaze_ml605.html">Linux on the Xilinx ML605 Virtex6 FPGA development Board</a></li>
-<li class="toctree-l5"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1-1" id="toctree-collapse-1-1-3-1-1"/><div class="collapse"><a class="reference internal" href="linux/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l6"><a class="reference internal" href="linux/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
-<li class="toctree-l6"><a class="reference internal" href="linux/applications/xcomm_cal.html">Xcomm Cal</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-3-1" id="toctree-collapse-1-1-3-1"/><div class="collapse"><a class="reference internal" href="applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-1-1-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l5"><a class="reference internal" href="applications/xcomm_cal.html">Xcomm Cal</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
@@ -192,7 +187,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="software">
-<span id="ad-fmcomms1-ebz-software"></span><h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
+<span id="ad-fmcomms1-ebz-software-linux"></span><span id="ad-fmcomms1-ebz-software"></span><h1>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h1>
 <p>Software for the AD-FMCOMMS1-EBZ.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -209,8 +204,26 @@ which means it is no longer maintained or actively updated, even though the
 devices themselves may be Recommended for New Designs or in
 Production. This page is here for historical/reference purposes only.</p>
 </div>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/tux.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/tux.png" />
+<p>Analog Devices provides full Linux support for the AD-FMCOMMS1-EBZ. Depending on
+which FPGA platform you are using the steps to perform to setup the system
+slightly differ:</p>
 <ul class="simple">
-<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq_hdmi.html#linux-kernel-zynq-hdmi" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Linux</span></a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/microblaze_ml605" target="_blank">ML605 (Microblaze)</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/microblaze_kc705" target="_blank">KC705 (Microblaze)</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq_hdmi.html#linux-kernel-zynq-hdmi" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">ZC702, ZC706, ZED (Zynq)</span></a></p></li>
+</ul>
+<p>Descriptions of the individual Linux device drivers for the different parts on
+the AD-FMCOMMS1-EBZ can be found at:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-pll/ad9523.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9523-1: Low Jitter Clock Generator with 14 LVPECL/LVDS/HSTL/29 LVCMOS Outputs</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-pll/adf4350.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">ADF4351: Wideband Synthesizer with Integrated VCO</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-amplifiers/ad8366.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD8366: DC to 600 MHz, Dual-Digital Variable Gain Amplifiers</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-adc/axi-adc-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9643: 14-Bit, 170/210/250 MSPS, 1.8 V Dual Analog-to-Digital Converter (ADC)</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-dds/axi-dac-dds-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+® Digital-to-Analog Converter</span></a></p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_linux_dd.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcomms1-ebz_landing/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_linux_dd.png" />
+<ul class="simple">
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/reference_design_no_os" target="_blank">No-OS drivers</a></p></li>
 <li><p><a class="reference internal" href="i2c_to_spi_bridge.html#ad-fmcomms1-ebz-software-i2c-to-spi-bridge"><span class="std std-ref">I2C-to-SPI-bridge</span></a></p></li>
 </ul>
@@ -223,7 +236,7 @@ Production. This page is here for historical/reference purposes only.</p>
               <div class="related">
                 &nbsp;
     <a href="../interface_timing_validation.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Digital Interface Timing Verification</a>
-    <a href="linux/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS1-EBZ Linux support</a>
+    <a href="applications/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Linux Applications for the AD-FMCOMMS1-EBZ</a>
               </div>
           
         </div>
