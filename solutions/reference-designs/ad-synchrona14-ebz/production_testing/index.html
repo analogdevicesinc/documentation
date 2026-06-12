@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The production testing is quite simple. Since each board has been completely characterized, and we know the layout is good, we can just look for gross errors." name="description" />
+<meta content="The purpose of this test procedure is to identify connectivity issues, poor soldering, and potential manufacturing defects in the AD-SYNCHRONA14-EBZ board. Some issues are directly identified by explicit part-targeted tests, while others are detected implicitly by running adjacent tests." name="description" />
 
-    <title>Production testing of the AD-SYNCHRONA14-EBZ &#8212; System Level Documentation  documentation</title>
+    <title>Production Testing &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
@@ -95,16 +95,25 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Production testing of the AD-SYNCHRONA14-EBZ</a><ul>
+<li><a class="reference internal" href="#">Production Testing</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
-<li><a class="reference internal" href="#required-software">Required software</a><ul>
-<li><a class="reference internal" href="#creating-an-ad-synchrona14-ebz-sd-test-card">Creating an AD-SYNCHRONA14-EBZ SD test card</a></li>
-<li><a class="reference internal" href="#creating-a-raspberry-pi-sd-test-card">Creating a Raspberry Pi SD test card</a></li>
+<li><a class="reference internal" href="#test-duration">Test Duration</a></li>
+<li><a class="reference internal" href="#test-requirements">Test Requirements</a><ul>
+<li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
+<li><a class="reference internal" href="#required-software">Required Software</a></li>
+<li><a class="reference internal" href="#required-setup">Required Setup</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#required-setup">Required setup</a></li>
-<li><a class="reference internal" href="#test-process">Test process</a></li>
+<li><a class="reference internal" href="#test-process">Test Process</a><ul>
+<li><a class="reference internal" href="#starting-the-test">Starting the Test</a></li>
+<li><a class="reference internal" href="#front-panel-output-testing">Front Panel Output Testing</a></li>
+<li><a class="reference internal" href="#back-panel-input-testing">Back Panel Input Testing</a></li>
+<li><a class="reference internal" href="#communication-testing">Communication Testing</a></li>
+<li><a class="reference internal" href="#visual-inspection">Visual Inspection</a></li>
+<li><a class="reference internal" href="#cleanup">Cleanup</a></li>
+<li><a class="reference internal" href="#final-steps">Final Steps</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -549,7 +558,7 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-23" id="toctree-collapse-14-23" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-SYNCHRONA14-EBZ</a><label for="toctree-collapse-14-23"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Production testing of the AD-SYNCHRONA14-EBZ</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Production Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-24" id="toctree-collapse-14-24"/><div class="collapse"><a class="reference internal" href="../../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-14-24"><div class="icon"></div></label></div><ul>
@@ -1306,159 +1315,265 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="production-testing-of-the-ad-synchrona14-ebz">
-<span id="ad-synchrona14-ebz-testing"></span><h1>Production testing of the AD-SYNCHRONA14-EBZ<a class="headerlink" href="#production-testing-of-the-ad-synchrona14-ebz" title="Link to this heading"></a></h1>
+  <section id="production-testing">
+<span id="ad-synchrona14-ebz-production-testing"></span><h1>Production Testing<a class="headerlink" href="#production-testing" title="Link to this heading"></a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The production testing is quite simple. Since each board has been completely
-characterized, and we know the layout is good, we can just look for gross
-errors.</p>
-<p>There are multiple test files for the different boards. (all in GitHub)</p>
-<ul class="simple">
-<li><p>synchrona_test_name_prod</p></li>
-</ul>
-<p>The tests and test parameters are in the production testing file. This is
-broken down into the following sections:</p>
-<ol class="arabic simple">
-<li><p>Front panel output channels</p></li>
-<li><p>Back panel input channels</p></li>
-<li><p>UART ports and SPI communication</p></li>
-<li><p>Miscellaneous</p></li>
-</ol>
+<p>The purpose of this test procedure is to identify connectivity issues, poor
+soldering, and potential manufacturing defects in the <a class="icon adi reference external" href="https://www.analog.com/AD-SYNCHRONA14-EBZ" target="_blank">AD-SYNCHRONA14-EBZ</a>
+board. Some issues are directly identified by explicit part-targeted tests,
+while others are detected implicitly by running adjacent tests.</p>
 </section>
+<section id="test-duration">
+<h2>Test Duration<a class="headerlink" href="#test-duration" title="Link to this heading"></a></h2>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 70.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Step Description</p></th>
+<th class="head"><p>Estimated Time (minutes)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Test bench setup</p></td>
+<td><p>10 min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Software test</p></td>
+<td><p>15 min</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total time</strong></p></td>
+<td><p><strong>25 min</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="test-requirements">
+<h2>Test Requirements<a class="headerlink" href="#test-requirements" title="Link to this heading"></a></h2>
 <section id="required-hardware">
-<h2>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>AD-SYNCHRONA14-EBZ</p></li>
-<li><p>Raspberry Pi4</p></li>
-<li><p>ADALM2000</p></li>
-<li><p>ADALM2000 BNC Adapter</p></li>
-<li><p>BR-068851 with ribbon cable and a single wire</p></li>
-<li><p>Twinax Cable Assembly</p></li>
-<li><p>Micro-USB</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-SYNCHRONA14-EBZ" target="_blank">AD-SYNCHRONA14-EBZ</a> board</p></li>
+<li><p>Raspberry Pi 4, power cable (USB-C), HDMI cable</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADALM2000" target="_blank">ADALM2000</a> with BNC adapter</p></li>
+<li><p>BR-068851 connector board with ribbon cable</p></li>
+<li><p>Twinax cable assembly</p></li>
+<li><p>Micro-USB cable</p></li>
 <li><p>Ethernet cable</p></li>
 <li><p>QR code scanner</p></li>
-<li><p>Mouse and Keyboard</p></li>
-<li><p>Dymo LabelWriter450</p></li>
+<li><p>Mouse and keyboard</p></li>
+<li><p>Dymo LabelWriter450 printer</p></li>
+<li><p>Front panel SMA cable</p></li>
+<li><p>Back panel SMA cable</p></li>
+<li><p>50 Ohm terminator</p></li>
 </ul>
 </section>
 <section id="required-software">
-<h2>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
-<section id="creating-an-ad-synchrona14-ebz-sd-test-card">
-<h3>Creating an AD-SYNCHRONA14-EBZ SD test card<a class="headerlink" href="#creating-an-ad-synchrona14-ebz-sd-test-card" title="Link to this heading"></a></h3>
-<p>Firstly, write the latest available SD card image found to a spare card to boot
-into Linux.</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p><strong>22 June 2022 release</strong></p></li>
-<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/synchrona_production_small.zip"><code class="xref download docutils literal notranslate"><span class="pre">Actual</span> <span class="pre">file</span></code></a></p></li>
+<li><p>SD card with the test image</p></li>
 </ul>
-</div>
-</section>
-<section id="creating-a-raspberry-pi-sd-test-card">
-<h3>Creating a Raspberry Pi SD test card<a class="headerlink" href="#creating-a-raspberry-pi-sd-test-card" title="Link to this heading"></a></h3>
-<p>The SD image used is based on Raspbian with Desktop.</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<ul class="simple">
-<li><p><strong>22 June 2022 release</strong></p></li>
-<li><p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/rpi_synchrona_production.zip"><code class="xref download docutils literal notranslate"><span class="pre">Actual</span> <span class="pre">file</span></code></a></p></li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>To write an image on a SD card you can follow the instructions
-<a class="icon link reference external" href="https://www.raspberrypi.com/documentation/computers/getting-started.html" target="_blank">Installing Pi Images</a>.</p>
-</div>
-</section>
 </section>
 <section id="required-setup">
-<h2>Required setup<a class="headerlink" href="#required-setup" title="Link to this heading"></a></h2>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_setup_s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_setup_s.png" />
+<h3>Required Setup<a class="headerlink" href="#required-setup" title="Link to this heading"></a></h3>
+<figure class="align-default" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_setup_s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_setup_s.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Test setup overview</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <ul>
-<li><p>Connect the BNC adapter to the ADALM2000 and attach the Back Panel and Front
-Panel SMA cables.</p></li>
-<li><p>Connect the ADALM2000 USB cable to one of the SYNCHRONA14 USB ports.</p></li>
-<li><p>Connect the Raspberry Pi pins via ribbon cable to the BR-068851 and connect
-the two using a USB cable.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/picture3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/picture3.jpg" />
+<li><p>Insert the SD card into the Raspberry Pi.</p></li>
+<li><p>Connect the ADALM2000’s BNC adapter to both the front and back panel SMA
+cables, with USB connection to the Synchrona board.</p></li>
+<li><p>Connect the Raspberry Pi’s GPIO pins via ribbon cable to the BR-068851
+adapter board, which connects via USB.</p>
+<figure class="align-default" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/picture3.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/picture3.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">BR-068851 connection</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Make sure you have added a wire to V_IO select on the BR-068851 and also a
-jumper on EN pins. See below photo for reference.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/picture2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/picture2.png" />
+<li><p>Add a wire to the V_IO select pin, and configure the EN pins with a jumper.</p>
+<figure class="align-default" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/picture2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/picture2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">V_IO select and EN pins configuration</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Connect an Ethernet cable between the Pi and Synchrona.</p></li>
-<li><p>Add the scanner and keyboard USBs to the Raspberry Pi, and also an external
-display.</p></li>
-<li><p>Connect the Dymo LabelWriter450 label printer to the Raspberry Pi via USB.</p></li>
-<li><p>Power on the Raspberry Pi by plugging in the USB-C power supply.</p></li>
-<li><p>Power on the Synchrona board by pressing the power button on the front panel
-and wait ~30sec.</p></li>
+<li><p>Connect an Ethernet cable between the Raspberry Pi and the Synchrona board.</p></li>
+<li><p>Connect the QR code scanner, keyboard, and display to the Raspberry Pi.</p></li>
+<li><p>Connect the Dymo LabelWriter450 printer via USB to the Raspberry Pi.</p></li>
+<li><p>Power on the Raspberry Pi via USB-C.</p></li>
+<li><p>Power on the Synchrona board by pressing the front panel power button.
+Allow approximately 30 seconds for initialization.</p></li>
 </ul>
 </section>
+</section>
 <section id="test-process">
-<h2>Test process<a class="headerlink" href="#test-process" title="Link to this heading"></a></h2>
-<p>Firstly, make sure all the required steps from the setup explained above are
-completed. Once the setup is ready, testing should be done using the following
-steps:</p>
+<h2>Test Process<a class="headerlink" href="#test-process" title="Link to this heading"></a></h2>
+<section id="starting-the-test">
+<h3>Starting the Test<a class="headerlink" href="#starting-the-test" title="Link to this heading"></a></h3>
 <ul>
-<li><p>Once you have powered on both Synchrona and the Raspberry Pi, you should be
-prompted with the following test window on your display.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_1.png" />
+<li><p>After the Raspberry Pi boots, the test screen will appear on the monitor.</p>
+<figure class="align-default" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_1.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Initial test screen</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Type ‘1’ in order to start the production testing.</p></li>
-<li><p>Start by scanning the serial number QR code on Synchrona.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_2.png" />
+<li><p>Type <strong>1</strong> and press <strong>ENTER</strong> to start the <strong>Production Testing</strong>.</p></li>
+<li><p>Scan the board’s serial number QR code when prompted.</p>
+<figure class="align-default" id="id5">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_2.png" />
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">QR code scanning prompt</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Firstly, we will test the outputs on the front panel of Synchrona. Attach
-the front panel SMA cable to Channel 01, port P and press ‘Enter’ when ready.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/channel1_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/channel1_test.png" />
+</ul>
+</section>
+<section id="front-panel-output-testing">
+<h3>Front Panel Output Testing<a class="headerlink" href="#front-panel-output-testing" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Test channels 1-10 by sequentially connecting the front panel SMA cable to
+each port’s P and N connectors.</p>
+<figure class="align-default" id="id6">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/channel1_test.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/channel1_test.png" />
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Channel 1 test</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_4.png" />
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Front panel channel testing</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Proceed doing the same process for each ‘P’ and ‘N’ ports of the channels.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_4.png" />
+<li><p>For channels 11-14, use the Twinax-to-SMA adapter with a probe connection.</p>
+<figure class="align-default" id="id8">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/channel11.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/channel11.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Twinax adapter for channels 11-14</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id9">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/testt_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/testt_5.png" />
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Channels 11-14 testing</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>For channels 11-14, attach the front panel cable to the Twinax to SMA adapter.
-Use the new probe to test.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/channel11.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/channel11.jpg" />
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/testt_5.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/testt_5.png" />
+</ul>
+</section>
+<section id="back-panel-input-testing">
+<h3>Back Panel Input Testing<a class="headerlink" href="#back-panel-input-testing" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Attach the back panel SMA cable to <strong>REF IN</strong>, <strong>PPS</strong>, <strong>CH2</strong>, and <strong>CH3</strong>
+inputs sequentially.</p></li>
+<li><p>When testing CH2 and CH3, connect to only one connector (P or N) and place
+a 50 Ohm terminator on the unconnected port.</p>
+<figure class="align-default" id="id10">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/50ohm.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/50ohm.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">50 Ohm terminator placement</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/backpanel.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/backpanel.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Back panel connections</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>The next step is testing the inputs, on the back panel. Use the SMA cable for
-back panel and attach it one at a time to REF IN, PPS, CH2 and CH3. <strong>For CH2
-and CH3 inputs you only need to connect to one of the SMA connectors, P or N.
-On the input (P or N) you are not connecting the SMA cable
-place a SMA 50 Ohm terminator.</strong></p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/50ohm.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/50ohm.jpg" />
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/backpanel.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/backpanel.jpg" />
+</ul>
+</section>
+<section id="communication-testing">
+<h3>Communication Testing<a class="headerlink" href="#communication-testing" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Attach the BR-068851 adapter to the GPIO port.</p>
+<figure class="align-default" id="id12">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/gpio.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/gpio.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">BR-068851 attached to GPIO port</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>In order to test the UART COMM 01, 02 and the SPI Communication, attach a
-BR-068851 to the GPIO port on the back panel.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/gpio.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/gpio.jpg" />
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_6.png" />
+<li><p>Verify UART COMM 01, UART COMM 02, and SPI communication functionality.</p>
+<figure class="align-default" id="id13">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_6.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_6.png" />
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Communication test screen</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>Next, check if the LED STAT1 is yellow and STAT2 red, check if the Synchrona
-fan is working.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/test_8.png" />
+</ul>
+</section>
+<section id="visual-inspection">
+<h3>Visual Inspection<a class="headerlink" href="#visual-inspection" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Verify that LED STAT1 displays yellow and STAT2 displays red.</p></li>
+<li><p>Confirm fan operation.</p>
+<figure class="align-default" id="id14">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_8.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/test_8.png" />
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">LED and fan verification</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </li>
-<li><p>After these steps, the board will power-off and display a message asking you
-to power up Synchrona in order to perform clean-up. Remove the BR-068851 board
-from the Synchrona before powering it back on.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/synchrona_clean_up.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/synchrona_clean_up.jpg" />
+</ul>
+</section>
+<section id="cleanup">
+<h3>Cleanup<a class="headerlink" href="#cleanup" title="Link to this heading"></a></h3>
+<ul>
+<li><p>Power off the board.</p></li>
+<li><p>Remove the BR-068851 adapter.</p></li>
+<li><p>Reboot the Raspberry Pi for cleanup operations.</p>
+<figure class="align-default" id="id15">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/synchrona_clean_up.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/synchrona_clean_up.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Cleanup prompt</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Make sure to reboot the board in order to perform clean-up.</p>
 </div>
 </li>
-<li><p>Make sure you have connected the Dymo LabelWriter 450 printer via USB to the
-Raspberry Pi. A label will be printed that must be placed on the back of the
-board. See below image for reference.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/label_synchrona.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/label_synchrona.jpg" />
-</li>
-<li><p>A ‘PASSED’ or ‘FAILED’ message should appear on the screen at the end of the
-test.</p>
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/passed_final.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/testing/passed_final.png" />
-</li>
 </ul>
+</section>
+<section id="final-steps">
+<h3>Final Steps<a class="headerlink" href="#final-steps" title="Link to this heading"></a></h3>
+<ul>
+<li><p>The printer generates a label for placement on the board’s rear.</p>
+<figure class="align-default" id="id16">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/label_synchrona.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/label_synchrona.jpg" />
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Label placement reference</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>The test concludes with a <strong>PASSED</strong> or <strong>FAILED</strong> message displayed
+on screen.</p>
+<figure class="align-default" id="id17">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/passed_final.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-synchrona14-ebz/production_testing/images/passed_final.png" />
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Test passed screen</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p>If all tests pass, you can move onto the next D.U.T.</p></li>
+<li><p>When you are done testing, press <strong>2</strong> and hit <strong>ENTER</strong> to power off the
+Raspberry Pi.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
