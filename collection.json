@@ -50,6 +50,33 @@
                 "user-guide"
             ]
         },
+        "AD9084-FMCA-EBZ": {
+            "docname": "documentation/solutions/reference-designs/ad9084_ebz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/ad9084_ebz": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad9084_ebz": {
+                        "name": "HDL Project (ad9084_ardz)"
+                    }
+                },
+                "linux": {
+                    "drivers/iio-trx-rf/ad9088": {
+                        "name": "Linux driver (ad9084)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/ad9084.png",
+            "subtitle": "Evaluating the Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
         "EVAL-AD4050/AD4052-ARDZ": {
             "docname": "documentation/solutions/reference-designs/ad4052-ardz/index",
             "description": "",
@@ -99,33 +126,6 @@
             },
             "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad4062-ardz/eval-angle.png",
             "subtitle": "Evaluating the AD4060/AD4062 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
-            "label": [
-                "eval",
-                "user-guide"
-            ]
-        },
-        "AD9084-FMCA-EBZ": {
-            "docname": "documentation/solutions/reference-designs/ad9084_ebz/index",
-            "description": "",
-            "include": {
-                "documentation": {
-                    "solutions/reference-designs/ad9084_ebz": {
-                        "name": "User guide"
-                    }
-                },
-                "hdl": {
-                    "projects/ad9084_ebz": {
-                        "name": "HDL Project (ad9084_ardz)"
-                    }
-                },
-                "linux": {
-                    "drivers/iio-trx-rf/ad9088": {
-                        "name": "Linux driver (ad9084)"
-                    }
-                }
-            },
-            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/ad9084.png",
-            "subtitle": "Evaluating the Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC",
             "label": [
                 "eval",
                 "user-guide"
