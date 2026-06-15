@@ -2323,8 +2323,7 @@ iio:device3: cf-ad9361-lpc (buffer capable)
 iio:device4: cf-ad9361-dds-core-lpc (buffer capable)
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div><p>You can also verify the FMC EEPROM using
-<a class="reference internal" href="../../../../software/fru_dump.html"><span class="doc">fru-dump</span></a>:</p>
+<div class="clear-left"></div></div></div><p>You can also verify the FMC EEPROM using <a class="reference internal" href="../../../../software/fru_dump.html#software-fru-dump"><span class="std std-ref">FMC EEPROM Programming</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="nd">@analog</span><span class="p">:</span><span class="o">~</span><span class="c1"># fru-dump -b /sys/bus/i2c/devices/14-0050/eeprom</span>
 <span class="n">read</span> <span class="mi">256</span> <span class="nb">bytes</span> <span class="kn">from</span><span class="w"> </span><span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="n">bus</span><span class="o">/</span><span class="n">i2c</span><span class="o">/</span><span class="n">devices</span><span class="o">/</span><span class="mi">14</span><span class="o">-</span><span class="mi">0050</span><span class="o">/</span><span class="n">eeprom</span>
 <span class="n">Date</span> <span class="n">of</span> <span class="n">Man</span>     <span class="p">:</span> <span class="n">Wed</span> <span class="n">Jun</span> <span class="mi">18</span> <span class="mi">12</span><span class="p">:</span><span class="mi">51</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2014</span>
