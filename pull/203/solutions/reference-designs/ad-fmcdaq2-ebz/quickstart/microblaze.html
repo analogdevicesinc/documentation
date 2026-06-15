@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This guide provides some quick instructions (still takes a while to download, and set things up) on how to setup the AD-FMCDAQ2-EBZ / AD-FMCDAQ3-EBZ on:" name="description" />
+<meta content="This guide provides some quick instructions on how to setup the AD-FMCDAQ2-EBZ on:" name="description" />
 
-    <title>AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <title>KCU105 Quickstart &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
@@ -14,8 +14,8 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Introduction" href="../introduction.html" />
-    <link rel="prev" title="ZCU102 Quickstart" href="zcu102.html" />
+    <link rel="next" title="ZC706 Quickstart" href="zc706.html" />
+    <link rel="prev" title="A10GX Quickstart (OBSOLETE)" href="a10gx.html" />
    
   
   
@@ -95,12 +95,27 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#">KCU105 Quickstart</a><ul>
+<li><a class="reference internal" href="#using-linux-as-software">Using Linux as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
 <li><a class="reference internal" href="#required-software">Required Software</a></li>
 <li><a class="reference internal" href="#required-hardware">Required Hardware</a></li>
 <li><a class="reference internal" href="#testing">Testing</a><ul>
-<li><a class="reference internal" href="#loading">Loading</a></li>
-<li><a class="reference internal" href="#messages">Messages</a></li>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
+<li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#id1">Necessary files</a></li>
+<li><a class="reference internal" href="#id2">Required Software</a></li>
+<li><a class="reference internal" href="#id4">Required Hardware</a></li>
+<li><a class="reference internal" href="#id5">Testing</a><ul>
+<li><a class="reference internal" href="#id6">Creating the setup</a></li>
+<li><a class="reference internal" href="#console-output">Console output</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#iio-oscilloscope-remote">IIO Oscilloscope Remote</a></li>
 </ul>
 </li>
@@ -139,15 +154,14 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCDAQ2-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="a10soc.html">On A10SOC</a></li>
 <li class="toctree-l4"><a class="reference internal" href="a10gx.html">On A10GX (OBSOLETE)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="kcu105.html">On KCU105</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On MICROBLAZE</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zc706.html">On ZC706</a></li>
 <li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../introduction.html">Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware.html">AD-FMCDAQ2-EBZ Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../hardware/card_specification.html">AD-FMCDAQ2-EBZ Specifications</a></li>
@@ -170,475 +184,1069 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCDAQ2-EBZ</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCDAQ2-EBZ</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
-  <section id="ad-fmcdaq2-ebz-ad-fmcdaq3-ebz-microblaze-quick-start-guide">
-<span id="ad-fmcdaq2-ebz-quickstart-microblaze"></span><h1>AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ Microblaze Quick Start Guide<a class="headerlink" href="#ad-fmcdaq2-ebz-ad-fmcdaq3-ebz-microblaze-quick-start-guide" title="Link to this heading"></a></h1>
-<p>This guide provides some quick instructions (still takes a while to download, and
-set things up) on how to setup the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a> / <a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ3-EBZ" target="_blank">AD-FMCDAQ3-EBZ</a> on:</p>
+  <section id="kcu105-quickstart">
+<span id="ad-fmcdaq2-ebz-quickstart-kcu105"></span><h1>KCU105 Quickstart<a class="headerlink" href="#kcu105-quickstart" title="Link to this heading"></a></h1>
+<p>This guide provides some quick instructions on how to setup the
+<a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a> on:</p>
 <ul class="simple">
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> on FMC HPC</p></li>
 </ul>
-<section id="required-software">
-<h2>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/kcu105.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/kcu105.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/kcu105.png" width="900" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><section id="using-linux-as-software">
+<h2>Using Linux as software<a class="headerlink" href="#using-linux-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
 <ul class="simple">
-<li><p>Bitfile and Linux ELF image.</p></li>
-<li><p>Xilinx XSCT/XSDB (included in Vivado/Vitis installation).</p></li>
-<li><p>A UART terminal (Tera Term/Hyperterminal), Baud rate 115200 (8N1).</p></li>
+<li><p>HDL boot image: <code class="docutils literal notranslate"><span class="pre">system_top.bit</span></code></p></li>
+<li><p>Linux simple image: <code class="docutils literal notranslate"><span class="pre">simpleImage.kcu105_fmcdaq2.strip</span></code></p></li>
+</ul>
+<p>Instructions on how to manually build the boot files from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze" target="_blank" title="(in System Level Documentation)"><span>Build MicroBlaze Linux kernel</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/daq2/index.html#daq2" target="_blank" title="(in HDL)"><span>DAQ2 HDL Project</span></a> build documentation.</p></li>
+</ul>
+<p>More HDL build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/hdl.git
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>projects/daq2/kcu105
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>user@analog:~/projects/daq2/kcu105$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span> Building daq2/kcu105
+ [/home/microblaze/hdl/projects/daq2/kcu105/daq2_kcu105_vivado.log] ... OK
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
+<section id="required-software">
+<h3>Required Software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from <a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a> will include Vivado as well)</p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)</p></li>
 </ul>
 </section>
 <section id="required-hardware">
-<h2>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h2>
+<h3>Required Hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Xilinx KC705 or KCU105 or VC707</p></li>
-<li><p>AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC Board.</p></li>
-<li><p>Micro / Mini-USB Cable</p></li>
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a> evaluation board</p></li>
+<li><p>2x Micro-USB cable (UART and JTAG)</p></li>
+<li><p>LAN cable (Ethernet)</p></li>
+<li><p>(Optional) 2x SMA cable for analog signal loopback</p></li>
 </ul>
 </section>
 <section id="testing">
-<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Connect the AD-FMCDAQ2-EBZ/AD-FMCDAQ3-EBZ FMC board to the FPGA carrier, on the HPC FMC connector.</p></li>
-<li><p>Connect USB JTAG (Micro USB) to your host PC.</p></li>
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg" width="900" />
+</a>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This project was tested with <strong>VADJ = 1.8 V</strong></p>
+</div>
+<p>In the following example, we will make a physical loopback between the ADC and
+the DAC channels on the evaluation board, using SMA cables.</p>
+<ol class="arabic simple">
+<li><p>Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier, on the HPC FMC
+connector.</p></li>
+<li><p>Connect USB UART J4 (Micro-USB) to your host PC</p></li>
+<li><p>Connect USB JTAG J87 (Micro-USB) to your host PC</p></li>
+<li><p>(Optional) Connect SMA cable for analog signal loopback</p></li>
 <li><p>Turn on the power switch on the FPGA board.</p></li>
-<li><p>Open XSCT/XSDB console to configure the FPGA and download the elf image.</p></li>
+<li><p>Program the FPGA using the steps shown
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html#linux-kernel-microblaze-boot" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">here</span></a>.</p></li>
+<li><p>Open xsct/xsdb and run the run.tcl script.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or
+COM port registered)</p></li>
+</ol>
+<p>We need to prepare a working directory where we will gather all the required
+binary files.</p>
+<p>From the HDL build directory locate the system_top.bit and copy it to the
+working directory.</p>
+<p>From the Linux build directory locate the simpleImage and copy it to the working
+directory.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>working_dir
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>&lt;hdl_repo_dir&gt;/projects/daq2/kcu105/daq2_kcu105.runs/impl_1/system_top.bit<span class="w"> </span>working_dir
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>&lt;linux_repo_dir&gt;/arch/microblaze/boot/simpleImage.kcu105_fmcdaq2.strip<span class="w"> </span>working_dir
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Next step is to program the board with xsct or similar tool</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>connect
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>fpga<span class="w"> </span>-f<span class="w"> </span>system_top.bit
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>after<span class="w"> </span><span class="m">1000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>target<span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>dow<span class="w"> </span>simpleImage.kcu105_fmcdaq2.strip
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>after<span class="w"> </span><span class="m">1000</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>con
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsct%<span class="w"> </span>disconnect
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>Alternatively, you can run the TCL script directly:</p>
+<div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="nv">connect</span>
+<span class="nv">fpga</span><span class="w"> </span><span class="o">-</span>f<span class="w"> </span>system_top.bit
+<span class="k">after</span><span class="w"> </span><span class="mi">1000</span>
+<span class="nv">target</span><span class="w"> </span><span class="mi">3</span>
+<span class="nv">dow</span><span class="w"> </span>simpleImage.kcu105_fmcdaq2.strip
+<span class="k">after</span><span class="w"> </span><span class="mi">1000</span>
+<span class="nv">con</span>
+<span class="nv">disconnect</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Login Information</p>
+<ul class="simple">
+<li><p>Welcome to Buildroot</p></li>
+<li><p>buildroot login: <strong>root</strong>, password: <strong>analog</strong></p></li>
+<li><p>buildroot login: <strong>analog</strong>, password: <strong>analog</strong></p></li>
 </ul>
-<section id="loading">
-<h3>Loading<a class="headerlink" href="#loading" title="Link to this heading"></a></h3>
-<p>There are two ways of loading the design. One is using the XMD command line.
-Open a xmd command window/shell and enter the commands manually.</p>
-<p>Below is just a example and the file-names may vary.</p>
-<div class="box bgblue docutils container">
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Xilinx XMD command console</p>
 </div>
-</div>
-<div><div class="collapsible docutils">
-<input class="collapsible_input" id="b7d4121c3350f116ec4d577d3231d972a0a540ba" name="b7d4121c3350f116ec4d577d3231d972a0a540ba" type="checkbox"></input><label for="b7d4121c3350f116ec4d577d3231d972a0a540ba"><p>Click to expand</p>
-<div class="icon"></div></label><div class="collapsible_content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Dave@HAL9000:~$ xmd
-
-* Xilinx Microprocessor Debugger (XMD) Engine
-* XMD v2014.2 (64-bit)
-  *** SW Build 932637 on Wed Jun 11 13:12:06 MDT 2014
-    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
-
-XMD% fpga -f download.bit
-Configuring Device 1 (xcku040) with Bitstream -- download.bit
-....10....20....30....40....50....60.....70....80....90....Done
-Successfully downloaded bit file.
-
-JTAG chain configuration
-Device   ID Code        IR Length    Part Name
- 1       03822093           6        xcku040
-
-0
-XMD% connect mb mdm
-
-JTAG chain configuration
-Device   ID Code        IR Length    Part Name
- 1       03822093           6        xcku040
-
-MicroBlaze Processor Configuration :
-Version............................9.3
-Optimization.......................Performance
-Interconnect.......................AXI-LE
-MMU Type...........................Full_MMU
-No of PC Breakpoints...............1
-No of Read Addr/Data Watchpoints...0
-No of Write Addr/Data Watchpoints..0
-Instruction Cache Support..........on
-Instruction Cache Base Address.....0x80000000
-Instruction Cache High Address.....0xbfffffff
-Data Cache Support.................on
-Data Cache Base Address............0x80000000
-Data Cache High Address............0xbfffffff
-Exceptions  Support................on
-FPU  Support.......................off
-Hard Divider Support...............on
-Hard Multiplier Support............on - (Mul64)
-Barrel Shifter Support.............on
-MSR clr/set Instruction Support....on
-Compare Instruction Support........on
-PVR Supported......................on
-PVR Configuration Type.............Full
-Data Cache Write-back Support......off
-Fault Tolerance Support............off
-Stack Protection Support...........off
-
-Connected to &quot;mb&quot; target. id = 0
-Starting GDB server for &quot;mb&quot; target (id = 0) at TCP port no 1234
-
-XMD% dow /home/microblaze/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
-System Reset .... DONE
-Downloading Program -- /home/microblaze/linux/arch/microblaze/boot/simpleImage.kcu105_ad_fmcdaq2_ebz
-    section, .text: 0x80000000-0x8031cda7
-    section, .init.text: 0x803fc000-0x804185eb
-    section, .init.ivt: 0x8041afac-0x8041afd3
-    section, __fdt_blob: 0x8031cda8-0x80324da7
-    section, .rodata: 0x80325000-0x803b950f
-    section, __ksymtab: 0x803b9510-0x803be90f
-    section, __ksymtab_gpl: 0x803be910-0x803c1e27
-    section, __ksymtab_strings: 0x803c1e28-0x803d4dd7
-    section, __param: 0x803d4dd8-0x803d5147
-    section, __modver: 0x803d5148-0x803d5fff
-    section, __ex_table: 0x803d6000-0x803d75df
-    section, .notes: 0x803d75e0-0x803d7603
-    section, .sdata2: 0x803d7604-0x803d7fff
-    section, .data: 0x803d8000-0x803fbc5f
-    section, .init.data: 0x804185ec-0x8041afab
-    section, .init.setup: 0x8041afd4-0x8041b327
-    section, .initcall.init: 0x8041b328-0x8041b683
-    section, .con_initcall.init: 0x8041b684-0x8041b68b
-    section, .init.ramfs: 0x8041b68c-0x806f97b3
-    section, .bss: 0x806fa000-0x8070f8db
-Download Progress........10.......20.......30.......40.......50........60.......70.......80.......90........Done
-Setting PC with Program Start Address 0x80000000
-XMD% con
-Processor started. Type &quot;stop&quot; to stop processor
-
-RUNNING&gt; XMD%
-</pre></div>
-</div>
-</div>
-</div>
-</div><p>XMD has been replaced with XSCT/XSDB in newer releases of VIVADO. In windows,
-you can run the XSCT terminal from start menu -&gt; Xilinx Design Tools -&gt; Xilinx
-Software Command Line Tool…</p>
-<div class="box bgblue docutils container">
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Xilinx XSCT command console</p>
-</div>
-</div>
-<div><div class="collapsible docutils">
-<input class="collapsible_input" id="49888dbc706d83b74195c05efa6188c0c81b65b0" name="49888dbc706d83b74195c05efa6188c0c81b65b0" type="checkbox"></input><label for="49888dbc706d83b74195c05efa6188c0c81b65b0"><p>Click to expand</p>
-<div class="icon"></div></label><div class="collapsible_content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Xilinx</span> <span class="n">System</span> <span class="n">Debugger</span> <span class="p">(</span><span class="n">XSDB</span><span class="p">)</span> <span class="n">v2021</span><span class="mf">.1</span>
-  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">58</span>
-    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2020</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
-
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">connect</span>
-<span class="n">attempting</span> <span class="n">to</span> <span class="n">launch</span> <span class="n">hw_server</span>
-
-<span class="o">*</span> <span class="n">Xilinx</span> <span class="n">hw_server</span> <span class="n">v2021</span><span class="mf">.1</span>
-  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span> <span class="n">at</span> <span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">57</span>
-    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2021</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
-
-<span class="n">INFO</span><span class="p">:</span> <span class="n">hw_server</span> <span class="n">application</span> <span class="n">started</span>
-<span class="n">INFO</span><span class="p">:</span> <span class="n">Use</span> <span class="n">Ctrl</span><span class="o">-</span><span class="n">C</span> <span class="n">to</span> <span class="n">exit</span> <span class="n">hw_server</span> <span class="n">application</span>
-
-<span class="n">INFO</span><span class="p">:</span> <span class="n">To</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">this</span> <span class="n">hw_server</span> <span class="n">instance</span> <span class="n">use</span> <span class="n">url</span><span class="p">:</span> <span class="n">TCP</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">3121</span>
-
-<span class="n">tcfchan</span><span class="c1">#0</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">fpga</span> <span class="o">-</span><span class="n">f</span> <span class="n">system_top</span><span class="o">.</span><span class="n">bit</span>
-<span class="mi">100</span><span class="o">%</span>    <span class="mi">4</span><span class="n">MB</span>   <span class="mf">1.7</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">targets</span>
-  <span class="mi">1</span>  <span class="n">xc7k325t</span>
-     <span class="mi">2</span>  <span class="n">MicroBlaze</span> <span class="n">Debug</span> <span class="n">Module</span> <span class="n">at</span> <span class="n">USER2</span>
-        <span class="mi">3</span>  <span class="n">MicroBlaze</span> <span class="c1">#0 (Running)</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">target</span> <span class="mi">3</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">dow</span> <span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
-<span class="n">Downloading</span> <span class="n">Program</span> <span class="o">--</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80000000</span> <span class="o">-</span> <span class="mh">0x804763ab</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__fdt_blob</span><span class="p">:</span> <span class="mh">0x804763ac</span> <span class="o">-</span> <span class="mh">0x804863ab</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">rodata</span><span class="p">:</span> <span class="mh">0x80487000</span> <span class="o">-</span> <span class="mh">0x808b110f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">builtin_fw</span><span class="p">:</span> <span class="mh">0x808b1110</span> <span class="o">-</span> <span class="mh">0x808b1133</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab</span><span class="p">:</span> <span class="mh">0x808b1134</span> <span class="o">-</span> <span class="mh">0x808b746b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_gpl</span><span class="p">:</span> <span class="mh">0x808b746c</span> <span class="o">-</span> <span class="mh">0x808bc483</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_strings</span><span class="p">:</span> <span class="mh">0x808bc484</span> <span class="o">-</span> <span class="mh">0x808d6973</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__param</span><span class="p">:</span> <span class="mh">0x808d6974</span> <span class="o">-</span> <span class="mh">0x808d6e5f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__modver</span><span class="p">:</span> <span class="mh">0x808d6e60</span> <span class="o">-</span> <span class="mh">0x808d6fff</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ex_table</span><span class="p">:</span> <span class="mh">0x808d7000</span> <span class="o">-</span> <span class="mh">0x808d844f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">notes</span><span class="p">:</span> <span class="mh">0x808d8450</span> <span class="o">-</span> <span class="mh">0x808d848b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">sdata2</span><span class="p">:</span> <span class="mh">0x808d848c</span> <span class="o">-</span> <span class="mh">0x808d8fff</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x808d9000</span> <span class="o">-</span> <span class="mh">0x8095893f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80959000</span> <span class="o">-</span> <span class="mh">0x8097a75b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x8097a75c</span> <span class="o">-</span> <span class="mh">0x8097c053</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ivt</span><span class="p">:</span> <span class="mh">0x8097c054</span> <span class="o">-</span> <span class="mh">0x8097c07b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">setup</span><span class="p">:</span> <span class="mh">0x8097c07c</span> <span class="o">-</span> <span class="mh">0x8097c3f3</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c3f4</span> <span class="o">-</span> <span class="mh">0x8097c80f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">con_initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c810</span> <span class="o">-</span> <span class="mh">0x8097c813</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ramfs</span><span class="p">:</span> <span class="mh">0x8097c814</span> <span class="o">-</span> <span class="mh">0x80c2a9fb</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">bss</span><span class="p">:</span> <span class="mh">0x80c2b000</span> <span class="o">-</span> <span class="mh">0x80c4225b</span>
-<span class="mi">100</span><span class="o">%</span>   <span class="mi">12</span><span class="n">MB</span>   <span class="mf">0.2</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">56</span>
-<span class="n">Setting</span> <span class="n">PC</span> <span class="n">to</span> <span class="n">Program</span> <span class="n">Start</span> <span class="n">Address</span> <span class="mh">0x80000000</span>
-<span class="n">Successfully</span> <span class="n">downloaded</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Stopped at 0x0 (Stop)</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">con</span>
-<span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Running</span>
-<span class="n">xsdb</span><span class="o">%</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div><p>The second method is to run the tcl script which takes care of loading the bit
-file and the linux image. Run Vivado TCL Shell from Windows start menu -&gt; Xilinx
-Design Suite -&gt; Vivado -&gt; Vivado TCL Shell. (In Linux, source the settings.sh
-file first)</p>
-<p>Then run the tcl script:</p>
-<div class="box bgblue docutils container">
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Vivado TCL shell or Linux console</p>
-</div>
-</div>
-<div><div class="collapsible docutils">
-<input class="collapsible_input" id="316812110fe83cc5c14f70b40bf310f0811d71b9" name="316812110fe83cc5c14f70b40bf310f0811d71b9" type="checkbox"></input><label for="316812110fe83cc5c14f70b40bf310f0811d71b9"><p>Click to expand</p>
-<div class="icon"></div></label><div class="collapsible_content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Xilinx</span> <span class="n">System</span> <span class="n">Debugger</span> <span class="p">(</span><span class="n">XSDB</span><span class="p">)</span> <span class="n">v2021</span><span class="mf">.1</span>
-  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">58</span>
-    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2020</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
-
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">source</span> <span class="n">run</span><span class="o">.</span><span class="n">tcl</span>
-<span class="n">attempting</span> <span class="n">to</span> <span class="n">launch</span> <span class="n">hw_server</span>
-
-<span class="o">*</span> <span class="n">Xilinx</span> <span class="n">hw_server</span> <span class="n">v2021</span><span class="mf">.1</span>
-  <span class="o">***</span> <span class="n">Build</span> <span class="n">date</span> <span class="p">:</span> <span class="n">Jun</span> <span class="mi">10</span> <span class="mi">2021</span> <span class="n">at</span> <span class="mi">20</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">57</span>
-    <span class="o">**</span> <span class="n">Copyright</span> <span class="mi">1986</span><span class="o">-</span><span class="mi">2021</span> <span class="n">Xilinx</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span> <span class="n">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="o">.</span>
-
-<span class="n">INFO</span><span class="p">:</span> <span class="n">hw_server</span> <span class="n">application</span> <span class="n">started</span>
-<span class="n">INFO</span><span class="p">:</span> <span class="n">Use</span> <span class="n">Ctrl</span><span class="o">-</span><span class="n">C</span> <span class="n">to</span> <span class="n">exit</span> <span class="n">hw_server</span> <span class="n">application</span>
-
-<span class="n">INFO</span><span class="p">:</span> <span class="n">To</span> <span class="n">connect</span> <span class="n">to</span> <span class="n">this</span> <span class="n">hw_server</span> <span class="n">instance</span> <span class="n">use</span> <span class="n">url</span><span class="p">:</span> <span class="n">TCP</span><span class="p">:</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">3121</span>
-
-<span class="mi">100</span><span class="o">%</span>    <span class="mi">4</span><span class="n">MB</span>   <span class="mf">1.7</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">02</span>
-<span class="n">Downloading</span> <span class="n">Program</span> <span class="o">--</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80000000</span> <span class="o">-</span> <span class="mh">0x804763ab</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__fdt_blob</span><span class="p">:</span> <span class="mh">0x804763ac</span> <span class="o">-</span> <span class="mh">0x804863ab</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">rodata</span><span class="p">:</span> <span class="mh">0x80487000</span> <span class="o">-</span> <span class="mh">0x808b110f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">builtin_fw</span><span class="p">:</span> <span class="mh">0x808b1110</span> <span class="o">-</span> <span class="mh">0x808b1133</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab</span><span class="p">:</span> <span class="mh">0x808b1134</span> <span class="o">-</span> <span class="mh">0x808b746b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_gpl</span><span class="p">:</span> <span class="mh">0x808b746c</span> <span class="o">-</span> <span class="mh">0x808bc483</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ksymtab_strings</span><span class="p">:</span> <span class="mh">0x808bc484</span> <span class="o">-</span> <span class="mh">0x808d6973</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__param</span><span class="p">:</span> <span class="mh">0x808d6974</span> <span class="o">-</span> <span class="mh">0x808d6e5f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__modver</span><span class="p">:</span> <span class="mh">0x808d6e60</span> <span class="o">-</span> <span class="mh">0x808d6fff</span>
-        <span class="n">section</span><span class="p">,</span> <span class="n">__ex_table</span><span class="p">:</span> <span class="mh">0x808d7000</span> <span class="o">-</span> <span class="mh">0x808d844f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">notes</span><span class="p">:</span> <span class="mh">0x808d8450</span> <span class="o">-</span> <span class="mh">0x808d848b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">sdata2</span><span class="p">:</span> <span class="mh">0x808d848c</span> <span class="o">-</span> <span class="mh">0x808d8fff</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x808d9000</span> <span class="o">-</span> <span class="mh">0x8095893f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">text</span><span class="p">:</span> <span class="mh">0x80959000</span> <span class="o">-</span> <span class="mh">0x8097a75b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">data</span><span class="p">:</span> <span class="mh">0x8097a75c</span> <span class="o">-</span> <span class="mh">0x8097c053</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ivt</span><span class="p">:</span> <span class="mh">0x8097c054</span> <span class="o">-</span> <span class="mh">0x8097c07b</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">setup</span><span class="p">:</span> <span class="mh">0x8097c07c</span> <span class="o">-</span> <span class="mh">0x8097c3f3</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c3f4</span> <span class="o">-</span> <span class="mh">0x8097c80f</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">con_initcall</span><span class="o">.</span><span class="n">init</span><span class="p">:</span> <span class="mh">0x8097c810</span> <span class="o">-</span> <span class="mh">0x8097c813</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">init</span><span class="o">.</span><span class="n">ramfs</span><span class="p">:</span> <span class="mh">0x8097c814</span> <span class="o">-</span> <span class="mh">0x80c2a9fb</span>
-        <span class="n">section</span><span class="p">,</span> <span class="o">.</span><span class="n">bss</span><span class="p">:</span> <span class="mh">0x80c2b000</span> <span class="o">-</span> <span class="mh">0x80c4225b</span>
-<span class="mi">100</span><span class="o">%</span>   <span class="mi">12</span><span class="n">MB</span>   <span class="mf">0.2</span><span class="n">MB</span><span class="o">/</span><span class="n">s</span>  <span class="mi">00</span><span class="p">:</span><span class="mi">56</span>
-<span class="n">Setting</span> <span class="n">PC</span> <span class="n">to</span> <span class="n">Program</span> <span class="n">Start</span> <span class="n">Address</span> <span class="mh">0x80000000</span>
-<span class="n">Successfully</span> <span class="n">downloaded</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">microblaze</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">/</span><span class="n">simpleImage</span><span class="o">.</span><span class="n">kc705_fmcdaq2</span><span class="o">.</span><span class="n">strip</span>
-<span class="n">Info</span><span class="p">:</span> <span class="n">MicroBlaze</span> <span class="c1">#0 (target 3) Running</span>
-<span class="n">xsdb</span><span class="o">%</span> <span class="n">Info</span><span class="p">:</span> <span class="n">tcfchan</span><span class="c1">#0 closed</span>
-<span class="n">xsdb</span><span class="o">%</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div></section>
-<section id="messages">
-<h3>Messages<a class="headerlink" href="#messages" title="Link to this heading"></a></h3>
-<p>If you are interested in the Linux console messages and command line interface,
-connect a USB cable to the USB UART port. Terminal settings are 115200,8N1.</p>
-<p>There are two users:</p>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>user</p></th>
-<th class="head"><p>password</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>root</p></td>
-<td><p>analog</p></td>
-</tr>
-<tr class="row-odd"><td><p>analog</p></td>
-<td><p>analog</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>If your FPGA carrier board (<a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a>, <a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a>, <a class="icon link reference external" href="https://www.xilinx.com/ML605" target="_blank">ML605</a>) features a LCD display and the board is connected to a DHCP enabled network. You should also see its IP address printed on the display. This allows you to connect remote to the board as well. (ssh, libiio remote)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For other obsolete carrier:
+If your FPGA carrier board (<a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a>, <a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a>,
+<a class="icon link reference external" href="https://www.xilinx.com/ML605" target="_blank">ML605</a>) features a LCD display and the board is connected to a DHCP
+enabled network. You should also see its IP address printed on the display.
+This allows you to connect remote to the board as well. (ssh, libiio remote)</p>
 <p>Unlike shown in the picture below you won’t see the second line. In case the IP
 address is 192.168.2.2, this indicates that DHCP failed and it is now using its
 default address. This address may not be within your subnet, and things
 therefore may fail.</p>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ml605-lcd.png"><img alt="LCD image" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ml605-lcd.png" width="200" />
-</a>
-<p>You should see the kernel start-up messages as follows:</p>
-<div class="box bggreen docutils container">
-<p>This specifies any shell prompt running on the target</p>
 </div>
+</section>
+<section id="boot-messages">
+<h4>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h4>
 <div><div class="collapsible docutils">
-<input class="collapsible_input" id="f5bb877d56d7b9658ea9b1e120b30543d2b7b04b" name="f5bb877d56d7b9658ea9b1e120b30543d2b7b04b" type="checkbox"></input><label for="f5bb877d56d7b9658ea9b1e120b30543d2b7b04b"><p>Click to expand</p>
+<input class="collapsible_input" id="378c0c747aa7cb2b1512fdb22e7d442ae1f4f08e" name="378c0c747aa7cb2b1512fdb22e7d442ae1f4f08e" type="checkbox"></input><label for="378c0c747aa7cb2b1512fdb22e7d442ae1f4f08e"><p>Complete boot log</p>
 <div class="icon"></div></label><div class="collapsible_content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Early console on uartlite at 0x40600000
-bootconsole [earlyser0] enabled
-Ramdisk addr 0x00000000,
-Compiled-in FDT at 8031cda8
-Linux version 3.17.0-126658-g6807aea (michael@mhenneri-D04) (gcc version 4.8.3 20140131 (prerelease) (crosstool-NG 1.18.0) ) #1647 Fri Nov 21 10:33:05 CET 2014
-setup_cpuinfo: initialising
-setup_cpuinfo: Using full CPU PVR support
-wt_msr_noirq
-setup_memory: max_mapnr: 0x30000
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ramdisk addr 0x00000000,
+Compiled-in FDT at 0x8077ab50
+earlycon: uartlite_a0 at MMIO 0x40600000 (options &#39;115200n8&#39;)
+printk: bootconsole [uartlite_a0] enabled
+cma: Reserved 512 MiB at 0x8fc00000
+Linux version 6.1.70-35308-ge2e62cc28c80 (jenkins@romlxbuild1) (microblazeel-xilinx-linux-gcc.real (GCC) 12.2.0, GNU ld (GNU Binutils) 2.39.0.20220819) #1706 Tue Sep 16 08:02:59 EEST 2025
+setup_memory: max_mapnr: 0x7ffff
 setup_memory: min_low_pfn: 0x80000
 setup_memory: max_low_pfn: 0xb0000
-setup_memory: max_pfn: 0xb0000
+setup_memory: max_pfn: 0xfffff
 Zone ranges:
-  DMA      [mem 0x80000000-0xafffffff]
-  Normal   empty
+DMA      [mem 0x0000000080000000-0x00000000afffffff]
+Normal   empty
+HighMem  [mem 0x00000000b0000000-0x00000000ffffefff]
 Movable zone start for each node
 Early memory node ranges
-  node   0: [mem 0x80000000-0xbfffffff]
-On node 0 totalpages: 196608
-free_area_init_node: node 0, pgdat 803fb104, node_mem_map 80800000
-  DMA zone: 1536 pages used for memmap
-  DMA zone: 0 pages reserved
-  DMA zone: 196608 pages, LIFO batch:31
-early_printk_console remapping from 0x40600000 to 0xffffd000
-pcpu-alloc: s0 r0 d32768 u32768 alloc=1\*32768
+node   0: [mem 0x0000000080000000-0x00000000ffffefff]
+Initmem setup node 0 [mem 0x0000000080000000-0x00000000ffffefff]
+setup_cpuinfo: initialising cpu 0
+setup_cpuinfo: Using full CPU PVR support
+wt_msr_noirq
+pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
 pcpu-alloc: [0] 0
-Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 195072
-Kernel command line: console=ttyUL0,115200
-PID hash table entries: 4096 (order: 2, 16384 bytes)
-Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
-Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
-Memory: 771408K/786432K available (3187K kernel code, 143K rwdata, 708K rodata, 3061K init, 86K bss, 15024K reserved)
-Kernel virtual memory layout:
-  * 0xffffe000..0xfffff000  : fixmap
-  * 0xffffd000..0xffffe000  : early ioremap
-  * 0xb0000000..0xffffd000  : vmalloc &amp; ioremap
-NR_IRQS:128
-/axi@0/axi-intc@41200000: num_irq=15, edge=0x3810
-/axi@0/axi-timer@41c00000: irq=1
-xilinx_timer_set_mode: shutdown
-xilinx_timer_set_mode: periodic
-sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 42949672950ns
-Calibrating delay loop... 48.51 BogoMIPS (lpj=97024)
-pid_max: default: 32768 minimum: 301
-Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
-Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+Built 1 zonelists, mobility grouping on.  Total pages: 522751
+Kernel command line: earlycon
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 1535084K/2097148K available (7658K kernel code, 598K rwdata, 6064K rodata, 210K init, 166K bss, 37776K reserved, 524288K cma-reserved, 1310716K highmem)
+NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+irq-xilinx: mismatch in kind-of-intr param
+irq-xilinx: /amba_pl/interrupt-controller@41200000: num_irq=16, sw_irq=0, edge=0xffff05f0
+xilinx_timer_init: Timer base: 0xb0002000, Clocksource base: 0xb0002010
+clocksource: xilinx_clocksource: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+sched_clock: 32 bits at 100MHz, resolution 10ns, wraps every 21474836475ns
+/amba_pl/timer@41c00000: irq=1, cpu_id 0
+xilinx_timer_shutdown
+xilinx_timer_set_periodic
+Calibrating delay loop... 49.35 BogoMIPS (lpj=246784)
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
 devtmpfs: initialized
-NET: Registered protocol family 16
-Switched to clocksource xilinx_clocksource
-xilinx_timer_set_mode: oneshot
-NET: Registered protocol family 2
-TCP established hash table entries: 8192 (order: 3, 32768 bytes)
-TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 16 (order: -4, 448 bytes, linear)
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+gpio gpiochip0: (40000000.gpio): not an immutable chip, please consider fixing it!
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+PTP clock support registered
+jesd204: created con: id=0, topo=1, link=0, /amba_pl/axi-ad9144-adxcvr@44a60000 &lt;-&gt; /amba_pl/axi-jesd204-tx@44a90000
+jesd204: created con: id=1, topo=0, link=0, /amba_pl/axi-ad9680-adxcvr@44a50000 &lt;-&gt; /amba_pl/axi-jesd204-rx@44aa0000
+jesd204: created con: id=2, topo=1, link=0, /amba_pl/axi-jesd204-tx@44a90000 &lt;-&gt; /amba_pl/axi-ad9144-hpc@44a04000
+jesd204: created con: id=3, topo=0, link=0, /amba_pl/axi-jesd204-rx@44aa0000 &lt;-&gt; /amba_pl/axi-ad9680-hpc@44a10000
+jesd204: created con: id=4, topo=0, link=0, /amba_pl/axi-ad9680-hpc@44a10000 &lt;-&gt; /amba_pl/spi@44a70000/ad9680@2
+jesd204: created con: id=5, topo=1, link=0, /amba_pl/axi-ad9144-hpc@44a04000 &lt;-&gt; /amba_pl/spi@44a70000/ad9144@1
+jesd204: /amba_pl/spi@44a70000/ad9680@2: JESD204[0:0] transition uninitialized -&gt; initialized
+jesd204: /amba_pl/spi@44a70000/ad9144@1: JESD204[1:0] transition uninitialized -&gt; initialized
+jesd204: found 8 devices and 2 topologies
+vgaarb: loaded
+clocksource: Switched to clocksource xilinx_clocksource
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 10240 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+TCP bind hash table entries: 8192 (order: 6, 327680 bytes, linear)
 TCP: Hash tables configured (established 8192 bind 8192)
-TCP: reno registered
-UDP hash table entries: 512 (order: 1, 8192 bytes)
-UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
-NET: Registered protocol family 1
+UDP hash table entries: 512 (order: 2, 24576 bytes, linear)
+UDP-Lite hash table entries: 512 (order: 2, 24576 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
 RPC: Registered named UNIX socket transport module.
 RPC: Registered udp transport module.
 RPC: Registered tcp transport module.
 RPC: Registered tcp NFSv4.1 backchannel transport module.
-XGpio: /axi@0/gpio@40000000: registered, base is 251
-XGpio: /axi@0/gpio@40000000: dual channel registered, base is 245
-XGpio: /axi@0/gpio@40020000: registered, base is 232
-XGpio: /axi@0/gpio@40020000: dual channel registered, base is 224
-Skipping unavailable RESET gpio -2 (reset)
-futex hash table entries: 256 (order: -1, 3072 bytes)
+PCI: CLS 0 bytes, default 32
+workingset: timestamp_bits=30 max_order=19 bucket_order=0
+Key type cifs.idmap registered
 jffs2: version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
-msgmni has been set to 1506
-Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
-io scheduler noop registered
-io scheduler deadline registered
-io scheduler cfq registered (default)
+romfs: ROMFS MTD (C) 2007 Red Hat, Inc.
+bounce: pool size: 64 pages
+io scheduler mq-deadline registered
+io scheduler kyber registered
 Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
-40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 46, base_baud = 0) is a uartlite
-console [ttyUL0] enabled
-console [ttyUL0] enabled
-bootconsole [earlyser0] disabled
-bootconsole [earlyser0] disabled
-of_serial 41400000.serial: Unknown serial port found, ignored
+40600000.serial: ttyUL0 at MMIO 0x40600000 (irq = 4, base_baud = 0) is a uartlite
+printk: console [ttyUL0] enabled
+printk: bootconsole [uartlite_a0] disabled
+uartlite 41400000.serial: error -EINVAL: could not read current-speed
+uartlite: probe of 41400000.serial failed with error -22
 brd: module loaded
-Xilinx SystemACE device driver, major=254
-xilinx_lcd 40010000.gpio_lcd: Device Tree Probing &#39;gpio_lcd&#39;
-xilinx_lcd 40010000.gpio_lcd: LCD 0x40010000 mapped to 0xb01a0000
-xilinx_spi 44a70000.axi-quad-spi: property name &#39;xlnx,num-ss-bits&#39; is deprecated.
-xilinx_spi 44a70000.axi-quad-spi: at 0x44A70000 mapped to 0xb01c0000, irq=10
-libphy: Fixed MDIO Bus: probed
-xilinx_axienet 40e00000.network: TX_CSUM 0
-xilinx_axienet 40e00000.network: RX_CSUM 0
-libphy: Xilinx Axi Ethernet MDIO: probed
-i2c /dev entries driver
-platform 44a10000.axi-ad9680-hpc: Driver cf_axi_adc requests probe deferral
-spi spi32766.2: Driver ad9467 requests probe deferral
-platform 44a90000.jesd204: Driver cf_axi_jesd204b_v51 requests probe deferral
-platform 44a91000.jesd204: Driver cf_axi_jesd204b_v51 requests probe deferral
-platform 44a60000.axi-jesd-gt: Driver cf_axi_jesd204b_gt requests probe deferral
-ad9523 spi32766.0: probed ad9523-1
-platform 44a04000.axi-ad9144-hpc: Driver cf_axi_dds requests probe deferral
-ad9144 spi32766.1: Failed to get clocks
-spi spi32766.1: Driver ad9144 requests probe deferral
-TCP: cubic registered
-NET: Registered protocol family 17
-platform 44a10000.axi-ad9680-hpc: Driver cf_axi_adc requests probe deferral
-spi spi32766.2: Driver ad9467 requests probe deferral
-platform 44a90000.jesd204: Driver cf_axi_jesd204b_v51 requests probe deferral
-platform 44a91000.jesd204: Driver cf_axi_jesd204b_v51 requests probe deferral
-cf_axi_jesd204b_gt 44a60000.axi-jesd-gt: AXI-JESD204B (5.00.b) at 0x44A60000 mapped to 0xb0280000,
-platform 44a04000.axi-ad9144-hpc: Driver cf_axi_dds requests probe deferral
-ad9144 spi32766.1: Failed to get clocks
-spi spi32766.1: Driver ad9144 requests probe deferral
-platform 44a10000.axi-ad9680-hpc: Driver cf_axi_adc requests probe deferral
-spi spi32766.2: Driver ad9467 requests probe deferral
-cf_axi_jesd204b_v51 44a90000.jesd204: AXI-JESD204B 5.2 Rev 1, at 0x44A90000 mapped to 0xb0032000,
-cf_axi_jesd204b_v51 44a91000.jesd204: AXI-JESD204B 5.2 Rev 1, at 0x44A91000 mapped to 0xb0034000,
-platform 44a04000.axi-ad9144-hpc: Driver cf_axi_dds requests probe deferral
-platform 44a10000.axi-ad9680-hpc: Driver cf_axi_adc requests probe deferral
-ad9467 spi32766.2: AD9680 PLL LOCKED
-cf_axi_dds 44a04000.axi-ad9144-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (8.00.b) at 0x44A04000 mapped to 0xb0098000, probed DDS AD9144
-cf_axi_adc 44a10000.axi-ad9680-hpc: ADI AIM (8.00.b) at 0x44A10000 mapped to 0xb02c0000, probed ADC AD9680 as MASTER
-Freeing unused kernel memory: 3060K (803fc000 - 806f9000)
-Starting logging: OK
-Starting network...
-Starting network...
-udhcpc (v1.22.1) started
-net eth0: Promiscuous mode disabled.
-net eth0: Promiscuous mode disabled.
-Sending discover...
-xilinx_axienet 40e00000.network eth0: Link is Down
-xilinx_axienet 40e00000.network eth0: Link is Up - 100Mbps/Full - flow control off
-Sending discover...
-Sending select for 10.44.2.94...
-Lease of 10.44.2.94 obtained, lease time 86400
+SPI driver spidev has no spi_device_id for adi,swspi
+xilinx_axienet 40e00000.ethernet: TX_CSUM 2
+xilinx_axienet 40e00000.ethernet: RX_CSUM 2
+i2c_dev: i2c /dev entries driver
+i2c i2c-0: Added multiplexed i2c bus 1
+at24 2-0050: supply vcc not found, using dummy regulator
+at24 2-0050: 256 byte 24c02 EEPROM, writable, 1 bytes/write
+i2c i2c-0: Added multiplexed i2c bus 2
+i2c i2c-0: Added multiplexed i2c bus 3
+i2c i2c-0: Added multiplexed i2c bus 4
+pca954x 0-0075: registered 4 multiplexed busses for I2C mux pca9544
+ad9523 spi0.0: supply vcc not found, using dummy regulator
+axi_adxcvr_drv 44a50000.axi-ad9680-adxcvr: AXI-ADXCVR-RX (17.05.a) using CPLL on GTH3 at 0x44A50000. Number of lanes: 4.
+axi_adxcvr_drv 44a60000.axi-ad9144-adxcvr: AXI-ADXCVR-TX (17.05.a) using QPLL on GTH3 at 0x44A60000. Number of lanes: 4.
+axi-jesd204-rx 44aa0000.axi-jesd204-rx: AXI-JESD204-RX (1.07.a) at 0x44AA0000. Encoder 8b10b, width 4/4, lanes 4, jesd204-fsm.
+axi-jesd204-tx 44a90000.axi-jesd204-tx: AXI-JESD204-TX (1.06.a) at 0x44A90000. Encoder 8b10b, width 4/4, lanes 4, jesd204-fsm.
+axi_sysid 45000000.axi-sysid-0: AXI System ID core version (1.01.a) found
+axi_sysid 45000000.axi-sysid-0: [daq2] [RX:M=2 L=4 S=1 TX:M=2 L=4 S=1 ADC_OFFLOAD:TYPE=0 SIZE=524288 DAC_OFFLOAD:TYPE=0 SIZE=1048576] on [kcu105] git branch &lt;main&gt; git &lt;5da8736cb717e92a827934dd1c272b5c07c8e871&gt; clean [2026-02-24 21:17:14] UTC
+Initializing XFRM netlink socket
+NET: Registered PF_INET6 protocol family
+Segment Routing with IPv6
+In-situ OAM (IOAM) with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered PF_PACKET protocol family
+NET: Registered PF_KEY protocol family
+Key type dns_resolver registered
+Key type encrypted registered
+ad9208 spi0.2: ad9680 PLL LOCKED
+ad9208 spi0.2: ad9680 Rev. 3 Grade 10 (API 1.0.1) probed
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition initialized -&gt; probed
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition probed -&gt; initialized
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition initialized -&gt; probed
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition probed -&gt; idle
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition idle -&gt; device_init
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition device_init -&gt; link_init
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_init -&gt; link_supported
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_supported -&gt; link_pre_setup
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_pre_setup -&gt; clk_sync_stage1
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition clk_sync_stage1 -&gt; clk_sync_stage2
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition clk_sync_stage2 -&gt; clk_sync_stage3
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition clk_sync_stage3 -&gt; link_setup
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_setup -&gt; opt_setup_stage1
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition opt_setup_stage1 -&gt; opt_setup_stage2
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition opt_setup_stage2 -&gt; opt_setup_stage3
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition opt_setup_stage3 -&gt; opt_setup_stage4
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition opt_setup_stage4 -&gt; opt_setup_stage5
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition opt_setup_stage5 -&gt; clocks_enable
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition clocks_enable -&gt; link_enable
+ad9144 spi0.1: Link0 code grp sync: f
+ad9144 spi0.1: Link0 frame sync stat: f
+ad9144 spi0.1: Link0 good checksum stat: f
+ad9144 spi0.1: Link0 init lane_sync stat: f
+ad9144 spi0.1: Link0 4 lanes @ 10000000 kBps
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_enable -&gt; link_running
+jesd204: /amba_pl/spi@44a70000/ad9144@1,jesd204:0,parent=spi0.1: JESD204[1:0] transition link_running -&gt; opt_post_running_stage
+cf_axi_dds 44a04000.axi-ad9144-hpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.02.b) at 0x44A04000 mapped to 0x(ptrval), probed DDS (null)
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition initialized -&gt; probed
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition probed -&gt; initialized
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition initialized -&gt; probed
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition probed -&gt; idle
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition idle -&gt; device_init
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition device_init -&gt; link_init
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_init -&gt; link_supported
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_supported -&gt; link_pre_setup
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_pre_setup -&gt; clk_sync_stage1
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition clk_sync_stage1 -&gt; clk_sync_stage2
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition clk_sync_stage2 -&gt; clk_sync_stage3
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition clk_sync_stage3 -&gt; link_setup
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_setup -&gt; opt_setup_stage1
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition opt_setup_stage1 -&gt; opt_setup_stage2
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition opt_setup_stage2 -&gt; opt_setup_stage3
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition opt_setup_stage3 -&gt; opt_setup_stage4
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition opt_setup_stage4 -&gt; opt_setup_stage5
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition opt_setup_stage5 -&gt; clocks_enable
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition clocks_enable -&gt; link_enable
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_enable -&gt; link_running
+jesd204: /amba_pl/spi@44a70000/ad9680@2,jesd204:1,parent=spi0.2: JESD204[0:0] transition link_running -&gt; opt_post_running_stage
+cf_axi_adc 44a10000.axi-ad9680-hpc: ADI AIM (10.03.) at 0x44A10000 mapped to 0x(ptrval) probed ADC AD9680 as MASTER
+Freeing unused kernel image (initmem) memory: 208K
+This architecture does not have kernel memory protection.
+Run /init as init process
+  with arguments:
+    /init
+  with environment:
+    HOME=/
+    TERM=linux
+Starting syslogd: OK
+Starting klogd: OK
+Running sysctl: OK
+Saving 256 bits of non-creditable seed for next boot
+Starting network: udhcpc: started, v1.36.1
+xilinx_axienet 40e00000.ethernet eth0: PHY [axienet-40e00000:07] driver [Marvell 88E1111] (irq=POLL)
+xilinx_axienet 40e00000.ethernet eth0: configuring for phy/sgmii link mode
+random: crng init done
+udhcpc: broadcasting discover
+xilinx_axienet 40e00000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+udhcpc: broadcasting discover
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 10.48.65.202, server 10.48.65.20
+udhcpc: lease of 10.48.65.202 obtained from 10.48.65.20, lease time 21600
 deleting routers
 adding dns 10.32.51.110
 adding dns 10.64.53.110
 Starting dropbear sshd: OK
-random: dropbear urandom read with 86 bits of entropy available
 Starting IIO Server Daemon
-
-Welcome to Buildroot
-buildroot login: root
-#
 </pre></div>
 </div>
 </div>
 </div>
 </div></section>
+</section>
+</section>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Necessary files<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot file: <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code></p></li>
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/fmcdaq2" target="_blank">projects/fmcdaq2</a></p></li>
+<li><p>rootfs.cpio.gz</p></li>
+</ul>
+<p>Instructions on how to build the boot files from source can be found here:</p>
+<ul class="simple">
+<li><p>More no-OS build details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a>.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/daq2/index.html#daq2" target="_blank" title="(in HDL)"><span>DAQ2 HDL Project</span></a>. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Required Software<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from <a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a> will include Vivado as well)</p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>Required Hardware<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a> board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD-FMCDAQ2-EBZ" target="_blank">AD-FMCDAQ2-EBZ</a> evaluation board</p></li>
+<li><p>2x Micro-USB cables, one for UART and one for JTAG</p></li>
+<li><p>LAN cable (Ethernet)</p></li>
+<li><p>Power supply for the FPGA carrier board</p></li>
+<li><p>(Optional) 2x SMA cable for analog signal loopback</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>Testing<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id6">
+<h4>Creating the setup<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_setup.jpg" width="900" />
+</a>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This project was tested with <strong>VADJ = 1.8 V</strong></p>
+</div>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Connect the AD-FMCDAQ2-EBZ FMC board to the FPGA carrier, on the HPC FMC
+connector.</p></li>
+<li><p>Connect USB UART J4 (Micro-USB) to your host PC</p></li>
+<li><p>Connect USB JTAG J87 (Micro-USB) to your host PC</p></li>
+<li><p>(Optional) Connect the SMA cable for analog signal loopback</p></li>
+<li><p>Turn on the power switch on the FPGA board.</p></li>
+<li><p>Build and run the project using the steps shown
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/rf-transceiver/ad9371.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">here</span></a>.</p></li>
+<li><p>Open xsct/xsdb and run the run.tcl script.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or
+COM port registered)</p></li>
+</ol>
+</section>
+<section id="console-output">
+<h4>Console output<a class="headerlink" href="#console-output" title="Link to this heading"></a></h4>
+<p>The following is what is printed in the serial console, after you have connected
+to the proper ttyUSB or COM port:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="a862f8d9828d7ba409599a00f6856fa366c80d3b" name="a862f8d9828d7ba409599a00f6856fa366c80d3b" type="checkbox"></input><label for="a862f8d9828d7ba409599a00f6856fa366c80d3b"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">Available</span> <span class="n">sampling</span> <span class="n">rates</span><span class="p">:</span>
+  <span class="mi">1</span> <span class="o">-</span> <span class="n">ADC</span> <span class="mi">1000</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span> <span class="mi">1000</span> <span class="n">MSPS</span>
+  <span class="mi">2</span> <span class="o">-</span> <span class="n">ADC</span>  <span class="mi">500</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span> <span class="mi">1000</span> <span class="n">MSPS</span>
+  <span class="mi">3</span> <span class="o">-</span> <span class="n">ADC</span>  <span class="mi">500</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span>  <span class="mi">500</span> <span class="n">MSPS</span>
+  <span class="mi">4</span> <span class="o">-</span> <span class="n">ADC</span>  <span class="mi">600</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span>  <span class="mi">600</span> <span class="n">MSPS</span>
+  <span class="mi">5</span> <span class="o">-</span> <span class="n">ADC</span> <span class="mi">1000</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span> <span class="mi">2000</span> <span class="n">MSPS</span> <span class="p">(</span><span class="mi">2</span><span class="n">x</span> <span class="n">interpolation</span><span class="p">)</span>
+<span class="n">choose</span> <span class="n">an</span> <span class="n">option</span> <span class="p">[</span><span class="n">default</span> <span class="mi">1</span><span class="p">]:</span>
+<span class="mi">4</span> <span class="o">-</span> <span class="n">ADC</span>  <span class="mi">600</span> <span class="n">MSPS</span><span class="p">;</span> <span class="n">DAC</span>  <span class="mi">600</span> <span class="n">MSPS</span>
+<span class="n">ad9144_xcvr</span><span class="p">:</span> <span class="n">OK</span> <span class="p">(</span><span class="mi">6000000</span> <span class="n">kHz</span><span class="p">)</span>
+<span class="n">ad9680_xcvr</span><span class="p">:</span> <span class="n">OK</span> <span class="p">(</span><span class="mi">6000000</span> <span class="n">kHz</span><span class="p">)</span>
+<span class="n">ad9680_adc</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">initialized</span> <span class="p">(</span><span class="mi">599981689</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">ad9144_dac</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">initialized</span> <span class="p">(</span><span class="mi">599987792</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">ad9680_xcvr</span><span class="p">:</span> <span class="n">OK</span> <span class="p">(</span><span class="mi">6000000</span> <span class="n">kHz</span><span class="p">)</span>
+<span class="n">ad9144_xcvr</span><span class="p">:</span> <span class="n">OK</span> <span class="p">(</span><span class="mi">6000000</span> <span class="n">kHz</span><span class="p">)</span>
+<span class="n">Link0</span> <span class="n">code</span> <span class="n">grp</span> <span class="n">sync</span><span class="p">:</span> <span class="n">f</span>
+<span class="n">Link0</span> <span class="n">frame</span> <span class="n">sync</span> <span class="n">stat</span><span class="p">:</span> <span class="n">f</span>
+<span class="n">Link0</span> <span class="n">good</span> <span class="n">checksum</span> <span class="n">stat</span><span class="p">:</span> <span class="n">f</span>
+<span class="n">Link0</span> <span class="n">init</span> <span class="n">lane_sync</span> <span class="n">stat</span><span class="p">:</span> <span class="n">f</span>
+<span class="n">Link0</span> <span class="mi">4</span> <span class="n">lanes</span> <span class="o">@</span> <span class="mi">6000000</span> <span class="n">kBps</span>
+<span class="n">ad9680_jesd</span> <span class="n">status</span><span class="p">:</span>
+  <span class="n">Link</span> <span class="ow">is</span> <span class="n">enabled</span>
+  <span class="n">Measured</span> <span class="n">Link</span> <span class="n">Clock</span><span class="p">:</span> <span class="mf">149.997</span> <span class="n">MHz</span>
+  <span class="n">Reported</span> <span class="n">Link</span> <span class="n">Clock</span><span class="p">:</span> <span class="mf">150.000</span> <span class="n">MHz</span>
+  <span class="n">Lane</span> <span class="n">rate</span><span class="p">:</span> <span class="mf">6000.000</span> <span class="n">MHz</span>
+  <span class="n">Lane</span> <span class="n">rate</span> <span class="o">/</span> <span class="mi">40</span><span class="p">:</span> <span class="mf">150.000</span> <span class="n">MHz</span>
+  <span class="n">LMFC</span> <span class="n">rate</span><span class="p">:</span> <span class="mf">18.750</span> <span class="n">MHz</span>
+  <span class="n">Link</span> <span class="n">status</span><span class="p">:</span> <span class="n">DATA</span>
+  <span class="n">SYSREF</span> <span class="n">captured</span><span class="p">:</span> <span class="n">Yes</span>
+  <span class="n">SYSREF</span> <span class="n">alignment</span> <span class="n">error</span><span class="p">:</span> <span class="n">No</span>
+<span class="n">ad9144_jesd</span> <span class="n">status</span><span class="p">:</span>
+  <span class="n">Link</span> <span class="ow">is</span> <span class="n">enabled</span>
+  <span class="n">Measured</span> <span class="n">Link</span> <span class="n">Clock</span><span class="p">:</span> <span class="mf">149.997</span> <span class="n">MHz</span>
+  <span class="n">Reported</span> <span class="n">Link</span> <span class="n">Clock</span><span class="p">:</span> <span class="mf">150.000</span> <span class="n">MHz</span>
+  <span class="n">Lane</span> <span class="n">rate</span><span class="p">:</span> <span class="mf">6000.000</span> <span class="n">MHz</span>
+  <span class="n">Lane</span> <span class="n">rate</span> <span class="o">/</span> <span class="mi">40</span><span class="p">:</span> <span class="mf">150.000</span> <span class="n">MHz</span>
+  <span class="n">LMFC</span> <span class="n">rate</span><span class="p">:</span> <span class="mf">18.750</span> <span class="n">MHz</span>
+  <span class="n">SYNC</span><span class="o">~</span><span class="p">:</span> <span class="n">deasserted</span>
+  <span class="n">Link</span> <span class="n">status</span><span class="p">:</span> <span class="n">DATA</span>
+  <span class="n">SYSREF</span> <span class="n">captured</span><span class="p">:</span> <span class="n">Yes</span>
+  <span class="n">SYSREF</span> <span class="n">alignment</span> <span class="n">error</span><span class="p">:</span> <span class="n">No</span>
+ <span class="p">[</span> <span class="o">--</span><span class="n">snip</span><span class="o">--</span> <span class="p">]</span>
+ <span class="mi">522</span>       <span class="o">|</span>    <span class="mh">0x0bb4</span>   <span class="o">|</span>    <span class="mh">0x013f</span>    <span class="o">|</span>
+  <span class="mi">523</span>       <span class="o">|</span>    <span class="mh">0x0c19</span>   <span class="o">|</span>    <span class="mh">0x029e</span>    <span class="o">|</span>
+  <span class="mi">524</span>       <span class="o">|</span>    <span class="mh">0x0b12</span>   <span class="o">|</span>    <span class="mh">0x03fe</span>    <span class="o">|</span>
+  <span class="mi">525</span>       <span class="o">|</span>    <span class="mh">0x08bc</span>   <span class="o">|</span>    <span class="mh">0x0553</span>    <span class="o">|</span>
+  <span class="mi">526</span>       <span class="o">|</span>    <span class="mh">0x0558</span>   <span class="o">|</span>    <span class="mh">0x0694</span>    <span class="o">|</span>
+  <span class="mi">527</span>       <span class="o">|</span>    <span class="mh">0x0160</span>   <span class="o">|</span>    <span class="mh">0x07b9</span>    <span class="o">|</span>
+  <span class="mi">528</span>       <span class="o">|</span>    <span class="mh">0xfd32</span>   <span class="o">|</span>    <span class="mh">0x08be</span>    <span class="o">|</span>
+  <span class="mi">529</span>       <span class="o">|</span>    <span class="mh">0xf95d</span>   <span class="o">|</span>    <span class="mh">0x09b6</span>    <span class="o">|</span>
+  <span class="mi">530</span>       <span class="o">|</span>    <span class="mh">0xf654</span>   <span class="o">|</span>    <span class="mh">0x0a86</span>    <span class="o">|</span>
+  <span class="mi">531</span>       <span class="o">|</span>    <span class="mh">0xf473</span>   <span class="o">|</span>    <span class="mh">0x0b2c</span>    <span class="o">|</span>
+  <span class="mi">532</span>       <span class="o">|</span>    <span class="mh">0xf3ec</span>   <span class="o">|</span>    <span class="mh">0x0bb5</span>    <span class="o">|</span>
+  <span class="mi">533</span>       <span class="o">|</span>    <span class="mh">0xf4d9</span>   <span class="o">|</span>    <span class="mh">0x0c0e</span>    <span class="o">|</span>
+  <span class="mi">534</span>       <span class="o">|</span>    <span class="mh">0xf70a</span>   <span class="o">|</span>    <span class="mh">0x0c4d</span>    <span class="o">|</span>
+  <span class="mi">535</span>       <span class="o">|</span>    <span class="mh">0xfa54</span>   <span class="o">|</span>    <span class="mh">0x0c57</span>    <span class="o">|</span>
+  <span class="mi">536</span>       <span class="o">|</span>    <span class="mh">0xfe4e</span>   <span class="o">|</span>    <span class="mh">0x0c37</span>    <span class="o">|</span>
+  <span class="mi">537</span>       <span class="o">|</span>    <span class="mh">0x0274</span>   <span class="o">|</span>    <span class="mh">0x0bee</span>    <span class="o">|</span>
+  <span class="mi">538</span>       <span class="o">|</span>    <span class="mh">0x065d</span>   <span class="o">|</span>    <span class="mh">0x0b80</span>    <span class="o">|</span>
+  <span class="mi">539</span>       <span class="o">|</span>    <span class="mh">0x0973</span>   <span class="o">|</span>    <span class="mh">0x0ae0</span>    <span class="o">|</span>
+  <span class="mi">540</span>       <span class="o">|</span>    <span class="mh">0x0b7c</span>   <span class="o">|</span>    <span class="mh">0x0a2e</span>    <span class="o">|</span>
+  <span class="mi">541</span>       <span class="o">|</span>    <span class="mh">0x0c25</span>   <span class="o">|</span>    <span class="mh">0x0951</span>    <span class="o">|</span>
+  <span class="mi">542</span>       <span class="o">|</span>    <span class="mh">0x0b5b</span>   <span class="o">|</span>    <span class="mh">0x084c</span>    <span class="o">|</span>
+  <span class="mi">543</span>       <span class="o">|</span>    <span class="mh">0x093f</span>   <span class="o">|</span>    <span class="mh">0x0734</span>    <span class="o">|</span>
+  <span class="mi">544</span>       <span class="o">|</span>    <span class="mh">0x0606</span>   <span class="o">|</span>    <span class="mh">0x0602</span>    <span class="o">|</span>
+  <span class="mi">545</span>       <span class="o">|</span>    <span class="mh">0x0224</span>   <span class="o">|</span>    <span class="mh">0x04b8</span>    <span class="o">|</span>
+  <span class="mi">546</span>       <span class="o">|</span>    <span class="mh">0xfdf2</span>   <span class="o">|</span>    <span class="mh">0x0362</span>    <span class="o">|</span>
+  <span class="mi">547</span>       <span class="o">|</span>    <span class="mh">0xfa04</span>   <span class="o">|</span>    <span class="mh">0x0201</span>    <span class="o">|</span>
+  <span class="mi">548</span>       <span class="o">|</span>    <span class="mh">0xf6ca</span>   <span class="o">|</span>    <span class="mh">0x009e</span>    <span class="o">|</span>
+  <span class="mi">549</span>       <span class="o">|</span>    <span class="mh">0xf4af</span>   <span class="o">|</span>    <span class="mh">0xff35</span>    <span class="o">|</span>
+  <span class="mi">550</span>       <span class="o">|</span>    <span class="mh">0xf3e7</span>   <span class="o">|</span>    <span class="mh">0xfdca</span>    <span class="o">|</span>
+  <span class="mi">551</span>       <span class="o">|</span>    <span class="mh">0xf48a</span>   <span class="o">|</span>    <span class="mh">0xfc66</span>    <span class="o">|</span>
+  <span class="mi">552</span>       <span class="o">|</span>    <span class="mh">0xf689</span>   <span class="o">|</span>    <span class="mh">0xfb13</span>    <span class="o">|</span>
+  <span class="mi">553</span>       <span class="o">|</span>    <span class="mh">0xf9ae</span>   <span class="o">|</span>    <span class="mh">0xf9cc</span>    <span class="o">|</span>
+  <span class="mi">554</span>       <span class="o">|</span>    <span class="mh">0xfd8b</span>   <span class="o">|</span>    <span class="mh">0xf8a1</span>    <span class="o">|</span>
+  <span class="mi">555</span>       <span class="o">|</span>    <span class="mh">0x01be</span>   <span class="o">|</span>    <span class="mh">0xf78a</span>    <span class="o">|</span>
+  <span class="mi">556</span>       <span class="o">|</span>    <span class="mh">0x05b3</span>   <span class="o">|</span>    <span class="mh">0xf692</span>    <span class="o">|</span>
+  <span class="mi">557</span>       <span class="o">|</span>    <span class="mh">0x08fd</span>   <span class="o">|</span>    <span class="mh">0xf5bd</span>    <span class="o">|</span>
+  <span class="mi">558</span>       <span class="o">|</span>    <span class="mh">0x0b37</span>   <span class="o">|</span>    <span class="mh">0xf504</span>    <span class="o">|</span>
+  <span class="mi">559</span>       <span class="o">|</span>    <span class="mh">0x0c1e</span>   <span class="o">|</span>    <span class="mh">0xf476</span>    <span class="o">|</span>
+  <span class="mi">560</span>       <span class="o">|</span>    <span class="mh">0x0b97</span>   <span class="o">|</span>    <span class="mh">0xf40c</span>    <span class="o">|</span>
+  <span class="mi">561</span>       <span class="o">|</span>    <span class="mh">0x09b7</span>   <span class="o">|</span>    <span class="mh">0xf3cc</span>    <span class="o">|</span>
+  <span class="mi">562</span>       <span class="o">|</span>    <span class="mh">0x06ac</span>   <span class="o">|</span>    <span class="mh">0xf3b0</span>    <span class="o">|</span>
+  <span class="mi">563</span>       <span class="o">|</span>    <span class="mh">0x02d2</span>   <span class="o">|</span>    <span class="mh">0xf3c2</span>    <span class="o">|</span>
+  <span class="mi">564</span>       <span class="o">|</span>    <span class="mh">0xfeae</span>   <span class="o">|</span>    <span class="mh">0xf3fe</span>    <span class="o">|</span>
+  <span class="mi">565</span>       <span class="o">|</span>    <span class="mh">0xfaac</span>   <span class="o">|</span>    <span class="mh">0xf466</span>    <span class="o">|</span>
+  <span class="mi">566</span>       <span class="o">|</span>    <span class="mh">0xf74c</span>   <span class="o">|</span>    <span class="mh">0xf4f1</span>    <span class="o">|</span>
+  <span class="mi">567</span>       <span class="o">|</span>    <span class="mh">0xf4f9</span>   <span class="o">|</span>    <span class="mh">0xf59d</span>    <span class="o">|</span>
+  <span class="mi">568</span>       <span class="o">|</span>    <span class="mh">0xf3f3</span>   <span class="o">|</span>    <span class="mh">0xf67a</span>    <span class="o">|</span>
+  <span class="mi">569</span>       <span class="o">|</span>    <span class="mh">0xf454</span>   <span class="o">|</span>    <span class="mh">0xf76c</span>    <span class="o">|</span>
+  <span class="mi">570</span>       <span class="o">|</span>    <span class="mh">0xf619</span>   <span class="o">|</span>    <span class="mh">0xf87f</span>    <span class="o">|</span>
+  <span class="mi">571</span>       <span class="o">|</span>    <span class="mh">0xf90a</span>   <span class="o">|</span>    <span class="mh">0xf9a4</span>    <span class="o">|</span>
+  <span class="mi">572</span>       <span class="o">|</span>    <span class="mh">0xfcd0</span>   <span class="o">|</span>    <span class="mh">0xfae8</span>    <span class="o">|</span>
+  <span class="mi">573</span>       <span class="o">|</span>    <span class="mh">0x0101</span>   <span class="o">|</span>    <span class="mh">0xfc3c</span>    <span class="o">|</span>
+  <span class="mi">574</span>       <span class="o">|</span>    <span class="mh">0x0502</span>   <span class="o">|</span>    <span class="mh">0xfd9a</span>    <span class="o">|</span>
+  <span class="mi">575</span>       <span class="o">|</span>    <span class="mh">0x0877</span>   <span class="o">|</span>    <span class="mh">0xff05</span>    <span class="o">|</span>
+  <span class="mi">576</span>       <span class="o">|</span>    <span class="mh">0x0ae7</span>   <span class="o">|</span>    <span class="mh">0x006f</span>    <span class="o">|</span>
+  <span class="mi">577</span>       <span class="o">|</span>    <span class="mh">0x0c11</span>   <span class="o">|</span>    <span class="mh">0x01d6</span>    <span class="o">|</span>
+  <span class="mi">578</span>       <span class="o">|</span>    <span class="mh">0x0bce</span>   <span class="o">|</span>    <span class="mh">0x0337</span>    <span class="o">|</span>
+  <span class="mi">579</span>       <span class="o">|</span>    <span class="mh">0x0a21</span>   <span class="o">|</span>    <span class="mh">0x0496</span>    <span class="o">|</span>
+  <span class="mi">580</span>       <span class="o">|</span>    <span class="mh">0x074a</span>   <span class="o">|</span>    <span class="mh">0x05e1</span>    <span class="o">|</span>
+  <span class="mi">581</span>       <span class="o">|</span>    <span class="mh">0x0392</span>   <span class="o">|</span>    <span class="mh">0x070f</span>    <span class="o">|</span>
+  <span class="mi">582</span>       <span class="o">|</span>    <span class="mh">0xff6e</span>   <span class="o">|</span>    <span class="mh">0x082c</span>    <span class="o">|</span>
+  <span class="mi">583</span>       <span class="o">|</span>    <span class="mh">0xfb60</span>   <span class="o">|</span>    <span class="mh">0x092a</span>    <span class="o">|</span>
+  <span class="mi">584</span>       <span class="o">|</span>    <span class="mh">0xf7d4</span>   <span class="o">|</span>    <span class="mh">0x0a12</span>    <span class="o">|</span>
+  <span class="mi">585</span>       <span class="o">|</span>    <span class="mh">0xf54f</span>   <span class="o">|</span>    <span class="mh">0x0ad2</span>    <span class="o">|</span>
+  <span class="mi">586</span>       <span class="o">|</span>    <span class="mh">0xf405</span>   <span class="o">|</span>    <span class="mh">0x0b6d</span>    <span class="o">|</span>
+  <span class="mi">587</span>       <span class="o">|</span>    <span class="mh">0xf42a</span>   <span class="o">|</span>    <span class="mh">0x0bdf</span>    <span class="o">|</span>
+  <span class="mi">588</span>       <span class="o">|</span>    <span class="mh">0xf5b5</span>   <span class="o">|</span>    <span class="mh">0x0c2c</span>    <span class="o">|</span>
+  <span class="mi">589</span>       <span class="o">|</span>    <span class="mh">0xf873</span>   <span class="o">|</span>    <span class="mh">0x0c50</span>    <span class="o">|</span>
+  <span class="mi">590</span>       <span class="o">|</span>    <span class="mh">0xfc20</span>   <span class="o">|</span>    <span class="mh">0x0c50</span>    <span class="o">|</span>
+  <span class="mi">591</span>       <span class="o">|</span>    <span class="mh">0x003a</span>   <span class="o">|</span>    <span class="mh">0x0c19</span>    <span class="o">|</span>
+  <span class="mi">592</span>       <span class="o">|</span>    <span class="mh">0x0450</span>   <span class="o">|</span>    <span class="mh">0x0bbf</span>    <span class="o">|</span>
+  <span class="mi">593</span>       <span class="o">|</span>    <span class="mh">0x07ed</span>   <span class="o">|</span>    <span class="mh">0x0b44</span>    <span class="o">|</span>
+  <span class="mi">594</span>       <span class="o">|</span>    <span class="mh">0x0a8a</span>   <span class="o">|</span>    <span class="mh">0x0a99</span>    <span class="o">|</span>
+  <span class="mi">595</span>       <span class="o">|</span>    <span class="mh">0x0bf5</span>   <span class="o">|</span>    <span class="mh">0x09ce</span>    <span class="o">|</span>
+  <span class="mi">596</span>       <span class="o">|</span>    <span class="mh">0x0bf6</span>   <span class="o">|</span>    <span class="mh">0x08df</span>    <span class="o">|</span>
+  <span class="mi">597</span>       <span class="o">|</span>    <span class="mh">0x0a86</span>   <span class="o">|</span>    <span class="mh">0x07de</span>    <span class="o">|</span>
+  <span class="mi">598</span>       <span class="o">|</span>    <span class="mh">0x07e2</span>   <span class="o">|</span>    <span class="mh">0x06b3</span>    <span class="o">|</span>
+  <span class="mi">599</span>       <span class="o">|</span>    <span class="mh">0x044c</span>   <span class="o">|</span>    <span class="mh">0x0578</span>    <span class="o">|</span>
+  <span class="mi">600</span>       <span class="o">|</span>    <span class="mh">0x0030</span>   <span class="o">|</span>    <span class="mh">0x042c</span>    <span class="o">|</span>
+  <span class="mi">601</span>       <span class="o">|</span>    <span class="mh">0xfc13</span>   <span class="o">|</span>    <span class="mh">0x02cc</span>    <span class="o">|</span>
+  <span class="mi">602</span>       <span class="o">|</span>    <span class="mh">0xf86d</span>   <span class="o">|</span>    <span class="mh">0x0162</span>    <span class="o">|</span>
+  <span class="mi">603</span>       <span class="o">|</span>    <span class="mh">0xf5a7</span>   <span class="o">|</span>    <span class="mh">0xfffe</span>    <span class="o">|</span>
+  <span class="mi">604</span>       <span class="o">|</span>    <span class="mh">0xf424</span>   <span class="o">|</span>    <span class="mh">0xfe96</span>    <span class="o">|</span>
+  <span class="mi">605</span>       <span class="o">|</span>    <span class="mh">0xf406</span>   <span class="o">|</span>    <span class="mh">0xfd2f</span>    <span class="o">|</span>
+  <span class="mi">606</span>       <span class="o">|</span>    <span class="mh">0xf556</span>   <span class="o">|</span>    <span class="mh">0xfbd2</span>    <span class="o">|</span>
+  <span class="mi">607</span>       <span class="o">|</span>    <span class="mh">0xf7e6</span>   <span class="o">|</span>    <span class="mh">0xfa88</span>    <span class="o">|</span>
+  <span class="mi">608</span>       <span class="o">|</span>    <span class="mh">0xfb6b</span>   <span class="o">|</span>    <span class="mh">0xf94b</span>    <span class="o">|</span>
+  <span class="mi">609</span>       <span class="o">|</span>    <span class="mh">0xff79</span>   <span class="o">|</span>    <span class="mh">0xf828</span>    <span class="o">|</span>
+  <span class="mi">610</span>       <span class="o">|</span>    <span class="mh">0x039b</span>   <span class="o">|</span>    <span class="mh">0xf71f</span>    <span class="o">|</span>
+  <span class="mi">611</span>       <span class="o">|</span>    <span class="mh">0x0753</span>   <span class="o">|</span>    <span class="mh">0xf637</span>    <span class="o">|</span>
+  <span class="mi">612</span>       <span class="o">|</span>    <span class="mh">0x0a2c</span>   <span class="o">|</span>    <span class="mh">0xf568</span>    <span class="o">|</span>
+  <span class="mi">613</span>       <span class="o">|</span>    <span class="mh">0x0bd0</span>   <span class="o">|</span>    <span class="mh">0xf4c5</span>    <span class="o">|</span>
+  <span class="mi">614</span>       <span class="o">|</span>    <span class="mh">0x0c0b</span>   <span class="o">|</span>    <span class="mh">0xf443</span>    <span class="o">|</span>
+  <span class="mi">615</span>       <span class="o">|</span>    <span class="mh">0x0ae4</span>   <span class="o">|</span>    <span class="mh">0xf3e9</span>    <span class="o">|</span>
+  <span class="mi">616</span>       <span class="o">|</span>    <span class="mh">0x086d</span>   <span class="o">|</span>    <span class="mh">0xf3ba</span>    <span class="o">|</span>
+  <span class="mi">617</span>       <span class="o">|</span>    <span class="mh">0x04fb</span>   <span class="o">|</span>    <span class="mh">0xf3b9</span>    <span class="o">|</span>
+  <span class="mi">618</span>       <span class="o">|</span>    <span class="mh">0x00ec</span>   <span class="o">|</span>    <span class="mh">0xf3d8</span>    <span class="o">|</span>
+  <span class="mi">619</span>       <span class="o">|</span>    <span class="mh">0xfcc9</span>   <span class="o">|</span>    <span class="mh">0xf429</span>    <span class="o">|</span>
+  <span class="mi">620</span>       <span class="o">|</span>    <span class="mh">0xf900</span>   <span class="o">|</span>    <span class="mh">0xf4a1</span>    <span class="o">|</span>
+  <span class="mi">621</span>       <span class="o">|</span>    <span class="mh">0xf615</span>   <span class="o">|</span>    <span class="mh">0xf53d</span>    <span class="o">|</span>
+  <span class="mi">622</span>       <span class="o">|</span>    <span class="mh">0xf452</span>   <span class="o">|</span>    <span class="mh">0xf5fa</span>    <span class="o">|</span>
+  <span class="mi">623</span>       <span class="o">|</span>    <span class="mh">0xf3f3</span>   <span class="o">|</span>    <span class="mh">0xf6e0</span>    <span class="o">|</span>
+  <span class="mi">624</span>       <span class="o">|</span>    <span class="mh">0xf500</span>   <span class="o">|</span>    <span class="mh">0xf7dd</span>    <span class="o">|</span>
+  <span class="mi">625</span>       <span class="o">|</span>    <span class="mh">0xf758</span>   <span class="o">|</span>    <span class="mh">0xf901</span>    <span class="o">|</span>
+  <span class="mi">626</span>       <span class="o">|</span>    <span class="mh">0xfabc</span>   <span class="o">|</span>    <span class="mh">0xfa33</span>    <span class="o">|</span>
+  <span class="mi">627</span>       <span class="o">|</span>    <span class="mh">0xfebd</span>   <span class="o">|</span>    <span class="mh">0xfb79</span>    <span class="o">|</span>
+  <span class="mi">628</span>       <span class="o">|</span>    <span class="mh">0x02e5</span>   <span class="o">|</span>    <span class="mh">0xfcd6</span>    <span class="o">|</span>
+  <span class="mi">629</span>       <span class="o">|</span>    <span class="mh">0x06b7</span>   <span class="o">|</span>    <span class="mh">0xfe3b</span>    <span class="o">|</span>
+  <span class="mi">630</span>       <span class="o">|</span>    <span class="mh">0x09be</span>   <span class="o">|</span>    <span class="mh">0xffa2</span>    <span class="o">|</span>
+  <span class="mi">631</span>       <span class="o">|</span>    <span class="mh">0x0b9e</span>   <span class="o">|</span>    <span class="mh">0x010a</span>    <span class="o">|</span>
+  <span class="mi">632</span>       <span class="o">|</span>    <span class="mh">0x0c1f</span>   <span class="o">|</span>    <span class="mh">0x0273</span>    <span class="o">|</span>
+  <span class="mi">633</span>       <span class="o">|</span>    <span class="mh">0x0b32</span>   <span class="o">|</span>    <span class="mh">0x03d3</span>    <span class="o">|</span>
+  <span class="mi">634</span>       <span class="o">|</span>    <span class="mh">0x08f2</span>   <span class="o">|</span>    <span class="mh">0x0522</span>    <span class="o">|</span>
+  <span class="mi">635</span>       <span class="o">|</span>    <span class="mh">0x05a4</span>   <span class="o">|</span>    <span class="mh">0x0666</span>    <span class="o">|</span>
+  <span class="mi">636</span>       <span class="o">|</span>    <span class="mh">0x01ae</span>   <span class="o">|</span>    <span class="mh">0x0790</span>    <span class="o">|</span>
+  <span class="mi">637</span>       <span class="o">|</span>    <span class="mh">0xfd82</span>   <span class="o">|</span>    <span class="mh">0x089f</span>    <span class="o">|</span>
+  <span class="mi">638</span>       <span class="o">|</span>    <span class="mh">0xf9a6</span>   <span class="o">|</span>    <span class="mh">0x0992</span>    <span class="o">|</span>
+  <span class="mi">639</span>       <span class="o">|</span>    <span class="mh">0xf684</span>   <span class="o">|</span>    <span class="mh">0x0a6b</span>    <span class="o">|</span>
+  <span class="mi">640</span>       <span class="o">|</span>    <span class="mh">0xf48b</span>   <span class="o">|</span>    <span class="mh">0x0b1d</span>    <span class="o">|</span>
+  <span class="mi">641</span>       <span class="o">|</span>    <span class="mh">0xf3e8</span>   <span class="o">|</span>    <span class="mh">0x0ba5</span>    <span class="o">|</span>
+  <span class="mi">642</span>       <span class="o">|</span>    <span class="mh">0xf4b3</span>   <span class="o">|</span>    <span class="mh">0x0c0a</span>    <span class="o">|</span>
+  <span class="mi">643</span>       <span class="o">|</span>    <span class="mh">0xf6d5</span>   <span class="o">|</span>    <span class="mh">0x0c3e</span>    <span class="o">|</span>
+  <span class="mi">644</span>       <span class="o">|</span>    <span class="mh">0xfa0e</span>   <span class="o">|</span>    <span class="mh">0x0c55</span>    <span class="o">|</span>
+  <span class="mi">645</span>       <span class="o">|</span>    <span class="mh">0xfe01</span>   <span class="o">|</span>    <span class="mh">0x0c3d</span>    <span class="o">|</span>
+  <span class="mi">646</span>       <span class="o">|</span>    <span class="mh">0x022a</span>   <span class="o">|</span>    <span class="mh">0x0bf9</span>    <span class="o">|</span>
+  <span class="mi">647</span>       <span class="o">|</span>    <span class="mh">0x0614</span>   <span class="o">|</span>    <span class="mh">0x0b87</span>    <span class="o">|</span>
+  <span class="mi">648</span>       <span class="o">|</span>    <span class="mh">0x0947</span>   <span class="o">|</span>    <span class="mh">0x0aff</span>    <span class="o">|</span>
+  <span class="mi">649</span>       <span class="o">|</span>    <span class="mh">0x0b61</span>   <span class="o">|</span>    <span class="mh">0x0a40</span>    <span class="o">|</span>
+  <span class="mi">650</span>       <span class="o">|</span>    <span class="mh">0x0c24</span>   <span class="o">|</span>    <span class="mh">0x096c</span>    <span class="o">|</span>
+  <span class="mi">651</span>       <span class="o">|</span>    <span class="mh">0x0b72</span>   <span class="o">|</span>    <span class="mh">0x0873</span>    <span class="o">|</span>
+  <span class="mi">652</span>       <span class="o">|</span>    <span class="mh">0x0972</span>   <span class="o">|</span>    <span class="mh">0x075d</span>    <span class="o">|</span>
+  <span class="mi">653</span>       <span class="o">|</span>    <span class="mh">0x0649</span>   <span class="o">|</span>    <span class="mh">0x0632</span>    <span class="o">|</span>
+  <span class="mi">654</span>       <span class="o">|</span>    <span class="mh">0x026f</span>   <span class="o">|</span>    <span class="mh">0x04ea</span>    <span class="o">|</span>
+  <span class="mi">655</span>       <span class="o">|</span>    <span class="mh">0xfe42</span>   <span class="o">|</span>    <span class="mh">0x0395</span>    <span class="o">|</span>
+  <span class="mi">656</span>       <span class="o">|</span>    <span class="mh">0xfa4b</span>   <span class="o">|</span>    <span class="mh">0x0234</span>    <span class="o">|</span>
+  <span class="mi">657</span>       <span class="o">|</span>    <span class="mh">0xf703</span>   <span class="o">|</span>    <span class="mh">0x00d0</span>    <span class="o">|</span>
+  <span class="mi">658</span>       <span class="o">|</span>    <span class="mh">0xf4cd</span>   <span class="o">|</span>    <span class="mh">0xff62</span>    <span class="o">|</span>
+  <span class="mi">659</span>       <span class="o">|</span>    <span class="mh">0xf3e8</span>   <span class="o">|</span>    <span class="mh">0xfdf6</span>    <span class="o">|</span>
+  <span class="mi">660</span>       <span class="o">|</span>    <span class="mh">0xf471</span>   <span class="o">|</span>    <span class="mh">0xfc99</span>    <span class="o">|</span>
+  <span class="mi">661</span>       <span class="o">|</span>    <span class="mh">0xf65e</span>   <span class="o">|</span>    <span class="mh">0xfb3e</span>    <span class="o">|</span>
+  <span class="mi">662</span>       <span class="o">|</span>    <span class="mh">0xf96b</span>   <span class="o">|</span>    <span class="mh">0xf9f9</span>    <span class="o">|</span>
+  <span class="mi">663</span>       <span class="o">|</span>    <span class="mh">0xfd40</span>   <span class="o">|</span>    <span class="mh">0xf8c8</span>    <span class="o">|</span>
+  <span class="mi">664</span>       <span class="o">|</span>    <span class="mh">0x016c</span>   <span class="o">|</span>    <span class="mh">0xf7b0</span>    <span class="o">|</span>
+  <span class="mi">665</span>       <span class="o">|</span>    <span class="mh">0x056c</span>   <span class="o">|</span>    <span class="mh">0xf6b6</span>    <span class="o">|</span>
+  <span class="mi">666</span>       <span class="o">|</span>    <span class="mh">0x08c8</span>   <span class="o">|</span>    <span class="mh">0xf5ce</span>    <span class="o">|</span>
+  <span class="mi">667</span>       <span class="o">|</span>    <span class="mh">0x0b16</span>   <span class="o">|</span>    <span class="mh">0xf51d</span>    <span class="o">|</span>
+  <span class="mi">668</span>       <span class="o">|</span>    <span class="mh">0x0c1c</span>   <span class="o">|</span>    <span class="mh">0xf487</span>    <span class="o">|</span>
+  <span class="mi">669</span>       <span class="o">|</span>    <span class="mh">0x0baf</span>   <span class="o">|</span>    <span class="mh">0xf415</span>    <span class="o">|</span>
+  <span class="mi">670</span>       <span class="o">|</span>    <span class="mh">0x09e6</span>   <span class="o">|</span>    <span class="mh">0xf3d1</span>    <span class="o">|</span>
+  <span class="mi">671</span>       <span class="o">|</span>    <span class="mh">0x06ef</span>   <span class="o">|</span>    <span class="mh">0xf3b5</span>    <span class="o">|</span>
+  <span class="mi">672</span>       <span class="o">|</span>    <span class="mh">0x0324</span>   <span class="o">|</span>    <span class="mh">0xf3c1</span>    <span class="o">|</span>
+  <span class="mi">673</span>       <span class="o">|</span>    <span class="mh">0xfefe</span>   <span class="o">|</span>    <span class="mh">0xf3f7</span>    <span class="o">|</span>
+  <span class="mi">674</span>       <span class="o">|</span>    <span class="mh">0xfaf8</span>   <span class="o">|</span>    <span class="mh">0xf459</span>    <span class="o">|</span>
+  <span class="mi">675</span>       <span class="o">|</span>    <span class="mh">0xf783</span>   <span class="o">|</span>    <span class="mh">0xf4de</span>    <span class="o">|</span>
+  <span class="mi">676</span>       <span class="o">|</span>    <span class="mh">0xf51a</span>   <span class="o">|</span>    <span class="mh">0xf588</span>    <span class="o">|</span>
+  <span class="mi">677</span>       <span class="o">|</span>    <span class="mh">0xf3f5</span>   <span class="o">|</span>    <span class="mh">0xf654</span>    <span class="o">|</span>
+  <span class="mi">678</span>       <span class="o">|</span>    <span class="mh">0xf443</span>   <span class="o">|</span>    <span class="mh">0xf74d</span>    <span class="o">|</span>
+  <span class="mi">679</span>       <span class="o">|</span>    <span class="mh">0xf5e8</span>   <span class="o">|</span>    <span class="mh">0xf857</span>    <span class="o">|</span>
+  <span class="mi">680</span>       <span class="o">|</span>    <span class="mh">0xf8cf</span>   <span class="o">|</span>    <span class="mh">0xf980</span>    <span class="o">|</span>
+  <span class="mi">681</span>       <span class="o">|</span>    <span class="mh">0xfc88</span>   <span class="o">|</span>    <span class="mh">0xfab7</span>    <span class="o">|</span>
+  <span class="mi">682</span>       <span class="o">|</span>    <span class="mh">0x00ac</span>   <span class="o">|</span>    <span class="mh">0xfc0e</span>    <span class="o">|</span>
+  <span class="mi">683</span>       <span class="o">|</span>    <span class="mh">0x04b8</span>   <span class="o">|</span>    <span class="mh">0xfd6e</span>    <span class="o">|</span>
+  <span class="mi">684</span>       <span class="o">|</span>    <span class="mh">0x0842</span>   <span class="o">|</span>    <span class="mh">0xfecd</span>    <span class="o">|</span>
+  <span class="mi">685</span>       <span class="o">|</span>    <span class="mh">0x0ac4</span>   <span class="o">|</span>    <span class="mh">0x0040</span>    <span class="o">|</span>
+  <span class="mi">686</span>       <span class="o">|</span>    <span class="mh">0x0c08</span>   <span class="o">|</span>    <span class="mh">0x01aa</span>    <span class="o">|</span>
+  <span class="mi">687</span>       <span class="o">|</span>    <span class="mh">0x0be0</span>   <span class="o">|</span>    <span class="mh">0x030a</span>    <span class="o">|</span>
+  <span class="mi">688</span>       <span class="o">|</span>    <span class="mh">0x0a4c</span>   <span class="o">|</span>    <span class="mh">0x046b</span>    <span class="o">|</span>
+  <span class="mi">689</span>       <span class="o">|</span>    <span class="mh">0x0789</span>   <span class="o">|</span>    <span class="mh">0x05b0</span>    <span class="o">|</span>
+  <span class="mi">690</span>       <span class="o">|</span>    <span class="mh">0x03da</span>   <span class="o">|</span>    <span class="mh">0x06e6</span>    <span class="o">|</span>
+  <span class="mi">691</span>       <span class="o">|</span>    <span class="mh">0xffc0</span>   <span class="o">|</span>    <span class="mh">0x0809</span>    <span class="o">|</span>
+  <span class="mi">692</span>       <span class="o">|</span>    <span class="mh">0xfba8</span>   <span class="o">|</span>    <span class="mh">0x090f</span>    <span class="o">|</span>
+  <span class="mi">693</span>       <span class="o">|</span>    <span class="mh">0xf814</span>   <span class="o">|</span>    <span class="mh">0x09f6</span>    <span class="o">|</span>
+  <span class="mi">694</span>       <span class="o">|</span>    <span class="mh">0xf572</span>   <span class="o">|</span>    <span class="mh">0x0ab9</span>    <span class="o">|</span>
+  <span class="mi">695</span>       <span class="o">|</span>    <span class="mh">0xf412</span>   <span class="o">|</span>    <span class="mh">0x0b56</span>    <span class="o">|</span>
+  <span class="mi">696</span>       <span class="o">|</span>    <span class="mh">0xf418</span>   <span class="o">|</span>    <span class="mh">0x0bd1</span>    <span class="o">|</span>
+  <span class="mi">697</span>       <span class="o">|</span>    <span class="mh">0xf587</span>   <span class="o">|</span>    <span class="mh">0x0c2a</span>    <span class="o">|</span>
+  <span class="mi">698</span>       <span class="o">|</span>    <span class="mh">0xf836</span>   <span class="o">|</span>    <span class="mh">0x0c50</span>    <span class="o">|</span>
+  <span class="mi">699</span>       <span class="o">|</span>    <span class="mh">0xfbd2</span>   <span class="o">|</span>    <span class="mh">0x0c4b</span>    <span class="o">|</span>
+  <span class="mi">700</span>       <span class="o">|</span>    <span class="mh">0xffeb</span>   <span class="o">|</span>    <span class="mh">0x0c25</span>    <span class="o">|</span>
+  <span class="mi">701</span>       <span class="o">|</span>    <span class="mh">0x0407</span>   <span class="o">|</span>    <span class="mh">0x0bd0</span>    <span class="o">|</span>
+  <span class="mi">702</span>       <span class="o">|</span>    <span class="mh">0x07ab</span>   <span class="o">|</span>    <span class="mh">0x0b55</span>    <span class="o">|</span>
+  <span class="mi">703</span>       <span class="o">|</span>    <span class="mh">0x0a66</span>   <span class="o">|</span>    <span class="mh">0x0ab4</span>    <span class="o">|</span>
+  <span class="mi">704</span>       <span class="o">|</span>    <span class="mh">0x0be6</span>   <span class="o">|</span>    <span class="mh">0x09ed</span>    <span class="o">|</span>
+  <span class="mi">705</span>       <span class="o">|</span>    <span class="mh">0x0c00</span>   <span class="o">|</span>    <span class="mh">0x0909</span>    <span class="o">|</span>
+  <span class="mi">706</span>       <span class="o">|</span>    <span class="mh">0x0ab2</span>   <span class="o">|</span>    <span class="mh">0x0803</span>    <span class="o">|</span>
+  <span class="mi">707</span>       <span class="o">|</span>    <span class="mh">0x081d</span>   <span class="o">|</span>    <span class="mh">0x06e0</span>    <span class="o">|</span>
+  <span class="mi">708</span>       <span class="o">|</span>    <span class="mh">0x048f</span>   <span class="o">|</span>    <span class="mh">0x05a5</span>    <span class="o">|</span>
+  <span class="mi">709</span>       <span class="o">|</span>    <span class="mh">0x007f</span>   <span class="o">|</span>    <span class="mh">0x045b</span>    <span class="o">|</span>
+  <span class="mi">710</span>       <span class="o">|</span>    <span class="mh">0xfc5b</span>   <span class="o">|</span>    <span class="mh">0x02f9</span>    <span class="o">|</span>
+  <span class="mi">711</span>       <span class="o">|</span>    <span class="mh">0xf8aa</span>   <span class="o">|</span>    <span class="mh">0x0195</span>    <span class="o">|</span>
+  <span class="mi">712</span>       <span class="o">|</span>    <span class="mh">0xf5d1</span>   <span class="o">|</span>    <span class="mh">0x0032</span>    <span class="o">|</span>
+  <span class="mi">713</span>       <span class="o">|</span>    <span class="mh">0xf439</span>   <span class="o">|</span>    <span class="mh">0xfec4</span>    <span class="o">|</span>
+  <span class="mi">714</span>       <span class="o">|</span>    <span class="mh">0xf3fc</span>   <span class="o">|</span>    <span class="mh">0xfd60</span>    <span class="o">|</span>
+  <span class="mi">715</span>       <span class="o">|</span>    <span class="mh">0xf532</span>   <span class="o">|</span>    <span class="mh">0xfc05</span>    <span class="o">|</span>
+  <span class="mi">716</span>       <span class="o">|</span>    <span class="mh">0xf7a6</span>   <span class="o">|</span>    <span class="mh">0xfab2</span>    <span class="o">|</span>
+  <span class="mi">717</span>       <span class="o">|</span>    <span class="mh">0xfb1c</span>   <span class="o">|</span>    <span class="mh">0xf970</span>    <span class="o">|</span>
+  <span class="mi">718</span>       <span class="o">|</span>    <span class="mh">0xff2c</span>   <span class="o">|</span>    <span class="mh">0xf84e</span>    <span class="o">|</span>
+  <span class="mi">719</span>       <span class="o">|</span>    <span class="mh">0x0348</span>   <span class="o">|</span>    <span class="mh">0xf740</span>    <span class="o">|</span>
+  <span class="mi">720</span>       <span class="o">|</span>    <span class="mh">0x0716</span>   <span class="o">|</span>    <span class="mh">0xf654</span>    <span class="o">|</span>
+  <span class="mi">721</span>       <span class="o">|</span>    <span class="mh">0x0a00</span>   <span class="o">|</span>    <span class="mh">0xf581</span>    <span class="o">|</span>
+  <span class="mi">722</span>       <span class="o">|</span>    <span class="mh">0x0bbf</span>   <span class="o">|</span>    <span class="mh">0xf4d7</span>    <span class="o">|</span>
+  <span class="mi">723</span>       <span class="o">|</span>    <span class="mh">0x0c1a</span>   <span class="o">|</span>    <span class="mh">0xf44e</span>    <span class="o">|</span>
+  <span class="mi">724</span>       <span class="o">|</span>    <span class="mh">0x0b02</span>   <span class="o">|</span>    <span class="mh">0xf3f4</span>    <span class="o">|</span>
+  <span class="mi">725</span>       <span class="o">|</span>    <span class="mh">0x08a7</span>   <span class="o">|</span>    <span class="mh">0xf3bf</span>    <span class="o">|</span>
+  <span class="mi">726</span>       <span class="o">|</span>    <span class="mh">0x0540</span>   <span class="o">|</span>    <span class="mh">0xf3b6</span>    <span class="o">|</span>
+  <span class="mi">727</span>       <span class="o">|</span>    <span class="mh">0x013e</span>   <span class="o">|</span>    <span class="mh">0xf3d5</span>    <span class="o">|</span>
+  <span class="mi">728</span>       <span class="o">|</span>    <span class="mh">0xfd14</span>   <span class="o">|</span>    <span class="mh">0xf416</span>    <span class="o">|</span>
+  <span class="mi">729</span>       <span class="o">|</span>    <span class="mh">0xf947</span>   <span class="o">|</span>    <span class="mh">0xf48a</span>    <span class="o">|</span>
+  <span class="mi">730</span>       <span class="o">|</span>    <span class="mh">0xf646</span>   <span class="o">|</span>    <span class="mh">0xf523</span>    <span class="o">|</span>
+  <span class="mi">731</span>       <span class="o">|</span>    <span class="mh">0xf46c</span>   <span class="o">|</span>    <span class="mh">0xf5de</span>    <span class="o">|</span>
+  <span class="mi">732</span>       <span class="o">|</span>    <span class="mh">0xf3eb</span>   <span class="o">|</span>    <span class="mh">0xf6b9</span>    <span class="o">|</span>
+  <span class="mi">733</span>       <span class="o">|</span>    <span class="mh">0xf4df</span>   <span class="o">|</span>    <span class="mh">0xf7b9</span>    <span class="o">|</span>
+  <span class="mi">734</span>       <span class="o">|</span>    <span class="mh">0xf71e</span>   <span class="o">|</span>    <span class="mh">0xf8d5</span>    <span class="o">|</span>
+  <span class="mi">735</span>       <span class="o">|</span>    <span class="mh">0xfa6e</span>   <span class="o">|</span>    <span class="mh">0xfa09</span>    <span class="o">|</span>
+  <span class="mi">736</span>       <span class="o">|</span>    <span class="mh">0xfe69</span>   <span class="o">|</span>    <span class="mh">0xfb52</span>    <span class="o">|</span>
+  <span class="mi">737</span>       <span class="o">|</span>    <span class="mh">0x0296</span>   <span class="o">|</span>    <span class="mh">0xfca4</span>    <span class="o">|</span>
+  <span class="mi">738</span>       <span class="o">|</span>    <span class="mh">0x066f</span>   <span class="o">|</span>    <span class="mh">0xfe08</span>    <span class="o">|</span>
+  <span class="mi">739</span>       <span class="o">|</span>    <span class="mh">0x098d</span>   <span class="o">|</span>    <span class="mh">0xff6a</span>    <span class="o">|</span>
+  <span class="mi">740</span>       <span class="o">|</span>    <span class="mh">0x0b89</span>   <span class="o">|</span>    <span class="mh">0x00db</span>    <span class="o">|</span>
+  <span class="mi">741</span>       <span class="o">|</span>    <span class="mh">0x0c25</span>   <span class="o">|</span>    <span class="mh">0x0241</span>    <span class="o">|</span>
+  <span class="mi">742</span>       <span class="o">|</span>    <span class="mh">0x0b4d</span>   <span class="o">|</span>    <span class="mh">0x039d</span>    <span class="o">|</span>
+  <span class="mi">743</span>       <span class="o">|</span>    <span class="mh">0x092d</span>   <span class="o">|</span>    <span class="mh">0x04f8</span>    <span class="o">|</span>
+  <span class="mi">744</span>       <span class="o">|</span>    <span class="mh">0x05e8</span>   <span class="o">|</span>    <span class="mh">0x063b</span>    <span class="o">|</span>
+  <span class="mi">745</span>       <span class="o">|</span>    <span class="mh">0x01f9</span>   <span class="o">|</span>    <span class="mh">0x0768</span>    <span class="o">|</span>
+  <span class="mi">746</span>       <span class="o">|</span>    <span class="mh">0xfdd3</span>   <span class="o">|</span>    <span class="mh">0x087f</span>    <span class="o">|</span>
+  <span class="mi">747</span>       <span class="o">|</span>    <span class="mh">0xf9ea</span>   <span class="o">|</span>    <span class="mh">0x0978</span>    <span class="o">|</span>
+  <span class="mi">748</span>       <span class="o">|</span>    <span class="mh">0xf6b7</span>   <span class="o">|</span>    <span class="mh">0x0a4d</span>    <span class="o">|</span>
+  <span class="mi">749</span>       <span class="o">|</span>    <span class="mh">0xf4a3</span>   <span class="o">|</span>    <span class="mh">0x0b09</span>    <span class="o">|</span>
+  <span class="mi">750</span>       <span class="o">|</span>    <span class="mh">0xf3ea</span>   <span class="o">|</span>    <span class="mh">0x0b93</span>    <span class="o">|</span>
+  <span class="mi">751</span>       <span class="o">|</span>    <span class="mh">0xf497</span>   <span class="o">|</span>    <span class="mh">0x0c00</span>    <span class="o">|</span>
+  <span class="mi">752</span>       <span class="o">|</span>    <span class="mh">0xf6a9</span>   <span class="o">|</span>    <span class="mh">0x0c3d</span>    <span class="o">|</span>
+  <span class="mi">753</span>       <span class="o">|</span>    <span class="mh">0xf9c7</span>   <span class="o">|</span>    <span class="mh">0x0c55</span>    <span class="o">|</span>
+  <span class="mi">754</span>       <span class="o">|</span>    <span class="mh">0xfdad</span>   <span class="o">|</span>    <span class="mh">0x0c41</span>    <span class="o">|</span>
+  <span class="mi">755</span>       <span class="o">|</span>    <span class="mh">0x01da</span>   <span class="o">|</span>    <span class="mh">0x0c07</span>    <span class="o">|</span>
+  <span class="mi">756</span>       <span class="o">|</span>    <span class="mh">0x05cb</span>   <span class="o">|</span>    <span class="mh">0x0b9e</span>    <span class="o">|</span>
+  <span class="mi">757</span>       <span class="o">|</span>    <span class="mh">0x090e</span>   <span class="o">|</span>    <span class="mh">0x0b14</span>    <span class="o">|</span>
+  <span class="mi">758</span>       <span class="o">|</span>    <span class="mh">0x0b3e</span>   <span class="o">|</span>    <span class="mh">0x0a62</span>    <span class="o">|</span>
+  <span class="mi">759</span>       <span class="o">|</span>    <span class="mh">0x0c21</span>   <span class="o">|</span>    <span class="mh">0x098a</span>    <span class="o">|</span>
+  <span class="mi">760</span>       <span class="o">|</span>    <span class="mh">0x0b91</span>   <span class="o">|</span>    <span class="mh">0x0899</span>    <span class="o">|</span>
+  <span class="mi">761</span>       <span class="o">|</span>    <span class="mh">0x09a2</span>   <span class="o">|</span>    <span class="mh">0x0787</span>    <span class="o">|</span>
+  <span class="mi">762</span>       <span class="o">|</span>    <span class="mh">0x0697</span>   <span class="o">|</span>    <span class="mh">0x0658</span>    <span class="o">|</span>
+  <span class="mi">763</span>       <span class="o">|</span>    <span class="mh">0x02ba</span>   <span class="o">|</span>    <span class="mh">0x0517</span>    <span class="o">|</span>
+  <span class="mi">764</span>       <span class="o">|</span>    <span class="mh">0xfe93</span>   <span class="o">|</span>    <span class="mh">0x03c7</span>    <span class="o">|</span>
+  <span class="mi">765</span>       <span class="o">|</span>    <span class="mh">0xfa93</span>   <span class="o">|</span>    <span class="mh">0x0268</span>    <span class="o">|</span>
+  <span class="mi">766</span>       <span class="o">|</span>    <span class="mh">0xf737</span>   <span class="o">|</span>    <span class="mh">0x00fc</span>    <span class="o">|</span>
+  <span class="mi">767</span>       <span class="o">|</span>    <span class="mh">0xf4f3</span>   <span class="o">|</span>    <span class="mh">0xff95</span>    <span class="o">|</span>
+  <span class="mi">768</span>       <span class="o">|</span>    <span class="mh">0xf3f2</span>   <span class="o">|</span>    <span class="mh">0xfe29</span>    <span class="o">|</span>
+  <span class="mi">769</span>       <span class="o">|</span>    <span class="mh">0xf45a</span>   <span class="o">|</span>    <span class="mh">0xfcc7</span>    <span class="o">|</span>
+  <span class="mi">770</span>       <span class="o">|</span>    <span class="mh">0xf629</span>   <span class="o">|</span>    <span class="mh">0xfb71</span>    <span class="o">|</span>
+  <span class="mi">771</span>       <span class="o">|</span>    <span class="mh">0xf928</span>   <span class="o">|</span>    <span class="mh">0xfa22</span>    <span class="o">|</span>
+  <span class="mi">772</span>       <span class="o">|</span>    <span class="mh">0xfcef</span>   <span class="o">|</span>    <span class="mh">0xf8f1</span>    <span class="o">|</span>
+  <span class="mi">773</span>       <span class="o">|</span>    <span class="mh">0x0117</span>   <span class="o">|</span>    <span class="mh">0xf7d1</span>    <span class="o">|</span>
+  <span class="mi">774</span>       <span class="o">|</span>    <span class="mh">0x0520</span>   <span class="o">|</span>    <span class="mh">0xf6d7</span>    <span class="o">|</span>
+  <span class="mi">775</span>       <span class="o">|</span>    <span class="mh">0x088b</span>   <span class="o">|</span>    <span class="mh">0xf5ee</span>    <span class="o">|</span>
+  <span class="mi">776</span>       <span class="o">|</span>    <span class="mh">0x0af3</span>   <span class="o">|</span>    <span class="mh">0xf533</span>    <span class="o">|</span>
+  <span class="mi">777</span>       <span class="o">|</span>    <span class="mh">0x0c13</span>   <span class="o">|</span>    <span class="mh">0xf496</span>    <span class="o">|</span>
+  <span class="mi">778</span>       <span class="o">|</span>    <span class="mh">0x0bc5</span>   <span class="o">|</span>    <span class="mh">0xf423</span>    <span class="o">|</span>
+  <span class="mi">779</span>       <span class="o">|</span>    <span class="mh">0x0a14</span>   <span class="o">|</span>    <span class="mh">0xf3d8</span>    <span class="o">|</span>
+  <span class="mi">780</span>       <span class="o">|</span>    <span class="mh">0x0734</span>   <span class="o">|</span>    <span class="mh">0xf3b4</span>    <span class="o">|</span>
+  <span class="mi">781</span>       <span class="o">|</span>    <span class="mh">0x0374</span>   <span class="o">|</span>    <span class="mh">0xf3bb</span>    <span class="o">|</span>
+  <span class="mi">782</span>       <span class="o">|</span>    <span class="mh">0xff54</span>   <span class="o">|</span>    <span class="mh">0xf3ee</span>    <span class="o">|</span>
+  <span class="mi">783</span>       <span class="o">|</span>    <span class="mh">0xfb42</span>   <span class="o">|</span>    <span class="mh">0xf44a</span>    <span class="o">|</span>
+  <span class="mi">784</span>       <span class="o">|</span>    <span class="mh">0xf7c1</span>   <span class="o">|</span>    <span class="mh">0xf4cc</span>    <span class="o">|</span>
+  <span class="mi">785</span>       <span class="o">|</span>    <span class="mh">0xf542</span>   <span class="o">|</span>    <span class="mh">0xf56d</span>    <span class="o">|</span>
+  <span class="mi">786</span>       <span class="o">|</span>    <span class="mh">0xf402</span>   <span class="o">|</span>    <span class="mh">0xf639</span>    <span class="o">|</span>
+  <span class="mi">787</span>       <span class="o">|</span>    <span class="mh">0xf42d</span>   <span class="o">|</span>    <span class="mh">0xf72a</span>    <span class="o">|</span>
+  <span class="mi">788</span>       <span class="o">|</span>    <span class="mh">0xf5c4</span>   <span class="o">|</span>    <span class="mh">0xf82d</span>    <span class="o">|</span>
+  <span class="mi">789</span>       <span class="o">|</span>    <span class="mh">0xf88f</span>   <span class="o">|</span>    <span class="mh">0xf957</span>    <span class="o">|</span>
+  <span class="mi">790</span>       <span class="o">|</span>    <span class="mh">0xfc3c</span>   <span class="o">|</span>    <span class="mh">0xfa91</span>    <span class="o">|</span>
+  <span class="mi">791</span>       <span class="o">|</span>    <span class="mh">0x005e</span>   <span class="o">|</span>    <span class="mh">0xfbde</span>    <span class="o">|</span>
+  <span class="mi">792</span>       <span class="o">|</span>    <span class="mh">0x046d</span>   <span class="o">|</span>    <span class="mh">0xfd3d</span>    <span class="o">|</span>
+  <span class="mi">793</span>       <span class="o">|</span>    <span class="mh">0x0801</span>   <span class="o">|</span>    <span class="mh">0xfea2</span>    <span class="o">|</span>
+  <span class="mi">794</span>       <span class="o">|</span>    <span class="mh">0x0a96</span>   <span class="o">|</span>    <span class="mh">0x000e</span>    <span class="o">|</span>
+  <span class="mi">795</span>       <span class="o">|</span>    <span class="mh">0x0c00</span>   <span class="o">|</span>    <span class="mh">0x0175</span>    <span class="o">|</span>
+  <span class="mi">796</span>       <span class="o">|</span>    <span class="mh">0x0bee</span>   <span class="o">|</span>    <span class="mh">0x02da</span>    <span class="o">|</span>
+  <span class="mi">797</span>       <span class="o">|</span>    <span class="mh">0x0a7d</span>   <span class="o">|</span>    <span class="mh">0x0437</span>    <span class="o">|</span>
+  <span class="mi">798</span>       <span class="o">|</span>    <span class="mh">0x07cb</span>   <span class="o">|</span>    <span class="mh">0x0586</span>    <span class="o">|</span>
+  <span class="mi">799</span>       <span class="o">|</span>    <span class="mh">0x042a</span>   <span class="o">|</span>    <span class="mh">0x06c2</span>    <span class="o">|</span>
+  <span class="mi">800</span>       <span class="o">|</span>    <span class="mh">0x0010</span>   <span class="o">|</span>    <span class="mh">0x07df</span>    <span class="o">|</span>
+  <span class="mi">801</span>       <span class="o">|</span>    <span class="mh">0xfbf5</span>   <span class="o">|</span>    <span class="mh">0x08ea</span>    <span class="o">|</span>
+  <span class="mi">802</span>       <span class="o">|</span>    <span class="mh">0xf853</span>   <span class="o">|</span>    <span class="mh">0x09d4</span>    <span class="o">|</span>
+  <span class="mi">803</span>       <span class="o">|</span>    <span class="mh">0xf59e</span>   <span class="o">|</span>    <span class="mh">0x0aa5</span>    <span class="o">|</span>
+  <span class="mi">804</span>       <span class="o">|</span>    <span class="mh">0xf41f</span>   <span class="o">|</span>    <span class="mh">0x0b4b</span>    <span class="o">|</span>
+  <span class="mi">805</span>       <span class="o">|</span>    <span class="mh">0xf407</span>   <span class="o">|</span>    <span class="mh">0x0bc7</span>    <span class="o">|</span>
+  <span class="mi">806</span>       <span class="o">|</span>    <span class="mh">0xf563</span>   <span class="o">|</span>    <span class="mh">0x0c1a</span>    <span class="o">|</span>
+  <span class="mi">807</span>       <span class="o">|</span>    <span class="mh">0xf7fa</span>   <span class="o">|</span>    <span class="mh">0x0c4b</span>    <span class="o">|</span>
+  <span class="mi">808</span>       <span class="o">|</span>    <span class="mh">0xfb85</span>   <span class="o">|</span>    <span class="mh">0x0c51</span>    <span class="o">|</span>
+  <span class="mi">809</span>       <span class="o">|</span>    <span class="mh">0xff9d</span>   <span class="o">|</span>    <span class="mh">0x0c2d</span>    <span class="o">|</span>
+  <span class="mi">810</span>       <span class="o">|</span>    <span class="mh">0x03b9</span>   <span class="o">|</span>    <span class="mh">0x0bde</span>    <span class="o">|</span>
+  <span class="mi">811</span>       <span class="o">|</span>    <span class="mh">0x076b</span>   <span class="o">|</span>    <span class="mh">0x0b6b</span>    <span class="o">|</span>
+  <span class="mi">812</span>       <span class="o">|</span>    <span class="mh">0x0a3d</span>   <span class="o">|</span>    <span class="mh">0x0acc</span>    <span class="o">|</span>
+  <span class="mi">813</span>       <span class="o">|</span>    <span class="mh">0x0bd4</span>   <span class="o">|</span>    <span class="mh">0x0a09</span>    <span class="o">|</span>
+  <span class="mi">814</span>       <span class="o">|</span>    <span class="mh">0x0c0a</span>   <span class="o">|</span>    <span class="mh">0x0927</span>    <span class="o">|</span>
+  <span class="mi">815</span>       <span class="o">|</span>    <span class="mh">0x0ad4</span>   <span class="o">|</span>    <span class="mh">0x081e</span>    <span class="o">|</span>
+  <span class="mi">816</span>       <span class="o">|</span>    <span class="mh">0x0859</span>   <span class="o">|</span>    <span class="mh">0x0705</span>    <span class="o">|</span>
+  <span class="mi">817</span>       <span class="o">|</span>    <span class="mh">0x04de</span>   <span class="o">|</span>    <span class="mh">0x05cf</span>    <span class="o">|</span>
+  <span class="mi">818</span>       <span class="o">|</span>    <span class="mh">0x00cd</span>   <span class="o">|</span>    <span class="mh">0x0488</span>    <span class="o">|</span>
+  <span class="mi">819</span>       <span class="o">|</span>    <span class="mh">0xfcad</span>   <span class="o">|</span>    <span class="mh">0x032e</span>    <span class="o">|</span>
+  <span class="mi">820</span>       <span class="o">|</span>    <span class="mh">0xf8f0</span>   <span class="o">|</span>    <span class="mh">0x01d0</span>    <span class="o">|</span>
+  <span class="mi">821</span>       <span class="o">|</span>    <span class="mh">0xf605</span>   <span class="o">|</span>    <span class="mh">0x0063</span>    <span class="o">|</span>
+  <span class="mi">822</span>       <span class="o">|</span>    <span class="mh">0xf447</span>   <span class="o">|</span>    <span class="mh">0xfef6</span>    <span class="o">|</span>
+  <span class="mi">823</span>       <span class="o">|</span>    <span class="mh">0xf3f4</span>   <span class="o">|</span>    <span class="mh">0xfd8d</span>    <span class="o">|</span>
+  <span class="mi">824</span>       <span class="o">|</span>    <span class="mh">0xf50e</span>   <span class="o">|</span>    <span class="mh">0xfc2e</span>    <span class="o">|</span>
+  <span class="mi">825</span>       <span class="o">|</span>    <span class="mh">0xf76d</span>   <span class="o">|</span>    <span class="mh">0xfadc</span>    <span class="o">|</span>
+  <span class="mi">826</span>       <span class="o">|</span>    <span class="mh">0xfad3</span>   <span class="o">|</span>    <span class="mh">0xf9a3</span>    <span class="o">|</span>
+  <span class="mi">827</span>       <span class="o">|</span>    <span class="mh">0xfed7</span>   <span class="o">|</span>    <span class="mh">0xf875</span>    <span class="o">|</span>
+  <span class="mi">828</span>       <span class="o">|</span>    <span class="mh">0x0304</span>   <span class="o">|</span>    <span class="mh">0xf765</span>    <span class="o">|</span>
+  <span class="mi">829</span>       <span class="o">|</span>    <span class="mh">0x06d0</span>   <span class="o">|</span>    <span class="mh">0xf66d</span>    <span class="o">|</span>
+  <span class="mi">830</span>       <span class="o">|</span>    <span class="mh">0x09d3</span>   <span class="o">|</span>    <span class="mh">0xf59a</span>    <span class="o">|</span>
+  <span class="mi">831</span>       <span class="o">|</span>    <span class="mh">0x0ba8</span>   <span class="o">|</span>    <span class="mh">0xf4ec</span>    <span class="o">|</span>
+  <span class="mi">832</span>       <span class="o">|</span>    <span class="mh">0x0c1b</span>   <span class="o">|</span>    <span class="mh">0xf45e</span>    <span class="o">|</span>
+  <span class="mi">833</span>       <span class="o">|</span>    <span class="mh">0x0b28</span>   <span class="o">|</span>    <span class="mh">0xf3fe</span>    <span class="o">|</span>
+  <span class="mi">834</span>       <span class="o">|</span>    <span class="mh">0x08e4</span>   <span class="o">|</span>    <span class="mh">0xf3c8</span>    <span class="o">|</span>
+  <span class="mi">835</span>       <span class="o">|</span>    <span class="mh">0x0587</span>   <span class="o">|</span>    <span class="mh">0xf3b4</span>    <span class="o">|</span>
+  <span class="mi">836</span>       <span class="o">|</span>    <span class="mh">0x0191</span>   <span class="o">|</span>    <span class="mh">0xf3cc</span>    <span class="o">|</span>
+  <span class="mi">837</span>       <span class="o">|</span>    <span class="mh">0xfd62</span>   <span class="o">|</span>    <span class="mh">0xf413</span>    <span class="o">|</span>
+  <span class="mi">838</span>       <span class="o">|</span>    <span class="mh">0xf991</span>   <span class="o">|</span>    <span class="mh">0xf479</span>    <span class="o">|</span>
+  <span class="mi">839</span>       <span class="o">|</span>    <span class="mh">0xf671</span>   <span class="o">|</span>    <span class="mh">0xf510</span>    <span class="o">|</span>
+  <span class="mi">840</span>       <span class="o">|</span>    <span class="mh">0xf480</span>   <span class="o">|</span>    <span class="mh">0xf5c0</span>    <span class="o">|</span>
+  <span class="mi">841</span>       <span class="o">|</span>    <span class="mh">0xf3ef</span>   <span class="o">|</span>    <span class="mh">0xf69e</span>    <span class="o">|</span>
+  <span class="mi">842</span>       <span class="o">|</span>    <span class="mh">0xf4be</span>   <span class="o">|</span>    <span class="mh">0xf794</span>    <span class="o">|</span>
+  <span class="mi">843</span>       <span class="o">|</span>    <span class="mh">0xf6ef</span>   <span class="o">|</span>    <span class="mh">0xf8ac</span>    <span class="o">|</span>
+  <span class="mi">844</span>       <span class="o">|</span>    <span class="mh">0xfa24</span>   <span class="o">|</span>    <span class="mh">0xf9dc</span>    <span class="o">|</span>
+  <span class="mi">845</span>       <span class="o">|</span>    <span class="mh">0xfe1a</span>   <span class="o">|</span>    <span class="mh">0xfb23</span>    <span class="o">|</span>
+  <span class="mi">846</span>       <span class="o">|</span>    <span class="mh">0x0247</span>   <span class="o">|</span>    <span class="mh">0xfc71</span>    <span class="o">|</span>
+  <span class="mi">847</span>       <span class="o">|</span>    <span class="mh">0x062f</span>   <span class="o">|</span>    <span class="mh">0xfddb</span>    <span class="o">|</span>
+  <span class="mi">848</span>       <span class="o">|</span>    <span class="mh">0x095b</span>   <span class="o">|</span>    <span class="mh">0xff3b</span>    <span class="o">|</span>
+  <span class="mi">849</span>       <span class="o">|</span>    <span class="mh">0x0b69</span>   <span class="o">|</span>    <span class="mh">0x00aa</span>    <span class="o">|</span>
+  <span class="mi">850</span>       <span class="o">|</span>    <span class="mh">0x0c21</span>   <span class="o">|</span>    <span class="mh">0x020e</span>    <span class="o">|</span>
+  <span class="mi">851</span>       <span class="o">|</span>    <span class="mh">0x0b6c</span>   <span class="o">|</span>    <span class="mh">0x0376</span>    <span class="o">|</span>
+  <span class="mi">852</span>       <span class="o">|</span>    <span class="mh">0x0960</span>   <span class="o">|</span>    <span class="mh">0x04c4</span>    <span class="o">|</span>
+  <span class="mi">853</span>       <span class="o">|</span>    <span class="mh">0x0635</span>   <span class="o">|</span>    <span class="mh">0x0611</span>    <span class="o">|</span>
+  <span class="mi">854</span>       <span class="o">|</span>    <span class="mh">0x024d</span>   <span class="o">|</span>    <span class="mh">0x0743</span>    <span class="o">|</span>
+  <span class="mi">855</span>       <span class="o">|</span>    <span class="mh">0xfe17</span>   <span class="o">|</span>    <span class="mh">0x085a</span>    <span class="o">|</span>
+  <span class="mi">856</span>       <span class="o">|</span>    <span class="mh">0xfa31</span>   <span class="o">|</span>    <span class="mh">0x0955</span>    <span class="o">|</span>
+  <span class="mi">857</span>       <span class="o">|</span>    <span class="mh">0xf6ea</span>   <span class="o">|</span>    <span class="mh">0x0a32</span>    <span class="o">|</span>
+  <span class="mi">858</span>       <span class="o">|</span>    <span class="mh">0xf4c2</span>   <span class="o">|</span>    <span class="mh">0x0aef</span>    <span class="o">|</span>
+  <span class="mi">859</span>       <span class="o">|</span>    <span class="mh">0xf3eb</span>   <span class="o">|</span>    <span class="mh">0x0b85</span>    <span class="o">|</span>
+  <span class="mi">860</span>       <span class="o">|</span>    <span class="mh">0xf47f</span>   <span class="o">|</span>    <span class="mh">0x0bef</span>    <span class="o">|</span>
+  <span class="mi">861</span>       <span class="o">|</span>    <span class="mh">0xf66f</span>   <span class="o">|</span>    <span class="mh">0x0c37</span>    <span class="o">|</span>
+  <span class="mi">862</span>       <span class="o">|</span>    <span class="mh">0xf985</span>   <span class="o">|</span>    <span class="mh">0x0c54</span>    <span class="o">|</span>
+  <span class="mi">863</span>       <span class="o">|</span>    <span class="mh">0xfd5d</span>   <span class="o">|</span>    <span class="mh">0x0c49</span>    <span class="o">|</span>
+  <span class="mi">864</span>       <span class="o">|</span>    <span class="mh">0x018a</span>   <span class="o">|</span>    <span class="mh">0x0c11</span>    <span class="o">|</span>
+  <span class="mi">865</span>       <span class="o">|</span>    <span class="mh">0x0586</span>   <span class="o">|</span>    <span class="mh">0x0bb1</span>    <span class="o">|</span>
+  <span class="mi">866</span>       <span class="o">|</span>    <span class="mh">0x08e0</span>   <span class="o">|</span>    <span class="mh">0x0b23</span>    <span class="o">|</span>
+  <span class="mi">867</span>       <span class="o">|</span>    <span class="mh">0x0b27</span>   <span class="o">|</span>    <span class="mh">0x0a7a</span>    <span class="o">|</span>
+  <span class="mi">868</span>       <span class="o">|</span>    <span class="mh">0x0c23</span>   <span class="o">|</span>    <span class="mh">0x09a9</span>    <span class="o">|</span>
+  <span class="mi">869</span>       <span class="o">|</span>    <span class="mh">0x0baa</span>   <span class="o">|</span>    <span class="mh">0x08b9</span>    <span class="o">|</span>
+  <span class="mi">870</span>       <span class="o">|</span>    <span class="mh">0x09d5</span>   <span class="o">|</span>    <span class="mh">0x07aa</span>    <span class="o">|</span>
+  <span class="mi">871</span>       <span class="o">|</span>    <span class="mh">0x06d7</span>   <span class="o">|</span>    <span class="mh">0x0682</span>    <span class="o">|</span>
+  <span class="mi">872</span>       <span class="o">|</span>    <span class="mh">0x030e</span>   <span class="o">|</span>    <span class="mh">0x0541</span>    <span class="o">|</span>
+  <span class="mi">873</span>       <span class="o">|</span>    <span class="mh">0xfedf</span>   <span class="o">|</span>    <span class="mh">0x03f0</span>    <span class="o">|</span>
+  <span class="mi">874</span>       <span class="o">|</span>    <span class="mh">0xfada</span>   <span class="o">|</span>    <span class="mh">0x029a</span>    <span class="o">|</span>
+  <span class="mi">875</span>       <span class="o">|</span>    <span class="mh">0xf772</span>   <span class="o">|</span>    <span class="mh">0x012f</span>    <span class="o">|</span>
+  <span class="mi">876</span>       <span class="o">|</span>    <span class="mh">0xf511</span>   <span class="o">|</span>    <span class="mh">0xffc6</span>    <span class="o">|</span>
+  <span class="mi">877</span>       <span class="o">|</span>    <span class="mh">0xf3f5</span>   <span class="o">|</span>    <span class="mh">0xfe5e</span>    <span class="o">|</span>
+  <span class="mi">878</span>       <span class="o">|</span>    <span class="mh">0xf44c</span>   <span class="o">|</span>    <span class="mh">0xfcf4</span>    <span class="o">|</span>
+  <span class="mi">879</span>       <span class="o">|</span>    <span class="mh">0xf5fc</span>   <span class="o">|</span>    <span class="mh">0xfb9c</span>    <span class="o">|</span>
+  <span class="mi">880</span>       <span class="o">|</span>    <span class="mh">0xf8e8</span>   <span class="o">|</span>    <span class="mh">0xfa55</span>    <span class="o">|</span>
+  <span class="mi">881</span>       <span class="o">|</span>    <span class="mh">0xfca7</span>   <span class="o">|</span>    <span class="mh">0xf91d</span>    <span class="o">|</span>
+  <span class="mi">882</span>       <span class="o">|</span>    <span class="mh">0x00cf</span>   <span class="o">|</span>    <span class="mh">0xf7f6</span>    <span class="o">|</span>
+  <span class="mi">883</span>       <span class="o">|</span>    <span class="mh">0x04d5</span>   <span class="o">|</span>    <span class="mh">0xf6f3</span>    <span class="o">|</span>
+  <span class="mi">884</span>       <span class="o">|</span>    <span class="mh">0x0855</span>   <span class="o">|</span>    <span class="mh">0xf607</span>    <span class="o">|</span>
+  <span class="mi">885</span>       <span class="o">|</span>    <span class="mh">0x0ad4</span>   <span class="o">|</span>    <span class="mh">0xf54f</span>    <span class="o">|</span>
+  <span class="mi">886</span>       <span class="o">|</span>    <span class="mh">0x0c0f</span>   <span class="o">|</span>    <span class="mh">0xf4ac</span>    <span class="o">|</span>
+  <span class="mi">887</span>       <span class="o">|</span>    <span class="mh">0x0bda</span>   <span class="o">|</span>    <span class="mh">0xf431</span>    <span class="o">|</span>
+  <span class="mi">888</span>       <span class="o">|</span>    <span class="mh">0x0a3f</span>   <span class="o">|</span>    <span class="mh">0xf3da</span>    <span class="o">|</span>
+  <span class="mi">889</span>       <span class="o">|</span>    <span class="mh">0x076e</span>   <span class="o">|</span>    <span class="mh">0xf3b4</span>    <span class="o">|</span>
+  <span class="mi">890</span>       <span class="o">|</span>    <span class="mh">0x03c2</span>   <span class="o">|</span>    <span class="mh">0xf3b8</span>    <span class="o">|</span>
+  <span class="mi">891</span>       <span class="o">|</span>    <span class="mh">0xff9b</span>   <span class="o">|</span>    <span class="mh">0xf3e9</span>    <span class="o">|</span>
+  <span class="mi">892</span>       <span class="o">|</span>    <span class="mh">0xfb8b</span>   <span class="o">|</span>    <span class="mh">0xf439</span>    <span class="o">|</span>
+  <span class="mi">893</span>       <span class="o">|</span>    <span class="mh">0xf7f9</span>   <span class="o">|</span>    <span class="mh">0xf4b3</span>    <span class="o">|</span>
+  <span class="mi">894</span>       <span class="o">|</span>    <span class="mh">0xf564</span>   <span class="o">|</span>    <span class="mh">0xf559</span>    <span class="o">|</span>
+  <span class="mi">895</span>       <span class="o">|</span>    <span class="mh">0xf410</span>   <span class="o">|</span>    <span class="mh">0xf61a</span>    <span class="o">|</span>
+  <span class="mi">896</span>       <span class="o">|</span>    <span class="mh">0xf422</span>   <span class="o">|</span>    <span class="mh">0xf704</span>    <span class="o">|</span>
+  <span class="mi">897</span>       <span class="o">|</span>    <span class="mh">0xf59a</span>   <span class="o">|</span>    <span class="mh">0xf810</span>    <span class="o">|</span>
+  <span class="mi">898</span>       <span class="o">|</span>    <span class="mh">0xf850</span>   <span class="o">|</span>    <span class="mh">0xf92e</span>    <span class="o">|</span>
+  <span class="mi">899</span>       <span class="o">|</span>    <span class="mh">0xfbf0</span>   <span class="o">|</span>    <span class="mh">0xfa68</span>    <span class="o">|</span>
+  <span class="mi">900</span>       <span class="o">|</span>    <span class="mh">0x0007</span>   <span class="o">|</span>    <span class="mh">0xfbae</span>    <span class="o">|</span>
+  <span class="mi">901</span>       <span class="o">|</span>    <span class="mh">0x041f</span>   <span class="o">|</span>    <span class="mh">0xfd0d</span>    <span class="o">|</span>
+  <span class="mi">902</span>       <span class="o">|</span>    <span class="mh">0x07c3</span>   <span class="o">|</span>    <span class="mh">0xfe73</span>    <span class="o">|</span>
+  <span class="mi">903</span>       <span class="o">|</span>    <span class="mh">0x0a77</span>   <span class="o">|</span>    <span class="mh">0xffdc</span>    <span class="o">|</span>
+  <span class="mi">904</span>       <span class="o">|</span>    <span class="mh">0x0bef</span>   <span class="o">|</span>    <span class="mh">0x0143</span>    <span class="o">|</span>
+  <span class="mi">905</span>       <span class="o">|</span>    <span class="mh">0x0bf7</span>   <span class="o">|</span>    <span class="mh">0x02aa</span>    <span class="o">|</span>
+  <span class="mi">906</span>       <span class="o">|</span>    <span class="mh">0x0aa6</span>   <span class="o">|</span>    <span class="mh">0x040e</span>    <span class="o">|</span>
+  <span class="mi">907</span>       <span class="o">|</span>    <span class="mh">0x0804</span>   <span class="o">|</span>    <span class="mh">0x0556</span>    <span class="o">|</span>
+  <span class="mi">908</span>       <span class="o">|</span>    <span class="mh">0x0473</span>   <span class="o">|</span>    <span class="mh">0x0698</span>    <span class="o">|</span>
+  <span class="mi">909</span>       <span class="o">|</span>    <span class="mh">0x0060</span>   <span class="o">|</span>    <span class="mh">0x07be</span>    <span class="o">|</span>
+  <span class="mi">910</span>       <span class="o">|</span>    <span class="mh">0xfc41</span>   <span class="o">|</span>    <span class="mh">0x08cb</span>    <span class="o">|</span>
+  <span class="mi">911</span>       <span class="o">|</span>    <span class="mh">0xf88d</span>   <span class="o">|</span>    <span class="mh">0x09ba</span>    <span class="o">|</span>
+  <span class="mi">912</span>       <span class="o">|</span>    <span class="mh">0xf5c2</span>   <span class="o">|</span>    <span class="mh">0x0a8d</span>    <span class="o">|</span>
+  <span class="mi">913</span>       <span class="o">|</span>    <span class="mh">0xf42e</span>   <span class="o">|</span>    <span class="mh">0x0b35</span>    <span class="o">|</span>
+  <span class="mi">914</span>       <span class="o">|</span>    <span class="mh">0xf3fd</span>   <span class="o">|</span>    <span class="mh">0x0bbb</span>    <span class="o">|</span>
+  <span class="mi">915</span>       <span class="o">|</span>    <span class="mh">0xf53e</span>   <span class="o">|</span>    <span class="mh">0x0c16</span>    <span class="o">|</span>
+  <span class="mi">916</span>       <span class="o">|</span>    <span class="mh">0xf7c6</span>   <span class="o">|</span>    <span class="mh">0x0c4e</span>    <span class="o">|</span>
+  <span class="mi">917</span>       <span class="o">|</span>    <span class="mh">0xfb3d</span>   <span class="o">|</span>    <span class="mh">0x0c52</span>    <span class="o">|</span>
+  <span class="mi">918</span>       <span class="o">|</span>    <span class="mh">0xff4b</span>   <span class="o">|</span>    <span class="mh">0x0c2f</span>    <span class="o">|</span>
+  <span class="mi">919</span>       <span class="o">|</span>    <span class="mh">0x0368</span>   <span class="o">|</span>    <span class="mh">0x0be9</span>    <span class="o">|</span>
+  <span class="mi">920</span>       <span class="o">|</span>    <span class="mh">0x0728</span>   <span class="o">|</span>    <span class="mh">0x0b7c</span>    <span class="o">|</span>
+  <span class="mi">921</span>       <span class="o">|</span>    <span class="mh">0x0a17</span>   <span class="o">|</span>    <span class="mh">0x0ae4</span>    <span class="o">|</span>
+  <span class="mi">922</span>       <span class="o">|</span>    <span class="mh">0x0bc4</span>   <span class="o">|</span>    <span class="mh">0x0a27</span>    <span class="o">|</span>
+  <span class="mi">923</span>       <span class="o">|</span>    <span class="mh">0x0c13</span>   <span class="o">|</span>    <span class="mh">0x0943</span>    <span class="o">|</span>
+  <span class="mi">924</span>       <span class="o">|</span>    <span class="mh">0x0afa</span>   <span class="o">|</span>    <span class="mh">0x084a</span>    <span class="o">|</span>
+  <span class="mi">925</span>       <span class="o">|</span>    <span class="mh">0x0893</span>   <span class="o">|</span>    <span class="mh">0x072d</span>    <span class="o">|</span>
+  <span class="mi">926</span>       <span class="o">|</span>    <span class="mh">0x0524</span>   <span class="o">|</span>    <span class="mh">0x05fc</span>    <span class="o">|</span>
+  <span class="mi">927</span>       <span class="o">|</span>    <span class="mh">0x0124</span>   <span class="o">|</span>    <span class="mh">0x04b2</span>    <span class="o">|</span>
+  <span class="mi">928</span>       <span class="o">|</span>    <span class="mh">0xfcf6</span>   <span class="o">|</span>    <span class="mh">0x035e</span>    <span class="o">|</span>
+  <span class="mi">929</span>       <span class="o">|</span>    <span class="mh">0xf931</span>   <span class="o">|</span>    <span class="mh">0x01fd</span>    <span class="o">|</span>
+  <span class="mi">930</span>       <span class="o">|</span>    <span class="mh">0xf62e</span>   <span class="o">|</span>    <span class="mh">0x0090</span>    <span class="o">|</span>
+  <span class="mi">931</span>       <span class="o">|</span>    <span class="mh">0xf45d</span>   <span class="o">|</span>    <span class="mh">0xff2a</span>    <span class="o">|</span>
+  <span class="mi">932</span>       <span class="o">|</span>    <span class="mh">0xf3ee</span>   <span class="o">|</span>    <span class="mh">0xfdc0</span>    <span class="o">|</span>
+  <span class="mi">933</span>       <span class="o">|</span>    <span class="mh">0xf4f0</span>   <span class="o">|</span>    <span class="mh">0xfc5e</span>    <span class="o">|</span>
+  <span class="mi">934</span>       <span class="o">|</span>    <span class="mh">0xf730</span>   <span class="o">|</span>    <span class="mh">0xfb0a</span>    <span class="o">|</span>
+  <span class="mi">935</span>       <span class="o">|</span>    <span class="mh">0xfa8f</span>   <span class="o">|</span>    <span class="mh">0xf9c4</span>    <span class="o">|</span>
+  <span class="mi">936</span>       <span class="o">|</span>    <span class="mh">0xfe87</span>   <span class="o">|</span>    <span class="mh">0xf896</span>    <span class="o">|</span>
+  <span class="mi">937</span>       <span class="o">|</span>    <span class="mh">0x02b3</span>   <span class="o">|</span>    <span class="mh">0xf785</span>    <span class="o">|</span>
+  <span class="mi">938</span>       <span class="o">|</span>    <span class="mh">0x068d</span>   <span class="o">|</span>    <span class="mh">0xf68e</span>    <span class="o">|</span>
+  <span class="mi">939</span>       <span class="o">|</span>    <span class="mh">0x099d</span>   <span class="o">|</span>    <span class="mh">0xf5b7</span>    <span class="o">|</span>
+  <span class="mi">940</span>       <span class="o">|</span>    <span class="mh">0x0b8f</span>   <span class="o">|</span>    <span class="mh">0xf501</span>    <span class="o">|</span>
+  <span class="mi">941</span>       <span class="o">|</span>    <span class="mh">0x0c21</span>   <span class="o">|</span>    <span class="mh">0xf46f</span>    <span class="o">|</span>
+  <span class="mi">942</span>       <span class="o">|</span>    <span class="mh">0x0b42</span>   <span class="o">|</span>    <span class="mh">0xf406</span>    <span class="o">|</span>
+  <span class="mi">943</span>       <span class="o">|</span>    <span class="mh">0x0915</span>   <span class="o">|</span>    <span class="mh">0xf3c7</span>    <span class="o">|</span>
+  <span class="mi">944</span>       <span class="o">|</span>    <span class="mh">0x05d8</span>   <span class="o">|</span>    <span class="mh">0xf3ae</span>    <span class="o">|</span>
+  <span class="mi">945</span>       <span class="o">|</span>    <span class="mh">0x01de</span>   <span class="o">|</span>    <span class="mh">0xf3ca</span>    <span class="o">|</span>
+  <span class="mi">946</span>       <span class="o">|</span>    <span class="mh">0xfdb4</span>   <span class="o">|</span>    <span class="mh">0xf404</span>    <span class="o">|</span>
+  <span class="mi">947</span>       <span class="o">|</span>    <span class="mh">0xf9ce</span>   <span class="o">|</span>    <span class="mh">0xf46b</span>    <span class="o">|</span>
+  <span class="mi">948</span>       <span class="o">|</span>    <span class="mh">0xf6a3</span>   <span class="o">|</span>    <span class="mh">0xf4f5</span>    <span class="o">|</span>
+  <span class="mi">949</span>       <span class="o">|</span>    <span class="mh">0xf49a</span>   <span class="o">|</span>    <span class="mh">0xf5a8</span>    <span class="o">|</span>
+  <span class="mi">950</span>       <span class="o">|</span>    <span class="mh">0xf3e4</span>   <span class="o">|</span>    <span class="mh">0xf67f</span>    <span class="o">|</span>
+  <span class="mi">951</span>       <span class="o">|</span>    <span class="mh">0xf49e</span>   <span class="o">|</span>    <span class="mh">0xf76f</span>    <span class="o">|</span>
+  <span class="mi">952</span>       <span class="o">|</span>    <span class="mh">0xf6b4</span>   <span class="o">|</span>    <span class="mh">0xf886</span>    <span class="o">|</span>
+  <span class="mi">953</span>       <span class="o">|</span>    <span class="mh">0xf9e6</span>   <span class="o">|</span>    <span class="mh">0xf9b3</span>    <span class="o">|</span>
+  <span class="mi">954</span>       <span class="o">|</span>    <span class="mh">0xfdc9</span>   <span class="o">|</span>    <span class="mh">0xfaf5</span>    <span class="o">|</span>
+  <span class="mi">955</span>       <span class="o">|</span>    <span class="mh">0x01f7</span>   <span class="o">|</span>    <span class="mh">0xfc4c</span>    <span class="o">|</span>
+  <span class="mi">956</span>       <span class="o">|</span>    <span class="mh">0x05e9</span>   <span class="o">|</span>    <span class="mh">0xfda8</span>    <span class="o">|</span>
+  <span class="mi">957</span>       <span class="o">|</span>    <span class="mh">0x0926</span>   <span class="o">|</span>    <span class="mh">0xff11</span>    <span class="o">|</span>
+  <span class="mi">958</span>       <span class="o">|</span>    <span class="mh">0x0b4f</span>   <span class="o">|</span>    <span class="mh">0x007a</span>    <span class="o">|</span>
+  <span class="mi">959</span>       <span class="o">|</span>    <span class="mh">0x0c22</span>   <span class="o">|</span>    <span class="mh">0x01e2</span>    <span class="o">|</span>
+  <span class="mi">960</span>       <span class="o">|</span>    <span class="mh">0x0b8c</span>   <span class="o">|</span>    <span class="mh">0x0347</span>    <span class="o">|</span>
+  <span class="mi">961</span>       <span class="o">|</span>    <span class="mh">0x0990</span>   <span class="o">|</span>    <span class="mh">0x049d</span>    <span class="o">|</span>
+  <span class="mi">962</span>       <span class="o">|</span>    <span class="mh">0x0676</span>   <span class="o">|</span>    <span class="mh">0x05e9</span>    <span class="o">|</span>
+  <span class="mi">963</span>       <span class="o">|</span>    <span class="mh">0x029d</span>   <span class="o">|</span>    <span class="mh">0x0718</span>    <span class="o">|</span>
+  <span class="mi">964</span>       <span class="o">|</span>    <span class="mh">0xfe6c</span>   <span class="o">|</span>    <span class="mh">0x0838</span>    <span class="o">|</span>
+  <span class="mi">965</span>       <span class="o">|</span>    <span class="mh">0xfa78</span>   <span class="o">|</span>    <span class="mh">0x0937</span>    <span class="o">|</span>
+  <span class="mi">966</span>       <span class="o">|</span>    <span class="mh">0xf71d</span>   <span class="o">|</span>    <span class="mh">0x0a17</span>    <span class="o">|</span>
+  <span class="mi">967</span>       <span class="o">|</span>    <span class="mh">0xf4e4</span>   <span class="o">|</span>    <span class="mh">0x0ad3</span>    <span class="o">|</span>
+  <span class="mi">968</span>       <span class="o">|</span>    <span class="mh">0xf3eb</span>   <span class="o">|</span>    <span class="mh">0x0b6c</span>    <span class="o">|</span>
+  <span class="mi">969</span>       <span class="o">|</span>    <span class="mh">0xf463</span>   <span class="o">|</span>    <span class="mh">0x0be7</span>    <span class="o">|</span>
+  <span class="mi">970</span>       <span class="o">|</span>    <span class="mh">0xf63d</span>   <span class="o">|</span>    <span class="mh">0x0c2f</span>    <span class="o">|</span>
+  <span class="mi">971</span>       <span class="o">|</span>    <span class="mh">0xf944</span>   <span class="o">|</span>    <span class="mh">0x0c50</span>    <span class="o">|</span>
+  <span class="mi">972</span>       <span class="o">|</span>    <span class="mh">0xfd0d</span>   <span class="o">|</span>    <span class="mh">0x0c46</span>    <span class="o">|</span>
+  <span class="mi">973</span>       <span class="o">|</span>    <span class="mh">0x0137</span>   <span class="o">|</span>    <span class="mh">0x0c1c</span>    <span class="o">|</span>
+  <span class="mi">974</span>       <span class="o">|</span>    <span class="mh">0x0542</span>   <span class="o">|</span>    <span class="mh">0x0bbe</span>    <span class="o">|</span>
+  <span class="mi">975</span>       <span class="o">|</span>    <span class="mh">0x08a3</span>   <span class="o">|</span>    <span class="mh">0x0b3b</span>    <span class="o">|</span>
+  <span class="mi">976</span>       <span class="o">|</span>    <span class="mh">0x0b01</span>   <span class="o">|</span>    <span class="mh">0x0a96</span>    <span class="o">|</span>
+  <span class="mi">977</span>       <span class="o">|</span>    <span class="mh">0x0c14</span>   <span class="o">|</span>    <span class="mh">0x09c4</span>    <span class="o">|</span>
+  <span class="mi">978</span>       <span class="o">|</span>    <span class="mh">0x0bbe</span>   <span class="o">|</span>    <span class="mh">0x08d7</span>    <span class="o">|</span>
+  <span class="mi">979</span>       <span class="o">|</span>    <span class="mh">0x0a01</span>   <span class="o">|</span>    <span class="mh">0x07d2</span>    <span class="o">|</span>
+  <span class="mi">980</span>       <span class="o">|</span>    <span class="mh">0x0719</span>   <span class="o">|</span>    <span class="mh">0x06af</span>    <span class="o">|</span>
+  <span class="mi">981</span>       <span class="o">|</span>    <span class="mh">0x0353</span>   <span class="o">|</span>    <span class="mh">0x0572</span>    <span class="o">|</span>
+  <span class="mi">982</span>       <span class="o">|</span>    <span class="mh">0xff31</span>   <span class="o">|</span>    <span class="mh">0x0420</span>    <span class="o">|</span>
+  <span class="mi">983</span>       <span class="o">|</span>    <span class="mh">0xfb20</span>   <span class="o">|</span>    <span class="mh">0x02c8</span>    <span class="o">|</span>
+  <span class="mi">984</span>       <span class="o">|</span>    <span class="mh">0xf7ac</span>   <span class="o">|</span>    <span class="mh">0x015f</span>    <span class="o">|</span>
+  <span class="mi">985</span>       <span class="o">|</span>    <span class="mh">0xf533</span>   <span class="o">|</span>    <span class="mh">0xfff7</span>    <span class="o">|</span>
+  <span class="mi">986</span>       <span class="o">|</span>    <span class="mh">0xf3fb</span>   <span class="o">|</span>    <span class="mh">0xfe87</span>    <span class="o">|</span>
+  <span class="mi">987</span>       <span class="o">|</span>    <span class="mh">0xf431</span>   <span class="o">|</span>    <span class="mh">0xfd28</span>    <span class="o">|</span>
+  <span class="mi">988</span>       <span class="o">|</span>    <span class="mh">0xf5d4</span>   <span class="o">|</span>    <span class="mh">0xfbcb</span>    <span class="o">|</span>
+  <span class="mi">989</span>       <span class="o">|</span>    <span class="mh">0xf8a5</span>   <span class="o">|</span>    <span class="mh">0xfa7e</span>    <span class="o">|</span>
+  <span class="mi">990</span>       <span class="o">|</span>    <span class="mh">0xfc54</span>   <span class="o">|</span>    <span class="mh">0xf941</span>    <span class="o">|</span>
+  <span class="mi">991</span>       <span class="o">|</span>    <span class="mh">0x007a</span>   <span class="o">|</span>    <span class="mh">0xf81d</span>    <span class="o">|</span>
+  <span class="mi">992</span>       <span class="o">|</span>    <span class="mh">0x048b</span>   <span class="o">|</span>    <span class="mh">0xf718</span>    <span class="o">|</span>
+  <span class="mi">993</span>       <span class="o">|</span>    <span class="mh">0x0816</span>   <span class="o">|</span>    <span class="mh">0xf62d</span>    <span class="o">|</span>
+  <span class="mi">994</span>       <span class="o">|</span>    <span class="mh">0x0aaa</span>   <span class="o">|</span>    <span class="mh">0xf563</span>    <span class="o">|</span>
+  <span class="mi">995</span>       <span class="o">|</span>    <span class="mh">0x0c01</span>   <span class="o">|</span>    <span class="mh">0xf4bb</span>    <span class="o">|</span>
+  <span class="mi">996</span>       <span class="o">|</span>    <span class="mh">0x0be8</span>   <span class="o">|</span>    <span class="mh">0xf43d</span>    <span class="o">|</span>
+  <span class="mi">997</span>       <span class="o">|</span>    <span class="mh">0x0a6b</span>   <span class="o">|</span>    <span class="mh">0xf3eb</span>    <span class="o">|</span>
+  <span class="mi">998</span>       <span class="o">|</span>    <span class="mh">0x07b2</span>   <span class="o">|</span>    <span class="mh">0xf3bb</span>    <span class="o">|</span>
+  <span class="mi">999</span>       <span class="o">|</span>    <span class="mh">0x0409</span>   <span class="o">|</span>    <span class="mh">0xf3b7</span>    <span class="o">|</span>
+ <span class="mi">1000</span>       <span class="o">|</span>    <span class="mh">0xffee</span>   <span class="o">|</span>    <span class="mh">0xf3da</span>    <span class="o">|</span>
+ <span class="mi">1001</span>       <span class="o">|</span>    <span class="mh">0xfbd2</span>   <span class="o">|</span>    <span class="mh">0xf42d</span>    <span class="o">|</span>
+ <span class="mi">1002</span>       <span class="o">|</span>    <span class="mh">0xf83a</span>   <span class="o">|</span>    <span class="mh">0xf49f</span>    <span class="o">|</span>
+ <span class="mi">1003</span>       <span class="o">|</span>    <span class="mh">0xf586</span>   <span class="o">|</span>    <span class="mh">0xf53e</span>    <span class="o">|</span>
+ <span class="mi">1004</span>       <span class="o">|</span>    <span class="mh">0xf418</span>   <span class="o">|</span>    <span class="mh">0xf604</span>    <span class="o">|</span>
+ <span class="mi">1005</span>       <span class="o">|</span>    <span class="mh">0xf40b</span>   <span class="o">|</span>    <span class="mh">0xf6e4</span>    <span class="o">|</span>
+ <span class="mi">1006</span>       <span class="o">|</span>    <span class="mh">0xf56d</span>   <span class="o">|</span>    <span class="mh">0xf7e8</span>    <span class="o">|</span>
+ <span class="mi">1007</span>       <span class="o">|</span>    <span class="mh">0xf813</span>   <span class="o">|</span>    <span class="mh">0xf905</span>    <span class="o">|</span>
+ <span class="mi">1008</span>       <span class="o">|</span>    <span class="mh">0xfba4</span>   <span class="o">|</span>    <span class="mh">0xfa3e</span>    <span class="o">|</span>
+ <span class="mi">1009</span>       <span class="o">|</span>    <span class="mh">0xffb6</span>   <span class="o">|</span>    <span class="mh">0xfb83</span>    <span class="o">|</span>
+ <span class="mi">1010</span>       <span class="o">|</span>    <span class="mh">0x03d6</span>   <span class="o">|</span>    <span class="mh">0xfcdb</span>    <span class="o">|</span>
+ <span class="mi">1011</span>       <span class="o">|</span>    <span class="mh">0x0782</span>   <span class="o">|</span>    <span class="mh">0xfe40</span>    <span class="o">|</span>
+ <span class="mi">1012</span>       <span class="o">|</span>    <span class="mh">0x0a45</span>   <span class="o">|</span>    <span class="mh">0xffaa</span>    <span class="o">|</span>
+ <span class="mi">1013</span>       <span class="o">|</span>    <span class="mh">0x0be2</span>   <span class="o">|</span>    <span class="mh">0x0114</span>    <span class="o">|</span>
+ <span class="mi">1014</span>       <span class="o">|</span>    <span class="mh">0x0c0e</span>   <span class="o">|</span>    <span class="mh">0x0279</span>    <span class="o">|</span>
+ <span class="mi">1015</span>       <span class="o">|</span>    <span class="mh">0x0ac6</span>   <span class="o">|</span>    <span class="mh">0x03db</span>    <span class="o">|</span>
+ <span class="mi">1016</span>       <span class="o">|</span>    <span class="mh">0x0841</span>   <span class="o">|</span>    <span class="mh">0x0527</span>    <span class="o">|</span>
+ <span class="mi">1017</span>       <span class="o">|</span>    <span class="mh">0x04bc</span>   <span class="o">|</span>    <span class="mh">0x066e</span>    <span class="o">|</span>
+ <span class="mi">1018</span>       <span class="o">|</span>    <span class="mh">0x00b4</span>   <span class="o">|</span>    <span class="mh">0x0795</span>    <span class="o">|</span>
+ <span class="mi">1019</span>       <span class="o">|</span>    <span class="mh">0xfc8b</span>   <span class="o">|</span>    <span class="mh">0x08a9</span>    <span class="o">|</span>
+ <span class="mi">1020</span>       <span class="o">|</span>    <span class="mh">0xf8ce</span>   <span class="o">|</span>    <span class="mh">0x099d</span>    <span class="o">|</span>
+ <span class="mi">1021</span>       <span class="o">|</span>    <span class="mh">0xf5f2</span>   <span class="o">|</span>    <span class="mh">0x0a6e</span>    <span class="o">|</span>
+ <span class="mi">1022</span>       <span class="o">|</span>    <span class="mh">0xf443</span>   <span class="o">|</span>    <span class="mh">0x0b1d</span>    <span class="o">|</span>
+<span class="n">Running</span> <span class="n">IIOD</span> <span class="n">server</span><span class="o">...</span>
+<span class="n">If</span> <span class="n">successful</span><span class="p">,</span> <span class="n">you</span> <span class="n">may</span> <span class="n">connect</span> <span class="n">an</span> <span class="n">IIO</span> <span class="n">client</span> <span class="n">application</span> <span class="n">by</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Disconnecting</span> <span class="n">the</span> <span class="n">serial</span> <span class="n">terminal</span> <span class="n">you</span> <span class="n">use</span> <span class="n">to</span> <span class="n">view</span> <span class="n">this</span> <span class="n">message</span><span class="o">.</span>
+<span class="mf">2.</span> <span class="n">Connecting</span> <span class="n">the</span> <span class="n">IIO</span> <span class="n">client</span> <span class="n">application</span> <span class="n">using</span> <span class="n">the</span> <span class="n">serial</span> <span class="n">backend</span> <span class="n">configured</span> <span class="k">as</span> <span class="n">shown</span><span class="p">:</span>
+<span class="n">Baudrate</span><span class="p">:</span> <span class="mi">115200</span>
+<span class="n">Data</span> <span class="n">size</span><span class="p">:</span> <span class="mi">8</span> <span class="n">bits</span>
+<span class="n">Parity</span><span class="p">:</span> <span class="n">none</span>
+<span class="n">Stop</span> <span class="n">bits</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Flow</span> <span class="n">control</span><span class="p">:</span> <span class="n">none</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+</section>
 <section id="iio-oscilloscope-remote">
 <h3>IIO Oscilloscope Remote<a class="headerlink" href="#iio-oscilloscope-remote" title="Link to this heading"></a></h3>
-<p>Please see also here: <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope</span></a></p>
-<p>The IIO Oscilloscope application can be used to connect to another platform that
-has a connected device in order to configure the device and read data from it.</p>
-<p>Build and start osc on a network enabled Linux host.</p>
-<p>Once the application is launched goto Settings -&gt; Connect and enter the IP
+<p>After booting process is complete, you can open IIO-Oscilloscope. Learn more
+about it <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">here</span></a>. You can interact with
+the IIO-Osc GUI either directly or over the network.</p>
+<ol class="arabic">
+<li><p>Once the application is launched go to Settings then Connect and enter the IP
 address of the target in the popup window.</p>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/connect.png"><img alt="Connect Window" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/connect.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_iio_osc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_iio_osc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_iio_osc.png" width="900" />
 </a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/plot_window.png"><img alt="Plot" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/plot_window.png" width="800" />
+</li>
+<li><p>Captured Loopback Signal Time Domain</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_time_domain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_time_domain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_time_domain.png" width="900" />
 </a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/daq2_plugin.png"><img alt="DAQ2 plugin" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/daq2_plugin.png" width="800" />
+</li>
+<li><p>Captured Loopback Signal Frequency Domain</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_frequency_domain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_frequency_domain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/daq2/docs/solutions/reference-designs/ad-fmcdaq2-ebz/images/ad-fmcdaq2-ebz_kcu105_frequency_domain.png" width="900" />
 </a>
+</li>
+</ol>
 </section>
 </section>
 </section>
@@ -647,8 +1255,8 @@ address of the target in the popup window.</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
-    <a href="../introduction.html" title="Next document (Alt+Shift+RightArrow)" class="next">Introduction</a>
+    <a href="a10gx.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">A10GX Quickstart (OBSOLETE)</a>
+    <a href="zc706.html" title="Next document (Alt+Shift+RightArrow)" class="next">ZC706 Quickstart</a>
               </div>
           
         </div>
