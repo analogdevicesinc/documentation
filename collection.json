@@ -20,6 +20,33 @@
                 "workshop"
             ]
         },
+        "EVAL-AD9434": {
+            "docname": "documentation/solutions/reference-designs/eval-ad9434-fmc/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/eval-ad9434-fmc": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad9434_fmc": {
+                        "name": "HDL Project (ad9434_fmc)"
+                    }
+                },
+                "no-OS": {
+                    "drivers/adc/ad9434": {
+                        "name": "no-OS Driver (ad9434)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/eval-ad9434-fmc/images/eval_ad9434_fmc.png",
+            "subtitle": "The EVAL-AD9434 is an evaluation board for the AD9434, single 12-bit ADC",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
         "EVAL-ADXL355-PMDZ": {
             "docname": "documentation/solutions/reference-designs/adxl355-pmdz/index",
             "description": "",
