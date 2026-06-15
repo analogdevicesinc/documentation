@@ -1435,17 +1435,26 @@ Content on this topic
 for prototyping intelligent, secure, and connected industrial field devices.</p>
 <section id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h3>
-<ul class="simple">
+<ul>
 <li><p>Certified for intrinsic safety (Ex ia IIC Ga)</p></li>
 <li><p>Pre-certified Ethernet-APL</p></li>
+<li><p>Extensive security features: built-in security for hardware root-of-trust,
+data confidentiality and integrity, and secure communications.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Designed with IEC 62443 and EUCRA requirements in mind.
+Support available for security certification.</p></li>
+</ul>
+</div></blockquote>
+</li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX42500" target="_blank">MAX42500</a> voltage monitor with integrated windowing watchdog</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX66132" target="_blank">MAX66132</a> temperature sensor</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/ADFS7124-4" target="_blank">ADFS7124-4</a> sigma-delta ADC (SC3 certified)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADFS7124-4" target="_blank">ADFS7124-4</a> sigma-delta AfDC (SC3 certified)</p></li>
 <li><p>Complete FMEDA documentation</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/MAX32690" target="_blank">MAX32690</a>  dual-core MCU (ARM Cortex-M4 with FPU + RISC-V co-processor)</p></li>
 <li><p>External RAM (512 Mb) and Flash (64 Mb)</p></li>
 <li><p>10BASE-T1L Ethernet via <a class="icon adi reference external" href="https://www.analog.com/ADIN1110" target="_blank">ADIN1110</a>  MAC/PHY</p></li>
-<li><p>Powered via Single-Pair Power over Ethernet (SPoE), <a class="icon adi reference external" href="https://www.analog.com/ADIN1100D2Z" target="_blank">ADIN1100D2Z</a> recommended</p></li>
+<li><p>Supports APL class A, <a class="icon adi reference external" href="https://www.analog.com/ADIN1100D2Z" target="_blank">ADIN1100D2Z</a> recommended</p></li>
 <li><p>Open-source software stack with drivers and example applications</p></li>
 <li><p>Zephyr RTOS support and integration with Code Fusion Studio</p></li>
 </ul>
@@ -1594,13 +1603,12 @@ and check the box for <code class="docutils literal notranslate"><span class="pr
 <li><p><strong>Development kit</strong>: AD-EthernetAPLDevice-SL</p></li>
 <li><p><strong>Debugging board</strong>: If RISC-V co-processor needs to be debugged, replace the
 IS digital board with the NON-IS Digital board</p></li>
-<li><p><strong>Power supply</strong>: Single-Pair Power over Ethernet (SPoE) via DEMO-ADIN1100D2Z
-supplied from external power connector (from 9V to 15V), or a Ethernet-APL
-field switch</p></li>
+<li><p><strong>Power supply</strong>: Powered via DEMO-ADIN1100D2Z supplied from external power connector
+(from 9V to 15V), or an Ethernet-APL field switch</p></li>
 <li><p><strong>ARM programmer</strong>: MAX32625PICO or any SWD-compatible programmer</p></li>
 <li><p><strong>RISC-V programmer</strong>: Olimex ARM-USB-OCD</p></li>
 <li><p><strong>Media converter</strong>: 10BASE-T1L to 10BASE-T or similar. DEMO-ADIN1100D2Z
-includes a media converter and can be used for both power and data, or a
+includes a media converter and can be used for both power and data, or an
 Ethernet-APL field switch</p></li>
 </ul>
 </section>
@@ -1616,8 +1624,8 @@ ribbon cable.</p></li>
 RISC‑V debug probe to the RISC‑V Jtag header (available only on the NON‑IS
 board).</p></li>
 <li><p>Connect the DEMO-ADIN1100D2Z to your PC via Ethernet.</p></li>
-<li><p>Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The
-AD-EthernetAPLDevice-SL will be powered via SPoE.</p></li>
+<li><p>Apply power to the DEMO-ADIN1100D2Z (9V to 15V input). The AD-EthernetAPLDevice-SL
+will be powered via Ethernet.</p></li>
 </ol>
 <figure class="align-default" id="id8">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-ethernetapldevice-sl/config.png"><img alt="Hardware Setup" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-ethernetapldevice-sl/config.png" style="width: 600px;" />
