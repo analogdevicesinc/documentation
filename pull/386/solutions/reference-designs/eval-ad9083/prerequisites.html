@@ -8,15 +8,16 @@
 
     <title>Prerequisites &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
-    <script async="async" src="../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="AD9083 Linux Driver" href="ad9083.html" />
+    <link rel="next" title="User guide" href="user-guide.html" />
     <link rel="prev" title="EVAL-AD9083" href="index.html" />
    
+  
   
   
   <meta name="repository" content="documentation">
@@ -133,13 +134,13 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-AD9083</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ad9083.html">AD9083 Linux Driver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/ads8-v3ebz.html">On ADS8-V3EBZ</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="eval/ad9083.html">AD9083EBZ and ADS8-V3EBZ Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart/ads8-v3ebz.html">ADS8-V3EBZ Quick Start Guide</a></li>
 </ul>
 </li>
 </ul>
@@ -166,7 +167,7 @@ start out with:</p>
 <section id="hardware-prerequisites">
 <h2>Hardware prerequisites<a class="headerlink" href="#hardware-prerequisites" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>The <a class="icon adi reference external" href="https://www.analog.com/AD9083" target="_blank">AD9083</a>-based evaluation board:
+<li><p>The AD9083-based evaluation board:
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9083" target="_blank">EVAL-AD9083</a></p></li>
 <li><p>An FPGA carrier platform. Our recommended ones can be found
 <a class="reference internal" href="quickstart/index.html#eval-ad9083-carriers"><span class="std std-ref">here</span></a>.</p>
@@ -194,14 +195,12 @@ close to the ARM/FPGA SoC based solutions, but the GUI runs on a host PC
 </li>
 </ol>
 </li>
-<li><p>Internet connection (without proxies makes things much easier) to update the
-scripts/binaries on the SD card that came with the ADI FMC Card (firewalls
-are OK, proxies make things a pain).</p></li>
+<li><p>Internet connection (without proxies makes things much easier) to update
+the scripts/binaries on the SD card that came with the ADI FMC Card
+(firewalls are OK, proxies make things a pain).</p></li>
 <li><p>RF Test equipment</p></li>
-<li><p>An SD card with at least 16 GB of memory, either provided with the evaluation
-board or required to be prepared by the user.</p></li>
-<li><p>USB-JTAG programmer for FPGA configuration</p></li>
-<li><p>Coaxial cables for RF connections</p></li>
+<li><p>An SD card with at least 16GB of memory (in case you’re using Linux). You
+should have received one when purchasing the evaluation board.</p></li>
 </ol>
 </section>
 <section id="software-prerequisites">
@@ -211,12 +210,11 @@ from the FPGA, we use the following:</p>
 <ol class="arabic simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">Scopy</span></a> v2.0 or later (must contain the IIO
 plugin)</p></li>
-<li><p>Vivado 2024.1 for HDL development</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="icon adi reference external" href="https://www.analog.com/" target="_blank">ADI</a> does not offer FPGA carrier platforms for sale or loan; getting
-one yourself is the normal part of development or evaluation.</p>
+<p><a class="icon adi reference external" href="https://www.analog.com/" target="_blank">ADI</a> does not offer FPGA carrier platforms for sale or loan;
+getting one yourself is the normal part of development or evaluation.</p>
 </div>
 </section>
 </section>
@@ -226,7 +224,7 @@ one yourself is the normal part of development or evaluation.</p>
               <div class="related">
                 &nbsp;
     <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">EVAL-AD9083</a>
-    <a href="ad9083.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD9083 Linux Driver</a>
+    <a href="user-guide.html" title="Next document (Alt+Shift+RightArrow)" class="next">User guide</a>
               </div>
           
         </div>

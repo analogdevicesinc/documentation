@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="Figure 1. AD9083EBZ Evaluation Board and ADS8-V3EBZ Data Capture Board" name="description" />
 
-    <title>AD9083EBZ and ADS8-V3EBZ Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <title>ADS8-V3EBZ Quick Start Guide &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
-    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="prev" title="ZCU102 Quickstart" href="../quickstart/zcu102.html" />
+    <link rel="prev" title="ZCU102 Quickstart" href="zcu102.html" />
    
+  
   
   
   <meta name="repository" content="documentation">
@@ -94,7 +95,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">AD9083EBZ and ADS8-V3EBZ Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#">ADS8-V3EBZ Quick Start Guide</a><ul>
 <li><a class="reference internal" href="#typical-setup">Typical Setup</a></li>
 <li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
 <li><a class="reference internal" href="#hardware-needed">Hardware Needed</a></li>
@@ -164,13 +165,13 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD9083</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ad9083.html">AD9083 Linux Driver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On ADS8-V3EBZ</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">AD9083EBZ and ADS8-V3EBZ Quick Start Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADS8-V3EBZ Quick Start Guide</a></li>
 </ul>
 </li>
 </ul>
@@ -186,12 +187,12 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9083</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9083</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
-  <section id="ad9083ebz-and-ads8-v3ebz-quick-start-guide">
-<span id="eval-ad9083-eval"></span><h1>AD9083EBZ and ADS8-V3EBZ Quick Start Guide<a class="headerlink" href="#ad9083ebz-and-ads8-v3ebz-quick-start-guide" title="Link to this heading"></a></h1>
+  <section id="ads8-v3ebz-quick-start-guide">
+<span id="eval-ad9083-quickstart-ads8-v3ebz"></span><h1>ADS8-V3EBZ Quick Start Guide<a class="headerlink" href="#ads8-v3ebz-quick-start-guide" title="Link to this heading"></a></h1>
 <section id="typical-setup">
 <h2>Typical Setup<a class="headerlink" href="#typical-setup" title="Link to this heading"></a></h2>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9083_extra_pages/docs/solutions/reference-designs/eval-ad9083/images/ad9083ebz_ads8-v3ebz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9083_extra_pages/docs/solutions/reference-designs/eval-ad9083/images/ad9083ebz_ads8-v3ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9083_extra_pages/docs/solutions/reference-designs/eval-ad9083/images/ad9083ebz_ads8-v3ebz.jpg" width="650" />
@@ -607,7 +608,7 @@ ACE) by following the instructions from the start.</p></li>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../quickstart/zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
+    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
     <div></div>
               </div>
           
