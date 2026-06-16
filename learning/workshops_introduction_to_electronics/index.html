@@ -4,19 +4,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This is a work in progress." name="description" />
+<meta content="Introduction" name="description" />
 
     <title>Introduction to Electronics &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5f9cb17c" />
-    <script async="async" src="../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script async="async" src="../../_static/app.umd.js?v=26d0298f"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Embedded Baremetal" href="../workshops_embedded_baremetal/index.html" />
     <link rel="prev" title="Software Defined Instrumentation" href="../workshops_software_defined_instrumentation/index.html" />
    
+  
   
   
   <meta name="repository" content="documentation">
@@ -97,9 +98,23 @@
           <ul>
 <li><a class="reference internal" href="#">Introduction to Electronics</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#theoretical-content">Theoretical content</a></li>
-<li><a class="reference internal" href="#hands-on-activity">Hands-on activity</a></li>
-<li><a class="reference internal" href="#slide-deck-booklet-and-additional-materials">Slide Deck, booklet and additional materials</a></li>
+<li><a class="reference internal" href="#slide-deck-and-booklet">Slide Deck and Booklet</a></li>
+<li><a class="reference internal" href="#theory">Theory</a><ul>
+<li><a class="reference internal" href="#why-electronics">Why Electronics?</a></li>
+<li><a class="reference internal" href="#what-is-an-ic">What is an IC?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#hands-on-activity">Hands-on activity</a><ul>
+<li><a class="reference internal" href="#example-1-scope-and-signal-generator-channels-cascaded-lp-filters">Example 1 - Scope and Signal generator channels - Cascaded LP filters</a><ul>
+<li><a class="reference internal" href="#first-stage-filter">First Stage Filter</a></li>
+<li><a class="reference internal" href="#second-stage-filter">Second Stage Filter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-2-traffic-lights-control">Example 2 - Traffic lights control</a></li>
+<li><a class="reference internal" href="#example-3-npn-transistor-characteristics">Example 3 - NPN transistor characteristics</a></li>
+<li><a class="reference internal" href="#example-4-home-made-battery-instructor-led">Example 4 - Home made battery - instructor-led</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#takeaways">Takeaways</a></li>
 <li><a class="reference internal" href="#resources">Resources</a></li>
 </ul>
@@ -1427,29 +1442,60 @@ Content on this topic
             
   <section id="introduction-to-electronics">
 <h1>Introduction to Electronics<a class="headerlink" href="#introduction-to-electronics" title="Link to this heading"></a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a work in progress.</p>
-</div>
+<nav class="contents local" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id20">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#slide-deck-and-booklet" id="id21">Slide Deck and Booklet</a></p></li>
+<li><p><a class="reference internal" href="#theory" id="id22">Theory</a></p>
+<ul>
+<li><p><a class="reference internal" href="#why-electronics" id="id23">Why Electronics?</a></p></li>
+<li><p><a class="reference internal" href="#what-is-an-ic" id="id24">What is an IC?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#hands-on-activity" id="id25">Hands-on activity</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1-scope-and-signal-generator-channels-cascaded-lp-filters" id="id26">Example 1 - Scope and Signal generator channels - Cascaded LP filters</a></p></li>
+<li><p><a class="reference internal" href="#example-2-traffic-lights-control" id="id27">Example 2 - Traffic lights control</a></p></li>
+<li><p><a class="reference internal" href="#example-3-npn-transistor-characteristics" id="id28">Example 3 - NPN transistor characteristics</a></p></li>
+<li><p><a class="reference internal" href="#example-4-home-made-battery-instructor-led" id="id29">Example 4 - Home made battery - instructor-led</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#takeaways" id="id30">Takeaways</a></p></li>
+<li><p><a class="reference internal" href="#resources" id="id31">Resources</a></p></li>
+</ul>
+</nav>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Introduction</a><a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>This workshop is designed for freshmen and second-year students who are passionate about electronics and electrical engineering. It aims to provide them with a comprehensive overview of the field.</p>
 <p>The content and structure are tailored to their current level of knowledge, introducing them to the fascinating world of electronics and microchips.</p>
 </section>
-<section id="theoretical-content">
-<h2>Theoretical content<a class="headerlink" href="#theoretical-content" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Why choosing Electronics</p></li>
-<li><p>What is an IC and what role does it have</p></li>
-<li><p>What is a transistor and what role does it have</p></li>
-<li><p>ADALM2000 board overview</p></li>
-</ul>
-<p><strong>Why Electronics?</strong></p>
-<p>Every Electronics or Electrical Engineering student has received at least once the question: why did you choose electronics?
-How can one answer this question better than: Why not?</p>
+<section id="slide-deck-and-booklet">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Slide Deck and Booklet</a><a class="headerlink" href="#slide-deck-and-booklet" title="Link to this heading"></a></h2>
+<p>Since this tutorial is also designed to be presented as a live, hands-on workshop, a slide deck is provided here:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/electronicsbasics_nov24.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
+</div>
+<p>A complete booklet of the hands-on activity is also provided, as a companion to following the tutorial yourself:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ebasics booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Booklet</span></code></a></p>
+</div>
+<p>A comma separated values file used for generating the base step voltage needed for the Transistor Characteristic demo is also provided:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><code class="xref download docutils literal notranslate"><span class="pre">Base</span> <span class="pre">Voltage</span> <span class="pre">Values</span></code></p>
+</div>
+</section>
+<section id="theory">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Theory</a><a class="headerlink" href="#theory" title="Link to this heading"></a></h2>
+<section id="why-electronics">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Why Electronics?</a><a class="headerlink" href="#why-electronics" title="Link to this heading"></a></h3>
+<p>Every Electronics or Electrical Engineering student has received at least once the question: <em>why did you choose electronics?</em>
+How can one answer this question better than: <em>Why not?</em></p>
 <ol class="arabic simple">
-<li><p>It offers diverse career opportunities:</p></li>
-</ol>
+<li><p>It offers diverse career opportunities:</p>
 <ul class="simple">
 <li><p>Wireless Communications Engineer</p></li>
 <li><p>Network Engineer</p></li>
@@ -1457,61 +1503,64 @@ How can one answer this question better than: Why not?</p>
 <li><p>Embedded Systems Engineer</p></li>
 <li><p>Satellite Communications Engineer</p></li>
 </ul>
-<ol class="arabic simple" start="2">
-<li><p>It brings to table inovation and technological advancement</p></li>
+</li>
+<li><p>It brings to table innovation and technological advancement</p></li>
 <li><p>It offers impactful contribution</p></li>
 <li><p>It offers continuous learning</p></li>
 </ol>
-<p><strong>What is an IC?</strong></p>
+</section>
+<section id="what-is-an-ic">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">What is an IC?</a><a class="headerlink" href="#what-is-an-ic" title="Link to this heading"></a></h3>
 <p>An integrated circuit (IC) is an assembly of electronic components in which hundreds to millions of transistors, resistors, and capacitors are interconnected and built up on a thin substrate of semiconductor material (usually silicon) to form a small chip or wafer. Integrated circuits are the building blocks for most electronic devices and equipment.</p>
-<p><cite>Applications</cite></p>
+<p><strong>Applications</strong></p>
 <ul class="simple">
 <li><p>Consumer Electronics: Smartphones, computers, and home appliances.</p></li>
 <li><p>Industrial: Automation systems, robotics.</p></li>
 <li><p>Medical: Diagnostic equipment, wearable health devices.</p></li>
 <li><p>Automotive: Engine control units, infotainment systems.</p></li>
 </ul>
-<p><cite>Importance</cite></p>
+<p><strong>Importance</strong></p>
 <ul class="simple">
 <li><p>Miniaturization of circuits.</p></li>
 <li><p>Increased reliability and performance.</p></li>
 <li><p>Cost efficiency.</p></li>
 </ul>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" width="500" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ic.png" style="width: 30em;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">ICs are everywhere</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" width="500" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/circuit.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">LSI – Large Scale Integration circuits compared to the corresponding prototype circuit 1970-1972</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">LSI - Large Scale Integration circuits compared to the corresponding prototype circuit 1970-1972</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Transistors - what kind of species is that?</strong></p>
-<p>A transistor is a miniature semiconductor that regulates or controls current or voltage flow in addition amplifying and generating these electrical signals and acting as a switch/gate for them</p>
+<p>A transistor is a miniature semiconductor that regulates or controls current or voltage flow in addition amplifying and generating these
+electrical signals and acting as a switch/gate for them</p>
 <ul class="simple">
-<li><p>why do we need them?</p></li>
-<li><p>how do they work?</p></li>
-<li><p>what are the commonly used types?</p></li>
+<li><p>Why do we need them?</p></li>
+<li><p>How do they work?</p></li>
+<li><p>What are the commonly used types?</p></li>
 </ul>
-<p><cite>Applications</cite></p>
+<p><strong>Applications</strong></p>
 <ul class="simple">
 <li><p>Analog Circuits: Amplifiers, oscillators.</p></li>
 <li><p>Digital Circuits: Logic gates, microprocessors.</p></li>
 <li><p>Power Electronics: Power supplies, motor controllers.</p></li>
 </ul>
 <figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/transistor.png" style="width: 30em;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">Transistor - the base of Electronics</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><cite>Functionality</cite></p>
+<p><strong>Functionality</strong></p>
 <ul class="simple">
 <li><p>Cut Off (“off”):  Emitter &gt; Base &lt; Collector</p></li>
 <li><p>Saturation (“on”): Emitter &lt; Base &gt; Collector</p></li>
@@ -1519,34 +1568,42 @@ How can one answer this question better than: Why not?</p>
 <li><p>Reverse Active (“negative proportional”):  Emitter &gt; Base &gt; Collector</p></li>
 </ul>
 <figure class="align-center" id="id4">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/vce_ib.png" style="width: 30em;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 4 </span><span class="caption-text">Output Characteristics - common emitter configuration</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><cite>How many transistors are needed to create a logic gate?</cite></p>
+<p><strong>How many transistors are needed to create a logic gate?</strong></p>
 <p>Logic gates built with transistors</p>
-<div class="grid grid-flex" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png"><img alt="AND" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png" width="280" />
+<div class="grid grid-flex" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png"><img alt="AND" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/and.png" style="width: 30em;" />
 </a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png"><img alt="NOT" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png"><img alt="NOT" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/not.png" style="width: 30em;" />
 </a>
-</div><p><cite>ADALM2000</cite></p>
-<p>The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals of electrical engineering in a self or instructor lead setting.</p>
-<p>With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear.</p>
+</div><p><strong>ADALM2000</strong></p>
+<p>The ADALM2000 (M2K) Advanced Active Learning Module is an affordable USB-powered data acquisition module, that can be used to introduce fundamentals
+of electrical engineering in a self or instructor lead setting.</p>
+<p>With 12-bit ADCs and DACs running at 100 MSPS, brings the power of high-performance lab equipment to the palm of your hand, enabling electrical
+engineering students and hobbyists to explore signals and systems into the tens of MHz without the cost and bulk associated with traditional lab gear.</p>
 <p>When coupled with Analog Devices’ Scopy™ graphical application software running on a computer, provides the user with high performance instrumentation.</p>
-<figure class="align-left">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png" />
-</figure>
-<figure class="align-center" id="id5">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png" />
+<div class="grid grid-flex" style="grid-template-columns: 50% 50%;"><figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png"><img alt="M2K" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/m2k.png" style="width: 30em;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">M2k and Scopy software</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">M2K Active Learning Module</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png"><img alt="Scopy" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/scopy.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Scopy Software</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></section>
 </section>
 <section id="hands-on-activity">
-<h2>Hands-on activity<a class="headerlink" href="#hands-on-activity" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Hands-on activity</a><a class="headerlink" href="#hands-on-activity" title="Link to this heading"></a></h2>
 <p>By the end of this workshop, you will learn:</p>
 <ul class="simple">
 <li><p>How to use a breadboard</p></li>
@@ -1560,78 +1617,90 @@ How can one answer this question better than: Why not?</p>
 <p><strong>Activities</strong></p>
 <ul class="simple">
 <li><p>Low pass filter transfer function</p></li>
-<li><p>Digital demo – traffic lights using logic gates</p></li>
+<li><p>Digital demo - traffic lights using logic gates</p></li>
 <li><p>Back to the analog world - Transistors</p></li>
 <li><p>Home made battery</p></li>
 </ul>
-<p><strong>Pre-requisites</strong></p>
-<ul class="simple">
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases" target="_blank">ADALM2000 drivers installation</a></p></li>
-<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/scopy/releases/tag/v1.4.1" target="_blank">Install Scopy software</a></p></li>
-</ul>
-<p><strong>Hands-on activity 1 - Scope and Signal generator channels – Cascaded LP filters</strong></p>
-<p><em>Materials</em></p>
+<p><strong>Materials</strong></p>
 <ul class="simple">
 <li><p>ADALM2000 Active Learning Module</p></li>
 <li><p>Solder-less breadboard, and jumper wire kit</p></li>
 <li><p>2 x 1 KΩ resistors</p></li>
 <li><p>2 x 0.1 uF capacitors (marked 104)</p></li>
 </ul>
-<p><strong>First Stage Filter</strong></p>
-<p><em>Hardware setup</em></p>
-<figure class="align-center" id="id6">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" />
-<figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Schematic for first stage filter</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
-</figcaption>
-</figure>
+<p><strong>Pre-requisites</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../tools/pluto-m2k/firmware.html#pluto-m2k-firmware"><span class="std std-ref">Firmware Updates</span></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/plutosdr-m2k-drivers-win/releases" target="_blank">ADALM2000 drivers installation</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/scopy/releases" target="_blank">Install latest version of Scopy software</a></p></li>
+</ul>
+<section id="example-1-scope-and-signal-generator-channels-cascaded-lp-filters">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">Example 1 - Scope and Signal generator channels - Cascaded LP filters</a><a class="headerlink" href="#example-1-scope-and-signal-generator-channels-cascaded-lp-filters" title="Link to this heading"></a></h3>
+<section id="first-stage-filter">
+<h4>First Stage Filter<a class="headerlink" href="#first-stage-filter" title="Link to this heading"></a></h4>
+<p><strong>Hardware setup</strong></p>
 <figure class="align-center" id="id7">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw.png" style="width: 30em;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Breadboard connections for first stage filter</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Schematic for first stage filter</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Steps</p>
-<blockquote>
-<div><ol class="arabic simple">
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Breadboard connections for first stage filter</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Steps</strong></p>
+<ol class="arabic simple">
 <li><p>Open Network Analyzer</p></li>
 <li><p>Set the sweep to logarithmic</p></li>
 <li><p>Set the start frequency to 100Hz and stop to 20kHz</p></li>
 <li><p>Set the magnitude axis between -50dB and 10dB</p></li>
 <li><p>Set the phase axis between -180 and 90 degrees</p></li>
 </ol>
-</div></blockquote>
-<figure class="align-center" id="id8">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" />
-<figcaption>
-<p><span class="caption-number">Figure 8 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p><strong>Second stage filter</strong></p>
-<figure class="align-left">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" />
-</figure>
 <figure class="align-center" id="id9">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves.png" style="width: 30em;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figure 9 </span><span class="caption-text">Schematic and Breadboard connections</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Steps:</p>
+</section>
+<section id="second-stage-filter">
+<h4>Second Stage Filter<a class="headerlink" href="#second-stage-filter" title="Link to this heading"></a></h4>
+<figure class="align-center">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1hw1.png" style="width: 30em;" />
+</a>
+</figure>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1bb1.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Schematic and Breadboard connections</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Steps</strong></p>
 <ol class="arabic simple">
 <li><p>Connect the Scope Channel 2 after the first RC group and do a single sweep</p></li>
 <li><p>Take a signal snapshot to preserve the result as a reference</p></li>
 <li><p>Connect the Scope Channel 2 after the second RC stage and perform another sweep</p></li>
 </ol>
-<figure class="align-center" id="id10">
-<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" />
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo1waves1.png" style="width: 30em;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Results for Bode Diagram</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>Hands-on activity 2 - Traffic lights control</strong></p>
+</section>
+</section>
+<section id="example-2-traffic-lights-control">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">Example 2 - Traffic lights control</a><a class="headerlink" href="#example-2-traffic-lights-control" title="Link to this heading"></a></h3>
 <p>This demo will showcase the usage of logic gates to implement a logic function which describes the functionality of a well-known device: a traffic light.</p>
-<p><em>Materials</em></p>
+<p><strong>Materials</strong></p>
 <ul class="simple">
 <li><p>ADALM2000 Active Learning Module</p></li>
 <li><p>Jumper wires</p></li>
@@ -1642,57 +1711,57 @@ How can one answer this question better than: Why not?</p>
 <li><p>1 Red LED</p></li>
 <li><p>1 Green LED</p></li>
 </ul>
-<p><em>Theory of operation</em></p>
-<p>Logic sequence of a traffic light is the one bellow:</p>
+<p><strong>Theory of operation</strong></p>
+<p>Logic sequence of a traffic light is the one below:</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy.png" style="width: 30em;" />
 </a>
 </figure>
-<p>You will use two logic inputs to control the traffic lights, those inputs are marked A and B, the sequence is the one bellow:</p>
-<figure class="align-center" id="id11">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" width="400" />
+<p>You will use two logic inputs to control the traffic lights, those inputs are marked A and B, the sequence is the one below:</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/rgy1.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 11 </span><span class="caption-text">Flow diagram</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Flow diagram</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Truth table for the logic function that describes the traffic lights sequence</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" width="400" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2.png" style="width: 30em;" />
 </a>
 </figure>
-<p><em>Hardware Setup</em></p>
+<p><strong>Hardware Setup</strong></p>
 <p>The circuit functionality is represented in the schematic:</p>
-<figure class="align-center" id="id12">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" width="300" />
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2hw.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">Schematic</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Schematic</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Components Pinout</p>
-<div class="grid grid-flex" style="grid-template-columns: 33% 33% 33%;"><figure class="align-default" id="id13">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png"><img alt="SN74HC04N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png" width="300" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 13 </span><span class="caption-text">SN74HC04N</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id14">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png" width="300" />
+<div class="grid grid-flex" style="grid-template-columns: 33% 33% 33%;"><figure class="align-default" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png"><img alt="SN74HC04N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc04n.png" style="width: 30em;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 14 </span><span class="caption-text">SN74HC04N</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id15">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png"><img alt="LED" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png" width="300" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc08n.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 15 </span><span class="caption-text">LED Terminals</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">SN74HC08N</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</div><p>Steps:</p>
+<figure class="align-default" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png"><img alt="LED" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/led.png" style="width: 30em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">LED Terminals</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><p><strong>Steps</strong></p>
 <ol class="arabic simple">
 <li><p>Place the ICs on the breadboard with each pin row on one side of the breadboard delimitator.</p></li>
 <li><p>Open Scopy application</p></li>
@@ -1709,16 +1778,16 @@ How can one answer this question better than: Why not?</p>
 <li><p>Connect SN74HC08N pin 3 to G LED</p></li>
 <li><p>Set the V+ to 3.3V and press the Enable button</p></li>
 </ol>
-<p><em>Results</em></p>
+<p><strong>Results</strong></p>
 <ul class="simple">
 <li><p>Open the Scopy Digital IO and Power instruments:</p></li>
 <li><p>Toggle the DIO0 and DIO1 digital pins according to the logical function truth table and verify the outputs match the table results</p></li>
 </ul>
-<figure class="align-center" id="id16">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" width="400" />
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 16 </span><span class="caption-text">Scopy setup</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Scopy setup</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><strong>Challenge</strong></p>
@@ -1726,69 +1795,67 @@ How can one answer this question better than: Why not?</p>
 <li><p>Implement a logical OR function using SN74HC32N part from the kit</p></li>
 <li><p>Pinout:</p></li>
 </ul>
-<figure class="align-center" id="id17">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" width="300" />
+<figure class="align-center" id="id18">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/sn74hc32n.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 17 </span><span class="caption-text">Logical OR</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Logical OR</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><strong>Hands-on activity 3 - NPN transistor characteristics</strong></p>
+</section>
+<section id="example-3-npn-transistor-characteristics">
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">Example 3 - NPN transistor characteristics</a><a class="headerlink" href="#example-3-npn-transistor-characteristics" title="Link to this heading"></a></h3>
 <p>The demo will describe the output characteristics of a BJT NPN transistor using modern instrumentation tools.</p>
-<p><em>Materials</em></p>
+<p><strong>Materials</strong></p>
 <ul class="simple">
 <li><p>ADALM2000 Active Learning Module</p></li>
 <li><p>Jumper wires</p></li>
-<li><p>1 - 100KΩResistor</p></li>
-<li><p>1 - 100ΩResistor</p></li>
+<li><p>1 - 100KΩ Resistor</p></li>
+<li><p>1 - 100Ω Resistor</p></li>
 <li><p>1 - small signal NPN transistor - 2N3904</p></li>
 <li><p>1 - small signal PNP transistor - 2N3906</p></li>
 </ul>
-<p><em>Theory of operation</em></p>
-<p>2N2904 Pinout</p>
-<div class="grid grid-flex" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png"><img alt="pnp" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png" width="200" />
+<p><strong>Theory of operation</strong></p>
+<p>2N3904 Pinout</p>
+<div class="grid grid-flex" style="grid-template-columns: 50% 50%;"><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png"><img alt="pnp" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn.png" style="width: 30em;" />
 </a>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png" width="200" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png"><img alt="SN74HC08N" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn1.png" style="width: 30em;" />
 </a>
-</div><p><em>Hardware setup</em></p>
+</div><p><strong>Hardware setup</strong></p>
 <ul class="simple">
 <li><p>Place the transistor and resistors on the breadboard.</p></li>
 <li><p>Make the connections between ADALM2000 and circuit as shown below.</p></li>
 </ul>
-<figure class="align-center" id="id18">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" width="350" />
+<figure class="align-center" id="id19">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/npn2.png" style="width: 30em;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 18 </span><span class="caption-text">ADALM2000 connections</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 19 </span><span class="caption-text">ADALM2000 connections</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p><em>Steps</em></p>
-<ol class="arabic simple">
+<p><strong>Steps</strong></p>
+<ol class="arabic">
 <li><p>Open Scopy application</p></li>
 <li><p>Create a CSV file with a column having integer values from 0 to 5(0, 1, 2, 3, 4), save it</p></li>
-<li><p>Open the Waveform generator instrument and select Channel 2, load the previously created csv file and make the setup:</p></li>
-</ol>
+<li><p>Open the Waveform generator instrument and select Channel 2, load the previously created csv file and make the setup:</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" width="600" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy1.png" style="width: 30em;" />
 </a>
 </figure>
-<ol class="arabic simple" start="4">
-<li><p>Select Channel 1, make the setup below:</p></li>
-</ol>
+</li>
+<li><p>Select Channel 1, make the setup below:</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" width="600" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopy2.png" style="width: 30em;" />
 </a>
 </figure>
-<ol class="arabic simple" start="5">
+</li>
 <li><p>Open the scope and select the XY view</p></li>
 <li><p>Add a math channel with the following function: M1 = t0/100  - it represents the Ic current, given the 100 ohms collector resistor</p></li>
 </ol>
-<p><cite>Results</cite></p>
-<ol class="arabic simple" start="7">
-<li><p>Observe the output characteristics of the NPN transistor Ic = f(Vce)</p></li>
-</ol>
+<p><strong>Results</strong></p>
+<p>Observe the output characteristics of the NPN transistor Ic = f(Vce)</p>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" width="600" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopyres.png" style="width: 30em;" />
 </a>
 </figure>
 <p><strong>Challenge</strong></p>
@@ -1797,13 +1864,15 @@ How can one answer this question better than: Why not?</p>
 <li><p>The curve trace should look like the one in the image:</p></li>
 </ul>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" width="600" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo2scopych.png" style="width: 30em;" />
 </a>
 </figure>
 <p>Tips: you need to create another csv file for the base control signal of the transistor.</p>
-<p><strong>Hands-on activity 4 - Home made battery - instructor-led</strong></p>
+</section>
+<section id="example-4-home-made-battery-instructor-led">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">Example 4 - Home made battery - instructor-led</a><a class="headerlink" href="#example-4-home-made-battery-instructor-led" title="Link to this heading"></a></h3>
 <p>This demo is instructor-led and intends to implement a proof of concept for a battery powered LED using unconventional materials.</p>
-<p><em>Materials:</em></p>
+<p><strong>Materials</strong></p>
 <ul class="simple">
 <li><p>ADALM2000 Active Learning Module</p></li>
 <li><p>Jumper wires (wires with alligator clips will work best)</p></li>
@@ -1812,40 +1881,27 @@ How can one answer this question better than: Why not?</p>
 <li><p>Copper plated coins or copper nails or heavy gauge (14 or 12) copper wire.</p></li>
 <li><p>Red LED</p></li>
 </ul>
-<p><em>Hardware Setup</em></p>
+<p><strong>Hardware Setup</strong></p>
 <ol class="arabic simple">
 <li><p>Insert a copper penny into a small cut or push a copper nail or heavy gauge wire into one side of the lemon.</p></li>
 <li><p>Push a galvanized (zinc coated) screw or nail into the other side of the lemon. The zinc and copper electrodes must not touch.</p></li>
 </ol>
+<p><strong>Steps</strong></p>
+<ol class="arabic simple">
+<li><p>Repeat the procedure for all 3 lemons</p></li>
+<li><p>Connect the lemon cells in series by linking the copper electrode of one lemon to the zinc electrode of the next</p></li>
+<li><p>Connect the Red LED across the battery (copper of first lemon to LED anode, zinc of last lemon to LED cathode)</p></li>
+</ol>
 <figure class="align-center">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" width="150" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/demo4.png" style="width: 20em;" />
 </a>
 </figure>
-<p><em>Results</em></p>
+<p><strong>Results</strong></p>
 <p>You should be able to observe how the Red LED is lit by the 4 or more lemon-cells battery</p>
 </section>
-<section id="slide-deck-booklet-and-additional-materials">
-<h2>Slide Deck, booklet and additional materials<a class="headerlink" href="#slide-deck-booklet-and-additional-materials" title="Link to this heading"></a></h2>
-<p>Since this tutorial is also designed to be presented as a live, hands-on
-workshop, a slide deck is provided here:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/electronicsbasics_nov24.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
-</div>
-<p>A complete booklet of the hands-on activity is also provided, as a companion to
-following the tutorial yourself:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><a class="icon reference download external" download="" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/learning/workshops_introduction_to_electronics/ebasics booklet.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronics</span> <span class="pre">Booklet</span></code></a></p>
-</div>
-<p>Comma Separated Values file used for generating the base step voltage needed for the Transistor Characteristic demo:</p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p><code class="xref download docutils literal notranslate"><span class="pre">Base</span> <span class="pre">Voltage</span> <span class="pre">Values</span></code></p>
-</div>
 </section>
 <section id="takeaways">
-<h2>Takeaways<a class="headerlink" href="#takeaways" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">Takeaways</a><a class="headerlink" href="#takeaways" title="Link to this heading"></a></h2>
 <p>Electronics can be both fun and challenging, but it brings many satisfactions</p>
 <p>ADALM2000 is a very versatile tool suited to use in various applications:</p>
 <ul class="simple">
@@ -1856,9 +1912,9 @@ following the tutorial yourself:</p>
 </ul>
 </section>
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">Resources</a><a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university" target="_blank">university</a></p></li>
+<li><p><a class="reference internal" href="../../university/index.html#university"><span class="std std-ref">Engineering University Program</span></a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/intro/real-voltage-sources" target="_blank">real-voltage-sources</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4" target="_blank">electronics-lab-4</a></p></li>
 <li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/engineering_discovery/lab_13" target="_blank">lab_13</a></p></li>
