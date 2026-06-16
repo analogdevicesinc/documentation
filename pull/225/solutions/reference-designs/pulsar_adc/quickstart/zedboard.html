@@ -8,15 +8,16 @@
 
     <title>ZedBoard Quickstart &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=ac863bf0" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
-    <script async="async" src="../../../../_static/app.umd.js?v=09b0c6bc"></script>
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="CoraZ7-07S Quickstart" href="coraz7s.html" />
     <link rel="prev" title="Quickstart" href="index.html" />
    
+  
   
   
   <meta name="repository" content="documentation">
@@ -289,7 +290,7 @@ board and its power supply (12V)</p></li>
 <li><p>Configure ZedBoard for SD BOOT:</p>
 <blockquote>
 <div><figure class="align-default" id="id9">
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad4020_zed.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad4020_zed.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/ad4020_zed.jpg" width="800" />
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_sdcard.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_sdcard.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_sdcard.jpg" width="800" />
 </a>
 <figcaption>
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">ZedBoard SD boot jumper configuration</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
@@ -1017,9 +1018,24 @@ board and its power supply (12V)</p></li>
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD400x-FMCZ" target="_blank">EVAL-AD400x-FMCZ</a> board to the ZedBoard, configuring the board for JTAG
 boot, and applying a test input signal.</p>
 <p>Follow the steps in this order, to avoid damaging the components:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Get the <a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
 <li><p>Configure ZedBoard for JTAG boot:</p>
+<blockquote>
+<div><blockquote>
+<div><figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ZedBoard JTAG boot jumper configuration</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>The BOOT switches (JP7-JP11) and the MIO0 jumper (JP6) must be set for JTAG
+boot mode. VADJ must be set to 3.3V, as specified in the HDL project’s
+README at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html#pulsar-adc" target="_blank" title="(in HDL)"><span>PULSAR-ADC HDL project</span></a>. Optionally, to use USB peripheral
+devices with the ZedBoard, install jumpers JP2 and JP3.</p>
+</div></blockquote>
 </li>
 <li><p>Connect your signal generator to the analog inputs of the evaluation board
 using the appropriate jumper wires or SMB connectors.</p></li>
