@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This user guide describes the AD9694 evaluation board AD9694-500EBZ which provides all of the support circuitry required to operate the ADC in its various modes and configurations. The application software used to interface with the devices is also described. The user guide wiki applies to the follow evaluation boards:" name="description" />
+
+    <title>EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="ZCU102 Quickstart" href="quickstart/zcu102.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a><ul>
+<li><a class="reference internal" href="#preface">Preface</a></li>
+<li><a class="reference internal" href="#ad9694-evaluation-board">AD9694 Evaluation Board</a></li>
+<li><a class="reference internal" href="#typical-measurement-setup">Typical Measurement Setup</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#helpful-documents">Helpful Documents</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#configuring-the-board">Configuring the Board</a></li>
+<li><a class="reference internal" href="#visual-analog-setup">Visual Analog Setup</a></li>
+<li><a class="reference internal" href="#ace-setup">ACE Setup</a></li>
+<li><a class="reference internal" href="#device-setup-full-bw-mode">Device Setup - Full BW Mode</a></li>
+<li><a class="reference internal" href="#obtaining-an-fft-full-bw-mode">Obtaining an FFT - Full BW Mode</a></li>
+<li><a class="reference internal" href="#device-setup-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode">Device Setup - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode</a></li>
+<li><a class="reference internal" href="#obtaining-an-fft-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode">Obtaining an FFT - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-AD9694</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">On ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-AD9694</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="evaluating-the-ad9694-quad-channel-500-msps-adc">
+<span id="ad9694-evaluating"></span><h1>EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC<a class="headerlink" href="#evaluating-the-ad9694-quad-channel-500-msps-adc" title="Link to this heading"></a></h1>
+<section id="preface">
+<h2>Preface<a class="headerlink" href="#preface" title="Link to this heading"></a></h2>
+<p>This user guide describes the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> evaluation board <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> which provides all of the support circuitry required to operate the
+ADC in its various modes and configurations. The application software used to
+interface with the devices is also described. The user guide wiki applies to the
+follow evaluation boards:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Evaluation Board Part Number</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Board Revision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AD9694-500EBZ</p></td>
+<td><p>Evaluation board for AD9694-500</p></td>
+<td><p>9694CE04A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="line-block">
+<div class="line">The <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> data sheet provides additional information and should be
+consulted when using the evaluation board. All documents and software tools
+are available at <a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">www.analog.com/hsadcevalboard</a>. For
+additional information or questions, send an email to
+<a class="reference external" href="mailto:highspeed&#46;converters&#37;&#52;&#48;analog&#46;com">highspeed<span>&#46;</span>converters<span>&#64;</span>analog<span>&#46;</span>com</a>.</div>
+</div>
+</section>
+<section id="ad9694-evaluation-board">
+<h2>AD9694 Evaluation Board<a class="headerlink" href="#ad9694-evaluation-board" title="Link to this heading"></a></h2>
+<p>The images below show the location and position of the jumpers on the old (first
+image) and new (second image) versions of the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a>.</p>
+<p><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_jumpers.jpg" /></p>
+<div class="centeralign docutils container">
+<p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> <em>Evaluation Board (old version)</em></p>
+<p><img alt="image2" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_jumpers_new_board.jpg" /></p>
+</div>
+<div class="centeralign docutils container">
+<p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> <em>Evaluation Board (new version)</em></p>
+</div>
+</section>
+<section id="typical-measurement-setup">
+<h2>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> can be evaluated using the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA data capture board. The
+figures below show the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> connected to the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>. If using the old version of the
+board, refer to the first image for connections, otherwise if using the new
+version of the board, refer to the second image.</p>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection.png"><img alt="image3" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection.png" width="800" /></a></p>
+<div class="centeralign docutils container">
+<p><em>(Old) Evaluation Board Connection—</em><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a></p>
+<p><a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection_new_board.jpg"><img alt="image4" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection_new_board.jpg" width="800" /></a></p>
+</div>
+<div class="centeralign docutils container">
+<p><em>(New) Evaluation Board Connection—</em><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a></p>
+</div>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Full featured evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a></p></li>
+<li><p>SPI interface for setup and control</p></li>
+<li><p>Wide band Balun driven input</p></li>
+<li><p>External supply powered but may also use 12V-1A and 3.3V-3A supplies from FMC</p></li>
+<li><p>VisualAnalog® and SPI controller software interfaces</p></li>
+</ul>
+</section>
+<section id="helpful-documents">
+<h2>Helpful Documents<a class="headerlink" href="#helpful-documents" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> Data Sheet</p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ evaluation kit</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog Converter Evaluation
+Tool Version 1.0 User Manual</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control
+Software</em></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/technical-guides/adispi" target="_blank">ADI SPI Application Note</a>,
+<em>ADI Serial Control Interface Standard</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-835" target="_blank">AN-835 Application Note</a>, <em>Understanding ADC Testing and
+Evaluation</em></p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h2>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/ace" target="_blank">ACE (Analysis | Control | Evaluation)</a></p></li>
+</ul>
+</section>
+<section id="equipment-needed">
+<h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Analog signal source and antialiasing filter</p></li>
+<li><p>Sample clock source</p></li>
+<li><p>12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01
+supplied with <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v1" target="_blank">ADS7-V1EBZ</a>)</p></li>
+<li><p>PC running Windows®</p></li>
+<li><p>USB 2.0 port</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> board</p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA-based data capture kit</p></li>
+</ul>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>This section provides quick start procedures for using the evaluation board for
+AD9694.</p>
+<section id="configuring-the-board">
+<h3>Configuring the Board<a class="headerlink" href="#configuring-the-board" title="Link to this heading"></a></h3>
+<p>Before using the software for testing, configure the evaluation board as
+follows:</p>
+<ul class="simple">
+<li><p>Connect the evaluation board to the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> data capture board, as shown in the figure for the
+<strong>Evaluation Board Connection</strong>.</p></li>
+<li><p>Make sure the jumpers are placed on the evaluation board as highlighted in
+green in the figure <strong>AD9694 Evaluation Board</strong>.</p></li>
+<li><p>Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01
+supplied) to P4 on the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> board.
+Connect the Standard-B USB port of the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> board to the PC with the supplied USB cable.</p></li>
+<li><p>Turn on the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>.</p></li>
+<li><p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> will appear in the Device
+Manager.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png" width="300" />
+</a>
+<div class="centeralign docutils container">
+<p><em>Device Manager showing</em> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a></p>
+</div>
+<ul class="simple">
+<li><p>If the Device Manager does not show the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> listed, unplug all USB devices from the PC,
+uninstall and re-install SPIController and VisualAnalog and restart the
+hardware setup from step 1.</p></li>
+<li><p>On the ADC evaluation board, provide a clean, low jitter 1GHz clock source to
+connector J203 and set the amplitude to 14dBm. This is the ADC Sample Clock.</p></li>
+<li><p>On the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> data capture board,
+provide a clean, low jitter clock source to connector J3 and set the
+amplitude to 10dBm. This is the Reference Clock for the gigabit transceivers
+in the FPGA. The REFCLK frequency can be calculated using the following
+empirical formulae:</p></li>
+</ul>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8})
+\times f_{out}/L\)</span> bps/lane, where</p>
+</div>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio, Nprime=8 or 16\)</span>
+<em>(Default Nprime = 16)</em></p>
+</div>
+<div class="centeralign docutils container">
+<p><span class="math notranslate nohighlight">\(REFCLK = LaneLineRate/20\)</span></p>
+</div>
+<ul class="simple">
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal for channel A to J101. Use a shielded,
+RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC
+Evaluation Board. For best results, use a narrow-band, band-pass filter with
+50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen
+Avionics, and K &amp; L band-pass filters.) If providing an input clock with a
+divide-by-1 setting in the AD9694 make sure the clock source has a 50% duty
+cycle. For optimum SNR performance use the clock divider with a divide ratio
+of 2 or higher to minimize the impact of the phase noise from the input clock
+source.</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal for channel B to J102. Use a shielded,
+RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC
+Evaluation Board. For best results, use a narrow-band, band-pass filter with
+50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen
+Avionics, and K &amp; L band-pass filters.)</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal for channel C to J104. Use a shielded,
+RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC
+Evaluation Board. For best results, use a narrow-band, band-pass filter with
+50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen
+Avionics, and K &amp; L band-pass filters.)</p></li>
+<li><p>On the ADC evaluation board, use a clean signal generator with low phase
+noise to provide an input signal for channel D to J107. Use a shielded,
+RG-58, 50 Ω coaxial cable to connect the signal generator output to the ADC
+Evaluation Board. For best results, use a narrow-band, band-pass filter with
+50 Ω terminations and an appropriate center frequency. (ADI uses TTE, Allen
+Avionics, and K &amp; L band-pass filters.)</p></li>
+</ul>
+</section>
+<section id="visual-analog-setup">
+<h3>Visual Analog Setup<a class="headerlink" href="#visual-analog-setup" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Click Start <span class="math notranslate nohighlight">\(right\)</span> All Programs <span class="math notranslate nohighlight">\(right\)</span> Analog Devices
+<span class="math notranslate nohighlight">\(right\)</span> VisualAnalog <span class="math notranslate nohighlight">\(right\)</span> VisualAnalog</p></li>
+<li><p>On the VisualAnalog “New Canvas” window, and select the desired canvas.
+<strong>Note: The current canvases for VisualAnalog only support operating both
+pairs of channels in the AD9694 in the same chip operating mode with the same
+decimation rate. If Pair AB is in full bandwidth mode then Pair CD must also
+be in full bandwidth mode. If Pair AB is in real DDC0/DDC1 mode with a
+decimation rate of 2 then pair CD must also be in real DDC0/DDC1 mode with a
+decimation rate of 2.</strong></p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/newcanvas9694.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/newcanvas9694.jpg" />
+<div class="centeralign docutils container">
+<p><em>Selecting the :adi:`AD9694` canvas</em></p>
+</div>
+<ul class="simple">
+<li><p>Next, program the FPGA in VisualAnalog by clicking into the <strong>ADC Data
+Capture Settings</strong> block and selecting the <strong>Capture Board</strong> tab. Use the
+<strong>Browse</strong> button to navigate to the <strong>ad9694_ads7v2.bin</strong> file and then
+click <strong>Program</strong>. The <strong>FPGA_DONE</strong> LED should illuminate on the ADS7-V1
+board indicating that the FPGA has been correctly programmed.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_program_fpga.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_program_fpga.png" />
+<div class="centeralign docutils container">
+<p><em>Programming the</em> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a></p>
+</div>
+<ul class="simple">
+<li><p>Click the <strong>General</strong> button in the <strong>ADC Data Capture Settings</strong> block. On
+the <strong>General</strong> tab make sure the clock frequency is set to match the sample
+clock. For example, if the sample clock of the AD9694 is 368.64 MHz then set
+the <strong>Clock Frequency (MHz)</strong> to 368.64 MHz. The FFT capture length may be
+changed to 131072 (128k) or 262144 (256k) per channel. The ADS7-V2 FPGA
+software supports up to 2M FFT capture (1M per channel).</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_data_capture_settings_general.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_data_capture_settings_general.png" />
+<div class="centeralign docutils container">
+<p><em>Changing the ADC Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>If VisualAnalog opens with a collapsed view, click on the “Expand Display”
+icon (see figure 5)</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig4_expand_display.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig4_expand_display.png" />
+<div class="centeralign docutils container">
+<p><em>Expanding Display in VA</em></p>
+</div>
+<ul class="simple">
+<li><p>On the <strong>Device</strong> tab. Make sure that <strong>Enable Alternate REFCLK</strong> option is
+checked.</p></li>
+<li><p>Click <strong>OK</strong></p></li>
+</ul>
+</section>
+<section id="ace-setup">
+<h3>ACE Setup<a class="headerlink" href="#ace-setup" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Click Start <span class="math notranslate nohighlight">\(right\)</span> All Programs <span class="math notranslate nohighlight">\(right\)</span> Analog Devices
+<span class="math notranslate nohighlight">\(right\)</span> ACE <span class="math notranslate nohighlight">\(right\)</span> ACE</p></li>
+<li><p>Once ACE opens the AD9694 evaluation board should appear in the <strong>Attached
+Hardware</strong> section.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_start.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_start.png" />
+<div class="centeralign docutils container">
+<p><em>ACE Attached Hardware: AD9694</em></p>
+</div>
+<ul class="simple">
+<li><p>Double click on the <strong>AD9694 Eval Board</strong> icon which will open up the Initial
+Configuration wizard. The default conditions for the AD9694 are Full BW mode
+with a sample clock of 500 MHz. From here both pairs of ADC channels (Pair AB
+and Pair CD) can be configured simultaneously. <strong>NOTE:It is important to
+remember that the AD9694 functions as two dual ADCs.</strong></p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config.png" />
+<div class="centeralign docutils container">
+<p><em>ACE - AD9694 Initial Configuration Wizard</em></p>
+</div>
+<ul class="simple">
+<li><p>Prior to configuring any modes in the AD9694 double click on the <strong>AD9694</strong>
+icon to bring up the device view. From the device view click on the <strong>Read
+All</strong> icon to read the SPI settings from the device. Do this for each pair by
+selecting one pair at a time and then clicking the <strong>Read All</strong> icon.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_read_all.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_read_all.png" />
+<div class="centeralign docutils container">
+<p><em>ACE - AD9694 Initial Configuration Wizard</em></p>
+</div>
+<ul class="simple">
+<li><p>From the the <strong>Initial Configuration Wizard</strong> the clock frequency, chip
+application mode (per pair), DDC inputs and outputs, and the JESD204B
+settings can be quickly configured. The default conditions are:</p>
+<ul>
+<li><p>Clock Input = <strong>1 GHz</strong></p></li>
+<li><p>Clock Divider = <strong>Divide by 2</strong></p></li>
+<li><p>Chip Operating Mode = <strong>Full Bandwidth Mode</strong></p></li>
+<li><p>JESD204B Parameters: <strong>L.M.F = 2.2.2</strong> ; <strong>N’ = 16</strong></p></li>
+</ul>
+</li>
+<li><p>All these parameters can be seen below:</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_204b.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_204b.png" />
+<div class="centeralign docutils container">
+<p><em>ACE - AD9694 Initial Configuration Wizard Showing JESD204B Parameters</em></p>
+</div>
+</section>
+<section id="device-setup-full-bw-mode">
+<h3>Device Setup - Full BW Mode<a class="headerlink" href="#device-setup-full-bw-mode" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The default Chip Application Mode for the AD9694-500 is Full BW mode. In this
+example the clock frequency will be set to <strong>500 MHz</strong>, the clock divider set
+to <strong>Divide by 1</strong>, and the chip operating mode set to <strong>Full BW Mode</strong>. Once
+the settings have been entered, click <strong>Apply</strong>. This will configure the
+device with the selected settings and provide an <strong>Initial Configuration
+Summary</strong> which will summarize the settings that have been loaded into the
+AD9694 and also provide the frequency for the required FPGA reference clock.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_apply.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_apply.png" />
+<div class="centeralign docutils container">
+<p><em>Default Application Mode - Full BW Mode</em></p>
+</div>
+<ul class="simple">
+<li><p>In order to change the settings for each channel, double-click on the AD9694
+icon from the <strong>AD9694 Eval Board</strong> view (highlighted in the figure below).</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_highlight.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_highlight.png" />
+<div class="centeralign docutils container">
+<p><em>Double-click the AD9694 Icon in the Eval Board View</em></p>
+</div>
+<ul class="simple">
+<li><p>This will bring up the AD9694 device view showing more specific settings for
+each pair and channel. The device view shows one pair of the AD9694 at a
+time. The <strong>ADC Pair Selection</strong> drop down box is used to select the current
+pair. To select the desired pair (Pair AB or Pair CD) select the desired pair
+form the drop down box. This sets the current changes to affect the select
+pair only. The settings can now be configured for each channel. Once the
+settings are configured click <strong>Apply Changes</strong> in the upper left of the
+device view. This will load the setting changes to the selected ADC pair and
+channel(s). If the settings are desired for all four channels then click the
+<strong>Apply</strong> button in the <strong>AD9694 Configuration</strong> window on the left of the
+screen. This loads the current settings to all channels in the device.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_fullbw.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_fullbw.png" />
+<div class="centeralign docutils container">
+<p><em>Figure 15. Pair AB - Channel A and Channel B NSR Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>The device view in ACE also has controls for the analog input controls. The
+input buffer current, input full-scale voltage, and analog input differential
+termination can be adjusted. The analog inputs can also be disabled from this
+menu.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_analog_input_controls.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_analog_input_controls.png" />
+<div class="centeralign docutils container">
+<p><em>Analog Input Control Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>The <strong>Memory Map View</strong> can be accessed from the AD9694 <strong>Device View</strong>. The
+<strong>Memory Map View</strong> can be used to individually write registers in the
+AD9694. <strong>Note: When writing individual registers it is imperative to first
+write the Pair Index register (0x0009) before any other write so that the
+correct ADC channel pair (Pair AB or Pair CD) is being addressed. If writing
+a local register, subsequently write the ADC channel index register (0x0008)
+so that the desired channel within the desired pair is written (Channel A/C
+or Channel B/D).</strong></p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_memorymap_view.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_memorymap_view.png" />
+<div class="centeralign docutils container">
+<p><em>Memory Map View</em></p>
+</div>
+</section>
+<section id="obtaining-an-fft-full-bw-mode">
+<h3>Obtaining an FFT - Full BW Mode<a class="headerlink" href="#obtaining-an-fft-full-bw-mode" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency.
+This needs to be set to twice the frequency of the input clock. Click in the
+ADC Data Capture block to open the settings. In this example, 500 MHz is the
+input clock frequency so 1000 is entered into VisualAnalog.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_data_capture_settings_general_1000.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_data_capture_settings_general_1000.png" />
+<div class="centeralign docutils container">
+<p><em>AD9694 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with an input clock of 500MHz, the output sample rate is
+500MSPS. The default JESD204B lane configuration for the JESD204B link of
+each ADC Channel Pair is 2.2.2 (L.M.F). The required REFCLK frequency is 500
+MHz (refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>Click the Run button in Visual Analog and you should see the capture data
+similar to the plot below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_fullbw_fft_fin70mhz.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_fullbw_fft_fin70mhz.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_fullbw_fft_fin70mhz.png" width="800" />
+</a>
+<div class="centeralign docutils container">
+<p><em>AD9694 FFT with NSR Enabled (Tuning Word = 58</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the
+desired level. (Examine the <strong>Fund Power</strong> reading in the left panel of the
+VisualAnalog FFT window.) NSR imposes a ~3dB loss in the signal, but does not
+impact the dynamic range. A -1.0 dBFS input signal will show as -4.0 dBFS in
+the FFT in Visual Analog.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window</p></li>
+</ul>
+</div></blockquote>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig13_floatform.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig13_floatform.png" />
+<div class="centeralign docutils container">
+<p><em>Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of
+choice</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_va_fft_saveas.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_va_fft_saveas.png" />
+<div class="centeralign docutils container">
+<p><em>Saving the FFT</em></p>
+</div>
+</section>
+<section id="device-setup-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode">
+<h3>Device Setup - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode<a class="headerlink" href="#device-setup-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The default Chip Application Mode for the AD9694 is full bandwidth mode. The
+AD9694 settings must be changed to configure the AD9694 into DDC mode. To set
+up the AD9694 for DDC mode change the Chip Application Mode to <strong>DDC0</strong> in
+the <strong>Initial Configuration</strong> window in the <strong>AD9694 Eval Board</strong> view in ACE
+and click <strong>Apply</strong>. (<strong>Note: Due to the software limitation in VisualAnalog,
+both ADC pairs (AB and CD) must be set to the same operating mode and same
+decimation rate.</strong>)</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_1ddc_complexinout.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_initial_config_1ddc_complexinout.png" />
+<div class="centeralign docutils container">
+<p><em>Set Application Mode to DDC0</em></p>
+</div>
+<ul class="simple">
+<li><p>The DDC settings can be configured from the <strong>Device View</strong> in ACE. In this
+example a complex input signal is being input to the AD9694, I data is on
+Channel A/C and Q data is on Channel B/D. See the AD9694 data sheet for more
+details on the available DDC modes and decimation rates. To access the device
+view, double-click the <strong>AD9694</strong> icon from the <strong>AD9694 Eval Board</strong> view
+which will bring up the view below. In this example DDC0 is set to complex
+mode with the NCO in Variable IF mode and the tuning frequency set to 230MHz
+(the input frequency to the AD9694 is 270.1 MHz). Once the settings have been
+entered click <strong>Apply Changes</strong> in the upper left of the <strong>Device View</strong>.
+This will apply changes to the ADC Pair (Pair AB or Pair CD) selected in the
+<strong>Device View</strong>.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout.png" />
+<div class="centeralign docutils container">
+<p><em>Pair AB: Channel A and Channel B DDC0 Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>Once again, make sure that Pair CD has the same DDC mode as Pair AB (due to
+VisualAnalog software limitation). The NCO tuning and NCO mode can be
+different between Pair AB and Pair CD, but the pairs must both be set to
+complex mode or to real mode and the decimation rates must be the same. To do
+so, set the <strong>ADC Pair Selection</strong> to the desired pair, configure the block
+diagram as desired and click <strong>Apply Changes</strong> in the upper left of the
+window. This should be done for each pair (Pair AB and Pair CD).</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout_paircd.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout_paircd.png" />
+<div class="centeralign docutils container">
+<p><em>Pair CD: Channel C and Channel D DDC0 Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>When making changes to the DDC settings the <strong>DDC Soft Reset</strong> must be
+written afterwards. To do so, select <strong>DDC Held in Reset</strong> from the drop down
+menu in the block diagram. Then click <strong>Apply Changes</strong> in the upper left of
+the AD9694 Device view in ACE. Next, select <strong>Normal Operation</strong> from the
+drop down menu in the block diagram and then click <strong>Apply Changes</strong> once
+again. This process resets the DDC and then places the DDC back into normal
+operating mode. This must be done for each pair (Pair AB and/or Pair CD) for
+which DDC changes have been applied.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout_ddc_softreset.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ace_device_view_1ddc_complexinout_ddc_softreset.png" />
+<div class="centeralign docutils container">
+<p><em>Pair AB: Channel A and Channel B DDC0 Settings with DDC Soft Reset</em></p>
+</div>
+</section>
+<section id="obtaining-an-fft-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode">
+<h3>Obtaining an FFT - 1 DDC Per ADC Pair in Complex Mode with Decimation by 2 Mode<a class="headerlink" href="#obtaining-an-fft-1-ddc-per-adc-pair-in-complex-mode-with-decimation-by-2-mode" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>The first item to configure in Visual Analog is the input clock frequency.
+This needs to be set to twice the frequency of the input clock. Click in the
+ADC Data Capture block to open the settings. In this example, 368.64 MHz is
+the sample clock frequency so 368.64 is entered into VisualAnalog. Also, make
+sure that the output data is set to *Ch. DDC0 Data*.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_data_capture_settings_ddc0.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_data_capture_settings_ddc0.png" />
+<div class="centeralign docutils container">
+<p><em>AD9694 FFT Data Capture Settings</em></p>
+</div>
+<ul class="simple">
+<li><p>In this example, with a sample clock of 368.64MHz, the output sample rate is
+184.32MSPS. The JESD204B lane configuration for the JESD204B link of each ADC
+Channel Pair is 2.4.4 (L.M.F). The required REFCLK frequency is 368.64 MHz
+(refer to step 7 in the section “Configuring the Board”).</p></li>
+<li><p>Click the Run button in Visual Analog and you should see the capture data
+similar to the plot below.</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_2ddc_complex_inout_ncopassthrough_fft_fin345p1mhz.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_2ddc_complex_inout_ncopassthrough_fft_fin345p1mhz.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_2ddc_complex_inout_ncopassthrough_fft_fin345p1mhz.png" width="800" />
+</a>
+<div class="centeralign docutils container">
+<p><em>AD9694 FFT with DDC0 Enabled</em></p>
+</div>
+<ul class="simple">
+<li><p>Adjust the amplitude of the input signal so that the fundamental is at the
+desired level. (Examine the <strong>Fund Power</strong> reading in the left panel of the
+VisualAnalog FFT window.) Adjust the input signal to -1.4 dBFS or less in the
+FFT in Visual Analog (this accounts for the approximately -0.4 dB loss in the
+DDC. Recall that the mixing process incurs a 6dB additional loss; the signal
+amplitude is -7.4 dBFS in this plot.</p></li>
+<li><p>To save the FFT plot do the following</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Click on the Float Form button in the FFT window</p></li>
+</ul>
+</div></blockquote>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig13_floatform.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/fig13_floatform.png" />
+<div class="centeralign docutils container">
+<p><em>Floating the FFT window</em></p>
+</div>
+<ul class="simple">
+<li><p>Click on File <span class="math notranslate nohighlight">\(right\)</span> Save Form As button and save it to a location of
+choice</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_va_fft_saveas.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/6684_va_fft_saveas.png" />
+<div class="centeralign docutils container">
+<p><em>Saving the FFT</em></p>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="quickstart/zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
