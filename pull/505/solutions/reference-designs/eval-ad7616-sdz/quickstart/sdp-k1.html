@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection. Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device." name="description" />
+
+    <title>SDP-K1 Quick Start Guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="prev" title="ZC706 Quick Start Guide" href="zc706.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">SDP-K1 Quick Start Guide</a><ul>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+<li><a class="reference internal" href="#required-software">Required software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD7616-SDZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../no-os.html">No-OS driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../no-os.html#iio-driver">IIO driver</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quick start guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zedboard.html">On ZedBoard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zc706.html">On ZC706</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">On SDP-K1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD7616-SDZ</a></li><li><a href="index.html">Quick start guides</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="sdp-k1-quick-start-guide">
+<span id="eval-ad7616-sdz-quickstart-sdp-k1"></span><h1>SDP-K1 Quick Start Guide<a class="headerlink" href="#sdp-k1-quick-start-guide" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7616_docs/docs/solutions/reference-designs/eval-ad7616-sdz/images/ad7616_sdp-k1_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7616_docs/docs/solutions/reference-designs/eval-ad7616-sdz/images/ad7616_sdp-k1_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7616_docs/docs/solutions/reference-designs/eval-ad7616-sdz/images/ad7616_sdp-k1_setup.jpg" width="800" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><p>This guide provides quick instructions on how to setup the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616SDZ" target="_blank">EVAL-AD7616SDZ</a> on:</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> using a fly-wire SPI connection</p></li>
+</ul>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<p>The following files are needed:</p>
+<ul class="simple">
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/ad7616-st" target="_blank">projects/ad7616-st</a></p></li>
+</ul>
+<p>Instructions on how to build the project from source can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a></p></li>
+</ul>
+</section>
+<section id="required-software">
+<h3>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vitis or STM32CubeIDE — see the <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a>
+for the supported toolchain</p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 230400 (8N1)</p></li>
+<li><p>(Optional) <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope" target="_blank">IIO Oscilloscope</a>
+to visualize the captured data over the IIO serial backend</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h3>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> microcontroller board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616SDZ" target="_blank">EVAL-AD7616SDZ</a> evaluation board and its power supply</p></li>
+<li><p>STLINK-V3 programmer</p></li>
+<li><p>Fly-wires for SPI connections</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#eval-ad7616-sdz-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic">
+<li><p>Configure the EVAL-AD7616-SDZ jumpers as follows for the SDP-K1:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jumper/Solder link</p></th>
+<th class="head"><p>Position</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SL1</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Channel Sequencer Enable</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL2</p></td>
+<td><p>Unmounted</p></td>
+<td><p>RC Enable Input</p></td>
+</tr>
+<tr class="row-even"><td><p>SL3</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Selects 1 MISO mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL4</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS2</p></td>
+</tr>
+<tr class="row-even"><td><p>SL5</p></td>
+<td><p>Mounted</p></td>
+<td><p>If mounted, selects serial interface</p></td>
+</tr>
+<tr class="row-odd"><td><p>SL6</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS1</p></td>
+</tr>
+<tr class="row-even"><td><p>SL7</p></td>
+<td><p>Unmounted</p></td>
+<td><p>Oversampling Ratio Selection OS0</p></td>
+</tr>
+<tr class="row-odd"><td><p>LK40</p></td>
+<td><p>A</p></td>
+<td><p>Onboard 5V power supply selected</p></td>
+</tr>
+<tr class="row-even"><td><p>LK41</p></td>
+<td><p>A</p></td>
+<td><p>Onboard 3.3V power supply selected</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616SDZ" target="_blank">EVAL-AD7616SDZ</a> to the <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> Arduino header
+using fly-wires as follows:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>EVAL-AD7616-SDZ</p></th>
+<th class="head"><p>SDP-K1 Arduino</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SCLK</p></td>
+<td><p>D13</p></td>
+</tr>
+<tr class="row-odd"><td><p>DB10/SDI</p></td>
+<td><p>D11</p></td>
+</tr>
+<tr class="row-even"><td><p>DB12/SDOA</p></td>
+<td><p>D12</p></td>
+</tr>
+<tr class="row-odd"><td><p>CS</p></td>
+<td><p>D10</p></td>
+</tr>
+<tr class="row-even"><td><p>CONVST</p></td>
+<td><p>D5</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESET</p></td>
+<td><p>D7</p></td>
+</tr>
+<tr class="row-even"><td><p>BUSY</p></td>
+<td><p>D6</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li><p>Connect the power supply to the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616SDZ" target="_blank">EVAL-AD7616SDZ</a> barrel jack</p></li>
+<li><p>Connect the power supply to the <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> barrel jack</p></li>
+<li><p>Connect the STLINK-V3 programmer to the <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> and to your host PC</p></li>
+<li><p>Connect a USB cable for UART from the <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a> to your host PC</p></li>
+<li><p>Build and flash the no-OS project:</p>
+<ol class="arabic">
+<li><p>Refer to the <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a> for toolchain setup.</p></li>
+<li><p>Clone the no-OS repository and navigate to the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>--recursive<span class="w"> </span>https://github.com/analogdevicesinc/no-OS.git
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>no-OS/projects/ad7616-st
+</pre></div>
+</div>
+</li>
+<li><p>Build and flash the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>reset
+$<span class="w"> </span>make
+$<span class="w"> </span>make<span class="w"> </span>run
+</pre></div>
+</div>
+<p>To debug instead of flash:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>make<span class="w"> </span>debug
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Connect to the IIO server running on the SDP-K1:</p>
+<ul class="simple">
+<li><p><strong>IIO Oscilloscope</strong>: connect using the serial backend at
+<code class="docutils literal notranslate"><span class="pre">serial:/dev/ttyUSB0,230400</span></code> (or the appropriate COM port on Windows)</p></li>
+<li><p><strong>UART terminal</strong>: open at <strong>230400</strong> baud to view the console log</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to power both the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7616SDZ" target="_blank">EVAL-AD7616SDZ</a> and the <a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a>
+via their respective barrel jack connectors.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zc706.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZC706 Quick Start Guide</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
