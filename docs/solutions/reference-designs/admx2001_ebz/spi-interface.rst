@@ -1,14 +1,26 @@
 ADMX2001B SPI Interface
 =======================
 
-The SPI interface can be used instead of the UART interface to send commands for configuration and measurement from the host. The SPI interface pins on the ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see :doc:`ADMX2001B Pin Configuration and Function Descriptions </solutions/reference-designs/admx/eval-admx2001ebz>` for the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD headers. See :doc:`EVAL-ADMX2001EBZ Terminal Description </solutions/reference-designs/admx/eval-admx2001ebz>` for more details.
+The SPI interface can be used instead of the UART interface to send commands for
+configuration and measurement from the host. The SPI interface pins on the
+ADMX2001B module are SCK, SDI, SDO, and CS (B14-B17); see :doc:`ADMX2001B Pin
+Configuration and Function Descriptions
+</solutions/reference-designs/admx2001_ebz/eval-admx2001_demo>` for
+the full pinout. On the evaluation board (EVAL-ADMX2001EBZ) the SPI interface is
+available on the Arduino style pin headers (P6 pins 5-8) and on both PMOD
+headers. See :doc:`EVAL-ADMX2001EBZ Terminal Description
+</solutions/reference-designs/admx2001_ebz/eval-admx2001_demo>` for
+more details.
 
-There is an example program for the SDP-K1 microcontroller that implements some functions to communicate with the ADMX2001B over the SPI interface. That code is available here: `MBED SPI library <https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADMX2001/>`_.
+There is an example program for the SDP-K1 microcontroller that implements some
+functions to communicate with the ADMX2001B over the SPI interface. That code is
+available here: `MBED SPI library
+<https://os.mbed.com/teams/AnalogDevices/code/EVAL-ADMX2001/>`_.
 
 SPI Protocol & Timing
 ---------------------
 
-.. image:: ../images/wildcat_spi_timing_56bit_frame_full.png
+.. image:: images/wildcat_spi_timing_56bit_frame_full.png
    :align: center
    :width: 600
 
@@ -355,7 +367,8 @@ Procedure for writing single parameter command:
 -  Do **Frame Write** with the respective command, address and data
 -  Poll the status register until the **Done** bit is set
 
-Once the **Done** bit is set, the command has been processed. If any warnings or error occur, respective bit will be set
+Once the **Done** bit is set, the command has been processed. If any warnings or
+error occur, respective bit will be set
 
 Single Parameter Read
 ~~~~~~~~~~~~~~~~~~~~~
@@ -369,7 +382,8 @@ Procedure for reading single parameter command:
 Status Register Read (0x00)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Status Register is a 32-bit read-only register and can be read using command **0x00**. Register fields are shown in **Status Register Field Descriptions**.
+The Status Register is a 32-bit read-only register and can be read using command
+**0x00**. Register fields are shown in **Status Register Field Descriptions**.
 
 **Status Register:**
 
@@ -379,7 +393,11 @@ The Status Register is a 32-bit read-only register and can be read using command
 | Field | Measurement Done | Command Done | Error | Warning | FIFO Error | Reserved | Result FIFO Depth [9:0] | Result/Error Code |
 +-------+------------------+--------------+-------+---------+------------+----------+-------------------------+-------------------+
 
-When any command is provided other than the Status, Result, and Measurement Read command, the **Command Done** bit will be cleared. After processing a given command, the **Command Done** bit will be set. The user must wait for this bit before providing the next command and/or to read data from The Result Register (0x01) or Measurement FIFO Register (0x03).
+When any command is provided other than the Status, Result, and Measurement Read
+command, the **Command Done** bit will be cleared. After processing a given
+command, the **Command Done** bit will be set. The user must wait for this bit
+before providing the next command and/or to read data from The Result Register
+(0x01) or Measurement FIFO Register (0x03).
 
 **Status Register Field Descriptions:**
 
@@ -406,26 +424,45 @@ Do a **Single Parameter Read** with the command **0x00** to get the status.
 Result Register Read (0x01)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Result register contains the processed output for few commands. Refer to the respective command’s section to know the data format and number of valid bits in the 32-bit field. Do a **Single Parameter Read** with **0x01** command to get the result.
+Result register contains the processed output for few commands. Refer to the
+respective command’s section to know the data format and number of valid bits in
+the 32-bit field. Do a **Single Parameter Read** with **0x01** command to get
+the result.
 
 Clear Error (0x02)
 ~~~~~~~~~~~~~~~~~~
 
-In order to clear SPI Measurement FIFO error, send the clear error command. It can also clear previous commands, measurement and command done bits, as well as retuls. It will return SPI interface to the ready state. Do a **Single Parameter Write** with **0x02** command and address & data field as zero to clear the error.
+In order to clear SPI Measurement FIFO error, send the clear error command. It
+can also clear previous commands, measurement and command done bits, as well as
+retuls. It will return SPI interface to the ready state. Do a **Single Parameter
+Write** with **0x02** command and address & data field as zero to clear the
+error.
 
 Measurement FIFO Read (0x03)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Measurement FIFO contains either the measured value or sweep points. Refer to the respective command section to know the number of data and result data types stored in the FIFO. The Measurement FIFO should be read only when the Result FIFO Depth field in the status register is greater than 0. If the FIFO is read when it does not contain any data, FIFO Error will occur. Do a **Single Parameter Read** with **0x03** command to get the result.
+The Measurement FIFO contains either the measured value or sweep points. Refer
+to the respective command section to know the number of data and result data
+types stored in the FIFO. The Measurement FIFO should be read only when the
+Result FIFO Depth field in the status register is greater than 0. If the FIFO is
+read when it does not contain any data, FIFO Error will occur. Do a **Single
+Parameter Read** with **0x03** command to get the result.
 
 Measure "Z" (0x0F)
 ~~~~~~~~~~~~~~~~~~
 
-Initiates the measurement immediately and stores the result in the Measurement FIFO. Result will be in two IEEE-754 Double precision format. Since only 32-bit data format is supported during a **Single Parameter Read**, 64 bit double data is split as two 32 bit data and written into the FIFO. Commands that will affect the measurement are: output format, trigger count, sample count, offset, frequency, magnitude, voltage/current gain, sweep, measure delay, trigger delay.
+Initiates the measurement immediately and stores the result in the Measurement
+FIFO. Result will be in two IEEE-754 Double precision format. Since only 32-bit
+data format is supported during a **Single Parameter Read**, 64 bit double data
+is split as two 32 bit data and written into the FIFO. Commands that will affect
+the measurement are: output format, trigger count, sample count, offset,
+frequency, magnitude, voltage/current gain, sweep, measure delay, trigger delay.
 
 Note: Trigger mode command will be ignored by this command.
 
-The figure below shows how results are stored into the FIFO. |image1| The number of 32-bit data stored into the FIFO for each measurement can be calculated using the following equation,
+The figure below shows how results are stored into the FIFO. The number of
+32-bit data stored into the FIFO for each measurement can be calculated using
+the following equation,
 
 ::
 
@@ -433,7 +470,8 @@ The figure below shows how results are stored into the FIFO. |image1| The number
 
 **Procedure:**
 
--  Configure the parameters (frequency, magnitude, etc...) with respective commands.
+-  Configure the parameters (frequency, magnitude, etc...) with respective
+   commands.
 -  Do Frame Write with z (0x0F) command.
 -  Poll status register until DONE and MEASURE DONE bit are set.
 -  Read the result from FIFO using MEASUREMENT FIFO READ command.
@@ -442,7 +480,12 @@ The figure below shows how results are stored into the FIFO. |image1| The number
 RDSWEEP (0x11)
 ~~~~~~~~~~~~~~
 
-After doing the measurement using ``z`` or ``trigger`` command, the sweep points can be read using this command. This command returns the count or frequency or magnitude or offset points as per the sweep type and count settings. Sweep points are in double precision format and are stored as two 32-bit data into the FIFO. These data can be read using the Measurement FIFO Read command. Number of points = (sample count \* trigger count) **Procedure:**
+After doing the measurement using ``z`` or ``trigger`` command, the sweep points
+can be read using this command. This command returns the count or frequency or
+magnitude or offset points as per the sweep type and count settings. Sweep
+points are in double precision format and are stored as two 32-bit data into the
+FIFO. These data can be read using the Measurement FIFO Read command. Number of
+points = (sample count \* trigger count) **Procedure:**
 
 -  Do Frame Write with (0x11) in command and number of points in data field.
 -  Poll register until Done bit is set.
@@ -451,7 +494,8 @@ After doing the measurement using ``z`` or ``trigger`` command, the sweep points
 Reset (0x12)
 ~~~~~~~~~~~~
 
-This command resets the entire device and sets the configuration parameters to its default value. Do a **Single Parameter Write** with reset command.
+This command resets the entire device and sets the configuration parameters to
+its default value. Do a **Single Parameter Write** with reset command.
 
 Initiate (0x17)
 ~~~~~~~~~~~~~~~
@@ -470,36 +514,47 @@ This command is treated as a software trigger for measuring the device under
 test. After measurement is completed, result will be stored into the FIFO. There
 are a few rules for using this command.
 
--  Should be provided only after providing initiate command i.e. when the device is in "wait for trigger" state.
--  Should be provided when software trigger is required. Should not be sent when external trigger is enabled.
+-  Should be provided only after providing initiate command i.e. when the device
+   is in "wait for trigger" state.
+-  Should be provided when software trigger is required. Should not be sent when
+   external trigger is enabled.
 -  Device will accept trigger command for trigger count times. For example, if
    trigger count is 2 only two triggers will be accepted.
 
 **External Trigger Procedure**
 
--  Configure the device parameters. Enable external trigger with trigger mode command.
+-  Configure the device parameters. Enable external trigger with trigger mode
+   command.
 -  Send initiate command.
--  Provide external trigger and poll status register until Measurement Done bit is set.
--  Read the result from FIFO. Refer to Measure Command to know how the data is stored in the FIFO. If required, read sweep points as well.
+-  Provide external trigger and poll status register until Measurement Done bit
+   is set.
+-  Read the result from FIFO. Refer to Measure Command to know how the data is
+   stored in the FIFO. If required, read sweep points as well.
 -  Repeat steps 3 and 4 for tcount times.
 
 **Software Trigger Procedure**
 
--  Configure the device parameters. Enable/Disable external trigger with trigger mode command.
+-  Configure the device parameters. Enable/Disable external trigger with trigger
+   mode command.
 -  Send initiate command.
--  Send trigger command and poll status register until Measurement Done bit is set.
--  Read the result from FIFO. Refer to Measure command to know how the data is stored in the FIFO. If required, read sweep points as well.
+-  Send trigger command and poll status register until Measurement Done bit is
+   set.
+-  Read the result from FIFO. Refer to Measure command to know how the data is
+   stored in the FIFO. If required, read sweep points as well.
 -  Repeat steps 3 and 4 for tcount times.
 
 Abort (0x1A)
 ~~~~~~~~~~~~
 
-The abort command resets the state machine and sets it to “idle” state. It doesn’t change the configuration parameters. Do a **Single Parameter Write** with the abort command.
+The abort command resets the state machine and sets it to “idle” state. It
+doesn’t change the configuration parameters. Do a **Single Parameter Write**
+with the abort command.
 
 Frequency (0x23, 0xA3)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Frequency at which measurement should happen. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Frequency at which measurement should happen. To configure or fetch data, do a
+**Single Parameter Write** or **Single Parameter Read**.
 
 **Frequency Command Format:**
 
@@ -517,7 +572,8 @@ Data type     IEEE-754 Single precision floating point
 Magnitude (0x25, 0xA5)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Magnitude at which measurement should happen. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Magnitude at which measurement should happen. To configure or fetch data, do a
+**Single Parameter Write** or **Single Parameter Read**.
 
 **Magnitude Command Format:**
 
@@ -535,7 +591,8 @@ Data type     IEEE-754 Single precision floating point
 Offset (0x26, 0xA6)
 ~~~~~~~~~~~~~~~~~~~
 
-Offset voltage at which measurement should happen. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Offset voltage at which measurement should happen. To configure or fetch data,
+do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Offset Command Format:**
 
@@ -553,7 +610,8 @@ Data type     IEEE-754 Single precision floating point
 Voltage Gain (0x28, 0xA8)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the voltage gain factor (0 = 1, 1 = 2, 2 = 4, 3 = 8). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the voltage gain factor (0 = 1, 1 = 2, 2 = 4, 3 = 8). To configure or
+fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 Note: This value will be ignored when auto range is enabled.
 
@@ -573,7 +631,9 @@ Data type     32-bit integer
 Current Gain (0x29, 0xA9)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the current gain factor (0 = 96.154, 1 = 961.54, 2 = 9615.4, 3 = 96154.0). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the current gain factor (0 = 96.154, 1 = 961.54, 2 = 9615.4, 3 =
+96154.0). To configure or fetch data, do a **Single Parameter Write** or
+**Single Parameter Read**.
 
 Note: This value will be ignored when auto range is enabled.
 
@@ -593,7 +653,8 @@ Data type     32-bit integer
 Average (0x2A, 0xAA)
 ~~~~~~~~~~~~~~~~~~~~
 
-Number of samples to average while taking measurement. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Number of samples to average while taking measurement. To configure or fetch
+data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Average Command Format:**
 
@@ -611,7 +672,8 @@ Data type     32-bit integer
 Measure Delay MDELAY (0x2B, 0xAB)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Delay (time to wait) before doing each measurement. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Delay (time to wait) before doing each measurement. To configure or fetch data,
+do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Measure Delay Command Format:**
 
@@ -629,7 +691,10 @@ Data type     IEEE-754 Single precision floating point
 Trigger Delay TDELAY (0x2C, 0xAC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Delay (time to wait) after receiving each (internal/external) trigger. This delay is necessary for the AC output signal to get settle before doing the measurement. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Delay (time to wait) after receiving each (internal/external) trigger. This
+delay is necessary for the AC output signal to get settle before doing the
+measurement. To configure or fetch data, do a **Single Parameter Write** or
+**Single Parameter Read**.
 
 **Trigger Delay Command Format:**
 
@@ -647,7 +712,8 @@ Data type     IEEE-754 Single precision floating point
 Trigger Count TCOUNT (0x2D, 0xAD)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Number of time to trigger the sweep measurement. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Number of time to trigger the sweep measurement. To configure or fetch data, do
+a **Single Parameter Write** or **Single Parameter Read**.
 
 Note: Only 256 measurement results can be stored in the measurement FIFO. If
 sample count \* trigger count is greater than 256, readings will be lost.
@@ -668,7 +734,8 @@ Data type     32-bit integer
 Sweep Start (0x30, 0xB0)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the sweep start frequency or magnitude or offset. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the sweep start frequency or magnitude or offset. To configure or
+fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Sweep Start Command Format:**
 
@@ -688,7 +755,8 @@ Data type     IEEE-754 Single precision floating point
 Sweep End (0x31, 0xB1)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the sweep end frequency or magnitude or offset. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the sweep end frequency or magnitude or offset. To configure or fetch
+data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Sweep End Command Format:**
 
@@ -708,7 +776,9 @@ Data type     IEEE-754 Single precision floating point
 Sweep Type (0x32, 0xB2)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the sweep type (0 = off, 1 = frequency, 2 = offset, 3 = magnitude). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the sweep type (0 = off, 1 = frequency, 2 = offset, 3 = magnitude).
+To configure or fetch data, do a **Single Parameter Write** or **Single
+Parameter Read**.
 
 **Sweep Type Command Format:**
 
@@ -726,7 +796,8 @@ Data type     32-bit integer
 Sweep Scale (0x33, 0xB3)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the sweep scale (0 = linear, 1 = logarithmic). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the sweep scale (0 = linear, 1 = logarithmic). To configure or fetch
+data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Sweep Scale Command Format:**
 
@@ -744,7 +815,8 @@ Data type     32-bit integer
 Temperature Unit (0x3B, 0xBB)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the temperature unit (0 = Fahrenheit, 1 = Celsius). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the temperature unit (0 = Fahrenheit, 1 = Celsius). To configure or
+fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Temperature Unit Command Format:**
 
@@ -762,7 +834,8 @@ Data type     Boolean
 Output Format (0x41, 0xC1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the output format, formats listed in the table below. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the output format, formats listed in the table below. To configure or
+fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Output Format Command Format:**
 
@@ -780,7 +853,8 @@ Data type     32-bit integer
 Sample Count (0x42, 0xC2)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the number of readings to be taken in a sweep. To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the number of readings to be taken in a sweep. To configure or fetch
+data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 Note: Only 256 measurement results can be stored in the measurement FIFO. If
 sample count \* trigger count is greater than 256, readings will be lost.
@@ -801,7 +875,9 @@ Data type     32-bit integer
 Correction Mode (0x43, 0xC3)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get the correction mode (0 = off, 1 = calibration, 2 = calibration + compensation). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get the correction mode (0 = off, 1 = calibration, 2 = calibration +
+compensation). To configure or fetch data, do a **Single Parameter Write** or
+**Single Parameter Read**.
 
 Note: Compensation cannot be used without calibration being enabled. Calibration
 must be turned on before compensation can be turned on.
@@ -822,7 +898,8 @@ Data type     32-bit integer
 Error Check (0xC4, 0x0)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get ADC saturation error checking (0 = disable, 1 = enable). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get ADC saturation error checking (0 = disable, 1 = enable). To configure
+or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
 
 **Error Check Command Format:**
 
@@ -840,7 +917,8 @@ Data type     Boolean
 DC Mode (0x45, 0xC5)
 ~~~~~~~~~~~~~~~~~~~~
 
-Set or get DC mode (1 = disable, 0 = enable). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get DC mode (1 = disable, 0 = enable). To configure or fetch data, do a
+**Single Parameter Write** or **Single Parameter Read**.
 
 Note: In order to do DC measurement, DC mode should be enabled (set parameter to
 0) and frequency should be set to 0 Hz. Since the AC source is off in DC mode,
@@ -862,7 +940,9 @@ Data type     Boolean
 Auto Range (0x46, 0xC6)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get Auto ranging of voltage and current gain (0 = disable, 1 = enable). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**.
+Set or get Auto ranging of voltage and current gain (0 = disable, 1 = enable).
+To configure or fetch data, do a **Single Parameter Write** or **Single
+Parameter Read**.
 
 Note1: When auto range is enabled, voltage gain & current gain settings will be
 updated automatically.
@@ -886,7 +966,10 @@ Data type     Boolean
 Trigger Mode (0x4A, 0xCA)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set or get Trigger mode (0 = internal/software, 1 = external). To configure or fetch data, do a **Single Parameter Write** or **Single Parameter Read**. Note: This mode will be ignored during calibration, compensation and measure (Z) command.
+Set or get Trigger mode (0 = internal/software, 1 = external). To configure or
+fetch data, do a **Single Parameter Write** or **Single Parameter Read**. Note:
+This mode will be ignored during calibration, compensation and measure (Z)
+command.
 
 **Trigger Mode Command Format:**
 
@@ -904,7 +987,9 @@ Data type     Boolean
 State (0xCD)
 ~~~~~~~~~~~~
 
-This command reads the current state of the device. Value 0 means device is in ``idle`` state and 1 means device is in ``wait for trigger`` state. Do a **Single Parameter Read** to fetch the state.
+This command reads the current state of the device. Value 0 means device is in
+``idle`` state and 1 means device is in ``wait for trigger`` state. Do a
+**Single Parameter Read** to fetch the state.
 
 **State Machine Register Format:**
 
@@ -921,7 +1006,11 @@ Data type    32-bit integer
 Self-Test (0x51, 0xD1)
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Self-test runs after powering on the device. Self-test (0x51) command initiates the self-test routine and returns pass or fail in the *error code* field in the status register. Self-test (0xD1) reads the self-test status code in result register. To initiate self-test, do **Single Parameter Write** and to fetch status code, do a **Single Parameter Read**.
+Self-test runs after powering on the device. Self-test (0x51) command initiates
+the self-test routine and returns pass or fail in the *error code* field in the
+status register. Self-test (0xD1) reads the self-test status code in result
+register. To initiate self-test, do **Single Parameter Write** and to fetch
+status code, do a **Single Parameter Read**.
 
 Note: Before initiating self-test make sure test leads/test fixture is in the
 open configuration, otherwise the analog test will fail. The self-test does not
@@ -956,7 +1045,10 @@ Bit Value
 Unique ID (0xD2)
 ~~~~~~~~~~~~~~~~
 
-Unique device ID can be fetched can be using this command. Do a **Single Parameter Read** with the respective command and address. The unique ID is a 64-bit integer, but frame format is only 32-bit data, so it is split into multiple address.
+Unique device ID can be fetched can be using this command. Do a **Single
+Parameter Read** with the respective command and address. The unique ID is a
+64-bit integer, but frame format is only 32-bit data, so it is split into
+multiple address.
 
 **Unique ID Register Format:**
 
@@ -973,7 +1065,9 @@ Data type    32-bit integer
 Warning Status (0xD3)
 ~~~~~~~~~~~~~~~~~~~~~
 
-Warning status can be fetched using this command. Do a **Single Parameter Read** with this command. Refer to the list of warnings to know the description of the code.
+Warning status can be fetched using this command. Do a **Single Parameter Read**
+with this command. Refer to the list of warnings to know the description of the
+code.
 
 **Warning Status Register Format:**
 
@@ -1058,7 +1152,18 @@ frequency.
 CAL_COMMIT (0x1B)
 ~~~~~~~~~~~~~~~~~
 
-CAL_COMMIT command is used to commit the calibration data to the flash after performing a password check. The password is written to the *input password buffer* as ASCII values of characters corresponding to the first 12 address's locations or fields (with values in decimal). The address field directs information from the data field to various locations or initiates specific processes. The address location 12 is reserved for the Unix timestamp of the commit. Sending 0xFF in the address field will compare the password stored and commit the calibration data if the password matches the set password. In case the password is incorrect sending 0xFF will clear the *input password buffer*. Performing calibration or using the CAL_STORE to store calibration coefficients is needed before committing the calibration data. Refer to the Commit Calibration Commands table for details about the address and data fields.
+CAL_COMMIT command is used to commit the calibration data to the flash after
+performing a password check. The password is written to the *input password
+buffer* as ASCII values of characters corresponding to the first 12 address's
+locations or fields (with values in decimal). The address field directs
+information from the data field to various locations or initiates specific
+processes. The address location 12 is reserved for the Unix timestamp of the
+commit. Sending 0xFF in the address field will compare the password stored and
+commit the calibration data if the password matches the set password. In case
+the password is incorrect sending 0xFF will clear the *input password buffer*.
+Performing calibration or using the CAL_STORE to store calibration coefficients
+is needed before committing the calibration data. Refer to the Commit
+Calibration Commands table for details about the address and data fields.
 
 **Commit Calibration Command Mapping**
 
@@ -1092,9 +1197,18 @@ compensation), frequency and temperature. For more details refer to Read
 Calibration/Compensation Command Mapping Table. Such address is access bitwise
 as follows:
 
--  The bit 3 to bit 0 of the address need to be set to the voltage and current gain for which the calibrations/compensation coefficients are to be read.
+-  The bit 3 to bit 0 of the address need to be set to the voltage and current
+   gain for which the calibrations/compensation coefficients are to be read.
 -  The bit 8 to bit 4 of the address field are redundant.
--  The bit 9 of the address can be used to toggle between two modes, *calibration/compensation data read mode* and *calibration/compensation coefficients read mode*. In case *calibration/compensation coefficients read mode* is used, the bit 14 is used to either read the MSB or the LSB of the 64-bit double valued calibration/compensation coefficient. The calibration/compensation coefficient is set by appropriately setting the bit 13 to bit 10. In case *calibration/compensation data read mode* is used, ignores bit 14 and can be used to read the calibration/compensation data in its respective formats.
+-  The bit 9 of the address can be used to toggle between two modes,
+   *calibration/compensation data read mode* and *calibration/compensation
+   coefficients read mode*. In case *calibration/compensation coefficients read
+   mode* is used, the bit 14 is used to either read the MSB or the LSB of the
+   64-bit double valued calibration/compensation coefficient. The
+   calibration/compensation coefficient is set by appropriately setting the bit
+   13 to bit 10. In case *calibration/compensation data read mode* is used,
+   ignores bit 14 and can be used to read the calibration/compensation data in
+   its respective formats.
 
 To send CAL_READ/COMP_READ commands, user can build a compound address using
 bitwise to the left operation to construct each sub-filed based on 2-bit voltage
@@ -1266,7 +1380,15 @@ table for details about the address and data fields.
 CAL_ERASE (0x10)
 ~~~~~~~~~~~~~~~~
 
-CAL_ERASE command is used to permanently delete all saved calibration coefficient sets from the memory after performing a password check. When completed, it restores them to the default configurations. The password is written to the input password buffer as ASCII values of characters corresponding to the first 12 address's locations or fields (with values in decimal). Sending 0xFF in the address field will compare it to the password stored and erase the calibration data if the password matches the set password, then initialize calibration coefficients to default configurations. In case the password is incorrect sending 0xFF will clear the *input password buffer*.
+CAL_ERASE command is used to permanently delete all saved calibration
+coefficient sets from the memory after performing a password check. When
+completed, it restores them to the default configurations. The password is
+written to the input password buffer as ASCII values of characters corresponding
+to the first 12 address's locations or fields (with values in decimal). Sending
+0xFF in the address field will compare it to the password stored and erase the
+calibration data if the password matches the set password, then initialize
+calibration coefficients to default configurations. In case the password is
+incorrect sending 0xFF will clear the *input password buffer*.
 
 **Erase Calibration Coefficients Command Mapping**
 
@@ -1439,5 +1561,6 @@ Address (bit 13 to bit 10) Selected Coefficient
 0b1011                     Bg
 ========================== ====================
 
-.. |image1| image:: ../images/measurement_fifo.png
+.. image:: images/measurement_fifo.png
+   :align: center
    :width: 400
