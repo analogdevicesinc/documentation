@@ -1110,8 +1110,8 @@ is split as two 32 bit data and written into the FIFO. Commands that will affect
 the measurement are: output format, trigger count, sample count, offset,
 frequency, magnitude, voltage/current gain, sweep, measure delay, trigger delay.</p>
 <p>Note: Trigger mode command will be ignored by this command.</p>
-<p>The figure below shows how results are stored into the FIFO. <a class="reference internal" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/admx_landing/docs/solutions/reference-designs/admx2001_ebz/images/measurement_fifo.png"><img alt="image1" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/admx_landing/docs/solutions/reference-designs/admx2001_ebz/images/measurement_fifo.png" width="400" /></a> The number
-of 32-bit data stored into the FIFO for each measurement can be calculated using
+<p>The figure below shows how results are stored into the FIFO. The number of
+32-bit data stored into the FIFO for each measurement can be calculated using
 the following equation,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">No</span><span class="o">.</span> <span class="n">of</span> <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">sample</span> <span class="n">count</span> <span class="o">*</span> <span class="n">trigger</span> <span class="n">count</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span>
 </pre></div>
@@ -3052,6 +3052,8 @@ compensation feature is in development, the gain values in address bit 3 to bit
 </tbody>
 </table>
 </div>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/admx_landing/docs/solutions/reference-designs/admx2001_ebz/images/measurement_fifo.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/admx_landing/docs/solutions/reference-designs/admx2001_ebz/images/measurement_fifo.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/admx_landing/docs/solutions/reference-designs/admx2001_ebz/images/measurement_fifo.png" width="400" />
+</a>
 </section>
 </section>
 </section>
