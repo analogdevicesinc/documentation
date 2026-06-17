@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta content="This guide provides quick instructions on how to set up the EVAL-AD400x-FMCZ on:" name="description" />
 
-    <title>ZedBoard Quickstart &#8212; System Level Documentation  documentation</title>
+    <title>ZedBoard &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
@@ -14,7 +14,7 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="CoraZ7-07S Quickstart" href="coraz7s.html" />
+    <link rel="next" title="CoraZ7-07S" href="coraz7s.html" />
     <link rel="prev" title="Quickstart" href="index.html" />
    
   
@@ -96,7 +96,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">ZedBoard Quickstart</a><ul>
+<li><a class="reference internal" href="#">ZedBoard</a><ul>
 <li><a class="reference internal" href="#using-linux-as-software">Using Linux as software</a><ul>
 <li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
 <li><a class="reference internal" href="#required-software">Required Software</a></li>
@@ -188,8 +188,8 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="zedboard-quickstart">
-<span id="pulsar-adc-quickstart-zedboard"></span><h1>ZedBoard Quickstart<a class="headerlink" href="#zedboard-quickstart" title="Link to this heading"></a></h1>
+  <section id="zedboard">
+<span id="pulsar-adc-quickstart-zedboard"></span><h1>ZedBoard<a class="headerlink" href="#zedboard" title="Link to this heading"></a></h1>
 <p>This guide provides quick instructions on how to set up the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD400x-FMCZ" target="_blank">EVAL-AD400x-FMCZ</a> on:</p>
 <ul class="simple">
@@ -935,7 +935,7 @@ Then the data capture window can be seen.</p>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_zed.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_zed.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_zed.png" width="700" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Scopy data capture from PulSAR ADC on CoraZ7-07S</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Scopy data capture from PulSAR ADC on ZedBoard</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -992,7 +992,8 @@ build details at <a class="icon link reference external" href="https://analogdev
 <section id="id2">
 <h3>Required Software<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from <a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
 will include Vivado as well)</p></li>
 <li><p>An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)</p></li>
 </ul>
@@ -1014,6 +1015,13 @@ board and its power supply (12V)</p></li>
 <h4>Creating the setup<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
 <section id="id6">
 <h5>EVAL-AD400x-FMCZ/ZED<a class="headerlink" href="#id6" title="Link to this heading"></a></h5>
+<figure class="align-default" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_no_os_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_no_os_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_no_os_setup.jpg" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">EVAL-AD400x-FMCZ/ZED no-OS setup</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 <p>In the following example, we will prepare the evaluation setup by connecting the
 <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD400x-FMCZ" target="_blank">EVAL-AD400x-FMCZ</a> board to the ZedBoard, configuring the board for JTAG
 boot, and applying a test input signal.</p>
@@ -1022,15 +1030,13 @@ boot, and applying a test input signal.</p>
 <li><p>Get the <a class="icon link reference external" href="https://digilent.com/reference/programmable-logic/zedboard/start" target="_blank">ZedBoard</a></p></li>
 <li><p>Configure ZedBoard for JTAG boot:</p>
 <blockquote>
-<div><blockquote>
-<div><figure class="align-default" id="id13">
+<div><figure class="align-default" id="id14">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_zed_jtag.jpg" width="800" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">ZedBoard JTAG boot jumper configuration</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">ZedBoard JTAG boot jumper configuration</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</div></blockquote>
 <p>The BOOT switches (JP7-JP11) and the MIO0 jumper (JP6) must be set for JTAG
 boot mode. VADJ must be set to 3.3V, as specified in the HDL project’s
 README at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html#pulsar-adc" target="_blank" title="(in HDL)"><span>PULSAR-ADC HDL project</span></a>. Optionally, to use USB peripheral
@@ -1054,17 +1060,2010 @@ device on).</p></li>
 <p>The following is what is printed in the serial console, after you have connected
 to the proper ttyUSB or COM port:</p>
 <div><div class="collapsible docutils">
-<input class="collapsible_input" id="270cb8c2445929dd8ed26fb7dd1ed5882d53e836" name="270cb8c2445929dd8ed26fb7dd1ed5882d53e836" type="checkbox"></input><label for="270cb8c2445929dd8ed26fb7dd1ed5882d53e836"><p>Complete boot log</p>
+<input class="collapsible_input" id="a308b02ee1c675084c49796eb863747bb45e4c82" name="a308b02ee1c675084c49796eb863747bb45e4c82" type="checkbox"></input><label for="a308b02ee1c675084c49796eb863747bb45e4c82"><p>Complete boot log</p>
 <div class="icon"></div></label><div class="collapsible_content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pulsar_adc_clkgen</span><span class="p">:</span> <span class="n">MMCM</span><span class="o">-</span><span class="n">PLL</span> <span class="n">locked</span> <span class="p">(</span><span class="mi">100000000</span> <span class="n">Hz</span><span class="p">)</span>
-<span class="n">Spi</span> <span class="n">engine</span> <span class="n">succesfully</span> <span class="n">initialized</span><span class="o">.</span>
-<span class="mi">0</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x00000000</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.00000</span><span class="n">V</span>
-<span class="mi">1</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x00000000</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.00000</span><span class="n">V</span>
-<span class="mi">2</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x0001c4e1</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.05661</span><span class="n">V</span>
-<span class="mi">3</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x0001c4b9</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.05659</span><span class="n">V</span>
-<span class="mi">4</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x0001c4ce</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.05660</span><span class="n">V</span>
-<span class="mi">5</span><span class="p">:</span> <span class="n">CH0</span><span class="p">:</span> <span class="mh">0x0001c4cd</span> <span class="o">=</span> <span class="o">+</span><span class="mf">0.05660</span><span class="n">V</span>
-<span class="o">...</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Spi</span> <span class="n">engine</span> <span class="n">v2</span><span class="mf">.0.0</span> <span class="n">succesfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="n">rx_clkgen</span><span class="p">:</span> <span class="n">MMCM</span><span class="o">-</span><span class="n">PLL</span> <span class="n">locked</span> <span class="p">(</span><span class="mi">160000000</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47926</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41001</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39098</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38967</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38763</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38541</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38015</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37366</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37268</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37023</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36674</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36398</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35956</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35241</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35008</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35254</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34737</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34306</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34063</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33516</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33185</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32136</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32127</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31118</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31111</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30742</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30179</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29919</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29486</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29195</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29156</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28786</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28051</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27735</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27379</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27031</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26715</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26154</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25349</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25230</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25144</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24876</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24484</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24116</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23452</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23150</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22951</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22750</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21985</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21876</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21420</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21405</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21028</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20805</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19914</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19523</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19426</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19218</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18693</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18474</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17982</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17334</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17511</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17295</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">16754</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">16177</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15995</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15334</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15304</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14960</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14638</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13969</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13427</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13418</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13356</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12627</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12444</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12113</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11332</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11310</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11340</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10718</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9985</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9730</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9343</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9231</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8923</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8725</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8116</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7844</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7863</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7319</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6782</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6224</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6133</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5748</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5575</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5124</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3996</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3702</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3717</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3422</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2850</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2543</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2147</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1573</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1421</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">818</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">111</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">211</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">318</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">503</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1126</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1302</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1828</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2282</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2270</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2532</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3165</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3946</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3930</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4127</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4515</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4880</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5235</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5935</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6261</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6158</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">7358</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">7423</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8029</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8270</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8475</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8475</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9182</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9823</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10164</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10101</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10499</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11218</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11270</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11980</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12205</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12221</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12565</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13074</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13756</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13902</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14211</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14543</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14753</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15227</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15860</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16193</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16227</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16572</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17090</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17271</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18232</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18285</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18550</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19376</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19829</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19804</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20298</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20695</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20669</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21218</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21857</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22255</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22278</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22609</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23282</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23859</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24254</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24245</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24575</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25261</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26306</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26214</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27225</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27848</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27871</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28298</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28583</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28743</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29972</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29998</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30269</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30605</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30798</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31233</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31679</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31642</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">32039</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">32572</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">32930</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33443</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33609</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33689</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">34076</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">34585</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">34922</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35190</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35507</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35657</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35836</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">36672</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">36822</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37313</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37614</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37584</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37881</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">38655</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39018</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39264</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39643</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39685</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39890</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">40703</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41243</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41506</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41688</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42751</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42657</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43342</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43677</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43514</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43990</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">44248</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">44662</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45391</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45515</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45517</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45929</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45966</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">46720</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47180</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48068</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48703</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49376</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49732</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49683</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50144</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50252</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50591</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51313</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51341</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51600</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51807</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51949</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">52622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">52955</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53358</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53551</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53616</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54045</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54318</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54627</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55434</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55314</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55658</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55654</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55909</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">56497</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">56601</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57361</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57513</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57655</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57599</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57828</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">58718</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">58643</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59247</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59539</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59611</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59892</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59887</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60734</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60732</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61242</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61772</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61820</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62002</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62629</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62669</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63356</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63595</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63584</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63707</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63968</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">64496</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">64622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65328</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65221</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65750</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65890</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">66173</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">66736</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67031</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67391</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67646</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67621</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68039</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68068</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68798</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69162</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69447</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70067</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69970</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70656</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70764</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71111</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71217</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71654</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71711</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72005</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72193</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72751</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72831</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73053</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73000</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73641</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74099</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74127</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74764</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74656</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74995</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74834</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75781</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75653</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76133</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75992</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76521</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76655</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76973</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76805</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77350</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77720</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77663</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78085</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78017</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78552</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78948</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78897</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79471</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79594</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79600</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79951</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79962</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80756</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80656</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81213</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81068</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81213</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81657</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82029</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81971</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82339</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82486</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82673</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83106</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82948</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83360</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83559</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83743</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83980</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84025</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84281</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84706</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84732</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85010</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85055</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85201</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85265</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85975</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86033</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86120</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86591</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86787</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86970</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87048</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87044</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87227</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87403</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87234</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88005</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87919</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87913</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88640</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88945</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88831</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88934</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89058</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89335</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89200</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89721</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90200</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89937</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90188</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90654</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90647</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90717</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90994</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91165</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91253</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91436</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91578</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91995</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91959</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92185</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92735</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92726</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92820</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93110</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92948</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93018</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92884</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93215</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93208</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93322</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93984</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93935</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94000</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94308</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94713</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94689</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94684</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95092</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94912</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95078</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95100</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95230</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95259</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95338</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95687</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96055</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95872</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95900</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96681</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96677</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96765</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96945</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97010</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97065</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97031</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97235</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97058</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97436</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97400</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97444</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97313</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97630</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98036</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97916</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98022</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97999</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97895</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98296</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98650</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98670</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98624</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98499</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98845</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99016</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98933</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98964</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99051</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98969</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98931</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99279</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99278</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99273</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99266</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99421</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99259</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99343</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99647</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99972</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99989</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100038</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100042</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100138</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99963</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99800</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100055</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100350</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100221</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100625</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100651</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100828</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100682</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100569</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100809</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100678</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100618</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100647</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100487</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101046</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100992</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100821</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100955</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100962</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100975</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100829</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101089</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101163</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100965</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100971</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100982</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101042</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100980</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101013</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100925</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101043</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100940</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100814</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101016</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100844</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101058</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100920</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101028</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100850</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100940</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100940</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100819</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100883</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101004</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101019</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100979</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100991</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100952</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100875</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101022</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100971</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101033</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101006</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100915</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101006</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101073</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100962</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101018</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100972</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100974</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100934</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100932</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100934</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100934</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">101074</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100580</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100747</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100691</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100623</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100630</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100594</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100255</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100326</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100043</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99955</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">100099</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99946</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99831</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99905</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99642</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99558</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99268</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99394</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99438</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99154</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99385</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99223</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99005</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98936</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99000</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98879</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98860</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98968</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">99057</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98920</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98640</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98617</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98616</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98585</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98554</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98243</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98074</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98018</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97903</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98058</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">98090</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97709</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97406</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97330</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97322</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97347</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96982</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97113</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97015</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97118</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">97083</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96747</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96810</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96617</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96653</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96392</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96069</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95904</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">96086</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95608</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95446</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95425</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95336</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95245</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94933</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94958</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94991</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">95159</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94605</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94625</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">94766</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93895</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93986</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93938</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93728</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93360</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93380</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93291</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92905</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92934</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93093</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">93148</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92699</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92675</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92780</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">92071</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91858</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91985</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91262</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91405</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91443</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91105</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90974</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90884</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">91157</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90573</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90746</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90349</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">90083</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89956</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89822</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89323</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89518</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89104</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">89081</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88910</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88988</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88657</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88684</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88401</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">88049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87589</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87394</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87352</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87205</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">87105</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86993</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86684</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86746</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86442</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86002</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">86059</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85425</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85308</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85070</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">85067</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84987</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84540</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84865</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84087</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">84086</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83675</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83604</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83048</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83017</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">83166</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82491</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82674</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82158</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">82049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81782</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81449</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81022</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">81069</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80830</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80612</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80162</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">80091</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79809</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79530</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">79017</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78933</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78712</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78719</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">78302</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77964</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77740</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77554</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76904</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">77178</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76685</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76786</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76064</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">76124</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75799</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75824</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75156</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75060</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">75021</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74901</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74303</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">74036</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73918</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73678</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73472</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73228</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">73146</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72683</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72488</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">72113</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71835</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71600</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71356</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71188</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">71152</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70793</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70433</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">70089</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69891</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69853</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">69567</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68831</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68797</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68072</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">68123</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67723</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67487</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">67516</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">66804</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">66632</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">66057</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65757</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65792</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65693</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">65390</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">64866</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">64767</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">64060</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63993</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63724</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63553</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63342</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">63142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62588</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62066</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">62134</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61750</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61733</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">61413</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60973</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60708</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60119</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">60068</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59631</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59497</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">59076</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">58700</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">58133</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">58014</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57617</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57578</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">57383</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">56768</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">56622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">56216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55946</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55729</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55589</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">55454</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54754</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54690</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">54043</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53788</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53691</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53325</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">53239</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">52710</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">52152</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">52039</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51645</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51637</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">51262</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50740</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50779</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">50138</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49756</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49666</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">49339</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48765</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48064</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">48125</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47682</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">47304</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">46711</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">46597</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45995</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45634</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45609</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">45381</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">44855</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">44716</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43986</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43696</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43739</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43453</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">43150</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42736</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42087</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">42021</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41472</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">41437</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">40704</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39982</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">40027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39766</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39303</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">39255</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">38681</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">38106</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">38161</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37811</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37549</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">37337</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">36725</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">36003</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35920</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35745</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35385</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">35412</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">34648</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">34140</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33992</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33529</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">33517</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">32695</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31998</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">32191</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31776</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31459</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">31372</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30581</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30199</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30379</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29989</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29373</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29021</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28634</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28442</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28326</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28051</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27279</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26603</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26412</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26201</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26052</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25472</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24553</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24460</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24303</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23841</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23715</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23278</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22774</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22472</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22390</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22009</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21397</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21208</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20652</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20294</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20371</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20036</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19263</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18773</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18696</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18313</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18103</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17796</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17286</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16425</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16317</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16504</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15865</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15406</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15239</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14593</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14231</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13935</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13158</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12777</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12594</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12338</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12156</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11779</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11385</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10653</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10370</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10233</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10010</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9139</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8626</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8220</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8148</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8030</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">7362</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6753</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6526</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6388</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5511</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5247</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4559</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4236</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4194</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4066</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3479</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2957</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2635</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2084</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1975</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1869</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1223</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">596</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">426</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">391</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">674</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">947</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1288</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1799</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2101</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2783</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3418</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3468</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3595</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3990</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4517</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4782</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5361</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5693</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5690</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5953</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6723</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7171</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7467</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7647</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8079</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8220</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9355</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9277</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9364</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9893</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10701</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10900</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11254</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11309</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11803</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11904</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12634</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13339</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13348</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13274</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13852</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14327</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14680</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15139</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15265</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15343</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15966</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">16508</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">16968</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17375</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17274</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17814</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17960</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18512</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19303</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19349</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19276</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19906</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20402</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20632</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21360</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21336</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21422</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21889</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22535</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23017</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22869</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23445</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23952</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23957</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24577</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24967</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24868</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25313</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25833</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26137</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26699</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27119</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26920</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27277</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27974</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28482</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28816</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29009</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29268</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29376</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30086</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30666</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30799</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31124</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31321</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31582</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32030</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32625</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32821</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32985</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33467</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33739</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34047</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34731</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34933</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35078</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35316</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35845</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35953</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36684</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37105</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36945</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37281</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38007</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38045</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38739</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39096</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39143</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39427</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39832</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39984</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">40669</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">40968</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41032</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41323</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41606</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42068</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42868</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42998</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">43307</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">43564</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">44066</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">44754</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">44808</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45121</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45345</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45870</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">46646</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">46736</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47061</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47149</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47391</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48084</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48296</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48690</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49033</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49009</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49414</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49837</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50177</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50619</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50812</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50812</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">51351</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">51409</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52047</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52607</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52804</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52669</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52970</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">53357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">53943</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54016</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54585</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54637</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54694</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">55323</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">55399</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56106</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56699</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56618</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56784</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">57259</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">57687</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58193</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">59182</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">59357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">59953</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60789</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60784</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60694</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">61001</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">61384</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">61939</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62167</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62782</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62593</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62671</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">63264</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">63459</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64058</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64656</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64682</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64622</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">65045</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">65438</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66131</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66643</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66849</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66649</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66748</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">67375</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">67770</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68098</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68322</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68939</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68804</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68773</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">69458</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">69351</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70143</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70072</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70749</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70579</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70698</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70818</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">71435</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">71586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72189</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72159</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72766</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72840</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72610</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73001</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73431</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73595</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74043</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74352</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74671</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74673</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75039</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75356</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75640</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76072</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76107</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76278</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76337</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76629</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76848</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">77598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">77392</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">77997</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78086</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78451</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78478</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78536</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78655</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79013</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79400</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79675</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80026</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80143</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80361</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80727</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80720</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81367</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81374</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81723</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82079</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82133</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82476</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82477</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82750</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82778</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83067</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83527</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83365</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84096</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84054</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84383</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84426</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84308</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84858</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84745</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85300</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85446</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85677</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86187</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86126</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86449</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86301</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86394</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86778</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86577</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87059</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87401</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87375</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88090</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87989</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88390</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88368</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88411</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88413</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88624</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88712</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89347</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89403</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89989</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90099</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90029</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89910</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90092</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90422</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90789</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91124</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91488</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91276</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91686</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92077</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92064</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92171</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92073</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92002</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92081</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92660</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92920</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92698</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93494</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93482</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93428</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93799</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94193</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94064</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94065</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94545</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94638</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94658</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94908</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95341</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95350</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95331</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95811</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96088</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95923</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96084</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95917</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95938</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96051</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96079</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96508</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96798</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96698</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96611</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97015</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97291</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97343</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97469</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97723</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97972</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98057</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98046</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98072</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98053</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98069</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98021</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98036</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98351</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98847</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98612</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99096</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99288</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99443</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99350</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99394</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99651</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99923</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100092</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99893</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99908</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99978</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100022</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99981</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100047</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100020</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99899</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100166</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100314</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100681</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100643</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100608</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100706</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100686</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100959</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101377</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101434</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101341</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101381</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101299</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101360</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101668</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101626</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101981</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101923</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101945</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102117</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101954</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102084</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101913</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102218</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101971</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101998</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102080</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101885</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101951</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102028</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101947</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101959</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102026</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102034</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101933</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102331</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102197</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102803</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102794</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102725</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102675</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102745</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102630</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102781</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102701</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102833</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102614</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102682</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102573</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102718</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102703</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102756</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102604</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102806</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102669</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102771</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102684</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102642</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102574</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102709</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102472</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102623</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102653</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102747</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102749</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102681</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102769</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102671</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102651</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102623</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102604</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102480</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102733</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102637</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102649</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102613</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102625</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102719</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102568</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102658</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102664</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102687</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102626</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102769</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102289</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102400</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102235</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101965</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102020</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102194</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102002</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102004</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102026</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102007</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101980</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101950</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102156</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101916</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101901</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101821</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101907</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102184</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">102077</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101777</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101751</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101248</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101365</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101174</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101515</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101303</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101286</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">101184</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100705</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100534</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100710</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100579</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100825</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100459</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100097</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99979</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99924</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100033</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99911</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99989</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100012</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99988</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100055</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">100059</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99699</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99411</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99212</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99408</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99319</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">99088</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98674</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98712</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98777</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98829</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98431</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98057</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98106</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98091</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98084</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98065</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98063</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98216</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">98036</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97757</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97455</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97435</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97450</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">97086</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96776</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96823</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96832</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96731</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96108</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95996</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96135</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95993</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95991</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">96054</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95787</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95454</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95389</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95291</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">95024</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94728</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94849</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94690</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94118</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94050</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94042</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94069</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94099</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">94004</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93911</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93487</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93445</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">93316</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92796</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92931</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92888</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92298</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92147</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92232</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92005</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92079</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">92132</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91862</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91375</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91524</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">91090</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90786</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90687</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90377</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90159</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90204</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90035</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90254</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">90152</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89617</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">89433</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88693</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88722</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88746</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88499</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88393</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88482</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88333</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">88108</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87417</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87550</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">87268</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86842</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86769</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86399</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86359</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86399</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86098</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">86135</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85801</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85449</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">85458</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84665</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84748</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84480</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84427</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84482</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84097</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">84008</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83618</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83394</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">83346</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82821</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82762</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82442</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82470</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82135</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">82077</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81789</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81548</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">81439</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80718</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80721</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80437</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80515</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80153</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">80065</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79811</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79326</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">79267</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78878</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78885</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78508</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78508</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78009</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">78025</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">77366</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">77403</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76867</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76795</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76527</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76302</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">76197</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75843</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75491</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">75092</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74884</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74881</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74749</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74374</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">74186</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73660</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73429</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">73175</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72792</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72738</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72892</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72555</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">72256</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">71672</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">71614</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70953</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70739</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">71025</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70788</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70202</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">70239</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">69401</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">69485</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68815</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68865</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68904</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">68284</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">67942</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">67516</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66833</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66641</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66712</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66782</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66112</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">65981</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">65453</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64981</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64783</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64717</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64595</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64076</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">64141</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">63467</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">63212</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62736</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62708</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62841</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62144</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">62062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">61367</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">61124</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60739</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60704</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60764</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60347</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">60062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">59392</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">59158</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58707</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58651</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58646</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">58105</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">57922</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">57474</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56800</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56681</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56743</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">56497</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">55970</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">55406</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">55383</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54857</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54757</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54679</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54156</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">54101</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">53282</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">53108</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52727</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52732</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52661</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">52109</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">51551</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">51471</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50762</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50840</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50659</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50106</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">50135</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49465</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">49089</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48956</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48683</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48533</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">48178</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47358</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">47302</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">46949</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">46812</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">46843</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45975</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45596</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45499</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45024</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">45121</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">44746</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">44055</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">43775</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">43376</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42979</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">43074</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42766</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">42183</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41914</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41319</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41081</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">41027</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">40735</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">40339</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">39406</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38987</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38991</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38749</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38048</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">38049</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37328</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36999</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">37104</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36714</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">36060</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35860</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35311</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35078</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">35151</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34926</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">34051</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33892</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33405</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33024</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">33075</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32683</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">32054</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31806</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31515</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30902</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">31010</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30822</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">30063</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29461</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29319</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">29304</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28866</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28722</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">28009</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27477</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27142</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">27105</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26801</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26278</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">26072</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25432</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25186</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">25040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">24842</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23966</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23877</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23474</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23000</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">23052</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22753</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">22033</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21549</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21437</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">21338</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20635</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20709</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">20040</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19319</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19349</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">19492</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18732</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18179</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">18007</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17360</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17330</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">17099</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">16636</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15954</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15560</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15430</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">15425</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14595</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">14493</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13995</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13379</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13404</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">13329</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12856</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">12155</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11885</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11297</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">11288</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10965</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10811</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">10062</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9382</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9418</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">9448</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8552</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">8046</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7801</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7539</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">7329</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6812</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">6177</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5880</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5725</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">5232</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4890</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4553</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">4073</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3586</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3722</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">3383</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2807</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">2119</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1889</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1759</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">1452</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">942</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">737</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="mi">66</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">272</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">276</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">432</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1179</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">1514</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2007</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2265</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2517</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">2792</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3284</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">3960</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4137</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4190</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">4598</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5152</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5516</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">5990</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6228</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6179</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">6530</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">7366</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">7943</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8000</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8180</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8619</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">8879</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9233</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">9822</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10323</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10297</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">10446</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11283</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11621</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">11755</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12344</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12593</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">12841</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13147</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">13977</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14129</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14176</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">14568</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15118</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15197</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">15783</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16219</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16220</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">16575</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17301</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17596</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">17976</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18249</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18627</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">18723</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">19786</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20275</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">20507</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21065</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">21331</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22007</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22179</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22378</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">22662</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23247</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23404</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">23883</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24279</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24364</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">24543</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25357</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25755</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">25877</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26238</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26718</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">26796</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27258</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">27877</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28092</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28355</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28767</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">28829</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">29279</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30108</span>
+<span class="n">ADC</span><span class="p">:</span> <span class="o">-</span><span class="mi">30180</span>
 </pre></div>
 </div>
 </div>
@@ -1079,7 +3078,7 @@ to the proper ttyUSB or COM port:</p>
               <div class="related">
                 &nbsp;
     <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quickstart</a>
-    <a href="coraz7s.html" title="Next document (Alt+Shift+RightArrow)" class="next">CoraZ7-07S Quickstart</a>
+    <a href="coraz7s.html" title="Next document (Alt+Shift+RightArrow)" class="next">CoraZ7-07S</a>
               </div>
           
         </div>
