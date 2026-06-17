@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="By using ACE Remote Control, AD7606B and AD7606C plug-ins can be automated to perform several evaluation activities across the different analog input ranges, bandwidth modes, channels, etc. Different example scripts are given in the MATLAB examples section." name="description" />
+
+    <title>AD7606B/C ACE Remote Control &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="CED1Z FPGA Project for AD7606 with Nios II" href="quickstart/ad7606_ced1z_fpga.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD7606B/C ACE Remote Control</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#hardware">Hardware</a></li>
+<li><a class="reference internal" href="#software">Software</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ace-environment">ACE Environment</a><ul>
+<li><a class="reference internal" href="#setting-up-communication-with-ace">Setting up Communication with ACE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recording-macros">Recording Macros</a></li>
+<li><a class="reference internal" href="#editing-macros-in-matlab">Editing Macros in MATLAB</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-AD7606x</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad7606_mbed_iio_application.html">AD7606 Mbed IIO Application</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zed.html">On ZedBoard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/ad7606_ced1z_fpga.html">On CED1Z (Nios II)</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">AD7606B/C ACE Remote Control</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-AD7606x</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad7606b-c-ace-remote-control">
+<span id="ad7606c-remotecontrol"></span><h1>AD7606B/C ACE Remote Control<a class="headerlink" href="#ad7606b-c-ace-remote-control" title="Link to this heading"></a></h1>
+<p>By using <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/ace/remotecontrol" target="_blank">ACE Remote Control</a>,
+AD7606B and AD7606C plug-ins can be automated to perform several evaluation
+activities across the different analog input ranges, bandwidth modes,
+channels, etc. Different example scripts are given in the MATLAB examples
+section.</p>
+<p>Without hardware, the
+<a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606b.html#product-tools" target="_blank">AD7606x Family software model</a>
+can be used to try different configurations for both AD7606C and AD7606B:
+sampling rate, RC filtering, oversampling, calibration; and analyze frequency
+response, noise performance, interface timing or power consumption, among
+others.</p>
+<p>All the below features can also be tested using the
+<a class="reference internal" href="ad7606_mbed_iio_application.html#ad7606-mbed-iio-application"><span class="std std-ref">AD7606 Mbed IIO Application</span></a>, which
+uses No-OS drivers and interfaces with SDP-K1 or STM32 Nucleo boards.</p>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<section id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-sdp-h1.html" target="_blank">SDP-H1 Controller board</a>
+and its 12 V DC wall adapter</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad7606c-18.html" target="_blank">AD7606C Evaluation Board</a>
+or an equivalent board with any of the following ADCs:</p>
+<ul>
+<li><p>AD7606B</p></li>
+<li><p>AD7606C-18</p></li>
+<li><p>AD7606C-16</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/ace-software.html" target="_blank">ACE software</a></p></li>
+<li><p>AD7606B or AD7606C ACE plugin — downloadable from within ACE through the
+plug-in manager section</p></li>
+<li><p>A MATLAB or Python environment</p></li>
+</ul>
+</section>
+</section>
+<section id="ace-environment">
+<h2>ACE Environment<a class="headerlink" href="#ace-environment" title="Link to this heading"></a></h2>
+<p>Refer to the
+<a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad7606c-fmcz-ug-1870.pdf" target="_blank">AD7606C Evaluation Board user guide</a>
+for instructions on powering the board and setting up the ACE plugin. Ensure
+the plugin is functional and the device responds to plugin interaction before
+proceeding.</p>
+<section id="setting-up-communication-with-ace">
+<h3>Setting up Communication with ACE<a class="headerlink" href="#setting-up-communication-with-ace" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Open ACE, then go to <strong>Settings</strong>.</p></li>
+<li><p>Go to the <strong>IPC Server</strong> tab and ensure that it is enabled and a port is
+allocated.</p></li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7606_docs/docs/solutions/reference-designs/eval-ad7606x/images/ace_ipc_server_settings.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7606_docs/docs/solutions/reference-designs/eval-ad7606x/images/ace_ipc_server_settings.png" />
+</section>
+</section>
+<section id="recording-macros">
+<h2>Recording Macros<a class="headerlink" href="#recording-macros" title="Link to this heading"></a></h2>
+<p>Start recording macros as explained on the <a class="icon link reference external" href="https://wiki.analog.com/software-tools/ace/recording-macros" target="_blank">Recording a macro</a> page.</p>
+</section>
+<section id="editing-macros-in-matlab">
+<h2>Editing Macros in MATLAB<a class="headerlink" href="#editing-macros-in-matlab" title="Link to this heading"></a></h2>
+<p>The code generated in the previous section can be imported into MATLAB and
+used to set the exact configuration loaded during macro recording. To give
+ACE an extra layer of flexibility, the <code class="docutils literal notranslate"><span class="pre">execute_macro</span></code> function can be
+edited to perform repetitive tasks. For example, an ‘AD7606C configuration’
+macro can be easily recorded with the macro recording tool to fully configure
+the AD7606C device: mode, range, OSR, reference, data interface, throughput,
+etc.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7606_docs/docs/solutions/reference-designs/eval-ad7606x/images/ace_execute_macro.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7606_docs/docs/solutions/reference-designs/eval-ad7606x/images/ace_execute_macro.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/add_ad7606_docs/docs/solutions/reference-designs/eval-ad7606x/images/ace_execute_macro.jpg" width="400" />
+</a>
+<p>In order to automate operations:</p>
+<ul class="simple">
+<li><p>Each of the parameters used (strings) can be replaced by variables managed
+in the main code. These variables would then be input parameters to the
+function, along with <code class="docutils literal notranslate"><span class="pre">Client</span></code>.</p></li>
+<li><p>Several macros can be recorded, each used as a function. The
+<code class="docutils literal notranslate"><span class="pre">execute_macro</span></code> function can be renamed to a more intuitive name.</p></li>
+</ul>
+<p>Explore each of the following MATLAB scripts to see different functions
+created to automate tests, e.g.: <code class="docutils literal notranslate"><span class="pre">configure_ad7606c()</span></code>, <code class="docutils literal notranslate"><span class="pre">run_capture()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">get_config()</span></code>, etc.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Feel free to consult
+<a class="icon ez reference external" href="https://ez.analog.com/data_converters/precision_adcs" target="_blank">Analog Devices Engineer-Zone</a>
+for additional support.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="quickstart/ad7606_ced1z_fpga.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">CED1Z FPGA Project for AD7606 with Nios II</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

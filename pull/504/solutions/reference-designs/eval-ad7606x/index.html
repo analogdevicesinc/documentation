@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD7606 family is an 8-/6-/4-channel simultaneous sampling ADC with 16-bit, bipolar input. Each device includes analog input clamp protection (±16.5 V tolerance), a second-order antialiasing filter (22 kHz, 3 dB cutoff), track-and-hold amplifier, 16-bit successive approximation ADC, flexible digital filter, 2.5 V reference and reference buffer, and high-speed serial/parallel interfaces. The family operates from a single 2.7 V to 5.25 V supply and supports ±10 V and ±5 V true bipolar inputs with synchronized sampling at up to 200 kSPS (300 kSPS for AD7605-4). All devices feature 1 MΩ analog input impedance regardless of sampling frequency. Single supply operation, on-chip filtering, and high input impedance eliminate the need for driver op-amps and external bipolar supplies." name="description" />
+
+    <title>EVAL-AD7606x &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Prerequisites" href="prerequisites.html" />
+    <link rel="prev" title="Reference Designs" href="../index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">EVAL-AD7606x</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#recommendations">Recommendations</a></li>
+<li><a class="reference internal" href="#table-of-contents">Table of contents</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and support</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">EVAL-AD7606x</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ad7606_mbed_iio_application.html">AD7606 Mbed IIO Application</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zed.html">On ZedBoard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/ad7606_ced1z_fpga.html">On CED1Z (Nios II)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ad7606c-remotecontrol.html">AD7606B/C ACE Remote Control</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="eval-ad7606x">
+<span id="eval-ad7606x-eval"></span><h1>EVAL-AD7606x<a class="headerlink" href="#eval-ad7606x" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD7606" target="_blank">AD7606</a> family is an 8-/6-/4-channel simultaneous sampling ADC with
+16-bit, bipolar input. Each device includes analog input clamp protection
+(±16.5 V tolerance), a second-order antialiasing filter (22 kHz, 3 dB cutoff),
+track-and-hold amplifier, 16-bit successive approximation ADC, flexible digital
+filter, 2.5 V reference and reference buffer, and high-speed serial/parallel
+interfaces. The family operates from a single 2.7 V to 5.25 V supply and
+supports ±10 V and ±5 V true bipolar inputs with synchronized sampling at up
+to 200 kSPS (300 kSPS for <a class="icon adi reference external" href="https://www.analog.com/AD7605-4" target="_blank">AD7605-4</a>). All devices feature 1 MΩ analog
+input impedance regardless of sampling frequency. Single supply operation,
+on-chip filtering, and high input impedance eliminate the need for driver
+op-amps and external bipolar supplies.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD7606C" target="_blank">AD7606C</a> is a direct pin replacement (software and hardware
+compatible) for both AD7608 and AD7609, with higher input impedance, extended
+temperature range, and additional features including 16/18-bit sample size,
+system gain/offset/phase calibration, sensor disconnect detection, lower VDRIVE
+operation, diagnostics, additional oversampling ratios, and per-channel analog
+input range selection with bipolar differential, bipolar single-ended, and
+unipolar single-ended options.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Multi-channel simultaneous sampling (8/6/4 channels)</p></li>
+<li><p>16-bit resolution with ±10 V and ±5 V bipolar input ranges</p></li>
+<li><p>±16.5 V input clamp protection and 22 kHz antialiasing filter</p></li>
+<li><p>1 MΩ analog input impedance (independent of sampling rate)</p></li>
+<li><p>On-chip 2.5 V reference, flexible digital filter, SPI/parallel interfaces</p></li>
+<li><p>Sensor disconnect detection (AD7606B/C) and per-channel range selection
+(AD7606C)</p></li>
+</ul>
+<p>Applications:</p>
+<ul class="simple">
+<li><p>Industrial data acquisition and power monitoring</p></li>
+<li><p>Motor control and automotive diagnostics</p></li>
+<li><p>Medical instrumentation and laboratory equipment</p></li>
+<li><p>Environmental monitoring and FPGA-based systems</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Link to this heading"></a></h2>
+<p>To get the most from the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD7606" target="_blank">EVAL-AD7606</a> evaluation board, we recommend
+starting with the <a class="reference internal" href="prerequisites.html#eval-ad7606x-prerequisites"><span class="std std-ref">Prerequisites</span></a> to ensure
+you have all required hardware and software. Then choose an evaluation approach
+that best suits your needs. Each path is independent and provides complete
+documentation for that specific workflow.</p>
+<p>For questions not covered in the documentation, please visit the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/common/help-and-support.html#help-and-support" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Help and Support</span></a> page or post on the
+<a class="icon ez reference external" href="https://ez.analog.com/data_converters/precision_adcs" target="_blank">EngineerZone forums</a>.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="prerequisites.html#eval-ad7606x-prerequisites"><span class="std std-ref">Prerequisites</span></a> - Required hardware,
+software tools, and evaluation platform options</p></li>
+<li><p>Evaluation approaches</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="ad7606_mbed_iio_application.html#ad7606-mbed-iio-application"><span class="std std-ref">IIO Ecosystem Quick Start</span></a> - Fast
+evaluation with IIO Oscilloscope and graphical tools (recommended)</p></li>
+<li><p><a class="reference internal" href="quickstart/zed.html#ad7606x-quickstart-zed"><span class="std std-ref">ZedBoard Quick Start</span></a> - Linux and
+no-OS evaluation on AMD Xilinx ZedBoard (FMC)</p></li>
+<li><p>No-OS Driver Integration</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/adc/ad7606x-fmc.html" target="_blank">AD7606x No-OS Example</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7606" target="_blank">AD7606 No-OS Driver</a></p></li>
+</ul>
+</li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-adc/ad7606.html" target="_blank">Linux IIO Driver</a> -
+Configure and build the Linux IIO driver with DeviceTree support</p></li>
+<li><p><a class="reference internal" href="quickstart/ad7606_ced1z_fpga.html#ad7606-ced1z-fpga"><span class="std std-ref">FPGA Prototyping</span></a> - Evaluation with the
+CED1Z board and Nios II application</p></li>
+<li><p><a class="reference internal" href="ad7606c-remotecontrol.html#ad7606c-remotecontrol"><span class="std std-ref">Automated Testing</span></a> - ACE software
+automation for MATLAB/Python scripting</p></li>
+</ol>
+</li>
+<li><p>HDL reference design</p>
+<ol class="arabic simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/ad7606x_fmc/index.html#ad7606x-fmc" target="_blank" title="(in HDL)"><span class="xref std std-ref">AD7606x HDL Project</span></a> - Complete HDL
+reference design for the EVAL-AD7606x-FMCZ board</p></li>
+</ol>
+</li>
+<li><p>Device and driver resources</p>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606.html" target="_blank">AD7606 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606b.html" target="_blank">AD7606B Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606b.html" target="_blank">AD7606C Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7605-4.html" target="_blank">AD7605-4 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606-4.html" target="_blank">AD7606-4 Product Page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad7606-6.html" target="_blank">AD7606-6 Product Page</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/ad7606" target="_blank">AD7606 No-OS Driver</a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/linux/tree/ci/drivers/iio/adc/ad7606.c" target="_blank">AD7606 Linux IIO Driver</a></p></li>
+</ul>
+</li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/common/help-and-support.html#help-and-support" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Help and Support</span></a></p></li>
+</ol>
+</section>
+<section id="help-and-support">
+<h2>Help and support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
+<p>Please visit the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/common/help-and-support.html#help-and-support" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Help and Support</span></a> page for
+additional resources.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Reference Designs</a>
+    <a href="prerequisites.html" title="Next document (Alt+Shift+RightArrow)" class="next">Prerequisites</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
