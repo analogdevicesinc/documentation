@@ -22,7 +22,7 @@ rate between 62.5 MSPS to 266.7 MSPS. The 16-bit complex output data is
 transferred to the host via a single or dual lane JESD204B interface
 supporting line rates of up to 5.333 Gbps.
 
-.. image:: Eval-AD6676.jpg
+.. image:: images/Eval-AD6676.jpg
    :align: center
    :width: 500
 
