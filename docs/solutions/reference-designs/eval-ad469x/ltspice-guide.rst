@@ -6,12 +6,19 @@ LTspice AD469x model user guide
 Overview
 -------------------------------------------------------------------------------
 
-Analog Devices provides LTspice models for the AD469x family of
-16-bit SAR ADCs. These models enable hardware-free prototyping of
-multichannel precision measurement signal chains.
+AD469x is a family of 16-bit, Easy Drive Mux SAR ADCs. The LTspice component
+library includes the AD469x family to enable hardware-free prototyping of
+multichannel precision measurement signal chains using the AD469x. This user
+guide provides an overview of the AD469x LTspice model features and
+functionality, plus links to other detailed user guides for setting up the
+models for different types of simulations (transient, noise analysis, etc.).
 
-Supported models
+Models supported
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are four generics in the AD469x family, ranging from 8 to 16 channels,
+and 500 kSPS to 1 MSPS. Please note that the LTspice models for the 16-channel
+generics (AD4695 and AD4696) only include 8 analog input channels.
 
 .. list-table::
    :header-rows: 1
@@ -22,47 +29,88 @@ Supported models
      - Channels (model)
    * - :adi:`AD4695 <en/products/ad4695.html>`
      - 16
-     - 500 kSPS
+     - 500k
      - 8
    * - :adi:`AD4696 <en/products/ad4696.html>`
      - 16
-     - 1 MSPS
+     - 1M
      - 8
    * - :adi:`AD4697 <en/products/ad4697.html>`
      - 8
-     - 500 kSPS
+     - 500k
      - 8
    * - :adi:`AD4698 <en/products/ad4698.html>`
      - 8
-     - 1 MSPS
+     - 1M
      - 8
-
-.. note::
-
-   The 16-channel models (AD4695, AD4696) implement only 8 analog
-   input channels in simulation.
 
 Model revision history
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Original release: June 22, 2022.
+- Original model releases -- 06/22/2022
 
 Features and capabilities
 -------------------------------------------------------------------------------
 
-The LTspice models support transient simulations that evaluate
-analog front-end settling and performance by modeling:
+The AD469x LTspice models cover the following features:
 
-- Charge kickback transient glitch magnitude
-- Timing relative to CNV rising edges
-- ADC acquisition timing relative to sampling rate
-- Input transient behaviors per channel sequencer configuration
+Transient simulations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For detailed transient simulation instructions, see
-:ref:`eval-ad469x-ltspice-transient-sims`.
+:ref:`Transient simulation <eval-ad469x-ltspice-transient-sims>` using the
+AD469x LTspice model assesses the settling accuracy and performance of the
+analog front-end (AFE) in response to the charge kickback of the AD469x analog
+input pins. The models emulate the following relevant behaviors of actual
+AD469x devices:
+
+- Magnitude of the transient glitches on the Easy Drive ADC inputs
+- Timing of the transient glitches relative to each CNV rising edge
+- Acquisition time of ADC relative to the desired sampling rate
+- Behaviors of input transients of each channel for a given channel
+  sequencer configuration
 
 Symbol and pin functions
 -------------------------------------------------------------------------------
+
+This section provides step-by-step instructions on how to access the AD469x
+family symbol in LTspice.
+
+- **Open a new schematic in LTspice**: to begin, open LTspice and
+  create a new schematic by selecting the appropriate option from the
+  file menu.
+- **Access the components library**: locate the components library in
+  the LTspice taskbar. Click on the symbol library icon twice to open
+  the window.
+- **Navigating the component library**: once the component library
+  window pops up, you will see a variety of categories and
+  subcategories. Look for the ADC list and click on it to access the
+  available ADC models in the LTspice directory. Within the ADC list,
+  locate and select the AD4696 model to proceed with your design.
+
+.. figure:: images/symbol_ad469x.gif
+   :align: center
+   :width: 600
+
+   Accessing the AD469x symbol in the LTspice component library
+
+Symbol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The symbol for the model is shown below.
+
+.. figure:: images/ad469x-symbol.png
+   :align: center
+   :width: 200
+
+   LTspice symbol for the AD469x family
+
+Pin functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following table lists the names and brief descriptions of the pins on the
+AD469x LTspice models. The functionality of each pin varies slightly depending
+on the type of simulation. Detailed descriptions for each pin are included in
+their respective simulation overview guide.
 
 .. list-table::
    :header-rows: 1
@@ -71,32 +119,55 @@ Symbol and pin functions
    * - Pin
      - Function
    * - IN0 -- IN7
-     - Eight analog input channels for conversion
+     - 8 analog input channels for conversion.
    * - SLCT0 -- SLCT2
-     - Bit select for channel selection
-       (valid when SEQ_EN = 0)
+     - Bit select input for channel selection. Only valid for
+       SEQ_EN = 0.
    * - CH_OUT0 -- CH_OUT2
-     - 3-bit channel indicator;
-       0 V = logic LOW, 1 V = logic HIGH
+     - Channel indicator. The CH_OUT[2:0] pins represent a 3-bit value
+       that corresponds to the most-recently sampled channel. When
+       CH_OUTx is 0 V, it represents logic LOW and when CH_OUTx is 1 V,
+       it represents logic HIGH.
    * - COMM
-     - Common channel input emulating COM pin
+     - Common channel input emulates the COM pin on AD469x.
    * - REF
-     - Reference voltage determining full-scale range;
-       VREF = REF - REFGND
+     - Reference voltage input determines the full-scale range and LSB
+       size of the VSAMPLE output. VREF = REF - REFGND.
    * - AVDD / LDO_IN
-     - Connect to 5 V
+     - Connect AVDD to 5 V.
    * - CNV
-     - Convert start signal initiating channel conversion
+     - Convert start signal. Used in transient sims to initiate the
+       conversion of selected channels.
    * - RESET
-     - Active-high reset signal
-       (pulse required at simulation start)
+     - Reset signal (active high RESET). Must be pulsed high at the
+       start of transient simulation to model active switches.
    * - REFGND
-     - Reference ground (REF referenced to REFGND)
+     - Reference ground. REF is referenced to REFGND.
    * - VSAMPLE
-     - Sampled output voltage
+     - Sampled output voltage.
 
 Parameters
 -------------------------------------------------------------------------------
+
+The AD469x LTspice models include a set of parameters for configuring various
+aspects of the models. The parameters are accessed by right-clicking on the
+parameters statements on the symbol.
+
+.. figure:: images/param-u1.png
+   :align: center
+   :width: 400
+
+   Accessing the AD469x model parameters
+
+.. figure:: images/param-u2.png
+   :align: center
+   :width: 400
+
+   Configuring the AD469x model parameters
+
+The following table lists the names and brief descriptions of the parameters
+available in the AD469x LTspice models. Detailed descriptions for each
+parameter are included in their respective simulation overview guide.
 
 .. list-table::
    :header-rows: 1
@@ -106,32 +177,46 @@ Parameters
      - Description
      - Default
    * - OSR
-     - Oversampling ratio; determines multi-sampling
-       per channel (transient) or input-referred noise
-       (noise analysis)
+     - Oversampling ratio. In transient simulations, OSR determines how
+       many times the same channel is sampled before switching to the
+       following one (only for SEQ_EN != 0). In noise simulations, OSR
+       determines the input-referred noise of the AD469x model.
      - 1
    * - SEQ_EN
-     - Sequencer enable; determines active channels
+     - Sequencer enable. Determines the active channels to be used in
+       the simulation.
      - 0
    * - CNV_FREQ_NOISE
-     - Conversion frequency for noise analysis
-       (set to 0 except for noise analysis)
+     - Conversion frequency value for noise analysis. This parameter
+       must be set to 0, except for noise analysis.
      - 0
    * - CNV_CH_NOISE
-     - Channel selected for AC/noise analysis
+     - Channel to be selected for AC/noise analysis.
      - 0
    * - COM_OPT
-     - Common input enable; references conversion to
-       COMM instead of REFGND for pseudo-differential
-       conversion
+     - Common input enable. Enable the function for the COMM input. The
+       conversion will take the voltage value at COMM as reference
+       instead of REFGND. It can be used for pseudo-differential
+       conversions.
      - 0
 
-Limitations
+Limitations / disclaimer
 -------------------------------------------------------------------------------
 
-The model has not been validated for:
+The model has not undergone validation for the remaining simulation types,
+including:
 
 - DC sweeps
 - AC analysis
 - DC transfer function
 - DC operating point analyses
+
+Sample schematics
+-------------------------------------------------------------------------------
+
+Transient simulation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A detailed explanation on the sample transient schematic and downloadable files
+are available here:
+:ref:`eval-ad469x-ltspice-transient-sims`.
