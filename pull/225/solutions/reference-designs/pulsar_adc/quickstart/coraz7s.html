@@ -151,7 +151,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="zedboard.html">ZedBoard</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">CoraZ7-07s</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">CoraZ7-07S</a></li>
 </ul>
 </li>
 </ul>
@@ -292,12 +292,12 @@ FPGA board</p></li>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>JP2</p></td>
-<td><p>Selects how the CoraZ7-07s board boots. We want to boot from the
+<td><p>Selects how the CoraZ7-07S board boots. We want to boot from the
 microSD card.</p></td>
 <td><p>Across Pins 1 &amp; 2</p></td>
 </tr>
 <tr class="row-odd"><td><p>JP3</p></td>
-<td><p>Selects how the CoraZ7-07s board is powered. We are powering from the
+<td><p>Selects how the CoraZ7-07S board is powered. We are powering from the
 USB port.</p></td>
 <td><p>Across Pins 3 &amp; 2 (labeled USB)</p></td>
 </tr>
@@ -332,10 +332,10 @@ FPGA board</p>
 <div class="admonition-info admonition">
 <p class="admonition-title">Info</p>
 <p>If you don’t have a network available and want to stream data directly
-from the Ethernet port of the CoraZ7-07s to the Ethernet port of your PC,
-that is still possible, but requires some extra configuration. Please see
-the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/network-config" target="_blank">[Wiki] Network Configuration</a> page for
-complete details.</p>
+from the Ethernet port of the CoraZ7-07S to the Ethernet port of your PC,
+that is still possible, but requires some extra configuration. Set a
+static IP on the board and on your PC’s Ethernet adapter within the same
+subnet (e.g., board: <code class="docutils literal notranslate"><span class="pre">192.168.1.10</span></code>, PC: <code class="docutils literal notranslate"><span class="pre">192.168.1.1</span></code>).</p>
 </div>
 </li>
 <li><p>Using the PMOD connector, plug the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADAQ40xx" target="_blank">EVAL-ADAQ40xx</a> on top of the
@@ -948,15 +948,18 @@ Use the IP address obtained from the <code class="docutils literal notranslate">
 </ol>
 <p>After the board is connected and a channel is enabled, hit the play button.
 Then the data capture window can be seen.</p>
-<figure class="align-default">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel1_coraz7s.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel1_coraz7s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel1_coraz7s.png" width="700" />
 </a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Scopy data capture from PulSAR ADC on CoraZ7-07S (Channel 1)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
 </figure>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_coraz7s.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_coraz7s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_scopy_channel2_coraz7s.png" width="700" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Scopy data capture from PulSAR ADC on CoraZ7-07S</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Scopy data capture from PulSAR ADC on CoraZ7-07S (Channel 2)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -972,21 +975,21 @@ Then the data capture window can be seen.</p>
 open the application. The user needs to supply a URI which will be used in
 the context creation of the IIO Oscilloscope.</p></li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Refresh</span></code> to display available IIO Devices and press <code class="docutils literal notranslate"><span class="pre">Connect</span></code>.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_connect_coraz7s.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_connect_coraz7s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_connect_coraz7s.png" width="700" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">IIO Oscilloscope connection</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">IIO Oscilloscope connection</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>After the board is connected and a channel is enabled, hit the play button.
 Then the data capture window can be seen like in the shown picture.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_plot_coraz7s.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_plot_coraz7s.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/pulsar_adc_landing/docs/solutions/reference-designs/pulsar_adc/images/pulsar_adc_iio_osc_plot_coraz7s.png" width="700" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">IIO Oscilloscope data capture</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">IIO Oscilloscope data capture</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
