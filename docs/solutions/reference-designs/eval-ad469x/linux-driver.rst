@@ -212,7 +212,7 @@ enabled.
 Testing
 -------------------------------------------------------------------------------
 
-The :adi:`EVAL-AD4696FMCZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/eval-ad4696.html>`
+The :adi:`EVAL-AD4696FMCZ`
 evaluation board on a
 `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
 can be used to test the driver.
