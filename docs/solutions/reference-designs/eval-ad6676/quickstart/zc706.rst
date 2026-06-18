@@ -92,7 +92,6 @@ Creating the setup
    for reprogramming the VADJ on the ZC706 can be found in the
    `Xilinx support article <https://support.xilinx.com/s/article/56811?language=en_US>`__.
 
-
 Follow the steps in this order, to avoid damaging the components:
 
 #. Connect the :adi:`EVAL-AD6676` FMC board to the FPGA carrier **HPC FMC**
