@@ -197,13 +197,9 @@ model. This concept is depicted somewhat abstractly in <a class="reference inter
 <p><span class="caption-number">Figure 1 </span><span class="caption-text">ADI DataX Layers</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>The goal of this tutorial is to equip the reader with a collection of ADI DataX-enabled hardware and
-software tools for developing low-speed mixed-signal applications. Complete
-written instructions follow, as well as a video guide and a slide deck that can
-be used for delivering as a hands-on workshop.</p>
-<p>The goal is to bring <a class="reference internal" href="#fig-datax-diag"><span class="std std-numref">Figure 1</span></a> to life in a tangible way by
-working through two application examples that map into the diagram as shown in
-<a class="reference internal" href="#fig-datax-diag-w-apps"><span class="std std-numref">Figure 2</span></a></p>
+<p>The goal of this tutorial is to bring <a class="reference internal" href="#fig-datax-diag"><span class="std std-numref">Figure 1</span></a> to life in a
+tangible way by working through two application examples that map into the
+diagram as shown in <a class="reference internal" href="#fig-datax-diag-w-apps"><span class="std std-numref">Figure 2</span></a></p>
 <figure class="align-center" id="id3">
 <span id="fig-datax-diag-w-apps"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/adi_datax_diag_w_apps.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/adi_datax_diag_w_apps.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/adi_datax_diag_w_apps.png" style="width: 700px; height: 400px;" />
 </a>
@@ -223,6 +219,16 @@ where precise timing is required. Rest assured, there are lots of very
 interesting applications in this category; consider a vector network analyzer
 (VNA) - set an excitation frequency, measure forward and reflected power and
 phase, do some math, step, repeat, and when done, display the results.</p>
+<p>We will start with a Linux-based workflow, leveraging Linux device drivers
+pre-built in ADI Kuiper Linux, Pyadi-iio. We’ll then show how to migrate to
+other languages (C, C#, MATLAB), other processing platforms (ARM-based
+MAX32xxx, Raspberry Pi Pico), ecosystems (no-OS / bare metal, Zephyr), and
+middleware layers (GNURadio, ROS). With ADI DataX, switching between these
+layers is cheap - there is little to no barrier to getting a proof of concept up
+and running in Linux, then switching to bare metal or Zephyr as development
+continues.</p>
+<p>Complete written instructions follow, as well as a video guide and a slide deck
+that can be used for delivering as a hands-on workshop.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>What exactly does “Low Speed” mean? In the context of this tutorial, it means
@@ -241,9 +247,9 @@ considered. In contrast - sample jitter is important in a “high speed”
 application. If you are measuring signal to noise ratio, the Signal to Noise
 ratio (SNR) can be no greater than:</p>
 <p><span class="math notranslate nohighlight">\(SNR &lt;= -20 * log(2*\pi*f_{IN}*t_{j})\)</span></p>
-<p>Where:
-<span class="math notranslate nohighlight">\(f_{IN}\)</span> is the analog input frequency in Hz
-<span class="math notranslate nohighlight">\(t_{j}\)</span> is the RMS jitter in seconds RMS</p>
+<p>Where:</p>
+<p><span class="math notranslate nohighlight">\(f_{IN}\)</span> is the analog input frequency in Hz</p>
+<p><span class="math notranslate nohighlight">\(t_{j}\)</span> is the RMS jitter in seconds RMS</p>
 </div>
 </section>
 <section id="materials">
