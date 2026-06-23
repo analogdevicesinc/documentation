@@ -9,7 +9,7 @@ to start out with:
 Hardware prerequisites
 -------------------------------------------------------------------------------
 
-#. One of the AD35xxR evaluation boards:
+#. One of the AD974x evaluation boards:
 
    - :adi:`EVAL-AD9740 <EVAL-AD9740>` - 10-bit variant
    - :adi:`EVAL-AD9742 <EVAL-AD9742>` - 12-bit variant
@@ -28,21 +28,21 @@ Software prerequisites
 -------------------------------------------------------------------------------
 
 The following files must be placed on the micro-SD card boot partition
-before powering on the ZedBoard. They are available as part of the ADI
+before powering on the Zedboard. They are available as part of the ADI
 Kuiper Linux image:
 
-- ``BOOT.BIN`` - pre-built boot binary for the EVAL-AD3552R on ZedBoard
+- ``BOOT.BIN`` - pre-built boot binary for the EVAL-AD9740 / EVAL-AD9742 /
+  EVAL-AD9744 / EVAL-AD9748 on Zedboard
 - ``uImage`` - Linux kernel image
-- ``devicetree.dtb`` - device tree blob for the ZedBoard + EVAL-AD9740 /
+- ``devicetree.dtb`` - device tree blob for the Zedboard + EVAL-AD9740 /
   EVAL-AD9742 / EVAL-AD9744 / EVAL-AD9748
 
 For basic data visualization and DAC control we use:
 
-#. `libiio <https://github.com/analogdevicesinc/libiio/releases>`_
-   (required by pyadi-iio on the host PC)
+#. :git-libiio:`libiio <releases/latest+>` (required by pyadi-iio on the host PC)
 #. :git-pyadi-iio:`PyADI-IIO </>` - optional Python scripting interface
 
 .. note::
 
    :adi:`ADI <>` does not offer FPGA carrier platforms for sale or loan;
-   obtaining a ZedBoard is a normal part of evaluation and development.
+   obtaining a Zedboard is a normal part of evaluation and development.

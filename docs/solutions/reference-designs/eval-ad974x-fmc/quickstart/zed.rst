@@ -23,8 +23,8 @@ Required software
 Required hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/
-  avnet-board-families/zedboard/>`_ Rev D or later
+- `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_
+  Rev D or later
 - :adi:`EVAL-AD9740 <EVAL-AD9740>` evaluation board or
 - :adi:`EVAL-AD9742 <EVAL-AD9742>` evaluation board or
 - :adi:`EVAL-AD9744 <EVAL-AD9744>` evaluation board or
@@ -59,7 +59,7 @@ Setting up the SD card
       The bitstream is written into ``hdl/projects/ad9740_fmc/zed/ad9740_fmc_zed.sdk/``.
 
       **Kuiper Linux kernel and device tree**
-      
+
       Refer to :external+kuiper:ref:`use-kuiper-image` for building
       ``uImage`` and ``devicetree.dtb`` for Zynq with the AD974x device
       tree overlay.

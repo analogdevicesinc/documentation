@@ -79,7 +79,7 @@ The single-ended configuration is implemented by default.
 - **Board Jumpers Configuration**
 
 A 0402, 0-ohm resistor are installed on the jumpers. Move these 0-ohm resistors
-accordingly to the required configuration as shown bellow.
+accordingly to the required configuration as shown below.
 
   .. list-table::
      :header-rows: 1
@@ -103,7 +103,7 @@ accordingly to the required configuration as shown bellow.
 The ACE software and DPGDownloader Lite are needed to configure the device.
 ACE is the software that is used to load the registers in the ADF4351 while
 DPGDownloader Lite is used to load the vector into the evaluation board.
-Install ACE from this link Analysis | Control | Evaluation (ACE) Software.
+Install ACE from :adi:`ace` (Analysis | Control | Evaluation (ACE) Software).
 During installation, expand the High-Speed DAC Components list and select the
 DPG Lite and HSDAC eval boards support through SDP drivers checkboxes. The
 plugins for this board can be downloaded from the plugin manager in the ACE
@@ -145,12 +145,14 @@ Follow the steps to generate and download a vector into the eval board.
 #. In the DPGDownloader Lite window, click the Add Generated Waveform dropdown
    menu and select Single Tone as the vector type.
 
-#. Refer to bellow table for the appropriate frequency values and default
+#. Refer to the table below for the appropriate frequency values and default
    settings.
 
-Note: Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 &
-AD9748).The NC pins are disconnected in the corresponding evaluation board.
- 
+   .. note::
+
+      Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 &
+      AD9748). The NC pins are disconnected in the corresponding evaluation board.
+
    .. list-table::
      :header-rows: 1
 

@@ -61,8 +61,8 @@ Schematic, PCB layout, and bill of materials
 Software guide
 -------------------------------------------------------------------------------
 
-Linux-based IIO (using Kuiper Linux on the ZedBoard) software environment is 
-available: 
+Linux-based IIO (using Kuiper Linux on the ZedBoard) software environment is
+available:
 
 Linux IIO environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

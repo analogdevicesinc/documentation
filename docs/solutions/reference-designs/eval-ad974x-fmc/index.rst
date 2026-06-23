@@ -18,7 +18,7 @@ The :adi:`EVAL-AD9740` / :adi:`EVAL-AD9742`/ :adi:`EVAL-AD9744` /
 :adi:`AD9742` / :adi:`AD9744` / :adi:`AD9748` devices. Paying careful attention
 to layout and circuit design, combined with a prototyping area, allows the user
 to effectively evaluate the AD9740, AD9742, AD9744, and AD9748 in applications
-that require high resolution and high speed conversion. 
+that require high resolution and high speed conversion.
 
 The evaluation board interfaces with an FPGA carrier via an FMC LPC
 connector, using the `ZedBoard <https://www.avnet.com/wps/portal/us/
@@ -40,11 +40,11 @@ Features:
 
 Applications:
 
-- Direct IFs 
-- Base stations 
-- Wireless local loops 
-- Digital radio links 
-- Direct digital synthesis (DDS) 
+- Direct IFs
+- Base stations
+- Wireless local loops
+- Digital radio links
+- Direct digital synthesis (DDS)
 - Instrumentation
 
 .. figure:: ./images/ad9744_eval_board.jpeg
@@ -71,10 +71,10 @@ as it should be. If you have any questions, feel free to ask on our
 thoroughly.
 
 To better understand the :adi:`AD9740` / :adi:`AD9742` / :adi:`AD9744` /
-:adi:`AD9748`, we recommend using the :adi:`EVAL-AD9740 <EVAL-AD39740>` /
-:adi:`EVAL-AD9742 <EVAL-AD39742>` / :adi:`EVAL-AD9744 <EVAL-AD39744>` /
-:adi:`EVAL-AD9748 <EVAL-AD39748>` evaluation board together with the
-`ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/
+:adi:`AD9748`, we recommend using the :adi:`EVAL-AD9740 <EVAL-AD9740>` /
+:adi:`EVAL-AD9742 <EVAL-AD9742>` / :adi:`EVAL-AD9744 <EVAL-AD9744>` /
+:adi:`EVAL-AD9748 <EVAL-AD9748>` evaluation board together with the
+`Zedboard <https://www.avnet.com/wps/portal/us/products/avnet-boards/
 avnet-board-families/zedboard/>`_ FPGA development kit.
 
 Table of contents
@@ -94,7 +94,7 @@ Table of contents
       #. :ref:`iio-oscilloscope`
       #. :external+scopy:doc:`Scopy <index>`
 
-#. Design with the AD9740 / AD9742 / AD744 / AD9748
+#. Design with the AD9740 / AD9742 / AD9744 / AD9748
 
    - :ref:`eval-ad974x fmc ebz block-diagram`
 
@@ -121,7 +121,7 @@ Table of contents
 Block diagram
 -------------------------------------------------------------------------------
 
-The :adi:`AD9740` HDL reference design on the ZedBoard uses the
+The :adi:`AD9740` HDL reference design on the Zedboard uses the
 :external+hdl:ref:`AXI AD9740 <axi_ad9740>` IP core to interface the
 DAC via a parallel bus. The AXI-DMAC streams sample data from DDR memory
 to the IP core, which drives the AD974x at up to 210 MSPS.
