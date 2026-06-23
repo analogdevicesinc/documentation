@@ -166,7 +166,7 @@ to start out with:</p>
 <section id="hardware-prerequisites">
 <h2>Hardware prerequisites<a class="headerlink" href="#hardware-prerequisites" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
-<li><p>One of the AD35xxR evaluation boards:</p>
+<li><p>One of the AD974x evaluation boards:</p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9740" target="_blank">EVAL-AD9740</a> - 10-bit variant</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9742" target="_blank">EVAL-AD9742</a> - 12-bit variant</p></li>
@@ -185,24 +185,24 @@ to start out with:</p>
 <section id="software-prerequisites">
 <h2>Software prerequisites<a class="headerlink" href="#software-prerequisites" title="Link to this heading"></a></h2>
 <p>The following files must be placed on the micro-SD card boot partition
-before powering on the ZedBoard. They are available as part of the ADI
+before powering on the Zedboard. They are available as part of the ADI
 Kuiper Linux image:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code> - pre-built boot binary for the EVAL-AD3552R on ZedBoard</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BOOT.BIN</span></code> - pre-built boot binary for the EVAL-AD9740 / EVAL-AD9742 /
+EVAL-AD9744 / EVAL-AD9748 on Zedboard</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">uImage</span></code> - Linux kernel image</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code> - device tree blob for the ZedBoard + EVAL-AD9740 /
+<li><p><code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code> - device tree blob for the Zedboard + EVAL-AD9740 /
 EVAL-AD9742 / EVAL-AD9744 / EVAL-AD9748</p></li>
 </ul>
 <p>For basic data visualization and DAC control we use:</p>
 <ol class="arabic simple">
-<li><p><a class="icon link reference external" href="https://github.com/analogdevicesinc/libiio/releases" target="_blank">libiio</a>
-(required by pyadi-iio on the host PC)</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/releases/latest" target="_blank">libiio</a> (required by pyadi-iio on the host PC)</p></li>
 <li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/" target="_blank">PyADI-IIO</a> - optional Python scripting interface</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="icon adi reference external" href="https://www.analog.com/" target="_blank">ADI</a> does not offer FPGA carrier platforms for sale or loan;
-obtaining a ZedBoard is a normal part of evaluation and development.</p>
+obtaining a Zedboard is a normal part of evaluation and development.</p>
 </div>
 </section>
 </section>

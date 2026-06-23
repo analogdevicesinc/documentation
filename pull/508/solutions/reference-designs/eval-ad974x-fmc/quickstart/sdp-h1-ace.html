@@ -248,7 +248,7 @@ The single-ended configuration is implemented by default.</p>
 <li><p><strong>Board Jumpers Configuration</strong></p></li>
 </ul>
 <p>A 0402, 0-ohm resistor are installed on the jumpers. Move these 0-ohm resistors
-accordingly to the required configuration as shown bellow.</p>
+accordingly to the required configuration as shown below.</p>
 <blockquote>
 <div><div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -279,7 +279,7 @@ accordingly to the required configuration as shown bellow.</p>
 <p>The ACE software and DPGDownloader Lite are needed to configure the device.
 ACE is the software that is used to load the registers in the ADF4351 while
 DPGDownloader Lite is used to load the vector into the evaluation board.
-Install ACE from this link Analysis | Control | Evaluation (ACE) Software.
+Install ACE from <a class="icon adi reference external" href="https://www.analog.com/ace" target="_blank">ace</a> (Analysis | Control | Evaluation (ACE) Software).
 During installation, expand the High-Speed DAC Components list and select the
 DPG Lite and HSDAC eval boards support through SDP drivers checkboxes. The
 plugins for this board can be downloaded from the plugin manager in the ACE
@@ -315,19 +315,20 @@ are correct.</p></li>
 </div></blockquote>
 <p><strong>Loading a vector using DPGDownloader Lite</strong></p>
 <p>Follow the steps to generate and download a vector into the eval board.</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Confirm first if the DCO frequency detected is the same as the clock
 frequency set on ACE (210MHz). Repeat the ACE process if frequencies don’t
 match.</p></li>
 <li><p>In the DPGDownloader Lite window, click the Add Generated Waveform dropdown
 menu and select Single Tone as the vector type.</p></li>
-<li><p>Refer to bellow table for the appropriate frequency values and default
-settings.</p></li>
-</ol>
-<p>Note: Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 &amp;
-AD9748).The NC pins are disconnected in the corresponding evaluation board.</p>
-<blockquote>
-<div><div class="table-wrapper docutils container">
+<li><p>Refer to the table below for the appropriate frequency values and default
+settings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select 14 bits DAC Resolution for all generics (AD9744, AD9740, AD9742 &amp;
+AD9748). The NC pins are disconnected in the corresponding evaluation board.</p>
+</div>
+<div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>FMC Pin</p></th>
@@ -425,8 +426,7 @@ AD9748).The NC pins are disconnected in the corresponding evaluation board.</p>
 </tbody>
 </table>
 </div>
-</div></blockquote>
-<ol class="arabic simple">
+</li>
 <li><p>In the Data Playback panel, select the 1I: Single Tone - 5.01 MHz; 0.0 dB;
 0.0° (In-Phase) option from the I Data Vector dropdown menu.</p></li>
 <li><p>Select the 1Q: Single Tone - 5.01 MHz; 0.0 dB; 0.0° (Quadrature) option from
