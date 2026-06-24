@@ -105,7 +105,7 @@ MATLAB format
 -------------
 
 The ``./osc`` application uses the
-`MAT File I/O Library <http://sourceforge.net/projects/matio/>`__
+`MAT File I/O Library <http://sourceforge.net/projects/matio/>`_
 to be able to read
 :mw:`MATLAB <products/matlab>` files into the system.
 

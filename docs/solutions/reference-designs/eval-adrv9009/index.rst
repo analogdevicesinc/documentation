@@ -25,9 +25,14 @@ and the software which can make it work can be found here.
 .. toctree::
    :hidden:
 
+   adrv9009
+   adrv9009-customization
+   adrv9009_advanced_plugin
+   adrv9009_osc_main
+   adrv9009_plugin
+   basic-iq-datafiles
    prerequisites
    quickstart/index
-   basic-iq-datafiles
 
 Table of Contents
 -------------------------------------------------------------------------------
