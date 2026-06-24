@@ -15,7 +15,7 @@
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="ZCU102 Quickstart" href="quickstart/zcu102.html" />
+    <link rel="prev" title="ADS7-V1EBZ High Speed Evaluation Board" href="quickstart/ads7-v1.html" />
    
   
   
@@ -152,6 +152,8 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/ads7-v2.html">ADS7-V2EBZ (Windows)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/ads7-v1.html">ADS7-V1EBZ (Obsolete)</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a></li>
@@ -178,7 +180,9 @@ Content on this topic
 <span id="ad9694-evaluating"></span><h1>EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC<a class="headerlink" href="#evaluating-the-ad9694-quad-channel-500-msps-adc" title="Link to this heading"></a></h1>
 <section id="preface">
 <h2>Preface<a class="headerlink" href="#preface" title="Link to this heading"></a></h2>
-<p>This user guide describes the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> evaluation board <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> which provides all of the support circuitry required to operate the
+<p>This user guide describes the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> evaluation board
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> which provides all of the
+support circuitry required to operate the
 ADC in its various modes and configurations. The application software used to
 interface with the devices is also described. The user guide wiki applies to the
 follow evaluation boards:</p>
@@ -209,7 +213,7 @@ additional information or questions, send an email to
 <section id="ad9694-evaluation-board">
 <h2>AD9694 Evaluation Board<a class="headerlink" href="#ad9694-evaluation-board" title="Link to this heading"></a></h2>
 <p>The images below show the location and position of the jumpers on the old (first
-image) and new (second image) versions of the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a>.</p>
+image) and new (second image) versions of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a>.</p>
 <figure class="align-center" id="id1">
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_jumpers.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_jumpers.jpg" />
 <figcaption>
@@ -225,24 +229,24 @@ image) and new (second image) versions of the <a class="icon adi reference exter
 </section>
 <section id="typical-measurement-setup">
 <h2>Typical Measurement Setup<a class="headerlink" href="#typical-measurement-setup" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> can be evaluated using the
-<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA data capture board. The
-figures below show the <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> connected to the
-<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>. If using the old version of the
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> can be evaluated using the
+<a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> FPGA data capture board. The
+figures below show the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> connected to the
+<a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a>. If using the old version of the
 board, refer to the first image for connections, otherwise if using the new
 version of the board, refer to the second image.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection.png" width="800" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">(Old) Evaluation Board Connection — <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">(Old) Evaluation Board Connection — <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a></span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection_new_board.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection_new_board.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9694_connection_new_board.jpg" width="800" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">(New) Evaluation Board Connection — <a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">(New) Evaluation Board Connection — <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a></span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -260,7 +264,7 @@ version of the board, refer to the second image.</p>
 <h2>Helpful Documents<a class="headerlink" href="#helpful-documents" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694</a> Data Sheet</p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ evaluation kit</a></p></li>
+<li><p><a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/an-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog Converter Evaluation
 Tool Version 1.0 User Manual</em></p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control
@@ -283,11 +287,12 @@ Evaluation</em></p></li>
 <li><p>Analog signal source and antialiasing filter</p></li>
 <li><p>Sample clock source</p></li>
 <li><p>12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01
-supplied with <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>/<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v1" target="_blank">ADS7-V1EBZ</a>)</p></li>
+supplied with <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> /
+<a class="reference internal" href="quickstart/ads7-v1.html#ads7-v1"><span class="std std-ref">ADS7-V1EBZ</span></a>)</p></li>
 <li><p>PC running Windows®</p></li>
 <li><p>USB 2.0 port</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> board</p></li>
-<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> FPGA-based data capture kit</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> board</p></li>
+<li><p><a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> FPGA-based data capture kit</p></li>
 </ul>
 </section>
 <section id="getting-started">
@@ -299,37 +304,41 @@ AD9694.</p>
 <p>Before using the software for testing, configure the evaluation board as
 follows:</p>
 <ul class="simple">
-<li><p>Connect the evaluation board to the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> data capture board, as shown in the figure for the
-<strong>Evaluation Board Connection</strong>.</p></li>
+<li><p>Connect the evaluation board to the
+<a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> data capture board, as shown
+in the figure for the <strong>Evaluation Board Connection</strong>.</p></li>
 <li><p>Make sure the jumpers are placed on the evaluation board as highlighted in
 green in the figure <strong>AD9694 Evaluation Board</strong>.</p></li>
 <li><p>Connect one 12V, 6.5A switching power supply (such as the CENB1080A1251F01
-supplied) to P4 on the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> board.
-Connect the Standard-B USB port of the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> board to the PC with the supplied USB cable.</p></li>
-<li><p>Turn on the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a>.</p></li>
-<li><p>The <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> will appear in the Device
+supplied) to P4 on the <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> board.
+Connect the Standard-B USB port of the
+<a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> board to the PC with the
+supplied USB cable.</p></li>
+<li><p>Turn on the <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a>.</p></li>
+<li><p>The <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> will appear in the Device
 Manager.</p></li>
 </ul>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_ads7v2_devmgr.png" width="300" />
 </a>
 <div class="centeralign docutils container">
-<p><em>Device Manager showing</em> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a></p>
+<p><em>Device Manager showing</em> <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a></p>
 </div>
 <ul class="simple">
-<li><p>If the Device Manager does not show the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> listed, unplug all USB devices from the PC,
+<li><p>If the Device Manager does not show the
+<a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> listed, unplug all USB
+devices from the PC,
 uninstall and re-install SPIController and VisualAnalog and restart the
 hardware setup from step 1.</p></li>
 <li><p>On the ADC evaluation board, provide a clean, low jitter 1GHz clock source to
 connector J203 and set the amplitude to 14dBm. This is the ADC Sample Clock.</p></li>
-<li><p>On the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a> data capture board,
+<li><p>On the <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a> data capture board,
 provide a clean, low jitter clock source to connector J3 and set the
 amplitude to 10dBm. This is the Reference Clock for the gigabit transceivers
 in the FPGA. The REFCLK frequency can be calculated using the following
 empirical formulae:</p></li>
 </ul>
 <div class="centeralign docutils container">
-<p><span class="math notranslate nohighlight">\(\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8})
-\times f_{out}/L\)</span> bps/lane, where</p>
+<p><span class="math notranslate nohighlight">\(\displaystyle LaneLineRate=M \times Nprime \times (\frac{10}{8}) \times f_{out}/L\)</span> bps/lane, where</p>
 </div>
 <div class="centeralign docutils container">
 <p><span class="math notranslate nohighlight">\(f_{out} = f_{ADC SAMPLE CLOCK}/DecimationRatio, Nprime=8 or 16\)</span>
@@ -395,7 +404,7 @@ board indicating that the FPGA has been correctly programmed.</p></li>
 </ul>
 <img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_program_fpga.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/9694_program_fpga.png" />
 <div class="centeralign docutils container">
-<p><em>Programming the</em> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/ads7-v2" target="_blank">ADS7-V2EBZ</a></p>
+<p><em>Programming the</em> <a class="reference internal" href="quickstart/ads7-v2.html#ads7-v2"><span class="std std-ref">ADS7-V2EBZ</span></a></p>
 </div>
 <ul class="simple">
 <li><p>Click the <strong>General</strong> button in the <strong>ADC Data Capture Settings</strong> block. On
@@ -710,7 +719,7 @@ choice</p></li>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="quickstart/zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
+    <a href="quickstart/ads7-v1.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADS7-V1EBZ High Speed Evaluation Board</a>
     <div></div>
               </div>
           

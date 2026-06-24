@@ -14,7 +14,7 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC" href="../ad9694-500ebz.html" />
+    <link rel="next" title="ADS7-V2EBZ High Speed Evaluation Board" href="ads7-v2.html" />
     <link rel="prev" title="Quickstart" href="index.html" />
    
   
@@ -151,6 +151,8 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ads7-v2.html">ADS7-V2EBZ (Windows)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ads7-v1.html">ADS7-V1EBZ (Obsolete)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../ad9694-500ebz.html">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a></li>
@@ -176,7 +178,7 @@ Content on this topic
   <section id="zcu102-quickstart">
 <span id="ad9694-quickstart-zcu102"></span><h1>ZCU102 Quickstart<a class="headerlink" href="#zcu102-quickstart" title="Link to this heading"></a></h1>
 <p>This guide provides step-by-step instructions on how to set up the
-<a class="icon adi reference external" href="https://www.analog.com/AD9694-500EBZ" target="_blank">AD9694-500EBZ</a> on:</p>
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> on:</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> on FMC HPC1</p></li>
 </ul>
@@ -194,8 +196,9 @@ Although the boards feature ESD protection circuitry, permanent damage may occur
 <p class="admonition-title">Note</p>
 <p>Pre-built files for this reference design are not yet available. The files
 must be built manually using the links above. Official release artifacts will
-be provided here once available. For now, check: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span class="xref std std-ref">Build an
-HDL project</span></a> and <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/index.html#linux-kernel" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Build the Linux kernel</span></a></p>
+be provided here once available. For now, check:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span class="xref std std-ref">Build an HDL project</span></a> and
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/index.html#linux-kernel" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Build the Linux kernel</span></a></p>
 </div>
 <p>The following files are needed for the system to boot:</p>
 <ul class="simple">
@@ -227,7 +230,7 @@ that guide on how to do it, then come back to this section)</p></li>
 <h3>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> Rev 1.0 FPGA board and its power supply (12 V)</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9694" target="_blank">AD9694-500EBZ</a> FMC evaluation board</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> FMC evaluation board</p></li>
 <li><p>A clock source, any low-noise clock generator with multiple outputs can be
 used. The following items are needed only if using the
 <a class="icon adi reference external" href="https://www.analog.com/AD-SYNCHRONA14-EBZ" target="_blank">AD-SYNCHRONA14-EBZ</a>:</p>
@@ -249,7 +252,8 @@ source)</p></li>
 <li><p>LAN cable (Ethernet)</p></li>
 <li><p>(Optional) USB keyboard and mouse, HDMI-compatible monitor</p></li>
 </ul>
-<p>More details as to why you need these can be found at <a class="reference internal" href="../prerequisites.html#ad9694-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+<p>More details as to why you need these can be found at
+<a class="reference internal" href="../prerequisites.html#ad9694-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
 </section>
 <section id="testing">
 <h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
@@ -302,7 +306,7 @@ guide), configure the output channels as follows:</p>
 the 20-pin ribbon cable, <strong>pin-to-pin</strong> (all 20 pins connected directly,
 1-to-1).</p>
 </li>
-<li><p>Prepare the <a class="icon adi reference external" href="https://www.analog.com/AD9694-500EBZ" target="_blank">AD9694-500EBZ</a>:</p>
+<li><p>Prepare the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a>:</p>
 <ul class="simple">
 <li><p>Configure the jumpers as described in the <a class="reference internal" href="../user-guide.html#ad9694-user-guide"><span class="std std-ref">User guide</span></a> hardware
 configuration section.</p></li>
@@ -314,7 +318,7 @@ clock input (250 MHz JESD204B reference clock).</p></li>
 B), <strong>J104</strong> (Channel C), <strong>J107</strong> (Channel D) via an antialiasing filter.</p></li>
 </ul>
 </li>
-<li><p>Plug the <a class="icon adi reference external" href="https://www.analog.com/AD9694-500EBZ" target="_blank">AD9694-500EBZ</a> into the <strong>FMC HPC1</strong> connector on the ZCU102.</p></li>
+<li><p>Plug the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD9694" target="_blank">AD9694-500EBZ</a> into the <strong>FMC HPC1</strong> connector on the ZCU102.</p></li>
 <li><p>Insert the SD card into the SD card socket on the ZCU102.</p></li>
 <li><p>Configure the <a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a> for SD card boot mode (SW6[4:1] = <strong>OFF, OFF,
 OFF, ON</strong>):</p>
@@ -348,7 +352,8 @@ correct ttyUSB or COM port:</p>
 <section id="useful-commands-for-the-serial-terminal">
 <h4>Useful commands for the serial terminal<a class="headerlink" href="#useful-commands-for-the-serial-terminal" title="Link to this heading"></a></h4>
 <p><strong>Login information</strong></p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>user: analog password: analog
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>user: analog
+password: analog
 </pre></div>
 </div>
 <p>To find the IP address of the FPGA board:</p>
@@ -420,7 +425,7 @@ needed).</p></li>
               <div class="related">
                 &nbsp;
     <a href="index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Quickstart</a>
-    <a href="../ad9694-500ebz.html" title="Next document (Alt+Shift+RightArrow)" class="next">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a>
+    <a href="ads7-v2.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADS7-V2EBZ High Speed Evaluation Board</a>
               </div>
           
         </div>

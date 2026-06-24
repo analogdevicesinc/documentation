@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADS7-V2EBZ was developed to support the evaluation of Analog Devices high speed A/D converters, D/A converters and transceivers with JESD204B bit rates up to 12.5 Gbps. The platform supports specified Analog Devices evaluation boards only. The ADS7-V2 is not intended to be used as a development platform, and no support is available for standalone operation." name="description" />
+
+    <title>ADS7-V2EBZ High Speed Evaluation Board &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ADS7-V1EBZ High Speed Evaluation Board" href="ads7-v1.html" />
+    <link rel="prev" title="ZCU102 Quickstart" href="zcu102.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADS7-V2EBZ High Speed Evaluation Board</a><ul>
+<li><a class="reference internal" href="#preface">Preface</a></li>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#using-ads7-v2ebz-for-high-speed-adc-evaluation">Using ADS7-V2EBZ for High Speed ADC Evaluation</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#helpful-documents">Helpful Documents</a></li>
+<li><a class="reference internal" href="#software-needed">Software Needed</a></li>
+<li><a class="reference internal" href="#design-files">Design Files</a></li>
+<li><a class="reference internal" href="#supported-adc-boards">Supported ADC Boards</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD9694</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Quickstart</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ADS7-V2EBZ (Windows)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ads7-v1.html">ADS7-V1EBZ (Obsolete)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ad9694-500ebz.html">EVALUATING THE AD9694 QUAD CHANNEL 500 MSPS ADC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD9694</a></li><li><a href="index.html">Quickstart</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ads7-v2ebz-high-speed-evaluation-board">
+<span id="ads7-v2"></span><h1>ADS7-V2EBZ High Speed Evaluation Board<a class="headerlink" href="#ads7-v2ebz-high-speed-evaluation-board" title="Link to this heading"></a></h1>
+<section id="preface">
+<h2>Preface<a class="headerlink" href="#preface" title="Link to this heading"></a></h2>
+<p>The ADS7-V2EBZ was developed to support the evaluation of Analog Devices
+high speed A/D converters, D/A converters and transceivers with JESD204B bit
+rates up to 12.5 Gbps. The platform supports specified Analog Devices
+evaluation boards only. The ADS7-V2 is not intended to be used as a development
+platform, and no support is available for standalone operation.</p>
+<p>For DAC-specific support documentation, refer to the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/dpg/ads7" target="_blank">ADS7 DAC evaluation guide</a>.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ads7-v2ebz.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ads7-v2ebz.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ads7-v2ebz.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADS7-V2EBZ Evaluation Board</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Xilinx Virtex-7 XC7VX330T-3FFG1157E FPGA (326,400 logic cells)</p></li>
+<li><p>One FMC-HPC connector</p></li>
+<li><p>Ten 13.1 Gbps transceivers via FMC-HPC</p></li>
+<li><p>Two DDR3-1866 DIMMs</p></li>
+<li><p>USB 2.0 interface</p></li>
+</ul>
+</section>
+<section id="using-ads7-v2ebz-for-high-speed-adc-evaluation">
+<h2>Using ADS7-V2EBZ for High Speed ADC Evaluation<a class="headerlink" href="#using-ads7-v2ebz-for-high-speed-adc-evaluation" title="Link to this heading"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<p>When used with the specified ADC evaluation boards, the ADS7-V2EBZ platform
+functions as a high speed data acquisition system. The FPGA on the ADS7-V2 acts
+as the data receiver, while the ADC is the data transmitter.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9680_ads7-v2ebz_setup.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9680_ads7-v2ebz_setup.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/eval-ad9694_extra_pages/docs/solutions/reference-designs/eval-ad9694/images/ad9680_ads7-v2ebz_setup.jpg" width="600" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Typical ADS7-V2EBZ Evaluation Setup</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="helpful-documents">
+<h3>Helpful Documents<a class="headerlink" href="#helpful-documents" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-905" target="_blank">AN-905 Application Note</a>, <em>VisualAnalog Converter Evaluation
+Tool Version 1.0 User Manual</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-878" target="_blank">AN-878 Application Note</a>, <em>High Speed ADC SPI Control
+Software</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-877" target="_blank">AN-877 Application Note</a>, <em>Interfacing to High Speed ADCs
+via SPI</em></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/an-835" target="_blank">AN-835 Application Note</a>, <em>Understanding ADC Testing and
+Evaluation</em></p></li>
+</ul>
+</section>
+<section id="software-needed">
+<h3>Software Needed<a class="headerlink" href="#software-needed" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ace-software" target="_blank">ACE (Analysis | Control | Evaluation)</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/spicontroller" target="_blank">SPI Controller</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/visualanalog" target="_blank">VisualAnalog</a></p></li>
+</ul>
+</section>
+<section id="design-files">
+<h3>Design Files<a class="headerlink" href="#design-files" title="Link to this heading"></a></h3>
+<p>Complete schematic, BOM, Gerber files, and Cadence board design files are
+available in the ADS7-V2EBZ design files archive.</p>
+</section>
+<section id="supported-adc-boards">
+<h3>Supported ADC Boards<a class="headerlink" href="#supported-adc-boards" title="Link to this heading"></a></h3>
+<p>For a complete list of supported ADC evaluation boards, refer to the
+<a class="icon adi reference external" href="https://www.analog.com/hsadcevalboard" target="_blank">High Speed ADC Evaluation Boards</a> product page.</p>
+<p>For additional information or questions, send an email to
+<a class="reference external" href="mailto:highspeed&#46;converters&#37;&#52;&#48;analog&#46;com">highspeed<span>&#46;</span>converters<span>&#64;</span>analog<span>&#46;</span>com</a>.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quickstart</a>
+    <a href="ads7-v1.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADS7-V1EBZ High Speed Evaluation Board</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
