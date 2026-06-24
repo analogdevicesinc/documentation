@@ -97,13 +97,18 @@
         <nav>
           <ul>
 <li><a class="reference internal" href="#">AI Usage</a><ul>
-<li><a class="reference internal" href="#pull-request-reviewer">Pull request reviewer</a><ul>
-<li><a class="reference internal" href="#how-it-works">How it works</a></li>
-<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#tooling-for-ai-assisted-work">Tooling for AI-assisted work</a><ul>
+<li><a class="reference internal" href="#public-mcp-servers-and-skills">Public MCP servers and skills</a></li>
+<li><a class="reference internal" href="#documentation-as-context">Documentation as context</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-coding-harness">The coding harness</a><ul>
 <li><a class="reference internal" href="#jagged-frontier-and-context">Jagged frontier and context</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pull-request-reviewer">Pull request reviewer</a><ul>
+<li><a class="reference internal" href="#how-it-works">How it works</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
 </ul>
 </li>
 </ul>
@@ -1486,16 +1491,116 @@ Content on this topic
 <h1>AI Usage<a class="headerlink" href="#ai-usage" title="Link to this heading"></a></h1>
 <p>For information on Analog Devices Inc. stance on AI usage, please see
 <a class="icon adi reference external" href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/responsible-ai.html" target="_blank">Responsible AI &#64; ADI</a>.</p>
+<p>AI tools are most useful when they are connected to the same sources of truth
+and validation paths that engineers already use: documentation, command-line
+tools, tests, builds, hardware interfaces, and code review. This page describes
+how ADI exposes that context to coding assistants and what a coding harness
+adds on top of a language model.</p>
+<section id="tooling-for-ai-assisted-work">
+<h2>Tooling for AI-assisted work<a class="headerlink" href="#tooling-for-ai-assisted-work" title="Link to this heading"></a></h2>
+<p>A large language model can explain, draft, and connect ideas quickly, but it is
+not a substitute for project knowledge or validation. The value comes from
+placing the model in a workflow where it can inspect the repository, call the
+right tools, read the right documentation, and report what it verified.</p>
+<p>ADI uses two complementary mechanisms for that:</p>
+<ul class="simple">
+<li><p><strong>MCP servers</strong> expose tools through the Model Context Protocol, so an
+assistant can search documentation, inspect designs, query hardware-facing
+libraries, or run project-specific checks through structured tool calls.</p></li>
+<li><p><strong>Skills</strong> package task-specific instructions and tool inventories. They help
+an assistant choose the right workflow for a repository instead of guessing
+from file names or prompt text alone.</p></li>
+</ul>
+<p>The important design choice is that these interfaces are <strong>CLI-first</strong>: tools
+exposed through an MCP server also exist as command-line entry points. This
+keeps automation scriptable, reproducible, and suitable for CI as well as
+interactive AI-assisted development.</p>
+<section id="public-mcp-servers-and-skills">
+<h3>Public MCP servers and skills<a class="headerlink" href="#public-mcp-servers-and-skills" title="Link to this heading"></a></h3>
+<p>Available public interfaces include:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/install.html#mcp" target="_blank" title="(in Doctools v0.4.43)"><span class="xref std std-ref">doctools MCP</span></a>:
+Searches ADI public documentation under
+<a class="icon link reference external" href="https://analogdevicesinc.github.io" target="_blank">https://analogdevicesinc.github.io</a> and <a class="icon link reference external" href="https://wiki.analog.com" target="_blank">https://wiki.analog.com</a>.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/pyadi-iio/mcp/index.html" target="_blank" title="(in Analog Devices Hardware Python Interfaces v0.0.21)"><span class="xref std std-doc">pyadi-iio MCP</span></a>:
+Interacts with hardware at runtime. It exposes tools for device discovery,
+connection management, property configuration, data capture, and signal
+generation across supported device classes.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/pyadi-dt/mcp_server.html" target="_blank" title="(in pyadi-dt v0.0.1)"><span class="xref std std-doc">pyadi-dt MCP</span></a>:
+Exposes device tree generation, linting, and inspection tools.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/pyadi-jif/mcp_server.html" target="_blank" title="(in pyadi-jif)"><span class="xref std std-doc">pyadi-jif MCP</span></a>:
+Provides a programmatic interface to pyadi-jif, including JESD mode queries
+and system-level solving.</p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/scopy/tree/main/tools/scopy_dev_plugin/skills/scopy-tools-inventory/SKILL.md" target="_blank">Scopy skills</a>:
+Catalogs Scopy development tools such as the package generator, test tools,
+CI scripts, format and license checks, and development plugin commands.</p></li>
+</ul>
+</section>
+<section id="documentation-as-context">
+<h3>Documentation as context<a class="headerlink" href="#documentation-as-context" title="Link to this heading"></a></h3>
+<p>Documentation is part of the toolchain. Assistants should be able to read the
+content available to users.</p>
+<p>Besides using the <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/install.html#mcp" target="_blank" title="(in Doctools v0.4.43)"><span class="xref std std-ref">doctools MCP</span></a>, public
+documentation sources can be fetched directly, for example, the source for this
+page is <a class="icon git reference external" href="https://raw.githubusercontent.com/analogdevicesinc/documentation/main/docs/contributing/ai.rst" target="_blank">docs/contributing/ai.rst</a>. Each rendered page
+also provides a <code class="docutils literal notranslate"><span class="pre">Copy</span> <span class="pre">content</span></code> button that copies the page as Markdown, which
+uses <a class="icon git reference external" href="https://github.com/analogdevicesinc/doctools/tree/main/adi_doctools/theme/harmonic/scripts/html2md.js" target="_blank">adi_doctools/theme/harmonic/scripts/html2md.js</a>; the MCP
+uses <a class="icon git reference external" href="https://github.com/analogdevicesinc/doctools/tree/main/adi_doctools/cli/aux_html2md.py" target="_blank">adi_doctools/cli/aux_html2md.py</a> to convert with Python.</p>
+</section>
+</section>
+<section id="the-coding-harness">
+<h2>The coding harness<a class="headerlink" href="#the-coding-harness" title="Link to this heading"></a></h2>
+<p>A coding harness is the software layer that wraps a LLM. It interfaces the
+model, manages context usage and compaction, summarizes tools in the context,
+and employs observability and recovery strategies.</p>
+<p>To ensure  quality, we build the coding harness to be:</p>
+<ul class="simple">
+<li><p><strong>Honest</strong>: the agent describes the validation steps it took.</p></li>
+<li><p><strong>Accurate</strong>: tools to verify implementations and claims.</p></li>
+<li><p><strong>Useful</strong>: fixes are delivered as patches that a developer can inspect and apply.</p></li>
+</ul>
+<figure class="align-default">
+<a class="no-background reference internal image-reference" href="../_images/agentic-loop.svg"><img alt="../_images/agentic-loop.svg" class="no-background" src="../_images/agentic-loop.svg" style="width: 800px;" />
+</a>
+</figure>
+<p>During a session, the harness can inject context, steer tool use, and employ
+multiple models with different roles. Since we collect the collateral generated
+by the run, including tool output and the agent session, the result can be
+reviewed. If something goes wrong, the interaction can be traced back to the
+step that introduced the issue.</p>
+<section id="jagged-frontier-and-context">
+<h3>Jagged frontier and context<a class="headerlink" href="#jagged-frontier-and-context" title="Link to this heading"></a></h3>
+<p>LLMs are prediction models with attention: Attention constructs weighted graphs
+between tokens for every single forward pass. At scale, enables cognitive-like
+behaviour emerges. However, models are incredible at creating perfectly
+coherent narratives, which may be factually incorrect.</p>
+<p>LLMs perform well on tasks within the jagged technology frontier, the uneven
+boundary where the model excels at. A study shows that subjects using AI
+completed 12.2% more tasks and finished 25.1% faster on tasks inside the model
+capabilities frontier, but were 19% less likely to produce correct solutions on
+complex tasks
+(<a class="icon link reference external" href="https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf" target="_blank">Dell’Acqua et al., 2023</a>).</p>
+<p>Another study shows that performance also degrades over long sessions: frontier
+models corrupt roughly 25% of document content by the end of ~20-iteration
+workflows, with an extra 3–6% loss per tool call at 2–5× the token cost.
+Non-compliance accounts for only ~3% of failures; the dominant causes are tool
+misuse and mistake propagation between rounds
+(<a class="icon link reference external" href="https://arxiv.org/pdf/2604.15597" target="_blank">Laban, 2026</a> pre-print).</p>
+<p>To mitigate this nature of the model, we ensure the quality of the context and
+tools available for the model, with careful analysis of sessions.</p>
+</section>
+</section>
 <section id="pull-request-reviewer">
 <h2>Pull request reviewer<a class="headerlink" href="#pull-request-reviewer" title="Link to this heading"></a></h2>
-<p>The PR Agent is an AI-assisted pull request reviewer integrated into our CI/CD
-pipeline. It uses the same tooling already present in the workflow to provide
-contextual feedback on pull requests. It combines build checks, static
-analysis, style validation, and any other tool that is meaningful for the code
-base.
-It supports models from multiple vendors, cloud-hosted or self-hosted. The tool
-does not approve or merge code; final decisions remain with our reviewers, there
-is always a human-in-the-loop.</p>
+<p>The pull request reviewer applies the same harness-and-tools approach to code
+review. It is an AI-assisted reviewer integrated into CI/CD. It uses the
+tooling present in each workflow to provide contextual feedback on pull
+requests: builds, static analysis, style validation, checks, and any other
+project-specific tool that is meaningful for the code base.</p>
+<p>It supports models from multiple vendors, cloud-hosted or self-hosted. The tool
+does not approve or merge code; final decisions remain with our reviewers, and
+there is always a human-in-the-loop. It enables resolving repetitive review
+work early and leave humans with a smaller, better-described problems.</p>
 <section id="how-it-works">
 <h3>How it works<a class="headerlink" href="#how-it-works" title="Link to this heading"></a></h3>
 <p>On dispatch, the agent runs in a read-only environment, compiles the code base,
@@ -2373,7 +2478,8 @@ The LLM front-end used is <a class="icon link reference external" href="https://
 include git patches with suggested changes and a session file to continue
 locally. An example run is available
 <a class="icon git reference external" href="https://github.com/analogdevicesinc/documentation/actions/runs/24085972371" target="_blank">here</a>.</p>
-<p>You can download and apply all patches in one go with <a class="icon git reference external" href="https://github.com/analogdevicesinc/doctools/tree/main/ci/scripts/apply-patches.sh" target="_blank">apply-patches.sh</a>:</p>
+<p>You can download and apply all patches in one go with
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/doctools/tree/main/ci/scripts/apply-patches.sh" target="_blank">apply-patches.sh</a>:</p>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
@@ -2391,50 +2497,6 @@ locally. An example run is available
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></section>
-</section>
-<section id="the-coding-harness">
-<h2>The coding harness<a class="headerlink" href="#the-coding-harness" title="Link to this heading"></a></h2>
-<p>A coding harness is the software layer that wraps a LLM. It interfaces the
-model, manages context usage and compaction, summarizes tools in the context,
-and employs observability and recovery strategies.</p>
-<p>To ensure quality generation, we build the coding harness to be:</p>
-<ul class="simple">
-<li><p><strong>Honest</strong>: the agent describes the validation steps it took.</p></li>
-<li><p><strong>Accurate</strong>:  tools to verify implementations and claims.</p></li>
-<li><p><strong>Useful</strong>: fixes are delivered as patches.</p></li>
-</ul>
-<figure class="align-default">
-<a class="no-background reference internal image-reference" href="../_images/agentic-loop.svg"><img alt="../_images/agentic-loop.svg" class="no-background" src="../_images/agentic-loop.svg" style="width: 800px;" />
-</a>
-</figure>
-<p>During the session, the harness ensures predictability, observes and evaluates
-by steering through context injection, and may employ multiple models with
-different roles. It steers the model within its own capabilities, while the
-context ensures coherence.
-Since we collect all collateral generated by the agent, including the
-thinking steps, the output can be verified, and in case of issues, can
-be traced to pin-point the failing interaction.</p>
-<section id="jagged-frontier-and-context">
-<h3>Jagged frontier and context<a class="headerlink" href="#jagged-frontier-and-context" title="Link to this heading"></a></h3>
-<p>LLMs are prediction models with attention: Attention constructs weighted graphs
-between tokens for every single forward pass. At scale, enables cognitive-like
-behaviour emerges. However, models are incredible at creating perfectly
-coherent narratives, which may be factually incorrect.</p>
-<p>LLMs perform well on tasks within the jagged technology frontier, the uneven
-boundary where the model excels at. A study shows that subjects using AI
-completed 12.2% more tasks and finished 25.1% faster on tasks inside the model
-capabilities frontier, but were 19% less likely to produce correct solutions on
-complex tasks
-(<a class="icon link reference external" href="https://www.hbs.edu/ris/Publication%20Files/dell-acqua-et-al-2026-navigating-the-jagged-technological-frontier_5c589c8c-fbb5-458f-b285-c944746cd717.pdf" target="_blank">Dell’Acqua et al., 2023</a>).</p>
-<p>Another study shows that performance also degrades over long sessions: frontier
-models corrupt roughly 25% of document content by the end of ~20-iteration
-workflows, with an extra 3–6% loss per tool call at 2–5× the token cost.
-Non-compliance accounts for only ~3% of failures; the dominant causes are tool
-misuse and mistake propagation between rounds
-(<a class="icon link reference external" href="https://arxiv.org/pdf/2604.15597" target="_blank">Laban, 2026</a> pre-print).</p>
-<p>To mitigate this nature of the model, we ensure the quality of the context and
-tools available for the model, with careful analysis of sessions.</p>
-</section>
 </section>
 </section>
 
