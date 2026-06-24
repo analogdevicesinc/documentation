@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Quick start guides provide simple step-by-step instructions on how to do an initial system setup and evaluation of the EVAL-AD4170-4ARDZ evaluation board on various FPGA development boards and controller platforms. In these guides, we will discuss how to connect the board, configure the software, and run initial measurements." name="description" />
+
+    <title>Quick start guides &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="AD4170-4 on SDP-K1 (EVAL-SDP-CK1Z)" href="sdp_k1.html" />
+    <link rel="prev" title="Prerequisites" href="../prerequisites.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Quick start guides</a><ul>
+<li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
+<li><a class="reference internal" href="#hardware-setup">Hardware setup</a><ul>
+<li><a class="reference internal" href="#eval-ad4170-4ardz-sdp-k1">EVAL-AD4170-4ARDZ + SDP-K1</a></li>
+<li><a class="reference internal" href="#sdp-based-evaluation">SDP-based evaluation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-AD4170-4ARDZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quick start guides</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="sdp_k1.html">AD4170-4 on SDP-K1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-AD4170-4ARDZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="quick-start-guides">
+<span id="ad4170-quickstart"></span><h1>Quick start guides<a class="headerlink" href="#quick-start-guides" title="Link to this heading"></a></h1>
+<p>The Quick start guides provide simple step-by-step instructions on how to do
+an initial system setup and evaluation of the <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD4170-4ARDZ" target="_blank">EVAL-AD4170-4ARDZ</a>
+evaluation board on various FPGA development boards and controller platforms.
+In these guides, we will discuss how to connect the board, configure the
+software, and run initial measurements.</p>
+<section id="supported-carriers">
+<span id="ad4170-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-AD4170-4ARDZ" target="_blank">EVAL-AD4170-4ARDZ</a> is a flexible evaluation board that can connect
+to multiple platforms for different application scenarios:</p>
+<p><strong>Controller Boards</strong> - For PC-based evaluation and control:</p>
+<p>The evaluation board connects to system demonstration platform (SDP) controller
+boards via Arduino connectors, providing USB connectivity to a Windows PC
+running the ACE Plugin software for easy configuration, data capture, and
+analysis.</p>
+<p>The carriers we support are:</p>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Controller board</p></th>
+<th class="head"><p>EVAL-AD4170-4ARDZ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="icon adi reference external" href="https://www.analog.com/SDP-K1" target="_blank">SDP-K1</a></p></td>
+<td><p>Arduino connectors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon adi reference external" href="https://www.analog.com/SDP-B" target="_blank">SDP-B</a></p></td>
+<td><p>Arduino connectors</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="hardware-setup">
+<h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>Each platform has specific connection and setup requirements. The evaluation
+board connects to the carriers using Arduino-compatible connectors. A few
+typical setups are shown below.</p>
+<section id="eval-ad4170-4ardz-sdp-k1">
+<h3>EVAL-AD4170-4ARDZ + SDP-K1<a class="headerlink" href="#eval-ad4170-4ardz-sdp-k1" title="Link to this heading"></a></h3>
+<p>The SDP-K1 is a modern System Demonstration Platform controller board that
+provides USB connectivity to a Windows PC. The AD4170 evaluation board connects
+via Arduino connectors.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4170_fix/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4170_fix/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/ad4170_fix/docs/solutions/reference-designs/eval-ad4170-4ardz/images/ad4170_sdpk1_connections.png" width="450" />
+</a>
+</section>
+<section id="sdp-based-evaluation">
+<h3>SDP-based evaluation<a class="headerlink" href="#sdp-based-evaluation" title="Link to this heading"></a></h3>
+<p>Connection overview:</p>
+<ul class="simple">
+<li><p><strong>Arduino Connectors</strong>: P1-P5 on SDP-K1 connect to EVAL-AD4170-4ARDZ Arduino
+headers</p></li>
+<li><p><strong>USB</strong>: USB-C connection from SDP-K1 to Windows PC</p></li>
+<li><p><strong>Power</strong>: Board powered via USB</p></li>
+<li><p><strong>Software</strong>: ACE Plugin software running on Windows PC</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sdp_k1.html">AD4170-4 on SDP-K1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#hardware-setup">Hardware Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#board-connection">Board Connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#power-and-connectivity">Power and Connectivity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#software-installation-and-configuration">Software Installation and Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#required-software-components">Required Software Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#step-1-install-ace-software">Step 1: Install ACE Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#step-2-install-sdp-controller-drivers">Step 2: Install SDP Controller Drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#step-3-install-ad4170-plugin">Step 3: Install AD4170 Plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#launching-and-using-ace-with-sdp-k1">Launching and Using ACE with SDP-K1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#initial-launch">Initial Launch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#board-view-window">Board View Window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#configuration-interface">Configuration Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#memory-map-tab">Memory Map Tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#analysis-tab">Analysis Tab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#demo-modes">Demo Modes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#demo-mode-access">Demo Mode Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#available-demo-modes">Available Demo Modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#running-noise-test-demo-example">Running Noise Test Demo (Example)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#other-demo-modes">Other Demo Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#virtual-evaluation-tool">Virtual Evaluation Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#reference-configuration">Reference Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#data-capture-best-practices">Data Capture Best Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#device-not-recognized">Device Not Recognized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#communication-errors">Communication Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#software-crashes">Software Crashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#data-capture-issues">Data Capture Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sdp_k1.html#no-data-display">No Data Display</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#recommended-next-steps">Recommended Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#technical-support">Technical Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdp_k1.html#related-documentation">Related Documentation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <a href="sdp_k1.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD4170-4 on SDP-K1 (EVAL-SDP-CK1Z)</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
