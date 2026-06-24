@@ -98,8 +98,7 @@
           <ul>
 <li><a class="reference internal" href="#">AI Usage</a><ul>
 <li><a class="reference internal" href="#tooling-for-ai-assisted-work">Tooling for AI-assisted work</a><ul>
-<li><a class="reference internal" href="#public-mcp-servers-and-skills">Public MCP servers and skills</a></li>
-<li><a class="reference internal" href="#documentation-as-context">Documentation as context</a></li>
+<li><a class="reference internal" href="#mcp-servers-and-skills">MCP servers and skills</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-coding-harness">The coding harness</a><ul>
@@ -1500,24 +1499,23 @@ adds on top of a language model.</p>
 <h2>Tooling for AI-assisted work<a class="headerlink" href="#tooling-for-ai-assisted-work" title="Link to this heading"></a></h2>
 <p>A large language model can explain, draft, and connect ideas quickly, but it is
 not a substitute for project knowledge or validation. The value comes from
-placing the model in a workflow where it can inspect the repository, call the
-right tools, read the right documentation, and report what it verified.</p>
-<p>ADI uses two complementary mechanisms for that:</p>
+placing the model in a workflow where it can inspect a code base, call the
+right tools, read the documentation, and report verified results.</p>
+<p>We utilize two complementary mechanisms to achieve this:</p>
 <ul class="simple">
-<li><p><strong>MCP servers</strong> expose tools through the Model Context Protocol, so an
-assistant can search documentation, inspect designs, query hardware-facing
-libraries, or run project-specific checks through structured tool calls.</p></li>
-<li><p><strong>Skills</strong> package task-specific instructions and tool inventories. They help
-an assistant choose the right workflow for a repository instead of guessing
-from file names or prompt text alone.</p></li>
+<li><p><strong>MCP Servers</strong> exposes tools and data through the Model Context Protocol.
+By coupling context with assertion, they allow the system to dynamically
+steer theagent toward optimal tool usage on the fly.</p></li>
+<li><p><strong>Skills</strong> package task-specific instructions and tool inventories as text
+files. They teach the agent how to utilize tools and execute tasks without
+forcing tight coupling or rigid hooks.</p></li>
 </ul>
-<p>The important design choice is that these interfaces are <strong>CLI-first</strong>: tools
-exposed through an MCP server also exist as command-line entry points. This
-keeps automation scriptable, reproducible, and suitable for CI as well as
-interactive AI-assisted development.</p>
-<section id="public-mcp-servers-and-skills">
-<h3>Public MCP servers and skills<a class="headerlink" href="#public-mcp-servers-and-skills" title="Link to this heading"></a></h3>
-<p>Available public interfaces include:</p>
+<p>A foundational design choice is our CLI-first stance: every tool available to
+the MCP is also accessible via the CLI. This ensures that frequent tasks can be
+automated programmatically and sustainably.</p>
+<section id="mcp-servers-and-skills">
+<h3>MCP servers and skills<a class="headerlink" href="#mcp-servers-and-skills" title="Link to this heading"></a></h3>
+<p>Our set of MCPs and Skills include:</p>
 <ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/install.html#mcp" target="_blank" title="(in Doctools v0.4.43)"><span class="xref std std-ref">doctools MCP</span></a>:
 Searches ADI public documentation under
@@ -1535,11 +1533,8 @@ and system-level solving.</p></li>
 Catalogs Scopy development tools such as the package generator, test tools,
 CI scripts, format and license checks, and development plugin commands.</p></li>
 </ul>
-</section>
-<section id="documentation-as-context">
-<h3>Documentation as context<a class="headerlink" href="#documentation-as-context" title="Link to this heading"></a></h3>
-<p>Documentation is part of the toolchain. Assistants should be able to read the
-content available to users.</p>
+<p>We believe documentation is part of the code base and that assistants should
+have access to it just like users have.</p>
 <p>Besides using the <a class="icon link reference external" href="https://analogdevicesinc.github.io/doctools/install.html#mcp" target="_blank" title="(in Doctools v0.4.43)"><span class="xref std std-ref">doctools MCP</span></a>, public
 documentation sources can be fetched directly, for example, the source for this
 page is <a class="icon git reference external" href="https://raw.githubusercontent.com/analogdevicesinc/documentation/main/docs/contributing/ai.rst" target="_blank">docs/contributing/ai.rst</a>. Each rendered page
@@ -1568,6 +1563,9 @@ multiple models with different roles. Since we collect the collateral generated
 by the run, including tool output and the agent session, the result can be
 reviewed. If something goes wrong, the interaction can be traced back to the
 step that introduced the issue.</p>
+<p>Examples of coding harnesses are <a class="icon link reference external" href="https://pi.dev" target="_blank">pi.dev</a>,
+<a class="icon link reference external" href="https://opencode.ai" target="_blank">OpenCode</a>, <a class="icon link reference external" href="https://claude.com/product/claude-code" target="_blank">Claude Code</a>,
+and <a class="icon link reference external" href="https://openai.com/codex/" target="_blank">OpenAI codex</a>.</p>
 <section id="jagged-frontier-and-context">
 <h3>Jagged frontier and context<a class="headerlink" href="#jagged-frontier-and-context" title="Link to this heading"></a></h3>
 <p>LLMs are prediction models with attention: Attention constructs weighted graphs
@@ -1592,10 +1590,9 @@ tools available for the model, with careful analysis of sessions.</p>
 </section>
 <section id="pull-request-reviewer">
 <h2>Pull request reviewer<a class="headerlink" href="#pull-request-reviewer" title="Link to this heading"></a></h2>
-<p>The pull request reviewer applies the same harness-and-tools approach to code
-review. It is an AI-assisted reviewer integrated into CI/CD. It uses the
-tooling present in each workflow to provide contextual feedback on pull
-requests: builds, static analysis, style validation, checks, and any other
+<p>The pull request reviewer is an AI-assisted reviewer integrated into CI/CD. It
+uses the tooling present in each workflow to provide contextual feedback on
+pull requests: builds, static analysis, style validation, checks, and any other
 project-specific tool that is meaningful for the code base.</p>
 <p>It supports models from multiple vendors, cloud-hosted or self-hosted. The tool
 does not approve or merge code; final decisions remain with our reviewers, and
