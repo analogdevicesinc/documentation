@@ -42,6 +42,13 @@ Contents
    software/gnuradio
 
 .. toctree::
+   :caption: Design Tools
+   :maxdepth: 4
+   :glob:
+
+   design_tools/*/index
+
+.. toctree::
    :caption: Devices
    :maxdepth: 2
    :glob:
