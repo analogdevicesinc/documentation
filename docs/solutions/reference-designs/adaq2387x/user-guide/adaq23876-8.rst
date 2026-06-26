@@ -1,0 +1,534 @@
+.. imported from: https://wiki.analog.com/resources/eval/user-guide/adaq23876/adaq23878
+
+.. _eval-adaq23876-8:
+
+ADAQ23876/ADAQ23878 User Guide
+===============================================================================
+
+Evaluating Using ZedBoard
+
+Features
+-------------------------------------------------------------------------------
+
+- Evaluation board for the :adi:`ADAQ23876` and :adi:`ADAQ23878` (16-/18-bit,
+  15 MSPS) µModule Data Acquisition Solutions
+- Versatile analog signal conditioning circuitry
+- On-board reference, LDO, and power supply circuits
+- PC software for control and data analysis of time and frequency domain
+
+Evaluation Requirements
+-------------------------------------------------------------------------------
+
+Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :adi:`EVAL-ADAQ23876FMCZ <EVAL-ADAQ23876>` or
+  :adi:`EVAL-ADAQ23878FMCZ <EVAL-ADAQ23878>` evaluation board
+- `ZedBoard (AES-Z7EV-7Z020-G)
+  <https://www.xilinx.com/products/boards-and-kits/1-8dyf-11.html>`__
+- 12V power supply
+- Host PC running Windows 10 or higher
+- SD Card (16GB or larger)
+- LAN Cable
+- SMA Cable
+- XLR to SMA adapter cable
+- Audio Analyzer (Audio Precision APX525) or other input source
+
+Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :external+kuiper:doc:`Analog Devices Kuiper Linux <index>` image
+
+General Description
+-------------------------------------------------------------------------------
+
+The :adi:`EVAL-ADAQ23876FMCZ <EVAL-ADAQ23876>` and
+:adi:`EVAL-ADAQ23878FMCZ <EVAL-ADAQ23878>` evaluation boards enable
+performance assessment of the :adi:`ADAQ23876` and :adi:`ADAQ23878` 15 MSPS,
+16-/18-bit, High Speed, Precision µModule Data Acquisition Solutions. These
+devices incorporate a low noise, fully differential ADC driver, a stable high
+resolution reference buffer, 16-/18-bit 15 MSPS SAR ADCs, and critical passive
+components for optimum performance.
+
+.. figure:: images/eval-adaq23878fmczangle.jpg
+   :align: center
+   :width: 500
+
+   Figure 1: EVAL-ADAQ23876FMCZ / EVAL-ADAQ23878FMCZ Evaluation Board
+
+Getting Started
+-------------------------------------------------------------------------------
+
+Setting Up the Evaluation Board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The evaluation board consists of:
+
+- **U1**: :adi:`ADAQ23878` or :adi:`ADAQ23876` µModule
+- **U5**: :adi:`LTC6655` 4.096V reference, or **U3**: :adi:`ADR4520` 2.048V
+  reference
+- **U6**: :adi:`LTM8049` power µModule
+- **U4**: :adi:`ADP7118`
+- **U7**: :adi:`ADP7183`
+- **U8**: :adi:`LT3023`
+- **U13**: 800 MHz clock distribution IC
+- Optional amplifiers: :adi:`ADA4899-1` (A2, A3)
+
+Power Supplies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/table1.png
+   :align: center
+
+   Table 1: On-Board Power Supplies
+
+The positive supply rails generated are:
+
+- 7V (+VS)
+- 5V (VDD)
+- 2.5V (VIO)
+
+The negative supply rail generated is:
+
+- −2.0V (−VS)
+
+Components used: :adi:`LTM8049` (U6), :adi:`ADP7118` (U4), :adi:`LT3023`
+(U8), :adi:`ADP7183` (U7).
+
+Each supply rail has the necessary decoupling capacitors placed as close as
+possible to the device. A single ground plane is used to minimize the effect
+of high-frequency noise interference.
+
+Analog Inputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Subminiature Version A (SMA) connectors (VIN+ and VIN−) provide analog inputs
+from a low-noise, audio precision signal source (SYS-2700 or SYS-x555 series).
+
+Two configuration options are available:
+
+#. Direct signal feed to the :adi:`ADAQ23876`/:adi:`ADAQ23878`, bypassing A2
+   and A3.
+#. Through the optional :adi:`ADA4899-1` amplifiers (A2, A3) in unity-gain
+   configuration, driving the :adi:`ADAQ23876`/:adi:`ADAQ23878`.
+
+The default board configuration provides 4.096V on the REFBUF pin and a
+buffered 2.048V (midscale) at the VCMO (FDA) pin.
+
+.. note::
+
+   For input frequencies below 100 kHz, use a low-noise audio precision signal
+   source (SYS-2700 series) with outputs set to balanced floating.
+
+Link Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/uncut_final.png
+   :align: center
+
+   Table 2: Link Options for the EVAL-ADAQ23876FMCZ and EVAL-ADAQ23878FMCZ
+
+Multiple link options must be set correctly before applying power and signal.
+
+Evaluation Board Connector Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: Table 3: Gain Input Configuration
+   :header-rows: 1
+   :widths: 20 80
+
+   * - Figure
+     - Gain Setting
+   * - Figure 2
+     - Gain = 0.37
+   * - Figure 3
+     - Gain = 0.73
+   * - Figure 4
+     - Gain = 0.87
+   * - Figure 5
+     - Gain = 1.38
+   * - Figure 6
+     - Gain = 2.25
+
+.. figure:: images/4aaaaa.png
+   :align: center
+
+   Table 4: On-Board Connectors
+
+.. figure:: images/5aaa.png
+   :align: center
+
+   Table 5: 160-Pin FMC Connector (P5)
+
+.. note::
+
+   #. User-defined signals: the P suffix denotes the positive pin of a
+      differential pair; the N suffix denotes the negative pin.
+      See the VITA 57 specification.
+   #. User-defined signals with the CC suffix are preferred for transmitting
+      clock signals from the controller board to the daughter board. These are
+      connected to global clock lines on the FPGA. See the VITA 57
+      specification.
+
+Loading the Image onto the SD Card
+-------------------------------------------------------------------------------
+
+To properly evaluate the :adi:`EVAL-ADAQ23876FMCZ <EVAL-ADAQ23876>` /
+:adi:`EVAL-ADAQ23878FMCZ <EVAL-ADAQ23878>`, the ADI Kuiper Linux must be
+properly flashed on the SD card. Complete instructions are available at
+:external+kuiper:doc:`Kuiper Linux <index>`.
+
+Follow the directions for preparing the image specifically for the
+EVAL-ADAQ23876FMCZ / EVAL-ADAQ23878FMCZ.
+
+SD Card Preparation
+-------------------------------------------------------------------------------
+
+#. **Download the ADI Kuiper Image**
+
+   Follow the instructions at :external+kuiper:doc:`Kuiper Linux <index>`.
+   The Kuiper Linux image is an open-source embedded Linux operating system
+   based on Raspberry Pi OS, incorporating Linux device drivers for ADI
+   products.
+
+   .. note::
+
+      Use the image for the **CN0577** project.
+
+   The ZedBoard can be accessed from a remote PC via LAN cable or Wi-Fi.
+
+#. **Format and Flash the SD Card on Windows hosts**
+
+   Follow the :dokuwiki:`Windows hosts instructions
+   <resources/tools-software/linux-software/zynq_images/windows_hosts>`.
+
+#. **Format and Flash the SD Card on Linux hosts**
+
+   Follow the :dokuwiki:`Linux hosts instructions
+   <resources/tools-software/linux-software/zynq_images/linux_hosts>`.
+
+After flashing, ensure the SD card is configured for the correct FPGA project
+per the :external+kuiper:doc:`Kuiper Linux <index>` documentation.
+
+Copy the following key files to the root folder of the SD card:
+
+#. ``BOOT.BIN``
+#. ``devicetree.dtb``
+#. ``uImage`` (from the ``zynq-common`` folder)
+
+Hardware Connection
+-------------------------------------------------------------------------------
+
+.. figure:: images/signal_chain.png
+   :align: center
+
+   Figure 8: Signal Chain Connection
+
+Setup steps (using the Audio Precision Audio Analyzer as input source):
+
+#. Download and install the IIO Oscilloscope application on the host PC.
+#. Flash the Analog Devices Kuiper Linux image on the SD card.
+#. Properly configure the SD card for the EVAL-ADAQ23876FMCZ /
+   EVAL-ADAQ23878FMCZ.
+#. Insert the SD card into the ZedBoard.
+#. Attach the evaluation board to the ZedBoard through the FMC pin connector.
+#. Power up the ZedBoard using the 12V cable.
+#. Connect the evaluation board to the Audio Precision Audio Analyzer using
+   the XLR to SMA adapter cable.
+#. Connect the Audio Precision Audio Analyzer USB cable to the PC.
+
+Navigating the IIO Oscilloscope
+-------------------------------------------------------------------------------
+
+Main Window
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/main_window.png
+   :align: center
+
+   Figure 9: Main Window
+
+The main window displays a configuration panel (plugin) for each device
+recognized by the system. Additional plugins are loaded for device debugging
+and monitoring (Debug Tab/Plugin and DMM Tab/Plugin).
+
+Each plugin can be detached by clicking the button on the right side of the
+plugin name. Close a detached window to re-attach it to the main window.
+
+Debug Tab/Plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/debug_tab.png
+   :align: center
+
+   Figure 10: Debug Tab/Plugin
+
+The Debug plugin is a tool for device debugging. Some features may not work
+unless the oscilloscope application is started as root.
+
+#. **Device Selection:** Sets the active device.
+#. **IIO Device Attributes:** Allows read/write operations for device
+   attributes.
+#. **Register:** Provides low-level access to device registers.
+
+   a. *Enable AutoRead:* Allows automatic register reading as the register
+      address changes.
+   b. *Address:* Register address field.
+   c. *Value:* Register value at the given address.
+
+DMM Tab/Plugin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/dmm_tab.png
+   :align: center
+
+   Figure 11: DMM Tab/Plugin
+
+The DMM (Digital Multimeter) plugin displays device-specific data continuously
+once the start button is activated.
+
+#. **Device tab:** Lists all available devices.
+#. **Active channels tab:** Lists the channels of enabled devices. The
+   "All Channels" button enables all channels simultaneously.
+#. **Right side tab:** Displays data readings of the enabled channels.
+
+Capture Window
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Menu (along top):**
+
+- **File**
+
+  - *Save As:* Saves data to a file.
+  - *Quit:* Closes the capture/plot window.
+
+- **Edit**
+
+  - *Plot Title:* Changes the window name.
+
+- **View**
+
+  - *Show Settings:* Shows/hides the settings panel on the left, allowing the
+    plot to fill the entire window.
+  - *Full Screen:* Makes the window full screen.
+
+**Plot options/icons (along top):**
+
+- *Capture/Stop:* Start or stop data capture.
+- *Zoom In:* Zoom in on the plot region.
+- *Zoom Out:* Zoom out from the plot region.
+- *AutoZoom:* Automatic zoom to fit the screen.
+- *Save As:* Save data to a file.
+- *FullScreen:* Enter/leave fullscreen mode.
+- *Auto scale:* Automatically re-scale the visible area to fit the entire plot.
+- *Show grid:* Show or hide the grid in the plot window.
+- *Y Max:* Adjust the upper limit of the vertical axis (when Auto scale is
+  disabled).
+- *Y Min:* Adjust the lower limit of the vertical axis (when Auto scale is
+  disabled).
+- *New Plot:* Create a new plot of the same type.
+
+**Plot types:**
+
+Time Domain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/time_domain.png
+   :align: center
+
+   Figure 12: Time Domain Plot
+
+Plots the signal in the time domain. Displays raw samples.
+
+#. *Sample Count:* Selects the number of samples for time domain,
+   constellation, and cross-correlation plotting.
+#. *Graph Type:* Selects the graph type (lines or dots).
+
+Frequency Domain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: images/frequency_domain.png
+   :align: center
+
+   Figure 13: Frequency Domain Plot
+
+Plots the signal in the frequency domain. Performs an FFT on the signal.
+
+#. *FFT size:* Selects the FFT size for frequency domain plotting.
+#. *Window:* Selects the FFT window function. Each window has its own
+   characteristics and suitability; see the
+   :dokuwiki:`window functions <resources/tools-software/linux-software/iio_oscilloscope/window_functions>`
+   page.
+#. *FFT Average:* Selects the average weight applied to FFT samples.
+#. *PWR Offset:* Selects the FFT graph offset.
+
+Constellation Plot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Plots the signal as a constellation plot, with the I-channel on the x-axis
+and the Q-channel on the y-axis.
+
+#. *Sample Count:* Selects the number of samples.
+#. *Graph Type:* Selects the graph type (lines or dots).
+
+Cross Correlation Plot
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Plots the signal as a cross-correlation plot.
+
+#. *Sample Count:* Selects the number of samples.
+#. *Graph Type:* Selects the graph type (lines or dots).
+
+Activating Markers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Markers are used for plot data measurement in the frequency domain or during
+cross correlation. Right-click on the plot and select a marker type to enable.
+
+Available marker types:
+
+- FFT domain (1 channel enabled): Peak, Fixed, Single Tone
+- FFT domain (2 channels enabled): Peak, Fixed, Single Tone, Image
+- Constellation: Peak Marker
+
+Add more markers via *Add Marker* or remove via *Remove Marker*.
+
+Saving Captured Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/save.png
+   :align: center
+
+   Figure 14: Save As Window
+
+Captured data can be saved in the following formats:
+
+- Agilent VSA
+- CSV (.csv)
+- MATLAB (.mat)
+- PNG (.png)
+
+Evaluating the EVAL-ADAQ23876FMCZ / EVAL-ADAQ23878FMCZ Using IIO Oscilloscope
+-------------------------------------------------------------------------------
+
+Download the latest release of IIO Oscilloscope from the
+`IIO Oscilloscope GitHub releases
+<https://github.com/analogdevicesinc/iio-oscilloscope/releases>`__.
+
+#. Select the **Refresh** button to display available IIO devices.
+
+   .. figure:: images/refresh.png
+      :align: center
+
+      Figure 15: Refreshing the IIO Oscilloscope Connection
+
+#. Once ``ltc2387`` appears in the device list, select **Connect**.
+
+   .. figure:: images/connect.png
+      :align: center
+
+      Figure 16: Connecting the IIO Oscilloscope
+
+IIO Oscilloscope Capture Window
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Waveform Plot:**
+
+.. figure:: images/waveform_plot.png
+   :align: center
+
+   Figure 17: Time Domain Waveform Plot
+
+**FFT Plot:**
+
+.. figure:: images/fft_plot.png
+   :align: center
+
+   Figure 18: FFT Plot
+
+**To obtain the FFT plot:**
+
+#. Select **Frequency Domain** for the plot type.
+
+   .. figure:: images/freq_domain.png
+      :align: center
+
+      Figure 19: Selecting the Plot Type
+
+#. Designate the preferred number of samples under **FFT size**.
+
+   .. figure:: images/sample_size.png
+      :align: center
+
+      Figure 20: Setting the Number of Samples
+
+#. Specify the window type as **Blackmann-Harris**.
+
+   .. figure:: images/window_type.png
+      :align: center
+
+      Figure 21: Selecting the Window Type
+
+#. Press **Run** to view the result.
+
+   .. figure:: images/run.png
+      :align: center
+
+      Figure 22: View the Result
+
+Board Layout Guidelines
+-------------------------------------------------------------------------------
+
+PCB layout is critical for preserving signal integrity and achieving the
+expected performance from the :adi:`ADAQ23876`/:adi:`ADAQ23878`.
+
+- Use a multilayer board with an internal, clean ground plane in the first
+  layer beneath the :adi:`ADAQ23876`/:adi:`ADAQ23878`.
+- Apply careful placement of individual components and routing of signals.
+- Route input and output signals symmetrically.
+- Solder the ground pins of the :adi:`ADAQ23876`/:adi:`ADAQ23878` directly to
+  the ground plane using multiple vias.
+- **Remove ground and power planes** under the analog input/output and digital
+  input/output pins (including F1 and F2) to avoid undesired parasitic
+  capacitance. Undesired parasitic capacitance impacts distortion and linearity
+  performance.
+
+**Signal routing:**
+
+The pinout of the :adi:`ADAQ23876`/:adi:`ADAQ23878` eases layout by placing
+analog signals on the left side and digital signals on the right side.
+
+- Separate sensitive analog and digital sections on the PCB.
+- Keep power supply circuitry away from the analog signal path.
+- Fast switching signals (CNV±, CLK±) and DA±, DB± digital outputs must not
+  run near or cross analog signal paths.
+
+**Decoupling:**
+
+- Use good-quality ceramic bypass capacitors of at least 2.2 µF (0402, X5R)
+  at the output of each LDO regulator generating the µModule supply rails
+  (VDD, VIO, VS+, VS−) to GND.
+- This minimizes electromagnetic interference (EMI) susceptibility and reduces
+  glitch effects on the power supply lines.
+- All other required bypass capacitors are laid out within the
+  :adi:`ADAQ23876`/:adi:`ADAQ23878`.
+- External decoupling capacitors on the REFIN, VDD, and VIO pins near the
+  µModule can be removed with no significant impact on performance.
+
+Mechanical Stress
+-------------------------------------------------------------------------------
+
+Mechanical stress from mounting the device to the board can cause subtle
+changes to SNR and the internal voltage reference.
+
+The recommended soldering method is IR reflow or convection soldering with a
+controlled temperature profile. Hand soldering with a heat gun or soldering
+iron is **not** recommended.
+
+Board Schematic and PCB Layout
+-------------------------------------------------------------------------------
+
+The complete design support package — including schematics, PCB layout, Bill
+of Materials, and Allegro project files — is available for download from the
+:adi:`EVAL-ADAQ23876FMCZ <EVAL-ADAQ23876>` and
+:adi:`EVAL-ADAQ23878FMCZ <EVAL-ADAQ23878>` product pages.
