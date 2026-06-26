@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This page is archived. The content below refers to the 2019_r1 and 2018_r2 releases. For current SD card setup instructions, refer to the Quickstart guide." name="description" />
+<meta content="Testing was conducted using an Agilent N9030A PXA spectrum analyzer." name="description" />
 
-    <title>Pre-release SD Card Creation &#8212; System Level Documentation  documentation</title>
+    <title>Performance Characteristics &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
@@ -14,8 +14,8 @@
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ADRV9009-ZU11EG Multi-SOM Synchronization" href="syncronization.html" />
-    <link rel="prev" title="Performance Characteristics" href="performance.html" />
+    <link rel="next" title="Pre-release SD Card Creation" href="pre-release.html" />
+    <link rel="prev" title="ADRV9009-ZU11EG RF-SOM Hardware Overview" href="hardware.html" />
    
   
   
@@ -96,12 +96,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Pre-release SD Card Creation</a><ul>
-<li><a class="reference internal" href="#writing-the-sd-card">Writing the SD Card</a></li>
-<li><a class="reference internal" href="#adrv9009-zu11eg-specific-boot-files">ADRV9009-ZU11EG Specific Boot Files</a></li>
-<li><a class="reference internal" href="#video-configuration">Video Configuration</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Performance Characteristics</a></li>
 </ul>
 
         </nav>
@@ -144,8 +139,8 @@ Content on this topic
 </li>
 <li class="toctree-l3"><a class="reference internal" href="adrv2crr-fmc_carrier_board.html">ADRV2CRR-FMC Carrier Board Hardware Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="hardware.html">ADRV9009-ZU11EG RF-SOM Hardware Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="performance.html">Performance Characteristics</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Pre-release SD Card Creation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Performance Characteristics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pre-release.html">Pre-release SD Card Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="syncronization.html">ADRV9009-ZU11EG Multi-SOM Synchronization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="testing.html">ADRV9009-ZU11EG Production Testing</a></li>
 </ul>
@@ -167,42 +162,35 @@ Content on this topic
 </div>
           <div class="body" role="main">
             
-  <section id="pre-release-sd-card-creation">
-<h1>Pre-release SD Card Creation<a class="headerlink" href="#pre-release-sd-card-creation" title="Link to this heading"></a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This page is archived. The content below refers to the 2019_r1 and
-2018_r2 releases. For current SD card setup instructions, refer to
-the <a class="reference internal" href="quickstart/index.html#adrv9009-zu11eg-quickstart"><span class="std std-ref">Quickstart guide</span></a>.</p>
-</div>
-<section id="writing-the-sd-card">
-<h2>Writing the SD Card<a class="headerlink" href="#writing-the-sd-card" title="Link to this heading"></a></h2>
-<p>Details on how to write the SD card can be found at
-<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images" target="_blank">Zynq Images</a>.</p>
-</section>
-<section id="adrv9009-zu11eg-specific-boot-files">
-<h2>ADRV9009-ZU11EG Specific Boot Files<a class="headerlink" href="#adrv9009-zu11eg-specific-boot-files" title="Link to this heading"></a></h2>
-<p>After writing the image, on the boot partition root, the ADRV9009-ZU11EG
-specific files can be added from any folder matching
-**zynqmp-adrv9009-zu11eg-revb-adrv2crr-fmc-revb*** from boot partition.
-More information can be found in boot partition ReadMe.txt.</p>
-</section>
-<section id="video-configuration">
-<h2>Video Configuration<a class="headerlink" href="#video-configuration" title="Link to this heading"></a></h2>
-<p>The default configuration for most of the projects is to use the HDMI output,
-but for this project the DisplayPort is used. In order for it to work, you should
-follow the steps described here:
-<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp" target="_blank">DisplayPort - no picture?</a>
-After following the steps, the board should be rebooted.</p>
-</section>
+  <section id="performance-characteristics">
+<span id="adrv9009-zu11eg-performance"></span><h1>Performance Characteristics<a class="headerlink" href="#performance-characteristics" title="Link to this heading"></a></h1>
+<p>Testing was conducted using an Agilent N9030A PXA spectrum analyzer.</p>
+<figure class="align-default" id="id1">
+<img alt="../../../_images/adrv9009_tx_amp_diff.svg" src="../../../_images/adrv9009_tx_amp_diff.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Amplitude variation across transmit channels over frequency</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../../../_images/adrv9009_tx_amp_cw.svg" src="../../../_images/adrv9009_tx_amp_cw.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Transmit power over frequency for CW 40 MHz off LO</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="../../../_images/adrv9009_meanevm_tx.svg" src="../../../_images/adrv9009_meanevm_tx.svg" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Transmit EVM of LTE10 over frequency without environmental shielding</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="performance.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Performance Characteristics</a>
-    <a href="syncronization.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRV9009-ZU11EG Multi-SOM Synchronization</a>
+    <a href="hardware.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADRV9009-ZU11EG RF-SOM Hardware Overview</a>
+    <a href="pre-release.html" title="Next document (Alt+Shift+RightArrow)" class="next">Pre-release SD Card Creation</a>
               </div>
           
         </div>
