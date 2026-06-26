@@ -5,6 +5,7 @@ Learning! Tutorials, Workshops, Etc
    :maxdepth: 4
 
    demo_hp_analog_meets_ai/index
+   monopulse_tracker/index
 
 Mixed Signal Basics
 -------------------------------------------------------------------------------
