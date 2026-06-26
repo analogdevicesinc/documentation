@@ -139,7 +139,7 @@ Reference Material
    :width: 200
 
 - `Software Defined Radio for Engineers <https://www.analog.com/en/education/education-library/software-defined-radio-for-engineers.html>`__
-- :dokuwiki:`Additional SDR Maths Documentation <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+- :ref:`Additional SDR Maths Documentation <fmcomms2 common fmcomms-math>`
 
 Functional Test
 ---------------

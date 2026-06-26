@@ -27,5 +27,5 @@ Video Configuration
 The default configuration for most of the projects is to use the HDMI output,
 but for this project the DisplayPort is used. In order for it to work, you should
 follow the steps described here:
-:dokuwiki:`DisplayPort - no picture? <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
+:ref:`DisplayPort - no picture? <linux-kernel zynqmp>`
 After following the steps, the board should be rebooted.

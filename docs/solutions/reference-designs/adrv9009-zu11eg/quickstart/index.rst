@@ -937,7 +937,7 @@ After following the steps, the board should be rebooted.
 IIO Oscilloscope Remote
 -----------------------
 
-The :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
+The :ref:`IIO Oscilloscope <iio-oscilloscope>`
 application can be used to connect to another platform that has a connected
 device in order to configure the device and read data from it.
 

@@ -243,7 +243,7 @@ Video Configuration
 
 The default configuration for most projects uses HDMI output, but this
 project uses DisplayPort. Follow the steps described at
-:dokuwiki:`DisplayPort - no picture? <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynqmp>`
+:ref:`DisplayPort - no picture? <linux-kernel zynqmp>`
 then reboot the board.
 
 IIO Oscilloscope

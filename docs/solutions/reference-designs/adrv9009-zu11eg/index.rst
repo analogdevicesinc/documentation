@@ -88,10 +88,10 @@ Table of Contents
          #. :ref:`ADRV9009/ADRV9008 Control IIO Scope Plugin <iio-oscilloscope adrv9009 plugin>`
          #. :ref:`Advanced ADRV9009/ADRV9008 Control IIO Scope Plugin <iio-oscilloscope adrv9009 advanced-plugin>`
 
-   #. :dokuwiki:`FRU EEPROM Utility <resources/tools-software/linux-software/fru_dump>`
+   #. :ref:`FRU EEPROM Utility <software fru-dump>`
    #. Push custom data into/out of the ADRV9009
 
-      #. :dokuwiki:`Basic Data files and formats <resources/eval/user-guides/adrv9009/software/basic_iq_datafiles>`
+      #. :ref:`Basic Data files and formats <adrv9009 basic-iq-datafiles>`
       #. :ref:`Stream data into/out of MATLAB <matlab transceiver-toolbox>`
 
    #. Design with the ADRV9009
@@ -104,7 +104,7 @@ Table of Contents
 
       #. Hardware in the Loop / How to design your own custom BaseBand
 
-         #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+         #. :ref:`GNU Radio <software gnuradio>`
          #. :ref:`Board Support Package for MathWorks Tools <matlab transceiver-toolbox>`
 
       #. Design with the ADRV9009-ZU11EG based platform
@@ -114,7 +114,7 @@ Table of Contents
             #. :ref:`ADRV9009/ADRV9008 Linux Device Driver <iio-transceiver adrv9009>`
 
                #. :ref:`ADRV9009/ADRV9008 Device Driver Customization <iio-transceiver adrv9009 customization>`
-               #. :dokuwiki:`Customizing the devicetree on the target <resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks>`
+               #. :ref:`Customizing the devicetree on the target <linux-kernel zynq-tips-tricks>`
 
             #. :dokuwiki:`JESD204 (FSM) Interface Linux Kernel Framework <resources/tools-software/linux-drivers/jesd204/jesd204-fsm-framework>`
             #. :dokuwiki:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <resources/tools-software/linux-drivers/iio-pll/hmc7044>`
@@ -147,7 +147,7 @@ Reference Material
 
 :adi:`Software Defined Radio for Engineers <en/education/education-library/software-defined-radio-for-engineers.html>`
 
-:dokuwiki:`Additional Documentation about SDR Signal Chains - The math behind the RF <resources/eval/user-guides/ad-fmcomms1-ebz/math>`
+:ref:`Additional Documentation about SDR Signal Chains - The math behind the RF <fmcomms2 common fmcomms-math>`
 
 Functional Test
 ---------------
