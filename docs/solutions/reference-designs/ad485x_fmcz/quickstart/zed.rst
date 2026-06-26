@@ -1,7 +1,7 @@
 .. _ad485x_fmcz quickstart zed:
 
 ZedBoard Quickstart
-===================
+===============================================================================
 
 This guide provides quick instructions on how to set up the
 :adi:`EVAL-AD4858` on:
@@ -9,16 +9,13 @@ This guide provides quick instructions on how to set up the
 - `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`__
   FMC LPC
 
-.. image:: ../images/ad4858-zedboard-quick-setup.png
-   :width: 900
-
 .. esd-warning::
 
 Using Linux as software
------------------------
+-------------------------------------------------------------------------------
 
 Necessary files
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -58,7 +55,7 @@ us, or you can build them manually:
    your specific use case.
 
 Required Software
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - SD Card 16GB imaged with :external+kuiper:doc:`Kuiper <index>`
   (check out that guide on how to do it, then come back to this
@@ -67,7 +64,7 @@ Required Software
   115200 (8N1)
 
 Required Hardware
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx
   `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`__
@@ -82,16 +79,16 @@ More details as to why you need these can be found at
 :ref:`ad485x_fmcz prerequisites`.
 
 Testing
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Creating the setup
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the following example, we will prepare the evaluation setup by
 connecting the EVAL-AD4858 evaluation board to the ZedBoard and
 applying a test input signal.
 
-.. figure:: ../images/ad4858-zedboard-quick-setup.png
+.. figure:: ../images/ad4858_fmcz_zed_setup.jpg
    :width: 800
 
    EVAL-AD4858 + ZedBoard setup
@@ -130,19 +127,17 @@ Follow the steps in this order, to avoid damaging the components:
    ttyUSB or COM port registered, Baud rate 115200 (8N1))
 
 Boot messages
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following is what is printed in the serial console, after you
 have connected to the proper ttyUSB or COM port:
 
 .. collapsible:: Complete boot log
 
-   ::
-
-      TBD
+   .. TODO:: Add complete boot log for EVAL-AD4858 + ZedBoard.
 
 Useful commands for the serial terminal
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The below commands are to be run in the serial terminal connected to
 the FPGA.
@@ -164,7 +159,6 @@ To see the IIO devices detected, run:
 .. shell::
 
    $iio_info | grep iio:device
-   TBD
 
 To power off the system, run the following command, and wait for the
 final message to be printed, then power off the FPGA board from the
@@ -189,10 +183,10 @@ To reboot the system, run:
    above-mentioned command for powering off.
 
 EVAL-AD4858
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Scopy
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
 
@@ -204,11 +198,8 @@ data captured from the EVAL-AD4858 evaluation board.
 
 .. TODO:: Add Scopy connection and usage instructions for EVAL-AD4858.
 
-.. image:: ../images/TBD_scopy.jpg
-   :width: 1000
-
 IIO Oscilloscope
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
 
@@ -228,10 +219,10 @@ IIO Oscilloscope
    play button. Then the data capture window can be seen.
 
 Using no-OS as software
------------------------
+-------------------------------------------------------------------------------
 
 Necessary files
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following files are needed for the system to boot:
 
@@ -245,7 +236,7 @@ here:
   :external+hdl:ref:`build_hdl`.
 
 Required Software
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx Vivado and Vitis (downloading Vitis from
   `here <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_
@@ -254,7 +245,7 @@ Required Software
   115200 (8N1)
 
 Required Hardware
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - AMD Xilinx
   `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`__
@@ -267,10 +258,10 @@ More details as to why you need these can be found at
 :ref:`ad485x_fmcz prerequisites`.
 
 Testing
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Creating the setup
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. TODO:: Add no-OS setup image for EVAL-AD4858 + ZedBoard.
 
@@ -300,19 +291,17 @@ Follow the steps in this order, to avoid damaging the components:
 #. Turn on the power switch on the FPGA board.
 
 Console output
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After the FPGA is programmed and the no-OS application is running,
 the following output is displayed on the serial terminal:
 
 .. collapsible:: Console output
 
-   ::
-
-      TBD
+   .. TODO:: Add no-OS console output for EVAL-AD4858 + ZedBoard.
 
 Scopy
-^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
 
@@ -324,11 +313,8 @@ data captured from the EVAL-AD4858 evaluation board.
 
 .. TODO:: Add Scopy connection and usage instructions for no-OS.
 
-.. image:: ../images/TBD_scopy_noos.jpg
-   :width: 1000
-
 IIO Oscilloscope
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. important::
 

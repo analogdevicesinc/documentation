@@ -1,7 +1,7 @@
 .. _ad485x_fmcz:
 
 AD485X-FMCZ
-===================================
+===============================================================================
 
 Buffered, 8-Channel Simultaneous Sampling, 20-Bit 1 MSPS DAS
 
@@ -13,8 +13,10 @@ Buffered, 8-Channel Simultaneous Sampling, 20-Bit 1 MSPS DAS
    :align: left
    :width: 150
 
+.. clear-content::
+
 Overview
-------------
+-------------------------------------------------------------------------------
 
 The :adi:`EVAL-AD4858` board contains the :adi:`AD4858` chip, which is a
 20-bit, low noise 8-channel simultaneous sampling successive approximation
@@ -52,8 +54,14 @@ Applications:
    :align: center
    :width: 600px
 
+.. toctree::
+   :hidden:
+
+   prerequisites
+   quickstart/index
+
 Recommendations
----------------
+-------------------------------------------------------------------------------
 
 People who follow the flow that is outlined, have a much better experience with
 things. However, like many things, documentation is never as complete as it
@@ -61,7 +69,7 @@ should be. If you have any questions, feel free to
 :ref:`ask <help-and-support>`.
 
 Table of Contents
------------------
+-------------------------------------------------------------------------------
 
 #. Using the evaluation board/full stack reference design that we offer:
 
