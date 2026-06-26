@@ -1,13 +1,13 @@
 .. _ad485x_fmcz prerequisites:
 
 Prerequisites
-=============
+===============================================================================
 
 What you need depends on what you are trying to do. As a minimum,
 you need to start out with:
 
 Hardware prerequisites
-----------------------
+-------------------------------------------------------------------------------
 
 #. An :adi:`EVAL-AD4858` evaluation board
 #. An FPGA carrier platform. Our recommended one can be found
@@ -25,7 +25,7 @@ Hardware prerequisites
    evaluation board.
 
 Software prerequisites
-----------------------
+-------------------------------------------------------------------------------
 
 Normally, for basic functionalities regarding visualizing the data
 received from the FPGA, we use the following:
@@ -50,7 +50,7 @@ received from the FPGA, we use the following:
    evaluation.
 
 Optional Hardware
------------------
+-------------------------------------------------------------------------------
 
 - :adi:`M2K <adalm2000>`
 - :dokuwiki:`M2K BNC adapter board <university/tools/m2k/accessories/bnc>`
