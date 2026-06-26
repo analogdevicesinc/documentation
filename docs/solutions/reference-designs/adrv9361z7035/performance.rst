@@ -64,23 +64,28 @@ Emissions, Sinusoidal vibration, random vibration, shock, temperature etc. The
 ADRV9x63x RF SOM family is tested against various military (https://mil-std.org)
 and Information Technology Standards (NIST) using external vendors with the
 appropriate equipment. All details and results of such are maintained in the
-test reports below.
+test reports.
+
+..
+   TODO: The following resource files have been removed and need to be
+   re-hosted or replaced:
+   -  SOM2 Emissions and Immunity CE Mark Test Report
+      (analog_devices_picozed_sdr_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0.pdf)
+   -  SOM2 Environmental Test Report (1510-107n_analog_devices_report.pdf)
 
 Emissions and Immunity
 ~~~~~~~~~~~~~~~~~~~~~~
 
-- `SOM2 Emissions and Immunity CE Mark Test Report <resources/analog_devices_picozed_sdr_emc_emissions_and_immunity_ce_mark_test_report_rev_1_0.pdf>`_
+The SOM2 Emissions and Immunity CE Mark Test Report contains tests results for:
 
-   -  This report contains tests results for:
-
-      -  EN 55022:2010 unwanted emissions
-      -  EN 55024:2010 immunity
+-  EN 55022:2010 unwanted emissions
+-  EN 55024:2010 immunity
 
 Shock and Vibration
 ~~~~~~~~~~~~~~~~~~~
 
-- The `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_
-  contains the results for MIL-STD-202G testing:
+The SOM2 Environmental Test Report contains the results for MIL-STD-202G
+testing:
 
    -  Method 201A:
 
@@ -113,8 +118,8 @@ Shock and Vibration
 Temperature
 ~~~~~~~~~~~
 
-The report listed above `SOM2 Environmental Test Report <resources/1510-107n_analog_devices_report.pdf>`_
-also contains the results of MIL-STD-810G testing.
+The SOM2 Environmental Test Report listed above also contains the results of
+MIL-STD-810G testing.
 
 The ADRV9361-Z7035 SDR 2X2 is rated for operation in the industrial temperature
 range (-40 to 85°C). Please take care to respect the individual device maximum

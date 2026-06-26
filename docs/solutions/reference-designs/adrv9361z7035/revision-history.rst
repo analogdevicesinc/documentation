@@ -13,12 +13,12 @@ Revision F
 
 This is the current shipping version.
 
-.. admonition:: Download
-   :class: download
-
-   -  `Rev F Schematics <resources/02-038702-01-f2.pdf>`_
-   -  `BOM (7 zipped) <resources/05-038702-01-f2.7z>`_
-   -  `Allegro brd file (7 zipped) <resources/08_038702f.7z>`_
+..
+   TODO: The following resource files have been removed and need to be
+   re-hosted or replaced:
+   -  Rev F Schematics (02-038702-01-f2.pdf)
+   -  BOM, 7 zipped (05-038702-01-f2.7z)
+   -  Allegro brd file, 7 zipped (08_038702f.7z)
 
 - Changes from Rev E to Rev F:
 
@@ -30,12 +30,12 @@ This is the current shipping version.
 Revision E
 ~~~~~~~~~~
 
-.. admonition:: Download
-   :class: download
-
-   -  `Rev E Schematics <resources/adrv9361-z7035_reve.pdf>`_
-   -  `Rev E BOM <images/05_038702-e.xlsx>`_
-   -  `Rev E Allegro Board File <resources/08_038702e.zip>`_ (This file is `compressed <http://www.7-zip.org/7z.html>`_). Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.6 or higher).
+..
+   TODO: The following resource files have been removed and need to be
+   re-hosted or replaced:
+   -  Rev E Schematics (adrv9361-z7035_reve.pdf)
+   -  Rev E BOM (05_038702-e.xlsx, was in images/)
+   -  Rev E Allegro Board File (08_038702e.zip)
 
 Revision D
 ~~~~~~~~~~
@@ -66,10 +66,10 @@ Revision C (First publicly available revision)
 
 This is the first publicly available revision.
 
-.. admonition:: Download
-   :class: download
-
-   -  `Rev C Schematics <resources/adrv9361-z7035.pdf>`_
+..
+   TODO: The following resource file has been removed and needs to be
+   re-hosted or replaced:
+   -  Rev C Schematics (adrv9361-z7035.pdf)
 
 ADRV9364-Z7020 Hardware
 -----------------------
@@ -87,30 +87,27 @@ This is the current shipping version.
       option for the Ethernet Phy (Ethernet Operation over Electrical Backplanes)
    -  Improved the RF traces to have better insertion loss and return loss.
 
-.. admonition:: Download
-   :class: download
+..
+   TODO: The following resource files have been removed and need to be
+   re-hosted or replaced:
+   -  Rev D1 Schematics (adrv9364-z7020_revd-1.pdf)
+   -  Rev D Schematics (adrv9364-z7020_revd.pdf)
 
-   -  `Rev D1 Schematics <resources/adrv9364-z7020_revd-1.pdf>`_
-
-      -  There was a small typo in the rev D0 of the schematics (below), the net
-         named ``*_EN_AGC``, was tied to the ``ENABLE`` pin, and the net called
-         ``*_ENABLE`` was tied to the ``EN_AGC`` pin. This is fixed/updated in
-         this schematic. copper/layout does not change, only the designation on
-         the wire (for clarity).
-
-   -  `Rev D Schematics <resources/adrv9364-z7020_revd.pdf>`_
-
-      -  This has the notation error described above.
+-  There was a small typo in the rev D0 of the schematics, the net
+   named ``*_EN_AGC``, was tied to the ``ENABLE`` pin, and the net called
+   ``*_ENABLE`` was tied to the ``EN_AGC`` pin. This is fixed/updated in
+   the D1 revision. Copper/layout does not change, only the designation on
+   the wire (for clarity).
 
 Revision C (First publicly available revision)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the first publicly available revision.
 
-.. admonition:: Download
-   :class: download
-
-   -  `Rev C Schematics <resources/adrv9364-z7020_revc.pdf>`_
+..
+   TODO: The following resource file has been removed and needs to be
+   re-hosted or replaced:
+   -  Rev C Schematics (adrv9364-z7020_revc.pdf)
 
 Support
 -------
