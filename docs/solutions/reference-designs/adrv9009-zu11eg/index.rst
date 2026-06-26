@@ -79,7 +79,7 @@ Table of Contents
       #. :external+kuiper:ref:`Configure a pre-existing SD-Card <use-kuiper-image>`
       #. :external+kuiper:ref:`Update the old card you received with your hardware <use-kuiper-image>`
 
-   #. :dokuwiki:`Performance Characteristics 'Pending Update' </resources/eval/user-guides/adrv9009-zu11eg/hardware/performance>`
+   #. :ref:`Performance Characteristics <adrv9009-zu11eg performance>`
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
@@ -193,6 +193,7 @@ Engineer Zone.
 
    adrv2crr-fmc_carrier_board
    hardware
+   performance
    pre-release
    syncronization
    testing
