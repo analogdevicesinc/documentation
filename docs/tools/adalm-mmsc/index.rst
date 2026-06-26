@@ -63,8 +63,8 @@ Features
    - Flagship LTC6655 for optimal performance
    - "Reference Corruption" input allows noise and interfering tones to be
      introduced and their effects observed
-- Selectable conversion rates from 5 MSPS to 40 MSPS allow observation
-  of aliasing and ADC noise density vs. sample rate
+- Selectable conversion rates from 5 MSPS to 40 MSPS allow observation of
+  aliasing and ADC noise density vs. sample rate
 
 Applications
 ++++++++++++
@@ -82,6 +82,31 @@ System Architecture
 
 Package Contents
 ++++++++++++++++
+
+.. admonition:: Errata
+   :class: warning
+
+   The first production build has three errors:
+
+   - P7 pins are too short for ADALM2000 fly wires
+
+     - Resolution: Use P29, P30 for experiments that probe the AD4080 inputs
+
+   - C2 and C3 should not be installed. Most experiments will work but there is
+     overshoot in the step response and a peak around 2 MHz in the frequency
+     response.
+
+     - Resolution: Remove C2 and C3. They are easily accessible using two
+       soldering irons or tweezer-style rework iron.
+
+   - R28 should be 249 ohms, not 249k. Only affects gain = 5 selection.
+
+     - Resolution: Install 249 ohm, 1% tolerance, 0603 on top of 249 k. The 249k
+       resistor will have negligible ~0.1% impact on gain.
+
+   .. image:: first_prod_run_rework.png
+      :width: 400px
+      :align: center
 
 The ADALM-MMSC kit includes the following boards and accessories:
 
@@ -251,9 +276,9 @@ Firmware Upgrades
 
 6. Drag and drop the file
    ``adalm-mmsc_maxim_iio_example_max32665.hex`` into the
-   **DAPLINK** drive (typically ``D:\`` or ``E:\`` on Windows).
+   **DAPLink** drive (typically ``D:\`` or ``E:\`` on Windows).
 
-7. Wait for the DAPLINK drive to automatically eject, indicating that the
+7. Wait for the DAPLink drive to automatically eject, indicating that the
    firmware upgrade has completed successfully.
 
 ----
