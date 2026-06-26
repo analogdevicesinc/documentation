@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This directory contains reusable reStructuredText (RST) templates for generating consistent documentation for Analog Devices reference designs." name="description" />
+
+    <title>Reference Design Documentation Templates &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Reference Design Documentation Templates</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#available-templates">Available Templates</a><ul>
+<li><a class="reference internal" href="#prerequisites-template-prerequisites-rst-jinja">1. Prerequisites Template (<code class="docutils literal notranslate"><span class="pre">prerequisites.rst.jinja</span></code>)</a><ul>
+<li><a class="reference internal" href="#prerequisites-template-variables">Prerequisites Template Variables</a></li>
+<li><a class="reference internal" href="#prerequisites-usage-example">Prerequisites Usage Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zedboard-quick-start-template-quickstart-zed-rst-jinja">2. ZedBoard Quick Start Template (<code class="docutils literal notranslate"><span class="pre">quickstart/zed.rst.jinja</span></code>)</a><ul>
+<li><a class="reference internal" href="#quick-start-template-variables">Quick Start Template Variables</a><ul>
+<li><a class="reference internal" href="#required-variables">Required Variables</a></li>
+<li><a class="reference internal" href="#optional-variables">Optional Variables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quick-start-usage-example">Quick Start Usage Example</a></li>
+<li><a class="reference internal" href="#quick-start-template-structure">Quick Start Template Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#example-implementations">Example Implementations</a></li>
+<li><a class="reference internal" href="#path-conventions">Path Conventions</a></li>
+<li><a class="reference internal" href="#project-structure-guidelines">Project Structure Guidelines</a></li>
+<li><a class="reference internal" href="#variable-naming-conventions">Variable Naming Conventions</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../adrv9002/index.html">EVAL-ADRV9002</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9002/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9002/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="../adrv9002/quickstart/index.html">ADRV9001/2 Quick Start Guides</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../adrv9002/quickstart/zcu102.html">ZCU102 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../adrv9002/quickstart/zc706.html">ZC706 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../adrv9002/quickstart/zed.html">ZedBoard Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../adrv9002/quickstart/a10soc.html">A10SoC Quick start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9002/adrv9002_plugin.html">ADRV9002 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9002/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="reference-design-documentation-templates">
+<h1>Reference Design Documentation Templates<a class="headerlink" href="#reference-design-documentation-templates" title="Link to this heading"></a></h1>
+<p>This directory contains reusable reStructuredText (RST) templates for
+generating consistent documentation for Analog Devices reference designs.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The template system uses Jinja2-based RST templates to generate
+comprehensive documentation for ADI evaluation boards and reference
+designs. This ensures consistency across different projects while allowing
+customization through template variables.</p>
+</section>
+<section id="available-templates">
+<h2>Available Templates<a class="headerlink" href="#available-templates" title="Link to this heading"></a></h2>
+<section id="prerequisites-template-prerequisites-rst-jinja">
+<h3>1. Prerequisites Template (<code class="docutils literal notranslate"><span class="pre">prerequisites.rst.jinja</span></code>)<a class="headerlink" href="#prerequisites-template-prerequisites-rst-jinja" title="Link to this heading"></a></h3>
+<p>A reusable template for generating the prerequisites section of
+documentation. This template provides a standardized way to document the
+hardware and software requirements for any reference design.</p>
+<section id="prerequisites-template-variables">
+<h4>Prerequisites Template Variables<a class="headerlink" href="#prerequisites-template-variables" title="Link to this heading"></a></h4>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prerequisites_ref</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Reference ID for cross-linking (e.g., “adrv9002 prerequisites”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">chip_name</span></code></p></td>
+<td><p>string or list</p></td>
+<td><p>Name(s) of the chip(s) used in the evaluation board.
+Accepts a single string (e.g., <code class="docutils literal notranslate"><span class="pre">ADRV9002</span></code>) or a list
+for multiple chips (e.g., <code class="docutils literal notranslate"><span class="pre">[AD9162,</span> <span class="pre">AD9625]</span></code>). Each
+entry is rendered as an ADI product link, separated
+by “/”.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">eval_board</span></code></p></td>
+<td><p>string or list</p></td>
+<td><p>Name(s) of the ADI evaluation board(s). Accepts a single
+string (e.g., <code class="docutils literal notranslate"><span class="pre">EVAL-ADRV9002</span></code>) or a list for multiple
+boards (e.g., <code class="docutils literal notranslate"><span class="pre">[AD-FMCOMMS11-EBZ,</span> <span class="pre">AD-FMCOMMS12-EBZ]</span></code>).
+Each entry is rendered as an ADI product link, separated
+by “/”. The label automatically pluralizes to “boards”
+when multiple entries are provided.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">carriers_ref</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Reference to the carriers/supported platforms section (e.g.,
+“adrv9002 carriers”)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">has_linux</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Whether the project uses Linux. When true, an SD card
+requirement is included in the hardware prerequisites.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">has_rf_test_equipment</span></code></p></td>
+<td><p>boolean</p></td>
+<td><p>Whether RF test equipment is required</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">additional_hardware</span></code></p></td>
+<td><p>list</p></td>
+<td><p>Additional hardware items to list in the hardware prerequisites
+section</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">additional_software</span></code></p></td>
+<td><p>list</p></td>
+<td><p>Additional software items to list in the software prerequisites
+section</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="prerequisites-usage-example">
+<h4>Prerequisites Usage Example<a class="headerlink" href="#prerequisites-usage-example" title="Link to this heading"></a></h4>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">include-template</span><span class="p">::</span> ../template/prerequisites.rst.jinja
+
+   prerequisites_ref: adrv9002 prerequisites
+   chip_name: ADRV9002
+   eval_board: EVAL-ADRV9002
+   carriers_ref: adrv9002 carriers
+   has_linux: true
+   has_rf_test_equipment: true
+   additional_hardware:
+     <span class="m">-</span> USB-JTAG programmer for FPGA configuration
+     <span class="m">-</span> Coaxial cables for RF connections
+   additional_software:
+     <span class="m">-</span> MATLAB R2023a or later for data analysis
+     <span class="m">-</span> Vivado 2024.1 for HDL development
+</pre></div>
+</div>
+<p>The prerequisites template automatically generates sections for:</p>
+<ul class="simple">
+<li><p><strong>Hardware prerequisites</strong>: Including the evaluation board, FPGA carrier
+platform, connectivity options, and SD card requirements (if Linux is
+enabled)</p></li>
+<li><p><strong>Software prerequisites</strong>: Including required development tools</p></li>
+</ul>
+</section>
+</section>
+<section id="zedboard-quick-start-template-quickstart-zed-rst-jinja">
+<h3>2. ZedBoard Quick Start Template (<code class="docutils literal notranslate"><span class="pre">quickstart/zed.rst.jinja</span></code>)<a class="headerlink" href="#zedboard-quick-start-template-quickstart-zed-rst-jinja" title="Link to this heading"></a></h3>
+<p>A comprehensive template for generating ZedBoard quick start guides for
+ADI evaluation boards. It supports both Linux and no-OS software
+configurations.</p>
+<section id="quick-start-template-variables">
+<h4>Quick Start Template Variables<a class="headerlink" href="#quick-start-template-variables" title="Link to this heading"></a></h4>
+<section id="required-variables">
+<h5>Required Variables<a class="headerlink" href="#required-variables" title="Link to this heading"></a></h5>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 10.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Variable</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">quickstart_ref</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Reference ID for the quick start guide (e.g., “adrv9002-zed”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">eval_board</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Name of the ADI evaluation board (e.g., “EVAL-ADRV9002”)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hdl_project_doc</span></code></p></td>
+<td><p>string</p></td>
+<td><p>HDL project documentation path for Sphinx reference (e.g.,
+“adrv9001”)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">prerequisites_ref</span></code></p></td>
+<td><p>string</p></td>
+<td><p>Reference to prerequisites section</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="optional-variables">
+<h5>Optional Variables<a class="headerlink" href="#optional-variables" title="Link to this heading"></a></h5>
+<p><strong>General Configuration</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">has_linux</span></code> (boolean): Enable Linux software section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_no_os</span></code> (boolean): Enable no-OS software section</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_lvds_support</span></code> (boolean): Show LVDS support warning for ZedBoard</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_jesd</span></code> (boolean): Show JESD204 status utility section (only if
+design has JESD support)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quickstart_image</span></code> (path): Image showing the complete setup</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_vadj_warning</span></code> (boolean): Show VADJ voltage warning (applies to
+both Linux and no-OS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_vadj_led</span></code> (boolean): Show VADJ LED information (applies to both
+Linux and no-OS)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vadj_led_image</span></code> (path): Image of the VADJ LED indicator (applies to
+both Linux and no-OS)</p></li>
+</ul>
+<p><strong>Linux-Specific Variables</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linux_setup_steps_file</span></code> (path): File with Linux setup steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">boot_log_file</span></code> (path): File containing the boot log output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linux_additional_hardware</span></code> (list): Additional hardware items needed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linux_has_loopback</span></code> (boolean): Show loopback configuration note for
+Linux</p></li>
+</ul>
+<p><strong>No-OS Specific Variables</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_project_path</span></code> (path): Path to no-OS project in git repo (e.g.,
+“projects/adrv9001”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_project_specific_doc</span></code> (string): no-OS project-specific
+documentation path for Sphinx reference (e.g.,
+“projects/rf-transceiver/adrv9001”)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_setup_image</span></code> (path): Image showing no-OS setup</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_setup_steps_file</span></code> (path): File with no-OS setup steps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_console_output_file</span></code> (path): File with console output</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_additional_hardware</span></code> (list): Additional hardware for no-OS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_os_has_loopback</span></code> (boolean): Show loopback configuration note for
+no-OS</p></li>
+</ul>
+</section>
+</section>
+<section id="quick-start-usage-example">
+<h4>Quick Start Usage Example<a class="headerlink" href="#quick-start-usage-example" title="Link to this heading"></a></h4>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">include-template</span><span class="p">::</span> ../../template/quickstart/zed.rst.jinja
+
+   quickstart_ref: adrv9002-zed
+   eval_board: EVAL-ADRV9002
+   has_linux: true
+   has_no_os: true
+   has_lvds_support: true
+   hdl_project_doc: template_project
+   prerequisites_ref: adrv9002 prerequisites
+   quickstart_image: ../images/adrv9002_zed_quickstart.png
+   has_vadj_warning: true
+   has_vadj_led: true
+   vadj_led_image: ../images/adrv9002_vadj_led.png
+   has_jesd: true
+   linux_has_loopback: true
+   no_os_has_loopback: true
+</pre></div>
+</div>
+</section>
+<section id="quick-start-template-structure">
+<h4>Quick Start Template Structure<a class="headerlink" href="#quick-start-template-structure" title="Link to this heading"></a></h4>
+<p>The quickstart template generates the following sections:</p>
+<ol class="arabic simple">
+<li><p><strong>Introduction</strong> - Overview with ZedBoard image and ESD warning</p></li>
+<li><p><strong>LVDS Support</strong> (optional) - Warning about LVDS limitations on
+ZedBoard</p></li>
+<li><p><strong>Linux Section</strong> (if <code class="docutils literal notranslate"><span class="pre">has_linux:</span> <span class="pre">true</span></code>)</p>
+<ul class="simple">
+<li><p>Necessary files (BOOT.bin, uImage, devicetree.dtb)</p></li>
+<li><p>Required software and hardware</p></li>
+<li><p>Testing and setup instructions:</p>
+<ul>
+<li><p>Creating the setup with optional quickstart image</p></li>
+<li><p>Loopback configuration note (optional)</p></li>
+<li><p>ESD warning</p></li>
+<li><p>VADJ voltage warning and LED information (optional)</p></li>
+<li><p>Setup steps from included file</p></li>
+<li><p>USB-OTG and jumper settings notes</p></li>
+</ul>
+</li>
+<li><p>Boot messages (collapsible)</p></li>
+<li><p>Useful serial terminal commands (ifconfig, iio_info, poweroff,
+reboot, etc.)</p></li>
+<li><p>JESD204 status utility (optional, if <code class="docutils literal notranslate"><span class="pre">has_jesd:</span> <span class="pre">true</span></code>)</p></li>
+</ul>
+</li>
+<li><p><strong>No-OS Section</strong> (if <code class="docutils literal notranslate"><span class="pre">has_no_os:</span> <span class="pre">true</span></code>)</p>
+<ul class="simple">
+<li><p>Necessary files (system_top.xsa and no-OS project)</p></li>
+<li><p>Required software (Vivado/Vitis, UART terminal)</p></li>
+<li><p>Required hardware</p></li>
+<li><p>Testing and setup instructions:</p>
+<ul>
+<li><p>Creating the setup with optional setup image</p></li>
+<li><p>Loopback configuration note (optional)</p></li>
+<li><p>ESD warning</p></li>
+<li><p>VADJ voltage warning and LED information (optional)</p></li>
+<li><p>Setup steps from included file</p></li>
+<li><p>Jumper settings reference</p></li>
+</ul>
+</li>
+<li><p>Console output (collapsible)</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="example-implementations">
+<h2>Example Implementations<a class="headerlink" href="#example-implementations" title="Link to this heading"></a></h2>
+<p>See these example implementations in the repository:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">../adrv9002/quickstart/zed.rst</span></code> - ZedBoard quickstart with Linux
+and no-OS</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">../adrv9002/prerequisites.rst</span></code> - Prerequisites example</p></li>
+</ul>
+</section>
+<section id="path-conventions">
+<h2>Path Conventions<a class="headerlink" href="#path-conventions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Image paths should be relative to the file that includes the template</p></li>
+<li><p>Common files (like setup steps) can be included from the same directory</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">../images/</span></code> for images in the project’s images folder</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">../files/</span></code> for binary artifacts and downloadable files (e.g.,
+.zip, .pdf, .docx, .bin, .exe)</p></li>
+</ul>
+</section>
+<section id="project-structure-guidelines">
+<h2>Project Structure Guidelines<a class="headerlink" href="#project-structure-guidelines" title="Link to this heading"></a></h2>
+<p>Each reference design project should follow this directory structure:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project/
+├── index.rst                 # Main documentation files (RST only)
+├── prerequisites.rst
+├── user-guide.rst
+├── images/                   # Image files only (.png, .jpg, etc.)
+│   ├── project_setup.png
+│   └── ...
+├── files/                    # Binary artifacts and downloads
+│   ├── firmware.zip
+│   ├── datasheet.pdf
+│   ├── configuration.bin
+│   └── ...
+└── quickstart/
+    ├── zed.rst
+    └── ...
+</pre></div>
+</div>
+<p><strong>Do NOT place binary files directly in the project root:</strong></p>
+<p>❌ <strong>Bad:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project/
+├── index.rst
+├── My_beautiful.pptx        # Don&#39;t do this!
+├── someZipfile.zip          # Don&#39;t do this!
+├── finalVersion1234.exe     # Don&#39;t do this!
+</pre></div>
+</div>
+<p>✅ <strong>Good:</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>project/
+├── index.rst
+├── images/
+│   └── diagrams.png
+└── files/
+    ├── presentation.pptx
+    ├── archive.zip
+    └── installer.exe
+</pre></div>
+</div>
+<p>This keeps the project directory clean and organized, making it easier to
+navigate and maintain.</p>
+</section>
+<section id="variable-naming-conventions">
+<h2>Variable Naming Conventions<a class="headerlink" href="#variable-naming-conventions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>General variables</strong> shared by both Linux and no-OS: no prefix (e.g.,
+<code class="docutils literal notranslate"><span class="pre">has_vadj_warning</span></code>, <code class="docutils literal notranslate"><span class="pre">has_vadj_led</span></code>, <code class="docutils literal notranslate"><span class="pre">vadj_led_image</span></code>)</p></li>
+<li><p><strong>Linux-specific variables</strong>: prefix with <code class="docutils literal notranslate"><span class="pre">linux_</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">linux_setup_steps_file</span></code>, <code class="docutils literal notranslate"><span class="pre">linux_additional_hardware</span></code>,
+<code class="docutils literal notranslate"><span class="pre">linux_has_loopback</span></code>)</p></li>
+<li><p><strong>No-OS-specific variables</strong>: prefix with <code class="docutils literal notranslate"><span class="pre">no_os_</span></code> (e.g.,
+<code class="docutils literal notranslate"><span class="pre">no_os_project_path</span></code>, <code class="docutils literal notranslate"><span class="pre">no_os_setup_image</span></code>, <code class="docutils literal notranslate"><span class="pre">no_os_has_loopback</span></code>)</p></li>
+</ul>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>All boolean variables default to <code class="docutils literal notranslate"><span class="pre">false</span></code> if not specified</p></li>
+<li><p>Image sections are only rendered if both the flag is <code class="docutils literal notranslate"><span class="pre">true</span></code> AND the
+image path is provided</p></li>
+<li><p>Both Linux and no-OS sections share VADJ warnings and VADJ LED
+information using the same general variables</p></li>
+<li><p>Loopback configuration notes are separate for Linux
+(<code class="docutils literal notranslate"><span class="pre">linux_has_loopback</span></code>) and no-OS (<code class="docutils literal notranslate"><span class="pre">no_os_has_loopback</span></code>)</p></li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <div></div>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

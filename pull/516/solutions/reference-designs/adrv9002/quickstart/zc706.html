@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This guide provides quick instructions on how to setup the EVAL-ADRV9002 on:" name="description" />
+
+    <title>ZC706 Quick start &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ZedBoard Quick Start Guide" href="zed.html" />
+    <link rel="prev" title="ZCU102 Quick start" href="zcu102.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ZC706 Quick start</a><ul>
+<li><a class="reference internal" href="#lvds-support">LVDS Support</a></li>
+<li><a class="reference internal" href="#using-linux-as-software">Using Linux as software</a><ul>
+<li><a class="reference internal" href="#necessary-files">Necessary files</a></li>
+<li><a class="reference internal" href="#required-software">Required software</a></li>
+<li><a class="reference internal" href="#required-hardware">Required hardware</a></li>
+<li><a class="reference internal" href="#testing">Testing</a><ul>
+<li><a class="reference internal" href="#creating-the-setup">Creating the setup</a></li>
+<li><a class="reference internal" href="#boot-messages">Boot messages</a></li>
+<li><a class="reference internal" href="#useful-commands-for-the-serial-terminal">Useful commands for the serial terminal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-no-os-as-software">Using no-OS as software</a><ul>
+<li><a class="reference internal" href="#id1">Necessary files</a></li>
+<li><a class="reference internal" href="#id2">Required software</a></li>
+<li><a class="reference internal" href="#id3">Required hardware</a></li>
+<li><a class="reference internal" href="#id4">Testing</a><ul>
+<li><a class="reference internal" href="#id5">Creating the setup</a></li>
+<li><a class="reference internal" href="#console-output">Console output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">EVAL-ADRV9002</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">ADRV9001/2 Quick Start Guides</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="zcu102.html">ZCU102 Quick start</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ZC706 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="zed.html">ZedBoard Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="a10soc.html">A10SoC Quick start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../adrv9002_plugin.html">ADRV9002 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">EVAL-ADRV9002</a></li><li><a href="index.html">ADRV9001/2 Quick Start Guides</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="zc706-quick-start">
+<span id="adrv9002-zc706"></span><h1>ZC706 Quick start<a class="headerlink" href="#zc706-quick-start" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/zc706.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/zc706.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/zc706.png" width="800" />
+</a>
+<p>This guide provides quick instructions on how to setup the
+<a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> on:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a> The revision that is supported is 1.2 or higher.</p></li>
+</ul>
+<section id="lvds-support">
+<h2>LVDS Support<a class="headerlink" href="#lvds-support" title="Link to this heading"></a></h2>
+<p>According to the
+<a class="icon link reference external" href="https://docs.amd.com/v/u/en-US/ug471_7Series_SelectIO" target="_blank">7 Series SelectIO guide</a>
+section ‘LVDS and LVDS_25’ and Table 1-43, the LVDS I/O standard (VADJ 1.8V) is
+not supported on High Range banks.</p>
+<p>Since the evaluation board can only operate with <strong>VADJ set to 1.8V</strong> and the
+FMC connector on the ZC706 is mapped to HR banks, the <strong>LVDS interface is not
+supported</strong>. Only CMOS operation is possible.</p>
+</section>
+<section id="using-linux-as-software">
+<h2>Using Linux as software<a class="headerlink" href="#using-linux-as-software" title="Link to this heading"></a></h2>
+<section id="necessary-files">
+<h3>Necessary files<a class="headerlink" href="#necessary-files" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SD card includes several folders in the root directory of the BOOT
+partition. In order to configure the SD card to work with a specific FPGA
+board and ADI hardware, several files must be copied onto the root directory.
+Using the host PC, drag and drop the required files onto the BOOT partition,
+and use the EJECT function when removing the SD card from the reader.</p>
+</div>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot image:  <code class="docutils literal notranslate"><span class="pre">BOOT.bin</span></code></p></li>
+<li><p>Linux Kernel image: <code class="docutils literal notranslate"><span class="pre">uImage</span></code></p></li>
+<li><p>Linux device tree: <code class="docutils literal notranslate"><span class="pre">devicetree.dtb</span></code></p></li>
+</ul>
+<p>They can either be taken from the SD card – already generated by us, or you
+can build them manually:</p>
+<ul>
+<li><p>Instructions on how to choose the boot files from the SD card can be found
+in the <strong>Platform-Specific Manual Steps</strong> section from here <a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/hardware-configuration.html#hardware-configuration" target="_blank" title="(in Kuiper latest)"><span>Hardware Configuration</span></a>.</p></li>
+<li><p>Instructions on how to manually build the boot files from source can be
+found here:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kernel/zynq.html#linux-kernel-zynq" target="_blank" title="(in System Level Documentation)"><span>Build Zynq Linux kernel and devicetree</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9001/index.html#adrv9001" target="_blank" title="(in HDL)"><span>ADRV9001 HDL Project</span></a> build documentation. More HDL build
+details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some projects provide multiple devicetree files in the SD card’s boot
+folders. Make sure you select the devicetree that matches your specific use
+case.</p>
+</div>
+</section>
+<section id="required-software">
+<h3>Required software<a class="headerlink" href="#required-software" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>SD Card 16GB imaged with <a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper</span></a></p></li>
+<li><p>A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="required-hardware">
+<h3>Required hardware<a class="headerlink" href="#required-hardware" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/products/boards-and-kits/ek-z7-zc706-g.html" target="_blank">ZC706</a> Rev 1.2 or later
+board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> FMC board</p></li>
+<li><p>SD card with at least 16GB of memory</p></li>
+<li><p>Mini-USB cable</p></li>
+<li><p>Ethernet cable</p></li>
+<li><p>Hardware for setting VADJ to 1.8V</p></li>
+<li><p>Signal generator</p></li>
+<li><p>Signal analyzer</p></li>
+<li><p>Signal synthesizer (required only if using external clock source)</p></li>
+<li><p>1x SMA cable for signal generator</p></li>
+<li><p>1x SMA cable for signal analyzer</p></li>
+<li><p>1x SMA cable for signal synthesizer (if using external clock)</p></li>
+<li><p>(Optional) USB keyboard &amp; mouse and a HDMI compatible monitor</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#adrv9002-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<section id="creating-the-setup">
+<h4>Creating the setup<a class="headerlink" href="#creating-the-setup" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_quickstart.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_quickstart.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_quickstart.png" style="width: 600px;" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before executing below steps, <strong>VADJ must be set to 1.8V</strong>. Instructions
+for reprogramming the VADJ on the ZC706 can be found in the
+<a class="icon link reference external" href="https://support.xilinx.com/s/article/56811?language=en_US" target="_blank">Xilinx support article</a>.</p>
+</div>
+<p>On the ADRV9002 card, there is a red LED close to the FMC connector. This LED
+indicates if VADJ voltage exceeded 2.0V. If the LED does not turn off after a
+few seconds after boot, VADJ is exceeding the recommended level, decreasing
+board lifetime and potentially causing permanent damage to the IC.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_vadj_led.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_vadj_led.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_vadj_led.png" width="200" />
+</a>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> FMC board to the FPGA carrier <strong>LPC FMC</strong>
+socket (J5).</p></li>
+<li><p>On the FMC card, set the switch to select clock source between:</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>an on-board 38.4 MHz VCTCXO (default)</p></li>
+<li><p>external (via J501) 10 MHz to 1000 MHz / +13 dBm</p></li>
+</ol>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>Connect USB UART (Mini-USB) to your host PC (J21).</p></li>
+<li><p>Insert SD card into socket (J30).</p></li>
+<li><p>Configure ZC706 for SD BOOT (SW11: <strong>1-Down, 2-Down, 3-Up, 4-Up, 5-Down</strong>).</p></li>
+<li><p>Plug the Power Supply into 12V Power input connector (J22)</p></li>
+<li><p>Turn on the power switch on the FPGA board.</p></li>
+<li><p>Observe kernel and serial console messages on your terminal.</p></li>
+</ol>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="3bdb18c50da12524cba58293c3dc0717faab3b32" name="3bdb18c50da12524cba58293c3dc0717faab3b32" type="checkbox"></input><label for="3bdb18c50da12524cba58293c3dc0717faab3b32"><p>Optional: Local display connection (keyboard, mouse, monitor)</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<p>You can also connect a monitor, keyboard and mouse directly to the board
+for a local connection. The UART connection is still recommended for
+debugging purposes. For the local connection, follow these additional
+steps:</p>
+<ul class="simple">
+<li><p>Plug your HDMI display device into the HDMI Video Connector (P1).</p></li>
+<li><p>Plug your USB mouse/keyboard into the USB 2.0 ULPI Controller, w/ Micro-B
+Connector (J49). You will have to use a USB hub to connect both mouse and
+keyboard. Some keyboards have a mouse or touch pad sharing the same USB
+connection or wireless dongle. This can be used to eliminate the use of a
+USB hub.</p></li>
+<li><p>Wait another ~30 seconds for the HDMI display device to start showing
+signs of life.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The USB 2.0 circuit requires specific jumper settings for OTG mode.
+Ensure the following jumper settings on the ZC706 board
+(these are the defaults; verify them if USB is not working):</p>
+<ul class="simple">
+<li><p>Shunt J10</p></li>
+<li><p>J11 → open (no shunt)</p></li>
+<li><p>J48 → Shunt pins 2–3</p></li>
+<li><p>J49 → Shunt pins 1–2</p></li>
+<li><p>J50 → Shunt pins 1–2</p></li>
+<li><p>J51 → Shunt pins 1–2</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more detailed information on ZC706 switch configuration, check the
+<em>ZC706 Hardware User Guide</em> (chapter “Device Configuration”)
+<a class="icon link reference external" href="https://docs.amd.com/v/u/en-US/ug954-zc706-eval-board-xc7z045-ap-soc" target="_blank">here</a>.</p>
+</div>
+</section>
+<section id="boot-messages">
+<h4>Boot messages<a class="headerlink" href="#boot-messages" title="Link to this heading"></a></h4>
+<p>The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are using a local connection (keyboard, mouse, monitor), you can
+view the boot log by opening a terminal and running the <code class="docutils literal notranslate"><span class="pre">dmesg</span></code> command.</p>
+</div>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="59bfa72ddf7215b774e56d4086d8a28191311b20" name="59bfa72ddf7215b774e56d4086d8a28191311b20" type="checkbox"></input><label for="59bfa72ddf7215b774e56d4086d8a28191311b20"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>U-Boot 2018.01-21442-gf06dec3cab (Oct 17 2024 - 08:58:28 +0300) Xilinx Zynq ZC706, Build: jenkins-development-build_uboot-35
+
+Model: Zynq ZC706 Development Board
+Board: Xilinx Zynq
+Silicon: v3.1
+I2C:   ready
+DRAM:  ECC disabled 1 GiB
+MMC:   sdhci@e0100000: 0 (SD)
+SF: Detected s25fl128s_64k with page size 512 Bytes, erase size 128 KiB, total 32 MiB
+In:    serial@e0001000
+Out:   serial@e0001000
+Err:   serial@e0001000
+Net:   ZYNQ GEM: e000b000, phyaddr 7, interface rgmii-id
+eth0: ethernet@e000b000
+reading uEnv.txt
+407 bytes read in 24 ms (15.6 KiB/s)
+Importing environment from SD ...
+Hit any key to stop autoboot:  0
+Device: sdhci@e0100000
+Manufacturer ID: 3
+OEM: 5344
+Name: SS16G
+Tran Speed: 50000000
+Rd Block Len: 512
+SD version 3.0
+High Capacity: Yes
+Capacity: 14.8 GiB
+Bus Width: 4-bit
+Erase Group Size: 512 Bytes
+reading uEnv.txt
+407 bytes read in 25 ms (15.6 KiB/s)
+Loaded environment from uEnv.txt
+Importing environment from SD ...
+Running uenvcmd ...
+Copying Linux from SD to RAM...
+reading uImage
+8412448 bytes read in 487 ms (16.5 MiB/s)
+reading devicetree.dtb
+24314 bytes read in 34 ms (698.2 KiB/s)
+** Unable to read file uramdisk.image.gz **
+## Booting kernel from Legacy Image at 03000000 ...
+   Image Name:   Linux-6.1.70-284114-g2e8908932df
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    8412384 Bytes = 8 MiB
+   Load Address: 00008000
+   Entry Point:  00008000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 02a00000
+   Booting using the fdt blob at 0x2a00000
+   Loading Kernel Image ... OK
+   Loading Device Tree to 1fff7000, end 1ffffef9 ... OK
+
+Starting kernel ...
+
+Booting Linux on physical CPU 0x0
+Linux version 6.1.70-284114-g2e8908932dfd (jenkins@romlxbuild1) (arm-xilinx-linux-gnueabi-gcc.real (GCC) 12.2.0, GNU ld (GNU Binutils) 2.39.0.20220819) #1060 SMP PREEMPT Tue Mar 18 16:11:24 EET 2025
+CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=18c5387d
+CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+OF: fdt: Machine model: Xilinx Zynq ZC706
+OF: fdt: earlycon: stdout-path /amba@0/uart@E0001000 not found
+Memory policy: Data cache writealloc
+cma: Reserved 128 MiB at 0x38000000
+Zone ranges:
+Normal   [mem 0x0000000000000000-0x000000002fffffff]
+HighMem  [mem 0x0000000030000000-0x000000003fffffff]
+Movable zone start for each node
+Early memory node ranges
+node   0: [mem 0x0000000000000000-0x000000003fffffff]
+Initmem setup node 0 [mem 0x0000000000000000-0x000000003fffffff]
+percpu: Embedded 11 pages/cpu s14420 r8192 d22444 u45056
+Built 1 zonelists, mobility grouping on.  Total pages: 260608
+Kernel command line: console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlycon rootfstype=ext4 rootwait clk_ignore_unused cpuidle.off=1
+Dentry cache hash table entries: 131072 (order: 7, 524288 bytes, linear)
+Inode-cache hash table entries: 65536 (order: 6, 262144 bytes, linear)
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+Memory: 881944K/1048576K available (12288K kernel code, 818K rwdata, 10376K rodata, 1024K init, 470K bss, 35560K reserved, 131072K cma-reserved, 131072K highmem)
+rcu: Preemptible hierarchical RCU implementation.
+rcu:    RCU event tracing is enabled.
+rcu:    RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=2.
+rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+efuse mapped to (ptrval)
+slcr mapped to (ptrval)
+L2C: platform modifies aux control register: 0x72360000 -&gt; 0x72760000
+L2C: DT/platform modifies aux control register: 0x72360000 -&gt; 0x72760000
+L2C-310 erratum 769419 enabled
+L2C-310 enabling early BRESP for Cortex-A9
+L2C-310 full line of zeros enabled for Cortex-A9
+L2C-310 ID prefetch enabled, offset 1 lines
+L2C-310 dynamic clock gating enabled, standby mode enabled
+L2C-310 cache controller enabled, 8 ways, 512 kB
+L2C-310: CACHE_ID 0x410000c8, AUX_CTRL 0x76760001
+rcu: srcu_init: Setting srcu_struct sizes based on contention.
+zynq_clock_init: clkc starts at (ptrval)
+Zynq clock init
+sched_clock: 64 bits at 167MHz, resolution 6ns, wraps every 4398046511103ns
+clocksource: arm_global_timer: mask: 0xffffffffffffffff max_cycles: 0x26703d7dd8, max_idle_ns: 440795208065 ns
+Switching to timer-based delay loop, resolution 6ns
+clocksource: ttc_clocksource: mask: 0xffff max_cycles: 0xffff, max_idle_ns: 537538477 ns
+timer #0 at (ptrval), irq=25
+Console: colour dummy device 80x30
+Calibrating delay loop (skipped), value calculated using timer frequency.. 333.33 BogoMIPS (lpj=1666666)
+CPU: Testing write buffer coherency: ok
+CPU0: Spectre v2: using BPIALL workaround
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes, linear)
+CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+Setting up static identity map for 0x100000 - 0x100060
+rcu: Hierarchical SRCU implementation.
+rcu:    Max phase no-delay instances is 1000.
+smp: Bringing up secondary CPUs ...
+CPU1: thread -1, cpu 1, socket 0, mpidr 80000001
+CPU1: Spectre v2: using BPIALL workaround
+smp: Brought up 1 node, 2 CPUs
+SMP: Total of 2 processors activated (666.66 BogoMIPS).
+CPU: All CPU(s) started in SVC mode.
+devtmpfs: initialized
+VFP support v0.3: implementor 41 architecture 3 part 30 variant 9 rev 4
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+pinctrl core: initialized pinctrl subsystem
+NET: Registered PF_NETLINK/PF_ROUTE protocol family
+DMA: preallocated 256 KiB pool for atomic coherent allocations
+thermal_sys: Registered thermal governor &#39;step_wise&#39;
+platform axi: Fixed dependency cycle(s) with /axi/interrupt-controller@f8f01000
+amba f8801000.etb: Fixed dependency cycle(s) with /replicator/out-ports/port@1/endpoint
+amba f8803000.tpiu: Fixed dependency cycle(s) with /replicator/out-ports/port@0/endpoint
+amba f8804000.funnel: Fixed dependency cycle(s) with /replicator/in-ports/port/endpoint
+amba f889c000.ptm: Fixed dependency cycle(s) with /axi/funnel@f8804000/in-ports/port@0/endpoint
+amba f889d000.ptm: Fixed dependency cycle(s) with /axi/funnel@f8804000/in-ports/port@1/endpoint
+hw-breakpoint: found 5 (+1 reserved) breakpoint and 1 watchpoint registers.
+hw-breakpoint: maximum watchpoint size is 4 bytes.
+e0001000.serial: ttyPS0 at MMIO 0xe0001000 (irq = 27, base_baud = 3125000) is a xuartps
+printk: console [ttyPS0] enabled
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+mc: Linux media interface: v0.10
+videodev: Linux video capture interface: v2.00
+pps_core: LinuxPPS API ver. 1 registered
+pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;
+PTP clock support registered
+jesd204: found 0 devices and 0 topologies
+FPGA manager framework
+Advanced Linux Sound Architecture Driver Initialized.
+clocksource: Switched to clocksource arm_global_timer
+NET: Registered PF_INET protocol family
+IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+tcp_listen_portaddr_hash hash table entries: 512 (order: 0, 4096 bytes, linear)
+Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+TCP established hash table entries: 8192 (order: 3, 32768 bytes, linear)
+TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+TCP: Hash tables configured (established 8192 bind 8192)
+UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+NET: Registered PF_UNIX/PF_LOCAL protocol family
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+armv7-pmu f8891000.pmu: hw perfevents: no interrupt-affinity property, guessing.
+hw perfevents: enabled with armv7_cortex_a9 PMU driver, 7 counters available
+workingset: timestamp_bits=30 max_order=18 bucket_order=0
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+fuse: init (API version 7.37)
+bounce: pool size: 64 pages
+io scheduler mq-deadline registered
+io scheduler kyber registered
+zynq-pinctrl 700.pinctrl: zynq pinctrl initialized
+dma-pl330 f8003000.dma-controller: Loaded driver for PL330 DMAC-241330
+dma-pl330 f8003000.dma-controller:      DBUFF-128x8bytes Num_Chans-8 Num_Peri-4 Num_Events-16
+brd: module loaded
+loop: module loaded
+Registered mathworks_ip class
+SPI driver spidev has no spi_device_id for adi,swspi
+spi-nor spi1.0: found s25fl128s1, expected n25q128a11
+spi-nor spi1.0: s25fl128s1 (16384 Kbytes)
+5 fixed-partitions partitions found on MTD device spi1.0
+Creating 5 MTD partitions on &quot;spi1.0&quot;:
+0x000000000000-0x000000500000 : &quot;boot&quot;
+0x000000500000-0x000000520000 : &quot;bootenv&quot;
+0x000000520000-0x000000540000 : &quot;config&quot;
+0x000000540000-0x000000fc0000 : &quot;image&quot;
+0x000000fc0000-0x000001000000 : &quot;spare&quot;
+MACsec IEEE 802.1AE
+tun: Universal TUN/TAP device driver, 1.6
+macb e000b000.ethernet eth0: Cadence GEM rev 0x00020118 at 0xe000b000 irq 47 (00:0a:35:ab:01:22)
+usbcore: registered new interface driver asix
+usbcore: registered new interface driver ax88179_178a
+usbcore: registered new interface driver cdc_ether
+usbcore: registered new interface driver net1080
+usbcore: registered new interface driver cdc_subset
+usbcore: registered new interface driver zaurus
+usbcore: registered new interface driver cdc_ncm
+usbcore: registered new interface driver r8153_ecm
+usbcore: registered new interface driver uas
+usbcore: registered new interface driver usb-storage
+usbcore: registered new interface driver usbserial_generic
+usbserial: USB Serial support registered for generic
+usbcore: registered new interface driver ftdi_sio
+usbserial: USB Serial support registered for FTDI USB Serial Device
+usbcore: registered new interface driver upd78f0730
+usbserial: USB Serial support registered for upd78f0730
+ULPI transceiver vendor/product ID 0x0424/0x0007
+Found SMSC USB3320 ULPI transceiver.
+ULPI integrity check: passed.
+ci_hdrc ci_hdrc.0: EHCI Host Controller
+ci_hdrc ci_hdrc.0: new USB bus registered, assigned bus number 1
+ci_hdrc ci_hdrc.0: USB 2.0 started, EHCI 1.00
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.01
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: EHCI Host Controller
+usb usb1: Manufacturer: Linux 6.1.70-284114-g2e8908932dfd ehci_hcd
+usb usb1: SerialNumber: ci_hdrc.0
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+SPI driver ads7846 has no spi_device_id for ti,tsc2046
+SPI driver ads7846 has no spi_device_id for ti,ads7843
+SPI driver ads7846 has no spi_device_id for ti,ads7845
+SPI driver ads7846 has no spi_device_id for ti,ads7873
+i2c_dev: i2c /dev entries driver
+si570: probe of 1-005d failed with error -5
+i2c i2c-0: Added multiplexed i2c bus 1
+i2c 2-0039: Fixed dependency cycle(s) with /fpga-axi@0/axi_hdmi@70e00000/port/endpoint
+adv7511 2-0039: supply avdd not found, using dummy regulator
+adv7511 2-0039: supply dvdd not found, using dummy regulator
+adv7511 2-0039: supply pvdd not found, using dummy regulator
+adv7511 2-0039: supply bgvdd not found, using dummy regulator
+adv7511 2-0039: supply dvdd-3v not found, using dummy regulator
+i2c i2c-0: Added multiplexed i2c bus 2
+at24 3-0054: supply vcc not found, using dummy regulator
+at24 3-0054: 1024 byte 24c08 EEPROM, writable, 1 bytes/write
+i2c i2c-0: Added multiplexed i2c bus 3
+pca953x 4-0021: supply vcc not found, using dummy regulator
+pca953x 4-0021: using no AI
+i2c i2c-0: Added multiplexed i2c bus 4
+rtc-pcf8563 5-0051: registered as rtc0
+rtc-pcf8563 5-0051: setting system clock to 2026-03-16T15:16:20 UTC (1773674180)
+i2c i2c-0: Added multiplexed i2c bus 5
+i2c i2c-0: Added multiplexed i2c bus 6
+i2c i2c-0: Added multiplexed i2c bus 7
+i2c i2c-0: Added multiplexed i2c bus 8
+pca954x 0-0074: registered 8 multiplexed busses for I2C switch pca9548
+gspca_main: v2.14.0 registered
+usbcore: registered new interface driver uvcvideo
+cdns-wdt f8005000.watchdog: Xilinx Watchdog Timer with timeout 10s
+Xilinx Zynq CpuIdle Driver started
+failed to register cpuidle driver
+sdhci: Secure Digital Host Controller Interface driver
+sdhci: Copyright(c) Pierre Ossman
+sdhci-pltfm: SDHCI platform and OF driver helper
+ledtrig-cpu: registered to indicate activity on CPUs
+hid: raw HID events driver (C) Jiri Kosina
+usbcore: registered new interface driver usbhid
+usbhid: USB HID core driver
+SPI driver fb_seps525 has no spi_device_id for syncoam,seps525
+mmc0: SDHCI controller on e0100000.mmc [e0100000.mmc] using ADMA
+SPI driver adis16475 has no spi_device_id for adi,adis16470
+SPI driver adis16475 has no spi_device_id for adi,adis16475-1
+SPI driver adis16475 has no spi_device_id for adi,adis16475-2
+SPI driver adis16475 has no spi_device_id for adi,adis16475-3
+SPI driver adis16475 has no spi_device_id for adi,adis16477-1
+SPI driver adis16475 has no spi_device_id for adi,adis16477-2
+SPI driver adis16475 has no spi_device_id for adi,adis16477-3
+SPI driver adis16475 has no spi_device_id for adi,adis16465-1
+SPI driver adis16475 has no spi_device_id for adi,adis16465-2
+SPI driver adis16475 has no spi_device_id for adi,adis16465-3
+SPI driver adis16475 has no spi_device_id for adi,adis16467-1
+SPI driver adis16475 has no spi_device_id for adi,adis16467-2
+SPI driver adis16475 has no spi_device_id for adi,adis16467-3
+SPI driver adis16475 has no spi_device_id for adi,adis16500
+SPI driver adis16475 has no spi_device_id for adi,adis16501
+SPI driver adis16475 has no spi_device_id for adi,adis16505-1
+SPI driver adis16475 has no spi_device_id for adi,adis16505-2
+SPI driver adis16475 has no spi_device_id for adi,adis16505-3
+SPI driver adis16475 has no spi_device_id for adi,adis16507-1
+SPI driver adis16475 has no spi_device_id for adi,adis16507-2
+SPI driver adis16475 has no spi_device_id for adi,adis16507-3
+SPI driver adis16475 has no spi_device_id for adi,adis16575-2
+SPI driver adis16475 has no spi_device_id for adi,adis16575-3
+SPI driver adis16475 has no spi_device_id for adi,adis16576-2
+SPI driver adis16475 has no spi_device_id for adi,adis16576-3
+SPI driver adis16475 has no spi_device_id for adi,adis16577-2
+SPI driver adis16475 has no spi_device_id for adi,adis16577-3
+mmc0: new high speed SDHC card at address e624
+axi_sysid 45000000.axi-sysid-0: AXI System ID core version (1.01.a) found
+mmcblk0: mmc0:e624 SS16G 14.8 GiB
+axi_sysid 45000000.axi-sysid-0: [adrv9001] [CMOS] on [zc706] git branch &lt;hdl_2023_r2&gt; git &lt;2156ac7e874a1dc321d9f64a325009fafe563419&gt; clean [2024-11-01 13:51:24] UTC
+fpga_manager fpga0: Xilinx Zynq FPGA Manager registered
+mmcblk0: p1 p2 p3
+usbcore: registered new interface driver snd-usb-audio
+NET: Registered PF_INET6 protocol family
+Segment Routing with IPv6
+In-situ OAM (IOAM) with IPv6
+sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+NET: Registered PF_PACKET protocol family
+NET: Registered PF_IEEE802154 protocol family
+Key type dns_resolver registered
+zynq_pm_remap_ocm: OCM pool is not available
+zynq_pm_suspend_init: Unable to map OCM.
+Registering SWP/SWPB emulation handler
+of-fpga-region fpga-full: FPGA Region probed
+[drm] Initialized axi_hdmi_drm 1.0.0 20120930 for 70e00000.axi_hdmi on minor 0
+axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+axi-hdmi 70e00000.axi_hdmi: [drm] Cannot find any crtc or sizes
+random: crng init done
+adrv9002 spi0.0: adrv9002-phy Rev 12.0, Firmware 0.22.39,  Stream 0.7.15.0,  API version: 68.14.10 successfully initialized
+cf_axi_adc 44a00000.axi-adrv9002-rx-lpc: ADI AIM (10.03.) at 0x44A00000 mapped to 0xbfa4842d probed ADC ADRV9002 as MASTER
+cf_axi_tdd 44a0c800.axi-adrv9002-core-tdd1-lpc: Analog Devices CF_AXI_TDD MASTER (1.00.a)
+cf_axi_tdd 44a0cc00.axi-adrv9002-core-tdd2-lpc: Analog Devices CF_AXI_TDD MASTER (1.00.a)
+cf_axi_dds 44a0a000.axi-adrv9002-tx-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.02.b) at 0x44A0A000 mapped to 0x198228e7, probed DDS ADRV9002
+cf_axi_dds 44a0c000.axi-adrv9002-tx2-lpc: Analog Devices CF_AXI_DDS_DDS MASTER (9.02.b) at 0x44A0C000 mapped to 0x36d7443b, probed DDS ADRV9002
+debugfs: File &#39;Capture&#39; in directory &#39;dapm&#39; already present!
+input: gpio_keys as /devices/soc0/gpio_keys/input/input0
+of_cfs_init
+of_cfs_init: OK
+clk: Not disabling unused clocks
+ALSA device list:
+#0: HDMI monitor
+EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Quota mode: disabled.
+VFS: Mounted root (ext4 filesystem) on device 179:2.
+devtmpfs: mounted
+Freeing unused kernel image (initmem) memory: 1024K
+Run /sbin/init as init process
+systemd[1]: systemd 247.3-7+rpi1+deb11u6 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +ZSTD +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=unified)
+systemd[1]: Detected architecture arm.
+
+Welcome to Kuiper GNU/Linux 11.2 (bullseye)!
+
+systemd[1]: Set hostname to &lt;analog&gt;.
+systemd[1]: /lib/systemd/system/plymouth-start.service:16: Unit configured to use KillMode=none. This is unsafe, as it disables systemd&#39;s process lifecycle management for the service. Please update your service to use a safer KillMode=, such as &#39;mixed&#39; or &#39;control-group&#39;. Support for KillMode=none is deprecated and will eventually be removed.
+systemd[1]: Queued start job for default target Graphical Interface.
+systemd[1]: system-getty.slice: unit configures an IP firewall, but the local system does not support BPF/cgroup firewalling.
+systemd[1]: (This warning is only shown for the first unit using IP firewalling.)
+systemd[1]: Created slice system-getty.slice.
+[  OK  ] Created slice system-getty.slice.
+systemd[1]: Created slice system-modprobe.slice.
+[  OK  ] Created slice system-modprobe.slice.
+systemd[1]: Created slice system-serial\x2dgetty.slice.
+[  OK  ] Created slice system-serial\x2dgetty.slice.
+systemd[1]: Created slice system-systemd\x2dfsck.slice.
+[  OK  ] Created slice system-systemd\x2dfsck.slice.
+systemd[1]: Created slice User and Session Slice.
+[  OK  ] Created slice User and Session Slice.
+systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[  OK  ] Started Forward Password R…uests to Wall Directory Watch.
+systemd[1]: Condition check resulted in Arbitrary Executable File Formats File System Automount Point being skipped.
+systemd[1]: Reached target Slices.
+[  OK  ] Reached target Slices.
+systemd[1]: Reached target Swap.
+[  OK  ] Reached target Swap.
+systemd[1]: Listening on Syslog Socket.
+[  OK  ] Listening on Syslog Socket.
+systemd[1]: Listening on fsck to fsckd communication Socket.
+[  OK  ] Listening on fsck to fsckd communication Socket.
+systemd[1]: Listening on initctl Compatibility Named Pipe.
+[  OK  ] Listening on initctl Compatibility Named Pipe.
+systemd[1]: Condition check resulted in Journal Audit Socket being skipped.
+systemd[1]: Listening on Journal Socket (/dev/log).
+[  OK  ] Listening on Journal Socket (/dev/log).
+systemd[1]: Listening on Journal Socket.
+[  OK  ] Listening on Journal Socket.
+systemd[1]: Listening on udev Control Socket.
+[  OK  ] Listening on udev Control Socket.
+systemd[1]: Listening on udev Kernel Socket.
+[  OK  ] Listening on udev Kernel Socket.
+systemd[1]: Condition check resulted in Huge Pages File System being skipped.
+systemd[1]: Condition check resulted in POSIX Message Queue File System being skipped.
+systemd[1]: Mounting RPC Pipe File System...
+         Mounting RPC Pipe File System...
+systemd[1]: Mounting Kernel Debug File System...
+         Mounting Kernel Debug File System...
+systemd[1]: Condition check resulted in Kernel Trace File System being skipped.
+systemd[1]: Condition check resulted in Kernel Module supporting RPCSEC_GSS being skipped.
+systemd[1]: Starting Restore / save the current clock...
+         Starting Restore / save the current clock...
+systemd[1]: Starting Set the console keyboard layout...
+         Starting Set the console keyboard layout...
+systemd[1]: Condition check resulted in Create list of static device nodes for the current kernel being skipped.
+systemd[1]: Starting Load Kernel Module configfs...
+         Starting Load Kernel Module configfs...
+systemd[1]: Starting Load Kernel Module drm...
+         Starting Load Kernel Module drm...
+systemd[1]: Starting Load Kernel Module fuse...
+         Starting Load Kernel Module fuse...
+systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+systemd[1]: Starting Journal Service...
+         Starting Journal Service...
+systemd[1]: Starting Load Kernel Modules...
+         Starting Load Kernel Modules...
+systemd[1]: Starting Remount Root and Kernel File Systems...
+         Starting Remount Root and Kernel File Systems...
+systemd[1]: Starting Coldplug All udev Devices...
+         Starting Coldplug All udev Devices...
+systemd[1]: Mounted RPC Pipe File System.
+[  OK  ] Mounted RPC Pipe File System.
+systemd[1]: Mounted Kernel Debug File System.
+[  OK  ] Mounted Kernel Debug File System.
+systemd[1]: Finished Restore / save the current clock.
+[  OK  ] Finished Restore / save the current clock.
+systemd[1]: modprobe@configfs.service: Succeeded.
+systemd[1]: Finished Load Kernel Module configfs.
+[  OK  ] Finished Load Kernel Module configfs.
+systemd[1]: modprobe@drm.service: Succeeded.
+systemd[1]: Finished Load Kernel Module drm.
+[  OK  ] Finished Load Kernel Module drm.
+systemd[1]: modprobe@fuse.service: Succeeded.
+systemd[1]: Finished Load Kernel Module fuse.
+[  OK  ] Finished Load Kernel Module fuse.
+systemd[1]: systemd-modules-load.service: Main process exited, code=exited, status=1/FAILURE
+systemd[1]: systemd-modules-load.service: Failed with result &#39;exit-code&#39;.
+systemd[1]: Failed to start Load Kernel Modules.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+systemd[1]: Started Journal Service.
+[  OK  ] Started Journal Service.
+         Mounting FUSE Control File System...
+EXT4-fs (mmcblk0p2): re-mounted. Quota mode: disabled.
+         Mounting Kernel Configuration File System...
+         Starting Apply Kernel Variables...
+[  OK  ] Finished Set the console keyboard layout.
+[  OK  ] Finished Remount Root and Kernel File Systems.
+[  OK  ] Mounted FUSE Control File System.
+[  OK  ] Mounted Kernel Configuration File System.
+[  OK  ] Finished Apply Kernel Variables.
+         Starting Flush Journal to Persistent Storage...
+         Starting Load/Save Random Seed...
+         Starting Create System Users...
+[  OK  ] Finished Load/Save Random Seed.
+[  OK  ] Finished Create System Users.
+[  OK  ] Finished Coldplug All udev Devices.
+         Starting Helper to synchronize boot up for ifupdown...
+         Starting Create Static Device Nodes in /dev...
+         Starting Wait for udev To …plete Device Initialization...
+[  OK  ] Finished Flush Journal to Persistent Storage.
+[  OK  ] Finished Helper to synchronize boot up for ifupdown.
+[  OK  ] Finished Create Static Device Nodes in /dev.
+[  OK  ] Reached target Local File Systems (Pre).
+         Starting Rule-based Manage…for Device Events and Files...
+[  OK  ] Started Rule-based Manager for Device Events and Files.
+         Starting Show Plymouth Boot Screen...
+[  OK  ] Started Show Plymouth Boot Screen.
+[  OK  ] Started Forward Password R…s to Plymouth Directory Watch.
+[  OK  ] Reached target Local Encrypted Volumes.
+[  OK  ] Found device /dev/ttyPS0.
+[  OK  ] Found device /dev/disk/by-partuuid/a22286d2-01.
+[  OK  ] Finished Wait for udev To Complete Device Initialization.
+         Starting File System Check…isk/by-partuuid/a22286d2-01...
+         Starting Load Kernel Modules...
+[  OK  ] Started File System Check Daemon to report status.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Finished File System Check…/disk/by-partuuid/a22286d2-01.
+         Mounting /boot...
+[  OK  ] Mounted /boot.
+[  OK  ] Reached target Local File Systems.
+         Starting Set console font and keymap...
+         Starting Raise network interfaces...
+         Starting Preprocess NFS configuration...
+         Starting Tell Plymouth To Write Out Runtime Data...
+         Starting Create Volatile Files and Directories...
+[  OK  ] Finished Set console font and keymap.
+[  OK  ] Finished Tell Plymouth To Write Out Runtime Data.
+[  OK  ] Finished Preprocess NFS configuration.
+[  OK  ] Reached target NFS client services.
+[  OK  ] Reached target Remote File Systems (Pre).
+[  OK  ] Reached target Remote File Systems.
+[  OK  ] Finished Create Volatile Files and Directories.
+         Starting Network Time Synchronization...
+         Starting Update UTMP about System Boot/Shutdown...
+[  OK  ] Finished Update UTMP about System Boot/Shutdown.
+         Starting Load Kernel Modules...
+[  OK  ] Started Network Time Synchronization.
+[  OK  ] Finished Raise network interfaces.
+[  OK  ] Reached target System Time Set.
+[  OK  ] Reached target System Time Synchronized.
+[FAILED] Failed to start Load Kernel Modules.
+See &#39;systemctl status systemd-modules-load.service&#39; for details.
+[  OK  ] Reached target System Initialization.
+[  OK  ] Started CUPS Scheduler.
+[  OK  ] Started Daily apt download activities.
+[  OK  ] Started Daily apt upgrade and clean activities.
+[  OK  ] Started Periodic ext4 Onli…ata Check for All Filesystems.
+[  OK  ] Started Discard unused blocks once a week.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Daily man-db regeneration.
+[  OK  ] Started Daily Cleanup of Temporary Directories.
+[  OK  ] Reached target Paths.
+[  OK  ] Reached target Timers.
+[  OK  ] Listening on Avahi mDNS/DNS-SD Stack Activation Socket.
+[  OK  ] Listening on CUPS Scheduler.
+[  OK  ] Listening on D-Bus System Message Bus Socket.
+[  OK  ] Listening on Erlang Port Mapper Daemon Activation Socket.
+[  OK  ] Listening on GPS (Global P…ioning System) Daemon Sockets.
+[  OK  ] Listening on triggerhappy.socket.
+[  OK  ] Reached target Sockets.
+[  OK  ] Reached target Basic System.
+         Starting Analog Devices power up/down sequence...
+         Starting Save/Restore Sound Card State...
+         Starting Avahi mDNS/DNS-SD Stack...
+[  OK  ] Started Regular background program processing daemon.
+[  OK  ] Started D-Bus System Message Bus.
+         Starting dphys-swapfile - …unt, and delete a swap file...
+         Starting Remove Stale Onli…t4 Metadata Check Snapshots...
+[  OK  ] Started fan-control.
+         Starting Fix DP audio and X11 for Jupiter...
+         Starting Creating IIOD Context Attributes......
+         Starting Authorization Manager...
+         Starting DHCP Client Daemon...
+         Starting LSB: Switch to on…nless shift key is pressed)...
+         Starting LSB: rng-tools (Debian variant)...
+         Starting System Logging Service...
+         Starting User Login Management...
+         Starting triggerhappy global hotkey daemon...
+         Starting Disk Manager...
+         Starting WPA supplicant...
+[  OK  ] Started triggerhappy global hotkey daemon.
+[  OK  ] Finished Save/Restore Sound Card State.
+[  OK  ] Finished Fix DP audio and X11 for Jupiter.
+[  OK  ] Started System Logging Service.
+[  OK  ] Started DHCP Client Daemon.
+[  OK  ] Finished dphys-swapfile - …mount, and delete a swap file.
+[  OK  ] Started Avahi mDNS/DNS-SD Stack.
+[  OK  ] Started Authorization Manager.
+[  OK  ] Started WPA supplicant.
+[  OK  ] Reached target Network.
+[  OK  ] Reached target Network is Online.
+[  OK  ] Reached target Sound Card.
+         Starting Modem Manager...
+         Starting CUPS Scheduler...
+[  OK  ] Started Erlang Port Mapper Daemon.
+         Starting HTTP based time synchronization tool...
+         Starting Internet superserver...
+         Starting /etc/rc.local Compatibility...
+         Starting OpenBSD Secure Shell server...
+         Starting Permit User Sessions...
+[  OK  ] Started LSB: rng-tools (Debian variant).
+[  OK  ] Finished Permit User Sessions.
+         Starting Light Display Manager...
+[  OK  ] Started Internet superserver.
+[  OK  ] Started User Login Management.
+[  OK  ] Started Unattended Upgrades Shutdown.
+[  OK  ] Finished Analog Devices power up/down sequence.
+[FAILED] Failed to start VNC Server for X11.
+
+Raspbian GNU/Linux 11 analog ttyPS0
+
+analog login: root (automatic login)
+
+Linux analog 6.1.70-284114-g2e8908932dfd #1060 SMP PREEMPT Tue Mar 18 16:11:24 EET 2025 armv7l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Mar 16 15:17:43 GMT 2026 on ttyPS0
+root@analog:~#
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="useful-commands-for-the-serial-terminal">
+<h4>Useful commands for the serial terminal<a class="headerlink" href="#useful-commands-for-the-serial-terminal" title="Link to this heading"></a></h4>
+<p>The below commands are to be run in the serial terminal connected to the FPGA.</p>
+<p>To find out the IP of the FPGA board, run the following command and take the
+IP specified at “eth0 inet”:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To see the IIO devices detected, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iio:device
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To power off the system, run the following command, and wait for the final
+message to be printed, then power off the FPGA board from the switch as well.</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poweroff
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To reboot the system, run:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reboot
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Even though this is Linux, this is a persistent file system. Care should
+be taken not to corrupt the file system – always shut down properly, don’t
+just turn off the power switch. You can do this from the terminal with
+<code class="code docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">shutdown</span> <span class="pre">-h</span> <span class="pre">now</span></code> or the above-mentioned <code class="code docutils literal notranslate"><span class="pre">poweroff</span></code> command.
+If you are using a local display connection, you can also use the GUI
+shut down button:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/shutdown.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/shutdown.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/images/shutdown.png" width="300" />
+</a>
+</div>
+</section>
+</section>
+</section>
+<section id="using-no-os-as-software">
+<h2>Using no-OS as software<a class="headerlink" href="#using-no-os-as-software" title="Link to this heading"></a></h2>
+<section id="id1">
+<h3>Necessary files<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The following files are needed for the system to boot:</p>
+<ul class="simple">
+<li><p>HDL boot file: <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code></p></li>
+<li><p>no-OS project: <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/adrv9001" target="_blank">projects/adrv9001</a></p></li>
+</ul>
+<p>Instructions on how to build the boot files from source can be found below:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/rf-transceiver/adrv9001.html" target="_blank" title="(in no-OS)"><span>ADRV9001 no-OS Example Project</span></a>. More no-OS build
+details at <a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/build_guide.html" target="_blank" title="(in no-OS)"><span>No-OS Build Guide</span></a>.</p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adrv9001/index.html#adrv9001" target="_blank" title="(in HDL)"><span>ADRV9001 HDL Project</span></a>. More HDL build details at
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3>Required software<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx Vivado and Vitis (downloading Vitis from
+<a class="icon link reference external" href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html" target="_blank">here</a>
+will include Vivado as well)</p></li>
+<li><p>An UART terminal (Putty/Tera Term/Minicom, etc.), Baud rate 115200 (8N1)</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>Required hardware<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AMD Xilinx <a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a> Rev 1.2 or later FPGA board and its power supply</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> FMC evaluation board</p></li>
+<li><p>SD card with at least 16GB of memory</p></li>
+<li><p>1x Mini-USB for UART</p></li>
+<li><p>1x Micro-USB for JTAG</p></li>
+<li><p>2x SMA cable for loopback</p></li>
+</ul>
+<p>More details as to why you need these, can be found at
+<a class="reference internal" href="../prerequisites.html#adrv9002-prerequisites"><span class="std std-ref">Prerequisites</span></a>.</p>
+</section>
+<section id="id4">
+<h3>Testing<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id5">
+<h4>Creating the setup<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_noos_setup.jpeg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_noos_setup.jpeg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_zc706_noos_setup.jpeg" width="900" />
+</a>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This setup is made by creating a physical loopback between the RX and the TX
+channel.</p>
+</div>
+<p>Follow the steps in this order, to avoid damaging the components:</p>
+<ol class="arabic simple">
+<li><p>Connect the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9002" target="_blank">EVAL-ADRV9002</a> FMC board to the FPGA carrier <strong>LPC FMC</strong>
+socket (J5).</p></li>
+<li><p>On the FMC card, set the switch to select clock source between:</p>
+<ol class="arabic simple">
+<li><p>an on-board 38.4 MHz VCTCXO (default)</p></li>
+<li><p>external (via J501) 10 MHz to 1000 MHz / +13 dBm</p></li>
+</ol>
+</li>
+<li><p>Configure <a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a> for JTAG boot mode (SW11: <strong>1-Down, 2-Down, 3-Down,
+4-Down, 5-Down</strong>)</p></li>
+<li><p>Connect USB UART (Mini-USB) to your host PC (J21).</p></li>
+<li><p>Connect USB JTAG (Micro USB) to your host PC (J2).</p></li>
+<li><p>Plug the Power Supply into 12V Power input connector (J22)</p></li>
+<li><p>Turn on the power switch on the FPGA board</p></li>
+<li><p>Build and run the project using the steps shown in
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/no-OS/projects/rf-transceiver/adrv9001.html" target="_blank" title="(in no-OS)"><span class="xref std std-doc">here</span></a>.</p></li>
+<li><p>Observe console output messages on your terminal (use the first ttyUSB or
+COM port registered)</p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more detailed information on ZC706 switch configuration, check the
+<em>ZC706 Hardware User Guide</em> (chapter “Device Configuration”)
+<a class="icon link reference external" href="https://docs.amd.com/v/u/en-US/ug954-zc706-eval-board-xc7z045-ap-soc" target="_blank">here</a>.</p>
+</div>
+</section>
+<section id="console-output">
+<h4>Console output<a class="headerlink" href="#console-output" title="Link to this heading"></a></h4>
+<p>The following is what is printed in the serial console, after you have
+connected to the proper ttyUSB or COM port:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="bf9dd7c02132a3e315f3216e02ef7140c953dc83" name="bf9dd7c02132a3e315f3216e02ef7140c953dc83" type="checkbox"></input><label for="bf9dd7c02132a3e315f3216e02ef7140c953dc83"><p>Complete boot log</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hello</span>
+<span class="n">ADRV9002</span> <span class="n">Rev</span> <span class="mf">12.0</span><span class="p">,</span> <span class="n">Firmware</span> <span class="mf">0.22.39</span><span class="p">,</span> <span class="n">Stream</span> <span class="mf">0.7.15.0</span><span class="p">,</span> <span class="n">API</span> <span class="n">version</span><span class="p">:</span> <span class="mf">68.14.13</span> <span class="n">successfully</span> <span class="n">initialized</span>
+<span class="n">axi</span><span class="o">-</span><span class="n">adrv9002</span><span class="o">-</span><span class="n">rx</span><span class="o">-</span><span class="n">lpc</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">inititalized</span> <span class="p">(</span><span class="mi">61437988</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">axi</span><span class="o">-</span><span class="n">adrv9002</span><span class="o">-</span><span class="n">tx</span><span class="o">-</span><span class="n">lpc</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">inititalized</span> <span class="p">(</span><span class="mi">61437988</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">axi</span><span class="o">-</span><span class="n">adrv9002</span><span class="o">-</span><span class="n">rx2</span><span class="o">-</span><span class="n">lpc</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">inititalized</span> <span class="p">(</span><span class="mi">61437988</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">axi</span><span class="o">-</span><span class="n">adrv9002</span><span class="o">-</span><span class="n">tx2</span><span class="o">-</span><span class="n">lpc</span><span class="p">:</span> <span class="n">Successfully</span> <span class="n">inititalized</span> <span class="p">(</span><span class="mi">61437988</span> <span class="n">Hz</span><span class="p">)</span>
+<span class="n">Bye</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="zcu102.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZCU102 Quick start</a>
+    <a href="zed.html" title="Next document (Alt+Shift+RightArrow)" class="next">ZedBoard Quick Start Guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADRV9002 plugin works with the IIO Oscilloscope. Always use the latest available version. Any field change is immediately written to the ADRV9002 hardware and then read back to verify the setting is valid. If a value you enter is changed by the GUI, it indicates either GUI rounding or that the hardware (ADRV9002 or FPGA fabric) does not support that specific mode or precision." name="description" />
+
+    <title>ADRV9002 Plugin Description &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Profile generation flow using TES" href="profile-generation.html" />
+    <link rel="prev" title="A10SoC Quick start" href="quickstart/a10soc.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADRV9002 Plugin Description</a><ul>
+<li><a class="reference internal" href="#adrv9002-global-settings">ADRV9002 Global Settings</a><ul>
+<li><a class="reference internal" href="#loading-profile-and-stream-files">Loading Profile and Stream Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#receive-chain-configuration">Receive Chain Configuration</a><ul>
+<li><a class="reference internal" href="#signal-path-parameters">Signal Path Parameters</a></li>
+<li><a class="reference internal" href="#gain-control-settings">Gain Control Settings</a></li>
+<li><a class="reference internal" href="#signal-monitoring">Signal Monitoring</a></li>
+<li><a class="reference internal" href="#frequency-control">Frequency Control</a></li>
+<li><a class="reference internal" href="#channel-control">Channel Control</a></li>
+<li><a class="reference internal" href="#digital-signal-processing">Digital Signal Processing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transmit-chain-configuration">Transmit Chain Configuration</a><ul>
+<li><a class="reference internal" href="#id1">Signal Path Parameters</a></li>
+<li><a class="reference internal" href="#power-control">Power Control</a></li>
+<li><a class="reference internal" href="#id2">Channel Control</a></li>
+<li><a class="reference internal" href="#id3">Frequency Control</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fpga-settings">FPGA Settings</a><ul>
+<li><a class="reference internal" href="#transmit-dds">Transmit/DDS</a><ul>
+<li><a class="reference internal" href="#one-cw-tone">One CW Tone</a></li>
+<li><a class="reference internal" href="#two-cw-tone">Two CW Tone</a></li>
+<li><a class="reference internal" href="#independent-i-q-control">Independent I/Q Control</a></li>
+<li><a class="reference internal" href="#dac-buffer-output">DAC Buffer Output</a></li>
+<li><a class="reference internal" href="#disable">Disable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#profile-generator">Profile Generator</a><ul>
+<li><a class="reference internal" href="#using-tes-transceiver-evaluation-software">Using TES (Transceiver Evaluation Software)</a></li>
+<li><a class="reference internal" href="#using-the-integrated-plugin-profile-generator">Using the Integrated Plugin Profile Generator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-ADRV9002</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">ADRV9001/2 Quick Start Guides</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zcu102.html">ZCU102 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">ZC706 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zed.html">ZedBoard Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/a10soc.html">A10SoC Quick start</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ADRV9002 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-ADRV9002</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adrv9002-plugin-description">
+<span id="adrv9002-plugin"></span><h1>ADRV9002 Plugin Description<a class="headerlink" href="#adrv9002-plugin-description" title="Link to this heading"></a></h1>
+<p>The ADRV9002 plugin works with the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope</span></a>.
+Always use the latest available version. Any field change is immediately written
+to the ADRV9002 hardware and then read back to verify the setting is valid.
+If a value you enter is changed by the GUI, it indicates either GUI rounding or
+that the hardware (ADRV9002 or FPGA fabric) does not support that specific mode
+or precision.</p>
+<p>If you modify settings directly through <code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/...</span></code> outside of
+the GUI, you can refresh the displayed values by clicking the
+<code class="docutils literal notranslate"><span class="pre">Reload</span> <span class="pre">Settings</span></code> button at the bottom of the GUI.</p>
+<p>The ADRV9002 view is divided in four sections:</p>
+<ul class="simple">
+<li><p><strong>ADRV9002 Global Settings</strong></p></li>
+<li><p><strong>ADRV9002 Receive Chain</strong></p></li>
+<li><p><strong>ADRV9002 Transmit Chain</strong></p></li>
+<li><p><strong>FPGA Settings</strong></p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about anything discussed in the sections below, see the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/adrv9002.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">ADRV9002 Linux Driver Documentation</span></a>.</p>
+</div>
+<section id="adrv9002-global-settings">
+<h2>ADRV9002 Global Settings<a class="headerlink" href="#adrv9002-global-settings" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Global_Settings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Global_Settings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Global_Settings.png" width="600" />
+</a>
+<p><strong>Load Profile</strong>: Loads device configuration settings from a JSON file that sets
+filters, clock rates, and signal paths.</p>
+<p><strong>Load Stream</strong>: Loads the stream binary file corresponding to the profile. Must
+be loaded before loading the profile.</p>
+<section id="loading-profile-and-stream-files">
+<h3>Loading Profile and Stream Files<a class="headerlink" href="#loading-profile-and-stream-files" title="Link to this heading"></a></h3>
+<p>To load the stream and profile configuration:</p>
+<ol class="arabic simple">
+<li><p>Click the folder icon next to <strong>Load Stream</strong> and <strong>Load Profile</strong>. Loading
+these files will configure the IIO Oscilloscope automatically, eliminating
+the need for manual setup.</p></li>
+<li><p>Navigate to
+<code class="docutils literal notranslate"><span class="pre">Program</span> <span class="pre">Files</span> <span class="pre">&gt;</span> <span class="pre">IIO</span> <span class="pre">Oscilloscope</span> <span class="pre">&gt;</span> <span class="pre">lib</span> <span class="pre">&gt;</span> <span class="pre">osc</span> <span class="pre">&gt;</span> <span class="pre">filters</span> <span class="pre">&gt;</span> <span class="pre">adrv9002</span></code></p></li>
+<li><p>Select the appropriate profile and stream pair from this directory.</p></li>
+</ol>
+</section>
+</section>
+<section id="receive-chain-configuration">
+<h2>Receive Chain Configuration<a class="headerlink" href="#receive-chain-configuration" title="Link to this heading"></a></h2>
+<p>The Receive Chain section provides comprehensive control over the RX signal path
+for both channels</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_ReciveChain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_ReciveChain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_ReciveChain.png" width="900" />
+</a>
+<section id="signal-path-parameters">
+<h3>Signal Path Parameters<a class="headerlink" href="#signal-path-parameters" title="Link to this heading"></a></h3>
+<p><strong>Bandwidth(MHz)</strong>: Displays the Primary Signal Bandwidth of the currently
+loaded profile. This parameter defines the usable signal bandwidth for the
+receive path.</p>
+<p><strong>Sampling Rate(MSPS)</strong>:Shows the RX Sample Rate configured in the current
+profile. This determines the digital sampling frequency for received signals.</p>
+</section>
+<section id="gain-control-settings">
+<h3>Gain Control Settings<a class="headerlink" href="#gain-control-settings" title="Link to this heading"></a></h3>
+<p><strong>Gain Control</strong>:
+- SPI: Manual gain control via software interface
+- PIN: Hardware pin-controlled gain adjustment
+- Automatic: Automatic gain control (AGC) mode</p>
+<p><strong>Hardware Gain(dB)</strong>: Controls the RX gain when in SPI or PIN mode. This
+setting adjusts the analog gain in the receive signal path.</p>
+</section>
+<section id="signal-monitoring">
+<h3>Signal Monitoring<a class="headerlink" href="#signal-monitoring" title="Link to this heading"></a></h3>
+<p><strong>RSSI(dB)</strong>: Displays the Received Signal Strength Indicator, providing
+real-time measurement of input signal level.</p>
+<p><strong>Decimated Power</strong>: Shows the decimated power measurement, useful for signal
+analysis and monitoring.</p>
+</section>
+<section id="frequency-control">
+<h3>Frequency Control<a class="headerlink" href="#frequency-control" title="Link to this heading"></a></h3>
+<p><strong>Local Oscillator</strong>: Controls the carrier frequency for the receive chain.
+This sets the center frequency for signal reception.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you made a physical loopback between the RX and TX channels, make sure
+the Local Oscillator value is the same for both channels.</p>
+</div>
+</section>
+<section id="channel-control">
+<h3>Channel Control<a class="headerlink" href="#channel-control" title="Link to this heading"></a></h3>
+<p><strong>Powerdown</strong>: While off disables the receive channel.</p>
+<blockquote>
+<div><p><strong>Dynamic ADC Switch</strong>: Enables dynamic ADC switching functionality for
+optimized power management and performance.</p>
+<dl class="simple">
+<dt><strong>ENSM (Enable State Machine)</strong>:</dt><dd><p>Selects the operational mode for the Enable State Machine:
+- Calibrated: Normal operation with calibrations enabled
+- Primed: Standby mode ready for quick activation
+- RF Enabled: Full RF operation mode</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt><strong>Port Enable</strong>:</dt><dd><p>Configures how the port can be enabled:
+- SPI: Software-controlled port enable
+- PIN: Hardware pin-controlled port enable</p>
+</dd>
+</dl>
+</section>
+<section id="digital-signal-processing">
+<h3>Digital Signal Processing<a class="headerlink" href="#digital-signal-processing" title="Link to this heading"></a></h3>
+<p><strong>Digital Gain Control</strong>: Selects the digital gain control mode for fine-tuning
+signal levels in the digital domain.</p>
+<p><strong>Interface Gain (dB)</strong>: Controls the Slicer block gain for digital signal
+processing optimization.</p>
+<p><strong>Tracking Calibrations</strong>: Enable/disable various tracking calibration
+algorithms:</p>
+<ul class="simple">
+<li><p>Quadrature FIC: Quadrature frequency image correction</p></li>
+<li><p>BBDC Rejection: Baseband DC offset rejection</p></li>
+<li><p>HD2: Second harmonic distortion correction</p></li>
+<li><p>AGC: Automatic gain control calibration</p></li>
+<li><p>Quadrature Poly: Quadrature polynomial correction</p></li>
+<li><p>RSSI: RSSI calibration</p></li>
+<li><p>RDFC: Receive data formatting correction</p></li>
+</ul>
+</section>
+</section>
+<section id="transmit-chain-configuration">
+<h2>Transmit Chain Configuration<a class="headerlink" href="#transmit-chain-configuration" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Transmitionchain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Transmitionchain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_Transmitionchain.png" width="900" />
+</a>
+<p>The Transmit Chain section provides control over the TX signal path for both
+channels.</p>
+<section id="id1">
+<h3>Signal Path Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><strong>Bandwidth (MHz)</strong>: Displays the Primary Signal Bandwidth for the transmit path
+as defined in the current profile.</p>
+<p><strong>Sampling Rate (MSPS)</strong>: Shows the TX Sample Rate configured in the current
+profile, determining the digital sampling frequency for transmitted signals.</p>
+</section>
+<section id="power-control">
+<h3>Power Control<a class="headerlink" href="#power-control" title="Link to this heading"></a></h3>
+<p><strong>Attenuation (dB)</strong>: Controls the TX output power attenuation. Higher values
+reduce output power.</p>
+<p><strong>Attenuation Control Mode</strong>: Selects the attenuation control mechanism:</p>
+<ul class="simple">
+<li><p>SPI: Software-controlled attenuation</p></li>
+<li><p>PIN: Hardware pin-controlled attenuation</p></li>
+<li><p>Bypass: Bypass attenuation control</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Channel Control<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p><strong>Powerdown</strong>: While off disables the transmit channel, stopping signal
+transmission and reducing power consumption.</p>
+<p><strong>ENSM (Enable State Machine)</strong>: Configures the transmit channel operational
+mode similar to the receive chain.</p>
+<p><strong>Port Enable</strong>: Selects port enable control method (SPI or PIN) for the
+transmit channel.</p>
+</section>
+<section id="id3">
+<h3>Frequency Control<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p><strong>Local Oscillator (MHz)</strong>: Sets the carrier frequency for signal transmission.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you made a physical loopback between the RX and TX channels, make sure
+the Local Oscillator value is the same for both channels.</p>
+</div>
+<p><strong>Tracking Calibrations</strong>:
+Enable/disable transmit-specific calibration algorithms:
+- Quadrature: Quadrature correction for TX path
+- PA Correction: Power amplifier linearity correction
+- LO Leakage: Local oscillator leakage correction
+- Close Loop Gain: Closed-loop gain calibration
+- Loopback Delay: Loopback delay calibration</p>
+</section>
+</section>
+<section id="fpga-settings">
+<h2>FPGA Settings<a class="headerlink" href="#fpga-settings" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_FPGASettings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_FPGASettings.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/ADRV9002_FPGASettings.png" width="900" />
+</a>
+<section id="transmit-dds">
+<h3>Transmit/DDS<a class="headerlink" href="#transmit-dds" title="Link to this heading"></a></h3>
+<p>The plugin provides several options on how the transmitted data is generated.</p>
+<p>It is possible to either use the built-in two tone <strong>Direct Digital Synthesizer
+(DDS)</strong> to transmit a bi-tonal signal on channels I and Q of the DAC. Or it is
+possible to use the <strong>Direct Memory Access (DMA) facility</strong> to transmit custom
+data that you have stored in a file.</p>
+<p>This can be achieved by selecting one of the following options listed by the
+<strong>DDS Mode</strong>:</p>
+<section id="one-cw-tone">
+<h4>One CW Tone<a class="headerlink" href="#one-cw-tone" title="Link to this heading"></a></h4>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_one_cw_tone.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_one_cw_tone.png" />
+<p>In <strong>One CW Tone</strong> mode one continuous wave (CW) tone will be outputted. The
+plugin displays the controls to set the Frequency, Amplitude and Phase for just
+one tone and makes sure that the amplitude of the other tone is set to 0. The
+resulting signal will be outputted on the Channel I of the DAC and the exact
+same signal but with a difference in phase of 90 degrees will be outputted on
+the Channel Q of the DAC.</p>
+</section>
+<section id="two-cw-tone">
+<h4>Two CW Tone<a class="headerlink" href="#two-cw-tone" title="Link to this heading"></a></h4>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_two_cw_tones.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_two_cw_tones.png" />
+<p>In <strong>Two CW Tone</strong> mode two continuous wave (CW) tones will be outputted.
+The plugin displays the controls to set the frequencies F1 and F2,
+amplitudes A1 and A2, phases P1 and P2 for the two tones. The resulting
+signal will be outputted on the Channel I of the DAC and the exact same
+signal but with a difference in phase of 90 degrees will be outputted on
+the Channel Q of the DAC.</p>
+</section>
+<section id="independent-i-q-control">
+<h4>Independent I/Q Control<a class="headerlink" href="#independent-i-q-control" title="Link to this heading"></a></h4>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_iq_independent.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_iq_independent.png" />
+<p>In <strong>Independent I/Q Control</strong> the plugin displays the controls to set the
+frequencies, amplitudes and phases for the two tones that will be outputted on
+channel I and additionally it allows for the two tones that will be outputted on
+channel Q of the DAC to be configured independently.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) = A1
+* sin(2 * p * F1 * t + P1) + A2 * sin(2 * p * F2 * t + P2), where
+A-amplitude, F-frequency, P-phase of a tone.</p>
+</div>
+</section>
+<section id="dac-buffer-output">
+<h4>DAC Buffer Output<a class="headerlink" href="#dac-buffer-output" title="Link to this heading"></a></h4>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_dac_output_buffer_panel.png" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9002/images/adrv9002_dac_output_buffer_panel.png" />
+<p>The file selector under the <strong>File Selection</strong> section is used to locate and
+choose the desired data file. Under the <strong>DAC Channels</strong> section the enabled
+channels will be used to transmit the data stored in the file. To finalize the
+process, a click on the <strong>Load</strong> button is required.</p>
+<p><strong>Restrictions:</strong></p>
+<ul class="simple">
+<li><p>There are two types of files than can be loaded: <strong>.txt</strong> or <strong>.mat</strong>. The
+IIO-Oscilloscope comes with several <a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/tree/main/waveforms" target="_blank">data files</a>
+that can be used. If you want to create your own data files please take a
+look at the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/eval-adrv9009/basic-iq-datafiles.html#adrv9009-basic-iq-datafiles" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Basic IQ Data Files</span></a> documentation first.</p></li>
+<li><p>Due to hardware limitation only specific combinations of enabled channels are
+possible. You can enable a total of 1, 2, 4, etc. channels. If 1 channel is
+enabled then it can be any of them. If two channels are enabled then channels
+0, 1 or channels 2, 3 can be enabled and so on.</p></li>
+</ul>
+</section>
+<section id="disable">
+<h4>Disable<a class="headerlink" href="#disable" title="Link to this heading"></a></h4>
+<p>In this mode both DDS and DMA are disabled causing the DAC channels to stop
+transmitting any data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Upon pressing Reload Settings button the values will be reloaded with the
+corresponding driver values. Useful in scenarios where the driver values get
+changed outside this plugin and a refresh on plugin’s values is needed.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Some plugin values will be rounded to the nearest value supported by the
+hardware.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="profile-generator">
+<h2>Profile Generator<a class="headerlink" href="#profile-generator" title="Link to this heading"></a></h2>
+<p>ADRV9002 device profiles configure the digital filters, analog filters, clock
+rates, and signal paths. There are two ways to generate profiles:</p>
+<section id="using-tes-transceiver-evaluation-software">
+<h3>Using TES (Transceiver Evaluation Software)<a class="headerlink" href="#using-tes-transceiver-evaluation-software" title="Link to this heading"></a></h3>
+<p>The
+<a class="icon adi reference external" href="https://www.analog.com/design-center/landing-pages/001/transceiver-evaluation-software.html" target="_blank">Transceiver Evaluation Software (TES)</a>
+is a standalone Windows application from Analog Devices dedicated to generating
+ADRV9002 profiles and stream files. It provides full control over all profile
+parameters including signal type selection (LTE, DMR, etc.), interface rate
+configuration, NCO frequency offset, antenna diversity, and frequency hopping
+settings. TES is used exclusively for profile generation and does not provide
+data acquisition or device control capabilities.</p>
+<p>For a detailed guide, see <a class="reference internal" href="profile-generation.html#adrv9002-profile-generation"><span class="std std-ref">Profile generation flow using TES</span></a>.</p>
+</section>
+<section id="using-the-integrated-plugin-profile-generator">
+<h3>Using the Integrated Plugin Profile Generator<a class="headerlink" href="#using-the-integrated-plugin-profile-generator" title="Link to this heading"></a></h3>
+<p>Both the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope</span></a> and
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">Scopy</span></a> ADRV9002 plugins include an integrated
+Profile Generator tab that provides a graphical interface for creating and
+managing device profiles. This approach allows profile generation within the same
+tool used for device control and data acquisition.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The Profile Generator functionality requires the libadrv9002-iio library to
+be installed. If this external tool is missing, the Profile Generator
+functionality will be disabled. The library can be obtained from:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/libadrv9002-iio" target="_blank">https://analogdevicesinc.github.io/libadrv9002-iio</a></p>
+</div>
+<p>More information about this topic can be found in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/plugins/adrv9002/adrv9002.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">Scopy ADRV9002 Plugin Documentation</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="quickstart/a10soc.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">A10SoC Quick start</a>
+    <a href="profile-generation.html" title="Next document (Alt+Shift+RightArrow)" class="next">Profile generation flow using TES</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
