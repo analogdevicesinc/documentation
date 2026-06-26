@@ -84,8 +84,8 @@ The release branches have the format ``<Year>_R[1|2]``, starting from ``2014_R2`
 Add aarch64-linux-gnu-gcc to PATH
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Using the Xilinx toolchain
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Using the AMD Xilinx toolchain
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. shell::
 
@@ -95,7 +95,7 @@ Using the Xilinx toolchain
 
 .. important::
 
-   Find the path to the Xilinx installation folder, and then use
+   Find the path to the AMD Xilinx installation folder, and then use
    it to replace this string: **$PATH_TO_XILINX** that is written above.
    Same goes for the **$VITIS_VERSION**, where you choose the Vitis version.
 
@@ -213,6 +213,8 @@ Common Issues
 
 This sections goes through common issues related to the Linux Kernel on the
 ZynqMP.
+
+.. _zynqmp displayport-no-picture:
 
 DisplayPort - no picture?
 ~~~~~~~~~~~~~~~~~~~~~~~~~
