@@ -31,26 +31,23 @@ Dimensions
 The physical dimensions of the connectors, mounting holes and PCB is common
 between the ADRV9361-Z7035 and the ADRV9364-Z7020.
 
-.. admonition:: Download
-   :class: download
+The Footprint is common between the two parts.
 
-   The Footprint is common between the two parts:
+Carrier Card Connector Dimensions:
 
-   - `Mounting holes and physical dimensions <resources/08_038702d_conn_dim.pdf>`_
-      * Carrier Card Connector Dimensions:
-
-        .. image:: images/carrier_connector_locations.jpg
-           :alt: Connector Dimensions
+.. image:: images/carrier_connector_locations.jpg
+   :alt: Connector Dimensions
 
 Pinout
 ------
 
-.. admonition:: Download
-   :class: download
+The connector pinouts are a superset.
 
-   The connector pinouts are a superset:
-
-   -  `ADRV9361-Z7035 Connector Pinout <resources/adrv9361-z7035_pinout_jx_1-4_.pdf>`_
-   -  `ADRV9364-Z7020 Connector Pinout <resources/adrv9364-z7020_pinout_jx_1-4_.pdf>`_
-   -  `Step File <resources/adrv9361-z7035_mechanical.zip>`_
+..
+   TODO: The following resource files have been removed and need to be
+   re-hosted or replaced:
+   -  ADRV9361-Z7035 Connector Pinout (adrv9361-z7035_pinout_jx_1-4_.pdf)
+   -  ADRV9364-Z7020 Connector Pinout (adrv9364-z7020_pinout_jx_1-4_.pdf)
+   -  Step File (adrv9361-z7035_mechanical.zip)
+   -  Mounting holes and physical dimensions (08_038702d_conn_dim.pdf)
 
