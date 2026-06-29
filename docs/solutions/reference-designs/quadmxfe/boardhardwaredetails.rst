@@ -26,7 +26,7 @@ Once digitized via the ADC, the input signal can then be routed through the digi
 DSA Gain Control
 ~~~~~~~~~~~~~~~~
 
-Rev. A/B of the Quad-MxFE Platform uses the :adi:`HMC425A` as the receiver DSA for gain control. Rev. C of the Quad-MxFE Platform uses the :adi:`HMC540S` instead to provide a wider frequency coverage at the sacrifice of attenuation resolution. The DSA control is provided from both within ADI `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_ and via MATLAB control. The same DSA attenuation value is set for all ADC front-ends. Within ADI `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_, the DSA value can be modified on the left side of the 'AD9081-3' tab as shown below. If using MATLAB to control the DSA value, then use the ``rx.ExternalAttenuation`` property.
+Rev. A/B of the Quad-MxFE Platform uses the :adi:`HMC425A` as the receiver DSA for gain control. Rev. C of the Quad-MxFE Platform uses the :adi:`HMC540S` instead to provide a wider frequency coverage at the sacrifice of attenuation resolution. The DSA control is provided from both within ADI :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>` and via MATLAB control. The same DSA attenuation value is set for all ADC front-ends. Within ADI :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`, the DSA value can be modified on the left side of the 'AD9081-3' tab as shown below. If using MATLAB to control the DSA value, then use the ``rx.ExternalAttenuation`` property.
 
 .. image:: images/quadmxfe_dsasettinglocation.png
    :width: 900
@@ -112,14 +112,14 @@ SYSREF Distribution
 ~~~~~~~~~~~~~~~~~~~
 
 Rev. A/B of the board does not implement length-matched SYSREFs. A goal of the
-     platform's multi-chip synchronization (MCS) effort was to prove successful
-     MCS functionality with non length-matched SYSREFs. MCS has been
-     demonstrated on rev. A/B boards.
+platform's multi-chip synchronization (MCS) effort was to prove successful
+MCS functionality with non length-matched SYSREFs. MCS has been
+demonstrated on rev. A/B boards.
 
 However, rev. C implements length-matched SYSREFs in an attempt to simplify
 software support going forward.
 
-A greater detail of the SYSREF distribution is shown in the :doc:`FPGA Clocks </solutions/reference-designs/quadmxfe/quadmxfe>` section.
+A greater detail of the SYSREF distribution is shown in the `FPGA Clocks`_ section.
 
 LVPECL to LVDS (One-Shot/N-Shot SYSREF vs. Continuous SYSREF)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -170,15 +170,16 @@ name/number on the FMC+ and the XCVU9P FPGA.
 The simplified version of which signals are connected to which quads is seen
 here:
 
-============================ ========= ===============
-Reference Clocks Rev B Board
-============================ ========= ===============
-Quad #                       Quad Bank MGTREFCLK0
-121                          X0Y2      HMC7043 CLKOUT2
-122                          X0Y3      HMC7043 CLKOUT4
-125                          X0Y6      HMC7043 CLKOUT6
-126                          X0Y7      HMC7043 CLKOUT2
-============================ ========= ===============
+Reference Clocks — Rev B Board
+
+====== ========= ================ ================
+Quad # Quad Bank MGTREFCLK0       MGTREFCLK1
+====== ========= ================ ================
+121    X0Y2      HMC7043 CLKOUT2  HMC7043 CLKOUT0
+122    X0Y3      HMC7043 CLKOUT4  HMC7043 CLKOUT0
+125    X0Y6      HMC7043 CLKOUT6  HMC7043 CLKOUT0
+126    X0Y7      HMC7043 CLKOUT2  HMC7043 CLKOUT0
+====== ========= ================ ================
 
 .. important::
 
@@ -210,15 +211,16 @@ Note that the reference clocks for the JRX and JTX are not fed to a Quad PLL,
 but rather other clock inputs on the FPGA. The CLKOUT0 is the FPGA REFCLK and is
 fed to a number of Quad PLLs as seen here:
 
-============================ ========= ==========
-Reference Clocks Rev C Board
-============================ ========= ==========
-Quad #                       Quad Bank MGTREFCLK0
-121                          X0Y2      N/C
-122                          X0Y3      N/C
-125                          X0Y6      N/C
-126                          X0Y7      N/C
-============================ ========= ==========
+Reference Clocks — Rev C Board
+
+====== ========= =========== ================
+Quad # Quad Bank MGTREFCLK0  MGTREFCLK1
+====== ========= =========== ================
+121    X0Y2      N/C          HMC7043 CLKOUT0
+122    X0Y3      N/C          HMC7043 CLKOUT0
+125    X0Y6      N/C          HMC7043 CLKOUT0
+126    X0Y7      N/C          HMC7043 CLKOUT0
+====== ========= =========== ================
 
 --------------
 
@@ -230,12 +232,12 @@ The Quad-MxFE Platform supports both JESD204b and JESD204c links. However, only 
 JESD204 Link Establishment References
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `Quad-MxFE HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/ad_quadmxfe1_ebz/ad_quadmxfe1_ebz_hdl>`_
--  `JESD204 Interface Framework <https://wiki.analog.com/resources/fpga/peripherals/jesd204>`_
--  `JESD204B/C Link Receive Peripheral <https://wiki.analog.com/resources/fpga/peripherals/jesd204/axi_jesd204_rx>`_
--  `JESD204B/C Link Transmit Peripheral <https://wiki.analog.com/resources/fpga/peripherals/jesd204/axi_jesd204_tx>`_
--  `ADC JESD204B/C Transport Peripheral <https://wiki.analog.com/resources/fpga/peripherals/jesd204/jesd204_tpl_adc>`_
--  `DAC JESD204B/C Transport Peripheral <https://wiki.analog.com/resources/fpga/peripherals/jesd204/jesd204_tpl_dac>`_
+-  :git-hdl:`Rev C. Quad-MxFE HDL Reference Design <projects/ad_quadmxfe1_ebz>`
+-  :dokuwiki:`JESD204 Interface Framework <resources/fpga/peripherals/jesd204>`
+-  :dokuwiki:`JESD204B/C Link Receive Peripheral <resources/fpga/peripherals/jesd204/axi_jesd204_rx>`
+-  :dokuwiki:`JESD204B/C Link Transmit Peripheral <resources/fpga/peripherals/jesd204/axi_jesd204_tx>`
+-  :dokuwiki:`ADC JESD204B/C Transport Peripheral <resources/fpga/peripherals/jesd204/jesd204_tpl_adc>`
+-  :dokuwiki:`DAC JESD204B/C Transport Peripheral <resources/fpga/peripherals/jesd204/jesd204_tpl_dac>`
 
 FMC+ Pinout
 ~~~~~~~~~~~
@@ -300,39 +302,18 @@ protection Schottky diode is connected between ground and +12V.
    :align: right
    :width: 300
 
-+------------------------+
+Power Connector Pinout
 
-| Power Connector Pinout |
-
-+========================+
-
-| Pin Number             |
-
-+------------------------+
-
-| 1                      |
-
-+------------------------+
-
-| 2                      |
-
-+------------------------+
-
-| 3                      |
-
-+------------------------+
-
-| 4                      |
-
-+------------------------+
-
-| 5                      |
-
-+------------------------+
-
-| 6                      |
-
-+------------------------+
+========== ============
+Pin Number Function
+========== ============
+1          +12V In
+2          Ground
+3          Ground
+4          +12V In
+5          +12V In
+6          Ground
+========== ============
 
 The on-board DC regulation scheme is shown below. The analog and mixed-signal
 voltage domains are largely generated from separate LDOs to keep them
@@ -374,43 +355,19 @@ distribution downstream.
 Power LEDs
 ~~~~~~~~~~
 
-+-----------------------------+
+Power LED Status Indicators
 
-| Power LED Status Indicators |
-
-+=============================+
-
-| LED Ref Des                 |
-
-+-----------------------------+
-
-| DS1                         |
-
-+-----------------------------+
-
-| DS6                         |
-
-+-----------------------------+
-
-| DS7                         |
-
-+-----------------------------+
-
-| DS8                         |
-
-+-----------------------------+
-
-| DS9                         |
-
-+-----------------------------+
-
-| DS10                        |
-
-+-----------------------------+
-
-| DS11                        |
-
-+-----------------------------+
+===== ===================================================
+LED   Function
+===== ===================================================
+DS1   ``1.8V_VADJ`` Good From FPGA Board
+DS6   LTM8053 ``6V_OUT`` 6V Output Good (RF Amps/PLL Synthesizers)
+DS7   LTM8053 ``6V_OUT`` 6V Output Good (RF Amps/PLL Synthesizers)
+DS8   LTM4633 ``PGOOD3`` 1.3V Output Good (MxFE0/1)
+DS9   LTM4633 ``PGOOD12`` 1V AND 1.3V Output Good (MxFE0/1)
+DS10  LTM4633 ``PGOOD3`` 1.3V Output Good (MxFE2/3)
+DS11  LTM4633 ``PGOOD12`` 1V AND 1.3V Output Good (MxFE2/3)
+===== ===================================================
 
 Current/Voltage Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

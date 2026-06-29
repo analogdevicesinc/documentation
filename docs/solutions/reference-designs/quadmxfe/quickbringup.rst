@@ -66,7 +66,7 @@ Required Additional Equipment
 
    -  https://www.acinfinity.com/component-cooling/axial-ac-fan-kits/axial-1238-muffin-120v-ac-cooling-fan-120mm-x-120mm-x-38mm/
 
--  1x `VCU118 FPGA Board <https://www.xilinx.com/products/boards-and-kits/vcu118.html>`_
+-  1x :xilinx:`VCU118` FPGA Board
 
 *NOTE: do not use the Ethernet cable that comes with the VCU118 board. It is a crossover cable and will not work with the platform*
 
@@ -130,14 +130,15 @@ PuTTY helps to provide a view into the Linux and give additional controls and de
 
 In PuTTY, this should be opened with a baudrate of 115200.
 
-|image1|
+.. image:: images/putty_comport.png
+   :width: 400
 
 --------------
 
 Xilinx Software Command Line Tool (XSCT)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to program the FPGA, the Vitis/Vivado tool suite is required: `Vivado Toolchain <https://www.xilinx.com/support/download.html>`_.
+In order to program the FPGA, the Vitis/Vivado tool suite is required: :xilinx:`Vivado Toolchain <support/download.html>`.
 
 .. important::
 
@@ -237,8 +238,12 @@ Once these are powered up, program the FPGA:
    :align: center
    :width: 400
 
--  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom. |image2| This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root
-   PW: analog``
+-  Wait for the build to boot completely by checking the Putty terminal window. The putty window shows the progress of the Linux image booting. Wait for the login prompt as shown at the bottom.
+
+   .. image:: images/putty_quad_mxfe.png
+      :width: 400
+
+   This example output is from the Txmode 11 Rxmode 4 image output. At this point, the image is ready to use in MATLAB or additional debug steps can be performed. To log into the image, the username and password are ``UN: root PW: analog``
 -  At this point the FPGA has booted and all of the blue PLL lights should be illuminated. The FPGA is ready to be controlled from MATLAB or from IIO Oscilloscope.
 -  To work in IIO Oscilloscope, open IIO Oscilloscope and use the GUI
 -  To control through MATLAB, Please refer to the following section. There are a
@@ -251,7 +256,10 @@ MATLAB Control Overview
 
 The Quad-MxFE Platform can be controlled via MATLAB using example scripts which are available as part of the `Analog Devices, Inc. High Speed Converter Toolbox <https://github.com/analogdevicesinc/HighSpeedConverterToolbox>`_ add-on. This add-on can either be manually downloaded from the Releases section of the GitHub page or downloaded and installed via MATLAB Add-On Explorer. *NOTE: it's recommended to install via the download from GitHub as this is generally more up to date than the MATLAB Add-On Explorer page* Please ensure you have installed both the Analog Devices, Inc. High Speed Converter Toolbox as well as the Communications Toolbox Support Package for Xilinx Zynq-Based Radio as shown below (`Zynq-Based Radio Toolbox <https://www.mathworks.com/matlabcentral/fileexchange/48491-communications-toolbox-support-package-for-xilinx-zynq-based-radio>`_).
 
-|image3| |image4|
+.. image:: images/github.png
+
+.. image:: images/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png
+   :width: 800
 
 --------------
 
@@ -260,7 +268,7 @@ Example scripts are located within the add-on install directory, which is usuall
 Controlling Quad-MxFE With MATLAB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The control interface for the Quad-MxFE is implemented using standard system objects in MATLAB. Basic information for instantiating the objects is provided in the toolbox documentation within MATLAB and on `this page <https://wiki.analog.com/resources/tools-software/hsx-toolbox>`_. Here is an example instantiation of the objects:
+The control interface for the Quad-MxFE is implemented using standard system objects in MATLAB. Basic information for instantiating the objects is provided in the toolbox documentation within MATLAB and on :dokuwiki:`this page <resources/tools-software/hsx-toolbox>`. Here is an example instantiation of the objects:
 
 ::
 
@@ -365,7 +373,7 @@ If the user intends to use the 16 Tx / 16 Rx Calibration Board in their analysis
 LoadVcu118Code.m
 ^^^^^^^^^^^^^^^^
 
-For convenience, there is also a function file available named ``LoadVcu118Code.m`` which allows the user to load new .tcl files via the MATLAB interface that correspond to the available use cases presently supported with the Quad-MxFE Platform. These .tcl files can be obtained from the .zip file download available on the :doc:`Quad-MxFE Software Quick Start Guide </solutions/reference-designs/quadmxfe/quick-start>`. The default configuration for the example scripts is such that the code is commented for this function, but the user can uncomment it at the beginning of loading the new bitstream, then execute the function and re-comment it so that the system doesn't boot each time the script is run. Be sure to wait until the system fully boots prior to executing any additional MATLAB scripting. The boot process can take a few minutes and status can be obtained via a terminal window such as PuTTY. Please install the `Vivado Toolchain <https://www.xilinx.com/support/download.html>`_ in order to know the path for the Xilinx Software Command Line Tool (XSCT) to be able to utilize this feature.
+For convenience, there is also a function file available named ``LoadVcu118Code.m`` which allows the user to load new .tcl files via the MATLAB interface that correspond to the available use cases presently supported with the Quad-MxFE Platform. These .tcl files can be obtained from the .zip file download available on the :doc:`Quad-MxFE Software Quick Start Guide </solutions/reference-designs/quadmxfe/quick-start>`. The default configuration for the example scripts is such that the code is commented for this function, but the user can uncomment it at the beginning of loading the new bitstream, then execute the function and re-comment it so that the system doesn't boot each time the script is run. Be sure to wait until the system fully boots prior to executing any additional MATLAB scripting. The boot process can take a few minutes and status can be obtained via a terminal window such as PuTTY. Please install the :xilinx:`Vivado Toolchain <support/download.html>` in order to know the path for the Xilinx Software Command Line Tool (XSCT) to be able to utilize this feature.
 
 -  ``LoadVcu118Code(xsctpath,tclpath)``: First parameter: Installed xsct.bat folder; 2nd Parameter: Downloaded .\\run.tcl' file location
 
@@ -550,12 +558,3 @@ input power and state of the source. It should be 500MHz @ ~0dBm. Once the
 
 :doc:`Back To Quad-MxFE Main Page </solutions/reference-designs/quadmxfe/quadmxfe>`
 
-.. |image1| image:: images/putty_comport.png
-   :width: 400
-
-.. |image2| image:: images/putty_quad_mxfe.png
-   :width: 400
-
-.. |image3| image:: images/github.png
-.. |image4| image:: images/matlab_addon_xilinx_zynqbased_radio_communications_toolbox.png
-   :width: 800

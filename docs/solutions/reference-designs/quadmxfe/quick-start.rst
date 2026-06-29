@@ -17,7 +17,7 @@ Software
 
 -  :doc:`Xilinx Vivado Design Suite </solutions/reference-designs/quadmxfe/quickbringup>`
 -  :doc:`Terminal program for serial and ssh connection (PuTTY) </solutions/reference-designs/quadmxfe/quickbringup>`
--  `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
 
    -  `adi-osc-setup.exe (Latest build) <https://github.com/analogdevicesinc/iio-oscilloscope/releases>`_
 
@@ -47,6 +47,8 @@ Testcase DAC M4,L4 ADC M4,L4
 
 -  TX: JESD204C, Subclass 1, Mode 10 - M4, L4, 12GHz 12x1 (1000MSPS)
 -  RX: JESD204C, Subclass 1, Mode 11 - M4, L4, 4GHz 4x1 (1000MSPS)
+
+-  use: run.vcu118_quad_ad9081_204c_txmode_10_rxmode_11.tcl
 
 Testcase DAC M4,L4,N=N'=12 ADC M4,L4,N=N'=12 (vcu118_quad_ad9081_204c_txmode_23_rxmode_25_revc)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -210,7 +212,7 @@ ADQUADMXFE3EBZ Rev.C using onchip-PLL on VCU118 (Xilinx Virtex UltraScale+)
 HDL Reference Design And Instructions To Build HDL Image
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  `ADQUADMXFE1EBZ HDL Reference Design <https://wiki.analog.com/resources/eval/user-guides/ad_quadmxfe1_ebz/ad_quadmxfe1_ebz_hdl>`_
+-  :git-hdl:`ADQUADMXFE1EBZ HDL Reference Design <projects/ad_quadmxfe1_ebz>`
 
 --------------
 
@@ -592,7 +594,7 @@ Useful IIO commands
 
 .. note::
 
-   See `Cmd Line <https://wiki.analog.com/resources/tools-software/linux-software/libiio/cmd_line>`_.
+   See :dokuwiki:`Cmd Line <resources/tools-software/linux-software/libiio/cmd_line>`.
 
 .. important::
 
@@ -644,11 +646,11 @@ Further information
 
 Further information about libiio and it's usage can be found here: **Weblinks**:
 
--  About IIO: `iio <https://wiki.analog.com/software/linux/docs/iio/iio>`_
+-  About IIO: :dokuwiki:`iio <software/linux/docs/iio/iio>`
 -  API Documentation: http://analogdevicesinc.github.io/libiio/
--  Libiio : `libiio <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_
--  Libiio internals : `libiio_internals <https://wiki.analog.com/resources/tools-software/linux-software/libiio_internals>`_
--  `pyadi-iio <https://wiki.analog.com/resources/tools-software/linux-software/pyadi-iio>`_
+-  Libiio: :dokuwiki:`libiio <resources/tools-software/linux-software/libiio>`
+-  Libiio internals: :dokuwiki:`libiio_internals <resources/tools-software/linux-software/libiio_internals>`
+-  :external+pyadi-iio:doc:`pyadi-iio <index>`
 
 Software architecture overview
 ------------------------------
@@ -665,36 +667,36 @@ Software architecture overview
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 | IIO Device   | Device Name     | Driver Documentation                                                                                                                           |
 +==============+=================+================================================================================================================================================+
-| iio:device0  | hmc425a         | `HMC425A Digital Step Attenuator Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-amplifiers/hmc425a>`_        |
+| iio:device0  | hmc425a         | :dokuwiki:`HMC425A Digital Step Attenuator Linux Driver <resources/tools-software/linux-drivers/iio-amplifiers/hmc425a>`                       |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device1  | adf4371-0       | `ADF4371 IIO Wideband Synthesizer Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/adf4371>`_              |
+| iio:device1  | adf4371-0       | :dokuwiki:`ADF4371 IIO Wideband Synthesizer Linux Driver <resources/tools-software/linux-drivers/iio-pll/adf4371>`                             |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device2  | adf4371-1       | `ADF4371 IIO Wideband Synthesizer Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/adf4371>`_              |
+| iio:device2  | adf4371-1       | :dokuwiki:`ADF4371 IIO Wideband Synthesizer Linux Driver <resources/tools-software/linux-drivers/iio-pll/adf4371>`                             |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device3  | adf4371-2       | `ADF4371 IIO Wideband Synthesizer Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/adf4371>`_              |
+| iio:device3  | adf4371-2       | :dokuwiki:`ADF4371 IIO Wideband Synthesizer Linux Driver <resources/tools-software/linux-drivers/iio-pll/adf4371>`                             |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device4  | adf4371-3       | `ADF4371 IIO Wideband Synthesizer Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/adf4371>`_              |
+| iio:device4  | adf4371-3       | :dokuwiki:`ADF4371 IIO Wideband Synthesizer Linux Driver <resources/tools-software/linux-drivers/iio-pll/adf4371>`                             |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device5  | hmc7043         | `HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-pll/hmc7044>`_ |
+| iio:device5  | hmc7043         | :dokuwiki:`HMC7044 Clock Jitter Attenuator with JESD204B Linux Driver <resources/tools-software/linux-drivers/iio-pll/hmc7044>`                |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device6  | axi-ad9081-rx-0 | `AD9081 MxFE Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_                                   |
-|              |                 | `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_                               |
+| iio:device6  | axi-ad9081-rx-0 | :dokuwiki:`AD9081 MxFE Linux Driver <resources/tools-software/linux-drivers/iio-mxfe/ad9081>`                                                  |
+|              |                 | :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`                                              |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device7  | axi-ad9081-rx-1 | `AD9081 MxFE Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_                                   |
-|              |                 | `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_                               |
+| iio:device7  | axi-ad9081-rx-1 | :dokuwiki:`AD9081 MxFE Linux Driver <resources/tools-software/linux-drivers/iio-mxfe/ad9081>`                                                  |
+|              |                 | :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`                                              |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device8  | axi-ad9081-rx-2 | `AD9081 MxFE Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_                                   |
-|              |                 | `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_                               |
+| iio:device8  | axi-ad9081-rx-2 | :dokuwiki:`AD9081 MxFE Linux Driver <resources/tools-software/linux-drivers/iio-mxfe/ad9081>`                                                  |
+|              |                 | :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`                                              |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device9  | axi-ad9081-tx-3 | `AXI DAC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`_                           |
+| iio:device9  | axi-ad9081-tx-3 | :dokuwiki:`AXI DAC HDL Linux Driver <resources/tools-software/linux-drivers/iio-dds/axi-dac-dds-hdl>`                                          |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| iio:device10 | axi-ad9081-rx-3 | `AD9081 MxFE Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-mxfe/ad9081>`_                                   |
-|              |                 | `AXI ADC HDL Linux Driver <https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`_                               |
+| iio:device10 | axi-ad9081-rx-3 | :dokuwiki:`AD9081 MxFE Linux Driver <resources/tools-software/linux-drivers/iio-mxfe/ad9081>`                                                  |
+|              |                 | :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`                                              |
 +--------------+-----------------+------------------------------------------------------------------------------------------------------------------------------------------------+
 
-All these drivers feature a runtime API which can be controlled using `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_, `libiio <https://wiki.analog.com/resources/tools-software/linux-software/libiio>`_, etc. However some configuration is static and done inside the device tree. For Microblaze projects (`VCU118 <https://www.xilinx.com/VCU118>`_) the device tree is build into the kernel image. Please see instructions on Building custom kernel and devicetree images here:
+All these drivers feature a runtime API which can be controlled using :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`, :dokuwiki:`libiio <resources/tools-software/linux-software/libiio>`, etc. However some configuration is static and done inside the device tree. For Microblaze projects (:xilinx:`VCU118`) the device tree is build into the kernel image. Please see instructions on Building custom kernel and devicetree images here:
 
--  `Linux on the Xilinx FPGA development Board <https://wiki.analog.com/resources/tools-software/linux-drivers/platforms/microblaze>`_
+-  :dokuwiki:`Linux on the Xilinx FPGA development Board <resources/tools-software/linux-drivers/platforms/microblaze>`
 
 IIO device ``axi-ad9081-rx-3`` is special compared to the ``axi-ad9081-rx-[0..2]``, since it controls the transport layer and therefore features the IIO buffer. So all 16R data captures are controlled via this device, while the other similar devices are there, to control the device instance specific controls.
 
@@ -715,7 +717,7 @@ Also ``axi-ad9081-rx-3`` aka. ``spi0.3`` instantiates last, it therefore brings 
    ad9081 spi0.3: JESD TX (JRX) Link1 0xF lanes in DATA
    ad9081 spi0.3: AD9081 Rev. 1 Grade 10 (API 0.7.4) probed
 
-It's expected that JRX, JTX status information may contain error status until the last device probes and the Link is finally enabled. Device ``axi-ad9081-tx-3`` purely controls the TX transport layer, it therefore doesn't have any MxFE controls. Please use the `iio_info <https://wiki.analog.com/resources/tools-software/linux-software/libiio/iio_info>`_ command to get an overview on what controls and capabilities exists.
+It's expected that JRX, JTX status information may contain error status until the last device probes and the Link is finally enabled. Device ``axi-ad9081-tx-3`` purely controls the TX transport layer, it therefore doesn't have any MxFE controls. Please use the :dokuwiki:`iio_info <resources/tools-software/linux-software/libiio/iio_info>` command to get an overview on what controls and capabilities exists.
 
 IIO Oscilloscope
 ----------------
@@ -729,7 +731,7 @@ devices.
 
 Documentation can be found here:
 
--  `IIO Oscilloscope <https://wiki.analog.com/resources/tools-software/linux-software/iio_oscilloscope>`_
+-  :dokuwiki:`IIO Oscilloscope <resources/tools-software/linux-software/iio_oscilloscope>`
 
 The MxFE AD9081 plugin is included in the official OSC release, which can be
 downloaded from here:
@@ -821,7 +823,8 @@ OSC will instantiate multiple notebook plugin tabs on the main window. One for e
 
 ``AD9081-3`` again is special since it also has the controls for the TX transport layer core (``axi-ad9081-tx-3``), and the ``HMC425`` Digital Step Attenuator.
 
-|image1|
+.. image:: images/image2019-12-4_13-20-29.png
+   :width: 600
 
 Loading custom waveform
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -859,7 +862,7 @@ IIO devices ``axi-ad9081-tx-3`` and ``axi-ad9081-rx-3`` are again special, since
 MATLAB Support
 --------------
 
-MATLAB support is provided through the `High Speed Converter Toolbox <https://wiki.analog.com/resources/tools-software/hsx-toolbox>`_, with unique classes for transmit and receive functionality. Currently you must grab a development build but installers are provided for convenience.
+MATLAB support is provided through the :dokuwiki:`High Speed Converter Toolbox <resources/tools-software/hsx-toolbox>`, with unique classes for transmit and receive functionality. Currently you must grab a development build but installers are provided for convenience.
 
 To install the toolbox perform the follow:
 
@@ -874,326 +877,11 @@ at:
 Linux Image build instructions
 ==============================
 
-A more comprehensive guide can be found here: `Linux on the Xilinx FPGA development Board <https://wiki.analog.com/resources/tools-software/linux-drivers/platforms/microblaze>`_
+For step-by-step instructions on how to build a Microblaze Linux kernel image,
+see :doc:`/linux/kernel/microblaze`.
 
-Linux on the Xilinx FPGA development Board
-==========================================
 
-.. warning::
-
-   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/linux/kernel/microblaze.html
-
-.. note::
-
-   This content is purely informational, and the best place for questions about this content is normally `Xilinx <https://forums.xilinx.com/t5/Embedded-Linux/bd-p/ELINUX>`_, or a friendly consultant (who you will pay), or `trainer <https://training.linuxfoundation.org/training/embedded-linux-development/>`_. These instructions work for us. That does not mean they are complete, accurate, or supported.
-
-20
-
-This guide provides some step-by-step instructions on how to build a Microblaze
-Linux Kernel image for the FMC board connected to an
-
--  `KC705 <https://www.xilinx.com/KC705>`_
--  `KCU105 <https://www.xilinx.com/KCU105>`_
--  `VC707 <https://www.xilinx.com/VC707>`_
--  `VCU118 <https://www.xilinx.com/VCU118>`_
--  `VCU128 <https://www.xilinx.com/VCU128>`_
-
-Required Software
------------------
-
--  `Linux Kernel Source <http://github.com/analogdevicesinc/linux>`_
--  `rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
--  `Xilinx Vivado Design Suite (Microblaze GNU Tools) <https://www.xilinx.com/products/design-tools/vivado.html>`_
--  `Microblaze GNU Toolchain <http://xilinx.wikidot.com/mb-gnu-tools>`_ (See note below)
-
-Microblaze gnu toolchain from Xilinx is no longer available on git. Please use
-gnu tools from Vitis installation as below:
-
-| ~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/::math:`PATH\\ ~/linux` export ARCH=microblaze
-| ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
-
-.. tip::
-
-   Latest released files can be downloaded from `here <https://wiki.analog.com/resources/tools-software/linux-drivers/platforms/microblaze_loading>`_
-
-Build Linux - Step by Step instructions
----------------------------------------
-
-Get Microblaze Little Endian Toolchain from Xilinx
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Download the Vivado Vitis from here `Download <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`_ And make sure you followed the instructions for `Microblaze GNU Toolchain <http://xilinx.wikidot.com/mb-gnu-tools>`_
-
-Get Linux kernel source
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. container:: box bgblue
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
-
-   
-   ::
-   
-
-   
-      $ git clone `linux <https://github.com/analogdevicesinc/linux>`_
-      Cloning into 'linux'...
-      remote: Counting objects: 2757163, done.
-      remote: Compressing objects: 100% (495484/495484), done.
-      remote: Total 2757163 (delta 2296596), reused 2687337 (delta 2234506)
-      Receiving objects: 100% (2757163/2757163), 782.04 MiB
-
-      | 1.39 MiB/s, done.
-      Resolving deltas: 100% (2296596/2296596), done.
-
-Checkout main branch
-~~~~~~~~~~~~~~~~~~~~
-
-.. container:: box bgblue
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
-
-   
-   ::
-   
-
-   
-      $ cd linux/
-      ~/linux$ git checkout main
-      Checking out files: 100% (16412/16412), done.
-      Branch main set up to track remote branch main from origin.
-      Switched to a new branch 'main'
-
-Set Environmental Variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. container:: box
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
-
-   
-   ::
-   
-
-   
-      ~/linux$ source /opt/Xilinx/Vivado/2023.2/settings64.sh
-      ~/linux$ export ARCH=microblaze
-      ~/linux$ export CROSS_COMPILE=microblazeel-xilinx-linux-gnu-
-
-.. tip::
-
-   Instead of sourcing the Vivado settings64.sh script you can alternatively add
-   your microblaze gcc toolchain directly to your PATH variable:
-
-   | ``~/linux$ export PATH=/opt/Xilinx/Vitis/2023.2/gnu/microblaze/linux_toolchain/lin64_le/bin/:$PATH``
-
-Configure Kernel
-~~~~~~~~~~~~~~~~
-
-.. container:: box bgblue
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the development host
-
-   
-   ::
-   
-
-   
-      ~/linux$ make adi_mb_defconfig
-      #
-      # configuration written to .config
-      #
-
-Get Root File-System
-~~~~~~~~~~~~~~~~~~~~
-
-The root file system or rootfs contains everything (besides the Linux kernel itself) needed to support a full Linux system. It contains all the (user) applications, configurations, services, data, etc. Without the rootfs your Linux system cannot run. You can either just download the pre-build image or build it yourself. Instructions can be found here: `Building with buildroot <https://wiki.analog.com/resources/tools-software/linux-build/generic/buildroot>`_
-
-`rootfs.cpio.gz <https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz>`_
-
-.. tip::
-
-   rootfs.cpio.gz must be placed in the root of your kernel tree.
-   (~/linux/rootfs.cpio.gz)
-
-.. container:: box bgblue
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
-
-   
-   ::
-   
-
-   
-      ~/linux$ wget https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-      --2022-01-18 09:52:08--  https://swdownloads.analog.com/cse/microblaze/rootfs/rootfs.cpio.gz
-      Resolving swdownloads.analog.com (swdownloads.analog.com)... 23.63.205.142
-      Connecting to swdownloads.analog.com (swdownloads.analog.com)|23.63.205.142|:443... connected.
-      HTTP request sent, awaiting response... 200 OK
-      Length: 6772207 (6,5M) [application/x-gzip]
-      Saving to: ‘rootfs.cpio.gz’
-   
-      rootfs.cpio.gz                                     100%[===============================================================================================================>]   6,46M  3,32MB/s    in 1,9s    
-   
-      2022-01-18 09:52:12 (3,32 MB/s) - ‘rootfs.cpio.gz’ saved [6772207/6772207]
-
-Build kernel
-~~~~~~~~~~~~
-
-The result of building the kernel is an elf file in arch/microblaze/boot named
-simpleImage.<dts file name> based on the dts specified.
-
-The build process for the kernel searches in the arch/microblaze/boot/dts
-directory for a specified device tree file and then builds the device tree into
-the kernel image.
-
-The following command shows the general format for the build target name. Note
-that the <dts file name> does not include the file extension ".dts".
-
-::
-
-   ~/linux$ make simpleImage.<dts file name>
-
-To see what device-trees for the different FPGA carrier and FMC module
-combination exist type:
-
-::
-
-   ~/linux$ ls -l arch/microblaze/boot/dts
-
-.. container:: box bgblue
-
-   
-   .. note::
-
-      This specifies any shell prompt running on the target or development host
-
-   
-   ::
-   
-
-   
-      ~/linux$ make -j4 simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1
-        SYNC    include/config/auto.conf.cmd
-        CC      scripts/mod/empty.o
-        CC      scripts/mod/devicetable-offsets.s
-        MKELF   scripts/mod/elfconfig.h
-        HOSTCC  scripts/mod/modpost.o
-        HOSTCC  scripts/mod/sumversion.o
-        HOSTCC  scripts/mod/file2alias.o
-   
-      [ --snip-- ]
-   
-        AR      init/built-in.a
-        LD      vmlinux.o
-        MODPOST vmlinux.symvers
-        MODINFO modules.builtin.modinfo
-        GEN     modules.builtin
-        LD      .tmp_vmlinux.kallsyms1
-        KSYMS   .tmp_vmlinux.kallsyms1.S
-        AS      .tmp_vmlinux.kallsyms1.S
-        LD      .tmp_vmlinux.kallsyms2
-        KSYMS   .tmp_vmlinux.kallsyms2.S
-        AS      .tmp_vmlinux.kallsyms2.S
-        LD      vmlinux
-        SORTTAB vmlinux
-        SYSMAP  System.map
-        OBJCOPY arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1
-        SHIPPED arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.unstrip
-        STRIP   vmlinux arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.strip
-        UIMAGE  arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.ub
-      Image Name:   Linux-5.10.0-97916-g513446e488c3
-      Created:      Tue Jan 18 12:07:35 2022
-      Image Type:   MicroBlaze Linux Kernel Image (uncompressed)
-      Data Size:    18398124 Bytes = 17966.92 KiB = 17.55 MiB
-      Load Address: 80000000
-      Entry Point:  80000000
-      Kernel: arch/microblaze/boot/simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1 is ready  (#3678)
-
-.. tip::
-
-   The STRIP image found under arch/microblaze/boot/ is the ELF image which can
-   be loaded via the debugger
-
-Boot Kernel on FPGA Microblaze
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Then one method to load the kernel onto the already built and running FPGA which
-has the Microblaze processor is to launch XMD or XSDB from the Xilinx Vivado
-toolset from within .../linux/arch/microblaze/boot and run from the XMD or XSDB
-shell:
-
-.. important::
-
-   XMD has been deprecated and will be removed in the future. XSDB/XSCT replaces XMD and provides additional functionality. Xilinx recommends you switch to XSDB for command line debugging. You can find more information about these tools in the `Embedded System Tools Reference Manual <https://www.xilinx.com/support/documentation/sw_manuals/xilinx2017_4/ug1043-embedded-system-tools.pdf>`_ (UG1043)
-
-For XMD:
-
-::
-
-   xmd> fpga -f system_top.bit
-   xmd> connect mb mdm
-   xmd> dow simpleImage.vc707_fmcomms2-3
-   xmd> run
-
-For XSDB or XSCT:
-
-::
-
-   xsdb> connect
-   xsdb> fpga -f system_top.bit
-   xsdb> targets
-     1  xcku040
-        2  MicroBlaze Debug Module at USER2
-           3  MicroBlaze #0 (Running)
-   xsdb> targets 3
-   xsdb> dow simpleImage.kcu105_fmcdaq2
-   xsdb> con
-
-Configure and loading using a TCL script
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Example TCL script:
-
-.. code:: c
-
-   run.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.tcl
-   connect
-   fpga -f system_top.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_revc.bit
-   after 1000
-   target 3
-   dow simpleImage.vcu118_quad_ad9081_204c_txmode_23_rxmode_25_onchip_pll_revc_nz1.strip
-   after 1000
-   con
-   disconnect
-
-From XSDB or XSCT:
-
-::
-
-   xsdb> source run.tcl
-
-(more details, methods of how to get bit file and kernel on flash and/or boot
-off SD Card is appreciated)
 
 --------------
 
-:doc:`Back To Quad-MxFE Main Page </solutions/reference-designs/quadmxfe/quick-start>`
-
-.. |image1| image:: images/image2019-12-4_13-20-29.png
-   :width: 600
+:doc:`Back To Quad-MxFE Main Page </solutions/reference-designs/quadmxfe/index>`

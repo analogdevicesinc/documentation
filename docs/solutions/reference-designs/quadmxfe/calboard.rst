@@ -18,16 +18,16 @@ Features
 -  On-Board Log Power Detectors With AD5592R Output To VCU118 Over PMOD
 -  On-Board Power Regulation from Single 12V Power Adapter (Included)
 
-Below is the full integrated system including the Xilinx `VCU118 <https://www.xilinx.com/VCU118>`_, ADQUADMXFE1EBZ, and :doc:`ADQUADMXFE-CAL </solutions/reference-designs/quadmxfe/calboard>` in full operation. For LED identification please see :doc:`Calibration Broad LED Information </solutions/reference-designs/quadmxfe/calboard>`, or `Quad MxFE LED Information <https://wiki.analog.com/resources/eval/user-guides/quadmxfe/>`_
+Below is the full integrated system including the Xilinx :xilinx:`VCU118`, ADQUADMXFE1EBZ, and :doc:`ADQUADMXFE-CAL </solutions/reference-designs/quadmxfe/calboard>` in full operation. For LED identification please see `LED Identification`_.
 
-|image1|
+.. image:: images/quadfull_edit.jpg
 
 --------------
 
 General Description
 -------------------
 
-This page serves to inform system engineers and software developers about the calibration board addition kit that pairs with the :adi:`Quad-MxFE <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>`. This board directly aligns with the 16 Rx and 16 Tx ports on the output of the Quad MxFE and includes power detectors and loopback configurations for the system-level calibration of the Quad MxFE. The board contains a PMOD 2A interface that connects the `VCU118 <https://www.xilinx.com/VCU118>`_ Evaluation Board from Xilinx®. A DIP switch and multi-channel ADC/DAC, :adi:`AD5592R`, are also included for additional control and power readings. The goal of this kit is to enable users to demonstrate combined-channel dynamic range, spurious, and phase noise improvements, develop system-level calibration algorithms, and demonstrate immediate phase determinism.
+This page serves to inform system engineers and software developers about the calibration board addition kit that pairs with the :adi:`Quad-MxFE <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/Quad-MxFE.html>`. This board directly aligns with the 16 Rx and 16 Tx ports on the output of the Quad MxFE and includes power detectors and loopback configurations for the system-level calibration of the Quad MxFE. The board contains a PMOD 2A interface that connects the :xilinx:`VCU118` Evaluation Board from Xilinx®. A DIP switch and multi-channel ADC/DAC, :adi:`AD5592R`, are also included for additional control and power readings. The goal of this kit is to enable users to demonstrate combined-channel dynamic range, spurious, and phase noise improvements, develop system-level calibration algorithms, and demonstrate immediate phase determinism.
 
 High Level Block Diagram
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,32 +39,22 @@ High Level Block Diagram
 Key Component Location
 ~~~~~~~~~~~~~~~~~~~~~~
 
-|image2| |image3|
+.. image:: images/cal_brd_labels.png
+
+.. image:: images/cal_brd_labels2.png
 
 LED Identification
 ~~~~~~~~~~~~~~~~~~
 
-+-----------------------+
+LED Status Indicators
 
-| LED Status Indicators |
-
-+=======================+
-
-| LED Ref Des           |
-
-+-----------------------+
-
-| DS601                 |
-
-+-----------------------+
-
-| DS602                 |
-
-+-----------------------+
-
-| DS603                 |
-
-+-----------------------+
+====== =============================================
+LED    Function
+====== =============================================
+DS601  ``1.9V @ 1.2mA`` Good From ADM7150 (LDO)
+DS602  ``1.9V @ 1.2mA`` Good From ADM7150 (LDO)
+DS603  ``3.3V_FPGA`` Good From VCU118 PMOD 2A
+====== =============================================
 
 Equipment Needed
 ----------------
@@ -92,7 +82,7 @@ Equipment Needed
 -  Startup Documentation
 -  VCU118 FPGA Board (optional)
 
-   -  `VCU118 <https://www.xilinx.com/VCU118>`_
+   -  :xilinx:`VCU118`
 
 -  Quad MxFE Board (optional)
 
@@ -121,18 +111,15 @@ Related Documents
 Related Parts Pages
 ~~~~~~~~~~~~~~~~~~~
 
--  :adi:`ad5592r` 8 Channel, 12-Bit, Configurable ADC/DAC with on-chip Reference, SPI interface
--  :adi:`hmc948` 54 dB Logarithmic Detector SMT, 1 - 23 GHz
--  :adi:`LTM5596 <ltc5596>` 100MHz to 40GHz Linear-in-dB RMS Power Detector with 35dB Dynamic Range
--  :adi:`ad8318` 1 MHz TO 8 GHz, 70 dB Logarithmic Detector/Controller
--  :adi:`adp5020` Power Management Unit for Imaging Modules
--  :adi:`ad5045` Fully Accurate 14-Bit VOUT nanoDAC® SPI Interface 4.5 V to 5.5 V in a TSSOP
+-  :adi:`AD5592R <ad5592r>` 8 Channel, 12-Bit, Configurable ADC/DAC with on-chip Reference, SPI interface
+-  :adi:`HMC948 <hmc948>` 54 dB Logarithmic Detector SMT, 1 - 23 GHz
+-  :adi:`LTC5596 <ltc5596>` 100MHz to 40GHz Linear-in-dB RMS Power Detector with 35dB Dynamic Range
+-  :adi:`AD8318 <ad8318>` 1 MHz to 8 GHz, 70 dB Logarithmic Detector/Controller
+-  :adi:`ADP5020 <adp5020>` Power Management Unit for Imaging Modules
+-  :adi:`ADRF5045 <adrf5045>` SPDT RF Switch, 9 kHz to 13 GHz
 
 Schematic
 ~~~~~~~~~
 
 -  `ADQUADMXFE-CAL <resources/02-064888-01-b_2_.pdf>`_
 
-.. |image1| image:: images/quadfull_edit.jpg
-.. |image2| image:: images/cal_brd_labels.png
-.. |image3| image:: images/cal_brd_labels2.png

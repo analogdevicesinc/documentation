@@ -3,7 +3,8 @@ Multi-Chip Synchronization with the Quad-MxFE + Calibration Board
 
 The Quad-MxFE Platform, in conjunction with the :doc:`16 Tx / 16 Rx Calibration Board </solutions/reference-designs/quadmxfe/calboard>`, has demonstrated multi-chip synchronization (MCS) of the four :adi:`AD9081`\ s on the system. MCS provides the user with a known, **deterministic phase** after each power cycle for a given operating frequency. The platform provides MATLAB scripts which can be tweaked for a particular customer application to showcase MCS on their own system.
 
-|image1|
+.. image:: images/calibrationboardconnected.jpg
+   :width: 800
 
 It is helpful to define a few terms prior to a MCS discussion.
 
@@ -14,7 +15,8 @@ It is helpful to define a few terms prior to a MCS discussion.
 
 The :adi:`AD9081` contains digital signal processing (DSP) blocks on-silicon to allow for channel-to-channel digital phase and/or amplitude calibration techniques to be implemented as part, or the entirety, of the system level calibration. Some of these phase adjustment knobs occur at the numerically-controlled oscillators (NCOs) residing in the 4x Coarse (Main) Digital Up/Down Converters (DUC/DDCs) and 8x Fine (Channelizer) DUC/DDCs. Additionally, on the Rx side, on-silicon programmable finite impulse response (pFIR) blocks allow for equalization of both phase and amplitude for all Rx channels in the system. Each of these DSP blocks must be synchronized when dealing with multiple MxFE® chips in a system.
 
-|image2|
+.. image:: images/quadmxfe_mxfephaseadjustknobs.png
+   :width: 800
 
 Multi-chip synchronization using the AD9081/AD9082 is achieved with the help of
 two distinct features within the chipset:
@@ -49,7 +51,8 @@ PLL Synthesizer Phase Adjustments
 
 The :adi:`ADF4371` PLL synthesizers allow for relative sample clock phase adjustments injected into each digitizer IC. Thermal drift, and the resulting PLL phase drift between the sample clock and the SYSREF of each IC, is compensated by creating a feedback mechanism which ensures that the first transmit channel of each :adi:`AD9081` is phase-aligned to the first :adi:`AD9081` IC’s first transmit channel, as shown in the figure below. To achieve this feedback loop, the first transmit channel of each MxFE® outputs a signal which differentiates itself from the other transmit channels. These four signals are combined and sent into a common receiver, which for this system is labeled Rx0.
 
-|image3|
+.. image:: images/quadmxfe_pllphaseadjustwithcalibrationboard.png
+   :width: 800
 
 A receiver data capture is obtained which then allows the user to apply cross-correlation techniques to determine the complex phase offsets between these four transmit channels, *φ\ TxOffset*. The :adi:`ADF4371` PLL synthesizer ICs contain within them a voltage-controlled oscillator (VCO) which are operating at a frequency *f\ VCO_PLL*. The measured phase offsets *φ\ TxOffset* are then related to the required PLL phase adjustment *φ\ PLL_Adj* and the RF frequency *f\ carrier* such that:
 
@@ -65,13 +68,4 @@ Publications
 
 :adi:`Power-Up Phase Determinism Using Multichip Synchronization Features in Integrated Wideband DACs and ADCs <en/technical-articles/power-up-phase-determinism-using-multichip-synchronization.html>`
 
-:doc:`Back To Quad-MxFE Main Page </solutions/reference-designs/quadmxfe/quadmxfe>`
-
-.. |image1| image:: images/calibrationboardconnected.jpg
-   :width: 800
-
-.. |image2| image:: images/quadmxfe_mxfephaseadjustknobs.png
-   :width: 800
-
-.. |image3| image:: images/quadmxfe_pllphaseadjustwithcalibrationboard.png
-   :width: 800
+:doc:`Back To Quad-MxFE Main Page </solutions/reference-designs/quadmxfe/index>`
