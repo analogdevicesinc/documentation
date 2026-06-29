@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD9371/AD9375 Advanced plugin works with the IIO Oscilloscope. You should always use the latest version if possible. Changing any field will immediately write changes which have been made to the AD9371 settings to the driver, but not to the HW unless the Save Settings button is pressed." name="description" />
+
+    <title>AD9371/AD9375 Advanced Plugin &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="MATLAB Profile Generator for AD9371" href="filters.html" />
+    <link rel="prev" title="AD9371/AD9375 Plugin Description" href="ad9371_plugin.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD9371/AD9375 Advanced Plugin</a><ul>
+<li><a class="reference internal" href="#screenshots-descriptions">Screenshots / Descriptions</a><ul>
+<li><a class="reference internal" href="#clock-settings">Clock Settings</a></li>
+<li><a class="reference internal" href="#calibrations">Calibrations</a></li>
+<li><a class="reference internal" href="#tx-settings">TX Settings</a></li>
+<li><a class="reference internal" href="#rx-settings">RX Settings</a></li>
+<li><a class="reference internal" href="#observation-rx-settings">Observation RX Settings</a></li>
+<li><a class="reference internal" href="#gain-settings">Gain Settings</a></li>
+<li><a class="reference internal" href="#agc-settings">AGC Settings</a></li>
+<li><a class="reference internal" href="#arm-gpio-settings">ARM GPIO Settings</a></li>
+<li><a class="reference internal" href="#gpio-settings">GPIO Settings</a></li>
+<li><a class="reference internal" href="#aux-dac-settings">AUX DAC Settings</a></li>
+<li><a class="reference internal" href="#jesd204b-framer-settings">JESD204B Framer Settings</a></li>
+<li><a class="reference internal" href="#jesd204b-deframer-settings">JESD204B Deframer Settings</a></li>
+<li><a class="reference internal" href="#bist">BIST</a></li>
+<li><a class="reference internal" href="#dpd-setup-ad9375-only">DPD Setup (AD9375 only)</a></li>
+<li><a class="reference internal" href="#clgc-setup-ad9375-only">CLGC Setup (AD9375 only)</a></li>
+<li><a class="reference internal" href="#vswr-setup-ad9375-only">VSWR Setup (AD9375 only)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Software</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/shell_scripts.html">Shell scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump.html">FMC EEPROM Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/fru_dump_tool.html">FMC FRU EEPROM Utility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/gnuradio.html">GNU Radio and IIO Devices: gr-iio</a></li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Devices</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Reference Designs</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../../ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/reference-design.html">Jupiter SDR HDL Reference Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ad-jupiter-ebz/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-2" id="toctree-collapse-3-2"/><div class="collapse"><a class="reference internal" href="../../adrv9002/index.html">EVAL-ADRV9002</a><label for="toctree-collapse-3-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../adrv9002/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrv9002/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-2-1" id="toctree-collapse-3-2-1"/><div class="collapse"><a class="reference internal" href="../../adrv9002/quickstart/index.html">ADRV9001/2 Quick Start Guides</a><label for="toctree-collapse-3-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../adrv9002/quickstart/zcu102.html">ZCU102 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../adrv9002/quickstart/zc706.html">ZC706 Quick start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../adrv9002/quickstart/zed.html">ZedBoard Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../adrv9002/quickstart/a10soc.html">A10SoC Quick start</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrv9002/adrv9002_plugin.html">ADRV9002 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../adrv9002/profile-generation.html">Profile generation flow using TES</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-3" id="toctree-collapse-3-3" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADRV9371x</a><label for="toctree-collapse-3-3"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-3-1" id="toctree-collapse-3-3-1"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quick Start</a><label for="toctree-collapse-3-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/a10soc.html">On Arria10 SoC</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/a10gx.html">On Arria10 GX</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-3-2" id="toctree-collapse-3-3-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">User Guide</a><label for="toctree-collapse-3-3-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="ad9371_osc_main.html">AD9371/AD9375 IIO Oscilloscope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad9371_plugin.html">AD9371/AD9375 Plugin Description</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">AD9371/AD9375 Advanced Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="filters.html">MATLAB Profile Generator for AD9371</a></li>
+<li class="toctree-l4"><a class="reference internal" href="basic_iq_datafiles.html">AD9371 Basic IQ Datafiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-4" id="toctree-collapse-3-4"/><div class="collapse"><a class="reference internal" href="../../arradio/index.html">ARRADIO</a><label for="toctree-collapse-3-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../arradio/prerequisites.html">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-5" id="toctree-collapse-3-5"/><div class="collapse"><a class="reference internal" href="../../eval-ad9081/index.html">AD9081 &amp; AD9082</a><label for="toctree-collapse-3-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-ad9081/prerequisites.html">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-6" id="toctree-collapse-3-6"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-3-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-7" id="toctree-collapse-3-7"/><div class="collapse"><a class="reference internal" href="../../eval-adrv902x/index.html">EVAL-ADRV902X</a><label for="toctree-collapse-3-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv902x/prerequisites.html">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-8" id="toctree-collapse-3-8"/><div class="collapse"><a class="reference internal" href="../../eval-adrv9032/index.html">EVAL-ADRV9032</a><label for="toctree-collapse-3-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9032/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv9032/prerequisites.html">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-9" id="toctree-collapse-3-9"/><div class="collapse"><a class="reference internal" href="../../eval-adrv904x/index.html">EVAL-ADRV904x</a><label for="toctree-collapse-3-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval-adrv904x/adrv904x_osc_main.html">IIO OSC ADRV904x Capture Window</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-10" id="toctree-collapse-3-10"/><div class="collapse"><a class="reference internal" href="../../fmcomms5/index.html">AD-FMCOMMS5-EBZ</a><label for="toctree-collapse-3-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-10-1" id="toctree-collapse-3-10-1"/><div class="collapse"><a class="reference internal" href="../../fmcomms5/user-guide.html">User Guide</a><label for="toctree-collapse-3-10-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-10-1-1" id="toctree-collapse-3-10-1-1"/><div class="collapse"><a class="reference internal" href="../../fmcomms5/hardware.html">AD-FMCOMMS5-EBZ Hardware</a><label for="toctree-collapse-3-10-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../fmcomms5/configuration_options.html">FMComms5 Configuration Options</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms5/fmcomms5_plugin.html">FMComms5 Plugin Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms5/multi-chip-sync.html">Synchronizing multiple AD9361 devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms5/phase-sync.html">FMComms5 Phase Synchronization</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms5/prerequisites.html">Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-11" id="toctree-collapse-3-11"/><div class="collapse"><a class="reference internal" href="../../fmcomms8/index.html">AD-FMCOMMS8-EBZ</a><label for="toctree-collapse-3-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms8/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms8/user-guide.html">User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms8/testing.html">AD-FMCOMMS8-EBZ Production Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">ADRV9371x</a></li><li><a href="index.html">User Guide</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad9371-ad9375-advanced-plugin">
+<span id="adrv9371x-advanced-plugin"></span><h1>AD9371/AD9375 Advanced Plugin<a class="headerlink" href="#ad9371-ad9375-advanced-plugin" title="Link to this heading"></a></h1>
+<p>The AD9371/AD9375 Advanced plugin works with the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a>.
+You should always use the latest version if possible. Changing any field will
+immediately write changes which have been made to the AD9371 settings to the
+driver, but not to the HW unless the Save Settings button is pressed.</p>
+<p>The AD9371 Advanced Plugin allows testing of different device driver
+initialization options and values. In contrast to the controls on the
+<a class="reference internal" href="ad9371_plugin.html#adrv9371x-plugin"><span class="std std-ref">AD9371/AD9375 Main Plugin</span></a> - the
+controls here are not part of the main driver API.</p>
+<p>In the No-OS driver the values directly correspond to members of the
+(mykonosDevice_t) mykDevice init structure. For the AD9371 Linux Device Driver
+each control corresponds to a specific devicetree property. Since the AD9371
+Linux driver uses the Analog Devices provided API driver. Ultimately also for
+the Linux driver maps any settings back to the mykDevice init structure. It’s
+therefore recommended to consult the <strong>AD9371 User Guide</strong> for more information
+about the options provided here.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/mykonosdevice_t.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/mykonosdevice_t.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/mykonosdevice_t.png" width="1000" />
+</a>
+<p>See more details about
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9371-customization.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9371/AD9375 Customization</span></a>.</p>
+<p>In order for the settings made on this plugin to take effect, the Save Settings
+button must be pressed. It should be noted that the driver then reinitializes
+the AD9371 from reset, which will rerun all calibrations and this may take
+several seconds to complete.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After you customized the driver for your application needs you can
+read back all values from the Linux debugfs:</p>
+<blockquote>
+<div><div class="code-shell"><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>root@analog:/sys/bus/iio/devices/iio:device3# cd /sys/kernel/debug/iio/iio\:device3
+root@analog:/sys/kernel/debug/iio/iio:device3# grep &quot;&quot; * | sed &quot;s/:/ = &lt;/g&quot; | awk &#39;{print $0&quot;&gt;;&quot;}&#39;
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>adi,clocks-clk-pll-hs-div = &lt;4&gt;;
+adi,clocks-clk-pll-vco-div = &lt;2&gt;;
+adi,clocks-clk-pll-vco-freq_khz = &lt;9830400&gt;;
+adi,clocks-device-clock_khz = &lt;122880&gt;;
+adi,default-initial-calibrations-mask = &lt;32255&gt;;
+adi,gpio-3v3-oe-mask = &lt;0&gt;;
+adi,gpio-3v3-src-ctrl11_8 = &lt;3&gt;;
+adi,gpio-3v3-src-ctrl3_0 = &lt;3&gt;;
+adi,gpio-3v3-src-ctrl7_4 = &lt;3&gt;;
+adi,gpio-oe-mask = &lt;0&gt;;
+adi,gpio-src-ctrl11_8 = &lt;0&gt;;
+adi,gpio-src-ctrl15_12 = &lt;0&gt;;
+adi,gpio-src-ctrl18_16 = &lt;0&gt;;
+adi,gpio-src-ctrl3_0 = &lt;0&gt;;
+adi,gpio-src-ctrl7_4 = &lt;0&gt;;
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>[ -- snip -- ]
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></div></blockquote>
+<p>Simply update the values here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9371.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9371 Devicetree Initialization</span></a></p>
+<p>For the No-OS driver the mapping can be found here:
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9371-customization.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9371 Customization</span></a></p>
+</div>
+<section id="screenshots-descriptions">
+<h2>Screenshots / Descriptions<a class="headerlink" href="#screenshots-descriptions" title="Link to this heading"></a></h2>
+<section id="clock-settings">
+<h3>Clock Settings<a class="headerlink" href="#clock-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clk.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clk.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clk.png" width="600" />
+</a>
+</section>
+<section id="calibrations">
+<h3>Calibrations<a class="headerlink" href="#calibrations" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_cal.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_cal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_cal.png" width="600" />
+</a>
+</section>
+<section id="tx-settings">
+<h3>TX Settings<a class="headerlink" href="#tx-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_tx.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_tx.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_tx.png" width="600" />
+</a>
+</section>
+<section id="rx-settings">
+<h3>RX Settings<a class="headerlink" href="#rx-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_rx.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_rx.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_rx.png" width="600" />
+</a>
+</section>
+<section id="observation-rx-settings">
+<h3>Observation RX Settings<a class="headerlink" href="#observation-rx-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_obs.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_obs.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_obs.png" width="600" />
+</a>
+</section>
+<section id="gain-settings">
+<h3>Gain Settings<a class="headerlink" href="#gain-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gain.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gain.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gain.png" width="600" />
+</a>
+</section>
+<section id="agc-settings">
+<h3>AGC Settings<a class="headerlink" href="#agc-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_agc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_agc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_agc.png" width="600" />
+</a>
+</section>
+<section id="arm-gpio-settings">
+<h3>ARM GPIO Settings<a class="headerlink" href="#arm-gpio-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_arm_gpio.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_arm_gpio.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_arm_gpio.png" width="600" />
+</a>
+</section>
+<section id="gpio-settings">
+<h3>GPIO Settings<a class="headerlink" href="#gpio-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gpio.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gpio.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_gpio.png" width="600" />
+</a>
+</section>
+<section id="aux-dac-settings">
+<h3>AUX DAC Settings<a class="headerlink" href="#aux-dac-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_aux_dac.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_aux_dac.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_aux_dac.png" width="600" />
+</a>
+</section>
+<section id="jesd204b-framer-settings">
+<h3>JESD204B Framer Settings<a class="headerlink" href="#jesd204b-framer-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_framer.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_framer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_framer.png" width="600" />
+</a>
+</section>
+<section id="jesd204b-deframer-settings">
+<h3>JESD204B Deframer Settings<a class="headerlink" href="#jesd204b-deframer-settings" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_deframer.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_deframer.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_deframer.png" width="600" />
+</a>
+</section>
+<section id="bist">
+<h3>BIST<a class="headerlink" href="#bist" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_bist.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_bist.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_bist.png" width="600" />
+</a>
+<p>BIST stands for Build-In Self-Test. Selections on this Tab take immediately
+effect and therefore don’t require the Save Settings Button. Functionality
+exposed here is only meant to inject test patterns/data than can be used to
+validate the Digital Interface or functionality of the device.</p>
+<p>There are three major facilities:</p>
+<ul class="simple">
+<li><p><strong>BIST Tone</strong>: User selectable tone with frequency in kHz, that can be
+injected into the TX path.</p></li>
+<li><p><strong>BIST PRBS</strong>: Pseudorandom Binary Sequence (PRBS) that can either injected
+into the RX or TX path.</p></li>
+<li><p><strong>BIST Loopback</strong>: Allows to digitally loopback TX data into the RX path.</p></li>
+</ul>
+</section>
+<section id="dpd-setup-ad9375-only">
+<h3>DPD Setup (AD9375 only)<a class="headerlink" href="#dpd-setup-ad9375-only" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_dpd.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_dpd.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_dpd.png" width="600" />
+</a>
+</section>
+<section id="clgc-setup-ad9375-only">
+<h3>CLGC Setup (AD9375 only)<a class="headerlink" href="#clgc-setup-ad9375-only" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clgc.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clgc.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_clgc.png" width="600" />
+</a>
+</section>
+<section id="vswr-setup-ad9375-only">
+<h3>VSWR Setup (AD9375 only)<a class="headerlink" href="#vswr-setup-ad9375-only" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_vswr.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_vswr.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/adrv9002/docs/solutions/reference-designs/adrv9371x/images/myk_vswr.png" width="600" />
+</a>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="ad9371_plugin.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD9371/AD9375 Plugin Description</a>
+    <a href="filters.html" title="Next document (Alt+Shift+RightArrow)" class="next">MATLAB Profile Generator for AD9371</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
