@@ -45,28 +45,28 @@ Table of Contents
 #. Use the evaluation board to better understand the AD9371/AD9375
 
    #. :doc:`/solutions/reference-designs/adrv9371x/prerequisites`
-   #. :doc:`Quick Start Guides </solutions/reference-designs/adrv9371x/quickstart/index>`:
+   #. :ref:`Quick Start Guides <adrv9371x quickstart>`:
 
-      #. :doc:`On ZCU102 </solutions/reference-designs/adrv9371x/quickstart/zcu102>`
-      #. :doc:`On KCU105 </solutions/reference-designs/adrv9371x/quickstart/kcu105>`
-      #. :doc:`On ZC706 </solutions/reference-designs/adrv9371x/quickstart/zc706>`
-      #. :doc:`On Arria 10 SoC </solutions/reference-designs/adrv9371x/quickstart/a10soc>`
-      #. :doc:`On Arria 10 GX </solutions/reference-designs/adrv9371x/quickstart/a10gx>`
+      #. :ref:`On ZCU102 <adrv9371x quickstart zcu102>`
+      #. :ref:`On KCU105 <adrv9371x quickstart kcu105>`
+      #. :ref:`On ZC706 <adrv9371x quickstart zc706>`
+      #. :ref:`On Arria 10 SoC <adrv9371x quickstart a10soc>`
+      #. :ref:`On Arria 10 GX <adrv9371x quickstart a10gx>`
 
-   #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/index`
+   #. :ref:`adrv9371x user-guide`
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
 
-         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_osc_main`
-         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_plugin`
-         #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/ad9371_advanced_plugin`
+         #. :ref:`adrv9371x iio-oscilloscope`
+         #. :ref:`adrv9371x plugin`
+         #. :ref:`adrv9371x advanced-plugin`
 
       #. :dokuwiki:`FRU EEPROM Utility <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/applications/fru_dump>`
 
    #. Push custom data into/out of the AD9371/AD9375
 
-      #. :doc:`/solutions/reference-designs/adrv9371x/user-guide/basic_iq_datafiles`
+      #. :ref:`adrv9371x iq datafiles`
       #. :ref:`matlab transceiver-toolbox`
       #. :ref:`pyadi-iio`
 
@@ -77,7 +77,7 @@ Table of Contents
       #. :adi:`AD9371 Product page <AD9371>`
       #. :adi:`AD9375 Product page <AD9375>`
       #. :adi:`Full Datasheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
-      #. :doc:`MATLAB Filter Wizard / Profile Generator for AD9371 </solutions/reference-designs/adrv9371x/user-guide/filters>`
+      #. :ref:`MATLAB Filter Wizard / Profile Generator for AD9371 <adrv9371x filters>`
 
    #. Hardware in the Loop / How to design your own custom Baseband
 

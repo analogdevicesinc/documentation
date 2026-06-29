@@ -72,7 +72,7 @@ Table of Contents
    - :doc:`What you need to get started </solutions/reference-designs/arradio/prerequisites>`
    - :ref:`arradio quick-start`
 
-      - :doc:`Linux on Altera SoCKit </solutions/reference-designs/arradio/quickstart/alterasockit>`
+      - :ref:`Linux on Altera SoCKit <arradio quick-start>`
       - :ref:`kuiper`
       - :ref:`kuiper`
 
