@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The AD-FMCADC5-EBZ is a legacy product and is no longer actively supported. This documentation is provided for reference only." name="description" />
+
+    <title>User guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Quick start" href="quickstart/index.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">User guide</a><ul>
+<li><a class="reference internal" href="#hardware-guide">Hardware guide</a><ul>
+<li><a class="reference internal" href="#specifications">Specifications</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-guide">Software guide</a><ul>
+<li><a class="reference internal" href="#fpga-code">FPGA Code</a></li>
+<li><a class="reference internal" href="#no-os-software">No-OS Software</a><ul>
+<li><a class="reference internal" href="#running-no-os-application">Running No-OS Application</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interleaving">Interleaving</a><ul>
+<li><a class="reference internal" href="#interleaving-hdl">Interleaving (HDL)</a></li>
+<li><a class="reference internal" href="#interleaving-sw">Interleaving (SW)</a></li>
+<li><a class="reference internal" href="#ila">ILA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">Linux</a></li>
+<li><a class="reference internal" href="#help-support">Help &amp; Support</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCADC5-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User guide</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick start</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/vc707.html">VC707 Quick Start Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCADC5-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<span id="ad-fmcadc5-ebz-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-FMCADC5-EBZ" target="_blank">AD-FMCADC5-EBZ</a> is a <strong>legacy product</strong>
+and is no longer actively supported. This documentation is provided for
+reference only.</p>
+</div>
+<section id="hardware-guide">
+<span id="ad-fmcadc5-ebz-hardware-guide"></span><h2>Hardware guide<a class="headerlink" href="#hardware-guide" title="Link to this heading"></a></h2>
+<section id="specifications">
+<h3>Specifications<a class="headerlink" href="#specifications" title="Link to this heading"></a></h3>
+<p>The AD-FMCADC5-EBZ board’s primary purpose is to quickly and easily connect
+to an FMC carrier platform and start collecting data using the two AD9625
+devices. The board is a double FMC wide board and requires two fully populated
+(transceivers mainly) FMC connectors on the carrier (such as VC707). The board
+is designed to be easy to use. Out of the box the board will self power and
+self clock when connected to an FMC carrier. The analog signal input is
+connected to J18.</p>
+<p>The AD-FMCADC5-EBZ uses a 2.5 GHz crystal. The two AD9625 devices are clocked
+from the same clock source, but 180 degrees out of phase to each other. This
+180-degree phase offset is what enables the effective 5 GSPS interleaved
+sampling rate: the first ADC samples at the rising edges of the 2.5 GHz clock,
+while the second ADC samples at the falling edges.</p>
+<p>The analog signal is connected to the board at connector J18. The board is
+designed for a wide bandwidth input to allow high frequency RF signals to be
+captured effectively.</p>
+<p>A calibration signal connector (J15) is also available as an alternative input
+for HDL-based calibration of the interleaving order.</p>
+</section>
+</section>
+<section id="software-guide">
+<span id="ad-fmcadc5-ebz-software-guide"></span><h2>Software guide<a class="headerlink" href="#software-guide" title="Link to this heading"></a></h2>
+<section id="fpga-code">
+<h3>FPGA Code<a class="headerlink" href="#fpga-code" title="Link to this heading"></a></h3>
+<p>The AD-FMCADC5-EBZ HDL reference design is built around a MicroBlaze processor
+as in an embedded system. Library cores used:</p>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_ad9625" target="_blank">axi_ad9625</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/axi_adxcvr" target="_blank">axi_adxcvr</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_dmac" target="_blank">axi_dmac</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_fmcadc5_sync" target="_blank">axi_fmcadc5_sync</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/jesd204/axi_jesd204_rx" target="_blank">axi_jesd204_rx</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/axi_sysid" target="_blank">axi_sysid</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/jesd204/jesd204_rx" target="_blank">jesd204_rx</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/sysid_rom" target="_blank">sysid_rom</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/util_adcfifo" target="_blank">util_adcfifo</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library/xilinx/util_adxcvr" target="_blank">util_adxcvr</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="no-os-software">
+<h3>No-OS Software<a class="headerlink" href="#no-os-software" title="Link to this heading"></a></h3>
+<p>The AD-FMCADC5-EBZ No-OS software source can be found at
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/tree/2018_R1/fmcadc5" target="_blank">fmcadc5 project</a>.</p>
+<section id="running-no-os-application">
+<h4>Running No-OS Application<a class="headerlink" href="#running-no-os-application" title="Link to this heading"></a></h4>
+<p>The HDL reference design is built around a processor as in an embedded system.
+You may use either Linux or No-OS software to demonstrate the design. In order
+to run the HDL with the No-OS application, one needs to build the HDL bit file
+and software elf file. The <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a> contains the
+instructions to build the bit file.</p>
+<p>Once the bit file is ready, follow these instructions to build the elf file.
+This assumes you are following our directory structures.</p>
+<ul class="simple">
+<li><p>Clone <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/" target="_blank">No-OS</a> repository</p></li>
+<li><p>Checkout the 2018_R1 release branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">2018_R1</span></code>)</p></li>
+<li><p>Change the directory to <code class="docutils literal notranslate"><span class="pre">fmcadc5/vc707</span></code>.</p></li>
+<li><p>Make the elf file by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">HDF-FILE=&lt;HDL-REPO&gt;/projects/fmcadc5/vc707/fmcadc5_vc707.sdk/system_top.hdf</span></code></p></li>
+</ul>
+<p>A typical run looks like this:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="baef8f754bd7c8846b17b3adca79ccc200263015" name="baef8f754bd7c8846b17b3adca79ccc200263015" type="checkbox"></input><label for="baef8f754bd7c8846b17b3adca79ccc200263015"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">~/</span><span class="n">github</span><span class="o">/</span><span class="n">noos</span><span class="o">/</span><span class="n">ad</span><span class="o">-</span><span class="n">fmcadc5</span><span class="o">-</span><span class="n">ebz</span><span class="o">/</span><span class="n">vc707</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">make</span> <span class="n">HDF</span><span class="o">-</span><span class="n">FILE</span><span class="o">=~/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fmcadc5</span><span class="o">/</span><span class="n">vc707</span><span class="o">/</span><span class="n">fmcadc5_vc707</span><span class="o">.</span><span class="n">sdk</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">hdf</span>
+<span class="n">xsct</span> <span class="o">-</span><span class="n">s</span> <span class="o">../../</span><span class="n">scripts</span><span class="o">/</span><span class="n">xilinx_xsct</span><span class="o">.</span><span class="n">tcl</span> <span class="o">~/</span><span class="n">github</span><span class="o">/</span><span class="n">hdl</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">fmcadc5</span><span class="o">/</span><span class="n">vc707</span><span class="o">/</span><span class="n">fmcadc5_vc707</span><span class="o">.</span><span class="n">sdk</span><span class="o">/</span><span class="n">system_top</span><span class="o">.</span><span class="n">hdf</span> <span class="o">&gt;&gt;</span> <span class="n">xilinx_xsct</span><span class="o">.</span><span class="n">log</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+
+<span class="n">mb</span><span class="o">-</span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">mlittle</span><span class="o">-</span><span class="n">endian</span> <span class="o">-</span><span class="n">mxl</span><span class="o">-</span><span class="n">soft</span><span class="o">-</span><span class="n">mul</span> <span class="o">-</span><span class="n">mcpu</span><span class="o">=</span><span class="n">v9</span><span class="mf">.2</span> <span class="o">-</span><span class="n">mxl</span><span class="o">-</span><span class="n">soft</span><span class="o">-</span><span class="n">mul</span> <span class="o">-</span><span class="n">DXILINX</span> <span class="o">-</span><span class="n">Ibsp</span><span class="o">/</span><span class="n">sys_mb</span><span class="o">/</span><span class="n">include</span> <span class="o">-</span><span class="n">I</span><span class="o">..</span> <span class="o">-</span><span class="n">I</span><span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">xilinx_platform_drivers</span> <span class="o">-</span><span class="n">I</span><span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">jesd204b_gt</span> <span class="o">-</span><span class="n">I</span><span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">jesd204b_v51</span> <span class="o">-</span><span class="n">I</span><span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">adc_core</span> <span class="o">-</span><span class="n">I</span><span class="o">../../</span><span class="n">drivers</span><span class="o">/</span><span class="n">ad9625</span> <span class="o">-</span><span class="n">Os</span> <span class="o">-</span><span class="n">ffunction</span><span class="o">-</span><span class="n">sections</span> <span class="o">-</span><span class="n">fdata</span><span class="o">-</span><span class="n">sections</span> <span class="o">-</span><span class="n">o</span> <span class="n">vc707</span><span class="o">.</span><span class="n">elf</span> <span class="n">sw</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">platform</span><span class="o">.</span><span class="n">c</span> <span class="o">../</span><span class="n">ad_fmcadc5_ebz</span><span class="o">.</span><span class="n">c</span> <span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">xilinx_platform_drivers</span><span class="o">/</span><span class="n">platform_drivers</span><span class="o">.</span><span class="n">c</span> <span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">jesd204b_gt</span><span class="o">/</span><span class="n">jesd204b_gt</span><span class="o">.</span><span class="n">c</span> <span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">jesd204b_v51</span><span class="o">/</span><span class="n">jesd204b_v51</span><span class="o">.</span><span class="n">c</span> <span class="o">../../</span><span class="n">common_drivers</span><span class="o">/</span><span class="n">adc_core</span><span class="o">/</span><span class="n">adc_core</span><span class="o">.</span><span class="n">c</span> <span class="o">../../</span><span class="n">drivers</span><span class="o">/</span><span class="n">ad9625</span><span class="o">/</span><span class="n">ad9625</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">Lbsp</span><span class="o">/</span><span class="n">sys_mb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span> <span class="o">-</span><span class="n">Tsw</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">lscript</span><span class="o">.</span><span class="n">ld</span> <span class="o">-</span><span class="n">Wl</span><span class="p">,</span><span class="o">--</span><span class="n">start</span><span class="o">-</span><span class="n">group</span><span class="p">,</span><span class="o">-</span><span class="n">lxil</span><span class="p">,</span><span class="o">-</span><span class="n">lgcc</span><span class="p">,</span><span class="o">-</span><span class="n">lc</span><span class="p">,</span><span class="o">--</span><span class="n">end</span><span class="o">-</span><span class="n">group</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>Start an UART terminal.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="8cd61d8b8ded4484640d32f7a776d5c349b73e7a" name="8cd61d8b8ded4484640d32f7a776d5c349b73e7a" type="checkbox"></input><label for="8cd61d8b8ded4484640d32f7a776d5c349b73e7a"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">port</span>    <span class="o">=</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
+<span class="n">speed</span>   <span class="o">=</span> <span class="mi">115200</span>
+<span class="n">bits</span>    <span class="o">=</span> <span class="mi">8</span>
+<span class="n">stopbits</span>    <span class="o">=</span> <span class="mi">1</span>
+<span class="n">parity</span>  <span class="o">=</span> <span class="n">none</span>
+<span class="n">crlfauto</span>    <span class="o">=</span> <span class="kc">True</span> <span class="c1">## if not set, expect non-aligned text</span>
+
+<span class="p">[</span><span class="o">~/</span><span class="n">github</span><span class="o">/</span><span class="n">noos</span><span class="o">/</span><span class="n">ad</span><span class="o">-</span><span class="n">fmcadc5</span><span class="o">-</span><span class="n">ebz</span><span class="o">/</span><span class="n">vc707</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">gtkterm</span> <span class="o">-</span><span class="n">c</span> <span class="n">USB0</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The folder contains a vc707.tcl file that you can launch with xmd. It can be
+also run using Vivado or SDK.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="4ca502253577390d3f5c8d97c86b873b7121362e" name="4ca502253577390d3f5c8d97c86b873b7121362e" type="checkbox"></input><label for="4ca502253577390d3f5c8d97c86b873b7121362e"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[~/github/noos/ad-fmcadc5-ebz/vc707]&gt; xmd -tcl vc707.tcl
+rlwrap: warning: your $TERM is &#39;xterm&#39; but rlwrap couldn&#39;t find it in the terminfo database. Expect some problems.
+
+* Xilinx Microprocessor Debugger (XMD) Engine
+* XMD v2015.2 (64-bit)
+*** SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+   ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+Executing user script : vc707.tcl
+Configuring Device 1 (xc7vx485t) with Bitstream -- hw/system_top.bit
+..............................10..............................20..............................30......................................................10..............................20..............................30......................................................10..............................20..............................30......................................................10..............................20..............................30......................................................10..............................20..............................30..............................40..............................50..............................60..............................70..............................................10..............................20..............................30..............................40..............................50..............................60..............................70..............................................10..............................20..............................30..............................40..............................50..............................60..............................70..............................80..............................90..............................Done
+Successfully downloaded bit file.
+
+JTAG chain configuration
+Device   ID Code        IR Length    Part Name
+1       23687093           6        xc7vx485t
+
+JTAG chain configuration
+Device   ID Code        IR Length    Part Name
+1       23687093           6        xc7vx485t
+
+MicroBlaze Processor Configuration :
+Version............................9.5
+Optimization.......................Performance
+Interconnect.......................AXI-LE
+MMU Type...........................Full_MMU
+No of PC Breakpoints...............1
+No of Read Addr/Data Watchpoints...0
+No of Write Addr/Data Watchpoints..0
+Instruction Cache Support..........on
+Instruction Cache Base Address.....0x80000000
+Instruction Cache High Address.....0xbfffffff
+Data Cache Support.................on
+Data Cache Base Address............0x80000000
+Data Cache High Address............0xbfffffff
+Exceptions  Support................on
+FPU  Support.......................off
+Hard Divider Support...............on
+Hard Multiplier Support............on - (Mul64)
+Barrel Shifter Support.............on
+MSR clr/set Instruction Support....on
+Compare Instruction Support........on
+PVR Supported......................on
+PVR Configuration Type.............Full
+Data Cache Write-back Support......off
+Fault Tolerance Support............off
+Stack Protection Support...........off
+
+Connected to &quot;mb&quot; target. id = 0
+Starting GDB server for &quot;mb&quot; target (id = 0) at TCP port no 1234
+Processor stopped
+
+System Reset .... DONE
+Downloading Program -- vc707.elf
+      section, .vectors.reset: 0x00000000-0x00000007
+      section, .vectors.sw_exception: 0x00000008-0x0000000f
+      section, .vectors.interrupt: 0x00000010-0x00000017
+      section, .vectors.hw_exception: 0x00000020-0x00000027
+      section, .text: 0x80000000-0x800069fb
+      section, .init: 0x800069fc-0x80006a2f
+      section, .fini: 0x80006a30-0x80006a4b
+      section, .ctors: 0x80006a4c-0x80006a53
+      section, .dtors: 0x80006a54-0x80006a5b
+      section, .rodata: 0x80006a5c-0x8000723f
+      section, .data: 0x80007240-0x8000746f
+      section, .eh_frame: 0x80007470-0x800074fb
+      section, .jcr: 0x800074fc-0x800074ff
+      section, .bss: 0x80007500-0x8000762b
+      section, .heap: 0x8000762c-0x80007a2f
+      section, .stack: 0x80007a30-0x80007e2f
+Download Progress..10.20.30.40.50.60.70.80.90.Done
+Setting PC with Program Start Address 0x00000000
+Processor started. Type &quot;stop&quot; to stop processor
+
+RUNNING&gt; Disconnected from Target 0
+
+[~/github/noos/ad-fmcadc5-ebz/vc707]&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The following messages should appear on the terminal.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="49eb041007bcef65d1e51b4e6732e3461a8ba2bc" name="49eb041007bcef65d1e51b4e6732e3461a8ba2bc" type="checkbox"></input><label for="49eb041007bcef65d1e51b4e6732e3461a8ba2bc"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AD9625</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="n">AD9625</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="n">JESD204B</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="n">JESD204B</span> <span class="n">successfully</span> <span class="n">initialized</span><span class="o">.</span>
+<span class="n">SYSREF</span> <span class="n">Calibration</span> <span class="n">Successful</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">ADC</span> <span class="n">Core</span> <span class="n">Initialized</span> <span class="p">(</span><span class="mi">157</span> <span class="n">MHz</span><span class="p">)</span><span class="o">.</span>
+<span class="n">ADC</span> <span class="n">Core</span> <span class="n">Initialized</span> <span class="p">(</span><span class="mi">157</span> <span class="n">MHz</span><span class="p">)</span><span class="o">.</span>
+<span class="n">Initialization</span> <span class="n">done</span><span class="o">.</span>
+<span class="n">Capture</span> <span class="n">done</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>This should appear on the ILA:</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">FMCADC5 ILA capture - correct interleaving</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="interleaving">
+<h3>Interleaving<a class="headerlink" href="#interleaving" title="Link to this heading"></a></h3>
+<section id="interleaving-hdl">
+<h4>Interleaving (HDL)<a class="headerlink" href="#interleaving-hdl" title="Link to this heading"></a></h4>
+<p>As a brief introduction to interleaving: there are two AD9625 devices running
+at 2.5 Gbps, with clocks that are 180 degrees out of phase. The input signal
+is sampled by the first ADC at the rising edges of the 2.5 GHz clock and by the
+second ADC at the falling edges of the conceptually same clock, yielding an
+effective sampling rate of 5 GSPS. The two sample streams then need to be
+interleaved. That sounds straightforward, but there are some challenges.</p>
+<p>A note of caution: this interleaving approach inherently introduces performance
+factors that are outside the scope of this discussion. The two main factors are
+jitter on the sampling clocks and gain/phase variations at the input. The
+devices may also have encoding skew, some of which can be filtered or
+compensated by post-processing.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_intlv_hdl.png"><img alt="AD-FMCADC5-BD" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_intlv_hdl.png" width="1000" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">AD-FMCADC5-EBZ Interleaving HDL Block Diagram</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Examining the data path of the devices independently (see block diagram above),
+alignment and deskew occur at various stages. The transceivers perform deskew
+and alignment of bits (comma character alignment and 10B to 8B conversion).
+The JESD-IP then aligns individual lanes and outputs data with a fixed latency
+using SYSREF. The SYSREF resets the LMFC, so the receiver can determine the
+system latency from the time it receives the SYSREF pulse to the first received
+ILA data. After this, the samples reach the AD9625 core.</p>
+<p>Each core receives two samples per device. Determining which sample comes first
+in time is essential because the samples must be interleaved in the exact order
+they were captured. In theory, JESD204B subclass-1 operation with SYSREF should
+be sufficient for this. SYSREF is the absolute time reference for all transmit
+and receive devices involved. In practice, however, SYSREF is rarely used as a
+clock. It is treated as data and sampled by each device at its own clock. A
+more robust approach is to identify, at the receiving device, the exact sample
+at which SYSREF was captured. The AD9625 supports a mode that attaches a time
+stamp to the samples - details are in the
+<a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/AD9625.pdf" target="_blank">data sheet</a>.
+The FPGA design uses this time stamp to determine the exact sample at which
+each device captured SYSREF. It does so by aligning samples across the
+16-sample data output per device per clock, then writing data to a small FIFO
+whose write pointer is reset by the SYSREF time stamp. A common read pointer
+reads the samples back out. The FIFO supports deskewing of up to 8 samples.
+The ADC pack interleaves these samples assuming device-0 is first in order.
+The software must ensure that device-0 always samples SYSREF half a clock
+ahead of device-1, which is achieved through a calibration routine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The AD9625 supports time stamp insertion at the LSB of the sample (and is
+the ONLY option in certain lane configurations). This changes the devices
+to 11-bit converters. The HDL design does NOT support this. It supports
+time stamp insertion in the CS bits ONLY. The converter resolution remains
+as 12-bit. If you would prefer the LSB option, you need to change both HDL
+and software.</p>
+</div>
+</section>
+<section id="interleaving-sw">
+<h4>Interleaving (SW)<a class="headerlink" href="#interleaving-sw" title="Link to this heading"></a></h4>
+<p>The software programs both the devices and the GPIO, transceivers and IP cores
+in the FPGA. The default transceiver setup only supports single-chip, single-link
+configuration. It also does not take into account that a single SYSREF controls
+both the devices and transceivers. The default routine is therefore modified to
+leave the transceivers up and running but the data path is held under reset.
+This is required because the AD9625 does NOT always wait for SYSREF to start
+the ILA phase after CGS. The second SYSREF may reset the LMFC, but in its
+absence, ILA phase is initiated.</p>
+<p>This is the section of the code where the initial setup is done:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="c5f250c98672d731dd0ecef739a0817eea29039f" name="c5f250c98672d731dd0ecef739a0817eea29039f" type="checkbox"></input><label for="c5f250c98672d731dd0ecef739a0817eea29039f"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">adc5_gpio_ctl</span><span class="p">(</span><span class="n">GPIO_DEVICE_ID</span><span class="p">))</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="n">ad9625_setup</span><span class="p">(</span><span class="n">XPAR_SPI_0_DEVICE_ID</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">ad9625_setup</span><span class="p">(</span><span class="n">XPAR_SPI_0_DEVICE_ID</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="n">jesd204b_gt_initialize</span><span class="p">(</span><span class="n">XPAR_AXI_FMCADC5_0_GT_BASEADDR</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="n">jesd204b_setup</span><span class="p">(</span><span class="n">XPAR_AXI_AD9625_0_JESD_BASEADDR</span><span class="p">,</span> <span class="n">jesd204b_st</span><span class="p">);</span>
+<span class="n">jesd204b_gt_setup_modified</span><span class="p">(</span><span class="n">jesd204b_gt_link</span><span class="p">);</span>
+
+<span class="n">jesd204b_gt_initialize</span><span class="p">(</span><span class="n">XPAR_AXI_FMCADC5_1_GT_BASEADDR</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+<span class="n">jesd204b_setup</span><span class="p">(</span><span class="n">XPAR_AXI_AD9625_1_JESD_BASEADDR</span><span class="p">,</span> <span class="n">jesd204b_st</span><span class="p">);</span>
+<span class="n">jesd204b_gt_setup_modified</span><span class="p">(</span><span class="n">jesd204b_gt_link</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The devices need to be re-programmed to support interleaving. The sequence
+below enables the SYSREF time stamping in the CS bits and also programs the
+monitoring of SYSREF signals for setup/hold violations at the 2.5 GHz clock.
+This is required to ensure that the sampling order is correct.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="8d98ea5c439aefac58af623876317cdcb76d4013" name="8d98ea5c439aefac58af623876317cdcb76d4013" type="checkbox"></input><label for="8d98ea5c439aefac58af623876317cdcb76d4013"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x072</span><span class="p">,</span> <span class="mh">0x8b</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x03a</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0x0ff</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x072</span><span class="p">,</span> <span class="mh">0x8b</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x03a</span><span class="p">,</span> <span class="mh">0x02</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x0ff</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>If starting from reset, the devices are in CGS at this time. The AD9625 may
+initiate a ILA as soon as it sees SYNC deasserted regardless of SYSREF. So we
+need to make sure that the link is down and the data path is in reset before
+synchronization. The following routine resets the data path and keeps SYNC
+asserted (SYSREF is NOT active):</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="d5fabeb53b9baa2fac7508729d486fc427b7ffb5" name="d5fabeb53b9baa2fac7508729d486fc427b7ffb5" type="checkbox"></input><label for="d5fabeb53b9baa2fac7508729d486fc427b7ffb5"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gtlink_control</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">gtlink_sysref</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">xil_printf</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%05d</span><span class="s2">]: Interleaving Synchronization Failed, Exiting!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The following routine brings the data path out of reset and deasserts SYNC.
+The SYSREF is set and status is checked for all data lanes to be active and
+in SYNC:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="5a49173af052259084a668be5dc164ca6520db7d" name="5a49173af052259084a668be5dc164ca6520db7d" type="checkbox"></input><label for="5a49173af052259084a668be5dc164ca6520db7d"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gtlink_control</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">gtlink_sysref</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x1ffff</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">xil_printf</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%05d</span><span class="s2">]: Interleaving Synchronization Failed, Exiting!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The software calibration essentially moves in and out of these two routines
+each time making sure that SYSREF is sampled by the devices in order.
+Device-0 samples SYSREF at its rising edge (the rising edge of the
+“conceptual clock”), device-1 samples SYSREF at its rising edge after that
+(the falling edge of the “conceptual clock”). The software moves the SYSREF
+until it sees a violation on the signal by device-0 but NOT device-1. The
+setup window is set such that this still does NOT cause an actual violation so
+that device-0 samples the signal correctly.</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="a0b1848733f38ca5c978ed86db2e40cdc791a0d1" name="a0b1848733f38ca5c978ed86db2e40cdc791a0d1" type="checkbox"></input><label for="a0b1848733f38ca5c978ed86db2e40cdc791a0d1"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ad9625_sysref_sw_calibrate</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>After calibration, the software brings the cores out of reset. As a measure of
+the link status, it monitors the PRBS sequences and makes sure that they were
+synchronized between the devices and the cores:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="afc5419c0e70a050da00740658a4a8a8e0ae79ef" name="afc5419c0e70a050da00740658a4a8a8e0ae79ef" type="checkbox"></input><label for="afc5419c0e70a050da00740658a4a8a8e0ae79ef"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adc_setup</span><span class="p">(</span><span class="n">ad9625_0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">adc_setup</span><span class="p">(</span><span class="n">ad9625_1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_TEST_CNTRL</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_OUTPUT_MODE</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_TRANSFER</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_TEST_CNTRL</span><span class="p">,</span> <span class="mh">0x5</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_OUTPUT_MODE</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_TRANSFER</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">adc_pn_mon</span><span class="p">(</span><span class="n">ad9625_0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ADC_PN23A</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">adc_pn_mon</span><span class="p">(</span><span class="n">ad9625_1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ADC_PN23A</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>The devices are set to disable the test patterns and data format is set to
+2’s complement with sign extension. The ILA core is 16-bit samples and the
+format must be signed decimal to display analog signal correctly:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="54d7741423f9227e98f73c6dac739d92d9f5fb41" name="54d7741423f9227e98f73c6dac739d92d9f5fb41" type="checkbox"></input><label for="54d7741423f9227e98f73c6dac739d92d9f5fb41"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_TEST_CNTRL</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_OUTPUT_MODE</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">AD9625_REG_TRANSFER</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+<span class="n">adc_write</span><span class="p">(</span><span class="n">ad9625_0</span><span class="p">,</span> <span class="n">ADC_REG_CHAN_CNTRL</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mh">0x51</span><span class="p">);</span>
+
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_TEST_CNTRL</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_OUTPUT_MODE</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+<span class="n">ad9625_spi_write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">AD9625_REG_TRANSFER</span><span class="p">,</span> <span class="mh">0x1</span><span class="p">);</span>
+<span class="n">adc_write</span><span class="p">(</span><span class="n">ad9625_1</span><span class="p">,</span> <span class="n">ADC_REG_CHAN_CNTRL</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mh">0x51</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section>
+<section id="ila">
+<h4>ILA<a class="headerlink" href="#ila" title="Link to this heading"></a></h4>
+<p>The design instantiates an ILA core that serializes the interleaved 512
+samples per clock down to 1 sample per clock, allowing the interleaving order
+to be inspected directly. The following captures illustrate correct operation:</p>
+<ol class="arabic simple">
+<li><p>ILA waveform overview.</p></li>
+</ol>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ILA waveform (correct interleaving)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Sine wave zoomed between -1 and 1.</p></li>
+</ol>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_2.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_2.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Sine wave zoomed in (correct interleaving)</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Values zoomed in — all samples are in strictly increasing order.</p></li>
+</ol>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_3.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_3.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Values zoomed in, samples in increasing order</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Zero crossing region with values zoomed in — samples remain in increasing
+order.</p></li>
+</ol>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_4.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_1_4.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Zero crossing with samples in increasing order</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>To observe the effect of an interleaving order violation, the calibration
+function can be replaced or followed by the routine below, which forces a
+violation:</p>
+<div><div class="collapsible docutils">
+<input class="collapsible_input" id="d4cfed9edf94ae29947bec1602f2f0e6dde076a1" name="d4cfed9edf94ae29947bec1602f2f0e6dde076a1" type="checkbox"></input><label for="d4cfed9edf94ae29947bec1602f2f0e6dde076a1"><p>Click to expand</p>
+<div class="icon"></div></label><div class="collapsible_content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+   <span class="n">gtlink_control</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">gtlink_sysref</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">xil_printf</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%05d</span><span class="s2">]: Interleaving Synchronization Failed, Exiting!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
+     <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="n">gtlink_control</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">gtlink_sysref</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mh">0x1ffff</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">xil_printf</span><span class="p">(</span><span class="s2">&quot;[</span><span class="si">%05d</span><span class="s2">]: Interleaving Synchronization Failed, Exiting!!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">__LINE__</span><span class="p">);</span>
+     <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">if</span> <span class="p">(</span><span class="n">ad9625_sysref_status</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><p>When the violation is triggered, the ILA captures will show samples out of
+order:</p>
+<ol class="arabic simple">
+<li><p>ILA waveform overview.</p></li>
+</ol>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">ILA waveform (broken interleaving)</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Sine wave zoomed between -1 and 1 — a “saw-tooth” artifact is visible due
+to out-of-order samples.</p></li>
+</ol>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_4.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_4.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Saw-tooth pattern due to out-of-order samples</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Values zoomed in — alternating samples are swapped, but each subsequence
+individually maintains increasing order.</p></li>
+</ol>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_2.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_2.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Values zoomed in - alternating samples swapped</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Zero crossing region with values zoomed in — alternating samples are out
+of order.</p></li>
+</ol>
+<figure class="align-center" id="id10">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_3.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_2_3.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Zero crossing - alternating samples out of order</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The same behavior is observable at higher input frequencies:</p>
+<ol class="arabic simple">
+<li><p>~900 MHz input.</p></li>
+</ol>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_4_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_4_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">ILA at ~900+ MHz</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>~66 MHz input.</p></li>
+</ol>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_3_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_3_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">ILA at ~66+ MHz</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>When interleaving order is correct, the output may still appear misaligned
+due to offset and gain differences between the two ADCs. This effect is less
+pronounced when the input gradient is high, but is clearly visible at signal
+peaks. The following captures show correct interleaving order:</p>
+<ol class="arabic simple">
+<li><p>Interleaved signal.</p></li>
+</ol>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_1.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_1.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Interleaved signal</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Zoom in the window below.</p></li>
+</ol>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_2.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_2.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Zoomed view</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>The samples are in order.</p></li>
+</ol>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_4.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_4.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">Samples in order</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Zoom in the window at the peak below.</p></li>
+</ol>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_3.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_3.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Peak region zoomed</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="5">
+<li><p>The samples are in order, but appear to be out of order.</p></li>
+</ol>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_5.png"><img alt="FMCADC5-ILA" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/ad-fmcadc5-ebz_landing/docs/solutions/reference-designs/ad-fmcadc5-ebz/images/fmcadc5_ila_5_5.png" width="800" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Samples appear out of order at peak due to offset/gain differences</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-adc/axi-adc-hdl.html#axi-adc-hdl" target="_blank" title="(in Linux Drivers)"><span class="xref std std-ref">AD9625 AXI Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/axi_jesd204_rx.html#axi-jesd204-rx" target="_blank" title="(in Linux Drivers)"><span class="xref std std-ref">JESD204B/C Receive Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/axi_adxcvr.html#axi-adxcvr" target="_blank" title="(in Linux Drivers)"><span class="xref std std-ref">JESD204B/C AXI_ADXCVR Highspeed Transceivers Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper Linux</span></a></p></li>
+</ul>
+</section>
+<section id="help-support">
+<h3>Help &amp; Support<a class="headerlink" href="#help-support" title="Link to this heading"></a></h3>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span>Build an HDL project</span></a> contains all the documentation, build
+instructions and register map tables.</p></li>
+<li><p>Browse the HDL GitHub repository:
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/library" target="_blank">library components</a>
+and <a class="icon git reference external" href="https://github.com/analogdevicesinc/hdl/tree/main/projects" target="_blank">projects</a>.</p></li>
+<li><p>Questions? Ask on <a class="icon ez reference external" href="https://ez.analog.com/community/fpga" target="_blank">FPGA questions</a>,
+<a class="icon ez reference external" href="https://ez.analog.com/linux-software-drivers/" target="_blank">Linux driver questions</a>,
+or <a class="icon ez reference external" href="https://ez.analog.com/microcontroller-no-os-drivers/" target="_blank">No-OS Drivers questions</a>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <a href="quickstart/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Quick start</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
