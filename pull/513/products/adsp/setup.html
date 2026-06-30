@@ -471,26 +471,12 @@ the installer proceeds to write the eMMC image.</p>
 </section>
 <section id="install-emmc-image">
 <h3>Install eMMC Image<a class="headerlink" href="#install-emmc-image" title="Link to this heading"></a></h3>
-<p>The installer prompts for the IP address of your PC to download the eMMC system
-image.</p>
-<p>You can obtain <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> in one of two ways:</p>
-<ul class="simple">
-<li><p><strong>From CI artifacts:</strong> download from
-<a class="icon link reference external" href="https://github.com/analogdevicesinc/br2-external/actions/runs/27255421102" target="_blank">https://github.com/analogdevicesinc/br2-external/actions/runs/27255421102</a>
-and extract the archive.</p></li>
-<li><p><strong>From a local build:</strong> the debug build produces <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> automatically
-in <code class="docutils literal notranslate"><span class="pre">output/images/</span></code>.</p></li>
-</ul>
-<p>If only <code class="docutils literal notranslate"><span class="pre">emmc.img</span></code> is present, create the compressed file manually:</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">emmc.img</span></code> is not compressed, compress it manually:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gzip<span class="w"> </span>-k<span class="w"> </span>emmc.img
 </pre></div>
 </div>
 <p>Ensure <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> is in the same directory where your HTTP server is
-running. If it is in a different location, either copy it there or restart the
-server in the directory containing the file:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>http.server
-</pre></div>
-</div>
+running.</p>
 <p>The serial console prompts for your PC’s IP address:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">======== Install eMMC Image ========</span>
 
@@ -499,7 +485,7 @@ server in the directory containing the file:</p>
 <span class="go">Enter your PC&#39;s IP address:</span>
 </pre></div>
 </div>
-<p>Enter your IP address. The board configures its network interface, downloads
+<p>The board configures its network interface, downloads
 <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> from your PC, decompresses it, and writes it directly to the
 eMMC. After the write completes, the console instructs you to move the S1 boot
 mode switch:</p>
