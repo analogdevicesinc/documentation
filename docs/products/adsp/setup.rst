@@ -282,14 +282,66 @@ Serial console displays a prompt:
    This will erase and program SPI flash.
    Continue? [y/N]:
 
-Type ``y`` to erase the flash contents and install U-Boot. After programming completes, 
-the console instructs you to move the S1 boot mode switch to the SPI boot position.
+Type ``y`` to erase the flash contents and install U-Boot. After programming completes,
+the installer proceeds to write the eMMC image.
+
+Install eMMC Image
+~~~~~~~~~~~~~~~~~~
+
+If ``emmc.img`` is not compressed, compress it manually:
+
+.. code-block:: sh
+
+   $ gzip -k emmc.img
+
+Ensure ``emmc.img.gz`` is in the same directory where your HTTP server is
+running.
+
+The serial console prompts for your PC's IP address:
 
 .. code-block:: console
 
-   SPI install complete
+   ======== Install eMMC Image ========
+
+   This will download emmc.img.gz from your PC and write it to /dev/mmcblk0.
+
+   Enter your PC's IP address:
+
+The board configures its network interface, downloads
+``emmc.img.gz`` from your PC, decompresses it, and writes it directly to the
+eMMC. After the write completes, the console instructs you to move the S1 boot
+mode switch:
+
+.. code-block:: console
+
+   eMMC install complete.
 
    Set the switch S1 to position 1 (SPI boot).
    Waiting for switch...
 
-Once the position change is detected, the system reboots automatically from SPI flash and the U-Boot console appears.
+Once the position change is detected, the system reboots automatically from SPI
+flash and the U-Boot console appears.
+
+Boot Linux from eMMC
+~~~~~~~~~~~~~~~~~~~~
+
+After reboot, U-Boot does not boot automatically. At the U-Boot prompt, type:
+
+.. code-block:: console
+
+   => run emmcboot
+
+U-Boot loads the kernel and device tree from the eMMC boot partition and starts
+Linux with the root filesystem on eMMC.
+
+Login
+~~~~~
+
+When the boot completes, a login prompt appears:
+
+.. code-block:: console
+
+   Welcome to the ADI SC598 EZ-Kit
+   sc598-ezkit login:
+
+Log in as ``root`` with no password (press Enter).
