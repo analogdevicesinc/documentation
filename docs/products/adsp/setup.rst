@@ -163,12 +163,24 @@ Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bi
 Booting the System
 ---------------------------
 
+A hybrid boot architecture is being used:
+
+* **SPI Flash** stores the bootloader (U-Boot SPL and U-Boot Proper)
+* **eMMC** stores the full system image (Linux kernel and root filesystem)
+
 Download Release
 ~~~~~~~~~~~~~~~~~~
 
 Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
-download the appropriate ``images-*.tar.xz`` release archive that matches your
-hardware.
+download both release archives that match your hardware (``images-bootstrap-*``
+and ``images-debug-*``), then extract them into the same directory:
+
+.. code-block:: sh
+
+   $ tar -xf images-bootstrap-*.tar.xz
+   $ tar -xf images-debug-*.tar.xz
+
+Both archives extract to ``buildroot/output/images/``.
 
 Boot U-Boot Proper
 ~~~~~~~~~~~~~~~~~~
@@ -209,14 +221,14 @@ Run GDB:
 
       .. shell:: sh
 
-         $ cd images-*   # Navigate to extracted release directory
+         $ cd buildroot/output/images
          $ gdb-multiarch -x u-boot.gdb
 
    .. tab-item:: Windows/Fedora/RHEL
 
       .. shell:: sh
 
-         $ cd images-*   # Navigate to extracted release directory
+         $ cd buildroot/output/images
          $ gdb -x u-boot.gdb
 
 Boot Linux
@@ -230,14 +242,14 @@ Start a file server in a new terminal on your PC in the release directory:
 
       .. shell:: sh
 
-         $ cd images-*   # Navigate to extracted release directory
+         $ cd buildroot/output/images
          $ python3 -m http.server
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $ cd images-*   # Navigate to extracted release directory
+         $ cd buildroot/output/images
          $ python -m http.server
 
 Find your IP address:
@@ -288,15 +300,6 @@ the installer proceeds to write the eMMC image.
 Install eMMC Image
 ~~~~~~~~~~~~~~~~~~
 
-If ``emmc.img`` is not compressed, compress it manually:
-
-.. code-block:: sh
-
-   $ gzip -k emmc.img
-
-Ensure ``emmc.img.gz`` is in the same directory where your HTTP server is
-running.
-
 The serial console prompts for your PC's IP address:
 
 .. code-block:: console
@@ -325,7 +328,8 @@ flash and the U-Boot console appears.
 Boot Linux from eMMC
 ~~~~~~~~~~~~~~~~~~~~
 
-After reboot, U-Boot does not boot automatically. At the U-Boot prompt, type:
+After reboot from SPI flash, U-Boot does not boot automatically. At the U-Boot
+prompt, type:
 
 .. code-block:: console
 
