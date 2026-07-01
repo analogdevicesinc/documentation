@@ -347,6 +347,11 @@ Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 <div class="clear-left"></div></div></div></div></div></section>
 <section id="booting-the-system">
 <h2>Booting the System<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
+<p>A hybrid boot architecture is being used:</p>
+<ul class="simple">
+<li><p><strong>SPI Flash</strong> stores the bootloader (U-Boot SPL and U-Boot Proper)</p></li>
+<li><p><strong>eMMC</strong> stores the full system image (Linux kernel and root filesystem)</p></li>
+</ul>
 <section id="download-release">
 <h3>Download Release<a class="headerlink" href="#download-release" title="Link to this heading"></a></h3>
 <p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
@@ -500,7 +505,8 @@ flash and the U-Boot console appears.</p>
 </section>
 <section id="boot-linux-from-emmc">
 <h3>Boot Linux from eMMC<a class="headerlink" href="#boot-linux-from-emmc" title="Link to this heading"></a></h3>
-<p>After reboot, U-Boot does not boot automatically. At the U-Boot prompt, type:</p>
+<p>After reboot from SPI flash, U-Boot does not boot automatically. At the U-Boot
+prompt, type:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; run emmcboot</span>
 </pre></div>
 </div>
