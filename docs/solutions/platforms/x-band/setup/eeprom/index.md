@@ -76,6 +76,10 @@ Program the EEPROM with the FMC FRU (Field Replaceable Unit) data:
 root@analog:~# fru-dump -i /usr/local/src/fru_tools/masterfiles/AD-FMCOMMS2-EBZ-FRU.bin -o /sys/bus/i2c/devices/15-0050/eeprom
 ```
 
+```{note}
+**Why AD-FMCOMMS2-EBZ FRU?** While the ADXUD1AEBZ interposer is a different board, we use the AD-FMCOMMS2-EBZ FRU binary because it encodes the critical **1.8V VADJ voltage requirement** needed by the AD9081-FMCA-EBZ. The board product name will show as "AD-FMCOMMS2-EBZ" in the readback output—this is intentional and correct.
+```
+
 Command breakdown:
 - `fru-dump`: FRU programming utility
 - `-i`: Input FRU binary file

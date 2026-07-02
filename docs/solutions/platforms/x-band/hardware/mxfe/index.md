@@ -12,15 +12,15 @@ The AD9081 Mixed-Signal Front End (MxFE) combines high-performance ADCs and DACs
 
 ```{tip}
 **Schematics & Resources**
-- [AD9081-FMCA-EBZ Schematic (Rev C)](https://www.analog.com/media/en/technical-documentation/eval-board-schematic/ad9081-mxfe-fmca-revc-eval-board-schematic.pdf)
-- [AD9081-FMCA-EBZ Design Files Rev. D (ZIP)](https://www.analog.com/media/en/evaluation-documentation/evaluation-design-files/ad9081-ad9082.zip)
-- [AD9081 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ad9081.pdf)
-- [AD9081-FMCA-EBZ User Guide (UG-1829)](https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf)
-- :external+linux:doc:`Linux Driver Documentation <drivers/iio-mxfe/ad9081>`
+- :adi:`AD9081-FMCA-EBZ Schematic (Rev C) <media/en/technical-documentation/eval-board-schematic/ad9081-mxfe-fmca-revc-eval-board-schematic.pdf>`
+- :adi:`AD9081-FMCA-EBZ Design Files Rev. D (ZIP) <media/en/evaluation-documentation/evaluation-design-files/ad9081-ad9082.zip>`
+- :adi:`AD9081 Datasheet <media/en/technical-documentation/data-sheets/ad9081.pdf>`
+- :adi:`AD9081-FMCA-EBZ User Guide (UG-1829) <media/en/technical-documentation/user-guides/eval-ad9081-9082-9986-9988-ug-1829.pdf>`
+- :external+linux:doc:`Linux Driver Documentation <drivers/iio-trx-rf/ad9081>`
 
 **Component Product Pages**
-- [AD9081](https://www.analog.com/en/products/ad9081.html) - MxFE Quad, 16-Bit, 12 GSPS DAC / Quad, 12-Bit, 4 GSPS ADC
-- [AD9081 Eval Board (EVAL-AD9081)](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html)
+- :adi:`AD9081 <en/products/ad9081.html>` - MxFE Quad, 16-Bit, 12 GSPS DAC / Quad, 12-Bit, 4 GSPS ADC
+- :adi:`AD9081 Eval Board (EVAL-AD9081) <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9081.html>`
 ```
 
 ## Key Features

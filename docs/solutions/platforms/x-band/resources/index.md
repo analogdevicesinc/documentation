@@ -5,16 +5,16 @@ This section provides links to publications, technical articles, related part pa
 ## Publications and Technical Articles
 
 **Hybrid Beamforming and Phased Arrays**
-- [Hybrid Beamforming Receiver Dynamic Range Theory to Practice](https://www.analog.com/en/technical-articles/hybrid-beamforming-receiver-dynamic-range.html)
-- [Hybrid Beamforming Transmit Calibration with SFDR Optimization](https://www.analog.com/en/resources/technical-articles/hybrid-beamforming-transmit-calibration-with-sfdr-optimization.html)
-- [Over-the-Air Pattern Measurements for Hybrid Beamforming Phased Array](https://www.analog.com/en/resources/technical-articles/over-the-air-pattern-measurements-for-hybrid-beamforming-phased-array.html)
+- :adi:`Hybrid Beamforming Receiver Dynamic Range Theory to Practice <en/technical-articles/hybrid-beamforming-receiver-dynamic-range.html>`
+- :adi:`Hybrid Beamforming Transmit Calibration with SFDR Optimization <en/resources/technical-articles/hybrid-beamforming-transmit-calibration-with-sfdr-optimization.html>`
+- :adi:`Over-the-Air Pattern Measurements for Hybrid Beamforming Phased Array <en/resources/technical-articles/over-the-air-pattern-measurements-for-hybrid-beamforming-phased-array.html>`
 
 ## Related Part Pages and Documentation
 
 **AD9081 MxFE**
-- [AD9081 Product Page](https://www.analog.com/en/products/ad9081.html)
+- :adi:`AD9081 Product Page <en/products/ad9081.html>`
 - {ref}`AD9081/AD9082 Zynq UltraScale+ MPSoC ZCU102 Quick Start Guide <ad9081 quickstart zcu102>`
-- [UG-1578 AD9081/AD9082 User Guide](https://www.analog.com/media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf)
+- :adi:`UG-1578 AD9081/AD9082 User Guide <media/en/technical-documentation/user-guides/ad9081-ad9082-ug-1578.pdf>`
 - {ref}`AD9081-FMCA-EBZ Evaluation Board Documentation <ad9081>`
 
 **ADXUD1AEBZ Up/Down Converter**
@@ -23,13 +23,13 @@ This section provides links to publications, technical articles, related part pa
 - Programming and configuration guides
 
 **ADAR1000 Beamforming IC**
-- [ADAR1000 Product Page](https://www.analog.com/en/products/adar1000.html)
-- [ADAR1000EVAL1Z (Stingray) Eval Board Page](https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADAR1000.html)
+- :adi:`ADAR1000 Product Page <en/products/adar1000.html>`
+- :adi:`ADAR1000EVAL1Z (Stingray) Eval Board Page <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADAR1000.html>`
 - ADAR1000 datasheet and programming guide
 - Beamforming algorithms and calibration procedures
 
 **FPGA Evaluation Board Hardware**
-- [Zynq UltraScale+ FPGA ZCU102](https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html)
+- :xilinx:`Zynq UltraScale+ FPGA ZCU102 <products/boards-and-kits/ek-u1-zcu102-g.html>`
 - ZCU102 user guide and documentation
 - Xilinx development tools and resources
 
@@ -76,7 +76,7 @@ This section provides links to publications, technical articles, related part pa
 ## Support and Community
 
 **Technical Support**
-- [Engineering Zone ADEF Forum](https://ez.analog.com/adef-system-platforms/)
+- :ez:`Engineering Zone ADEF Forum <adef-system-platforms/>`
 - Product-specific support forums
 - Application engineering support
 - Documentation and errata updates
@@ -107,7 +107,7 @@ This resource list is regularly updated. For the most current information and ad
 
 ## Additional Links
 
-- [Analog Devices Main Website](https://www.analog.com/)
-- [ADI Documentation](/)
-- [Engineering Zone Forums](https://ez.analog.com/)
-- [X-Band Development Platform Product Page](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/x-band-development-platform.html)
+- :adi:`Analog Devices Main Website <>`
+- :doc:`ADI Documentation </index>`
+- :ez:`Engineering Zone Forums <>`
+- :adi:`X-Band Development Platform Product Page <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/x-band-development-platform.html>`

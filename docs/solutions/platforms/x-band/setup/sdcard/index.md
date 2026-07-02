@@ -15,7 +15,7 @@ Before starting, ensure you have:
 - **Host Computer**: Windows, Mac, or Linux
 
 ```{important}
-**This version of Kuiper Linux is not yet released publicly.**  
+**This version of Kuiper Linux is not yet released publicly.**
 Reach out to an ADI FAE for a copy
 ```
 
@@ -228,7 +228,7 @@ Boot is confirmed successful when **40 IIO devices** appear in the terminal **an
 - [SD Association - SD Card Formatter](https://www.sdcard.org/downloads/formatter/)
 - [BalenaEtcher Download](https://www.balena.io/etcher/)
 - {ref}`ADI Kuiper Linux Images <kuiper>`
-- [ZCU102 Documentation](https://www.xilinx.com/products/boards-and-kits/ek-u1-zcu102-g.html)
+- :xilinx:`ZCU102 Documentation <products/boards-and-kits/ek-u1-zcu102-g.html>`
 
 ```{seealso}
 - {ref}`ZCU102 Configuration <x-band-zcu102config>` - Configure boot mode and peripherals

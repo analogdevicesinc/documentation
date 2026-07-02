@@ -255,7 +255,7 @@ TDD_CH0 (TX Enable):
   - OFF time: 10 µs
   - Duration: 10 µs TX pulse (repeats every frame)
 
-TDD_CH1 (RX Enable):  
+TDD_CH1 (RX Enable):
   - ON time:  0 µs
   - OFF time: 20 µs
   - Duration: 20 µs capture window per frame
@@ -358,7 +358,7 @@ Two key TDD signals are accessible for oscilloscope verification:
 
 *System Settling Times*
 - **RF Switches**: ADAR1000 switches in < 1 µs
-- **IF Switches**: ADXUD1A converter switching < 2 µs  
+- **IF Switches**: ADXUD1A converter switching < 2 µs
 - **Amplifier Bias**: PA/LNA bias settling 5-20 µs
 - **Total TX→RX**: Recommend 20-50 µs guard time minimum
 - **Total RX→TX**: Recommend 10-30 µs guard time minimum

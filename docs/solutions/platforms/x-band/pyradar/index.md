@@ -606,17 +606,17 @@ The custom ADAR1000 driver is required for proper phased-array beamforming on th
 
 ### Documentation
 - {external+pyadi-iio:doc}`pyadi-iio Documentation <index>` - Python IIO library reference
-- [AD9081 Product Page](https://www.analog.com/en/products/ad9081.html) - MxFE datasheet and resources
-- [ADAR1000 Product Page](https://www.analog.com/en/products/adar1000.html) - Beamformer documentation
+- :adi:`AD9081 Product Page <en/products/ad9081.html>` - MxFE datasheet and resources
+- :adi:`ADAR1000 Product Page <en/products/adar1000.html>` - Beamformer documentation
 - {ref}`Kuiper Linux Documentation <kuiper>` - Linux image documentation
 
 ### Tools and Software
 - {ref}`IIO Oscilloscope <iio-oscilloscope>` - Real-time IIO device visualization
-- [Genalyzer](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/genalyzer.html) - Signal analysis library
+- :adi:`Genalyzer <en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/genalyzer.html>` - Signal analysis library
 
 ### Contact and Support
 - **pyRadar Author**: Brandon Lopez - brandon.lopez@analog.com
-- **ADI Support**: [EngineerZone Community](https://ez.analog.com/)
+- **ADI Support**: :ez:`EngineerZone Community <>`
 - **GitHub Issues**: Report bugs and request features in repository
 
 ## Pilot Deep-Dives

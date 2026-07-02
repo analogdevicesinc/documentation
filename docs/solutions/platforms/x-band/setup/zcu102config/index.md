@@ -69,7 +69,7 @@ Configure the following jumpers for USB host operation:
 - **Position**: Pins **2-3** shunted
 - **Purpose**: Configures USB2.0 PHY for host mode
 
-#### J110 - USB3.0 PHY Configuration  
+#### J110 - USB3.0 PHY Configuration
 - **Position**: Pins **2-3** shunted
 - **Purpose**: Configures USB3.0 PHY for host mode
 
@@ -174,7 +174,7 @@ The CP2108 provides 4 UART channels:
 
 ## References and Resources
 
-- [ZCU102 Evaluation Board User Guide (UG1182)](https://www.xilinx.com/content/dam/xilinx/support/documents/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf)
+- :xilinx:`ZCU102 Evaluation Board User Guide (UG1182) <content/dam/xilinx/support/documents/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf>`
 - [Silicon Labs CP210x Driver Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - {ref}`ADI Kuiper Linux Documentation <kuiper>`
 

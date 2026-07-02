@@ -183,7 +183,7 @@ Some configurations may not include standoffs. The FMC connector provides mechan
 **2.4 Visual Verification**
 
 - **Check gap between boards** - should be uniform (~10mm)
-- **Verify no bent components** from installation pressure  
+- **Verify no bent components** from installation pressure
 - **Confirm FMC connector fully seated** - no visible gap
 - **Check board alignment** - AD9081 board should be parallel to ZCU102
 
@@ -362,4 +362,4 @@ a. **For one ADAR1000 board**:
    - Connect 12V power supply to P2
 
 b. **For multiple ADAR1000 boards**:
-    - Use single 12V power supply and daisy chain power between boards using P1 Board 1 → P2 Board 2 
+    - Use single 12V power supply and daisy chain power between boards using P1 Board 1 → P2 Board 2

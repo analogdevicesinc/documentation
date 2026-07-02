@@ -30,7 +30,7 @@ The X-Band Development Platform consists of 3 main parts, all designed to work t
 
 The X-Band platform implements a hybrid beamforming architecture combining:
 - **32-channel analog beamforming** via ADAR1000 ICs
-- **4-channel digital beamforming** via AD9081 MxFE  
+- **4-channel digital beamforming** via AD9081 MxFE
 - **X-Band to C-Band frequency conversion** via ADXUD1A
 - **FPGA-based control and processing** via ZCU102
 

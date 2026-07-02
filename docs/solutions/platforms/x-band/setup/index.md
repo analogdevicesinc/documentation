@@ -44,7 +44,7 @@ The X-Band Phased Array Development Platform includes:
 
 **ADXUD1AEBZ**
 
-- **12V DC power adapter** 
+- **12V DC power adapter**
 - On-board power regulation provides all required voltages
 
 
