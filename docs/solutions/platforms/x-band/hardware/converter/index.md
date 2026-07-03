@@ -23,12 +23,12 @@ The ADXUD1AEBZ provides four independent up/down converter channels. Each channe
 - {download}`Interposer BOM (Rev B) <resources/interposer_bom_revB.zip>`
 
 **Component Product Pages**
-- :adi:`ADF4371 <en/products/adf4371.html>` - Microwave Wideband Synthesizer with Integrated VCO
-- :adi:`HMC773A <en/products/hmc773a.html>` - GaAs MMIC Fundamental Mixer
-- :adi:`ADL8111 <en/products/adl8111.html>` - IF Variable Gain Amplifier
-- :adi:`HMC8411 <en/products/hmc8411.html>` - GaAs pHEMT MMIC Low Noise Amplifier
-- :adi:`HMC903 <en/products/hmc903.html>` - GaAs pHEMT MMIC Driver Amplifier
-- :adi:`ADRF5020 <en/products/adrf5020.html>` - Silicon SPDT Switch
+- {adi}`ADF4371 <en/products/adf4371.html>` - Microwave Wideband Synthesizer with Integrated VCO
+- {adi}`HMC773A <en/products/hmc773a.html>` - GaAs MMIC Fundamental Mixer
+- {adi}`ADL8111 <en/products/adl8111.html>` - IF Variable Gain Amplifier
+- {adi}`HMC8411 <en/products/hmc8411.html>` - GaAs pHEMT MMIC Low Noise Amplifier
+- {adi}`HMC903 <en/products/hmc903.html>` - GaAs pHEMT MMIC Driver Amplifier
+- {adi}`ADRF5020 <en/products/adrf5020.html>` - Silicon SPDT Switch
 ```
 
 ## Block Diagram

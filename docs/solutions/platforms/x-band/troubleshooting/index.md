@@ -198,6 +198,6 @@ Always verify TDD timing with an oscilloscope before enabling high-power TX mode
 
 ## Additional Support
 
-- **ADI EngineerZone**: :ez:`ez.analog.com/adef-system-platforms <adef-system-platforms/>`
+- **ADI EngineerZone**: {ez}`adef-system-platforms`
 - {external+pyadi-iio:doc}`pyadi-iio Documentation <index>`
 - {ref}`Kuiper Linux Documentation <kuiper>`

@@ -174,7 +174,7 @@ The CP2108 provides 4 UART channels:
 
 ## References and Resources
 
-- :xilinx:`ZCU102 Evaluation Board User Guide (UG1182) <content/dam/xilinx/support/documents/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf>`
+- {xilinx}`ZCU102 Evaluation Board User Guide (UG1182) <content/dam/xilinx/support/documents/boards_and_kits/zcu102/ug1182-zcu102-eval-bd.pdf>`
 - [Silicon Labs CP210x Driver Download](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
 - {ref}`ADI Kuiper Linux Documentation <kuiper>`
 

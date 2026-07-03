@@ -15,30 +15,30 @@ The ADAR1000EVAL1Z, nicknamed "Stingray," is a comprehensive analog beamforming 
 
 ```{tip}
 **Schematics & Reference Documents**
-- Eval Board Schematics: :adi:`Rev E <media/en/technical-documentation/eval-board-schematic/02-045107-01-e-2.pdf>` \| :adi:`Rev C/D <media/en/technical-documentation/eval-board-schematic/02_045107c_d_top.pdf>` \| :adi:`Rev B <media/en/technical-documentation/eval-board-schematic/02_045107b_top.pdf>`
+- Eval Board Schematics: {adi}`Rev E <media/en/technical-documentation/eval-board-schematic/02-045107-01-e-2.pdf>` \| {adi}`Rev C/D <media/en/technical-documentation/eval-board-schematic/02_045107c_d_top.pdf>` \| {adi}`Rev B <media/en/technical-documentation/eval-board-schematic/02_045107b_top.pdf>`
 - {download}`BOM (Rev B) <resources/stingray_bom_revB.zip>`
-- :adi:`ADAR1000 Data Sheet (Rev B) <media/en/technical-documentation/data-sheets/ADAR1000.pdf>`
-- :adi:`UG-1283 ADAR1000-EVALZ User Guide <media/en/technical-documentation/user-guides/ADAR1000-EVALZ-UG-1283.pdf>`
-- :adi:`ADAR1000 Register Map <media/en/technical-documentation/product-information/adar1000_memorymap.pdf>`
+- {adi}`ADAR1000 Data Sheet (Rev B) <media/en/technical-documentation/data-sheets/ADAR1000.pdf>`
+- {adi}`UG-1283 ADAR1000-EVALZ User Guide <media/en/technical-documentation/user-guides/ADAR1000-EVALZ-UG-1283.pdf>`
+- {adi}`ADAR1000 Register Map <media/en/technical-documentation/product-information/adar1000_memorymap.pdf>`
 - :git-linux:`Linux IIO Driver (source) <drivers/iio/beamformer/adar1000.c>`
 
 **Component Product Pages**
-- :adi:`ADAR1000 <en/products/adar1000.html>` - 8 GHz to 16 GHz, 4-Channel, X/Ku Band Beamformer
-- :adi:`ADTR1107 <en/products/adtr1107.html>` - 6 GHz to 18 GHz Front-End IC (PA + LNA + TR Switch)
-- :adi:`HMC948 <en/products/hmc948.html>` - GaAs Log Detector
-- :adi:`ADA4807-1 <en/products/ada4807-1.html>` - Unity Gain Buffer Op-Amp
-- :adi:`LTC2314-14 <en/products/ltc2314-14.html>` - 14-Bit, 4.5 Msps Serial ADC
-- :adi:`LT8652S <en/products/lt8652s.html>` - Dual-Channel Synchronous Step-Down Converter
-- :adi:`LT8642S <en/products/lt8642s.html>` - 18V, 10A Synchronous Step-Down Regulator
-- :adi:`LT3093 <en/products/lt3093.html>` - Negative Linear Regulator
-- :adi:`LT3094 <en/products/lt3094.html>` - Negative Linear Regulator
-- :adi:`LT8606 <en/products/lt8606.html>` - 42V, 350mA Step-Down Regulator
-- :adi:`ADP150 <en/products/adp150.html>` - Ultralow-Noise Linear Regulator
-- :adi:`ADP5074 <en/products/adp5074.html>` - Inverting Regulator
-- :adi:`ADM1172 <en/products/adm1172.html>` - Hot-Swap Controller
-- :adi:`ADM1186 <en/products/adm1186.html>` - Quad Voltage Sequencer
-- :adi:`LTC2992 <en/products/ltc2992.html>` - Power Monitor with GPIO
-- :adi:`LTC4301 <en/products/ltc4301.html>` - I2C Hot-Swappable Bus Buffer
+- {adi}`ADAR1000 <en/products/adar1000.html>` - 8 GHz to 16 GHz, 4-Channel, X/Ku Band Beamformer
+- {adi}`ADTR1107 <en/products/adtr1107.html>` - 6 GHz to 18 GHz Front-End IC (PA + LNA + TR Switch)
+- {adi}`HMC948 <en/products/hmc948.html>` - GaAs Log Detector
+- {adi}`ADA4807-1 <en/products/ada4807-1.html>` - Unity Gain Buffer Op-Amp
+- {adi}`LTC2314-14 <en/products/ltc2314-14.html>` - 14-Bit, 4.5 Msps Serial ADC
+- {adi}`LT8652S <en/products/lt8652s.html>` - Dual-Channel Synchronous Step-Down Converter
+- {adi}`LT8642S <en/products/lt8642s.html>` - 18V, 10A Synchronous Step-Down Regulator
+- {adi}`LT3093 <en/products/lt3093.html>` - Negative Linear Regulator
+- {adi}`LT3094 <en/products/lt3094.html>` - Negative Linear Regulator
+- {adi}`LT8606 <en/products/lt8606.html>` - 42V, 350mA Step-Down Regulator
+- {adi}`ADP150 <en/products/adp150.html>` - Ultralow-Noise Linear Regulator
+- {adi}`ADP5074 <en/products/adp5074.html>` - Inverting Regulator
+- {adi}`ADM1172 <en/products/adm1172.html>` - Hot-Swap Controller
+- {adi}`ADM1186 <en/products/adm1186.html>` - Quad Voltage Sequencer
+- {adi}`LTC2992 <en/products/ltc2992.html>` - Power Monitor with GPIO
+- {adi}`LTC4301 <en/products/ltc4301.html>` - I2C Hot-Swappable Bus Buffer
 ```
 
 ### ADAR1000 IC Quick Reference

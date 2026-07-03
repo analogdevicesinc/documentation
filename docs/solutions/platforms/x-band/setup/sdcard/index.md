@@ -228,7 +228,7 @@ Boot is confirmed successful when **40 IIO devices** appear in the terminal **an
 - [SD Association - SD Card Formatter](https://www.sdcard.org/downloads/formatter/)
 - [BalenaEtcher Download](https://www.balena.io/etcher/)
 - {ref}`ADI Kuiper Linux Images <kuiper>`
-- :xilinx:`ZCU102 Documentation <products/boards-and-kits/ek-u1-zcu102-g.html>`
+- {xilinx}`ZCU102 Documentation <products/boards-and-kits/ek-u1-zcu102-g.html>`
 
 ```{seealso}
 - {ref}`ZCU102 Configuration <x-band-zcu102config>` - Configure boot mode and peripherals
