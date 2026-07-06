@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This tutorial walks you through running a servo motor control demo using the adi_iio ROS2 package. You will use Docker to run the demo nodes, inspect the ROS2 system with standard CLI tools, and explore how the code maps IIO attributes to ROS2 topics and services." name="description" />
+
+    <title>ROS2 Integration with IIO Devices &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="ADI DataX™ Tools for Low Speed Mixed Signal System Design" href="../index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ROS2 Integration with IIO Devices</a><ul>
+<li><a class="reference internal" href="#hardware-prerequisites">Hardware Prerequisites</a></li>
+<li><a class="reference internal" href="#software-prerequisites">Software Prerequisites</a></li>
+<li><a class="reference internal" href="#architecture-overview">Architecture Overview</a></li>
+<li><a class="reference internal" href="#step-1-verify-the-hardware">Step 1: Verify the Hardware</a></li>
+<li><a class="reference internal" href="#step-2-build-the-docker-image">Step 2: Build the Docker Image</a></li>
+<li><a class="reference internal" href="#step-3-run-the-demo">Step 3: Run the Demo</a></li>
+<li><a class="reference internal" href="#step-4-inspect-the-ros2-system">Step 4: Inspect the ROS2 System</a></li>
+<li><a class="reference internal" href="#step-5-cleanup">Step 5: Cleanup</a></li>
+<li><a class="reference internal" href="#how-the-code-works">How the Code Works</a><ul>
+<li><a class="reference internal" href="#sweep-generator-position-command-generation">sweep_generator — Position Command Generation</a></li>
+<li><a class="reference internal" href="#servo-commander-dac-output-control">servo_commander — DAC Output Control</a></li>
+<li><a class="reference internal" href="#servo-feedback-adc-input-reading">servo_feedback — ADC Input Reading</a></li>
+<li><a class="reference internal" href="#iio-service-interface">IIO Service Interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#comparison-ros2-vs-python-matlab">Comparison: ROS2 vs. Python/MATLAB</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ROS2 Integration with IIO Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Learning! Tutorials, Workshops, Etc</a></li><li><a href="../index.html">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ros2-integration-with-iio-devices">
+<span id="datax-ros2-integration"></span><h1>ROS2 Integration with IIO Devices<a class="headerlink" href="#ros2-integration-with-iio-devices" title="Link to this heading"></a></h1>
+<p>This tutorial walks you through running a servo motor control demo using the
+<a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_iio</a> ROS2 package. You
+will use Docker to run the demo nodes, inspect the ROS2 system with standard
+CLI tools, and explore how the code maps IIO attributes to ROS2 topics and
+services.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">adi_iio</span></code> package handles low-level IIO communication, while
+application nodes interact with devices through standard ROS2 interfaces.
+No direct libiio knowledge is required.</p>
+</div>
+<section id="hardware-prerequisites">
+<h2>Hardware Prerequisites<a class="headerlink" href="#hardware-prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Raspberry Pi 5</strong> running ADI Kuiper Linux</p></li>
+<li><p><strong>ADALM-LSMSPG</strong> board connected to the Raspberry Pi via the 40-pin ribbon cable</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This demo simulates servo motor control using readings from the AD5592r and
+AD5593r. No actual servo motor hardware is required — the demo generates
+position commands and reads ADC feedback to demonstrate the ROS2/IIO
+integration pattern.</p>
+</div>
+</section>
+<section id="software-prerequisites">
+<h2>Software Prerequisites<a class="headerlink" href="#software-prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Docker</strong> and <strong>Docker Compose</strong> installed on the Raspberry Pi</p></li>
+<li><p>Clone the <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_ros2</a> repository
+and build the base Docker image:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/adi_ros2.git
+analog@analog:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>adi_ros2
+analog@analog:~/adi_ros2$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>compose.build.yml<span class="w"> </span>build<span class="w"> </span>base
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Clone the <a class="icon link reference external" href="https://github.com/plescaevelyn/iio_ros2" target="_blank">iio_ros2</a> repository
+and checkout the <code class="docutils literal notranslate"><span class="pre">adalm-lsmspg-example</span></code> branch (contains the ADALM-LSMSPG
+example):</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~$<span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>adalm-lsmspg-example<span class="w"> </span>https://github.com/plescaevelyn/iio_ros2.git
+</pre></div>
+</div>
+</section>
+<section id="architecture-overview">
+<h2>Architecture Overview<a class="headerlink" href="#architecture-overview" title="Link to this heading"></a></h2>
+<p>The ROS2 architecture separates device communication from application logic:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/ros2_architecture.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/ros2_architecture.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/ros2_architecture.png" style="width: 40em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ROS2 ADALM-LSMSPG architecture</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> acts as a bridge between the IIO subsystem and ROS2. It
+connects to the ADALM-LSMSPG via the local IIO backend and exposes each device
+attribute as either a ROS2 topic (for continuous streaming) or service (for
+on-demand reads/writes). This allows application nodes to interact with the
+hardware using standard ROS2 patterns — no direct IIO knowledge required.</p>
+<p>The demo simulates a servo control loop: <code class="docutils literal notranslate"><span class="pre">sweep_generator</span></code> publishes position
+commands, <code class="docutils literal notranslate"><span class="pre">servo_commander</span></code> converts them to DAC values and writes to the
+AD5592r, and <code class="docutils literal notranslate"><span class="pre">servo_feedback</span></code> reads ADC values to simulate position/current
+sensing.</p>
+</section>
+<section id="step-1-verify-the-hardware">
+<h2>Step 1: Verify the Hardware<a class="headerlink" href="#step-1-verify-the-hardware" title="Link to this heading"></a></h2>
+<p>Before running ROS2, confirm that the ADALM-LSMSPG is properly connected and
+the IIO devices are accessible. The Raspberry Pi should be running ADI Kuiper
+Linux with the ADALM-LSMSPG overlay configured (as described in the earlier
+sections of this tutorial).</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> to verify the IIO context:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~$<span class="w"> </span>iio_info<span class="w"> </span>-u<span class="w"> </span>local:
+</pre></div>
+</div>
+<p>You should see the <code class="docutils literal notranslate"><span class="pre">ad5592r</span></code>, <code class="docutils literal notranslate"><span class="pre">ad5593r</span></code>, and <code class="docutils literal notranslate"><span class="pre">lm75</span></code> devices listed. If
+not, check that the device tree overlay is enabled and the ribbon cable is
+properly connected.</p>
+</section>
+<section id="step-2-build-the-docker-image">
+<h2>Step 2: Build the Docker Image<a class="headerlink" href="#step-2-build-the-docker-image" title="Link to this heading"></a></h2>
+<p>The demo runs inside Docker containers, which bundle ROS2, the <code class="docutils literal notranslate"><span class="pre">adi_iio</span></code>
+package, and all dependencies. This ensures a consistent environment without
+needing to install ROS2 natively on the Raspberry Pi.</p>
+<p>Navigate to the example directory and build the image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>iio_ros2/examples/adalm_lsmspg/docker
+analog@analog:~/iio_ros2/examples/adalm_lsmspg/docker$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>build
+</pre></div>
+</div>
+<p>This creates a Docker image containing:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">adi_iio</span></code> ROS2 package — provides the IIO-to-ROS2 bridge node</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">adalm_lsmspg</span></code> example package — contains the servo demo nodes</p></li>
+<li><p>Runtime dependencies — libiio, numpy, and scipy</p></li>
+</ul>
+</section>
+<section id="step-3-run-the-demo">
+<h2>Step 3: Run the Demo<a class="headerlink" href="#step-3-run-the-demo" title="Link to this heading"></a></h2>
+<p>Launch the demo using Docker Compose:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~/iio_ros2/examples/adalm_lsmspg/docker$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up
+</pre></div>
+</div>
+<p>This command reads the <code class="docutils literal notranslate"><span class="pre">compose.yml</span></code> file and starts two containers. Let’s
+look at what it does:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">compose.yml — Docker Compose configuration</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">adi_iio</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ... build configuration ...</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ros2 run adi_iio adi_iio_node --ros-args -p uri:=&quot;ip:analog.local&quot;</span>
+
+<span class="w">  </span><span class="nt">demo</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ... container configuration ...</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adi_iio</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">      </span><span class="no">bash -c &quot;sleep 3 &amp;&amp; ros2 launch adalm_lsmspg adalm_lsmspg_bringup.launch.py&quot;</span>
+
+<span class="w">  </span><span class="nt">shell</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># ... interactive shell for debugging (profiles: [debug]) ...</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">adi_iio</span></code> service starts first, launching the <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> which
+connects to the IIO context at <code class="docutils literal notranslate"><span class="pre">ip:analog.local</span></code>. The <code class="docutils literal notranslate"><span class="pre">demo</span></code> service waits
+3 seconds for <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> to initialize, then launches the application
+nodes via the bringup launch file. The <code class="docutils literal notranslate"><span class="pre">shell</span></code> service is only started when
+using the debug profile (<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">--profile</span> <span class="pre">debug</span> <span class="pre">up</span></code>).</p>
+<p>Once running, you will see log output from all the nodes. The <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code>
+initializes first, connecting to the IIO context and discovering the devices.
+Then the application nodes start: <code class="docutils literal notranslate"><span class="pre">sweep_generator</span></code> begins publishing position
+commands, <code class="docutils literal notranslate"><span class="pre">servo_commander</span></code> writes DAC values, and <code class="docutils literal notranslate"><span class="pre">servo_feedback</span></code> reads
+ADC values and publishes feedback.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/servo_feedback.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/servo_feedback.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/servo_feedback.png" style="width: 45em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Docker compose output showing the running demo</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The demo runs continuously, sweeping the simulated servo position back and
+forth. Leave this terminal running and open a new one for the next step.</p>
+</section>
+<section id="step-4-inspect-the-ros2-system">
+<h2>Step 4: Inspect the ROS2 System<a class="headerlink" href="#step-4-inspect-the-ros2-system" title="Link to this heading"></a></h2>
+<p>With the demo running, we can use standard ROS2 command-line tools to inspect
+the system. Open a new terminal and start a shell inside the Docker environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~/iio_ros2/examples/adalm_lsmspg/docker$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>shell
+</pre></div>
+</div>
+<p>This drops you into a container with ROS2 tools available. First, list the
+active nodes to see all the running components:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@analog:/#<span class="w"> </span>ros2<span class="w"> </span>node<span class="w"> </span>list
+</pre></div>
+</div>
+<p>You should see four nodes: <code class="docutils literal notranslate"><span class="pre">/adi_iio_node</span></code> (the IIO bridge) and the three
+application nodes (<code class="docutils literal notranslate"><span class="pre">/servo_commander</span></code>, <code class="docutils literal notranslate"><span class="pre">/servo_feedback</span></code>, <code class="docutils literal notranslate"><span class="pre">/sweep_generator</span></code>).</p>
+<p>Next, list the available topics. The <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> creates topics for each
+IIO attribute, and the application nodes create their own topics for the servo
+control loop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@analog:/#<span class="w"> </span>ros2<span class="w"> </span>topic<span class="w"> </span>list
+</pre></div>
+</div>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_list.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_list.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_list.png" style="width: 35em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">ROS2 topic list output</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Notice the IIO attribute topics like <code class="docutils literal notranslate"><span class="pre">/ad5592r/input_voltage1/raw</span></code> — these
+are automatically generated by <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> for each channel. The
+application topics like <code class="docutils literal notranslate"><span class="pre">/servo/position_cmd</span></code> and <code class="docutils literal notranslate"><span class="pre">/servo/position_feedback</span></code>
+are created by the demo nodes.</p>
+<p>To see live data, echo one of the feedback topics. This shows the simulated
+position values being published by <code class="docutils literal notranslate"><span class="pre">servo_feedback</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@analog:/#<span class="w"> </span>ros2<span class="w"> </span>topic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/servo/position_feedback
+</pre></div>
+</div>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_echo.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_echo.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/ros2_integration/topic_echo.png" style="width: 25em;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Position feedback topic output</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also interact with IIO attributes directly using ROS2 services. For
+example, read the temperature from the LM75 sensor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@analog:/#<span class="w"> </span>ros2<span class="w"> </span>service<span class="w"> </span>call<span class="w"> </span>/adi_iio_node/AttrReadString<span class="w"> </span>adi_iio/srv/AttrReadString<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;{attr_path: &#39;lm75/input_temp0/raw&#39;}&quot;</span>
+</pre></div>
+</div>
+<p>This demonstrates that any ROS2 node can access IIO device attributes without
+needing to know anything about libiio — the <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> handles all the
+low-level communication.</p>
+</section>
+<section id="step-5-cleanup">
+<h2>Step 5: Cleanup<a class="headerlink" href="#step-5-cleanup" title="Link to this heading"></a></h2>
+<p>When finished, stop the demo by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> in the terminal running
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span></code>, or run the following from another terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~/iio_ros2/examples/adalm_lsmspg/docker$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>down
+</pre></div>
+</div>
+<p>This stops and removes the containers. The Docker images remain cached for
+faster startup next time.</p>
+</section>
+<section id="how-the-code-works">
+<h2>How the Code Works<a class="headerlink" href="#how-the-code-works" title="Link to this heading"></a></h2>
+<p>The servo demo consists of three application nodes, each implemented as a
+Python ROS2 node. The source code is located in
+<a class="icon link reference external" href="https://github.com/plescaevelyn/iio_ros2/tree/adalm-lsmspg-example/examples/adalm_lsmspg/adalm_lsmspg" target="_blank">examples/adalm_lsmspg/adalm_lsmspg/</a>.</p>
+<section id="sweep-generator-position-command-generation">
+<h3>sweep_generator — Position Command Generation<a class="headerlink" href="#sweep-generator-position-command-generation" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">sweep_generator</span></code> node
+(<a class="icon link reference external" href="https://github.com/plescaevelyn/iio_ros2/blob/adalm-lsmspg-example/examples/adalm_lsmspg/adalm_lsmspg/sweep_generator.py" target="_blank">sweep_generator.py</a>)
+generates a sinusoidal position sweep from 0 to 180 degrees and publishes to
+the <code class="docutils literal notranslate"><span class="pre">/servo/position_cmd</span></code> topic. The core logic computes the angle using a
+sine wave:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">sweep_generator.py — lines 68-73</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">timer_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">time_elapsed</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">timer_period</span>
+
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">min_angle</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_angle</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">amplitude</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_angle</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_angle</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+    <span class="n">angle</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">amplitude</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sweep_rate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_elapsed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This produces smooth oscillation between the configured minimum and maximum
+angles. The sweep rate (default 0.5 Hz) and update rate (default 10 Hz) are
+configurable via ROS2 parameters.</p>
+</section>
+<section id="servo-commander-dac-output-control">
+<h3>servo_commander — DAC Output Control<a class="headerlink" href="#servo-commander-dac-output-control" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">servo_commander</span></code> node
+(<a class="icon link reference external" href="https://github.com/plescaevelyn/iio_ros2/blob/adalm-lsmspg-example/examples/adalm_lsmspg/adalm_lsmspg/servo_commander.py" target="_blank">servo_commander.py</a>)
+subscribes to position commands and writes corresponding DAC values to the
+AD5592r. It demonstrates two key IIO service interactions:</p>
+<p><strong>Reading the DAC scale factor</strong> — Before writing values, the node reads the
+scale attribute to convert millivolts to raw DAC counts:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">servo_commander.py — lines 99-103</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">read_scale</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">AttrReadString</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
+    <span class="n">request</span><span class="o">.</span><span class="n">attr_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;dac_scale&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">future</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">attr_read_string_client</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">future</span><span class="o">.</span><span class="n">add_done_callback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scale_response_callback</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Enabling topic-based writes</strong> — The node enables a write topic for the DAC
+raw attribute, allowing it to publish values directly:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">servo_commander.py — lines 91-94</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="n">AttrEnableTopic</span><span class="o">.</span><span class="n">Request</span><span class="p">()</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">attr_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;dac_raw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">loop_rate</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loop_rate</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">attr_enable_topic_client</span><span class="o">.</span><span class="n">call_async</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Converting angle to DAC value</strong> — When a position command arrives, the node
+converts degrees to millivolts, then to raw DAC counts:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text">servo_commander.py — lines 113-122</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">angle_to_voltage_mv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">angle_deg</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert angle (degrees) to voltage (mV).&quot;&quot;&quot;</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="p">(</span><span class="n">angle_deg</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_angle</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max_angle</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_angle</span><span class="p">)</span>
+    <span class="n">normalized</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">normalized</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">normalized</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_voltage_mv</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">position_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">:</span> <span class="n">Float64</span><span class="p">):</span>
+    <span class="c1"># ...</span>
+    <span class="n">voltage_mv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">angle_to_voltage_mv</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+    <span class="n">raw_value</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">4095</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">voltage_mv</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">scale</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="servo-feedback-adc-input-reading">
+<h3>servo_feedback — ADC Input Reading<a class="headerlink" href="#servo-feedback-adc-input-reading" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">servo_feedback</span></code> node
+(<a class="icon link reference external" href="https://github.com/plescaevelyn/iio_ros2/blob/adalm-lsmspg-example/examples/adalm_lsmspg/adalm_lsmspg/servo_feedback.py" target="_blank">servo_feedback.py</a>)
+reads ADC values from the AD5592r to simulate position and current feedback.
+It subscribes to IIO attribute topics for continuous streaming:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-number">Listing 6 </span><span class="caption-text">servo_feedback.py — lines 79-89</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">position_raw_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+    <span class="n">String</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;position_adc_raw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">/read&quot;</span><span class="p">,</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">position_raw_callback</span><span class="p">,</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">qos</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">current_raw_sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_subscription</span><span class="p">(</span>
+    <span class="n">String</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_parameter</span><span class="p">(</span><span class="s1">&#39;current_adc_raw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">/read&quot;</span><span class="p">,</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">current_raw_callback</span><span class="p">,</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">qos</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The node converts raw ADC readings to physical units (degrees and milliamps)
+and publishes them as <code class="docutils literal notranslate"><span class="pre">JointState</span></code> messages:</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">Listing 7 </span><span class="caption-text">servo_feedback.py — lines 158-170</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pos_voltage_mv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">position_raw</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">position_scale</span>
+<span class="n">measured_angle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">voltage_to_angle</span><span class="p">(</span><span class="n">pos_voltage_mv</span><span class="p">)</span>
+
+<span class="n">cur_voltage_mv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_raw</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_scale</span>
+<span class="n">measured_current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">voltage_to_current</span><span class="p">(</span><span class="n">cur_voltage_mv</span><span class="p">)</span>
+
+<span class="n">joint_msg</span> <span class="o">=</span> <span class="n">JointState</span><span class="p">()</span>
+<span class="n">joint_msg</span><span class="o">.</span><span class="n">header</span><span class="o">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_clock</span><span class="p">()</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">to_msg</span><span class="p">()</span>
+<span class="n">joint_msg</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;servo_joint&#39;</span><span class="p">]</span>
+<span class="n">joint_msg</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="n">measured_angle</span> <span class="o">*</span> <span class="mf">3.14159</span> <span class="o">/</span> <span class="mf">180.0</span><span class="p">]</span>
+<span class="n">joint_msg</span><span class="o">.</span><span class="n">effort</span> <span class="o">=</span> <span class="p">[</span><span class="n">measured_current</span><span class="p">]</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">joint_pub</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">joint_msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="iio-service-interface">
+<h3>IIO Service Interface<a class="headerlink" href="#iio-service-interface" title="Link to this heading"></a></h3>
+<p>The key interaction with IIO happens through the <code class="docutils literal notranslate"><span class="pre">adi_iio_node</span></code> services:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AttrReadString</span></code> — Read an attribute value (e.g., scale factors)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AttrEnableTopic</span></code> — Enable streaming for an attribute (creates a
+<code class="docutils literal notranslate"><span class="pre">&lt;attr_path&gt;/read</span></code> topic for inputs or <code class="docutils literal notranslate"><span class="pre">&lt;attr_path&gt;/write</span></code> for outputs)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AttrDisableTopic</span></code> — Disable streaming for an attribute</p></li>
+</ul>
+<p>This pattern allows any ROS2 node to interact with IIO devices using standard
+ROS2 communication patterns. The application nodes never call libiio directly —
+they simply publish/subscribe to topics and call services, making it easy to
+integrate precision analog hardware into robotic systems.</p>
+</section>
+</section>
+<section id="comparison-ros2-vs-python-matlab">
+<h2>Comparison: ROS2 vs. Python/MATLAB<a class="headerlink" href="#comparison-ros2-vs-python-matlab" title="Link to this heading"></a></h2>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>Python (pyadi-iio)</p></th>
+<th class="head"><p>MATLAB</p></th>
+<th class="head"><p>ROS2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Use case</strong></p></td>
+<td><p>Scripting, testing</p></td>
+<td><p>Analysis, plots</p></td>
+<td><p>Robotics, control</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Architecture</strong></p></td>
+<td><p>Single process</p></td>
+<td><p>Single process</p></td>
+<td><p>Distributed nodes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Real-time</strong></p></td>
+<td><p>No</p></td>
+<td><p>No</p></td>
+<td><p>Soft real-time</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Deployment</strong></p></td>
+<td><p>Direct</p></td>
+<td><p>MATLAB runtime</p></td>
+<td><p>Docker/native</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Integration</strong></p></td>
+<td><p>Python ecosystem</p></td>
+<td><p>MATLAB toolboxes</p></td>
+<td><p>ROS2 ecosystem</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>ROS2 is the right choice when the IIO device is part of a larger robotic or
+automation system that requires distributed processing, standardized
+communication, or integration with other ROS2 packages (navigation, control,
+perception, etc.).</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

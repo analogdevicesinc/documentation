@@ -8,13 +8,14 @@
 
     <title>ADI DataX™ Tools for Low Speed Mixed Signal System Design &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=d3f78147" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5f9cb17c" />
     <script async="async" src="../../_static/app.umd.js?v=26d0298f"></script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ROS2 Integration with IIO Devices" href="ros2_integration/index.html" />
     <link rel="prev" title="Learning! Tutorials, Workshops, Etc" href="../index.html" />
    
   
@@ -116,6 +117,7 @@
 <li><a class="reference internal" href="#hands-on-working-through-a-simple-but-complete-case-study"><strong>Hands-On!</strong> Working through a simple, but complete case study</a></li>
 <li><a class="reference internal" href="#next-steps-developing-on-a-remote-host">Next Steps: Developing on a remote host</a></li>
 <li><a class="reference internal" href="#next-steps-other-languages-c-c-matlab-etc">Next Steps: Other languages (C++, C#, MATLAB, etc.)</a></li>
+<li><a class="reference internal" href="#next-steps-ros2-integration">Next Steps: ROS2 Integration</a></li>
 <li><a class="reference internal" href="#iio-as-a-tool-for-migrating-to-an-embedded-implementation">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
 <li><a class="reference internal" href="#porting-to-a-fully-embedded-system">Porting to a Fully Embedded System</a></li>
 <li><a class="reference internal" href="#next-steps-no-os-development-on-linux-you-bet">Next Steps: No-OS development on Linux? You bet!</a></li>
@@ -156,7 +158,10 @@ Content on this topic
 
 <ul class="current">
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="ros2_integration/index.html">ROS2 Integration with IIO Devices</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -408,6 +413,20 @@ a shutdown when shorted to ground.</p>
 <section id="next-steps-other-languages-c-c-matlab-etc">
 <h2>Next Steps: Other languages (C++, C#, MATLAB, etc.)<a class="headerlink" href="#next-steps-other-languages-c-c-matlab-etc" title="Link to this heading"></a></h2>
 </section>
+<section id="next-steps-ros2-integration">
+<h2>Next Steps: ROS2 Integration<a class="headerlink" href="#next-steps-ros2-integration" title="Link to this heading"></a></h2>
+<p>While the previous exercises used Python and pyadi-iio, the IIO framework can
+also be integrated with <strong>ROS2</strong> (Robot Operating System 2) for robotics and
+automation applications. The <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_iio</a>
+ROS2 package provides a bridge between IIO devices and the ROS2 ecosystem,
+exposing device attributes as ROS2 topics and services.</p>
+<p>In this section, we will run a servo motor control demo that uses the
+ADALM-LSMSPG to generate position commands and read feedback, demonstrating
+how IIO devices can be integrated into a ROS2-based control system.</p>
+<p><a class="reference internal" href="ros2_integration/index.html"><span class="doc">Continue to ROS2 Integration Tutorial</span></a></p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
 <section id="iio-as-a-tool-for-migrating-to-an-embedded-implementation">
 <h2>IIO as a Tool for Migrating to an Embedded Implementation<a class="headerlink" href="#iio-as-a-tool-for-migrating-to-an-embedded-implementation" title="Link to this heading"></a></h2>
 <p>Prototyping in Linux is incredibly convenient - even if we didn’t have pre-built
@@ -461,12 +480,12 @@ ad5593r_curve_tracer.py -u serial:COMx
 </pre></div>
 </div>
 <p>where “x” is the COM port number identified. The output should be identical to
-previous runs using the local backend, as shown in <a class="reference internal" href="#fig-ct-tinyiiod"><span class="std std-numref">Figure 3</span></a></p>
+previous runs using the local backend, as shown in <a class="reference internal" href="#fig-ct-tinyiiod"><span class="std std-numref">Figure 7</span></a></p>
 <figure class="align-center" id="id4">
 <span id="fig-ct-tinyiiod"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png" style="width: 700px; height: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Curve tracer plots, serial backend</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Curve tracer plots, serial backend</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>At this point you can re-verify your top-level code, but on the actual target
@@ -614,7 +633,7 @@ tutorial.</p>
               <div class="related">
                 &nbsp;
     <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Learning! Tutorials, Workshops, Etc</a>
-    <div></div>
+    <a href="ros2_integration/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ROS2 Integration with IIO Devices</a>
               </div>
           
         </div>
