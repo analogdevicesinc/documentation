@@ -53,10 +53,10 @@ Our set of MCPs and Skills include:
   and system-level solving.
 
 - :external+genalyzer:doc:`genalyzer MCP <mcp/index>`:
-   Exposes spectral and code-density analysis tools. Tools cover all five
-   genalyzer analysis domains — Fourier, histogram, DNL, INL, and time-domain
-   waveform — plus generators and a quantizer for end-to-end
-   simulate-and-verify workflows.
+  Exposes spectral and code-density analysis tools. Tools cover all five
+  genalyzer analysis domains — Fourier, histogram, DNL, INL, and time-domain
+  waveform — plus generators and a quantizer for end-to-end
+  simulate-and-verify workflows.
 
 - :git+scopy:`Scopy skills <tools/scopy_dev_plugin/skills/scopy-tools-inventory/SKILL.md>`:
   Catalogs Scopy development tools such as the package generator, test tools,
