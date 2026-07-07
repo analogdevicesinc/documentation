@@ -1674,11 +1674,7 @@ for the <strong>analog</strong> user. If you have not changed it, the default pa
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/boot/firmware/config.txt<span class="w"> </span>&lt;&lt;<span class="s1">&#39;EOF&#39;</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  dtoverlay=rpi-t1lpse-class12
-  EOF
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;dtoverlay=rpi-t1lpse-class12&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/boot/config.txt
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><div class="admonition warning">
@@ -1693,11 +1689,7 @@ Using <code class="docutils literal notranslate"><span class="pre">apl</span></c
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/boot/firmware/config.txt<span class="w"> </span>&lt;&lt;<span class="s1">&#39;EOF&#39;</span>
-</pre></div>
-</div>
-<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>  dtoverlay=rpi-cn0575
-  EOF
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;dtoverlay=rpi-cn0575&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/boot/config.txt
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></li>
@@ -1832,8 +1824,15 @@ Using <code class="docutils literal notranslate"><span class="pre">apl</span></c
 toggles the LED on the other <a class="icon adi reference external" href="https://www.analog.com/CN0575" target="_blank">CN0575</a> HAT if pressed and vice versa. The code is run on the
 parent only, which communicates with both child devices using <em>libiio</em>.</p>
 <p>Run the application the parent Raspberry Pi only, which will handle communication with both child devices.</p>
-<blockquote>
-<div><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The parent side of this example does not have to run on the <a class="icon adi reference external" href="https://www.analog.com/AD-RPI-T1LPSE-SL" target="_blank">AD-RPI-T1LPSE-SL</a> Raspberry Pi.
+Any platform that has pyadi-iio set up can be used to run the script.</p>
+</div>
+<p>There are two ways to run the application:</p>
+<ol class="arabic">
+<li><p>Using the default URIs, which match the IP addresses configured in the <a class="reference internal" href="#network-setup">Network Setup</a> section above:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$
 </pre></div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/pyadi-iio/examples/rpi_t1lpse
@@ -1848,7 +1847,28 @@ parent only, which communicates with both child devices using <em>libiio</em>.</
 <div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~/pyadi-iio/examples/rpi_t1lpse$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>cn0591_2x_cn0575_button_blinky.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>t1lpse_2x_cn0575_button_blinky.py
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></li>
+<li><p>Passing the URIs of the two boards explicitly, in case your networking configuration differs from the one
+used in this guide:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~/pyadi-iio/examples/rpi_t1lpse
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~/pyadi-iio/examples/rpi_t1lpse$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/pyadi-iio/venv/bin/activate
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~/pyadi-iio/examples/rpi_t1lpse$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>t1lpse_2x_cn0575_button_blinky.py<span class="w"> </span>--my_cn0575a_u<span class="w"> </span>ip:192.168.10.2<span class="w"> </span>--my_cn0575b_u<span class="w"> </span>ip:192.168.10.130
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><figure class="align-center" id="id3">
@@ -1858,7 +1878,8 @@ parent only, which communicates with both child devices using <em>libiio</em>.</
 <p><span class="caption-number">Figure 3 </span><span class="caption-text">Running Basic Sample Application with Button Presses</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-</div></blockquote>
+</li>
+</ol>
 </section>
 </section>
 </section>
