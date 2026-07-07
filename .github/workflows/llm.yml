@@ -133,6 +133,34 @@ jobs:
           .. rest of the content
           ```
 
+          If the pages are Markdown (.md), myst-parser is used and the roles and directives
+          are slightly different:
+
+          RestructuredText role:
+          ```
+          :download:`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>`
+          ```
+          Markdown role:
+          ```
+          {download}`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>`
+          ```
+
+          RestructuredText directive:
+          ```
+          .. figure:: ../resources/pluto.png
+             :alt: PlutoSDR Picture
+             :width: 400px
+             :align: right
+          ```
+          Markdown directive:
+          ````
+          ```{figure} ../resources/pluto.png
+          :alt: PlutoSDR Picture
+          :width: 400px
+          :align: right
+          ```
+          ````
+
           ## Task 1: Content check
           At this task, you will focus on the content, fixing content logical
           errors, as well as: Broken links References to files or pages that do not
