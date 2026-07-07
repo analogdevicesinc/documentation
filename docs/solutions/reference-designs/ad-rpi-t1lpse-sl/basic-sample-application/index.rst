@@ -104,9 +104,7 @@ In order to apply the overlays, open a terminal on each Raspberry Pi and follow 
       :group: analog
       :show-user:
 
-      $ sudo tee -a /boot/firmware/config.txt <<'EOF'
-         dtoverlay=rpi-t1lpse-class12
-         EOF
+      $ echo "dtoverlay=rpi-t1lpse-class12" | sudo tee -a /boot/config.txt
 
    .. warning::
 
@@ -122,9 +120,7 @@ In order to apply the overlays, open a terminal on each Raspberry Pi and follow 
       :group: analog
       :show-user:
 
-      $ sudo tee -a /boot/firmware/config.txt <<'EOF'
-         dtoverlay=rpi-cn0575
-         EOF
+      $ echo "dtoverlay=rpi-cn0575" | sudo tee -a /boot/config.txt
 
 Reboot the Raspberry Pi computers to apply the changes:
 
@@ -240,6 +236,15 @@ parent only, which communicates with both child devices using *libiio*.
 
 Run the application the parent Raspberry Pi only, which will handle communication with both child devices.
 
+.. note::
+
+   The parent side of this example does not have to run on the :adi:`AD-RPI-T1LPSE-SL` Raspberry Pi.
+   Any platform that has pyadi-iio set up can be used to run the script.
+
+There are two ways to run the application:
+
+1. Using the default URIs, which match the IP addresses configured in the `Network Setup`_ section above:
+
    .. shell::
       :user: analog
       :group: analog
@@ -247,7 +252,19 @@ Run the application the parent Raspberry Pi only, which will handle communicatio
 
       $ cd ~/pyadi-iio/examples/rpi_t1lpse
       $ source ~/pyadi-iio/venv/bin/activate
-      $ python3 cn0591_2x_cn0575_button_blinky.py
+      $ python3 t1lpse_2x_cn0575_button_blinky.py
+
+2. Passing the URIs of the two boards explicitly, in case your networking configuration differs from the one
+   used in this guide:
+
+   .. shell::
+      :user: analog
+      :group: analog
+      :show-user:
+
+      $ cd ~/pyadi-iio/examples/rpi_t1lpse
+      $ source ~/pyadi-iio/venv/bin/activate
+      $ python3 t1lpse_2x_cn0575_button_blinky.py --my_cn0575a_u ip:192.168.10.2 --my_cn0575b_u ip:192.168.10.130
 
    .. figure:: eval-cn0575-rpiz-sample-application-terminal-result.webp
       :align: center
