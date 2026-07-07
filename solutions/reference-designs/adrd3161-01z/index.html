@@ -729,6 +729,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="hardware-guide.html">ADRD3161-01Z Hardware Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="quick-start-guide.html">ADRD3161-01Z Quick Start Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="production-guide.html">ADRD3161-01Z Production Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html">Production Testing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-41" id="toctree-collapse-14-41"/><div class="collapse"><a class="reference internal" href="../adrd4161-01z/index.html">ADRD4161-01Z</a><label for="toctree-collapse-14-41"><div class="icon"></div></label></div><ul>
@@ -1606,7 +1607,7 @@ controlled / configured via TMCL-IDE.</p>
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/ADRD3161-01Z" target="_blank">ADRD3161-01Z</a></p></li>
 <li><p>Stepper / BLDC / DC motor. Documented output represents the <a class="icon adi reference external" href="https://www.analog.com/qsh5718" target="_blank">QSH5718-51-28-101-10k</a> Stepper.</p></li>
-<li><p>DC power supply (9 .. 70 VDC)</p></li>
+<li><p>DC power supply (9 .. 70 Vdc)</p></li>
 <li><p>CAN, encoder cables, described in the <a class="reference internal" href="hardware-guide.html"><span class="doc">ADRD3161-01Z Hardware Guide</span></a></p></li>
 </ul>
 <p>To debug / reprogram the device, you will need a MAXDAP compatible debug probe, such as the <a class="icon adi reference external" href="https://www.analog.com/MAX32625PICO" target="_blank">MAX32625PICO</a>.</p>
@@ -1639,6 +1640,35 @@ controlled / configured via TMCL-IDE.</p>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#bootstrapping-the-tmc9660">Bootstrapping the TMC9660</a></li>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#flashing-the-max32662">Flashing the MAX32662</a></li>
 <li class="toctree-l2"><a class="reference internal" href="production-guide.html#visual-check">Visual check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="production-testing.html">Production Testing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="production-testing.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="production-testing.html#test-duration">Test Duration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="production-testing.html#test-requirements">Test Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html#required-hardware">Required Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html#required-software">Required Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html#required-setup">Required Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#jumper-positions">Jumper Positions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#s2-switch-configuration">S2 Switch Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#motor-and-encoder-connections">Motor and Encoder Connections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#daplink-connections">Daplink Connections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#power-connections">Power Connections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#complete-test-bench">Complete Test Bench</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="production-testing.html#test-process">Test Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html#enabling-wi-fi">Enabling Wi-Fi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="production-testing.html#running-the-tests">Running the Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#tmc-bootstrapping">1) TMC Bootstrapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#firmware-flash">2) Firmware Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="production-testing.html#system-test">3) System Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
