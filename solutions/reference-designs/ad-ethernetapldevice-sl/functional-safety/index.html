@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The AD-ETHERNETAPLDEVICE-SL has a failure modes, effects, and diagnostics analysis (FMEDA) document readily available upon request to support functional safety designs despite it not being assessed for functional safety. It also utilizes ADI functional safety certified components like the MAX42500 and ADFS7124-4 as diagnostics to further improve systematic capability and functional safety compliance. Furthermore, this reference design demonstrates how such FS-certified parts can be implemented in an actual system." name="description" />
+<meta content="The AD-ETHERNETAPLDEVICE-SL integrates safety-certified and uncertified components. An FMEDA for the design is available in PDF format. It also uses ADI functional safety certified components such as the MAX42500 and ADFS7124-4 as diagnostics to improve systematic capability and functional safety compliance. This reference design demonstrates how FS-certified parts can be implemented in a real system." name="description" />
 
     <title>Functional Safety Features &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
@@ -101,7 +101,8 @@
 <li><a class="reference internal" href="#fmeda-target-requirements-overview">FMEDA Target/Requirements Overview</a></li>
 <li><a class="reference internal" href="#diagnostic-circuit-for-safe-microcontroller-and-internal-power-supplies">Diagnostic Circuit for Safe Microcontroller and Internal Power Supplies</a></li>
 <li><a class="reference internal" href="#adfs7124-4-diagnostic-features">ADFS7124-4 Diagnostic Features</a></li>
-<li><a class="reference internal" href="#derating-analysis">Derating Analysis</a></li>
+<li><a class="reference internal" href="#safety-related-data-communications">Safety Related Data Communications</a></li>
+<li><a class="reference internal" href="#system-capability">System Capability</a></li>
 </ul>
 </li>
 </ul>
@@ -1562,25 +1563,16 @@ Content on this topic
 <span id="ethernet-apl-functional-safety"></span><h1>Functional Safety Features<a class="headerlink" href="#functional-safety-features" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-ETHERNETAPLDEVICE-SL" target="_blank">AD-ETHERNETAPLDEVICE-SL</a> has a failure modes, effects, and diagnostics analysis
-(FMEDA) document readily available upon request to support functional safety
-designs despite it not being assessed for functional safety. It also utilizes ADI
-functional safety certified components like the <a class="icon adi reference external" href="https://www.analog.com/MAX42500" target="_blank">MAX42500</a> and <a class="icon adi reference external" href="https://www.analog.com/ADFS7124-4" target="_blank">ADFS7124-4</a>
-as diagnostics to further improve systematic capability and functional safety
-compliance. Furthermore, this reference design demonstrates how such FS-certified
-parts can be implemented in an actual system.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-ETHERNETAPLDEVICE-SL" target="_blank">AD-ETHERNETAPLDEVICE-SL</a> integrates safety-certified and uncertified components.
+An FMEDA for the design is available in PDF format. It also uses ADI functional safety certified
+components such as the <a class="icon adi reference external" href="https://www.analog.com/MAX42500" target="_blank">MAX42500</a> and <a class="icon adi reference external" href="https://www.analog.com/ADFS7124-4" target="_blank">ADFS7124-4</a> as diagnostics to improve
+systematic capability and functional safety compliance. This reference design demonstrates
+how FS-certified parts can be implemented in a real system.</p>
 </section>
 <section id="fmeda-target-requirements-overview">
 <h2>FMEDA Target/Requirements Overview<a class="headerlink" href="#fmeda-target-requirements-overview" title="Link to this heading"></a></h2>
-<p>The aim of FMEDA is to demonstrate that the safety requirements (PFDavg and SFF),
-based on the assumptions of the document (or safety concept if available) and
-product requirement specifications, are met as shown in the summary found in
-Table 1, or if necessary, to make suggestions for improvement. Consider that the
-reference design is only a first demonstrator hardware which shall be checked to
-be “SIL 2 Low Demand” functional safety-ready board, the AD-EthernetAPLDevice-SL
-does not require to have a safety concept document initially. However, the board
-must still undergo on the FMEDA process with some common assumptions on its safe
-states, to verify that it will be at least functional safety ready.</p>
+<p>The aim of the FMEDA is to demonstrate that the hardware safety metrics,
+PFDavg and SFF, can be met for low demand using the assumptions in Table 1.</p>
 <div class="table-wrapper docutils container" id="id1">
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Targets for Safety Function of AD-EthernetAPLDevice-SL</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
@@ -1598,10 +1590,10 @@ states, to verify that it will be at least functional safety ready.</p>
 <td><p>There are two possible safe states:</p></td>
 </tr>
 <tr class="row-odd"><td></td>
-<td><p>a) The safe bus communication over APL with the Hockey Puck is not possible anymore.</p></td>
+<td><p>(1) No data transmitted on the bus by the reference design.</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>b) The Hockey Puck is indicating an internal error over the safe bus protocol and mark the transmitted temperature measurement as faulty.</p></td>
+<td><p>(2) The AD-EthernetAPLDevice-SL transmits an error code over the safe bus protocol and mark the transmitted temperature measurement as faulty.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Targets of safety parameter according to IEC-61508</p></td>
 <td><p>PFD (percentage) of SIL2 ≤ 35% of 10^-2</p></td>
@@ -1637,46 +1629,36 @@ states, to verify that it will be at least functional safety ready.</p>
 <tr class="row-odd"><td><p>Subject</p></td>
 <td><p>Requirements</p></td>
 </tr>
-<tr class="row-even"><td><p>Standard for determination of failure rates</p></td>
+<tr class="row-even"><td><p>Standard for Determination of Failure Rates</p></td>
 <td><p>Siemens Standard SN29500</p></td>
 </tr>
 <tr class="row-odd"><td><p>Environmental Conditions</p></td>
 <td><p>The analysis shall be performed for T = 40°C</p></td>
 </tr>
 <tr class="row-even"><td></td>
-<td><p>Height (for soft errors): ≤ 2000m</p></td>
-</tr>
-<tr class="row-odd"><td><p>Other requirements to be fulfilled via FMEDA</p></td>
-<td><p>Proof of absence of feedback for the non-safety parts to the safety function</p></td>
+<td><p>Altitude (for soft errors): ≤ 2000m</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>All functional safety documentation like component safety manuals and FMEDA are available
-upon request and may require non-disclosure agreement as part of confidentiality
-terms.</p>
+<p><strong>FMEDA and safety manuals available on request. An NDA may be required.</strong></p>
 </section>
 <section id="diagnostic-circuit-for-safe-microcontroller-and-internal-power-supplies">
 <h2>Diagnostic Circuit for Safe Microcontroller and Internal Power Supplies<a class="headerlink" href="#diagnostic-circuit-for-safe-microcontroller-and-internal-power-supplies" title="Link to this heading"></a></h2>
-<p>In the functional safety circuit of AD-EthernetAPLDevice-SL, the main
-microcontroller MAX32690 is connecting its RESET pin to the MAX42500 supervisor,
-the supervisor mainly monitors the voltage amplitudes of the main three supplies
-powering the MAX32690 which are the 3.3V, 1.8V and 1.1V supplies. If at least
-one of those supplies deviate away from its intended amplitude, the supervisor
-will trigger a reset on the microcontroller. Additional feature of MAX42500 is
-the challenge/response watchdog timer when connected to the I2C pins of the
-MAX32690, the watchdog is refreshed through the I2C interface. When configured
-as a challenge/response watchdog, there is a key value register indicated in the
-MAX42500 datasheet that must be read and used to compute the appropriate
-response. The watchdog has several status bits to communicate status and past
-faults. Separate flags are provided to indicate an update-too-early fault, a
-wrong-key fault, and a no-update-received fault. These fields are cleared when
-read, this is for implementation of simple windowed watchdog.</p>
-<p>The MAX42500 is an IEC 61508 SIL-3 certified four-to-seven-channel power supply
-monitor with windowed watchdog timer enabled by default as well its associated
-timing included. Two variants with corresponding enabled trims as shown in Table
-3 are currently available. The AD-EthernetAPLDevice-SL uses the MAX42500ATEAA+T
-which utilizes only three channels.</p>
+<p>In the functional safety circuit of AD-EthernetAPLDevice-SL, the main microcontroller MAX32690
+connects its RESET pin to the MAX42500 supervisor. The supervisor monitors the voltages of the
+three main supplies powering the MAX32690: 3.3V, 1.8V, and 1.1V. If any of those supplies deviates
+from its nominal voltage, the supervisor triggers a reset on the microcontroller.</p>
+<p>The MAX42500 also provides a challenge/response watchdog timer when connected to the MAX32690
+over I2C. The watchdog is refreshed through the I2C interface. When configured as a challenge/
+response watchdog, a key value register described in the MAX42500 datasheet must be read and used
+to compute the appropriate response. The watchdog has status bits to communicate status and past
+faults. Separate flags indicate an update-too-early fault, a wrong-key fault, and a no-update-
+received fault. These fields are cleared when read, supporting the implementation of a simple
+windowed watchdog.</p>
+<p>The MAX42500 is an IEC 61508 SIL-3 certified four-to-seven-channel power supply monitor with a
+windowed watchdog timer enabled by default. Two variants with corresponding enabled trims are shown
+in Table 3. The AD-EthernetAPLDevice-SL uses the MAX42500ATEAA+T, which utilizes only three channels.</p>
 <div class="table-wrapper docutils container" id="id3">
 <table class="docutils align-default" id="id3">
 <caption><span class="caption-number">Table 3 </span><span class="caption-text">Default Voltage Monitoring Channels</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
@@ -1789,26 +1771,17 @@ which utilizes only three channels.</p>
 </tbody>
 </table>
 </div>
-<p>In addition, besides voltage monitoring of the microcontroller, there is also a
-temperature monitoring of MAX32690 using the MAX6613 small-packaged temperature
-sensor IC. The MAX6613 is connected and placed near the MAX32690 to sense the
-temperature of the microcontroller, then it sends the reading of temperature in
-a form of analog voltage into one of the analog input pins of MAX32690.</p>
-<p>The combination of the MAX42500 supply monitoring and MAX6613 temperature
-monitoring formed the diagnostics circuit of the microcontroller MAX32690. To
-ensure that the diagnostic circuit will detect the microcontroller’s failure, it
-is important to have the power supply rail of the diagnostic components separate
-from the power rails monitored. This will provide a level of independence
-between the diagnostic circuits and the microcontroller. For example, if the
-MAX42500 and MAX6613 need a VDD of 3.3V, and there is a 3.3V line powering the
-microcontroller and being monitored by MAX42500. The diagnostic components
-should not tap on the supply pins on that monitored main 3.3V line, instead
-there should be another power part producing a separate 3.3V line that will
-supply the diagnostic parts. This is because the voltage being referenced by the
-supervisor and temperature sensor are based on its supply pin voltage, if the
-tapped 3.3V voltage fails or deviates then it will cause for the incorrect
-amplitude reading of the parts, or worse, the diagnostic parts will fail to
-power up at all.</p>
+<p>The design also monitors the MAX32690 temperature using the MAX6613 small-package temperature
+sensor IC. The MAX6613 is placed near the MAX32690 and senses the microcontroller temperature,
+then sends the temperature reading as an analog voltage to one of the MAX32690 analog input pins.</p>
+<p>Together, the MAX42500 supply monitor and the MAX6613 temperature monitor form the diagnostics
+circuit for the MAX32690. To ensure the circuit detects a microcontroller failure, the diagnostic
+components’ power rail must be separate from the rails being monitored. This provides independence
+between the diagnostic circuit and the microcontroller. For example, if the MAX42500 and MAX6613
+require 3.3V and the microcontroller is powered by a monitored 3.3V rail, the diagnostic components
+should not draw from that same monitored line. Instead, they should be supplied by a separate 3.3V
+rail. Otherwise, a failure or deviation on the monitored line could cause incorrect readings or cause
+the diagnostic components to fail to power up.</p>
 <figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/diagnostic-circuit.png"><img alt="Diagnostic Circuit for the Microcontroller" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-ethernetapldevice-sl/functional-safety/diagnostic-circuit.png" style="width: 700px;" />
 </a>
@@ -1819,191 +1792,53 @@ power up at all.</p>
 </section>
 <section id="adfs7124-4-diagnostic-features">
 <h2>ADFS7124-4 Diagnostic Features<a class="headerlink" href="#adfs7124-4-diagnostic-features" title="Link to this heading"></a></h2>
-<p>The ADFS7124-4 is another variant of the previously released AD7124-4, 24-Bit,
-Sigma-Delta ADC with PGA and Reference built-in, with addition of self-
-diagnostics features to comply with FS. The ADFS7124-4 is compliant to SC3 by
-TÜV Rheinland. The diagnostic functions, which aid safe integrity level (SIL)
-certification, are based on the following features of the component, if ever the
-user wants to use these features:</p>
-<p>1. <code class="docutils literal notranslate"><span class="pre">SIGNAL</span> <span class="pre">CHAIN</span> <span class="pre">CHECK</span></code> - ADFS7124-4 can check all voltages connected to the
-device.</p>
-<p>2. <code class="docutils literal notranslate"><span class="pre">REFERENCE</span> <span class="pre">DETECT</span></code> - ADFS7124-4 includes on-chip circuitry to detect if there
-is a valid reference for conversions or calibrations when selecting an external
-reference as the reference source.</p>
-<p>3. <code class="docutils literal notranslate"><span class="pre">CALIBRATION,</span> <span class="pre">CONVERSION,</span> <span class="pre">AND</span> <span class="pre">SATURATION</span> <span class="pre">ERRORS</span></code> - These diagnostics check the
-analog input used as well as the modulator and digital filter during conversions
-or calibration.</p>
-<p>4. <code class="docutils literal notranslate"><span class="pre">OVERVOLTAGE/UNDERVOLTAGE</span> <span class="pre">DETECTION</span></code> - The overvoltage/undervoltage monitors
-check the absolute voltage on the AINx analog input pins.</p>
-<p>5. <code class="docutils literal notranslate"><span class="pre">POWER</span> <span class="pre">SUPPLY</span> <span class="pre">MONITORS</span></code> - Along with converting external voltages, the ADC can
-monitor the voltages on the Analog Supply pin and Digital I/O Supply pins of the
-ADC.</p>
-<p>6. <code class="docutils literal notranslate"><span class="pre">LDO</span> <span class="pre">CAPACITOR</span> <span class="pre">DETECT</span></code> - The analog and digital LDOs require an external
-decoupling capacitor of at least 0.1 µF. The ADFS7124-4 can check for the
-presence of this decoupling capacitor.</p>
-<p>7. <code class="docutils literal notranslate"><span class="pre">MCLK</span> <span class="pre">COUNTER</span></code> - The ADFS7124-4 allows the user to monitor the controller
-clock. A stable controller clock is important as the output data rate, filter
-settling time, and the filter notch frequencies are dependent on the controller
-clock.</p>
-<p>8. <code class="docutils literal notranslate"><span class="pre">SPI</span> <span class="pre">SCLK</span> <span class="pre">COUNTER</span></code> - The SPI SCLK counter counts the number of SCLK pulses used
-in each read and write operation.</p>
-<p>9. <code class="docutils literal notranslate"><span class="pre">SPI</span> <span class="pre">READ/WRITE</span> <span class="pre">ERRORS</span></code> - The ADFS7124-4 can check the read and write
-operations to ensure that valid registers are being addressed.</p>
-<p>10. <code class="docutils literal notranslate"><span class="pre">CHECKSUM</span> <span class="pre">PROTECTION</span></code> - Using the checksum ensures that only valid data is
-written to a register and allows data read from a register to be validated.</p>
-<p>11. <code class="docutils literal notranslate"><span class="pre">BURNOUT</span> <span class="pre">CURRENTS</span></code> - The ADFS7124-4 contains two constant current generators
-that can be programmed to 0.5 µA, 2 µA, or 4 µA. Use these currents to verify
-that an external transducer is still operational before attempting to take
-measurements on that channel.</p>
-<p>12. <code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span> <span class="pre">SENSOR</span></code> - The ADFS7124-4 has an embedded temperature sensor that
-is useful to monitor the die temperature of the IC.</p>
-<p>All the diagnostics are explained further on how to use them in the ADFS7124-4
-datasheet. The safety manual is also available for this part; it can be acquired
-upon request.</p>
+<p>The ADFS7124-4 is a variant of the AD7124-4, a 24-bit Sigma-Delta ADC with PGA and built-in reference,
+with additional self-diagnostic features for functional safety. The ADFS7124-4 is compliant with SC3 by
+TÜV Rheinland. The diagnostic functions that aid SIL certification are based on the following
+features of the component:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SIGNAL</span> <span class="pre">CHAIN</span> <span class="pre">CHECK</span></code> - ADFS7124-4 can check all voltages connected to the device.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">REFERENCE</span> <span class="pre">DETECT</span></code> - ADFS7124-4 includes on-chip circuitry to detect whether a valid reference
+is present for conversions or calibrations when using an external reference.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CALIBRATION,</span> <span class="pre">CONVERSION,</span> <span class="pre">AND</span> <span class="pre">SATURATION</span> <span class="pre">ERRORS</span></code> - These diagnostics check the analog input, the
+modulator, and the digital filter during conversions or calibration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">OVERVOLTAGE/UNDERVOLTAGE</span> <span class="pre">DETECTION</span></code> - The overvoltage/undervoltage monitors check the absolute
+voltage on the AINx analog input pins.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POWER</span> <span class="pre">SUPPLY</span> <span class="pre">MONITORS</span></code> - Along with converting external voltages, the ADC can monitor the
+voltages on its analog supply pin and digital I/O supply pins.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LDO</span> <span class="pre">CAPACITOR</span> <span class="pre">DETECT</span></code> - The analog and digital LDOs require an external decoupling capacitor of
+at least 0.1 µF. The ADFS7124-4 can check for the presence of this capacitor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MCLK</span> <span class="pre">COUNTER</span></code> - The ADFS7124-4 allows the user to monitor the controller clock. A stable controller
+clock is important because the output data rate, filter settling time, and filter notch frequencies
+depend on it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPI</span> <span class="pre">SCLK</span> <span class="pre">COUNTER</span></code> - The SPI SCLK counter counts the number of SCLK pulses used in each read and
+write operation.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPI</span> <span class="pre">READ/WRITE</span> <span class="pre">ERRORS</span></code> - The ADFS7124-4 can check the read and write operations to ensure valid
+registers are being addressed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CHECKSUM</span> <span class="pre">PROTECTION</span></code> - A checksum ensures that only valid data is written to a register and allows
+data read from a register to be validated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BURNOUT</span> <span class="pre">CURRENTS</span></code> - The ADFS7124-4 contains two constant current generators that can be programmed
+to 0.5 µA, 2 µA, or 4 µA. Use these currents to verify that an external transducer is still operational
+before taking measurements on that channel.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TEMPERATURE</span> <span class="pre">SENSOR</span></code> - The ADFS7124-4 has an embedded temperature sensor that is useful to monitor
+the die temperature of the IC.</p></li>
+</ol>
+<p>The datasheet explains how to use all of these diagnostics. The safety manual for this part is also
+available upon request.</p>
 </section>
-<section id="derating-analysis">
-<h2>Derating Analysis<a class="headerlink" href="#derating-analysis" title="Link to this heading"></a></h2>
-<p>All the components of the reference design undergo derating analysis for safety
-relevance, verifying that all electronic and/or electrical components are
-operating within limits even after derating it. Justification for operating any
-hardware elements at their limits shall be documented (see IEC 61508-1, Clause
-5), which means all the parts in the Bill of Materials of the device are in
-derating analysis.</p>
-<p>Where de-rating is appropriate, a de-rating factor of approximately two-thirds
-(2/3) or 67% is typical. This is also known as Safety Ratio.</p>
-<p>For example, if the operating current flowing in a diode is 50mA, that
-particular diode should have high enough maximum current rating, that even if
-multiplied to 2/3 or 67%, it still above 50mA, like a diode with maximum current
-of 100mA, which 100*(2/3) = 67mA, then 67mA is greater than 50mA, so it still
-passed. If the maximum derated current is below 50mA then it is failed, and the
-user must find an alternative diode with better current rating.</p>
-<p>The reference design components are derated to all electrical parameters be it
-voltage, current, power and operating temperature. It can be all parameters or
-can be just some parameters depending on how the components operate. A table of
-summary on what parameters are analyzed is included for the common part types
-used in the reference design.</p>
-<div class="table-wrapper docutils container" id="id5">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-number">Table 4 </span><span class="caption-text">Parameters Needed for Derating Analysis</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
-<tbody>
-<tr class="row-odd"><td><p>Component Type</p></td>
-<td><p>Voltage Derating</p></td>
-<td><p>Current Derating</p></td>
-<td><p>Power Derating</p></td>
-<td><p>Junction or Die Temperature</p></td>
-<td><p>Temperature Range</p></td>
-</tr>
-<tr class="row-even"><td><p>Capacitors</p></td>
-<td><p>Voltage maximum</p></td>
-<td><p>Ripple Current</p></td>
-<td></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-odd"><td><p>Connectors or Ports</p></td>
-<td></td>
-<td><p>Current maximum per pin</p></td>
-<td></td>
-<td></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-even"><td><p>Diodes for Suppression (TVS)</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-odd"><td><p>Diodes for General Purpose (Silicon, Schottky)</p></td>
-<td><p>Reverse breakdown or blocking voltage</p></td>
-<td><p>Forward current maximum</p></td>
-<td><p>Power maximum</p></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-even"><td><p>Diodes for Stabilization (Zener)</p></td>
-<td></td>
-<td><p>Reverse or Zener current maximum</p></td>
-<td><p>Power maximum</p></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-odd"><td><p>Analog Integrated Circuit</p></td>
-<td><p>Wide supply maximum voltage</p></td>
-<td><p>Load current maximum</p></td>
-<td><p>Power maximum</p></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-even"><td><p>Digital Integrated Circuit</p></td>
-<td><p>Wide supply maximum voltage</p></td>
-<td><p>Load current maximum</p></td>
-<td><p>Power maximum</p></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-odd"><td><p>Inductors and Transformers</p></td>
-<td></td>
-<td><p>Average or RMS current</p></td>
-<td></td>
-<td></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-even"><td><p>Quartz, Crystals or Oscillators</p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-<tr class="row-odd"><td><p>Resistors</p></td>
-<td><p>Voltage maximum</p></td>
-<td><p>Current maximum via Ohm’s Law</p></td>
-<td><p>Power maximum</p></td>
-<td><p>Temperature maximum</p></td>
-<td><p>Operating temperatures</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Besides which parameters to analyze, it’s important that generic parameters are
-established when initiating the derating analysis, especially if ambient
-temperature is involved.</p>
-<div class="table-wrapper docutils container" id="id6">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-number">Table 5 </span><span class="caption-text">Generic Parameters for the AD-EthernetAPLDevice-SL</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
-<tbody>
-<tr class="row-odd"><td><p>Parameter</p></td>
-<td><p>Unit</p></td>
-<td><p>Value</p></td>
-</tr>
-<tr class="row-even"><td><p>Safey Ratio</p></td>
-<td><p>%</p></td>
-<td><p>67</p></td>
-</tr>
-<tr class="row-odd"><td><p>Minimum Ambient Temperature</p></td>
-<td><p>°C</p></td>
-<td><p>-40</p></td>
-</tr>
-<tr class="row-even"><td><p>Maximum Ambient Temperature</p></td>
-<td><p>°C</p></td>
-<td><p>90</p></td>
-</tr>
-<tr class="row-odd"><td><p>Minimum Storage Temperature</p></td>
-<td><p>°C</p></td>
-<td><p>-40</p></td>
-</tr>
-<tr class="row-even"><td><p>Maximum Storage Temperature</p></td>
-<td><p>°C</p></td>
-<td><p>85</p></td>
-</tr>
-<tr class="row-odd"><td><p>Junction Temperature (ΔTmax –ΔT))</p></td>
-<td><p>K</p></td>
-<td><p>3</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<section id="safety-related-data-communications">
+<h2>Safety Related Data Communications<a class="headerlink" href="#safety-related-data-communications" title="Link to this heading"></a></h2>
+<p>It is assumed that the MAX32690 will implement an IEC 61784-3 compliant black channel protocol
+with the ADIN1100 thus existing in the black channel.</p>
+</section>
+<section id="system-capability">
+<h2>System Capability<a class="headerlink" href="#system-capability" title="Link to this heading"></a></h2>
+<p>The MAX42500 and ADFS7124-4 are safety rated and suitable for use in applications up to SC3.</p>
+<p>For the MAX32690 the challenge response mode of the MAX42500 gives additional confidence
+and a completed IEC 61508-2:2010 table F.1 is available under NDA to support the design-in of the MAX32690.</p>
+<p>Other components such as the ADIN1100, power limitation and regulators are covered by the
+black channel safety concept for communications, are to implement diagnostics,
+or are covered by the MAX42500 diagnostics.</p>
 </section>
 </section>
 
