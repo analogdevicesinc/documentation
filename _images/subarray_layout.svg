@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="Consolas, monospace" font-size="13">
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="520" fill="#1a1a2e" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="bold">Antenna-Facing View (ADAR1000 ICs on reverse side)</text>
+
+  <!-- Outer border -->
+  <rect x="20" y="45" width="760" height="430" fill="none" stroke="#4a4a6a" stroke-width="2" rx="4"/>
+
+  <!-- Horizontal divider -->
+  <line x1="20" y1="260" x2="780" y2="260" stroke="#4a4a6a" stroke-width="2"/>
+
+  <!-- Vertical divider -->
+  <line x1="400" y1="45" x2="400" y2="475" stroke="#4a4a6a" stroke-width="2"/>
+
+  <!-- SUBARRAY 4 (top-left) -->
+  <text x="210" y="72" text-anchor="middle" fill="#6ecf6e" font-size="14" font-weight="bold">SUBARRAY 4</text>
+  <text x="210" y="92" text-anchor="middle" fill="#aaaaaa" font-size="12">DAC0 / ADC2</text>
+  <text x="210" y="112" text-anchor="middle" fill="#7ab8d4" font-size="11">TXRX1(p2) → J1A UDC</text>
+
+  <!-- Sub4 devices -->
+  <rect x="50" y="130" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="115" y="150" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 7</text>
+  <text x="85" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[29]</text>
+  <text x="145" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[25]</text>
+  <text x="85" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[30]</text>
+  <text x="145" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[26]</text>
+
+  <rect x="210" y="130" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="275" y="150" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 5</text>
+  <text x="245" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[21]</text>
+  <text x="305" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[17]</text>
+  <text x="245" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[22]</text>
+  <text x="305" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[18]</text>
+
+  <!-- SUBARRAY 1 (top-right) -->
+  <text x="590" y="72" text-anchor="middle" fill="#6ecf6e" font-size="14" font-weight="bold">SUBARRAY 1</text>
+  <text x="590" y="92" text-anchor="middle" fill="#aaaaaa" font-size="12">DAC3 / ADC3</text>
+  <text x="590" y="112" text-anchor="middle" fill="#7ab8d4" font-size="11">TXRX4(p8) → J1D UDC</text>
+
+  <!-- Sub1 devices -->
+  <rect x="430" y="130" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="495" y="150" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 3</text>
+  <text x="465" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[13]</text>
+  <text x="525" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 9]</text>
+  <text x="465" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[14]</text>
+  <text x="525" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[10]</text>
+
+  <rect x="590" y="130" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="655" y="150" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 1</text>
+  <text x="625" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 5]</text>
+  <text x="685" y="175" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 1]</text>
+  <text x="625" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 6]</text>
+  <text x="685" y="200" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 2]</text>
+
+  <!-- SUBARRAY 3 (bottom-left) -->
+  <text x="210" y="287" text-anchor="middle" fill="#6ecf6e" font-size="14" font-weight="bold">SUBARRAY 3</text>
+  <text x="210" y="307" text-anchor="middle" fill="#aaaaaa" font-size="12">DAC1 / ADC0</text>
+  <text x="210" y="327" text-anchor="middle" fill="#7ab8d4" font-size="11">TXRX2(p4) → J1B UDC</text>
+
+  <!-- Sub3 devices -->
+  <rect x="50" y="345" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="115" y="365" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 8</text>
+  <text x="85" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[31]</text>
+  <text x="145" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[27]</text>
+  <text x="85" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[32]</text>
+  <text x="145" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[28]</text>
+
+  <rect x="210" y="345" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="275" y="365" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 6</text>
+  <text x="245" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[23]</text>
+  <text x="305" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[19]</text>
+  <text x="245" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[24]</text>
+  <text x="305" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[20]</text>
+
+  <!-- SUBARRAY 2 (bottom-right) -->
+  <text x="590" y="287" text-anchor="middle" fill="#6ecf6e" font-size="14" font-weight="bold">SUBARRAY 2</text>
+  <text x="590" y="307" text-anchor="middle" fill="#aaaaaa" font-size="12">DAC2 / ADC1</text>
+  <text x="590" y="327" text-anchor="middle" fill="#7ab8d4" font-size="11">TXRX3(p6) → J1C UDC</text>
+
+  <!-- Sub2 devices -->
+  <rect x="430" y="345" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="495" y="365" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 4</text>
+  <text x="465" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[15]</text>
+  <text x="525" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[11]</text>
+  <text x="465" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[16]</text>
+  <text x="525" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[12]</text>
+
+  <rect x="590" y="345" width="130" height="110" fill="#2a2a4a" stroke="#5a5a8a" rx="3"/>
+  <text x="655" y="365" text-anchor="middle" fill="#d4a76a" font-size="12" font-weight="bold">DEV 2</text>
+  <text x="625" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 7]</text>
+  <text x="685" y="390" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 3]</text>
+  <text x="625" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 8]</text>
+  <text x="685" y="415" text-anchor="middle" fill="#e0e0e0" font-size="12">[ 4]</text>
+
+  <!-- Legend -->
+  <text x="400" y="500" text-anchor="middle" fill="#888888" font-size="11">Element numbers shown in brackets [ ] — each device drives 4 antenna elements</text>
+</svg>
