@@ -130,7 +130,7 @@ Table of Contents
        #. :external+scopy:doc:`Scopy <index>`
        #. :ref:`IIO Command Line Tools <libiio cli>`
        #. :ref:`Python Interfaces <pyadi-iio>`
-       #. :git+pyadi-iio:`FMCOMMS11 Python Example <main:examples/fmcomms11.py>`
+       #. :git-pyadi-iio:`FMCOMMS11 Python Example <main:examples/fmcomms11.py>`
 
 #. Design with the FMCOMMS11
 
