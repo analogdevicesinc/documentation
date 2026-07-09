@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="16-Bit, 12 GSPS RF DAC and 12-Bit, 2.5 GSPS RF ADC Development Platform." name="description" />
+
+    <title>AD-FMCOMMS11-EBZ &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS11-EBZ Certification" href="certification.html" />
+    <link rel="prev" title="Reference Designs" href="../index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">AD-FMCOMMS11-EBZ</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#recommendation">Recommendation</a></li>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li><a class="reference internal" href="#block-diagram">Block diagram</a></li>
+<li><a class="reference internal" href="#adi-articles">ADI Articles</a></li>
+<li><a class="reference internal" href="#videos">Videos</a></li>
+<li><a class="reference internal" href="#mathworks-webinars">MathWorks Webinars</a></li>
+<li><a class="reference internal" href="#help-and-support">Help and support</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">AD-FMCOMMS11-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="certification.html">AD-FMCOMMS11-EBZ Certification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fmcomms11_plugin.html">FMCOMMS11 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCOMMS11-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCOMMS11-EBZ Characteristics &amp; Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCOMMS11-EBZ Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick start guide</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">On ZC706</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Production testing of the AD-FMCOMMS11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ad-fmcomms11-ebz">
+<span id="fmcomms11"></span><h1>AD-FMCOMMS11-EBZ<a class="headerlink" href="#ad-fmcomms11-ebz" title="Link to this heading"></a></h1>
+<p>16-Bit, 12 GSPS RF DAC and 12-Bit, 2.5 GSPS RF ADC Development Platform.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9625-TR-TAG-chip-illustration.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9625-TR-TAG-chip-illustration.png" class="align-left" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9625-TR-TAG-chip-illustration.png" width="150" />
+</a>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9162-TR-chip-illustration.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9162-TR-chip-illustration.png" class="align-left" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD9162-TR-chip-illustration.png" width="150" />
+</a>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS11-EBZ" target="_blank">AD-FMCOMMS11-EBZ</a> board is a system platform board for communication
+infrastructure applications that demonstrates the Direct to RF (DRF) transmitter
+and observation receiver architecture. Using high sample rate RFDAC(s)
+and RFADC(s), a number of components in previous generation transmitters can be
+eliminated, such as mixers, modulators, IF amplifiers and filters. The objective
+being to bring the ADC or DAC as close to the antenna as possible, leading to
+possibly more cost effective and efficient communications solution.
+It is composed of multi-GSps RF ADC <a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625</a> and DAC <a class="icon adi reference external" href="https://www.analog.com/AD9162" target="_blank">AD9162</a>, Cheetah
+and Barium respectively. The transmit path contains a balun, low pass filter,
+gain block and variable attenuation to produce an output appropriate for a power
+amplifier module. Along the observation path, the PA output is coupled back into
+the board through a variable attenuator, a balun and finally the ADC. Clock
+management is taken care of on board; all the necessary clocks are generated
+from a reference. Power management is present as well. We will provide typical
+performance data for the entire range (70 MHz – 6 GHz) which is
+supported by the platform. This is primarily for system investigation and bring
+up of various waveforms from a software team before their custom hardware is
+complete, where they want to see waveforms, but are not concerned about the last
+1dB or 1% EVM of performance.</p>
+<p>Features:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TX</dt><dd><ul>
+<li><p>16-bit 12GSPS RFDAC</p></li>
+<li><dl class="simple">
+<dt>JESD204B Interface</dt><dd><ul>
+<li><p>8 lanes up to 12.5Gbps</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>1x/2x/4x/6x/8x/12x/16x/24x/32x Interpolation</p></li>
+<li><p>64-bit NCO at max rate</p></li>
+<li><dl class="simple">
+<dt>Analog Modes of Operation:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Normal Mode: 6GSPS DAC rate</dt><dd><ul>
+<li><p>Synthesis up to 2.5GHz (1st Nyquist)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Mix Mode: 6GSPS DAC rate</dt><dd><ul>
+<li><p>Synthesis in 2nd &amp; 3rd Nyquist zones</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>2X Normal Mode: 12GSPS DAC rate</dt><dd><ul>
+<li><p>Synthesis up to 6GHz (1st Nyquist)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Excellent dynamic performance</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>RX</dt><dd><ul>
+<li><dl class="simple">
+<dt>3.2GHz full power bandwidth at 2.5GSPS</dt><dd><ul>
+<li><p>Noise Density = -149.5dBFs/Hz, ENOB = 9.5 bits</p></li>
+<li><p>SFDR = 77 dBc at 1GHz Ain (2.5Gsps)</p></li>
+<li><p>SFDR = 77dBc at 1.8GHz Ain (2.5Gsps)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>+/-0.3 LSB DNL, +/-1.0 LSB INL</p></li>
+<li><p>Dual supplies : 1.3V and 2.5V</p></li>
+<li><p>8 or 6 Lane JESD204B Outputs</p></li>
+<li><p>Programmable clipping threshold for Fast Detect output</p></li>
+<li><dl class="simple">
+<dt>Two Integrated wide band digital down converters (DDC) per channel</dt><dd><ul>
+<li><p>10-bit complex NCO</p></li>
+<li><p>2 cascaded half band filters (dec/8, dec/16)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Timestamp for synchronous processing alignment</dt><dd><ul>
+<li><p>SYSREF Setup/Hold detector</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Programmable Interrupt (IRQ) event monitor</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Applications:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>TX</dt><dd><ul>
+<li><p>Broadband communications systems</p></li>
+<li><p>DOCSIS 3.1 cable modem termination system (CMTS)/video on demand
+(VOD)/edge quadrature amplitude modulation (EQAM)</p></li>
+<li><p>Wireless communications infrastructure</p></li>
+<li><p>W-CDMA, LTE, LTE-A, point to point</p></li>
+<li><p>Instrumentation, automatic test equipment (ATE)</p></li>
+<li><p>Radars and jammers</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>RX</dt><dd><ul>
+<li><p>Spectrum analyzers</p></li>
+<li><p>Military communications</p></li>
+<li><p>Radar</p></li>
+<li><p>High performance digital storage oscilloscopes</p></li>
+<li><p>Active jamming/antijamming</p></li>
+<li><p>Electronic surveillance and countermeasures</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/fmcomms11_image.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/fmcomms11_image.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/fmcomms11_image.png" width="600" />
+</a>
+</section>
+<section id="recommendation">
+<h2>Recommendation<a class="headerlink" href="#recommendation" title="Link to this heading"></a></h2>
+<p>To better understand the <a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625</a> and <a class="icon adi reference external" href="https://www.analog.com/AD9162" target="_blank">AD9162</a>, we recommend to use
+the <a class="icon adi reference external" href="https://www.analog.com/AD-FMCOMMS11-EBZ" target="_blank">AD-FMCOMMS11-EBZ</a> evaluation board.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><a class="reference internal" href="hardware.html#fmcomms11-hardware"><span class="std std-ref">FMCOMMS11 Hardware</span></a>:
+This provides a brief description of the AD-FMCOMMS11-EBZ
+board by itself, and is a good reference for those who want
+to understand a little more about the board. If you just
+want to use the board, you can skip this section, and come
+back to it when you want to incorporate one of the devices
+into your product.</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="hardware/functional_overview.html"><span class="doc">Functional Overview &amp; Specifications</span></a></p></li>
+<li><p><a class="reference internal" href="hardware/card_specification.html"><span class="doc">Characteristics &amp; Performance</span></a></p></li>
+</ol>
+</li>
+<li><p><a class="reference internal" href="certification.html"><span class="doc">FCC or CE certification</span></a></p></li>
+<li><p><a class="reference internal" href="testing.html"><span class="doc">Production Testing Process</span></a></p></li>
+<li><p>Using the evaluation board/full stack reference design that we offer:</p>
+<ol class="arabic">
+<li><p><a class="reference internal" href="user-guide.html#fmcomms11-user-guide"><span class="std std-ref">User guide</span></a>- what you need to know about the
+evaluation board</p></li>
+<li><p><a class="reference internal" href="prerequisites.html#fmcomms11-prerequisites"><span class="std std-ref">Prerequisites</span></a>- what you need to get started</p></li>
+<li><p><a class="reference internal" href="quickstart/index.html#fmcomms11-quickstart"><span class="std std-ref">Quick-Start Guide</span></a>:</p>
+<ol class="arabic simple">
+<li><p>Using the <a class="reference internal" href="quickstart/zc706.html#fmcomms11-quickstart-zc706"><span class="std std-ref">ZC706</span></a></p></li>
+</ol>
+</li>
+<li><p>Configure an SD Card with <a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper</span></a></p></li>
+<li><p>Software Solutions</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a></p></li>
+<li><p><a class="reference internal" href="fmcomms11_plugin.html#fmcomms11-plugin"><span class="std std-ref">FMCOMMS11 Plugin Description</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy v2.2.1)"><span class="xref std std-doc">Scopy</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/libiio/cli.html#libiio-cli" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Command Line Tools</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/pyadi-iio/index.html#pyadi-iio" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">Python Interfaces</span></a></p></li>
+<li><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/fmcomms11.py" target="_blank">FMCOMMS11 Python Example</a></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</li>
+<li><p>Design with the FMCOMMS11</p></li>
+</ol>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="#fmcomms11-block-diagram"><span class="std std-ref">Block diagram</span></a></p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms11-ebz" target="_blank">AD-FMCOMMS11-EBZ Product page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9162" target="_blank">AD9162 Product page</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/AD9625" target="_blank">AD9625 Product page</a></p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Resources for designing a custom AD9625/AD9162-based platform software</p>
+<ol class="arabic simple">
+<li><p>For Linux software:</p>
+<ol class="arabic simple">
+<li><p>About the device driver:</p>
+<ol class="arabic simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/axi_jesd204_tx.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">JESD204B Transmit Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/axi_jesd204_rx.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">JESD204B Receive Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/axi_adxcvr.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-adc/axi-adc-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AXI ADC HDL Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-dds/axi-dac-dds-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AXI DAC HDL Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/dma/axi-dmac.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AXI-DMAC DMA Controller Linux driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-pll/ad9162.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9162 Linux driver</span></a></p></li>
+</ol>
+</li>
+<li><p>About the device tree:</p>
+<ol class="arabic simple">
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/linux/zynq_tips_tricks" target="_blank">Customizing the device tree on the target</a></p></li>
+</ol>
+</li>
+<li><p>About the JESD204 utilities:</p>
+<ol class="arabic simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/jesd204/jesd204-fsm-framework.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">JESD204 (FSM) interface Linux Kernel framework</span></a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_status" target="_blank">JESD204 status utility</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/jesd_eye_scan" target="_blank">JESD204 Eye Scan</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/jesd204/index.html#jesd204" target="_blank" title="(in HDL)"><span>JESD204 Interface Framework</span></a></p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>FPGA Resources:</p>
+<ol class="arabic simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms11/index.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">FMCOMMS11 HDL reference design</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/index.html#user-guide" target="_blank" title="(in HDL)"><span class="xref std std-ref">HDL User Guide</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/customize_hdl.html" target="_blank" title="(in HDL)"><span class="xref std std-doc">HDL Customize Guide</span></a></p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</section>
+<section id="block-diagram">
+<span id="fmcomms11-block-diagram"></span><h2>Block diagram<a class="headerlink" href="#block-diagram" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-FMCOMMS11-EBZ-block-diagram.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-FMCOMMS11-EBZ-block-diagram.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-FMCOMMS11-EBZ-block-diagram.png" width="800" />
+</a>
+</section>
+<section id="adi-articles">
+<h2>ADI Articles<a class="headerlink" href="#adi-articles" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Four Quick Steps to Production: Using Model-Based Design for
+Software-Defined Radio</p>
+<ul>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-09/four-step-sdr-01.html" target="_blank">Part 1—the Analog Devices/Xilinx SDR Rapid Prototyping Platform: Its Capabilities, Benefits, and Tools</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-10/four-step-sdr-02.html" target="_blank">Part 2—Mode S Detection and Decoding Using MATLAB and Simulink</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-11/four-step-sdr-03.html" target="_blank">Part 3—Mode S Signals Decoding Algorithm Validation Using Hardware in the Loop</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/library/analogDialogue/archives/49-12/four-step-sdr-04.html" target="_blank">Part 4 - Rapid Prototyping Using the Zynq SDR Kit and Simulink Code Generation Workflow</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/products/ad9625.html#product-recommendations" target="_blank">Silent Switcher µModule Regulators Powering GSPS Sampling ADC</a></p></li>
+</ul>
+</section>
+<section id="mathworks-webinars">
+<h2>MathWorks Webinars<a class="headerlink" href="#mathworks-webinars" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html" target="_blank">Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html" target="_blank">Getting Started with Software-Defined Radio using MATLAB and Simulink</a></p></li>
+</ul>
+</section>
+<section id="help-and-support">
+<h2>Help and support<a class="headerlink" href="#help-and-support" title="Link to this heading"></a></h2>
+<p>People who follow the flow that is outlined have a much better experience.
+However, like many things, documentation is never as complete as it should be.
+If you have any questions, feel free to ask on the <a class="icon ez reference external" href="https://ez.analog.com/" target="_blank">EngineerZone</a> technical support
+community, but before that, please make sure you read our documentation
+thoroughly.</p>
+</section>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h2>
+<div><div class="esd-warning docutils">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Reference Designs</a>
+    <a href="certification.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS11-EBZ Certification</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

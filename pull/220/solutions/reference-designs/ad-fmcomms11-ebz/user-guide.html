@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="For detailed hardware documentation, refer to:" name="description" />
+
+    <title>User guide &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Production testing of the AD-FMCOMMS11" href="testing.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">User guide</a><ul>
+<li><a class="reference internal" href="#top-view">Top view</a></li>
+<li><a class="reference internal" href="#bottom-view">Bottom view</a></li>
+<li><a class="reference internal" href="#hardware-guide">Hardware guide</a></li>
+<li><a class="reference internal" href="#software-guide">Software guide</a><ul>
+<li><a class="reference internal" href="#adi-iio-oscilloscope">ADI IIO Oscilloscope</a><ul>
+<li><a class="reference internal" href="#for-linux">For Linux</a><ul>
+<li><a class="reference internal" href="#remote-run-on-host">Remote run on host</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#plugin">Plugin</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#scopy">Scopy</a></li>
+<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a></li>
+<li><a class="reference internal" href="#matlab">MATLAB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS11-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="certification.html">AD-FMCOMMS11-EBZ Certification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fmcomms11_plugin.html">FMCOMMS11 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCOMMS11-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCOMMS11-EBZ Characteristics &amp; Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCOMMS11-EBZ Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick start guide</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">On ZC706</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Production testing of the AD-FMCOMMS11</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCOMMS11-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="user-guide">
+<span id="fmcomms11-user-guide"></span><h1>User guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
+<section id="top-view">
+<h2>Top view<a class="headerlink" href="#top-view" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/top_view_ic_component.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/top_view_ic_component.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/top_view_ic_component.jpg" width="600" />
+</a>
+</section>
+<section id="bottom-view">
+<h2>Bottom view<a class="headerlink" href="#bottom-view" title="Link to this heading"></a></h2>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-COMMS11-EBZBOTTOM-evaluation-board.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-COMMS11-EBZBOTTOM-evaluation-board.jpg" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/AD-COMMS11-EBZBOTTOM-evaluation-board.jpg" width="600" />
+</a>
+</section>
+<section id="hardware-guide">
+<h2>Hardware guide<a class="headerlink" href="#hardware-guide" title="Link to this heading"></a></h2>
+<p>For detailed hardware documentation, refer to:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="hardware.html"><span class="doc">AD-FMCOMMS11-EBZ Hardware</span></a> - Board overview, PCB layers and dimensions</p></li>
+<li><p><a class="reference internal" href="hardware/functional_overview.html"><span class="doc">AD-FMCOMMS11-EBZ Functional Overview</span></a> - System block diagram and signal paths</p></li>
+<li><p><a class="reference internal" href="hardware/card_specification.html"><span class="doc">AD-FMCOMMS11-EBZ Characteristics &amp; Performance</span></a> - Transmitter and receiver characterization</p></li>
+</ul>
+<p>Design files (schematic, PCB layout, bill of materials) are available
+<a class="reference internal" href="hardware.html#fmcomms11-hardware-design-files"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="software-guide">
+<h2>Software guide<a class="headerlink" href="#software-guide" title="Link to this heading"></a></h2>
+<p>The FMCOMMS11 evaluation board is supported with the
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/libiio/tree/main/" target="_blank">libiio library</a>. This library is cross-platform
+(Windows, Linux, Mac) with language bindings for C, C#, Python, MATLAB,
+and others.</p>
+<section id="adi-iio-oscilloscope">
+<h3>ADI IIO Oscilloscope<a class="headerlink" href="#adi-iio-oscilloscope" title="Link to this heading"></a></h3>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a> is a cross-platform application for interfacing
+with IIO devices, enabling you to configure device parameters and visualize
+data.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure to download/update to the latest version of
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases" target="_blank">IIO Oscilloscope</a>.</p>
+</div>
+<section id="for-linux">
+<h4>For Linux<a class="headerlink" href="#for-linux" title="Link to this heading"></a></h4>
+<section id="remote-run-on-host">
+<h5>Remote run on host<a class="headerlink" href="#remote-run-on-host" title="Link to this heading"></a></h5>
+<p>The <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a> application can be used to connect to another
+platform that has a connected device, to configure the device and read data
+from it. This application is not for performance testing, but rather
+showcasing the basic features.</p>
+<p>Please see <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">IIO Oscilloscope documentation</span></a> for
+installation steps and more details.</p>
+<p>Build and start <code class="docutils literal notranslate"><span class="pre">osc</span></code> on a network-enabled Linux host.
+For Windows computers, open the application from the start menu.</p>
+<p>Once the application is launched, go to Settings &gt; Connect &gt; URI and type
+“ip:” then the IP address of the target in the pop-up window. This IP can
+be found out with a command from the previous section of this documentation.</p>
+</section>
+</section>
+<section id="plugin">
+<h4>Plugin<a class="headerlink" href="#plugin" title="Link to this heading"></a></h4>
+<p>This project also contains an IIO-Oscilloscope device-specific plugin that
+enables you to access the unique features and functions of the device.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about this plugin: <a class="reference internal" href="fmcomms11_plugin.html#fmcomms11-plugin"><span class="std std-ref">FMCOMMS11 Plugin Description</span></a></p>
+</div>
+</section>
+</section>
+<section id="scopy">
+<h3>Scopy<a class="headerlink" href="#scopy" title="Link to this heading"></a></h3>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy v2.2.1)"><span class="xref std std-doc">Scopy</span></a> is a cross-platform software toolbox for
+interfacing with ADI devices, enabling you to configure device parameters,
+visualize data, and perform advanced signal analysis.</p>
+</section>
+<section id="pyadi-iio">
+<h3>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading"></a></h3>
+<p><a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/" target="_blank">PyADI-IIO</a> is a Python abstraction module for ADI
+hardware with IIO drivers. An FMCOMMS11 example can be found
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/fmcomms11_example.py" target="_blank">here</a>.</p>
+</section>
+<section id="matlab">
+<h3>MATLAB<a class="headerlink" href="#matlab" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/modelling-and-simulating-analog-devices-rf-transceivers-with-matlab-and-simrf-89934.html" target="_blank">Modelling and Simulating Analog Devices’ RF Transceivers with MATLAB and SimRF</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.mathworks.com/videos/getting-started-with-software-defined-radio-using-matlab-and-simulink-108646.html" target="_blank">Getting Started with Software-Defined Radio using MATLAB and Simulink</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="testing.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Production testing of the AD-FMCOMMS11</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

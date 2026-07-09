@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The production testing is quite simple. Since each board has been completely characterized, and we know the layout is good, we can just look for gross errors. There are multiple ways to run the test depending on the hardware setup." name="description" />
+
+    <title>Production testing of the AD-FMCOMMS11 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="User guide" href="user-guide.html" />
+    <link rel="prev" title="ZC706 Quickstart" href="quickstart/zc706.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Production testing of the AD-FMCOMMS11</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#requirement">Requirement</a></li>
+<li><a class="reference internal" href="#preparing-the-sd-card">Preparing the SD Card</a></li>
+<li><a class="reference internal" href="#id1">Hardware Setup</a></li>
+<li><a class="reference internal" href="#software-setup">Software Setup</a></li>
+<li><a class="reference internal" href="#test-process">Test process</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS11-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="certification.html">AD-FMCOMMS11-EBZ Certification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fmcomms11_plugin.html">FMCOMMS11 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCOMMS11-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCOMMS11-EBZ Characteristics &amp; Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCOMMS11-EBZ Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick start guide</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">On ZC706</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Production testing of the AD-FMCOMMS11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCOMMS11-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="production-testing-of-the-ad-fmcomms11">
+<span id="fmcomms11-testing"></span><h1>Production testing of the AD-FMCOMMS11<a class="headerlink" href="#production-testing-of-the-ad-fmcomms11" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The production testing is quite simple. Since each board has been completely
+characterized, and we know the layout is good, we can just look for gross
+errors. There are multiple ways to run the test depending on the hardware setup.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>fmcomms11_test/fmcomms11_prod_test.sh: used to test AD-FMCOMMS11-EBZ locally</dt><dd><p>on the carrier with GUI. A desktop shortcut named “FMCOMMS11 TEST” is also
+provided.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>fmcomms11_test/fmcomms11_test: used to test AD-FMCOMMS11-EBZ via console.</dt><dd><p>This can be used remotely. You have to supply some parameters to use this.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The test parameters limits are stored in a “csv” file which can be specified in
+the arguments when running the console test binary. The GUI version uses the
+test parameters limits stored in the BOOT partition.</p>
+</section>
+<section id="requirement">
+<h2>Requirement<a class="headerlink" href="#requirement" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms11-ebz" target="_blank">AD-FMCOMMS11-EBZ</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
+<li><dl class="simple">
+<dt>FMCOMMS SD card (at least 8 gb class 10) loaded with ADI zynq linux image</dt><dd><p>installed with the fmcomms11_test program</p>
+</dd>
+</dl>
+</li>
+<li><p>SMA RF loopback cable (1x for FMCOMMS11)</p></li>
+<li><p>External monitor connected to the carrier via HDMI</p></li>
+<li><p>Keyboard and mouse (with USB hub if they aren’t part of a combo device)</p></li>
+<li><p>USB OTG adapter</p></li>
+</ul>
+</section>
+<section id="preparing-the-sd-card">
+<h2>Preparing the SD Card<a class="headerlink" href="#preparing-the-sd-card" title="Link to this heading"></a></h2>
+<p>If you have a production test SD-card already, you can skip this section and
+proceed to the <a class="icon link reference external" href="https://wiki.analog.com/testing" target="_blank">Hardware Setup</a> section.</p>
+<p>Obtain the pre-built SD card Zynq image for ZC706 pre-installed with the
+fmcomms11 test program from this <a class="icon link reference external" href="https://wiki.analog.com/testing" target="_blank">link</a>. If
+the image file is compressed – that is, not ending with “.img” but with file
+extensions of xz, zip, and rar, decompress the file using 7zip or similar tool.
+Insert the SD card (at least 8gb) to a computer. Using a disk writer software,
+write the downloaded image (img file) to the SD card. Instructions can be found
+on
+<a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/zynq_images/windows_hosts" target="_blank">windows_hosts</a>
+about how to use the Win32 disk manager. Etcher, on the other hand, is easier
+to use than win32 disk manager. Example Disk writer software:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.balena.io/etcher/" target="_blank">Etcher.io (Linux, Windows, Mac)</a></p></li>
+<li><p><a class="icon link reference external" href="https://sourceforge.net/projects/win32diskimager/" target="_blank">Win32 Disk Imager (Windows)</a></p></li>
+</ul>
+<p>Once the image has been written on the SD card, it is now ready to use. Eject
+the SD card from the card reader and proceed to the hardware setup.</p>
+</section>
+<section id="id1">
+<h2>Hardware Setup<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/system_test_setup.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/system_test_setup.png" />
+<ul class="simple">
+<li><p>Plug in the external monitor and connect it via HDMI to the carrier board.</p></li>
+<li><dl class="simple">
+<dt>Connect the USB OTG adapter (and USB hub if needed) to the USB port on the</dt><dd><p>carrier, then plug in the keyboard and mouse as well.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Attach the FMCOMMS11 that has a hardware loopback to the Carrier board via</dt><dd><p>the FMC HPC connector (J37).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Attach the power supply cable of the fan to the fan supply cable connected to</dt><dd><p>J61. Make sure that the fan is attached to the FMCOMMS11 securely.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Insert the SD card that contains the Zynq image and confirm that the carrier</dt><dd><p>board is set to boot from SD. The SW11 is configured the same as the
+following image to ensure that the carrier will boot from SD card.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/zilynx_switch_settings.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/zilynx_switch_settings.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/zilynx_switch_settings.png" width="300" />
+</a>
+<ul class="simple">
+<li><p>Plug the power adapter of the Zynq ZC706.</p></li>
+<li><dl class="simple">
+<dt>Switch on the Zynq ZC706 to and wait for the system to boot on to start the</dt><dd><p>test.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="software-setup">
+<h2>Software Setup<a class="headerlink" href="#software-setup" title="Link to this heading"></a></h2>
+<p>If the Zynq image used is the pre-built image pre-installed with the test
+program, there is no other software setup needed.</p>
+</section>
+<section id="test-process">
+<h2>Test process<a class="headerlink" href="#test-process" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Make sure that Zynq Carrier board is turned-off during each start of the</dt><dd><p>test.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Attach the RF loopback cable to the card. See the image in the Hardware Setup</dt><dd><p>section for correct placement.</p>
+</dd>
+</dl>
+</li>
+<li><p>Attach the card into the carrier board through the FMC HPC J37.</p></li>
+<li><p>Power on the carrier board.</p></li>
+<li><dl class="simple">
+<dt>A terminal window open and a dialog box will prompt with a message ensuring</dt><dd><p>that the loopback cable is connected as instructed in step 2. Click OK if the
+RF loopback cable is already connected. If there is no dialog box,
+double-click the FMCOMMS11 Test icon in the desktop.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/hardware_setup_reminder.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/hardware_setup_reminder.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/hardware_setup_reminder.png" width="400" />
+</a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>When prompted with a window like the following image, enter the serial number</dt><dd><p>found on the board. Pressing cancel will just cancel the test.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/board_number_entry.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/board_number_entry.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/board_number_entry.png" width="300" />
+</a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>After entering the serial number, the test will start, and progress will be</dt><dd><p>shown on the terminal.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/linux_terminal.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/linux_terminal.png" />
+<ul class="simple">
+<li><p>When tests pass, the following window should be shown</p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results.png" width="200" />
+</a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>If tests fail, a window like the following image should be shown below. In</dt><dd><p>either case, hit the OK button to end the test program. You may re-run the
+test software from the desktop to re-test.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results_2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results_2.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/test_results_2.png" width="200" />
+</a>
+<ul>
+<li><p>In case of Program errors, the message box like the image below will appear:</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/program_error_msg.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/program_error_msg.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/program_error_msg.png" width="300" />
+</a>
+<p>The instructions on what to do with the error will be displayed on the
+message box. In the case above, the error might be solved by stopping all
+programs that are using the libiio. For example, when the IIO-Oscilloscope
+plot is running, this error will appear. So, stopping IIO-Oscilloscope might
+fix it. If the test has been restarted but the same error appears, the board
+under test has failed. If the next boards have the same problem, retest a
+board that was tested before that “passed” to check the state of the carrier
+board.</p>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>If test ended but did not automatically shut down, Click the icon in top</dt><dd><p>left, click the log-off icon, then, click the shutdown button. During
+shutdown, the desktop view will exit and turn black. After several seconds
+power off the carrier board via the physical switch. SW1.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Once the carrier board is already powered down, remove the FMCOMMS11 that was</dt><dd><p>tested and return to step 1 to continue with the next board.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>In each test except for program errors, two files are generated, and a</dt><dd><p>summary file will be updated.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Measurement file (f_measurement-XXXXX.csv where XXXXX is the serial</dt><dd><p>number) - Contains all the data from the measurements done in the program</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Processed File (f_processed-XXXXX.csv) - contains the mean, standard</dt><dd><p>deviation, as well as the PASS or FAIL remarks for the individual test
+set.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Summary File (f_summary.csv) – contains the list of board serial numbers</dt><dd><p>that has been tested and the result of most recent test on each board.
+Therefore, running the test again will just update the result and
+overwrite the processed file and measurement file of that board.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Re-running the test on the same board serial number will just overwrite the
+previous test results for that serial number. These files will be stored in
+/boot/test_results/. To backup these files, turn off the carrier board,
+remove the SD card, and insert the SD card to the computer. Locate the
+detected removable drive named “BOOT” and copy the test_results folder to
+computer. As alternative, if the carrier board is connected to the network,
+SSH or SCP can be used to copy the files from the ZC706 to the computer.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="quickstart/zc706.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ZC706 Quickstart</a>
+    <a href="user-guide.html" title="Next document (Alt+Shift+RightArrow)" class="next">User guide</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

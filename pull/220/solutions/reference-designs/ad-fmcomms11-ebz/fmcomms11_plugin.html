@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The FMCOMMS11 plugin works with the IIO Oscilloscope. You always use the latest version if possible. Changing any field will immediately write changes which have been made to the device settings to the hardware, and then read it back to make sure the setting is valid. If you want to set something that the GUI changes to a different number, that either means that GUI is rounding (sorry), or the hardware (either the FMCOMMS11 or the FPGA fabric) does not support that mode/precision." name="description" />
+
+    <title>FMCOMMS11 Plugin Description &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="AD-FMCOMMS11-EBZ Hardware" href="hardware.html" />
+    <link rel="prev" title="AD-FMCOMMS11-EBZ Certification" href="certification.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">FMCOMMS11 Plugin Description</a><ul>
+<li><a class="reference internal" href="#adc">ADC</a></li>
+<li><a class="reference internal" href="#input-attenuator">Input Attenuator</a></li>
+<li><a class="reference internal" href="#dds">DDS</a><ul>
+<li><a class="reference internal" href="#axi-ad9162-hpc">axi-ad9162-hpc</a></li>
+<li><a class="reference internal" href="#one-cw-tone">One CW Tone</a></li>
+<li><a class="reference internal" href="#two-cw-tone">Two CW Tone</a></li>
+<li><a class="reference internal" href="#independent-i-q-control">Independent I/Q Control</a></li>
+<li><a class="reference internal" href="#dac-buffer-output">DAC Buffer Output</a></li>
+<li><a class="reference internal" href="#disable">Disable</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dac">DAC</a></li>
+<li><a class="reference internal" href="#output-vga">Output VGA</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">AD-FMCOMMS11-EBZ</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="certification.html">AD-FMCOMMS11-EBZ Certification</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">FMCOMMS11 Plugin Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware.html">AD-FMCOMMS11-EBZ Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/card_specification.html">AD-FMCOMMS11-EBZ Characteristics &amp; Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hardware/functional_overview.html">AD-FMCOMMS11-EBZ Functional Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1-1" id="toctree-collapse-1-1-1"/><div class="collapse"><a class="reference internal" href="quickstart/index.html">Quick start guide</a><label for="toctree-collapse-1-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart/zc706.html">On ZC706</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="testing.html">Production testing of the AD-FMCOMMS11</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">AD-FMCOMMS11-EBZ</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="fmcomms11-plugin-description">
+<span id="fmcomms11-plugin"></span><h1>FMCOMMS11 Plugin Description<a class="headerlink" href="#fmcomms11-plugin-description" title="Link to this heading"></a></h1>
+<p>The FMCOMMS11 plugin works with the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span>IIO Oscilloscope</span></a>. You always use
+the latest version if possible. Changing any field will immediately write
+changes which have been made to the device settings to the hardware, and then
+read it back to make sure the setting is valid. If you want to set something
+that the GUI changes to a different number, that either means that GUI is
+rounding (sorry), or the hardware (either the FMCOMMS11 or the FPGA fabric)
+does not support that mode/precision.</p>
+<p>If you want to go play with <code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/....</span></code> and manipulate the
+devices behind the back of the GUI, it’s still possible to see the settings
+by clicking the “refresh” button at the bottom of the GUI.</p>
+<p>The FMCOMMS11 view is divided in five sections:</p>
+<ul class="simple">
+<li><p><strong>ADC</strong></p></li>
+<li><p><strong>Attenuator</strong></p></li>
+<li><p><strong>DDS</strong></p></li>
+<li><p><strong>DAC</strong></p></li>
+<li><p><strong>Output VGA</strong></p></li>
+</ul>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls.jpg" width="400" />
+</a>
+<section id="adc">
+<h2>ADC<a class="headerlink" href="#adc" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Sampling frequency(MHz):</strong> Display the sample rate of the ADC.</p></li>
+<li><p><strong>Input Scales / Reference:</strong> Set the scale of the signal input.</p></li>
+<li><dl class="simple">
+<dt><strong>Channel 0 Test mode:</strong> control the JESD204B interface test injection</dt><dd><p>points.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="input-attenuator">
+<h2>Input Attenuator<a class="headerlink" href="#input-attenuator" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Gain(dB):</strong> Controls RX signal attenuation.</p></li>
+</ul>
+</section>
+<section id="dds">
+<h2>DDS<a class="headerlink" href="#dds" title="Link to this heading"></a></h2>
+<section id="axi-ad9162-hpc">
+<h3>axi-ad9162-hpc<a class="headerlink" href="#axi-ad9162-hpc" title="Link to this heading"></a></h3>
+<p>The plugin provides several options on how the transmitted data is generated.</p>
+<p>It is possible to either use the built-in two tone <strong>Direct Digital
+Synthesizer (DDS)</strong> to transmit a bi-tonal signal on channels I and Q of the
+DAC. Or it is possible to use the <strong>Direct Memory Access (DMA) facility</strong> to
+transmit custom data that you have stored in a file.</p>
+<p>This can be achieved by selecting one of the following options listed by the
+<strong>DDS Mode</strong>:</p>
+</section>
+<section id="one-cw-tone">
+<h3>One CW Tone<a class="headerlink" href="#one-cw-tone" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_1_tone.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_1_tone.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_1_tone.jpg" width="200" />
+</a>
+<p>In <strong>One CW Tone</strong> mode one continuous wave (CW) tone will be outputted. The
+plugin displays the controls to set the Frequency, Amplitude and Phase for
+just one tone and makes sure that the amplitude of the other tone is set to
+0. The resulting signal will be outputted on the Channel I of the DAC and the
+exact same signal but with a difference in phase of 90 degrees will be
+outputted on the Channel Q of the DAC.</p>
+</section>
+<section id="two-cw-tone">
+<h3>Two CW Tone<a class="headerlink" href="#two-cw-tone" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_2_tone.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_2_tone.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_2_tone.jpg" width="340" />
+</a>
+<p>In <strong>Two CW Tone</strong> mode two continuous wave (CW) tones will be outputted.
+The plugin displays the controls to set the frequencies F1 and F2, amplitudes
+A1 and A2, phases P1 and P2 for the two tones. The resulting signal will be
+outputted on the Channel I of the DAC and the exact same signal but with a
+difference in phase of 90 degrees will be outputted on the Channel Q of the
+DAC.</p>
+</section>
+<section id="independent-i-q-control">
+<h3>Independent I/Q Control<a class="headerlink" href="#independent-i-q-control" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_independent_i_and_q.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_independent_i_and_q.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_independent_i_and_q.jpg" width="300" />
+</a>
+<p>In <strong>Independent I/Q Control</strong> the plugin displays the controls to set the
+frequencies, amplitudes and phases for the two tones that will be outputted
+on channel I and additionally it allows for the two tones that will be
+outputted on channel Q of the DAC to be configured independently.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note: The bi-tonal signal (T) is defined as the sum of two tones: T(t) =
+A1 * sin(2 * π * F1 * t + P1) + A2 * sin(2 * π * F2 * t + P2),
+where A-amplitude, F-frequency, P-phase of a tone.</p>
+</div>
+</section>
+<section id="dac-buffer-output">
+<h3>DAC Buffer Output<a class="headerlink" href="#dac-buffer-output" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_dac_buffer.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_dac_buffer.jpg" class="align-right" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/wiki_migration/fmcomms11_landing/docs/solutions/reference-designs/ad-fmcomms11-ebz/images/controls_dac_buffer.jpg" width="200" />
+</a>
+<p>The file selector under the <strong>File Selection</strong> section is used to locate and
+choose the desired data file. Under the <strong>DAC Channels</strong> section the enabled
+channels will be used to transmit the data stored in the file. To finalize
+the process, a click on the <strong>Load</strong> button is required.</p>
+<p><strong>Restrictions:</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>There are two types of files than can be loaded: <strong>.txt</strong> or <strong>.mat</strong>. The</dt><dd><p>IIO-Oscilloscope comes with several
+<a class="icon git reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/tree/main/waveforms" target="_blank">data files</a> that can be used. If you
+want to create your own data files please take a look at the
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/basic_iq_datafiles" target="_blank">Basic IQ Data Files</a>
+documentation first.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Due to hardware limitation only specific combinations of enabled channels</dt><dd><p>are possible. You can enable a total of 1, 2, 4, etc. channels. If 1
+channel is enabled then it can be any of them. If two channels are enabled
+then channels 0, 1 or channels 2, 3 can be enabled and so on.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="disable">
+<h3>Disable<a class="headerlink" href="#disable" title="Link to this heading"></a></h3>
+<p>In this mode both DDS and DMA are disabled causing the DAC channels to stop
+transmitting any data.</p>
+</section>
+</section>
+<section id="dac">
+<h2>DAC<a class="headerlink" href="#dac" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Sampling frequency(MHz):</strong> Display the sample rate of the DAC.</p></li>
+<li><dl class="simple">
+<dt><strong>NCO Frequency (MHz):</strong> Set the frequency for NCO to enable digital</dt><dd><p>frequency shifts of signals with near infinite precision.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Filter Settings:</strong> Enable/disable finite impulse response filter with</dt><dd><p>85 dB digital attenuation that implements 2× NRZ mode.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="output-vga">
+<h2>Output VGA<a class="headerlink" href="#output-vga" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Gain(dB):</strong> Set the TX gain output.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Upon pressing Reload Settings button the values will be reloaded with the
+corresponding driver values. Useful in scenarios where the driver values
+get changed outside this plugin (e.g with the use of Debug plugin) and a
+refresh on plugin’s values is needed.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Some plugin values will be rounded to the nearest value supported by the
+hardware.</p>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="certification.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">AD-FMCOMMS11-EBZ Certification</a>
+    <a href="hardware.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS11-EBZ Hardware</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
