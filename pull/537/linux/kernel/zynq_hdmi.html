@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The image for the AD9361/AD9364 based boards can be found, and created by following the directions here." name="description" />
+
+    <title>Embedded ARM and AD9361/AD9364 &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tips &amp; Tricks" href="zynq_tips_tricks.html" />
+    <link rel="prev" title="Build with Petalinux" href="petalinux.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Embedded ARM and AD9361/AD9364</a><ul>
+<li><a class="reference internal" href="#zc706">ZC706</a></li>
+<li><a class="reference internal" href="#linux-with-hdmi-video-output-on-the-zed-zc702-and-zc706-boards">Linux with HDMI video output on the ZED, ZC702 and ZC706 boards</a><ul>
+<li><a class="reference internal" href="#supported-devices">Supported devices</a></li>
+<li><a class="reference internal" href="#supported-carriers">Supported carriers</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#preparing-the-sd-card">Preparing the SD-card</a></li>
+<li><a class="reference internal" href="#obtain-the-hdl-reference-design">Obtain the HDL reference design</a></li>
+<li><a class="reference internal" href="#build-the-boot-image">Build the boot image</a></li>
+<li><a class="reference internal" href="#alternative-method-of-building-the-zynq-boot-image">Alternative method of building the Zynq boot image</a></li>
+<li><a class="reference internal" href="#use-script-to-build-boot-bin">Use script to build BOOT.BIN</a><ul>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#build-and-install-the-kernel-image">Build and install the kernel image</a></li>
+<li><a class="reference internal" href="#uenv-txt">uEnv.txt</a></li>
+<li><a class="reference internal" href="#install-the-root-file-system">Install the root file system</a></li>
+<li><a class="reference internal" href="#testing-the-system">Testing the system</a></li>
+<li><a class="reference internal" href="#post-installation-tweaks">Post-installation tweaks</a><ul>
+<li><a class="reference internal" href="#enable-xf86-video-modesetting-xorg-driver">Enable xf86-video-modesetting Xorg driver</a></li>
+<li><a class="reference internal" href="#fixing-issues-with-pulse-audio">Fixing issues with pulse audio</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#more-information">More information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Kuiper &amp; Linux Kernel</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Kernel and devicetrees</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="petalinux.html">Build with Petalinux</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux with HDMI video output on Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zynq_tips_tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+</ul>
+
+<p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/index.html">AD-JUPITER-EBZ</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/quickstart/index.html">Jupiter SDR Quick Start Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/hardware-overview.html">Jupiter SDR Hardware Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/mcs-setup.html">Jupiter_SDR MCS Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/known-issues.html">Jupiter SDR - known issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-jupiter-ebz/production_testing/production-testing.html">Production Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="index.html">Kernel and devicetrees</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="embedded-arm-and-ad9361-ad9364">
+<span id="linux-kernel-zynq-hdmi"></span><h1>Embedded ARM and AD9361/AD9364<a class="headerlink" href="#embedded-arm-and-ad9361-ad9364" title="Link to this heading"></a></h1>
+<p>The image for the AD9361/AD9364 based boards can be found, and created by
+following the directions <a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">here</span></a>.</p>
+<p>After that is complete, and running, you should see the IIO scope, which will be
+described <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">here</span></a></p>
+<section id="zc706">
+<h2>ZC706<a class="headerlink" href="#zc706" title="Link to this heading"></a></h2>
+<p>The default slot for the AD9361 based boards is the LPC FMC slot, as shown:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/fmcomm2_zc706photo2.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/fmcomm2_zc706photo2.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/fmcomm2_zc706photo2.jpg" width="600" />
+</a>
+</section>
+<section id="linux-with-hdmi-video-output-on-the-zed-zc702-and-zc706-boards">
+<h2>Linux with HDMI video output on the ZED, ZC702 and ZC706 boards<a class="headerlink" href="#linux-with-hdmi-video-output-on-the-zed-zc702-and-zc706-boards" title="Link to this heading"></a></h2>
+<section id="supported-devices">
+<h3>Supported devices<a class="headerlink" href="#supported-devices" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ADV7511" target="_blank">ADV7511</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms1-ebz" target="_blank">FMCOMMS-1</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms2-ebz" target="_blank">FMCOMMS-2</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms3-ebz" target="_blank">FMCOMMS-3</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms4-ebz" target="_blank">FMCOMMS-4</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms5-ebz" target="_blank">FMCOMMS-5</a> (ZC702, ZC706 only)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcadc2-ebz" target="_blank">AD-FMCADC2-EBZ</a> (ZC706 only)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcdaq2-ebz" target="_blank">AD-FMCDAQ2-EBZ</a> (ZC706 only)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/EVAL-FMCDAQ3-EBZ" target="_blank">EVAL-FMCDAQ3-EBZ</a> (ZC706 only)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/ad-fmcjesdadc1-ebz" target="_blank">AD-FMCJESDADC1-EBZ</a> (ZC706 only)</p></li>
+</ul>
+</section>
+<section id="supported-carriers">
+<h3>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC702" target="_blank">ZC702</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></li>
+<li><p><a class="icon link reference external" href="http://zedboard.org/content/overview" target="_blank">Zed Board</a>
+(not for <a class="icon adi reference external" href="https://www.analog.com/ad-fmcomms5-ebz" target="_blank">FMCOMMS-5</a>)</p></li>
+</ul>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/adv7511.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/adv7511.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/adv7511.png" width="400" />
+</a>
+</section>
+<section id="preparing-the-sd-card">
+<h3>Preparing the SD-card<a class="headerlink" href="#preparing-the-sd-card" title="Link to this heading"></a></h3>
+<p>To boot the system on the ZED, ZC702 or ZC706 board you’ll need a SD memory
+card. The SD card should have at least 4 GB of storage and it is recommended to
+use a card with speed-grade 6 or higher to achieve optimal file transfer
+performance.</p>
+<p>The SD card needs to be partitioned with two partitions. The first one should be
+about 40MB in size and the second one should take up the remaining space. For
+optimal performance make sure that the partitions are 4MB aligned. The first
+partition needs to be formatted with a FAT filesystem. It will hold the
+bootloader, devicetree and kernel images. The second partition needs to be
+formatted with a ext4 filesystem. It will store the systems root filesystem.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-gparted-sdcard.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-gparted-sdcard.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-gparted-sdcard.png" width="600" />
+</a>
+</section>
+<section id="obtain-the-hdl-reference-design">
+<h3>Obtain the HDL reference design<a class="headerlink" href="#obtain-the-hdl-reference-design" title="Link to this heading"></a></h3>
+<p>The ZYNQ does not have a on-chip graphics or audio core, instead the FPGA is
+used to generate the necessary signals to deliver the video and audio streams to
+the ADV7511. Analog Devices provides a reference HDL design which contain
+support for generating the necessary video and audio as well as support for
+interfacing with the AD-FMCOMMS1-EBZ.</p>
+<p>The HDL reference designs can be downloaded from their respective wiki page:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/adv7511/index.html#adv7511" target="_blank" title="(in HDL)"><span class="xref std std-ref">ADV7511 XILINX KC705, VC707, ZC702 AND ZED REFERENCE DESIGN</span></a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz" target="_blank">AD-FMCOMMS1-EBZ REFERENCE DESIGN</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span class="xref std std-ref">AD-FMCOMMS2-EBZ DESIGN</span></a></p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The AD-FMCOMMS1-EBZ reference designs for the ZED, ZC702 and ZC706 include
+support for the ADV7511. So you only need one of the reference designs
+depending on whether you want support for the AD-FMCOMMS1-EBZ or not.</p>
+</div>
+<p>You can either use the provided reference designs to build your own system.bit
+or use a pre-build system.bit file. The system.bit will be required in the next
+step.</p>
+</section>
+<section id="build-the-boot-image">
+<h3>Build the boot image<a class="headerlink" href="#build-the-boot-image" title="Link to this heading"></a></h3>
+<p>To complete this step you need to have a u-boot image for the Zynq platform.
+Please refer to the <a class="icon link reference external" href="https://xilinx-wiki.atlassian.net/wiki/spaces/A/overview" target="_blank">Xilinx wiki</a> on how to build
+such an image.</p>
+<p>The bootloader can be build with Xilinx SDK. In order to do so it is necessary
+to first export the HDL design from the Xilinx Platform Studio to the SDK, this
+is done by clicking the “Export to SDK” button in the Platform Studio GUI.</p>
+<p>Export project to SDK:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-export-xps.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-export-xps.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-export-xps.png" width="600" />
+</a>
+<p>Once the project has been exported create a new FSBL project in the SDK. To do
+this right-click on the newly exported hardware platform specification in left
+“Project Explorer” panel and select “New &gt; Project” from the popup menu. Select
+“Xilinx - Application Project” on first dialog page. On the second dialog page
+choose a name for the project (zynq_fsbl for example) and on the third page
+select “Zynq FSBL” template.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl1.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl1.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl1.png" width="400" />
+</a>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl2.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl2.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl2.png" width="400" />
+</a>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl3.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl3.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-xsdk-fsbl3.png" width="400" />
+</a>
+<p>The project should build automatically. If not a manual build can be started by
+right clicking the newly created project in the left “Project Explorer” panel
+and selecting “Build Project” from the popup menu. After the project has been
+build it is time to generate the boot image. This is done by right clicking on
+the project in the left “Project Explorer” pane and selecting “Create Boot
+Image”. This will open up the bootgen wizard. The bootgen wizard needs three
+files:</p>
+<ul class="simple">
+<li><p>The freshly build zynq_fsbl.elf binary</p></li>
+<li><p>The system.bit bitstream</p></li>
+<li><p>The u-boot.elf binary</p></li>
+</ul>
+<p>Add these files to partitions list in the dialog, then select an output folder.</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-bootgen.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-bootgen.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/linux/kernel/images/linux-zynq-bootgen.png" width="400" />
+</a>
+<p>Clicking “Create Image” will now generate in the chosen location a new boot
+image for the target platform. The output *.bin file should be named “BOOT.BIN”
+and needs to be saved on the first partition of the SD-card.</p>
+</section>
+<section id="alternative-method-of-building-the-zynq-boot-image">
+<h3>Alternative method of building the Zynq boot image<a class="headerlink" href="#alternative-method-of-building-the-zynq-boot-image" title="Link to this heading"></a></h3>
+<p>The boot image BOOT.BIN is build using the bootgen tool which requires several
+input files.</p>
+<p>Instructions on how to build the Hardware Description File (HDF) handover file
+can be found here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_hdl.html#build-hdl" target="_blank" title="(in HDL)"><span class="xref std std-ref">Building HDL</span></a></p></li>
+</ul>
+<p>All further steps are lengthy explained in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/user_guide/build_boot_bin.html#build-boot-bin" target="_blank" title="(in HDL)"><span class="xref std std-ref">Build the boot
+image BOOT.BIN</span></a> guide and on the <a class="icon link reference external" href="http://www.wiki.xilinx.com" target="_blank">Xilinx Wiki Page</a></p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="http://www.wiki.xilinx.com/Build+U-Boot" target="_blank">Build u-boot</a></p>
+<ul>
+<li><p>Make sure you checkout the proper git tag matching your Vivado Version
+(xilinx-v2018.2, xilinx-v2017.4, …)</p></li>
+</ul>
+</li>
+<li><p><a class="icon link reference external" href="http://www.wiki.xilinx.com/Build+FSBL" target="_blank">Build FSBL</a></p></li>
+<li><p><a class="icon link reference external" href="http://www.wiki.xilinx.com/Build+PMU+Firmware" target="_blank">Build PMU Frimware</a></p></li>
+<li><p><a class="icon link reference external" href="http://www.wiki.xilinx.com/Build+Arm+Trusted+Firmware+%28ATF%29" target="_blank">Build Arm Trusted Firmware (ATF)</a></p></li>
+<li><p><a class="icon link reference external" href="http://www.wiki.xilinx.com/Prepare+Boot+Image" target="_blank">Build BOOT image</a></p></li>
+</ul>
+</section>
+<section id="use-script-to-build-boot-bin">
+<h3>Use script to build BOOT.BIN<a class="headerlink" href="#use-script-to-build-boot-bin" title="Link to this heading"></a></h3>
+<p>For ease of use we provide a bash shell script which allows building BOOT.BIN
+from system_top.hdf, u-boot.elf and either bl31.elf or a path to the Arm Trusted
+Firmware repository</p>
+<section id="download">
+<h4>Download<a class="headerlink" href="#download" title="Link to this heading"></a></h4>
+<p>The script can be downloaded from here:</p>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://raw.githubusercontent.com/analogdevicesinc/wiki-scripts/master/zynqmp_boot_bin/build_zynqmp_boot_bin.sh" target="_blank">build_zynqmp_boot_bin.sh</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>NOTE: After downloading the script you need to make it executable</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>build_zynqmp_boot_bin.sh
+</pre></div>
+</div>
+</div>
+</section>
+<section id="usage">
+<h4>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">build_zynqmp_boot_bin</span><span class="o">.</span><span class="n">sh</span> <span class="n">system_top</span><span class="o">.</span><span class="n">xsa</span> <span class="n">u</span><span class="o">-</span><span class="n">boot</span><span class="o">.</span><span class="n">elf</span> <span class="p">(</span><span class="n">download</span> <span class="o">|</span> <span class="n">bl31</span><span class="o">.</span><span class="n">elf</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">arm</span><span class="o">-</span><span class="n">trusted</span><span class="o">-</span><span class="n">firmware</span><span class="o">-</span><span class="n">source</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">[</span><span class="n">output</span><span class="o">-</span><span class="n">archive</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul>
+<li><p>Path to <code class="docutils literal notranslate"><span class="pre">system_top.xsa</span></code> and <code class="docutils literal notranslate"><span class="pre">u-boot.elf</span></code> are required parameters.</p></li>
+<li><p>The 3rd argument must either be <code class="docutils literal notranslate"><span class="pre">download</span></code> (which will git clone the ATF
+repository), <code class="docutils literal notranslate"><span class="pre">bl31.elf</span></code> or the file system <code class="docutils literal notranslate"><span class="pre">path</span></code> to the Arm Trusted
+Firmware source code repository</p></li>
+<li><p>An optionally 4th <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter can be given to tar.gz the output
+directory. (<code class="docutils literal notranslate"><span class="pre">name</span></code>.tar.gz)</p></li>
+<li><p>Build output is located in a local directory named: output_boot_bin.</p></li>
+<li><p>This script requires Xilinx Vitis and bootgen in the PATH.</p>
+<ul class="simple">
+<li><p>A simple way is to source vivado settings[32|64].sh for Linux:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>/opt/Xilinx/Vivado/202x.x/settings64.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>When using <strong>cygwin</strong>, you can add the following in the ~/.bashrc
+configuration file:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/cygdrive/c/Xilinx/Vivado/202x.x/bin
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/cygdrive/c/Xilinx/Vitis/202x.x/bin
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/cygdrive/c/Xilinx/Vitis/202x.x/gnu/microblaze/nt/bin
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>NOTE: u-boot.elf</strong></p>
+<p>For those who don’t want to build u-boot themselves.
+The <strong>u-boot.elf</strong> can be extracted from the project folder on the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">SD Card image</span></a>, <strong>bootgen_sysfiles.tgz</strong></p>
+</div>
+</section>
+</section>
+<section id="build-and-install-the-kernel-image">
+<h3>Build and install the kernel image<a class="headerlink" href="#build-and-install-the-kernel-image" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The prerequistes for following these instructions are to have:</p>
+<ul class="simple">
+<li><p>mkimage from your distribution (normally <code class="docutils literal notranslate"><span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">u-boot-tools</span></code>)</p></li>
+<li><p>C compiler from the Xilinx SDK</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The most stable kernel source tree containing support for the ZED, ZC702 and
+ZC706 plus <strong>AD-FMCOMMS1-EBZ</strong> can be found at <a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/tree/2016_R1" target="_blank">2016_R1</a>. For the
+<strong>AD-FMCOMMS2-EBZ</strong> use also the <a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/tree/2016_R1" target="_blank">2016_R1</a> branch.</p>
+</div>
+<p>Download and build the kernel image:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; git clone https://github.com/analogdevicesinc/linux.git</span>
+<span class="go">Cloning into &#39;linux&#39;...</span>
+<span class="go">remote: Counting objects: 2550298, done.</span>
+<span class="go">remote: Compressing objects: 100% (466978/466978), done.</span>
+<span class="go">remote: Total 2550298 (delta 2118600), reused 2483072 (delta 2058083)</span>
+<span class="go">Receiving objects: 100% (2550298/2550298), 727.70 MiB | 353 KiB/s, done.</span>
+<span class="go">Resolving deltas: 100% (2118600/2118600), done.</span>
+<span class="go">Checking out files: 38170/38170), done.</span>
+<span class="go">&gt; cd linux</span>
+<span class="go">&gt; # For AD-FMCOMMS2-EBZ use</span>
+<span class="go">&gt; # git checkout master</span>
+<span class="go">&gt; export ARCH=arm</span>
+<span class="go">&gt; export CROSS_COMPILE=/path/to/your/arm/cross-compiler</span>
+<span class="go">&gt; # e.g. export CROSS_COMPILE=/opt/CodeSourcery/Sourcery_G++_Lite/bin/arm-xilinxa9-linux-gnueabi-</span>
+<span class="go">&gt; make zynq_xcomm_adv7511_defconfig</span>
+<span class="gp">#</span>
+<span class="gp"># </span>configuration<span class="w"> </span>written<span class="w"> </span>to<span class="w"> </span>.config
+<span class="gp">#</span>
+<span class="go">&gt; make uImage LOADADDR=0x00008000</span>
+<span class="go">  ...</span>
+<span class="go">  OBJCOPY arch/arm/boot/uImage</span>
+<span class="go">  Kernel: arch/arm/boot/uImage is ready</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The same kernel image is used for all HDL reference design.</p>
+</div>
+<p>The next step is to build the devicetree for your target platform. While the
+kernel is the same for all target boards the devicetree file differs as it
+describes the board specifics.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The devicetree must match the HDL reference design that is used. It is not
+possible to use a adv7511 only devicetree for a AD-FMCOMMS1-EBZ reference
+HDL design, even if the AD-FMCOMMS1-EBZ is not connected to the FMC slot.</p>
+</div>
+<p>To build the devicetree from the devicetree file run
+<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">name-dts-replaced-by-dtb</span></code></p>
+<p>Build the devicetree for ZED with HDMI video out and XCOMM:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; make zynq-zed-adv7511-xcomm.dtb</span>
+<span class="go">  DTC     arch/arm/boot/zynq-zed-adv7511-xcomm.dtb</span>
+<span class="go">DTC: dts-&gt;dtb  on file &quot;arch/arm/boot/dts/zynq-zed-adv7511-xcomm.dts&quot;</span>
+</pre></div>
+</div>
+<p>The last step is to copy both the kernel and the devicetree files to the first
+partition of the SD card. It is important to rename the devicetree file to
+devicetree.dtb</p>
+<p>Copy kernel and device tree to SD card:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; cp arch/arm/boot/uImage /media/BOOT/uImage</span>
+<span class="go">&gt; cp arch/arm/boot/zynq-zed-adv7511-xcomm.dtb /media/BOOT/devicetree.dtb</span>
+</pre></div>
+</div>
+</section>
+<section id="uenv-txt">
+<h3>uEnv.txt<a class="headerlink" href="#uenv-txt" title="Link to this heading"></a></h3>
+<p>The default environment that is used by the u-boot bootloader instructions the
+kernel to use a ramfs disk for its root filesystem. In order to boot from the SD
+card it is necessary to overwrite the default environment. This can be done by
+placing a file called uEnv.txt in the BOOT partition of the SD card. This file
+will be read by u-boot and is used to replace the default environment.</p>
+<p><strong>uEnv.txt for using SD card rootfs</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>uenvcmd=run adi_sdboot
+adi_sdboot=echo Copying Linux from SD to RAM... &amp;&amp; fatload mmc 0 0x3000000 ${kernel_image} &amp;&amp; fatload mmc 0 0x2A00000 ${devicetree_image} &amp;&amp; if fatload mmc 0 0x2000000 ${ramdisk_image}; then bootm 0x3000000 0x2000000 0x2A00000; else bootm 0x3000000 - 0x2A00000; fi
+bootargs=console=ttyPS0,115200 root=/dev/mmcblk0p2 rw earlyprintk rootfstype=ext4 rootwait
+</pre></div>
+</div>
+</section>
+<section id="install-the-root-file-system">
+<h3>Install the root file system<a class="headerlink" href="#install-the-root-file-system" title="Link to this heading"></a></h3>
+<p>In this example we will use a <a class="icon link reference external" href="http://linaro.org" target="_blank">Linaro Ubuntu ARM</a> rootfs as
+it provides a good out of the box experience. The latest version can be found on
+the <a class="icon link reference external" href="http://www.linaro.org/downloads/" target="_blank">Linaro Download page</a>. In this example
+we will use the 12.11 release.</p>
+<p>The first step is to download the
+<a class="icon link reference external" href="https://releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz" target="_blank">archive containing the root filesystem</a>.</p>
+<p>Download Linaro Ubuntu ARM rootfs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; wget http://releases.linaro.org/archive/12.12/ubuntu/vexpress/linaro-precise-ubuntu-desktop-20121124-560.tar.gz</span>
+</pre></div>
+</div>
+<p>The next step is to extract the root filesystem from the archive to the SD card.
+It is important to preserve the file permission and owner settings, otherwise
+the system will be unable to boot. Since some of the files have root permissions
+it is necessary to run the extraction process as root.</p>
+<p>Extract the root filesystem onto the SD card:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo tar --strip-components=3 -C /media/rootfs -xzpf linaro-precise-ubuntu-desktop-20121124-560.tar.gz binary/boot/filesystem.dir</span>
+<span class="go">&gt; ls /media/rootfs/</span>
+<span class="go">bin/  boot/  dev/  etc/  home/  lib/  lost+found/  media/  mnt/ opt/</span>
+<span class="go">proc/  root/  run/  sbin/  selinux/  srv/  sys/  tmp/  usr/  var/</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-the-system">
+<h3>Testing the system<a class="headerlink" href="#testing-the-system" title="Link to this heading"></a></h3>
+<p>Once all of the previous tasks have been completed it is time to test the
+system. To do this insert the SD-card into the board and power-up the board.
+After a few seconds the blue “DONE” LED should light up. This means that the
+bitstream has been loaded and the system will now start to boot. It is also
+possible to connect to the serial console by using the on-board UART-to-USB
+bridge, this allows to monitor the boot process and view debug messages.</p>
+<p>After another few seconds the monitor connected to the system will turn on and
+display the <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Tux" target="_blank">Linux mascot</a> in the top left
+corner, after that the Ubuntu Desktop system will appear on the screen. The
+system is now ready to be used.</p>
+</section>
+<section id="post-installation-tweaks">
+<h3>Post-installation tweaks<a class="headerlink" href="#post-installation-tweaks" title="Link to this heading"></a></h3>
+<p>After the system has been installed it is time to do some post-installation
+tweaks to the system. None of them is required to get a basic working system,
+but they improve the overall video and audio experience quite a bit.</p>
+<section id="enable-xf86-video-modesetting-xorg-driver">
+<h4>Enable xf86-video-modesetting Xorg driver<a class="headerlink" href="#enable-xf86-video-modesetting-xorg-driver" title="Link to this heading"></a></h4>
+<p>The xf86-video-modesetting driver is a driver which has been written to take
+advantage of the new Kernel Mode Setting (KMS) API of the DRM layer. This allows
+to switch between different screen resolutions at runtime (using the Xservers
+xrandr interface) and adds plug-and-play support for monitors.</p>
+<p>Unfortunately the current Linaro Ubuntu distribution does not contain a package
+for xf86-video-modesetting driver. So it becomes necessary to manually download
+and build it. Open up a terminal on the target system and run the following
+commands.</p>
+<p>Download and install xf86-video-modesetting:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sudo apt-get install xserver-xorg-dev libdrm-dev xutils-dev</span>
+<span class="go">&gt; wget http://xorg.freedesktop.org/archive/individual/driver/xf86-video-modesetting-0.9.0.tar.bz2</span>
+<span class="go">&gt; tar -xjf xf86-video-modesetting-0.9.0.tar.bz2</span>
+<span class="go">&gt; cd xf86-video-modesetting-0.9.0</span>
+<span class="go">&gt; ./configure --prefix=/usr</span>
+<span class="go">&gt; make</span>
+<span class="go">&gt; sudo make install</span>
+</pre></div>
+</div>
+<p>To enable the modesetting driver the create /etc/X11/xorg.conf and add
+following lines:</p>
+<p>Enable the modesetting driver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="s2">&quot;Device&quot;</span>
+  <span class="n">Identifier</span> <span class="s2">&quot;ADV7511 HDMI&quot;</span>
+  <span class="n">Driver</span> <span class="s2">&quot;modesetting&quot;</span>
+<span class="n">EndSection</span>
+</pre></div>
+</div>
+</section>
+<section id="fixing-issues-with-pulse-audio">
+<h4>Fixing issues with pulse audio<a class="headerlink" href="#fixing-issues-with-pulse-audio" title="Link to this heading"></a></h4>
+<p>PulseAudio is the audio daemon used by default on the Linaro Ubuntu
+installation. Unfortunately PulseAudio’s ‘glitch-free’ algorithm seems to cause
+audio glitches on this particular platform. To get seamless audio experience it
+is necessary to disable the glitch-free feature. To disable the ‘glitch-free’
+feature of pulse audio open up a terminal on the target system an run the
+following commands.</p>
+<p>Disable pulse audio ‘glitch-free’ feature:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; sed -i &#39;s,load-module module-udev-detect.*,load-module module-udev-detect tsched=0,&#39; /etc/pulse/default.pa</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="more-information">
+<h3>More information<a class="headerlink" href="#more-information" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/fpga/xilinx/fmc/ad-fmcomms1-ebz" target="_blank">AD-FMCOMMS1-EBZ Reference Design</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/fmcomms2/index.html#fmcomms2" target="_blank" title="(in HDL)"><span class="xref std std-ref">AD-FMCOMMS2-EBZ User Guide</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-fmcomms3-ebz/index.html#ad-fmcomms3-ebz" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">AD-FMCOMMS3-EBZ User Guide</span></a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms4-ebz" target="_blank">AD-FMCOMMS4-EBZ User Guide</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz" target="_blank">AD-FMCOMMS5-EBZ User Guide</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq2-ebz" target="_blank">AD-FMCDAQ2-EBZ User Guide</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcadc2-ebz" target="_blank">AD-FMCADC2-EBZ User Guide</a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/index.html#iio-oscilloscope" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">ADI IIO Oscilloscope</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/drm/adv7511.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">ADV7511 HDMI transmitter Linux Driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/drm/hdl-axi-hdmi.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AXI HDMI HDL Linux Driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/sound/hdl-axi-spidf.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">HDL AXI SPIDF Linux Driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/sound/hdl-axi-i2s.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">HDL AXI I2S Linux Driver</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-pll/ad9523.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9523-1: Low Jitter Clock Generator</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-pll/adf4350.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">ADF4351: Wideband Synthesizer with Integrated VCO</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-amplifiers/ad8366.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD8366: DC to 600 MHz, Dual-Digital Variable Gain Amplifiers</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-adc/axi-adc-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9643: 14-Bit, 170/210/250 MSPS, 1.8 V Dual ADC</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-dds/axi-dac-dds-hdl.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9122: Dual, 16-Bit, 1200 MSPS, TxDAC+ DAC</span></a></p></li>
+<li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-transceiver/ad9361.html" target="_blank" title="(in Linux Drivers)"><span class="xref std std-doc">AD9361 RF Agile Transceiver Linux device driver</span></a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="petalinux.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Build with Petalinux</a>
+    <a href="zynq_tips_tricks.html" title="Next document (Alt+Shift+RightArrow)" class="next">Tips &amp; Tricks</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
