@@ -47,9 +47,11 @@ the AD-FMCOMMS1-EBZ can be found at:
 
 - :dokuwiki:`No-OS drivers <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/reference_design_no_os>`
 - :ref:`I2C-to-SPI-bridge <ad_fmcomms1_ebz software i2c_to_spi_bridge>`
+- :ref:`FMCOMMS1 plugin <fmcomms1-plugin>`
 
 .. toctree::
    :hidden:
 
    applications/index
+   fmcomms1_plugin
    i2c_to_spi_bridge
