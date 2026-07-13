@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="Open the Simulink Library browser." name="description" />
+<meta content="Analog Devices uses six designations to inform our customers where a semiconductor product is in its life cycle. From emerging innovations to products which have been in production for twenty years, we understand that insight into life cycle status is important. Device life cycles are tracked on their individual product pages on analog.com, and should always be consulted before making any design decisions." name="description" />
 
-    <title>How to run the AD9361 Receive Testbench? &#8212; System Level Documentation  documentation</title>
+    <title>FMCOMMS1 Plugin Description &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/app.min.css?v=d3f78147" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=5f9cb17c" />
@@ -14,8 +14,8 @@
     <link rel="icon" href="../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="RF Blockset Model of AD9361 from MathWorks" href="simrf.html" />
-    <link rel="prev" title="Installing RF Blockset Models for Analog Devices RF Transceivers" href="rfblkset_mdls_install.html" />
+    <link rel="next" title="AD-FMCOMMS1-EBZ Register Access" href="i2c_to_spi_bridge.html" />
+    <link rel="prev" title="Xcomm Cal" href="applications/xcomm_cal.html" />
    
   
   
@@ -96,7 +96,21 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">How to run the AD9361 Receive Testbench?</a></li>
+<li><a class="reference internal" href="#">FMCOMMS1 Plugin Description</a><ul>
+<li><a class="reference internal" href="#receive-chain">Receive Chain</a><ul>
+<li><a class="reference internal" href="#adc-settings">ADC Settings</a></li>
+<li><a class="reference internal" href="#gain-amplifier-settings">Gain Amplifier Settings</a></li>
+<li><a class="reference internal" href="#rx-lo-settings">RX LO Settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transmit-chain">Transmit Chain</a><ul>
+<li><a class="reference internal" href="#dds-settings">DDS Settings</a></li>
+<li><a class="reference internal" href="#dac-frequency-settings">DAC Frequency Settings</a></li>
+<li><a class="reference internal" href="#tx-lo-settings">TX LO Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </nav>
@@ -498,36 +512,36 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../ad-fmclidar1-ebz/system_evaluation.html#make-some-actual-distance-measurements">Make some actual distance measurements</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9" id="toctree-collapse-14-9"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms1-ebz/index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-14-9"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-1" id="toctree-collapse-14-9-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-14-9-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9" id="toctree-collapse-14-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a><label for="toctree-collapse-14-9"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-1" id="toctree-collapse-14-9-1"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">AD-FMCOMMS1-EBZ Quick Start Guides</a><label for="toctree-collapse-14-9-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq.html">AD-FMCOMMS1-EBZ Zynq Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_kc705.html">AD-FMCOMMS1-EBZ KC705/VC707 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze_ml605.html">AD-FMCOMMS1-EBZ ML605 Quick Start Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/no_os_microblaze.html">AD-FMCOMMS1-EBZ Quick Start Guide on Xilinx FPGA Boards Without OS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../quickstart/zynq_box.html">FMCOMMS1 Demo System</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-2" id="toctree-collapse-14-9-2"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/index.html">Hardware</a><label for="toctree-collapse-14-9-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/hardware.html">Hardware overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/functional_overview.html">Functional Overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/card_specification.html">Characteristics &amp; Performance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/configuration_options.html">Configuration options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/hardware/bom_improvements.html">BOM Improvements</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-2" id="toctree-collapse-14-9-2"/><div class="collapse"><a class="reference internal" href="../hardware/index.html">Hardware</a><label for="toctree-collapse-14-9-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/functional_overview.html">Functional Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hardware/bom_improvements.html">BOM Improvements</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms1-ebz/interface_timing_validation.html">Digital Interface Timing Verification</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-3" id="toctree-collapse-14-9-3"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/index.html">Software</a><label for="toctree-collapse-14-9-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-3-1" id="toctree-collapse-14-9-3-1"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-14-9-3-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/applications/xcomm_cal.html">Xcomm Cal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../interface_timing_validation.html">Digital Interface Timing Verification</a></li>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-3" id="toctree-collapse-14-9-3" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Software</a><label for="toctree-collapse-14-9-3"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l4"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-9-3-1" id="toctree-collapse-14-9-3-1"/><div class="collapse"><a class="reference internal" href="applications/index.html">Linux Applications for the AD-FMCOMMS1-EBZ</a><label for="toctree-collapse-14-9-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l5"><a class="reference internal" href="applications/shell_scripts.html">Shell Scripts for the FMC RF boards</a></li>
+<li class="toctree-l5"><a class="reference internal" href="applications/xcomm_cal.html">Xcomm Cal</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/fmcomms1_plugin.html">FMCOMMS1 Plugin Description</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../ad-fmcomms1-ebz/software/i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">FMCOMMS1 Plugin Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="i2c_to_spi_bridge.html">AD-FMCOMMS1-EBZ Register Access</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms1-ebz/testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ad-fmcomms1-ebz/help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../testing.html">Testing the AD-FMCOMMS1-EBZ Board</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">AD-FMCOMMS1-EBZ Help and Support</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-10" id="toctree-collapse-14-10"/><div class="collapse"><a class="reference internal" href="../../ad-fmcomms3-ebz/index.html">AD-FMCOMMS3-EBZ</a><label for="toctree-collapse-14-10"><div class="icon"></div></label></div><ul>
@@ -1423,56 +1437,56 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../eval-ltpa-kit/software_guide/index.html">EVAL-LTPA-KIT Software Guide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104" id="toctree-collapse-14-104" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-14-104"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-1" id="toctree-collapse-14-104-1"/><div class="collapse"><a class="reference internal" href="../common/index.html">Additional Documentation</a><label for="toctree-collapse-14-104-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../common/introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/interface_timing_validation.html">Digital Interface Timing Validation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/math.html">The math behind the RF</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/iq_rotation.html">IQ rotation and phase sync</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/iq_correction.html">I/Q Correction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/testing.html">Production Testing Process</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../common/datafiles.html">Create and analyze data files in MATLAB</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104" id="toctree-collapse-14-104"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/index.html">AD-FMCOMMS2-EBZ</a><label for="toctree-collapse-14-104"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-1" id="toctree-collapse-14-104-1"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/common/index.html">Additional Documentation</a><label for="toctree-collapse-14-104-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/introduction_to_ad9361_ad9364.html">Introduction to AD9361/AD9364</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/ad9361_ad9363_ad9364_general_description.html">AD9361/AD9363/AD9364 General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/interface_timing_validation.html">Digital Interface Timing Validation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/math.html">The math behind the RF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_rotation.html">IQ rotation and phase sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/iq_correction.html">I/Q Correction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/testing.html">Production Testing Process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/basic_iq_datafiles.html">Basic IQ data files and formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/common/datafiles.html">Create and analyze data files in MATLAB</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-2" id="toctree-collapse-14-104-2"/><div class="collapse"><a class="reference internal" href="../hardware/index.html">Hardware</a><label for="toctree-collapse-14-104-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../hardware/hardware.html">Hardware overview</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../hardware/card_specification.html">Characteristics &amp; Performance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../hardware/configuration_options.html">Configuration options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../hardware/certification.html">FCC or CE certification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../hardware/tuning.html">Tuning the system</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-2" id="toctree-collapse-14-104-2"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/hardware/index.html">Hardware</a><label for="toctree-collapse-14-104-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/hardware/hardware.html">Hardware overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/hardware/card_specification.html">Characteristics &amp; Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/hardware/configuration_options.html">Configuration options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/hardware/certification.html">FCC or CE certification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/hardware/tuning.html">Tuning the system</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-3" id="toctree-collapse-14-104-3"/><div class="collapse"><a class="reference internal" href="../quickstart/index.html">Quickstart</a><label for="toctree-collapse-14-104-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/zcu102.html">On ZCU102</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/kcu105.html">On KCU105</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc706.html">On ZC706</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/zc702.html">On ZC702</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/zed.html">On ZED</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/help_and_support.html">Help and Support for ADI FMC Cards &amp; RF SoMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/partial_reconfiguration.html">Partial Reconfiguration with FMCOMMS2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fmcomms2/prerequisites.html">Prerequisites for AD9361/AD9364 based boards</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-3" id="toctree-collapse-14-104-3"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/quickstart/index.html">Quickstart</a><label for="toctree-collapse-14-104-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zcu102.html">On ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/kcu105.html">On KCU105</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc706.html">On ZC706</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zc702.html">On ZC702</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/zed.html">On ZED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/quickstart/microblaze.html">On KC705, VC707 (Obsolete)</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-4" id="toctree-collapse-14-104-4" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Software</a><label for="toctree-collapse-14-104-4"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="using_iio_osc.html">Using the IIO Oscilloscope</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ad9361_plugin.html">AD9361 IIO Scope Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ad9361_adv_plugin.html">Advanced AD9361 IIO Scope Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="filters/baremetal-filter.html">Filter response</a></li>
-<li class="toctree-l4"><a class="reference internal" href="filters/filters.html">MATLAB Filter Design Wizard</a></li>
-<li class="toctree-l4"><a class="reference internal" href="filters/license.html">Filter Design license</a></li>
-<li class="toctree-l4"><a class="reference internal" href="linux.html">Linux support</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rfblkset_mdls_install.html">Installing RF Blockset Models</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">AD9361 Receive Testbench</a></li>
-<li class="toctree-l4"><a class="reference internal" href="simrf.html">SimRF Models</a></li>
-<li class="toctree-l4"><a class="reference internal" href="beacon_frame_receiver.html">Beacon Frame Receiver Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="qpsk_example.html">QPSK Transmit and Receive Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="lte_example.html">LTE Transmitter and Receiver Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adsb_example.html">ADS-B Airplane Tracking Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="adsb_tutorial.html">ADS-B Airplane Tracking Tutorial</a></li>
-<li class="toctree-l4"><a class="reference internal" href="fm_radio.html">FM Radio/Tuner</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-104-4" id="toctree-collapse-14-104-4"/><div class="collapse"><a class="reference internal" href="../../fmcomms2/software/index.html">Software</a><label for="toctree-collapse-14-104-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/using_iio_osc.html">Using the IIO Oscilloscope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/ad9361_plugin.html">AD9361 IIO Scope Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/ad9361_adv_plugin.html">Advanced AD9361 IIO Scope Plugin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/filters/baremetal-filter.html">Filter response</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/filters/filters.html">MATLAB Filter Design Wizard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/filters/license.html">Filter Design license</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/linux.html">Linux support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/rfblkset_mdls_install.html">Installing RF Blockset Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/rfblkset_mdls_run_testbench.html">AD9361 Receive Testbench</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/simrf.html">SimRF Models</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/beacon_frame_receiver.html">Beacon Frame Receiver Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/qpsk_example.html">QPSK Transmit and Receive Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/lte_example.html">LTE Transmitter and Receiver Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/adsb_example.html">ADS-B Airplane Tracking Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/adsb_tutorial.html">ADS-B Airplane Tracking Tutorial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../fmcomms2/software/fm_radio.html">FM Radio/Tuner</a></li>
 </ul>
 </li>
 </ul>
@@ -1601,43 +1615,111 @@ Content on this topic
       <div class="documentwrapper">
         <div class="bodywrapper" id="top-anchor">
           <div class="body-header">
-  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS2-EBZ</a></li><li><a href="index.html">Software</a></li></ol></nav>
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Reference Designs</a></li><li><a href="../index.html">AD-FMCOMMS1-EBZ (Obsolete)</a></li><li><a href="index.html">Software</a></li></ol></nav>
 </div>
           <div class="body" role="main">
             
-  <section id="how-to-run-the-ad9361-receive-testbench">
-<span id="fmcomms2-software-rfblkset-mdls-run-testbench"></span><h1>How to run the AD9361 Receive Testbench?<a class="headerlink" href="#how-to-run-the-ad9361-receive-testbench" title="Link to this heading"></a></h1>
+  <section id="fmcomms1-plugin-description">
+<span id="fmcomms1-plugin"></span><h1>FMCOMMS1 Plugin Description<a class="headerlink" href="#fmcomms1-plugin-description" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Analog Devices uses six designations to inform our customers where a
+semiconductor product is in its
+<a class="icon adi reference external" href="https://www.analog.com/en/support/customer-service-resources/sales/product-life-cycle-information.html" target="_blank">life cycle</a>.
+From emerging innovations to products which have been in production for
+twenty years, we understand that insight into life cycle status is important.
+Device life cycles are tracked on their individual product pages on
+<a class="icon link reference external" href="https://www.analog.com/" target="_blank">analog.com</a>, and should always be consulted
+before making any design decisions.</p>
+<p>This particular article/document/design has been retired or deprecated, which
+means it is no longer maintained or actively updated, even though the devices
+themselves may be Recommended for New Designs or in Production. This page is
+here for historical/reference purposes only.</p>
+</div>
+<p>The FMCOMMS1 plugin works with the <a class="reference internal" href="../../../../software/iio-oscilloscope/index.html#iio-oscilloscope"><span class="std std-ref">IIO Oscilloscope</span></a>. The FMCOMMS1 view is
+divided into two sections:</p>
 <ul class="simple">
-<li><p>Open the Simulink Library browser.</p></li>
-<li><p>In the library browser, find RF Blockset Models for Analog Devices
-Transceivers.</p></li>
-<li><p>Under AD9361 Testbenches, find ad9361_RX and double click it to
-open the testbench.</p></li>
+<li><p><strong>Receive Chain</strong></p></li>
+<li><p><strong>Transmit Chain</strong></p></li>
 </ul>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/lib_browser.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/lib_browser.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/lib_browser.png" width="600" />
-</a>
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_plugin.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad-fmcomms1-ebz/images/fmcomms1_plugin.png" />
+<p>Clicking the <strong>Save Settings</strong> button will write changes which have been made to
+the FMCOMMS1 settings to the hardware. Values round to the nearest
+hardware-supported value upon saving.</p>
+<section id="receive-chain">
+<h2>Receive Chain<a class="headerlink" href="#receive-chain" title="Link to this heading"></a></h2>
+<section id="adc-settings">
+<h3>ADC Settings<a class="headerlink" href="#adc-settings" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Double-click Manual Switch block to toggle between continuous wave
-(CW) or LTE source input.</p></li>
+<li><p><strong>Sampling Frequency (MHz):</strong> Configures the ADC sampling rate.</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/manual_switch.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/manual_switch.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/manual_switch.png" width="600" />
-</a>
+</section>
+<section id="gain-amplifier-settings">
+<h3>Gain Amplifier Settings<a class="headerlink" href="#gain-amplifier-settings" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><p>Set the Simulation Stop Time to 0.005 s.</p></li>
+<li><p><strong>Lock Channels:</strong> Forces matching gain values on both channels.</p></li>
+<li><p><strong>Gain (dB):</strong> Adjustable I/Q channel gain, from 4.5 dB to 20.5 dB. See
+<a class="icon adi reference external" href="https://www.analog.com/AD8366" target="_blank">AD8366</a> for more details.</p></li>
 </ul>
-<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/simulation_time.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/simulation_time.png" class="align-center" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/fmcomms2/images/simulation_time.png" width="600" />
-</a>
+</section>
+<section id="rx-lo-settings">
+<h3>RX LO Settings<a class="headerlink" href="#rx-lo-settings" title="Link to this heading"></a></h3>
+<p>Configures the receive PLL (<a class="icon adi reference external" href="https://www.analog.com/ADF4350" target="_blank">ADF4350</a>).</p>
 <ul class="simple">
-<li><p>Run the simulation using the Play button.</p></li>
+<li><p><strong>Enable:</strong> Toggles the local oscillator on/off.</p></li>
+<li><p><strong>Frequency (MHz):</strong> Sets the receive base frequency.</p></li>
+<li><p><strong>Spacing (Hz):</strong> Selects the frequency spacing.</p></li>
 </ul>
+</section>
+</section>
+<section id="transmit-chain">
+<h2>Transmit Chain<a class="headerlink" href="#transmit-chain" title="Link to this heading"></a></h2>
+<section id="dds-settings">
+<h3>DDS Settings<a class="headerlink" href="#dds-settings" title="Link to this heading"></a></h3>
+<p>The DDS (Direct Digital Synthesizer) provides test tone generation. See
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/linux/drivers/iio-dds/axi-dac-dds-hdl.html#axi-dac-dds-hdl" target="_blank" title="(in Linux Drivers)"><span class="xref std std-ref">AXI DAC DDS HDL documentation</span></a> for more
+details.</p>
+<p>Available modes:</p>
+<ul class="simple">
+<li><p><strong>One CW Tone</strong></p></li>
+<li><p><strong>Two CW Tones</strong></p></li>
+<li><p><strong>Independent I/Q Control</strong></p></li>
+<li><p><strong>DAC Buffer Output</strong></p></li>
+<li><p><strong>Disabled</strong></p></li>
+</ul>
+<p>Tone Parameters:</p>
+<ul class="simple">
+<li><p><strong>Frequency (MHz):</strong> Tone frequency selection.</p></li>
+<li><p><strong>Scale:</strong> Amplitude adjustment.</p></li>
+<li><p><strong>Phase (degrees):</strong> Phase offset configuration.</p></li>
+</ul>
+</section>
+<section id="dac-frequency-settings">
+<h3>DAC Frequency Settings<a class="headerlink" href="#dac-frequency-settings" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Data (MHz):</strong> DAC data clock.</p></li>
+<li><p><strong>Interpolation (Hz):</strong> Selectable interpolation frequencies.</p></li>
+<li><p><strong>Center Shift (Hz):</strong> Selectable center shift frequencies.</p></li>
+</ul>
+</section>
+<section id="tx-lo-settings">
+<h3>TX LO Settings<a class="headerlink" href="#tx-lo-settings" title="Link to this heading"></a></h3>
+<p>Configures the transmit PLL (<a class="icon adi reference external" href="https://www.analog.com/ADF4350" target="_blank">ADF4350</a>).</p>
+<ul class="simple">
+<li><p><strong>Enable:</strong> Toggles the local oscillator on/off.</p></li>
+<li><p><strong>Frequency (MHz):</strong> Sets the transmit output frequency.</p></li>
+<li><p><strong>Spacing (Hz):</strong> Selects the frequency spacing.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="rfblkset_mdls_install.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Installing RF Blockset Models for Analog Devices RF Transceivers</a>
-    <a href="simrf.html" title="Next document (Alt+Shift+RightArrow)" class="next">RF Blockset Model of AD9361 from MathWorks</a>
+    <a href="applications/xcomm_cal.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Xcomm Cal</a>
+    <a href="i2c_to_spi_bridge.html" title="Next document (Alt+Shift+RightArrow)" class="next">AD-FMCOMMS1-EBZ Register Access</a>
               </div>
           
         </div>
