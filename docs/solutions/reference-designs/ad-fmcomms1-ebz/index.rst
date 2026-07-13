@@ -146,6 +146,7 @@ Table of contents
      - :dokuwiki:`KC705 (Microblaze) <resources/eval/user-guides/ad-fmcomms1-ebz/software/linux/microblaze_kc705>`
 
    - :dokuwiki:`No-OS drivers <resources/fpga/xilinx/fmc/ad-fmcomms1-ebz/reference_design_no_os>`
+   - :ref:`FMCOMMS1 IIO Oscilloscope Plugin <fmcomms1-plugin>`
    - :ref:`I2C-to-SPI-bridge <ad_fmcomms1_ebz software i2c_to_spi_bridge>`
 
 #. :ref:`Production Testing Process <ad_fmcomms1_ebz testing>`
