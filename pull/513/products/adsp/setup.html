@@ -8,7 +8,7 @@
 
     <title>Getting started &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=a8f9a170" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=d3f78147" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=5f9cb17c" />
     <script async="async" src="../../_static/app.umd.js?v=26d0298f"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
@@ -355,8 +355,11 @@ Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 <section id="download-release">
 <h3>Download Release<a class="headerlink" href="#download-release" title="Link to this heading"></a></h3>
 <p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
-download the appropriate <code class="docutils literal notranslate"><span class="pre">images-*.tar.xz</span></code> release archive that matches your
-hardware.</p>
+download both release archives that match your hardware:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">images-*.tar.xz</span></code> — bootstrap image containing U-Boot SPL and U-Boot Proper</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">debug-*.tar.xz</span></code> — debug image containing the Linux kernel and root filesystem</p></li>
+</ul>
 </section>
 <section id="boot-u-boot-proper">
 <h3>Boot U-Boot Proper<a class="headerlink" href="#boot-u-boot-proper" title="Link to this heading"></a></h3>
@@ -476,10 +479,6 @@ the installer proceeds to write the eMMC image.</p>
 </section>
 <section id="install-emmc-image">
 <h3>Install eMMC Image<a class="headerlink" href="#install-emmc-image" title="Link to this heading"></a></h3>
-<p>If <code class="docutils literal notranslate"><span class="pre">emmc.img</span></code> is not compressed, compress it manually:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>gzip<span class="w"> </span>-k<span class="w"> </span>emmc.img
-</pre></div>
-</div>
 <p>Ensure <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> is in the same directory where your HTTP server is
 running.</p>
 <p>The serial console prompts for your PC’s IP address:</p>
