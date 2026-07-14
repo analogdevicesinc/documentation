@@ -104,6 +104,33 @@
                 "user-guide"
             ]
         },
+        "EVAL-AD4050/AD4052-ARDZ": {
+            "docname": "documentation/solutions/reference-designs/ad4052-ardz/index",
+            "description": "",
+            "include": {
+                "documentation": {
+                    "solutions/reference-designs/ad4052-ardz": {
+                        "name": "User guide"
+                    }
+                },
+                "hdl": {
+                    "projects/ad4052_ardz": {
+                        "name": "HDL Project (ad4052_ardz)"
+                    }
+                },
+                "no-OS": {
+                    "drivers/adc/ad405x": {
+                        "name": "no-OS driver (ad405x)"
+                    }
+                }
+            },
+            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad4052-ardz/eval-angle.png",
+            "subtitle": "Evaluating the AD4050/AD4052 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
+            "label": [
+                "eval",
+                "user-guide"
+            ]
+        },
         "EVAL-AD4060/AD4062-ARDZ": {
             "docname": "documentation/solutions/reference-designs/ad4062-ardz/index",
             "description": "",
@@ -153,33 +180,6 @@
             },
             "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/images/ad9084.png",
             "subtitle": "Evaluating the Apollo MxFE Quad, 16-Bit, 28GSPS RF DAC and Quad, 12-Bit, 20 GSPS RF ADC",
-            "label": [
-                "eval",
-                "user-guide"
-            ]
-        },
-        "EVAL-AD4050/AD4052-ARDZ": {
-            "docname": "documentation/solutions/reference-designs/ad4052-ardz/index",
-            "description": "",
-            "include": {
-                "documentation": {
-                    "solutions/reference-designs/ad4052-ardz": {
-                        "name": "User guide"
-                    }
-                },
-                "hdl": {
-                    "projects/ad4052_ardz": {
-                        "name": "HDL Project (ad4052_ardz)"
-                    }
-                },
-                "no-OS": {
-                    "drivers/adc/ad405x": {
-                        "name": "no-OS driver (ad405x)"
-                    }
-                }
-            },
-            "image": "https://media.githubusercontent.com/media/analogdevicesinc/documentation/main/docs/solutions/reference-designs/ad4052-ardz/eval-angle.png",
-            "subtitle": "Evaluating the AD4050/AD4052 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs",
             "label": [
                 "eval",
                 "user-guide"
