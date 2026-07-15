@@ -65,6 +65,7 @@ Applications:
    user-guide
    prerequisites
    quickstart/index
+   ram-capture
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -94,6 +95,7 @@ Table of contents
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
+      #. :ref:`RAM Capture <adrv904x ram-capture>`
 
 #. Design with the ADRV9040/ADRV9044
 
