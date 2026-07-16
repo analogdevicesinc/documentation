@@ -109,6 +109,9 @@
 <li><a class="reference internal" href="#boot-u-boot-proper">Boot U-Boot Proper</a></li>
 <li><a class="reference internal" href="#boot-linux">Boot Linux</a></li>
 <li><a class="reference internal" href="#install-u-boot">Install U-Boot</a></li>
+<li><a class="reference internal" href="#install-emmc-image">Install eMMC Image</a></li>
+<li><a class="reference internal" href="#boot-linux-from-emmc">Boot Linux from eMMC</a></li>
+<li><a class="reference internal" href="#login">Login</a></li>
 </ul>
 </li>
 </ul>
@@ -1840,11 +1843,21 @@ Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 <div class="clear-left"></div></div></div></div></div></section>
 <section id="booting-the-system">
 <h2>Booting the System<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
+<p>A hybrid boot architecture is being used:</p>
+<ul class="simple">
+<li><p><strong>SPI Flash</strong> stores the bootloader (U-Boot SPL and U-Boot Proper)</p></li>
+<li><p><strong>eMMC</strong> stores the full system image (Linux kernel and root filesystem)</p></li>
+</ul>
 <section id="download-release">
 <h3>Download Release<a class="headerlink" href="#download-release" title="Link to this heading"></a></h3>
 <p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
-download the appropriate <code class="docutils literal notranslate"><span class="pre">images-*.tar.xz</span></code> release archive that matches your
-hardware.</p>
+download both release archives that match your hardware (<code class="docutils literal notranslate"><span class="pre">images-bootstrap-*</span></code>
+and <code class="docutils literal notranslate"><span class="pre">images-debug-*</span></code>), then extract them into the same directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>images-bootstrap-*.tar.xz
+$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>images-debug-*.tar.xz
+</pre></div>
+</div>
+<p>Both archives extract to <code class="docutils literal notranslate"><span class="pre">buildroot/output/images/</span></code>.</p>
 </section>
 <section id="boot-u-boot-proper">
 <h3>Boot U-Boot Proper<a class="headerlink" href="#boot-u-boot-proper" title="Link to this heading"></a></h3>
@@ -1874,25 +1887,25 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div></div><p>Run GDB:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-0" name="tab-set-79fdc5bfa2680c637b91790edc0b0d1cf292323f" type="radio"></input><label class="tab-label" for="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb-multiarch<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-1" name="tab-set-79fdc5bfa2680c637b91790edc0b0d1cf292323f" type="radio"></input><label class="tab-label" for="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
@@ -1902,25 +1915,25 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 <section id="boot-linux">
 <h3>Boot Linux<a class="headerlink" href="#boot-linux" title="Link to this heading"></a></h3>
 <p>Start a file server in a new terminal on your PC in the release directory:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-0" name="tab-set-71343a9a91eb78631fff90467ce24a800a90d736" type="radio"></input><label class="tab-label" for="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-0" name="tab-set-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2" type="radio"></input><label class="tab-label" for="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-1" name="tab-set-71343a9a91eb78631fff90467ce24a800a90d736" type="radio"></input><label class="tab-label" for="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-1" name="tab-set-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2" type="radio"></input><label class="tab-label" for="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server
@@ -1960,14 +1973,49 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 </pre></div>
 </div>
 <p>Type <code class="docutils literal notranslate"><span class="pre">y</span></code> to erase the flash contents and install U-Boot. After programming completes,
-the console instructs you to move the S1 boot mode switch to the SPI boot position.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SPI install complete</span>
+the installer proceeds to write the eMMC image.</p>
+</section>
+<section id="install-emmc-image">
+<h3>Install eMMC Image<a class="headerlink" href="#install-emmc-image" title="Link to this heading"></a></h3>
+<p>The serial console prompts for your PC’s IP address:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">======== Install eMMC Image ========</span>
+
+<span class="go">This will download emmc.img.gz from your PC and write it to /dev/mmcblk0.</span>
+
+<span class="go">Enter your PC&#39;s IP address:</span>
+</pre></div>
+</div>
+<p>The board configures its network interface, downloads
+<code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> from your PC, decompresses it, and writes it directly to the
+eMMC. After the write completes, the console instructs you to move the S1 boot
+mode switch:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">eMMC install complete.</span>
 
 <span class="go">Set the switch S1 to position 1 (SPI boot).</span>
 <span class="go">Waiting for switch...</span>
 </pre></div>
 </div>
-<p>Once the position change is detected, the system reboots automatically from SPI flash and the U-Boot console appears.</p>
+<p>Once the position change is detected, the system reboots automatically from SPI
+flash and the U-Boot console appears.</p>
+</section>
+<section id="boot-linux-from-emmc">
+<h3>Boot Linux from eMMC<a class="headerlink" href="#boot-linux-from-emmc" title="Link to this heading"></a></h3>
+<p>After reboot from SPI flash, U-Boot does not boot automatically. At the U-Boot
+prompt, type:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">=&gt; run emmcboot</span>
+</pre></div>
+</div>
+<p>U-Boot loads the kernel and device tree from the eMMC boot partition and starts
+Linux with the root filesystem on eMMC.</p>
+</section>
+<section id="login">
+<h3>Login<a class="headerlink" href="#login" title="Link to this heading"></a></h3>
+<p>When the boot completes, a login prompt appears:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Welcome to the ADI SC598 EZ-Kit</span>
+<span class="go">sc598-ezkit login:</span>
+</pre></div>
+</div>
+<p>Log in as <code class="docutils literal notranslate"><span class="pre">root</span></code> with no password (press Enter).</p>
 </section>
 </section>
 </section>
