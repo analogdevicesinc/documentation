@@ -355,11 +355,13 @@ Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 <section id="download-release">
 <h3>Download Release<a class="headerlink" href="#download-release" title="Link to this heading"></a></h3>
 <p>Navigate to the <a class="icon git reference external" href="https://github.com/analogdevicesinc/br2-external/releases" target="_blank">br2-external releases page</a> and
-download both release archives that match your hardware:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">adi_sc598_ezkit_defconfig-bootstrap</span></code> — bootstrap image (U-Boot SPL, U-Boot)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adi_sc598_ezkit_defconfig-debug</span></code> — debug image (Linux kernel, root filesystem)</p></li>
-</ul>
+download both release archives that match your hardware (<code class="docutils literal notranslate"><span class="pre">images-bootstrap-*</span></code>
+and <code class="docutils literal notranslate"><span class="pre">images-debug-*</span></code>), then extract them into the same directory:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>images-bootstrap-*.tar.xz
+$<span class="w"> </span>tar<span class="w"> </span>-xf<span class="w"> </span>images-debug-*.tar.xz
+</pre></div>
+</div>
+<p>Both archives extract to <code class="docutils literal notranslate"><span class="pre">buildroot/output/images/</span></code>.</p>
 </section>
 <section id="boot-u-boot-proper">
 <h3>Boot U-Boot Proper<a class="headerlink" href="#boot-u-boot-proper" title="Link to this heading"></a></h3>
@@ -389,25 +391,25 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div></div></div><p>Run GDB:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-0" name="tab-set-79fdc5bfa2680c637b91790edc0b0d1cf292323f" type="radio"></input><label class="tab-label" for="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-0">Ubuntu/Debian</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb-multiarch<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1" name="tab-set-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20" type="radio"></input><label class="tab-label" for="tab-item-704cd3b2ee4ad8f82fc6920c179ffb341c3aaf20-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-1" name="tab-set-79fdc5bfa2680c637b91790edc0b0d1cf292323f" type="radio"></input><label class="tab-label" for="tab-item-79fdc5bfa2680c637b91790edc0b0d1cf292323f-1">Windows/Fedora/RHEL</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>gdb<span class="w"> </span>-x<span class="w"> </span>u-boot.gdb
@@ -417,25 +419,25 @@ Ensure the arrow on the dial is pointing to position “0”.</p>
 <section id="boot-linux">
 <h3>Boot Linux<a class="headerlink" href="#boot-linux" title="Link to this heading"></a></h3>
 <p>Start a file server in a new terminal on your PC in the release directory:</p>
-<div class="tab-set docutils"><input checked="checked" id="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-0" name="tab-set-71343a9a91eb78631fff90467ce24a800a90d736" type="radio"></input><label class="tab-label" for="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="tab-set docutils"><input checked="checked" id="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-0" name="tab-set-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2" type="radio"></input><label class="tab-label" for="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-0">Linux</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server
 </pre></div>
 </div>
-<div class="clear-left"></div></div></div></div><input id="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-1" name="tab-set-71343a9a91eb78631fff90467ce24a800a90d736" type="radio"></input><label class="tab-label" for="tab-item-71343a9a91eb78631fff90467ce24a800a90d736-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+<div class="clear-left"></div></div></div></div><input id="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-1" name="tab-set-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2" type="radio"></input><label class="tab-label" for="tab-item-aa5f553b2aafd8c841bfbbfb28279eb789ddb3a2-1">Windows</label><div class="tab-content docutils"><div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>images-*<span class="w">   </span><span class="c1"># Navigate to extracted release directory</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>buildroot/output/images
 </pre></div>
 </div>
-<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/images-*$
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~/buildroot/output/images$
 </pre></div>
 </div>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>http.server
@@ -479,8 +481,6 @@ the installer proceeds to write the eMMC image.</p>
 </section>
 <section id="install-emmc-image">
 <h3>Install eMMC Image<a class="headerlink" href="#install-emmc-image" title="Link to this heading"></a></h3>
-<p>Ensure <code class="docutils literal notranslate"><span class="pre">emmc.img.gz</span></code> is in the same directory where your HTTP server is
-running.</p>
 <p>The serial console prompts for your PC’s IP address:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">======== Install eMMC Image ========</span>
 
