@@ -101,6 +101,7 @@
 <li><a class="reference internal" href="#mcs-prebuild-files">MCS prebuild files</a></li>
 <li><a class="reference internal" href="#setup">Setup</a><ul>
 <li><a class="reference internal" href="#setting-synchrona-for-mcs-setup">Setting Synchrona for MCS setup</a></li>
+<li><a class="reference internal" href="#setting-up-jupiter-sdr">Setting up Jupiter SDR</a></li>
 <li><a class="reference internal" href="#connecting-jupiter-sdr-with-synchrona">Connecting Jupiter SDR with Synchrona</a><ul>
 <li><a class="reference internal" href="#configuring-synchrona-in-a-4-jupiter-sdr-syncronization-setup">Configuring Synchrona in a 4 Jupiter SDR syncronization setup</a></li>
 </ul>
@@ -241,7 +242,7 @@ than the clock ones.</p></li>
 </div>
 </section>
 <section id="mcs-prebuild-files">
-<h2>MCS prebuild files<a class="headerlink" href="#mcs-prebuild-files" title="Link to this heading"></a></h2>
+<span id="ad-jupiter-ebz-mcs-setup-prebuild-files"></span><h2>MCS prebuild files<a class="headerlink" href="#mcs-prebuild-files" title="Link to this heading"></a></h2>
 <p>The boot partition files for the MCS sync example and the device tree overlays
 for Synchrona can be built from the following sources:</p>
 <ul>
@@ -840,37 +841,20 @@ release.</p>
 </div>
 </div>
 </div>
-</div></li>
+</div><p>To compile the overlay:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dtc<span class="w"> </span>-@<span class="w"> </span>-I<span class="w"> </span>dts<span class="w"> </span>-O<span class="w"> </span>dtb<span class="w"> </span>-o<span class="w"> </span>rpi-ad9545-hmc7044.dtbo<span class="w"> </span>rpi-ad9545-hmc7044.dts
+</pre></div>
+</div>
+</li>
 </ul>
 </section>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
-<ol class="arabic simple">
-<li><p>Write the latest Kuiper image on the SD cards
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper images</span></a></p></li>
-<li><p>Copy on the boot partition of the SD cards, the provided boot files from the
-archive above, for MCS sync (Image, system.dtb, BOOT.BIN and boot.scr)</p></li>
-<li><p>Configure the Synchrona, see the <a class="reference internal" href="#ad-jupiter-ebz-mcs-setup"><span class="std std-ref">Jupiter_SDR MCS Setup</span></a>.</p></li>
-<li><p>Connect all SMA cable and terminations as described in
-<a class="reference internal" href="#ad-jupiter-ebz-mcs-setup-connecting-synchrona"><span class="std std-ref">Connecting Jupiter SDR with Synchrona</span></a>
-section</p></li>
-<li><p>The reference clock from the signal generator(Synchrona) must be, connected,
-and running before the next step</p></li>
-<li><p>Insert the SD cards and power up the jupiter_sdrs</p></li>
-<li><p>You need all 4 machines(Main, jupiter_sdr, Synchrona) in the same LAN
-network, even if a DHCP server is not present</p></li>
-<li><p>Using a UART terminal, read the IP addresses of the Jupiter_SDRs and
-Synchrona. By entering “ifconfig” in their UART console</p></li>
-<li><p>On the main Linux machine, make sure you have installed python3, libiio and
-pyadi-iio more info in
-<a class="reference internal" href="#ad-jupiter-ebz-mcs-setup-prepare-python-tests"><span class="std std-ref">Prepare and run Python tests</span></a>
-section.</p></li>
-<li><p>Enter in the folder examples/adrv9002_mcs_sync and run “python3
-jupiter_sync.py”.</p></li>
-</ol>
+<p>Since Synchrona provides the reference clock for the Jupiter SDR boards, it
+must be configured and running before powering up the Jupiter SDRs.</p>
 <section id="setting-synchrona-for-mcs-setup">
 <span id="ad-jupiter-ebz-mcs-setup-setting-synchrona"></span><h3>Setting Synchrona for MCS setup<a class="headerlink" href="#setting-synchrona-for-mcs-setup" title="Link to this heading"></a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Power up the system/Wait for it to boot(1min).</p></li>
 <li><p>Using a UART terminal, read the IP address of the Pi(synchrona). Enter
 ifconfig</p></li>
@@ -881,12 +865,51 @@ ifconfig</p></li>
 <li><p>Reboot Synchrona</p></li>
 <li><p>To check if the configuration was set, after reboot, you can enter in a
 browser enter the IP address. In the GUI that will open in browser, log in
-with User ”admin”, pass: “analog”</p></li>
+with User “admin”, pass: “analog”</p>
+<p>The <strong>Advanced</strong> and <strong>Debug</strong> tabs should look like the following images
+after the device tree is loaded.</p>
+<div class="tab-set docutils"><input checked="checked" id="tab-item-406821666073076f67939a925520c940a1346d87-0" name="tab-set-406821666073076f67939a925520c940a1346d87" type="radio"></input><label class="tab-label" for="tab-item-406821666073076f67939a925520c940a1346d87-0">Before loading the device tree</label><div class="tab-content docutils"><figure class="align-center" id="id1">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_advanced_tab_init.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_advanced_tab_init.png" />
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Advanced tab before loading the device tree</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_debug_tab_init.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_debug_tab_init.png" />
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Debug tab before loading the device tree</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div><input id="tab-item-406821666073076f67939a925520c940a1346d87-1" name="tab-set-406821666073076f67939a925520c940a1346d87" type="radio"></input><label class="tab-label" for="tab-item-406821666073076f67939a925520c940a1346d87-1">After loading the device tree</label><div class="tab-content docutils"><figure class="align-center" id="id3">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_advanced_tab_devicetree_loaded.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_advanced_tab_devicetree_loaded.png" />
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Advanced tab after loading the device tree</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_debug_tab_devicetree_loaded.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/synchrona_debug_tab_devicetree_loaded.png" />
+<figcaption>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Debug tab after loading the device tree</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</div></div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If the configuration does not match the images above, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>In the <strong>Advanced</strong> tab, in the <strong>Input Priority</strong> section, drag the
+TCXO to the top of the list using the three-line handle on the right
+side.</p></li>
+<li><p>Click <strong>Reload Config</strong>.</p></li>
+<li><p>Press <strong>OK</strong> in the warning dialog if it appears.</p></li>
+<li><p>Reboot the Synchrona.</p></li>
+<li><p>After reboot, refresh the web page in your browser.</p></li>
+</ol>
+</div>
+</li>
 </ol>
 <p>If your Synchrona does not boot or you need a fresh SD card for synchrona, you
 should re-image the SD card with the image from the bottom of this section, or
-check if there is a newer version on
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-synchrona14-ebz/index.html#ad-syncrhona14-ebz" target="_blank" title="(in System Level Documentation)"><span>AD-SYNCHRONA14-EBZ</span></a></p>
+check if there is a newer version on <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-synchrona14-ebz/index.html#ad-syncrhona14-ebz" target="_blank" title="(in System Level Documentation)"><span>AD-SYNCHRONA14-EBZ</span></a></p>
 <ul>
 <li><p>Write the image to an SD card, 16 G or above. Using your favourite tool</p></li>
 <li><p>Insert the freshly written SD card into the Synchrona’s raspberry Pi and power
@@ -914,13 +937,34 @@ by running the enable_dhcp.sh script:</p></li>
 </div>
 </div></blockquote>
 <p>After reboot, start from <a class="reference internal" href="#ad-jupiter-ebz-mcs-setup-setting-synchrona"><span class="std std-ref">Setting Synchrona for MCS setup</span></a> point
-1. above.</p>
+2. above.</p>
 <p>More info on <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-synchrona14-ebz/index.html#ad-syncrhona14-ebz" target="_blank" title="(in System Level Documentation)"><span>AD-SYNCHRONA14-EBZ</span></a></p>
 <p>None of the jumpers should be connected on Synchrona’s ADD-ON board</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/ad-synchrona14-ebz2_top-1000.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/ad-synchrona14-ebz2_top-1000.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/update_jupiter_sys_level/docs/solutions/reference-designs/ad-jupiter-ebz/images/ad-synchrona14-ebz2_top-1000.jpg" style="width: 800px;" />
 </a>
 </figure>
+</section>
+<section id="setting-up-jupiter-sdr">
+<h3>Setting up Jupiter SDR<a class="headerlink" href="#setting-up-jupiter-sdr" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Write the latest Kuiper image on the SD cards
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/kuiper/index.html" target="_blank" title="(in Kuiper latest)"><span class="xref std std-doc">Kuiper images</span></a></p></li>
+<li><p>Build the boot files (Image, system.dtb, BOOT.BIN and boot.scr) as described
+in the <a class="reference internal" href="#ad-jupiter-ebz-mcs-setup-prebuild-files"><span class="std std-ref">MCS prebuild files</span></a>
+section and copy them on the boot partition of the SD cards.</p></li>
+<li><p>Make sure the Synchrona reference clock is connected and running.</p></li>
+<li><p>Insert the SD cards and power up the Jupiter SDRs.</p></li>
+<li><p>You need all 4 machines (Main, Jupiter SDR, Synchrona) in the same LAN
+network, even if a DHCP server is not present</p></li>
+<li><p>Using a UART terminal, read the IP addresses of the Jupiter SDRs and
+Synchrona by entering <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> in their UART console.</p></li>
+<li><p>On the main Linux machine, make sure you have installed python3, libiio and
+pyadi-iio, more info in <a class="reference internal" href="#ad-jupiter-ebz-mcs-setup-prepare-python-tests"><span class="std std-ref">Prepare and run Python tests</span></a>
+section.</p></li>
+<li><p>Enter in the folder examples/adrv9002_mcs_sync and run
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">jupiter_sync.py</span></code>.</p></li>
+</ol>
 </section>
 <section id="connecting-jupiter-sdr-with-synchrona">
 <span id="ad-jupiter-ebz-mcs-setup-connecting-synchrona"></span><h3>Connecting Jupiter SDR with Synchrona<a class="headerlink" href="#connecting-jupiter-sdr-with-synchrona" title="Link to this heading"></a></h3>
