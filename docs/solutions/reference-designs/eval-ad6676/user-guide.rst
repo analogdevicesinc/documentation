@@ -3,7 +3,7 @@
 User guide
 ===============================================================================
 
-.. image:: images/Eval-AD6676.jpg
+.. image:: images/eval-ad6676.jpg
    :align: center
    :width: 500
 
