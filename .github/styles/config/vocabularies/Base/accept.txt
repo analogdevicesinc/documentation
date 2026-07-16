@@ -1,10 +1,10 @@
-(?i)
 (?i)adc(s)?
 (?i)cli
 (?i)cmos
 (?i)dac(s)?
 (?i)dokuwiki
 (?i)eval(s)?
+(?i)fakra
 (?i)gb
 (?i)gdb
 (?i)gpio(s)?
@@ -33,6 +33,7 @@
 (?i)ptr
 (?i)pwm(s)?
 (?i)pypi
+(?i)rpi
 (?i)sdk
 (?i)syncb
 (?i)syncronization
@@ -75,12 +76,12 @@ DokuWiki
 GitHub
 GTKTerm
 HDL
-LED(s)?
 IIO
 IIOD
 Jitsi
 JLink
 Kirkstone
+LED(s)?
 LTspice
 MATLAB
 MCS
@@ -188,7 +189,6 @@ Yocto
 [Ee]thernet
 [Ee]valuate
 [Ee]vkit
-[Ff]akra
 [Ff]eatherheaders
 [Ff]irewire
 [Ff]lourescent
@@ -310,7 +310,6 @@ Yocto
 [Rr]ealtime
 [Rr]ensselaer
 [Rr]oscolux
-[Rr]pi
 [Rr]sense
 [Rr]shunt
 [Rr]unnin
