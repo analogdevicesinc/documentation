@@ -24,7 +24,7 @@ Necessary files
 The following files are needed to boot the system:
 
 - ``system_top.rbf``, HDL bitstream built from
-  :external+hdl:ref:`Build an HDL project <build_hdl>`
+  :external+hdl:ref:`build_hdl`
 - ``u-boot-with-spl.sfp``, SPL and U-Boot bootloader
 - ``socfpga.dtb``, compiled device tree blob
 - ``zImage``, the Linux kernel image
@@ -83,11 +83,11 @@ Creating the setup
 AD57xx/DE10-Nano
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-   .. figure:: ../images/ad57xx_setup_hardware_de10nano.jpg
-      :align: center
-      :width: 500
+.. figure:: ../images/ad57xx_setup_hardware_de10nano.jpg
+   :align: center
+   :width: 500
 
-      AD57xx/DE10-Nano hardware setup.
+   AD57xx/DE10-Nano hardware setup.
 
 In the following example, we will prepare the evaluation setup
 by connecting the AD57xx board to the DE10-Nano and configuring

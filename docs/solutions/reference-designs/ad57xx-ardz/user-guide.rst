@@ -38,9 +38,9 @@ Refer to the specific evaluation board user guide for detailed
 power supply specifications, connector pinouts, and
 configuration options:
 
-- `UG-2209 <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad5780ardz-ug-2209.pdf>`_
+- :adi:`UG-2209 <media/en/technical-documentation/user-guides/eval-ad5780ardz-ug-2209.pdf>`
   for the EVAL-AD5780ARDZ
-- `UG-2225 <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad5781ardz-ad5791ardz-ug-2225.pdf>`_
+- :adi:`UG-2225 <media/en/technical-documentation/user-guides/eval-ad5781ardz-ad5791ardz-ug-2225.pdf>`
   for the EVAL-AD5781ARDZ and EVAL-AD5791ARDZ
 
 Analog outputs

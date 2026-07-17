@@ -16,7 +16,7 @@ AD57xx on:
 
 .. esd-warning::
 
-Using Linux as software
+Using linux as software
 -------------------------------------------------------------------------------
 
 Necessary files
@@ -25,9 +25,9 @@ Necessary files
 The following files are needed to boot the system:
 
 - ``BOOT.BIN``, built from the HDL project;
-  follow :external+hdl:ref:`Build an HDL project <build_hdl>`
+  follow :external+hdl:ref:`build_hdl`
 - ``devicetree.dtb``, compiled from the device tree source
-- ``uImage``, the Linux kernel image;
+- ``uImage``, the linux kernel image;
   follow :ref:`linux-kernel zynq`
 
 .. note::
@@ -86,7 +86,7 @@ AD57xx/CoraZ7-07S
    :align: center
    :width: 800
 
-   AD57xx/CoraZ7-07S hardware setup for Linux.
+   AD57xx/CoraZ7-07S hardware setup for linux.
 
 In the following example, we will prepare the evaluation setup
 by connecting the AD57xx board to the CoraZ7-07S and configuring

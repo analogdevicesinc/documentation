@@ -23,7 +23,7 @@ Hardware prerequisites
      currently not supported by us. The experience with the
      fabric-only solutions is very close to the ARM/FPGA SoC
      based solutions, but the GUI runs on a host PC (Windows
-     or Linux).
+     or linux).
 
 #. Some way to interact with the FPGA platform:
 
@@ -36,13 +36,13 @@ Hardware prerequisites
    #. for the FPGA only solutions, this includes:
 
       - LAN cable (Ethernet)
-      - Host PC (Windows or Linux)
+      - Host PC (Windows or linux)
 
 #. Internet connection (without proxies makes things much
    easier) to update the scripts/binaries on the SD card
    (firewalls are OK, proxies make things a pain).
 #. An SD card with at least 16GB of memory (in case you're
-   using Linux). You should have received one when purchasing
+   using linux). You should have received one when purchasing
    the evaluation board.
 
 Software prerequisites

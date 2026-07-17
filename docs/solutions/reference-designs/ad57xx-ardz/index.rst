@@ -1,4 +1,4 @@
-﻿.. _ad57xx:
+.. _ad57xx:
 
 EVAL-AD57XXARDZ
 ===============
@@ -56,18 +56,18 @@ Applications:
 - Digital gain and offset adjustment
 - Power supply control and calibration
 
-   .. grid::
-      :widths: 50% 50%
+.. grid::
+   :widths: 50% 50%
 
-      .. figure:: images/eval_ad5781ardz_angle.jpg
-         :width: 300
+   .. figure:: images/eval_ad5781ardz_angle.jpg
+      :width: 300
 
-         EVAL-AD5781ARDZ
+      EVAL-AD5781ARDZ
 
-      .. figure:: images/eval_ad5780ardz_top.jpg
-         :width: 400
+   .. figure:: images/eval_ad5780ardz_top.jpg
+      :width: 400
 
-         EVAL-AD5780ARDZ
+      EVAL-AD5780ARDZ
 
 .. toctree::
    :hidden:
@@ -109,7 +109,7 @@ Table of contents
     #. Configure an SD Card with
        :external+kuiper:doc:`Kuiper <index>`
 
-    #. Linux Applications
+    #. linux Applications
 
         #. :ref:`iio-oscilloscope`
 
@@ -125,11 +125,11 @@ Table of contents
 
     - Resources for designing a custom AD57xx-based platform
 
-    #. For Linux software:
+    #. For linux software:
 
         - About the device driver:
 
-            - :git-linux:`AD5791 IIO DAC Linux Driver <drivers/iio/dac/ad5791.c>`
+            - :git-linux:`AD5791 IIO DAC linux Driver <drivers/iio/dac/ad5791.c>`
 
     #. For no-OS software:
 
