@@ -15,7 +15,7 @@
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ROS2 Integration with IIO Devices" href="ros2_integration/index.html" />
+    <link rel="next" title="Language Support: C, C++" href="native_c_example/index.html" />
     <link rel="prev" title="Learning! Tutorials, Workshops, Etc" href="../index.html" />
    
   
@@ -99,27 +99,29 @@
           <ul>
 <li><a class="reference internal" href="#">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#what-does-enabled-by-adi-datax-mean">What does “Enabled by ADI DataX” mean?</a></li>
+<li><a class="reference internal" href="#developing-a-product-with-adi-datax">Developing a Product with ADI DataX</a></li>
 <li><a class="reference internal" href="#materials">Materials</a></li>
-<li><a class="reference internal" href="#background">Background</a></li>
 <li><a class="reference internal" href="#slide-deck-and-video">Slide Deck and Video</a></li>
 <li><a class="reference internal" href="#preparation-a-few-resources-for-learning-python">Preparation - a few resources for learning Python</a></li>
-<li><a class="reference internal" href="#what-does-just-enough-software-look-like">What does “Just Enough Software” look like?</a></li>
-<li><a class="reference internal" href="#software-stack-background">Software Stack Background</a></li>
-<li><a class="reference internal" href="#introducing-an-exciting-new-product-that-we-ll-apply-our-skills">Introducing an exciting new product that we’ll apply our skills</a></li>
+<li><a class="reference internal" href="#software-stack-background-and-to-deliver-you-from-the-preliminary-terrors">Software Stack Background, and, To Deliver You from the Preliminary Terrors</a></li>
+<li><a class="reference internal" href="#introducing-the-exciting-new-products-to-which-we-ll-apply-our-skills">Introducing the exciting new products to which we’ll apply our skills</a></li>
 <li><a class="reference internal" href="#component-selection-based-on-software-support-vs-pure-analog-performance">Component selection based on software support (vs. pure analog performance)</a></li>
+<li><a class="reference internal" href="#hands-on-working-through-a-simple-but-complete-case-study"><strong>Hands-On!</strong> Working through a simple, but complete case study</a></li>
 <li><a class="reference internal" href="#hardware-setup">Hardware Setup</a></li>
 <li><a class="reference internal" href="#booting-the-system">Booting the system</a></li>
 <li><a class="reference internal" href="#configuring-the-system-and-rebooting">Configuring the System (and rebooting!)</a></li>
 <li><a class="reference internal" href="#command-line-tools-hello-ad5592r">Command Line Tools (Hello, AD5592r!)</a></li>
 <li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
+<li><a class="reference internal" href="#scopy">Scopy</a></li>
 <li><a class="reference internal" href="#device-trees-telling-linux-what-s-connected">Device Trees: Telling Linux what’s connected</a></li>
 <li><a class="reference internal" href="#pyadi-iio-and-examples">Pyadi-iio And examples</a></li>
-<li><a class="reference internal" href="#hands-on-working-through-a-simple-but-complete-case-study"><strong>Hands-On!</strong> Working through a simple, but complete case study</a></li>
 <li><a class="reference internal" href="#next-steps-developing-on-a-remote-host">Next Steps: Developing on a remote host</a></li>
-<li><a class="reference internal" href="#next-steps-other-languages-c-c-matlab-etc">Next Steps: Other languages (C++, C#, MATLAB, etc.)</a></li>
-<li><a class="reference internal" href="#next-steps-ros2-integration">Next Steps: ROS2 Integration</a></li>
+<li><a class="reference internal" href="#language-support-c-c">Language Support: C, C++</a></li>
+<li><a class="reference internal" href="#language-support-matlab">Language Support: MATLAB</a></li>
 <li><a class="reference internal" href="#iio-as-a-tool-for-migrating-to-an-embedded-implementation">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
 <li><a class="reference internal" href="#porting-to-a-fully-embedded-system">Porting to a Fully Embedded System</a></li>
+<li><a class="reference internal" href="#ecosystem-support-ros2-integration">Ecosystem Support: ROS2 Integration</a></li>
 <li><a class="reference internal" href="#next-steps-no-os-development-on-linux-you-bet">Next Steps: No-OS development on Linux? You bet!</a></li>
 <li><a class="reference internal" href="#more-just-enough-software-examples">More “Just Enough Software” examples</a></li>
 <li><a class="reference internal" href="#drawing-parallels-to-other-software-flows">Drawing parallels to other software flows</a></li>
@@ -159,6 +161,10 @@ Content on this topic
 <ul class="current">
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="native_c_example/index.html">Language Support: C, C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="matlab_example/index.html">Language Support: MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tinyiiod_example/index.html">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="standalone_no-os_example/index.html">Porting to a Fully Embedded System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ros2_integration/index.html">ROS2 Integration with IIO Devices</a></li>
 </ul>
 </li>
@@ -212,18 +218,71 @@ diagram as shown in <a class="reference internal" href="#fig-datax-diag-w-apps">
 <p><span class="caption-number">Figure 2 </span><span class="caption-text">Applications mappped onto ADI DataX layers</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>In this tutorial, we will use a transistor curve tracer and temperature sensor
-as example applications. The temperature sensor simply involves reading
-temperature, doing some math to convert units if necessary, and displaying the
-result. The curve tracer involves setting voltages and currents, reading
-voltages and currents, doing some basic math, and displaying a result. Each
-reading will be treated independently, no correlation to previous or future
-readings. We will NOT be measuring AC Signal to Noise Ratio (SNR), Total
-Harmonic Distortion (THD), nor measuring steps, wiggles, or any other situation
-where precise timing is required. Rest assured, there are lots of very
-interesting applications in this category; consider a vector network analyzer
-(VNA) - set an excitation frequency, measure forward and reflected power and
-phase, do some math, step, repeat, and when done, display the results.</p>
+</section>
+<section id="what-does-enabled-by-adi-datax-mean">
+<h2>What does “Enabled by ADI DataX” mean?<a class="headerlink" href="#what-does-enabled-by-adi-datax-mean" title="Link to this heading"></a></h2>
+<p>An Analog Devices product, reference design, or application example is “Enabled
+by ADI DataX” if you can follow one or more unbroken paths across
+<a class="reference internal" href="#fig-datax-diag"><span class="std std-numref">Figure 1</span></a>, where:</p>
+<ul class="simple">
+<li><p>The compute platform is an easily available standard development board, or a
+bespoke / custom board based on a standard platform</p></li>
+<li><p>The OS-specific device drivers are open-source, fully documented</p></li>
+<li><p>Language bindings and A simple “Hello, World!” example are written for the
+Ecosystem, and are also open-source</p></li>
+<li><p>An application example either exists, or is trivial to derive from the “Hello,
+World!” example.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all paths make sense for all products. A good example is the
+<a class="icon adi reference external" href="https://www.analog.com/adm1266" target="_blank">ADM1266</a> sequencer -this device is used in large network
+infrastructure and data center boards, which typically have a board
+management controller running OpenBMC, a special-purpose embedded Linux. As
+such, a Raspberry Pi can serve as a proxy for the SoCs typically used in BMC
+applications, only a Linux driver is required, and the ecosystem and
+application layers are Phosphor and Redfish. With a single path, this part is
+“fully ADI DataX enabled”.</p>
+</div>
+<p>But wait, there’s more! We also pre-build boot files for as many of these cases
+as possible. This means you can bring up examples without having to install and
+configure toolchains right away. This can be a huge timesaver when you just want
+a quick proof of concept, and don’t want the overhead of installing a piece of
+software you may not be familiar with (FPGA tools, compilers for processors
+you’re not going to be using beyond initial development, etc.).</p>
+<p>The ADI <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kuiper/index.html#kuiper" target="_blank" title="(in System Level Documentation)"><span>Kuiper</span></a> Linux distribution is a big part of the “get up and
+running quickly” philosophy. Kuiper is a specialized Debian-based Linux
+distribution designed specifically for Analog Devices hardware and evaluation
+boards. It provides a complete, ready-to-use environment with ADI libraries,
+tools, and applications pre-configured for seamless hardware integration.</p>
+<p>Rather than manually installing and configuring individual ADI software
+components, Kuiper delivers a cohesive development platform that eliminates
+setup complexity and gets you running immediately.</p>
+<p>The no-OS framework is ADI’s bare-metal device drivers, platform drivers, and
+example projects, and it too shares the same philosophy. Projects are
+automatically built as part of the continuous integration (CI) process, and boot
+files for each project, often supporting several platforms, are available in the
+releases section of the repository on GitHub.</p>
+</section>
+<section id="developing-a-product-with-adi-datax">
+<h2>Developing a Product with ADI DataX<a class="headerlink" href="#developing-a-product-with-adi-datax" title="Link to this heading"></a></h2>
+<p>In this tutorial, we will help strategic and key customer Fred in the Shed
+Instruments, Inc. develop their first products:</p>
+<ul class="simple">
+<li><p>A temperature sensor with options for local display and network connectivity</p></li>
+<li><p>A handheld transistor curve tracer for the custom guitar pedal industry</p></li>
+</ul>
+<p>The temperature sensor simply involves reading temperature, doing some math to
+convert units if necessary, and displaying the result. The curve tracer involves
+setting voltages and currents, reading voltages and currents, doing some basic
+math, and displaying a result. Each reading is considered independently, no
+correlation to previous or future readings. We will NOT be measuring AC Signal
+to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor measuring steps,
+wiggles, wavelets, or any other situation where precise timing is required. Rest
+assured, there are lots of very interesting applications in this category;
+consider a vector network analyzer (VNA) - set an excitation frequency, measure
+forward and reflected power and phase, do some math, step, repeat, and when
+done, display the results.</p>
 <p>We will start with a Linux-based workflow, leveraging Linux device drivers
 pre-built in ADI Kuiper Linux, Pyadi-iio. We’ll then show how to migrate to
 other languages (C, C#, MATLAB), other processing platforms (ARM-based
@@ -261,7 +320,7 @@ ratio (SNR) can be no greater than:</p>
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><dl class="simple">
-<dt>Raspberry Pi 4 or 5; 2GB or greater RAM (for Linux examples). (Model 3B, 3B</dt><dd><p>Plus will work, but you will want a 4 or 5 :-) )</p>
+<dt>Raspberry Pi 4, 400, 5 or 500; 2GB or greater RAM (for Linux examples). (Model 3B, 3B</dt><dd><p>Plus will work, but you will want a 4, 400, 5, or 500 :-) )</p>
 </dd>
 </dl>
 </li>
@@ -317,13 +376,6 @@ ratio (SNR) can be no greater than:</p>
 <p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/labs/software/tools_for_low_speed_mix-sig_systems/rpi-ad5592r-with_gpios-overlay.zip" target="_blank">rpi-ad5592r-with_gpios-overlay source and compiled overlay</a></p>
 </div>
 </section>
-<section id="background">
-<h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
-<p>This tutorial builds on the concepts covered in the
-<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/learning/converter_connectivity_tutorial/index.html#conv-connect-tutorial" target="_blank" title="(in System Level Documentation)"><span>Converter Connectivity Tutorial</span></a>.</p>
-<p>It also serves as a preview to the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/learning/tutorial_prec_adc/index.html#precision-adc-tutorial" target="_blank" title="(in System Level Documentation)"><span>Precision ADC Tutorial</span></a> that starts to
-deal with analyzing time series data.</p>
-</section>
 <section id="slide-deck-and-video">
 <h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading"></a></h2>
 <p>Since this tutorial is also designed to be presented as a live, hands-on
@@ -346,37 +398,87 @@ circuit. It will be re-done to target the ADALM-LSMSPG board.</p>
 </div></div></section>
 <section id="preparation-a-few-resources-for-learning-python">
 <h2>Preparation - a few resources for learning Python<a class="headerlink" href="#preparation-a-few-resources-for-learning-python" title="Link to this heading"></a></h2>
-<p>A wonderful resource for learning Python is <a class="icon link reference external" href="https://learnpython.org/" target="_blank">learnpython.org</a>, runs right in your browser without needing to
-install anything.</p>
+<p>While this is not intended to be a Python-centric workshop, it sort of ends up
+that way by default because Python is so easy to use and flexible, so we use it
+as a tool througout. Even if you are not using Python in your end application,
+it often still makes sense as an intermediate tool during development. If you’re
+not at least somewhat familiar with the language, A wonderful resource for
+learning Python is <a class="icon link reference external" href="https://learnpython.org/" target="_blank">learnpython.org</a>, runs right in
+your browser without needing to install anything. We’re not going to go super
+deep into Python arcana and minutia by any means - the “Learn the Basics”
+section will leave you more than prepared for what follows.</p>
 <p>And despite the name, <a class="icon link reference external" href="https://nostarch.com/python-kids-2nd-edition" target="_blank">Python for Kids</a> is surprisingly good for
 adults, too!</p>
 </section>
-<section id="what-does-just-enough-software-look-like">
-<h2>What does “Just Enough Software” look like?<a class="headerlink" href="#what-does-just-enough-software-look-like" title="Link to this heading"></a></h2>
+<section id="software-stack-background-and-to-deliver-you-from-the-preliminary-terrors">
+<h2>Software Stack Background, and, To Deliver You from the Preliminary Terrors<a class="headerlink" href="#software-stack-background-and-to-deliver-you-from-the-preliminary-terrors" title="Link to this heading"></a></h2>
+<p>A typical Linux-based software stack is shown in <a class="reference internal" href="#fig-annotated-stack"><span class="std std-numref">Figure 3</span></a>.
+It’s pretty scary, even a relatively simple application exercises most of these
+layers, and a full understanding of each and every layer is outside of the
+skillset of most engineers - including most software engineers. <strong>And that’s
+okay</strong>.</p>
+<figure class="align-center" id="id4">
+<span id="fig-annotated-stack"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/annotated_stack.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/annotated_stack.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/annotated_stack.png" style="width: 700px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Annotated Linux software stack</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For engineers that are bringing their brainstorms to life for the first time,
+building proof of concept, and early prototypes, you don’t need to understand
+all of the layers. The goal is to operate at a point in the stack where you can
+quickly add value - try out a couple of ADCs, DACs, IMUs, or other parts without
+having to start from scratch each time. Build basic command line programs that
+achieve proof of concept, deferring pretty, focus-group vetted GUIs for later.
+The goal of ADI DataX is to expose this operating point as efficiently as
+possible so you can get to work.</p>
 </section>
-<section id="software-stack-background">
-<h2>Software Stack Background<a class="headerlink" href="#software-stack-background" title="Link to this heading"></a></h2>
-</section>
-<section id="introducing-an-exciting-new-product-that-we-ll-apply-our-skills">
-<h2>Introducing an exciting new product that we’ll apply our skills<a class="headerlink" href="#introducing-an-exciting-new-product-that-we-ll-apply-our-skills" title="Link to this heading"></a></h2>
+<section id="introducing-the-exciting-new-products-to-which-we-ll-apply-our-skills">
+<h2>Introducing the exciting new products to which we’ll apply our skills<a class="headerlink" href="#introducing-the-exciting-new-products-to-which-we-ll-apply-our-skills" title="Link to this heading"></a></h2>
+<p>The temperature sensor is intended as an “as simple as possible” application.
+The temperature sensor IC itself is the ADT75, which has cross-references from
+multiple manufacturers (all inferior to Analog Devices, of course!). The Linux
+device driver has been in the kernel since at least version 2 (1998), and you
+can buy a ten-pack of breakout boards for $15 USD.</p>
 </section>
 <section id="component-selection-based-on-software-support-vs-pure-analog-performance">
 <h2>Component selection based on software support (vs. pure analog performance)<a class="headerlink" href="#component-selection-based-on-software-support-vs-pure-analog-performance" title="Link to this heading"></a></h2>
+<p>Talk about the importance of robust, long-term software support. Reference <a class="icon link reference external" href="https://www.analog.com/en/resources/analog-dialogue/articles/free-and-open-source-software.html" target="_blank">Free
+and Open-Source Software—An Analog Devices Perspective</a></p>
+<p>Links out to drivers on kernel.org</p>
+</section>
+<section id="hands-on-working-through-a-simple-but-complete-case-study">
+<h2><strong>Hands-On!</strong> Working through a simple, but complete case study<a class="headerlink" href="#hands-on-working-through-a-simple-but-complete-case-study" title="Link to this heading"></a></h2>
+<p>Let’s actually build up a working prototype of these devices. We are going to
+start with an entirely Linux-based flow, with all software running on the Linux
+machine itself. Does this make sense when our product will ultimately be
+targeting a low-cost microcontroller running bare-metal C? You bet! Remember,
+With ADI DataX, switching between ecosystem layers is cheap - Use Linux to get
+up and running quickly, debug circuitry, verify analog performence. Then there
+is little to no barrier to switching to bare metal or Zephyr as development
+continues.</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
+<p>ADALM-LSMSPG overview, block diagram. Reference <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/tools/adalm-lsmspg/index.html#adalm-lsmspg" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">ADALM-LSMSPG User Guide</span></a></p>
 </section>
 <section id="booting-the-system">
 <h2>Booting the system<a class="headerlink" href="#booting-the-system" title="Link to this heading"></a></h2>
+<p>Boot the system, run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+<p>You see the Raspberry Pi’s cpu_thermal
+sensor, undervoltage warning comparator, but nothing else.</p>
 </section>
 <section id="configuring-the-system-and-rebooting">
 <h2>Configuring the System (and rebooting!)<a class="headerlink" href="#configuring-the-system-and-rebooting" title="Link to this heading"></a></h2>
-<p>The Raspberry Pi-based hardware and Linux setup mirrors that of the ADXL345 used
-in the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/learning/converter_connectivity_tutorial/index.html#conv-connect-tutorial" target="_blank" title="(in System Level Documentation)"><span>Converter Connectivity Tutorial</span></a>, including bringing up the
-pyadi-iio example. Follow the instructions for downloading and installing ADI
-Kuiper Linux, and editing config.txt. The only difference is the device tree
-overlay to be added to config.txt. For this exercise, add the following lines to
-config.txt:</p>
+<p>&lt;&lt;Point out to Kuiper, maybe refernce the ADALM-LSMSPG user guide&gt;&gt;</p>
+<p>Follow the instructions for downloading and installing ADI Kuiper
+Linux, and editing config.txt. The only difference is the device tree overlay to
+be added to config.txt. For this exercise, Prepare an SD card with ADI Kuiper
+Linux following the instructions at <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/linux/kuiper/index.html#kuiper" target="_blank" title="(in System Level Documentation)"><span class="xref std std-ref">ADI Kuiper Linux Guide</span></a>.</p>
+<p>Add the following to the end of <code class="docutils literal notranslate"><span class="pre">/boot/config.txt</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dtoverlay=rpi-adalm-lsmspg
 
 # Heartbeat blinky:
@@ -394,36 +496,87 @@ a shutdown when shorted to ground.</p>
 </section>
 <section id="command-line-tools-hello-ad5592r">
 <h2>Command Line Tools (Hello, AD5592r!)<a class="headerlink" href="#command-line-tools-hello-ad5592r" title="Link to this heading"></a></h2>
+<p>Open a terminal and run the following command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>iio_info
+</pre></div>
+</div>
+<p>again. If all goes well, you should see a few pages of information about the
+AD5592r, AD5593r, LM75, and GPIOs.</p>
 </section>
 <section id="iio-oscilloscope">
 <h2>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading"></a></h2>
+<p>The ADI IIO Oscilloscope is a cross platform GUI application for basic
+interaction with IIO contexts such as evaluation boards running on standard
+platforms, standalone modules such as the ADALM-Pluto or AD-JUPITER-EBZ
+software-defined radio. The application supports plotting of the captured data
+in four different modes (time domain, frequency domain, constellation and
+cross-correlation). The application also allows to view and modify IIO
+Attributes and settings of the evaluation board’s devices.</p>
+<p>IIO Oscilloscope is a legacy application that is being slowly deprecated in
+favor of Scopy, so we are only going to cover it briefly.</p>
+<p>&lt;&lt;screenshot of IIO Oscilloscope, with one of the blinky GPIOs shown.&gt;&gt;</p>
+</section>
+<section id="scopy">
+<h2>Scopy<a class="headerlink" href="#scopy" title="Link to this heading"></a></h2>
+<p>Scopy is a multi-functional software toolset with full instrument support for
+the ADALM2000 including oscilloscope, spectrum analyzer function generator,
+network analyzer, and tools for digital debug. From Scopy version 2.0, it now
+supports general-purpose interaction with IIO contexts, and largely supersedes
+IIO Oscilloscope.</p>
+<p>Let’s interact with the ADALM-LSMSPG board using Scopy…</p>
+<p>&lt;&lt;Walk through blinking LEDs, reading / writing voltages, reading
+temperatures.&gt;&gt;</p>
 </section>
 <section id="device-trees-telling-linux-what-s-connected">
 <h2>Device Trees: Telling Linux what’s connected<a class="headerlink" href="#device-trees-telling-linux-what-s-connected" title="Link to this heading"></a></h2>
+<p>Examine device tree overlay, include annotated figure from presentation.</p>
 </section>
 <section id="pyadi-iio-and-examples">
 <h2>Pyadi-iio And examples<a class="headerlink" href="#pyadi-iio-and-examples" title="Link to this heading"></a></h2>
-</section>
-<section id="hands-on-working-through-a-simple-but-complete-case-study">
-<h2><strong>Hands-On!</strong> Working through a simple, but complete case study<a class="headerlink" href="#hands-on-working-through-a-simple-but-complete-case-study" title="Link to this heading"></a></h2>
+<p>Open up Thonny, and:</p>
+<p>run lm75_example.py</p>
+<p>run ad5592r_curve_tracer.py</p>
+<p>run ad5592r_curve_tracer.py</p>
 </section>
 <section id="next-steps-developing-on-a-remote-host">
 <h2>Next Steps: Developing on a remote host<a class="headerlink" href="#next-steps-developing-on-a-remote-host" title="Link to this heading"></a></h2>
+<p>As wonderful as Thonny is, it’s often advantageious (or essential) to develop on
+a much more powerful machine. While the temperature sensor requires little to no
+math, and the curve tracer requires a tolerable amount of math, high-bandwidth,
+RF, and radar applications will push the Raspberry Pi’s limits. And if the
+application itself doesn’t the development environment - VSCode, MATLAB,
+PyCharm, etc. will. Luckily the IIO subsystem supports multiple physical
+backends, including Serial, USB, and network. Kuiper Linux is configured to run
+a program called “iiod” (IIO daemon) on startup. This process serves up local
+IIO devices over a network connection that can be accessed from anywhere on the
+network. Open up a terminal again and run:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>iio_info -u ip:localhost
+</pre></div>
+</div>
+<p>… same information as no argument! We’ve told iio_info to not look at locally
+connected devices, rather, for devices on the network. It just so happens that
+the network never left the machine, but it certainly could have. Here is a
+screenshot of iio_info running on a Windows 11 machine:</p>
+<p>&lt;&lt;Screenshot of iio_info -u ip:analog.local&gt;&gt;</p>
+<p>So now we can fire up our favorite bloated (oops - “full featured”) Python,
+MATLAB, C#, etc. development environment, and communicate with the target
+hardware over a network connection.</p>
 </section>
-<section id="next-steps-other-languages-c-c-matlab-etc">
-<h2>Next Steps: Other languages (C++, C#, MATLAB, etc.)<a class="headerlink" href="#next-steps-other-languages-c-c-matlab-etc" title="Link to this heading"></a></h2>
+<section id="language-support-c-c">
+<h2>Language Support: C, C++<a class="headerlink" href="#language-support-c-c" title="Link to this heading"></a></h2>
+<p>Of course we’re not limited to Python! The libiio is written natively in C, so
+we can write a simple C program that runs natively in Linux, on the Raspberry
+Pi. In this section, we’ll go through this process.</p>
+<p><a class="reference internal" href="native_c_example/index.html"><span class="doc">Continue to C, C++ Tutorial</span></a></p>
+<div class="toctree-wrapper compound">
+</div>
 </section>
-<section id="next-steps-ros2-integration">
-<h2>Next Steps: ROS2 Integration<a class="headerlink" href="#next-steps-ros2-integration" title="Link to this heading"></a></h2>
-<p>While the previous exercises used Python and pyadi-iio, the IIO framework can
-also be integrated with <strong>ROS2</strong> (Robot Operating System 2) for robotics and
-automation applications. The <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_iio</a>
-ROS2 package provides a bridge between IIO devices and the ROS2 ecosystem,
-exposing device attributes as ROS2 topics and services.</p>
-<p>In this section, we will run a servo motor control demo that uses the
-ADALM-LSMSPG to generate position commands and read feedback, demonstrating
-how IIO devices can be integrated into a ROS2-based control system.</p>
-<p><a class="reference internal" href="ros2_integration/index.html"><span class="doc">Continue to ROS2 Integration Tutorial</span></a></p>
+<section id="language-support-matlab">
+<h2>Language Support: MATLAB<a class="headerlink" href="#language-support-matlab" title="Link to this heading"></a></h2>
+<p>The LM75, AD5592r, and AD5593r are supported in ADI’s MATLAB precision toolbox.
+In this section, we’ll work through porting the temperature sensor and curve
+tracer to MATLAB.</p>
+<p><a class="reference internal" href="matlab_example/index.html"><span class="doc">Continue to MATLAB Tutorial</span></a></p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -448,52 +601,10 @@ designing the final board with the target processor. The devices can then be
 exposed over the iio network backend using the “tinyiiod server”. This allows
 you to run the same proof of concept Python (or C or MATLAB or C#) code that
 previously talked to the Raspberry Pi, to talk to your actual embedded target.</p>
-<p>To see this in action, let’s load up the pre-built ADALM-LSMSPG tinyiiod server.
-Go to <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/releases/latest" target="_blank">ADALM-LSMSPG firmware (no-OS releases)</a>,
-download the adalm-lsmspg.zip file, and unzip to a convenient location. Shut
-down your Raspberry Pi properly, then disconnect the 40-pin ribbon cable from the
-ADALM-LSMSPG board. Install a MAX32666FTHR in the FTHR sockets, taking care to
-align the pins properly. Connect the supplied MAX PICO board to the MAX32666FTHR
-programming header. Connect both the MAX PICO and MAX32666FTHR to the host
-computer via USB-A to Micro-B cables. Drag and drop the
-adalm-lsmspg_maxim_iio.hex file into the DAPLINK DAPLINK mass storage device
-(typically <code class="docutils literal notranslate"><span class="pre">D:</span></code> or <code class="docutils literal notranslate"><span class="pre">E:</span></code> on Windows systems). The DAPLINK drive will
-auto-eject, and the heartbeat LED on the ADALM-LSMSPG will begin blinking.
-(Almost done!)</p>
-<p>Unlike network and USB backends, the iio serial backend is not discoverable so
-we will need to find out what serial port the MAX32666FTHR enumerates as.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Back in “ye oldyn days” serial ports were dedicated D-SUB 9 or 25 pin
-connectors on the host computer, assigned to a particular COM or TTY port.
-Those days are mostly gone; “virtual” USB serial ports are incredibly
-convenient as they allow the use of standard serial port software APIs, the
-drawback is the port numbering can be somewhat arbitrary and inconsistent.</p>
+<p>To see this in action:</p>
+<p><a class="reference internal" href="tinyiiod_example/index.html"><span class="doc">Continue to tinyiiod Tutorial</span></a></p>
+<div class="toctree-wrapper compound">
 </div>
-<p>There are various ways to find the serial port - Device Manager on Windows, and
-looking for tty* ports in /dev on Linux, but we can also use IIO Oscilloscope or
-Scopy from the previous experiments.</p>
-<p>Once the serial port is located, run the same curve tracer scripts as before,
-but append the COM / tty port URI:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ad5592r_curve_tracer.py -u serial:COMx
-ad5593r_curve_tracer.py -u serial:COMx
-</pre></div>
-</div>
-<p>where “x” is the COM port number identified. The output should be identical to
-previous runs using the local backend, as shown in <a class="reference internal" href="#fig-ct-tinyiiod"><span class="std std-numref">Figure 7</span></a></p>
-<figure class="align-center" id="id4">
-<span id="fig-ct-tinyiiod"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/workshops/just_enough_datax/docs/learning/tools_for_ls/curvetraceroutput.png" style="width: 700px; height: 400px;" />
-</a>
-<figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Curve tracer plots, serial backend</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
-</figcaption>
-</figure>
-<p>At this point you can re-verify your top-level code, but on the actual target
-hardware (vs. evaluation boards or crude prototypes). While the devices and
-curve tracer application on the ADALM-LSMSPG are not terribly sensitive to
-noise, more sensitive applications - precision instrumentation, communications,
-sensing, etc. - will absolutely benefit from a quick check before beginning the
-potentially long embedded firmware development process.</p>
 </section>
 <section id="porting-to-a-fully-embedded-system">
 <h2>Porting to a Fully Embedded System<a class="headerlink" href="#porting-to-a-fully-embedded-system" title="Link to this heading"></a></h2>
@@ -504,92 +615,24 @@ and Analog Devices processors, as well as STM32, Raspberry Pi pico, AMD Xilinx
 and Altera soft processors, freeRTOS, ChibOS, and others. The framework is
 designed to be easily portable to other platforms as well.</p>
 <p>Let’s now migrate the curve tracer logic that until now ran in Python on a
-remote host into the embedded target, replacing the tinyiiod server entirely.
-While the ultimate goal of the curve tracer is to have a local display, that’s
-another layer of both hardware and software development that we can defer a bit
-longer with a little bit of creative thinking. Since there is a serial port
-available, we can test out the logic by printing values to a terminal, formatted
-as comma-separated variable (CSV) data for easy copy/paste into <a class="icon link reference external" href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> or other spreadsheet for plotting. And for a
-bit of <a class="icon link reference external" href="https://www.merriam-webster.com/dictionary/icing%20on%20the%20cake" target="_blank">icing on the cake</a> and
-nostalgia, we can also make an ASCII-art plot!</p>
-<p>Go back to the zip file from the no-OS release, and drag-and-drop the curve
-tracer example HEX file into the DAPLINK drive. Press the RESET button on the
-ADALM-LSMSPG and observe the output. The CSV data and ASCII-art plots will be
-printed to the terminal as shown in the figures below.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">ASCII-art NPN curve trace output</span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">AD5592R</span> <span class="p">(</span><span class="n">SPI</span><span class="p">)</span> <span class="o">-</span> <span class="n">NPN</span> <span class="n">Curve</span> <span class="n">Tracer</span> <span class="p">(</span><span class="n">Ic</span> <span class="n">vs</span> <span class="n">Vc</span><span class="p">)</span> <span class="o">===</span>
-<span class="n">Y</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Ic</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">7.16</span> <span class="n">mA</span><span class="p">)</span>
-<span class="n">X</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Vc</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">2.45</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="o">+------------------------------------------------------------+</span>
-<span class="o">|</span>         <span class="o">******</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">**</span> <span class="o">*</span>          <span class="o">|</span>
-<span class="o">|</span>        <span class="o">*</span>                                                   <span class="o">|</span>
-<span class="o">|</span>       <span class="o">*</span>                                                    <span class="o">|</span>
-<span class="o">|</span>      <span class="o">*</span>                                                     <span class="o">|</span>
-<span class="o">|</span>                                                            <span class="o">|</span>
-<span class="o">|</span>      <span class="o">*</span> <span class="o">**</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*</span>      <span class="o">|</span>
-<span class="o">|</span>     <span class="o">*</span> <span class="o">*</span>                                                    <span class="o">|</span>
-<span class="o">|</span>      <span class="o">*</span>                                                     <span class="o">|</span>
-<span class="o">|</span>     <span class="o">**</span>                                                     <span class="o">|</span>
-<span class="o">|</span>     <span class="o">*</span>                                                      <span class="o">|</span>
-<span class="o">|</span>    <span class="o">*</span>   <span class="o">***</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">**</span>    <span class="o">|</span>
-<span class="o">|</span>     <span class="o">***</span>                                                    <span class="o">|</span>
-<span class="o">|</span>    <span class="o">*</span>                                                       <span class="o">|</span>
-<span class="o">|</span>    <span class="o">**</span>                                                      <span class="o">|</span>
-<span class="o">|</span>    <span class="o">**</span>                                                      <span class="o">|</span>
-<span class="o">|</span>    <span class="o">*</span>  <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">***</span>  <span class="o">|</span>
-<span class="o">|</span>   <span class="o">*</span>  <span class="o">*</span>                                                     <span class="o">|</span>
-<span class="o">|</span>   <span class="o">***</span>                                                      <span class="o">|</span>
-<span class="o">|******</span> <span class="o">****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">****</span> <span class="o">*|</span>
-<span class="o">|</span>                                                            <span class="o">|</span>
-<span class="o">+------------------------------------------------------------+</span>
-<span class="mf">0.0</span>       <span class="mf">0.49</span>       <span class="mf">0.98</span>       <span class="mf">1.47</span>       <span class="mf">1.96</span>       <span class="mf">2.45</span> <span class="n">V</span>
-
-<span class="o">=====</span> <span class="n">AD5592R</span> <span class="n">Curve</span> <span class="n">Trace</span> <span class="n">Complete</span> <span class="o">=====</span>
-</pre></div>
+remote host into the embedded target, replacing the tinyiiod server entirely.</p>
+<p><a class="reference internal" href="standalone_no-os_example/index.html"><span class="doc">Continue to tinyiiod Tutorial</span></a></p>
+<div class="toctree-wrapper compound">
 </div>
+</section>
+<section id="ecosystem-support-ros2-integration">
+<h2>Ecosystem Support: ROS2 Integration<a class="headerlink" href="#ecosystem-support-ros2-integration" title="Link to this heading"></a></h2>
+<p>While the previous exercises used Python and pyadi-iio, the IIO framework can
+also be integrated with <strong>ROS2</strong> (Robot Operating System 2) for robotics and
+automation applications. The <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_iio</a>
+ROS2 package provides a bridge between IIO devices and the ROS2 ecosystem,
+exposing device attributes as ROS2 topics and services.</p>
+<p>In this section, we will run a servo motor control demo that uses the
+ADALM-LSMSPG to generate position commands and read feedback, demonstrating
+how IIO devices can be integrated into a ROS2-based control system.</p>
+<p><a class="reference internal" href="ros2_integration/index.html"><span class="doc">Continue to ROS2 Integration Tutorial</span></a></p>
+<div class="toctree-wrapper compound">
 </div>
-<p>Similarly, you will see an ASCII-art PNP curve trace similar to the figure below.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">ASCII-art PNP curve trace output</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">AD5593R</span> <span class="p">(</span><span class="n">I2C</span><span class="p">)</span> <span class="o">-</span> <span class="n">PNP</span> <span class="n">Curve</span> <span class="n">Tracer</span> <span class="p">(</span><span class="n">Ic</span> <span class="n">vs</span> <span class="n">Vc</span><span class="p">)</span> <span class="o">===</span>
-<span class="n">Y</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="o">|</span><span class="n">Ic</span><span class="o">|</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">5.62</span> <span class="n">mA</span><span class="p">)</span>
-<span class="n">X</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Vc</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">2.50</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="o">+------------------------------------------------------------+</span>
-<span class="o">|</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*******|</span>
-<span class="o">|</span>                                                         <span class="o">*</span>  <span class="o">|</span>
-<span class="o">|</span>                                                        <span class="o">**</span>  <span class="o">|</span>
-<span class="o">|</span>                                                       <span class="o">**</span>   <span class="o">|</span>
-<span class="o">|</span>  <span class="o">**</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">****</span> <span class="o">*</span>   <span class="o">|</span>
-<span class="o">|</span>                                                        <span class="o">*</span>   <span class="o">|</span>
-<span class="o">|</span>                                                        <span class="o">*</span>   <span class="o">|</span>
-<span class="o">|</span>                                                       <span class="o">*</span>    <span class="o">|</span>
-<span class="o">|</span>                                                      <span class="o">*</span> <span class="o">*</span>   <span class="o">|</span>
-<span class="o">|</span>                                                            <span class="o">|</span>
-<span class="o">|</span>                                        <span class="o">*****</span> <span class="o">*******</span> <span class="o">*</span>     <span class="o">|</span>
-<span class="o">|</span>      <span class="o">*****</span> <span class="o">******</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*</span>               <span class="o">*</span>    <span class="o">|</span>
-<span class="o">|</span>                                                            <span class="o">|</span>
-<span class="o">|</span>                                                       <span class="o">*</span>    <span class="o">|</span>
-<span class="o">|</span>                                                      <span class="o">*</span>     <span class="o">|</span>
-<span class="o">|</span>                                                            <span class="o">|</span>
-<span class="o">|</span>                                                   <span class="o">***</span>      <span class="o">|</span>
-<span class="o">|</span>                                   <span class="o">*</span> <span class="o">**</span> <span class="o">******</span> <span class="o">****</span>         <span class="o">|</span>
-<span class="o">|</span>         <span class="o">**</span> <span class="o">******</span> <span class="o">******</span> <span class="o">******</span> <span class="o">**</span> <span class="o">*</span>                       <span class="o">|</span>
-<span class="o">|</span>         <span class="o">*</span>                                                  <span class="o">|</span>
-<span class="o">+------------------------------------------------------------+</span>
-<span class="mf">0.0</span>       <span class="mf">0.50</span>       <span class="mf">1.00</span>       <span class="mf">1.50</span>       <span class="mf">2.00</span>       <span class="mf">2.50</span> <span class="n">V</span>
-
-<span class="o">=====</span> <span class="n">AD5593R</span> <span class="n">Curve</span> <span class="n">Trace</span> <span class="n">Complete</span> <span class="o">=====</span>
-</pre></div>
-</div>
-</div>
-<p>At this point all of the math, algorithms, and overall operation of the curve
-tracer are running in the embedded target, and we’re able to verify everything
-is operating properly and with full (analog) performance. The next step can be
-to connect a local display, or enable a server for display on a remote screen
-such as a tablet or mobile device.</p>
 </section>
 <section id="next-steps-no-os-development-on-linux-you-bet">
 <h2>Next Steps: No-OS development on Linux? You bet!<a class="headerlink" href="#next-steps-no-os-development-on-linux-you-bet" title="Link to this heading"></a></h2>
@@ -625,6 +668,10 @@ tutorial.</p>
 </section>
 <section id="additional-references">
 <h2>Additional References<a class="headerlink" href="#additional-references" title="Link to this heading"></a></h2>
+<p>This tutorial builds on the concepts covered in the
+<a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/learning/converter_connectivity_tutorial/index.html#conv-connect-tutorial" target="_blank" title="(in System Level Documentation)"><span>Converter Connectivity Tutorial</span></a>.</p>
+<p>It also serves as a preview to the <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/learning/tutorial_prec_adc/index.html#precision-adc-tutorial" target="_blank" title="(in System Level Documentation)"><span>Precision ADC Tutorial</span></a> that starts to
+deal with analyzing time series data.</p>
 </section>
 </section>
 
@@ -633,7 +680,7 @@ tutorial.</p>
               <div class="related">
                 &nbsp;
     <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Learning! Tutorials, Workshops, Etc</a>
-    <a href="ros2_integration/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ROS2 Integration with IIO Devices</a>
+    <a href="native_c_example/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Language Support: C, C++</a>
               </div>
           
         </div>

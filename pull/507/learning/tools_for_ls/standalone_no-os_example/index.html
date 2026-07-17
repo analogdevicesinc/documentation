@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is a work in progress." name="description" />
+
+    <title>Porting to a Fully Embedded System &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ROS2 Integration with IIO Devices" href="../ros2_integration/index.html" />
+    <link rel="prev" title="IIO as a Tool for Migrating to an Embedded Implementation" href="../tinyiiod_example/index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Porting to a Fully Embedded System</a></li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Learning</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../native_c_example/index.html">Language Support: C, C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../matlab_example/index.html">Language Support: MATLAB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tinyiiod_example/index.html">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Porting to a Fully Embedded System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ros2_integration/index.html">ROS2 Integration with IIO Devices</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../../index.html">Learning! Tutorials, Workshops, Etc</a></li><li><a href="../index.html">ADI DataX™ Tools for Low Speed Mixed Signal System Design</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="porting-to-a-fully-embedded-system">
+<span id="datax-no-os-standalone"></span><h1>Porting to a Fully Embedded System<a class="headerlink" href="#porting-to-a-fully-embedded-system" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a work in progress.</p>
+</div>
+<p>While the ultimate goal of the curve tracer is to have a local display, that’s
+another layer of both hardware and software development that we can defer a bit
+longer with a little bit of creative thinking. Since there is a serial port
+available, we can test out the logic by printing values to a terminal, formatted
+as comma-separated variable (CSV) data for easy copy/paste into <a class="icon link reference external" href="https://www.libreoffice.org/" target="_blank">LibreOffice</a> or other spreadsheet for plotting. And for a
+bit of <a class="icon link reference external" href="https://www.merriam-webster.com/dictionary/icing%20on%20the%20cake" target="_blank">icing on the cake</a> and
+nostalgia, we can also make an ASCII-art plot!</p>
+<p>Go back to the zip file from the no-OS release, and drag-and-drop the curve
+tracer example HEX file into the DAPLINK drive. Press the RESET button on the
+ADALM-LSMSPG and observe the output. The CSV data and ASCII-art plots will be
+printed to the terminal as shown in the figures below.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">ASCII-art NPN curve trace output</span><a class="headerlink" href="#id1" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">AD5592R</span> <span class="p">(</span><span class="n">SPI</span><span class="p">)</span> <span class="o">-</span> <span class="n">NPN</span> <span class="n">Curve</span> <span class="n">Tracer</span> <span class="p">(</span><span class="n">Ic</span> <span class="n">vs</span> <span class="n">Vc</span><span class="p">)</span> <span class="o">===</span>
+<span class="n">Y</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Ic</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">7.16</span> <span class="n">mA</span><span class="p">)</span>
+<span class="n">X</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Vc</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">2.45</span> <span class="n">V</span><span class="p">)</span>
+
+<span class="o">+------------------------------------------------------------+</span>
+<span class="o">|</span>         <span class="o">******</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">**</span> <span class="o">*</span>          <span class="o">|</span>
+<span class="o">|</span>        <span class="o">*</span>                                                   <span class="o">|</span>
+<span class="o">|</span>       <span class="o">*</span>                                                    <span class="o">|</span>
+<span class="o">|</span>      <span class="o">*</span>                                                     <span class="o">|</span>
+<span class="o">|</span>                                                            <span class="o">|</span>
+<span class="o">|</span>      <span class="o">*</span> <span class="o">**</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*</span>      <span class="o">|</span>
+<span class="o">|</span>     <span class="o">*</span> <span class="o">*</span>                                                    <span class="o">|</span>
+<span class="o">|</span>      <span class="o">*</span>                                                     <span class="o">|</span>
+<span class="o">|</span>     <span class="o">**</span>                                                     <span class="o">|</span>
+<span class="o">|</span>     <span class="o">*</span>                                                      <span class="o">|</span>
+<span class="o">|</span>    <span class="o">*</span>   <span class="o">***</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">**</span>    <span class="o">|</span>
+<span class="o">|</span>     <span class="o">***</span>                                                    <span class="o">|</span>
+<span class="o">|</span>    <span class="o">*</span>                                                       <span class="o">|</span>
+<span class="o">|</span>    <span class="o">**</span>                                                      <span class="o">|</span>
+<span class="o">|</span>    <span class="o">**</span>                                                      <span class="o">|</span>
+<span class="o">|</span>    <span class="o">*</span>  <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">***</span>  <span class="o">|</span>
+<span class="o">|</span>   <span class="o">*</span>  <span class="o">*</span>                                                     <span class="o">|</span>
+<span class="o">|</span>   <span class="o">***</span>                                                      <span class="o">|</span>
+<span class="o">|******</span> <span class="o">****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">*****</span> <span class="o">****</span> <span class="o">*|</span>
+<span class="o">|</span>                                                            <span class="o">|</span>
+<span class="o">+------------------------------------------------------------+</span>
+<span class="mf">0.0</span>       <span class="mf">0.49</span>       <span class="mf">0.98</span>       <span class="mf">1.47</span>       <span class="mf">1.96</span>       <span class="mf">2.45</span> <span class="n">V</span>
+
+<span class="o">=====</span> <span class="n">AD5592R</span> <span class="n">Curve</span> <span class="n">Trace</span> <span class="n">Complete</span> <span class="o">=====</span>
+</pre></div>
+</div>
+</div>
+<p>Similarly, you will see an ASCII-art PNP curve trace similar to the figure below.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">ASCII-art PNP curve trace output</span><a class="headerlink" href="#id2" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">===</span> <span class="n">AD5593R</span> <span class="p">(</span><span class="n">I2C</span><span class="p">)</span> <span class="o">-</span> <span class="n">PNP</span> <span class="n">Curve</span> <span class="n">Tracer</span> <span class="p">(</span><span class="n">Ic</span> <span class="n">vs</span> <span class="n">Vc</span><span class="p">)</span> <span class="o">===</span>
+<span class="n">Y</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="o">|</span><span class="n">Ic</span><span class="o">|</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">5.62</span> <span class="n">mA</span><span class="p">)</span>
+<span class="n">X</span><span class="o">-</span><span class="n">axis</span><span class="p">:</span> <span class="n">Vc</span> <span class="p">(</span><span class="mi">0</span> <span class="n">to</span> <span class="mf">2.50</span> <span class="n">V</span><span class="p">)</span>
+
+<span class="o">+------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*******|</span>
+<span class="o">|</span>                                                         <span class="o">*</span>  <span class="o">|</span>
+<span class="o">|</span>                                                        <span class="o">**</span>  <span class="o">|</span>
+<span class="o">|</span>                                                       <span class="o">**</span>   <span class="o">|</span>
+<span class="o">|</span>  <span class="o">**</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">****</span> <span class="o">*</span>   <span class="o">|</span>
+<span class="o">|</span>                                                        <span class="o">*</span>   <span class="o">|</span>
+<span class="o">|</span>                                                        <span class="o">*</span>   <span class="o">|</span>
+<span class="o">|</span>                                                       <span class="o">*</span>    <span class="o">|</span>
+<span class="o">|</span>                                                      <span class="o">*</span> <span class="o">*</span>   <span class="o">|</span>
+<span class="o">|</span>                                                            <span class="o">|</span>
+<span class="o">|</span>                                        <span class="o">*****</span> <span class="o">*******</span> <span class="o">*</span>     <span class="o">|</span>
+<span class="o">|</span>      <span class="o">*****</span> <span class="o">******</span> <span class="o">******</span> <span class="o">*****</span> <span class="o">******</span> <span class="o">*</span>               <span class="o">*</span>    <span class="o">|</span>
+<span class="o">|</span>                                                            <span class="o">|</span>
+<span class="o">|</span>                                                       <span class="o">*</span>    <span class="o">|</span>
+<span class="o">|</span>                                                      <span class="o">*</span>     <span class="o">|</span>
+<span class="o">|</span>                                                            <span class="o">|</span>
+<span class="o">|</span>                                                   <span class="o">***</span>      <span class="o">|</span>
+<span class="o">|</span>                                   <span class="o">*</span> <span class="o">**</span> <span class="o">******</span> <span class="o">****</span>         <span class="o">|</span>
+<span class="o">|</span>         <span class="o">**</span> <span class="o">******</span> <span class="o">******</span> <span class="o">******</span> <span class="o">**</span> <span class="o">*</span>                       <span class="o">|</span>
+<span class="o">|</span>         <span class="o">*</span>                                                  <span class="o">|</span>
+<span class="o">+------------------------------------------------------------+</span>
+<span class="mf">0.0</span>       <span class="mf">0.50</span>       <span class="mf">1.00</span>       <span class="mf">1.50</span>       <span class="mf">2.00</span>       <span class="mf">2.50</span> <span class="n">V</span>
+
+<span class="o">=====</span> <span class="n">AD5593R</span> <span class="n">Curve</span> <span class="n">Trace</span> <span class="n">Complete</span> <span class="o">=====</span>
+</pre></div>
+</div>
+</div>
+<p>At this point all of the math, algorithms, and overall operation of the curve
+tracer are running in the embedded target, and we’re able to verify everything
+is operating properly and with full (analog) performance. The next step can be
+to connect a local display, or enable a server for display on a remote screen
+such as a tablet or mobile device.</p>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../tinyiiod_example/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">IIO as a Tool for Migrating to an Embedded Implementation</a>
+    <a href="../ros2_integration/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ROS2 Integration with IIO Devices</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
