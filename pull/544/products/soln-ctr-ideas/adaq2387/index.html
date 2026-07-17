@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is a draft, very much WIP document in a fork of https://github.com/analogdevicesinc/documentation" name="description" />
+
+    <title>ADAQ2387x and LTC2387 family SAR ADC Developer Resources &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Single-Channel, SPI-interface SAR ADC Developer Resources" href="../adc_pulsar_single/index.html" />
+    <link rel="prev" title="Product Solution Centers" href="../index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a><ul>
+<li><a class="reference internal" href="#family-overview">Family Overview</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#evaluation-boards-and-development-platforms">Evaluation Boards and Development Platforms</a><ul>
+<li><a class="reference internal" href="#fmc-fpga-mezzanine-card">FMC (FPGA Mezzanine Card)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-resources">Software Resources</a><ul>
+<li><a class="reference internal" href="#standard-application-software">Standard Application Software</a></li>
+<li><a class="reference internal" href="#hdl-ip-core">HDL IP Core</a></li>
+<li><a class="reference internal" href="#linux-device-drivers">Linux Device Drivers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#board-and-platform-summary">Board and Platform Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Product Solution Centers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355/index.html">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Product Solution Centers</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="adaq2387x-and-ltc2387-family-sar-adc-developer-resources">
+<span id="adaq2387"></span><h1>ADAQ2387x and LTC2387 family SAR ADC Developer Resources<a class="headerlink" href="#adaq2387x-and-ltc2387-family-sar-adc-developer-resources" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This is a draft, very much WIP document in a fork of <a class="icon link reference external" href="https://github.com/analogdevicesinc/documentation" target="_blank">https://github.com/analogdevicesinc/documentation</a></p>
+</div>
+<section id="family-overview">
+<h2>Family Overview<a class="headerlink" href="#family-overview" title="Link to this heading"></a></h2>
+<p>This page describes various hardware and software resources available for evaluating and developing with certain Analog Devices’ single-channel, SPI-interface, successive-approximation (SAR) Analog to Digital Converters.</p>
+<p>The evaluation and development boards across these devices use the industry-standard FMC connector, compatible with industry-standard and proprietary carrier (processor/FPGA) boards. The choice depends on the developer’s needs; If the development flow involves software and HDL development on standard carrier boards, it is best to use either the Pmod or FMC boards. Review the example projects and their user guides for the various options in order to make the best choice.</p>
+<p>Wherever possible, pre-built programming and boot files are provided for the various carrier / eval board combinations. These typically implement an IIO (Industrial Input-Output) server, compatible with a wide array of software tools and language bindings, easing development considerably.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs. In general combinations fall into two categories:</p>
+<p>The FMC eval boards can target either the SDP-H1 board or standard development platforms, while the SDP eval boards can only target the SDP-B or SDP-H1 board. The eval boards can interface to legacy evaluation boards and software are geared toward performance evaluation, with Windows-based GUI software that computes typical metrics such as THD, SNR, linearity, etc. These are closed-source, and further development requires moving to other controller boards and software development environments.</p>
+<p>The second category of development systems is based on commercially available development platforms running open-source software, firmware, and HDL. Examples for this family of ADCs are shown in <a class="reference internal" href="#fig-2387-iio-systems"><span class="std std-numref">Figure 1</span></a>. These systems are based on the Linux Industrial Input/Output (IIO) framework and are much more flexible, with multiple cross-platform options for both evaluation software and development software.</p>
+<figure class="align-center" id="id1">
+<span id="fig-2387-iio-systems"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adaq2387/2387x_iio_systems_block_diags.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adaq2387/2387x_iio_systems_block_diags.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adaq2387/2387x_iio_systems_block_diags.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">IIO-Based Development System</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="evaluation-boards-and-development-platforms">
+<h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
+<section id="fmc-fpga-mezzanine-card">
+<h3>FMC (FPGA Mezzanine Card)<a class="headerlink" href="#fmc-fpga-mezzanine-card" title="Link to this heading"></a></h3>
+<p>This is an industry standard, also known as VITA57. FMC is a widely used standard for both COTS and development carriers and module cards. FMC evaluation boards on this page are supported on the ZedBoard carrier board as well as the ADI proprietary SDP-H1 board. Pre-built example projects for the ZedBoard are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.) Important: The SDP-H1 is ADI proprietary, and works in conjunction with ACE software or product-specific evaluation software package. It is not intended as a development platform, and source code is not provided.</p>
+</section>
+</section>
+<section id="software-resources">
+<h2>Software Resources<a class="headerlink" href="#software-resources" title="Link to this heading"></a></h2>
+<section id="standard-application-software">
+<h3>Standard Application Software<a class="headerlink" href="#standard-application-software" title="Link to this heading"></a></h3>
+<p>The HDL, Linux, and no-OS example projects are typically based on the Linux Industrial Input-Output (IIO) framework. This maximizes flexibility, as the framework is cross-platform (Windows, Linux, Mac) and supports multiple languages (C, C++, C#, Python, MATLAB, and others). The projects are also supported by the ACE evaluation GUI, and the Scopy multi-purpose data acquisition GUI.</p>
+</section>
+<section id="hdl-ip-core">
+<h3>HDL IP Core<a class="headerlink" href="#hdl-ip-core" title="Link to this heading"></a></h3>
+<p>The HDL for these devices is based on the SPI Engine IP core, user guide here: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/axi_ltc2387/index.html" target="_blank">AXI LTC2387</a>, and PWM IP core, which generates the sample rate from the master clock.</p>
+<p>The example project for these devices is described at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/cn0577/index.html" target="_blank">CN0577 HDL project</a>.</p>
+<p>The example project targets the <a class="icon adi reference external" href="https://www.analog.com/cn0577" target="_blank">CN0577 Analog Front End and Digital Interface for Serial LVDS SAR ADCs</a>, and can be parameterized for each device, and building the project generates a set of boot files that can be run on the target platform.</p>
+</section>
+<section id="linux-device-drivers">
+<h3>Linux Device Drivers<a class="headerlink" href="#linux-device-drivers" title="Link to this heading"></a></h3>
+<p>The Linux driver for these devices is presently in development, with the goal of having a single, unified driver covering all devices and the associated HDL code.</p>
+<p>The LTC2387 driver is in upstream review, source at <a class="icon link reference external" href="https://github.com/analogdevicesinc/linux/blob/main/drivers/iio/adc/ltc2387.c" target="_blank">https://github.com/analogdevicesinc/linux/blob/main/drivers/iio/adc/ltc2387.c</a></p>
+<p>The device driver is compatible with the HDL example project, and provides a convenient programming interface for controlling the ADC and capturing data.</p>
+</section>
+</section>
+<section id="board-and-platform-summary">
+<h2>Board and Platform Summary<a class="headerlink" href="#board-and-platform-summary" title="Link to this heading"></a></h2>
+<p>The various eval boards and their supported platforms are listed below. The standard platforms can be used for product performance evaluation using ACE software, software development, and system prototyping. The ADI proprietary platforms are more constrained, and only work with the software listed.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Product Solution Centers</a>
+    <a href="../adc_pulsar_single/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Single-Channel, SPI-interface SAR ADC Developer Resources</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

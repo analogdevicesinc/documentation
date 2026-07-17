@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is a draft, very much WIP document in a fork of https://github.com/analogdevicesinc/documentation" name="description" />
+
+    <title>Single-Channel, SPI-interface SAR ADC Developer Resources &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="ADXL355 3-Axis MEMS Accelerometer Developer Resources" href="../adxl355/index.html" />
+    <link rel="prev" title="ADAQ2387x and LTC2387 family SAR ADC Developer Resources" href="../adaq2387/index.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Single-Channel, SPI-interface SAR ADC Developer Resources</a><ul>
+<li><a class="reference internal" href="#family-overview-and-adi-datax-framework-support">Family Overview and ADI DataX Framework Support</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#evaluation-boards-and-development-platforms">Evaluation Boards and Development Platforms</a><ul>
+<li><a class="reference internal" href="#pmod-peripheral-module">Pmod (Peripheral Module)</a></li>
+<li><a class="reference internal" href="#fmc-fpga-mezzanine-card">FMC (FPGA Mezzanine Card)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-resources">Software Resources</a><ul>
+<li><a class="reference internal" href="#standard-application-software">Standard Application Software</a></li>
+<li><a class="reference internal" href="#hdl-ip-core">HDL IP Core</a></li>
+<li><a class="reference internal" href="#linux-device-drivers">Linux Device Drivers</a></li>
+<li><a class="reference internal" href="#no-os-bare-metal-device-drivers-and-examples">no-OS (Bare Metal) Device Drivers and Examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#board-and-platform-summary">Board and Platform Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Product Categories</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Product Solution Centers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adxl355/index.html">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Product Solution Centers</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="single-channel-spi-interface-sar-adc-developer-resources">
+<span id="adc-pulsar-single"></span><h1>Single-Channel, SPI-interface SAR ADC Developer Resources<a class="headerlink" href="#single-channel-spi-interface-sar-adc-developer-resources" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This is a draft, very much WIP document in a fork of <a class="icon link reference external" href="https://github.com/analogdevicesinc/documentation" target="_blank">https://github.com/analogdevicesinc/documentation</a></p>
+</div>
+<section id="family-overview-and-adi-datax-framework-support">
+<h2>Family Overview and ADI DataX Framework Support<a class="headerlink" href="#family-overview-and-adi-datax-framework-support" title="Link to this heading"></a></h2>
+<p>This page describes various hardware and software resources available for evaluating and developing with several families of Analog Devices’ single-channel, SPI-interface, successive-approximation (SAR) Analog to Digital Converters. Not all such devices across ADI’s product line are covered here, however the devices on this page are all supported by the same Linux or no-OS (bare metal) device driver, and FPGA HDL IP core and project.</p>
+<p>The resources for these devices fall under ADI DataX - a collection of device drivers, FPGA IP cores, and middleware components, all designed to integrate seamlessly with industry-standard open-source operating systems and software frameworks. ADI DataX is an unifies application portability across heterogeneous compute environments, enabling reusable workflows for data acquisition and processing. Developers can scale complexity as needed, from rapid prototyping to advanced system refinement. The <a class="reference internal" href="#fig-datax-support"><span class="std std-numref">Figure 1</span></a> is a high-level overview of the various ADI DataX components for these devices.</p>
+<figure class="align-center" id="id1">
+<span id="fig-datax-support"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/PulSAR_ADI_DataX_support.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/PulSAR_ADI_DataX_support.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/PulSAR_ADI_DataX_support.png" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADI DataX Support for Single-Channel SAR ADCs</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The evaluation and development boards across these devices use several industry-standard and ADI-proprietary connectors, compatible with industry-standard and proprietary carrier (processor/FPGA) boards. The choice depends on the developer’s needs; If the development flow involves software and HDL development on standard carrier boards, it is best to use either the Pmod or FMC boards. Review the example projects and their user guides for the various options in order to make the best choice.</p>
+<p>Wherever possible, pre-built programming and boot files are provided for the various carrier / eval board combinations. These typically implement an IIO (Industrial Input-Output) server, compatible with a wide array of software tools and language bindings, easing development considerably.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs. In general combinations fall into two categories:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for ADI proprietary evaluation systems such as the SDP-H1 and SDP-B is being phased out in favor of processor and FPGA-vendor supplied development systems, running open-source software provided by Analog Devices.</p>
+</div>
+<p>Evaluation systems for the PulSAR family of ADCs is based on commercially available development platforms running open-source software, firmware, and HDL. Examples for this family of ADCs are shown in <a class="reference internal" href="#fig-iio-systems"><span class="std std-numref">Figure 2</span></a>. These systems are based on the Linux Industrial Input/Output (IIO) framework and are much more flexible, with multiple cross-platform options for both evaluation software and development software.</p>
+<figure class="align-center" id="id2">
+<span id="fig-iio-systems"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/iio_systems_block_diags.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/iio_systems_block_diags.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adc_pulsar_single/iio_systems_block_diags.png" style="width: 900px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">IIO-Based Development Systems</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="evaluation-boards-and-development-platforms">
+<h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
+<section id="pmod-peripheral-module">
+<h3>Pmod (Peripheral Module)<a class="headerlink" href="#pmod-peripheral-module" title="Link to this heading"></a></h3>
+<p>This is a de-facto standard developed by Digilent. Pmods communicate with host boards using 6, 8, or 12-pin, 100-mil pitch connectors that can carry multiple digital control signals, taking advantage of standard serial protocols such as SPI and I²C. The official specification is available from Digilent at <a class="icon link reference external" href="https://digilent.com/reference/pmod/start" target="_blank">https://digilent.com/reference/pmod/start</a>. Pmod evaluation boards on this page are supported on either a ZedBoard or Cora Z7 FPGA carrier board. Pre-built example projects are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.)</p>
+<p>The Pmod board hardware documentation is at <a class="icon link reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods" target="_blank">https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is an example of some documentation that is in serious need of some updating, but it does provide a starting point for ADI DataX-enabled Pmods. Pointing to a recent PR, this URL will change when merged: <a class="icon link reference external" href="https://analogdevicesinc.github.io/documentation/pull/194/wiki-migration/resources/eval/ad400x-eval-board.html" target="_blank">https://analogdevicesinc.github.io/documentation/pull/194/wiki-migration/resources/eval/ad400x-eval-board.html</a></p>
+</div>
+</section>
+<section id="fmc-fpga-mezzanine-card">
+<h3>FMC (FPGA Mezzanine Card)<a class="headerlink" href="#fmc-fpga-mezzanine-card" title="Link to this heading"></a></h3>
+<p>This is an industry standard, also known as VITA57. FMC is a widely used standard for both COTS and development carriers and module cards. FMC evaluation boards on this page are supported on the ZedBoard carrier board as well as the ADI proprietary SDP-H1 board. Pre-built example projects for the ZedBoard are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.) Important: The SDP-H1 is ADI proprietary, and works in conjunction with ACE software or product-specific evaluation software package. It is not intended as a development platform, and source code is not provided.</p>
+</section>
+</section>
+<section id="software-resources">
+<h2>Software Resources<a class="headerlink" href="#software-resources" title="Link to this heading"></a></h2>
+<section id="standard-application-software">
+<h3>Standard Application Software<a class="headerlink" href="#standard-application-software" title="Link to this heading"></a></h3>
+<p>The HDL, Linux, and no-OS example projects are based on the Linux Industrial Input-Output (IIO) framework. This maximizes flexibility, as the framework is cross-platform (Windows, Linux, Mac) and supports multiple languages (C, C++, C#, Python, MATLAB, and others). The projects are also supported by the ACE evaluation GUI, and the Scopy multi-purpose data acquisition GUI. The documentation for each eval board will provide specific details on how to use the <a class="icon link reference external" href="https://analogdevicesinc.github.io/pyadi-iio/index.html" target="_blank">Pyadi-IIO</a> and <a class="icon link reference external" href="https://https://analogdevicesinc.github.io/PrecisionToolbox/index.html" target="_blank">MATLAB Precision Toolbox</a> interfaces and examples.</p>
+</section>
+<section id="hdl-ip-core">
+<h3>HDL IP Core<a class="headerlink" href="#hdl-ip-core" title="Link to this heading"></a></h3>
+<p>The HDL for these devices is based on the SPI Engine IP core, user guide here: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html" target="_blank">SPI Engine</a>, and PWM IP core, which generates the sample rate from the master clock.</p>
+<p>The example project for these devices is described at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html" target="_blank">PULSAR-ADC HDL project</a>.</p>
+<p>The example project is parameterized for each device, and building the project generates a set of boot files that can be run on the target platform.</p>
+</section>
+<section id="linux-device-drivers">
+<h3>Linux Device Drivers<a class="headerlink" href="#linux-device-drivers" title="Link to this heading"></a></h3>
+<p>The Linux driver for these devices is presently in development, with the goal of having a single, unified driver covering all devices and the associated HDL code.</p>
+<p>The AD400x driver is in upstream review, documented at <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x" target="_blank">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x</a></p>
+<p>The previous mainlined PulSAR family driver is documented at <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a" target="_blank">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a</a></p>
+<p>The updated device driver is compatible with the HDL example project, and provides a convenient programming interface for controlling the ADC and capturing data.</p>
+</section>
+<section id="no-os-bare-metal-device-drivers-and-examples">
+<h3>no-OS (Bare Metal) Device Drivers and Examples<a class="headerlink" href="#no-os-bare-metal-device-drivers-and-examples" title="Link to this heading"></a></h3>
+<p>The no-OS driver is intended for systems not using an operating system. It is generally easier to start with a Linux-based system for initial development, then migrate to no-OS.</p>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc" target="_blank">https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc</a></p>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc" target="_blank">https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc</a></p>
+</section>
+</section>
+<section id="board-and-platform-summary">
+<h2>Board and Platform Summary<a class="headerlink" href="#board-and-platform-summary" title="Link to this heading"></a></h2>
+<p>The various eval boards and their supported platforms are listed below. The standard platforms can be used for product performance evaluation using ACE software, software development, and system prototyping. The ADI proprietary platforms are more constrained, and only work with the software listed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only a few example cells are filled out for now.</p>
+</div>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Single-Channel SAR table test</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Arduino</p></th>
+<th class="head"><p>FMC</p></th>
+<th class="head"><p>Pmod</p></th>
+<th class="head"><p>ZedBoard</p></th>
+<th class="head"><p>Cora</p></th>
+<th class="head"><p>SDP-K1</p></th>
+<th class="head"><p>ST Nucleo</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Part Number</p></th>
+<th class="head"><p>Eval Board</p></th>
+<th class="head"><p>Eval Board</p></th>
+<th class="head"><p>Eval Board</p></th>
+<th class="head"><p>Controller</p></th>
+<th class="head"><p>Controller</p></th>
+<th class="head"><p>Controller</p></th>
+<th class="head"><p>Controller</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4000" target="_blank">AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">EVAL-AD400x-fmcz (00)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>AD4000 ‘’</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad4000-pmdz" target="_blank">EVAL-AD4000-PMDZ</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4001" target="_blank">AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">EVAL-AD400x-fmcz (01)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad4001-pmdz" target="_blank">EVAL-AD4001-PMDZ</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4002" target="_blank">AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">EVAL-AD400x-fmcz (02)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>AD4002 ‘’</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad4002-pmdz" target="_blank">EVAL-AD4002-PMDZ</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4003" target="_blank">AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">eval-ad400x-fmcz (03)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>AD4003 ‘’</p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad4003-pmdz" target="_blank">EVAL-AD4003-PMDZ</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4004" target="_blank">AD4004: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4005" target="_blank">AD4005: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4006" target="_blank">AD4006: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4007" target="_blank">AD4007: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4008" target="_blank">AD4008: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4010" target="_blank">AD4010: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4011" target="_blank">AD4011: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/adaq4003" target="_blank">ADAQ4003: 18-Bit 2 MSPS Precision DAQ Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4020" target="_blank">AD4020: 20-Bit 1.8 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad4020-pmdz" target="_blank">EVAL-AD4020-PMDZ</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7685" target="_blank">AD7685: 16-Bit 250 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7687" target="_blank">AD7687: 16-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7691" target="_blank">AD7691: 18-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7686" target="_blank">AD7686: 500 kSPS 16-BIT PulSAR A/D Converter</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7688" target="_blank">AD7688: 500 kSPS 16- BIT Differential PulSAR A/D Converter in µSOIC/QFN</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7693" target="_blank">AD7693: 16-Bit ±0.5 LSB 500 kSPS PulSAR Differential A/D Converter</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7988-5" target="_blank">AD7988-5: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7980" target="_blank">AD7980: 16-Bit 1 MSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7980-pmdz" target="_blank">eval-ad7980-pmdz</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7983" target="_blank">AD7983: 16-Bit 1.33 MSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7690" target="_blank">AD7690: 18-Bit 1.5 LSB INL 400 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7689" target="_blank">AD7689: 16-Bit 8-Channel 250 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7942" target="_blank">AD7942: 14-Bit 250 kSPS PulSAR Pseudo Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7942-pmdz" target="_blank">eval-ad7942-pmdz</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7946" target="_blank">AD7946: 14-Bit 500 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7988-1" target="_blank">AD7988-1: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../adaq2387/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a>
+    <a href="../adxl355/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
