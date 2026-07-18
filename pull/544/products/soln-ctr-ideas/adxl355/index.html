@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="This is a draft, very much WIP document in a fork of https://github.com/analogdevicesinc/documentation" name="description" />
+<meta content="This page is in development, in a deployed pull request. Feedback welcome in the PR comment section." name="description" />
 
     <title>ADXL355 3-Axis MEMS Accelerometer Developer Resources &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -14,7 +14,8 @@
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="prev" title="Single-Channel, SPI-interface SAR ADC Developer Resources" href="../adc_pulsar_single/index.html" />
+    <link rel="next" title="ADAQ2387x and LTC2387 family SAR ADC Developer Resources" href="../adaq2387/index.html" />
+    <link rel="prev" title="Product Solution Centers" href="../index.html" />
    
   
   
@@ -97,6 +98,7 @@
           <ul>
 <li><a class="reference internal" href="#">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a><ul>
 <li><a class="reference internal" href="#adxl355-overview">ADXL355 Overview</a></li>
+<li><a class="reference internal" href="#adi-datax-enablement">ADI DataX Enablement</a></li>
 <li><a class="reference internal" href="#getting-started">Getting Started</a></li>
 <li><a class="reference internal" href="#evaluation-boards-and-development-platforms">Evaluation Boards and Development Platforms</a><ul>
 <li><a class="reference internal" href="#eval-adxl35x-sdp">EVAL-ADXL35x-SDP</a></li>
@@ -187,9 +189,9 @@ Content on this topic
 
 <ul class="current">
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Product Solution Centers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
 </ul>
 </li>
 </ul>
@@ -211,12 +213,17 @@ Content on this topic
 <span id="adxl355"></span><h1>ADXL355 3-Axis MEMS Accelerometer Developer Resources<a class="headerlink" href="#adxl355-3-axis-mems-accelerometer-developer-resources" title="Link to this heading"></a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>This is a draft, very much WIP document in a fork of <a class="icon link reference external" href="https://github.com/analogdevicesinc/documentation" target="_blank">https://github.com/analogdevicesinc/documentation</a></p>
+<p>This page is in development, in a deployed pull request. Feedback welcome in
+the PR comment section.</p>
 </div>
 <section id="adxl355-overview">
 <h2>ADXL355 Overview<a class="headerlink" href="#adxl355-overview" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">ADXL355</a> is a low noise density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration
-and with very low power consumption. Applications include:</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADXL355" target="_blank">ADXL355</a> is a low noise density, low zero-g offset drift, low power,
+3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355
+supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset
+drift over temperature, and long term stability, enabling precision applications
+with minimal calibration and with very low power consumption. Applications
+include:</p>
 <ul class="simple">
 <li><p>Inertial measurement units (IMUs)/altitude and heading reference systems (AHRS)</p></li>
 <li><p>Platform stabilization systems</p></li>
@@ -232,15 +239,37 @@ expense associated with calibration and testing effort, helping to achieve
 higher throughput for device OEMs. In addition, the hermetic package helps
 ensure that the end product conforms to its repeatability and stability
 specifications long after they leave the factory.</p>
-<p>With output of ±2g to ±8g full scale range (FSR), selectable digital
-filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than
-200µA current consumption, ADXL355 MEMS accelerometer offers performance level
-comparable to much more expensive devices with less power consumption and BOM
-cost.</p>
+<p>With output of ±2g to ±8g full scale range (FSR), selectable digital filtering
+from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than 200µA current
+consumption, ADXL355 MEMS accelerometer offers performance level comparable to
+much more expensive devices with less power consumption and BOM cost.</p>
+</section>
+<section id="adi-datax-enablement">
+<h2>ADI DataX Enablement<a class="headerlink" href="#adi-datax-enablement" title="Link to this heading"></a></h2>
+<p><a class="icon link reference external" href="https://developer.analog.com/solutions/adi-datax" target="_blank">ADI DataX™</a> is a highly
+adaptable, open technology stack that bridges the gap between signal chains and
+applications across a wide range of processing platforms, operating systems, and
+software ecosystems to enable physically intelligent systems.</p>
+<p>The ADXL355 is supported in several ADI DataX frameworks as shown in <a class="reference internal" href="#fig-adxl355-datax-map"><span class="std std-numref">Figure 1</span></a></p>
+<figure class="align-center" id="id4">
+<span id="fig-adxl355-datax-map"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_datax_map.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_datax_map.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_datax_map.png" style="width: 700px; height: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADXL355 DataX Enablement</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Open-source drivers and ready-to-run examples are provided for ADI ARM
+processors running bare-metal (no-OS) or Zephyr, Raspberry Pi running Linux.
+Examples include Python, C, MATLAB, and others. Code is written for portability,
+and can be easily migrated to your development platform of choice, and into your
+product.</p>
 </section>
 <section id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
-<p>There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs.</p>
+<p>There are several combinations of evaluation and development boards and
+controller platforms, with different capabilities and associated software and
+device driver resources. Review the options and choose the one that best suits
+your needs.</p>
 </section>
 <section id="evaluation-boards-and-development-platforms">
 <h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
@@ -248,8 +277,20 @@ cost.</p>
 <h3>EVAL-ADXL35x-SDP<a class="headerlink" href="#eval-adxl35x-sdp" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif" style="width: 350px;" />
 </a>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35x-SDP" target="_blank">EVAL-ADXL35x-SDP</a> is an easy-to-use Customer Evaluation System that allows the user a quick start on testing and evaluating the ADXL355 or ADXL357 accelerometer. The system consists of a main board (EVAL-SDP-CB1Z evaluation platform), an interface board (EVAL-SDP-INTER4-Z), and a satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z breakout board).</p>
-<p>The EVAL-SDP-CB1Z board, also called “SDP-B”, connects directly to a PC via an USB cable, with the USB connection providing both communications and power to the board. The SDP-B is connected to the interface board (EVAL-SDP-INTER4-Z), which provides the signal conditioning and electrical connections to communicated with the satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z) through a cable. This cable allows the satellite to be easily manipulated for testing or separately placed into an environmental chamber for temperature or humidity testing. Separating the boards mitigates corruption of data due to the temperature and humidity effects of other components.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35x-SDP" target="_blank">EVAL-ADXL35x-SDP</a> is an easy-to-use Customer Evaluation System that
+allows the user a quick start on testing and evaluating the ADXL355 or ADXL357
+accelerometer. The system consists of a main board (EVAL-SDP-CB1Z evaluation
+platform), an interface board (EVAL-SDP-INTER4-Z), and a satellite board
+(EVAL-ADXL355Z or EVAL-ADXL357Z breakout board).</p>
+<p>The EVAL-SDP-CB1Z board, also called “SDP-B”, connects directly to a PC via an
+USB cable, with the USB connection providing both communications and power to
+the board. The SDP-B is connected to the interface board (EVAL-SDP-INTER4-Z),
+which provides the signal conditioning and electrical connections to
+communicated with the satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z) through a
+cable. This cable allows the satellite to be easily manipulated for testing or
+separately placed into an environmental chamber for temperature or humidity
+testing. Separating the boards mitigates corruption of data due to the
+temperature and humidity effects of other components.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This system is intended for performance evaluation only. Source code for the SDP-B firmware and GUI software is not available.</p>
@@ -260,7 +301,15 @@ cost.</p>
 <h3>EVAL-ADXL35X<a class="headerlink" href="#eval-adxl35x" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL354BZANGLE-web.gif"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL354BZANGLE-web.gif" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL354BZANGLE-web.gif" style="width: 350px;" />
 </a>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35X-Z" target="_blank">EVAL-ADXL35X-Z</a> are simple evaluation boards that allow quick evaluation of the performance of Analog Devices new series of low power, low noise, low drift 3-axis, MEMS accelerometers. The series consists of both analog and digital output devices, supporting a variety of Full Scale Ranges (FSR). The model descriptions are shown in the ordering guide below. These evaluation boards are ideal for evaluation of the ADXL35x accelerometer series in an existing system because the stiffness and the small size of the evaluation board minimize the effect of the board on both the system and acceleration measurements.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35X-Z" target="_blank">EVAL-ADXL35X-Z</a> are simple evaluation boards that allow quick
+evaluation of the performance of Analog Devices new series of low power, low
+noise, low drift 3-axis, MEMS accelerometers. The series consists of both analog
+and digital output devices, supporting a variety of Full Scale Ranges (FSR). The
+model descriptions are shown in the ordering guide below. These evaluation
+boards are ideal for evaluation of the ADXL35x accelerometer series in an
+existing system because the stiffness and the small size of the evaluation board
+minimize the effect of the board on both the system and acceleration
+measurements.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This board does not directly interface to any standard platforms, and requires a separate cable. This may be desirable for interfacing to an arbitrary platform board, or when the sensor needs to be separated from the platform board by a cable.</p>
@@ -271,13 +320,22 @@ cost.</p>
 <h3>EVAL-ADXL355-PMDZ<a class="headerlink" href="#eval-adxl355-pmdz" title="Link to this heading"></a></h3>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL335-PMDZANGLE-web.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL335-PMDZANGLE-web.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/EVAL-ADXL335-PMDZANGLE-web.png" style="width: 350px;" />
 </a>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a> is a compact, low-cost, Pmod-compatible evaluation board for the ADXL355. It targets several standard microcontroller development boards that either have a native Pmod interface, or via an adapter. It also targets the Raspberry Pi via the <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> adapter board. The Pmod board is small in size with dimensions approximately 2.5 cm in width by 2.5 cm in length.</p>
-<p>SPI PMOD peripheral connectors can also be found on many 3rd party MCU or FPGA development boards, where the EVAL-ADXL355-PMDZ can be connected directly into those systems, and you can develop your own code using our reference code below.</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ" target="_blank">EVAL-ADXL355-PMDZ</a> is a compact, low-cost, Pmod-compatible evaluation
+board for the ADXL355. It targets several standard microcontroller development
+boards that either have a native Pmod interface, or via an adapter. It also
+targets the Raspberry Pi via the <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ" target="_blank">PMD-RPI-INTZ</a> adapter board. The Pmod
+board is small in size with dimensions approximately 2.5 cm in width by 2.5 cm
+in length.</p>
+<p>SPI PMOD peripheral connectors can also be found on many 3rd party MCU or FPGA
+development boards, where the EVAL-ADXL355-PMDZ can be connected directly into
+those systems, and you can develop your own code using our reference code below.</p>
 </section>
 </section>
 <section id="developing-with-the-adxl355">
 <h2>Developing with the ADXL355<a class="headerlink" href="#developing-with-the-adxl355" title="Link to this heading"></a></h2>
-<p>The EVAL-ADXL335-PMDZ will be used for the various example systems described below. These examples are designed to be used as-is for initial development, then ported to your target hardware.</p>
+<p>The EVAL-ADXL335-PMDZ will be used for the various example systems described
+below. These examples are designed to be used as-is for initial development,
+then ported to your target hardware.</p>
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_pmdz.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_pmdz.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_pmdz.png" style="width: 350px;" />
 </a>
 <section id="pmod-processor-connector">
@@ -382,11 +440,11 @@ uses the ADXL355 no-OS driver and has several configuration options:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>The tinyiiod configuration emulates the Linux IIO framework through the
-tinyiiod daemon library. The application communicates with the host computer
-via the serial backend, over a USB-UART physical connection. This facilitates
-rapid application development on a host computer, independent from embedded
-code development. This is the configuration that will be referenced in the
-no-OS platform setups below.</p></li>
+tinyiiod daemon library. The application communicates with the host
+computer via the serial backend, over a USB-UART physical connection.
+This facilitates rapid application development on a host computer,
+independent from embedded code development. This is the configuration
+that will be referenced in the no-OS platform setups below.</p></li>
 <li><p>The “dummy” configuration implements a simple command-line program that
 can be run on a terminal.</p></li>
 </ul>
@@ -408,10 +466,10 @@ applications running the Linux operating system, typically on larger processors
 and SoC devices.</p></li>
 <li><p>The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework,
 greatly simplifying the development of application code via the cross-platform
-Libiio library, which is written in C and includes bindings for Python, MATLAB,
-C#, and other languages. Application code can run directly on the platform
-board, communicating with the device over the local backend, or from a remote
-host over the network or USB backends.</p></li>
+Libiio library, which is written in C and includes bindings for Python,
+MATLAB, C#, and other languages. Application code can run directly on the
+platform board, communicating with the device over the local backend, or from
+a remote host over the network or USB backends.</p></li>
 </ul>
 </section>
 <section id="system-setup-using-adicup3029">
@@ -461,30 +519,30 @@ This is the <strong>EASIEST</strong> way to get started with the reference desig
 <li><p>Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
 connect it to a computer. The final setup should look similar to the picture
 below.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_adicup3029_connections.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_adicup3029_connections.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/adxl355_adicup3029_connections.jpg" style="width: 900px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>Make sure the following switches are as shown from the table below.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/switch_config.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/switch_config.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/switch_config.png" style="width: 900px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Switch Confuguration</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Switch Confuguration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>From your PC, open My Computer and look for the DAPLINK drive, if you see
 this then the drivers are complete and correct.</p>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id7">
 <a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/daplink.jpg"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/daplink.jpg" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/thorenscientific/soln-ctr-ideas/docs/products/soln-ctr-ideas/adxl355/daplink.jpg" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -984,8 +1042,8 @@ to receive all these great benefits and more!</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../adc_pulsar_single/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Single-Channel, SPI-interface SAR ADC Developer Resources</a>
-    <div></div>
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Product Solution Centers</a>
+    <a href="../adaq2387/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a>
               </div>
           
         </div>
