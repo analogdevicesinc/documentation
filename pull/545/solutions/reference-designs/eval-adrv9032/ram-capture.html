@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The ADRV903x provides a RAM capture feature for capturing raw RX/ORX ADC samples at various points in the signal chain. This is useful for debugging, signal analysis, and calibration verification." name="description" />
+
+    <title>RAM Capture &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">RAM Capture</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#iio-device">IIO Device</a><ul>
+<li><a class="reference internal" href="#channel-mapping">Channel Mapping</a></li>
+<li><a class="reference internal" href="#device-attributes">Device Attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-iio-oscilloscope">Using IIO Oscilloscope</a></li>
+<li><a class="reference internal" href="#using-iio-readdev">Using iio_readdev</a></li>
+<li><a class="reference internal" href="#setting-capture-parameters">Setting Capture Parameters</a></li>
+<li><a class="reference internal" href="#debugfs-interface">debugfs Interface</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-ADRV9032</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">RAM Capture</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-ADRV9032</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="ram-capture">
+<span id="adrv903x-ram-capture"></span><h1>RAM Capture<a class="headerlink" href="#ram-capture" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The ADRV903x provides a RAM capture feature for capturing raw RX/ORX ADC
+samples at various points in the signal chain. This is useful for debugging,
+signal analysis, and calibration verification.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">adrv903x-ramc</span></code> IIO device exposes this feature with standard IIO buffer
+support, allowing data capture using IIO Oscilloscope or command-line tools
+like <code class="docutils literal notranslate"><span class="pre">iio_readdev</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RAM capture is a <strong>single-shot snapshot</strong> mechanism. Each buffer enable
+triggers one capture that fills the buffer, then stops. For continuous
+RX data streaming, use the JESD interface (<code class="docutils literal notranslate"><span class="pre">axi-adrv903x-rx-hpc</span></code>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The capture hardware can only sample one RX/ORX channel at a time. Only one
+I/Q channel pair can be enabled simultaneously.</p>
+</div>
+</section>
+<section id="iio-device">
+<h2>IIO Device<a class="headerlink" href="#iio-device" title="Link to this heading"></a></h2>
+<p>The RAM capture interface appears as a separate IIO device named
+<code class="docutils literal notranslate"><span class="pre">adrv903x-ramc</span></code>. It provides 10 channel pairs (RX0-RX7 and ORX0-ORX1), each
+with I and Q components.</p>
+<section id="channel-mapping">
+<h3>Channel Mapping<a class="headerlink" href="#channel-mapping" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>IIO Channel</p></th>
+<th class="head"><p>Signal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">voltage0_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage0_q</span></code></p></td>
+<td><p>RX0</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">voltage1_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage1_q</span></code></p></td>
+<td><p>RX1</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">voltage2_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage2_q</span></code></p></td>
+<td><p>RX2</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">voltage3_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage3_q</span></code></p></td>
+<td><p>RX3</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">voltage4_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage4_q</span></code></p></td>
+<td><p>RX4</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">voltage5_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage5_q</span></code></p></td>
+<td><p>RX5</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">voltage6_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage6_q</span></code></p></td>
+<td><p>RX6</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">voltage7_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage7_q</span></code></p></td>
+<td><p>RX7</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">voltage8_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage8_q</span></code></p></td>
+<td><p>ORX0</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">voltage9_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage9_q</span></code></p></td>
+<td><p>ORX1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="device-attributes">
+<h3>Device Attributes<a class="headerlink" href="#device-attributes" title="Link to this heading"></a></h3>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sample_count</span></code></p></td>
+<td><p>Read/Write</p></td>
+<td><p>Number of samples to capture. Valid values: 32, 64, 128, 256, 512,
+1024, 2048, 4096, 8192, 12288, 16384, 32768. ORX channels are limited
+to 12288 maximum.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sampling_frequency</span></code></p></td>
+<td><p>Read only</p></td>
+<td><p>Sample rate in Hz (matches RX IQ rate).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="using-iio-oscilloscope">
+<h2>Using IIO Oscilloscope<a class="headerlink" href="#using-iio-oscilloscope" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Connect to the board using IIO Oscilloscope.</p></li>
+<li><p>In the <strong>Plot Channels</strong> panel, expand <code class="docutils literal notranslate"><span class="pre">adrv903x-ramc</span></code>.</p></li>
+<li><p>Enable one I/Q channel pair (e.g., <code class="docutils literal notranslate"><span class="pre">voltage0_i</span></code> and <code class="docutils literal notranslate"><span class="pre">voltage0_q</span></code> for
+RX0).</p></li>
+<li><p>Click <strong>Capture</strong> to trigger a single-shot capture and display the data.</p></li>
+<li><p>To capture from a different channel, disable the current pair and enable
+another.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Attempting to enable channels from different RX/ORX pairs simultaneously
+will result in an error due to hardware constraints.</p>
+</div>
+</section>
+<section id="using-iio-readdev">
+<h2>Using iio_readdev<a class="headerlink" href="#using-iio-readdev" title="Link to this heading"></a></h2>
+<p>Capture 1024 samples from RX0:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-u<span class="w"> </span>&lt;uri&gt;<span class="w"> </span>-s<span class="w"> </span><span class="m">1024</span><span class="w"> </span>adrv903x-ramc<span class="w"> </span>voltage0_i<span class="w"> </span>voltage0_q<span class="w"> </span>&gt;<span class="w"> </span>capture.bin
+</pre></div>
+</div>
+<p>Capture from RX2:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_readdev<span class="w"> </span>-u<span class="w"> </span>&lt;uri&gt;<span class="w"> </span>-s<span class="w"> </span><span class="m">1024</span><span class="w"> </span>adrv903x-ramc<span class="w"> </span>voltage2_i<span class="w"> </span>voltage2_q<span class="w"> </span>&gt;<span class="w"> </span>capture.bin
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;uri&gt;</span></code> with the appropriate connection URI (e.g., <code class="docutils literal notranslate"><span class="pre">ip:192.168.1.1</span></code>
+or <code class="docutils literal notranslate"><span class="pre">local:</span></code>).</p>
+<p>The output file contains interleaved 32-bit signed I and Q samples in
+little-endian format.</p>
+</section>
+<section id="setting-capture-parameters">
+<h2>Setting Capture Parameters<a class="headerlink" href="#setting-capture-parameters" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">sample_count</span></code> attribute controls how many samples are captured:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check current value</span>
+cat<span class="w"> </span>/sys/bus/iio/devices/iio:device3/sample_count
+
+<span class="c1"># Set to 4096 samples</span>
+<span class="nb">echo</span><span class="w"> </span><span class="m">4096</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/bus/iio/devices/iio:device3/sample_count
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The device number (<code class="docutils literal notranslate"><span class="pre">iio:device3</span></code>) may vary depending on the system
+configuration. Use <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> or check <code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/*/name</span></code>
+to identify the correct device.</p>
+</div>
+</section>
+<section id="debugfs-interface">
+<h2>debugfs Interface<a class="headerlink" href="#debugfs-interface" title="Link to this heading"></a></h2>
+<p>A simplified debugfs interface is also available for quick single-shot
+captures without IIO buffer setup.</p>
+<p>Usage:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trigger capture: channel 0 (RX0), 256 samples</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0 256&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/iio/iio:device2/rx_data_capture
+
+<span class="c1"># Read captured data</span>
+cat<span class="w"> </span>/sys/kernel/debug/iio/iio:device2/rx_data_capture
+</pre></div>
+</div>
+<p>Channel numbers for debugfs:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>-<code class="docutils literal notranslate"><span class="pre">7</span></code>: RX0-RX7</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span></code>-<code class="docutils literal notranslate"><span class="pre">9</span></code>: ORX0-ORX1</p></li>
+</ul>
+<p>The output is raw 32-bit values in hardware format (interleaved I/Q with bank
+layout). The IIO device interface is recommended for most use cases as it
+handles the data format conversion automatically.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
