@@ -97,7 +97,7 @@ Table of contents
    #. :download:`MATLAB Filter Wizard / Profile Generator for ADRV9009 <https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/ADRV9008-x-ADRV9009-profile-config-tool-filter-wizard-v2.4.zip>`
    #. Hardware in the Loop / How to design your own custom BaseBand
 
-      - :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+      - :ref:`GNU Radio <software gnuradio>`
       - :ref:`Transceiver Toolbox <matlab transceiver-toolbox>`
 
    #. Resources for designing a custom ADRV9009-based platform

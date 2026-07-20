@@ -58,7 +58,7 @@ Contents
       (SDR) powered by the GNU Radio
    #. :mw:`Official support for MATLAB and Simulink <hardware-support/adalm-pluto-radio.html>`
    #. :dokuwiki:`MATLAB IIO Bindings </resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
-   #. :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
+   #. :ref:`GNU Radio <software gnuradio>`
    #. `SDRangel <https://github.com/f4exb/sdrangel>`__, an Open Source Qt5 /
       OpenGL 3.0+ SDR and signal analyzer frontend to various hardware.
    #. `SDR# <https://airspy.com/download/>`__. The PlutoSDR frontend for

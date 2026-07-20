@@ -55,6 +55,7 @@ interref_repos = [
     'no-OS',
     'precision-converters-firmware',
     'PrecisionToolbox',
+    'testbenches',
     'adi_ros2/humble/adi_meta',
 ]
 

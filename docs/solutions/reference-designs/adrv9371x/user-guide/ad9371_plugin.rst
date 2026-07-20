@@ -17,7 +17,7 @@ devices behind the back of the GUI, it's still possible to see the settings by
 clicking the "refresh" button at the bottom of the GUI.
 
 If you think the device has a setting that isn't managed by this tab, check out
-the :ref:`adrv9371x advanced plugin` for the IIO Oscilloscope.
+the :ref:`adrv9371x advanced-plugin` for the IIO Oscilloscope.
 
 The AD9371 view is divided in four sections:
 

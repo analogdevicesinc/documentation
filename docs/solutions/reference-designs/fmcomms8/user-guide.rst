@@ -75,7 +75,7 @@ Data streaming
 
 - :ref:`Basic IQ Datafiles <adrv9009 basic-iq-datafiles>`
 - :dokuwiki:`Stream data into/out of MATLAB <resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
-- :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+- :ref:`GNU Radio <software gnuradio>`
 - :ref:`Transceiver Toolbox <matlab transceiver-toolbox>`
 
 Other tools
