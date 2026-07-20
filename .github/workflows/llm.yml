@@ -26,10 +26,25 @@ on:
         - medium
         - large
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
+  pr-check-pending:
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
+    permissions:
+      checks: write
+      pull-requests: read
+
+    outputs:
+      pr: ${{ steps.check.outputs.pr }}
+      check_run_id: ${{ steps.check.outputs.check_run_id }}
+
+    steps:
+      - uses: analogdevicesinc/doctools/gh-pr-checks@action
+        id: check
+        with:
+          ref: ${{ inputs.ref }}
+          name: llm-agent
+
   llm:
     runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
     permissions:
@@ -294,8 +309,26 @@ jobs:
           rm -f "$prompt_file"
           rm -rf "$py_venv"
 
+  pr-check-conclusion:
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
+    needs:
+      - pr-check-pending
+      - llm
+    if: always()
+    permissions:
+      checks: write
+      pull-requests: read
+
+    steps:
+      - uses: analogdevicesinc/doctools/gh-pr-checks@action
+        with:
+          ref: ${{ needs.pr-check-pending.outputs.pr }}
+          name: llm-agent
+          conclusion: ${{ needs.llm.result }}
+          check-run-id: ${{ needs.pr-check-pending.outputs.check_run_id }}
+
   pr-comment:
-    runs-on: ubuntu-slim
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
     needs: llm
     permissions:
       pull-requests: write
