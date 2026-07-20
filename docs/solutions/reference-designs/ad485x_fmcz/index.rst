@@ -5,15 +5,15 @@ AD485X-FMCZ
 
 Buffered, 8-Channel Simultaneous Sampling, 20-Bit 1 MSPS DAS
 
-.. image:: ./images/AD485x-chip-illustration.png
-   :align: left
-   :width: 150
+.. flex::
 
-.. image:: ./images/AD4858-chip-illustration.png
-   :align: left
-   :width: 150
+   .. image:: ./images/ad485x-chip-illustration.png
+      :width: 250
+      :align: left
 
-.. clear-content::
+   .. image:: ./images/ad4858-chip-illustration.png
+      :width: 250
+      :align: left
 
 Overview
 -------------------------------------------------------------------------------
@@ -50,9 +50,23 @@ Applications:
 - Semiconductor manufacturing
 - Test and measurement
 
-.. image:: ./images/EVAL-AD4858FMCZ_ANGLE-evaluation-board.JPG
-   :align: center
-   :width: 600px
+.. grid::
+   :widths: 33% 33% 33%
+
+   .. figure:: ./images/eval-ad4858fmcz_angle-evaluation-board.jpg
+      :width: 300px
+
+      Angle view
+
+   .. figure:: ./images/eval-ad4858fmcz_top-evaluation-board.jpg
+      :width: 300px
+
+      Top view
+
+   .. figure:: ./images/eval-ad4858fmcz_bottom-evaluation-board.jpg
+      :width: 300px
+
+      Bottom view
 
 .. toctree::
    :hidden:
@@ -88,7 +102,7 @@ Table of Contents
       #. :ref:`iio-oscilloscope`
       #. :external+scopy:doc:`Scopy <index>`
 
-   #. :dokuwiki:`FRU EEPROM Utility <resources/tools-software/linux-software/fru_dump>`
+   #. :ref:`FRU EEPROM Utility <software fru-dump>`
 
 #. Design with the EVAL-AD485X-FMCZ
 
@@ -103,10 +117,6 @@ Table of Contents
 
          #. :git-hdl:`AD485x-FMC HDL Reference Design <projects/ad485x_fmcz>`
 
-      #. No-OS software
-
-         #. :git-no-OS:`AD485x No-OS Project <projects/ad485x_fmcz>`
-
       #. Linux software
 
          #. :git-linux:`AD485x Linux driver source code <drivers/iio/adc/ad4858.c>`
@@ -114,8 +124,8 @@ Table of Contents
 
       #. More information
 
-         #. :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
-         #. :dokuwiki:`AXI ADC HDL Linux Driver <resources/tools-software/linux-drivers/iio-adc/axi-adc-hdl>`
+         #. :ref:`GNU Radio <software gnuradio>`
+         #. :external+linux:ref:`AXI ADC HDL Linux Driver <axi-adc-hdl>`
 
 #. :ref:`Help and Support <help-and-support>`
 
