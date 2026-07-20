@@ -16,7 +16,6 @@ Hardware prerequisites
 
    - Micro-USB cable for UART console
    - LAN cable (Ethernet) for SSH or IIO applications
-   - Micro-USB cable for JTAG (for no-OS)
 
 #. Internet connection to update the scripts/binaries on the SD card.
 #. Test equipment for generating analog input signals.
@@ -53,7 +52,7 @@ Optional Hardware
 -------------------------------------------------------------------------------
 
 - :adi:`M2K <adalm2000>`
-- :dokuwiki:`M2K BNC adapter board <university/tools/m2k/accessories/bnc>`
+- :adi:`AD-M2KBNC-EBZ`
 - 2x BNC to SMA cables
 - 2x Micro-B USB cables
 

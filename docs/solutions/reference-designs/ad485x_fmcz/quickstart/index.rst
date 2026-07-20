@@ -10,7 +10,7 @@ FPGA-based evaluation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use these guides when evaluating with an FPGA carrier board. They
-cover bitstream programming, no-OS programs and Linux boot.
+cover bitstream programming and Linux boot.
 
 .. toctree::
    :titlesonly:
@@ -46,10 +46,10 @@ The supported environments are:
    - - Eval Board
      - FPGA board
      - HDL
-     - Linux software
-     - No-OS software
+     - Linux
+     - No-OS
    - - EVAL-AD4858
      - `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`__
      - Yes
      - Yes
-     - Yes
+     - No
