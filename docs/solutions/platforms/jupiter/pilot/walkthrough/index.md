@@ -183,24 +183,21 @@ To proceed to the next plot, you must close the current plot.
 `````{grid}
 :columns: 3
 
-````{grid-item}
-**Phase Adjustment**
+````{card} Phase Adjustment
 ```{image} sync-sine-phase.png
 :alt: Sync sine phase adjustment plot
 :width: 100%
 ```
 ````
 
-````{grid-item}
-**Gain Adjustment**
+````{card} Gain Adjustment
 ```{image} sync-sine-gain.png
 :alt: Sync sine gain adjustment plot
 :width: 100%
 ```
 ````
 
-````{grid-item}
-**Phase Error over Time**
+````{card} Phase Error over Time
 ```{image} sync-sine-last.png
 :alt: Sync sine phase error over time plot
 :width: 100%
