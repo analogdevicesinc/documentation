@@ -40,7 +40,7 @@ This is a guide detailing how to set up the Over the Air (OTA) and RF Splitter J
 4.	Make a directory for Jupiter MCS, then CD into that directory
 5.	Type:  
     ```bash
-    git clone -b jupiter_sync_update_refactor
+    git clone -b jupiter_sync_update_refactor https://github.com/analogdevicesinc/pyadi-iio.git
     ```
     -	This will clone the appropriate dependencies
 6.	CD into pyadi-iio and follow the commands in the README
