@@ -88,48 +88,47 @@ Software
 ~~~~~~~~
 
 There is a setup portion (if you are unsure of what these attributes do, check
-out the
-:external+linux:ref:`ad9361-customization` [1]_ :
+out the :external+linux:ref:`ad9361-customization`) [1]_ :
 
 #. set up the part in TDD mode (``0`` is TDD mode, ``1`` is FDD mode):
 
-   .. shell::
+   .. code:: console
 
-      $iio_attr -a -D ad9361-phy adi,frequency-division-duplex-mode-enable 0
+      analog@analog:~$ iio_attr -a -D ad9361-phy adi,frequency-division-duplex-mode-enable 0
 
 #. set up ``GPO_0`` to assert when in Tx mode
 
-   .. shell::
+   .. code:: console
 
-      $iio_attr -a -D ad9361-phy adi,gpo0-slave-tx-enable 1
+      analog@analog:~$ iio_attr -a -D ad9361-phy adi,gpo0-slave-tx-enable 1
 
 #. write the new configuration to the part
 
-   .. shell::
+   .. code:: console
 
-      $iio_attr -a -D ad9361-phy  initialize 1
+      analog@analog:~$ iio_attr -a -D ad9361-phy initialize 1
 
 Verify the setup is in TDD mode, by checking the ``ensm_mode_available``
 attribute, and making sure it includes ``rx`` and ``tx`` and not ``fdd``.
 
-.. shell::
+.. code:: console
 
-   $iio_attr -a -d ad9361-phy ensm_mode_available
-    dev 'ad9361-phy', attr 'ensm_mode_available', value :'sleep wait alert rx tx pinctrl'
+   analog@analog:~$ iio_attr -a -d ad9361-phy ensm_mode_available
+   dev 'ad9361-phy', attr 'ensm_mode_available', value :'sleep wait alert rx tx pinctrl'
 
 Then there is a run time configuration that is needed.
 
 #. To set the part into Receive only mode:
 
-   .. shell::
+   .. code:: console
 
-      $iio_attr -a -d ad9361-phy ensm_mode rx
+      analog@analog:~$ iio_attr -a -d ad9361-phy ensm_mode rx
 
 #. To set the part into Tx only mode:
 
-   .. shell::
+   .. code:: console
 
-      $iio_attr -a -d ad9361-phy ensm_mode tx
+      analog@analog:~$ iio_attr -a -d ad9361-phy ensm_mode tx
 
 When you change from Rx mode to Tx mode, any of the four pins will
 assert/de-assert.
@@ -272,7 +271,7 @@ with pin control.
 Testing in IIO Oscilloscope
 ---------------------------
 
-The :dokuwiki:`Advanced Tab </resources/tools-software/linux-software/fmcomms2_advanced_plugin#axillary_io_adc_dac_control_io_temp_sensor>`
+The `Advanced Tab <https://analogdevicesinc.github.io/scopy/plugins/ad936x/index.html>`__
 indicates how to control these in the IIO oscilloscope.
 
 .. [1]

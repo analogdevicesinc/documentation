@@ -34,8 +34,7 @@ Linux Driver or libiio or Application Questions
 For questions regarding the ADI Linux distribution used in the M2k (which is
 based `buildroot <https://buildroot.org/>`__ with
 :ref:`libiio` library, the Linux
-drivers (including the
-:external+linux:ref:`ad9361`, or
+drivers (including the :ref:`AD936x driver <ad9361>`, or
 the device trees for M2k, please use the :ez:`Linux Software Drivers <linux-software-drivers>` sub-community.
 
 If you have generic userspace questions (*how do I use a standard linux tool*),

@@ -34,6 +34,7 @@ Documentation
    internals
    Command line utility <cli>
    Tips & Tricks <tips-tricks>
+   IIO System Object <matlab_simulink/index>
 
 An automatically generated documentation of the API can be found at :git-libiio:`/`
 
@@ -47,7 +48,7 @@ and within the `API documentation <http://analogdevicesinc.github.io/libiio/>`__
 
 * :dokuwiki+deprecated:`ADI vs MathWorks Support <resources/tools-software/linux-software/libiio/clients/fmcomms2_3_simulink>`
 * :dokuwiki+deprecated:`LTE Transmitter and Receiver Example <resources/tools-software/linux-software/libiio/clients/lte_example>`
-* :dokuwiki+deprecated:`IIO System Object <resources/tools-software/linux-software/libiio/clients/matlab_simulink>`
+* :ref:`IIO System Object <libiio matlab_simulink>`
 * :dokuwiki+deprecated:`IIO Plugin for Visual Analog <resources/tools-software/linux-software/libiio/clients/visual_analog>`
 * :dokuwiki+deprecated:`QPSK Transmit and Receive Example <resources/tools-software/linux-software/libiio/clients/qpsk_example>`
 * :dokuwiki+deprecated:`ADS-B Airplane Tracking Example <resources/tools-software/linux-software/libiio/clients/adsb_example>`
@@ -59,10 +60,10 @@ Network Backends
 If you just want to use libiio and iiod, which may be on a pre-compiled image -
 there are many places you can stream data to.
 
-- :dokuwiki:`MATLAB and Simulink </libiio/clients/matlab_simulink>`
+- :ref:`MATLAB and Simulink <libiio matlab_simulink>`
 - :dokuwiki:`Visual Analog </libiio/clients/Visual Analog>`
 - :ref:`iio-oscilloscope`
-- :dokuwiki:`GNU Radio </resources/tools-software/linux-software/gnuradio>`
+- :ref:`GNU Radio <gnuradio>`
 - :ref:`pyadi-iio: Device Specific Python Interfaces For IIO Drivers <pyadi-iio>`
 
 Source code and releases
