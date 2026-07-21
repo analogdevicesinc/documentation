@@ -192,8 +192,10 @@ jobs:
           vale sync --config=.github/styles/vale-spelling.ini
           vale --config=.github/styles/vale-spelling.ini docs/index.rst
           ```
-          But only consider vale checks for obvious mispellings, since it is extra picky
-          and some things, like casing of products, are not useful.
+          Consider vale checks as **mostly noise**, unless they show obvious mispellings
+          of dictionary words (not casing of products, software, etc).
+          It is **not** you task to update vale rules (e.g., **don't** update
+          .github/styles/config/vocabularies/Base/accept.txt).
 
           ## Task 1: Content check
           At this task, you will focus on the content, fixing content logical
