@@ -179,6 +179,14 @@ jobs:
           ```
           ````
 
+          For the vale grammar check the usage is
+          ```
+          vale sync --config=.github/styles/vale-spelling.ini
+          vale --config=.github/styles/vale-spelling.ini docs/index.rst
+          ```
+          But only consider vale checks for obvious mispellings, since it is extra picky
+          and some things, like casing of products, are not useful.
+
           ## Task 1: Content check
           At this task, you will focus on the content, fixing content logical
           errors, as well as: Broken links References to files or pages that do not
@@ -292,7 +300,7 @@ jobs:
           python3 -m ensurepip --upgrade
 
           pip install -r requirements.txt
-          pip install camelot-py
+          pip install camelot-py vale
 
       - uses: analogdevicesinc/doctools/llm@action
         id: llm
