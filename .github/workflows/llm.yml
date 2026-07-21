@@ -308,7 +308,7 @@ jobs:
           python3 -m ensurepip --upgrade
 
           pip install -r requirements.txt
-          pip install camelot-py vale
+          pip install camelot-py vale rst2html
 
       - uses: analogdevicesinc/doctools/llm@action
         id: llm
