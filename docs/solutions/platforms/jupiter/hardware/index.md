@@ -27,7 +27,7 @@ This page covers the basics of Jupiter hardware and what a user should know to u
 ```{clear-content}
 ```
 ### Configurations
-There are two configurations for Jupiter: Host Computer Mode and Standslone Mode.
+There are two configurations for Jupiter: Host Computer Mode and Standalone Mode.
 
 **Host Computer Mode**
 - Micro-USB cable
@@ -144,7 +144,7 @@ The main board also expose to the front panel two transmit channels TX1A and TX2
 * - **Processing**
     - XCZU3EG Zynq UltraScale+ MPSoC  
     - ARM PS
-    - Integrated PL 
+    - Integrated PL
   - **Memory & Storage**
     - 2 GB DDR4  
     - 64 MB QSPI  
@@ -159,7 +159,7 @@ The main board also expose to the front panel two transmit channels TX1A and TX2
     - ADCLK925 fanout  
     - Multichip sync
   - **Power**
-    - 5V input 
+    - 5V input
     - 9V input
     - PoE support
   - **Interfaces**

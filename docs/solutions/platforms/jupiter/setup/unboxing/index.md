@@ -25,12 +25,12 @@
 **Optional:**
 - Displayport cable
     - If the user intends to interface directly with Jupiter
-- Ethernet cable 
+- Ethernet cable
     - To connect to host pc, or can be used for POE
 - Micro USB cable
     - UART / serial console access
-- {adi}`AD-SYNCHRONA14-EBZ <resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-synchrona14-ebz.html>` 
-    - Synchrona is only necessary if you want to phase synchronize two, or more, Jupiter SDRs together 
+- {adi}`AD-SYNCHRONA14-EBZ <resources/evaluation-hardware-and-software/evaluation-boards-kits/ad-synchrona14-ebz.html>`
+    - Synchrona is only necessary if you want to phase synchronize two, or more, Jupiter SDRs together
 
 <br>
 <br>

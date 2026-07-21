@@ -1,12 +1,12 @@
 # Jupiter Pilot Walkthrough
 
-This walkthrough will show the user how to start the hardware and will walk through the Multi-Chip Sync (MCS) code. The code used in this walkthrough is the {git-pyadi-iio}`adrv9002_mcs_sync <jupiter_sync_update_refactor:examples/adrv9002_mcs_sync/>` code found in the {git-pyadi-iio}`PYADI-IIO </>` library. 
+This walkthrough will show the user how to start the hardware and will walk through the Multi-Chip Sync (MCS) code. The code used in this walkthrough is the {git-pyadi-iio}`adrv9002_mcs_sync <jupiter_sync_update_refactor:examples/adrv9002_mcs_sync/>` code found in the {git-pyadi-iio}`PYADI-IIO </>` library.
 
-In order to run this code you must have 2 Jupiters, a Synchrona, a transmit antenna, and a 4x1 receive array (see {doc}`Pilot Hardware Setup </solutions/platforms/jupiter/pilot/mcs-quick-start/index>`). 
+In order to run this code you must have 2 Jupiters, a Synchrona, a transmit antenna, and a 4x1 receive array (see {doc}`Pilot Hardware Setup </solutions/platforms/jupiter/pilot/mcs-quick-start/index>`).
 
 
 ## Theory
- In this pilot beamforming will be used to steer our beam in software by applying the appropriate phase shift to the received signals from each antenna element. By adjusting the phase shift from each channel we create constructive interference in the desired direction or directional gain, and thus beamforming is achieved. {doc}`Here </solutions/platforms/pluto/pilots/beamforming/bf_theory>` is a link to beamforming fundamentals. 
+ In this pilot beamforming will be used to steer our beam in software by applying the appropriate phase shift to the received signals from each antenna element. By adjusting the phase shift from each channel we create constructive interference in the desired direction or directional gain, and thus beamforming is achieved. {doc}`Here </solutions/platforms/pluto/pilots/beamforming/bf_theory>` is a link to beamforming fundamentals.
 
 ## Booting the hardware
 This section will guide through steps up until running the software.
@@ -55,12 +55,12 @@ This section will guide through steps up until running the software.
 
 ## Code Walkthrough
 <!-- Provide an overview -->
-All of the Jupiter MCS pilot code can be found here **(link the PyADI-IIO website)**. Contrary to Pluto, there is not support for the Jupiter hardware, which is why the Python calls for Jupiter will address the **ADRV9002** (Jupiter's transceiver) instead of Jupiter itself. Regarding the structure of this walkthrough, it will first go through the config file, the Sine Sync file, then the OTA specific examples. The very first thing to do is to **edit the config file**. 
+All of the Jupiter MCS pilot code can be found here **(link the PyADI-IIO website)**. Contrary to Pluto, there is not support for the Jupiter hardware, which is why the Python calls for Jupiter will address the **ADRV9002** (Jupiter's transceiver) instead of Jupiter itself. Regarding the structure of this walkthrough, it will first go through the config file, the Sine Sync file, then the OTA specific examples. The very first thing to do is to **edit the config file**.
 
 ### Config file
 This file has two main purposes, set the IP addresses of the hardware, and set constants for either OTA or splitter. Some key constants found in this file are transmit frequency, amplitude and gain values for each channel as well as phased array antenna (used on Rx channels) parameters such as the distance between each antenna element relative to wavelength.
 
-- If the IP addresses are not already known, go to the terminals connected to the Jupiters and Synchrona and type ***ifconfig***, it will give you an IP address for each device. See screenshot below. 
+- If the IP addresses are not already known, go to the terminals connected to the Jupiters and Synchrona and type ***ifconfig***, it will give you an IP address for each device. See screenshot below.
 
 ```{image} pu-tty-w-ifconfig.png
 :alt: Put Text Here to Describe the Image
@@ -68,7 +68,7 @@ This file has two main purposes, set the IP addresses of the hardware, and set c
 :align: center
 ```
 
-- Copy each IP address and paste them on **lines 34-36**. The *primary* Jupiter is the one using the Tx port, the *secondary* Jupiter is just connected to the array and Synchrona. 
+- Copy each IP address and paste them on **lines 34-36**. The *primary* Jupiter is the one using the Tx port, the *secondary* Jupiter is just connected to the array and Synchrona.
 
 ```{image} hardware-w-pu-tty.png
 :alt: Put Text Here to Describe the Image
@@ -105,7 +105,7 @@ This file has two main purposes, set the IP addresses of the hardware, and set c
 
 ```{clear-content}
 ```
-```python 
+```python
     # # For Power splitter setup:
     # # Below values are used for testing with a power splitter ##########################
     # lo_freq = 2200000000 - 40000 # LO frequency of jupiter
@@ -242,7 +242,7 @@ When running this script you will see the same two subplots from the Sync Sine e
 ```{image} resync-plot-bad.png
 :alt: Phase error plot showing relative phase difference across profile reloads
 :width: 1000px
-:align: center 
+:align: center
 ```-->
 
 ### DOA Example

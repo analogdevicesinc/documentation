@@ -5,7 +5,7 @@ In addition to an extra Jupiter and a Synchrona, the MCS pilot requires a Tx ant
 
 ```{clear-content}
 ```
- **RF splitter:** [ZN4PD1-63HP-S+](https://www.digikey.com/en/products/detail/mini-circuits/ZN4PD1-63HP-S/20526937?gclid=66be15c9f8fb1691dff17c1b6d81a035&gclsrc=3p.ds&msclkid=66be15c9f8fb1691dff17c1b6d81a035) from Mini-Circuits 
+ **RF splitter:** {digikey}`ZN4PD1-63HP-S+` from Mini-Circuits
 
 ```{image} resources/splitter.webp
 :alt: Put Text Here to Describe the Image

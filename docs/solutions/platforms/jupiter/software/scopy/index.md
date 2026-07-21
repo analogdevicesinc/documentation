@@ -3,7 +3,7 @@
 This page details how to download Scopy 2.0 as well as a walkthrough example with the Jupiter SDR. Scopy is is a free, open-source, multi-functional software toolset designed for signal analysis.
 
 
-## Installation 
+## Installation
 - To download Scopy navigate to the {git-scopy}`Scopy V2.1.0 release page <releases/tag/v2.1.0>` and scroll to the bottom of the page. At the bottom of the page there will be several download links, download the version appropriate for your system.
 
 ```{image} scopy-dl-links.png
@@ -48,10 +48,10 @@ Continue to press the "Next" button through the rest of the setup. After you com
 :align: center
 ```
 
-- On this page there are three possible ways to connect to the Jupiter: 
+- On this page there are three possible ways to connect to the Jupiter:
     1. Scan
-        - In order to use the scan option, click the refresh arrow in the Scan section. 
-        - If your desired device is not chosen, select the correct device from the context drop-down menu. 
+        - In order to use the scan option, click the refresh arrow in the Scan section.
+        - If your desired device is not chosen, select the correct device from the context drop-down menu.
     2. Serial Port
         - To use the serial port to connect, click the refresh arrow in the Serial Port section.
         - If this does not update to the desired device, use the drop-down menu to choose the correct COM port.
@@ -89,7 +89,7 @@ Following these steps will yield the magnitude spectrum shown below.
 :align: center
 ```
 
-**Magnitude Spectrum:** 
+**Magnitude Spectrum:**
 ```{image} scopy-spectrogram.png
 :alt: Put Text Here to Describe the Image
 :width: 1000px

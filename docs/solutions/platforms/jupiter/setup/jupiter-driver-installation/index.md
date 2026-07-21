@@ -19,7 +19,7 @@ The first thing to do, preferably prior to connecting your Jupiter, is to instal
     - Pick your Linux distribution from this list {git-libiio}`here <releases+>`
     - Or install from the {git-libiio}`source <main:README_BUILD.md>`
         - But change the git clone line to:
-            git clone https://github.com/analogdevicesinc/libiio.git –branch libiio-v0
+            git clone https://github.com/analogdevicesinc/libiio.git --branch libiio-v0
         - libiio-v0 is always the latest, stable, branch. This command as of (Sept 2024) will install libiio v0.25
         - If you run into any errors with install, try repeating that command with sudo
 2. Install {ref}`PYADI-IIO <pyadi-iio>` (from source is recommended but not always necessary)  
@@ -62,7 +62,7 @@ If you see a list of "Available contexts", such as shown above, then you have su
 ```{clear-content}
 ```
 
-If you get something like the message below, then you've probably installed the drivers correctly, but the computer can't find Jupiter (or any IIO device).  Is Jupiter plugged in??? 
+If you get something like the message below, then you've probably installed the drivers correctly, but the computer can't find Jupiter (or any IIO device).  Is Jupiter plugged in???
 
 ```{image} resources/iio_info2.svg
 :width: 700px

@@ -2,12 +2,12 @@
 Tasks left to be done:
     1. Add a paragraph describing the block diagram
     2. When Jupiter MCS documentation is complete link that to the Jupiter MCS Pilot text
-    3. General Formatting 
+    3. General Formatting
  -->
 
 # Synchrona Overview
 <!-- Summary  -->
-The AD-SYNCHRONA14-EBZ (Synchrona) is a highly accurate frequency and phase controlled source clock. Synchrona is based on the {adi}`AD9545`, which is a quad input synchronizer and jitter cleaner, and the {adi}`HMC7044`, a 3.2 GHz, 14 output high performance jitter attenuator. 
+The AD-SYNCHRONA14-EBZ (Synchrona) is a highly accurate frequency and phase controlled source clock. Synchrona is based on the {adi}`AD9545`, which is a quad input synchronizer and jitter cleaner, and the {adi}`HMC7044`, a 3.2 GHz, 14 output high performance jitter attenuator.
 
 In order to change the channel configuration of Synchrona, follow this guide {ref}`here <ad-syncrhona14-ebz>` that shows how to use RaspAP with Synchrona. RaspAP is an open-source software suite that transforms a Raspberry Pi into a functional, web-managed wireless access point.
 
@@ -66,8 +66,8 @@ Synchrona plays a vital part in the Jupiter MCS pilot, accurately syncing two Ju
     - The final clock fan‑out section delivering synchronized timing signals to downstream hardware (e.g., converters, transceivers, or FPGA systems).
 
 <!-- Synchrona Add-On board
-Reference: {wiki}`resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter-->
-`
+Reference: {dokuwiki}`resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter`
+-->
 ## ADD-ON Voltage Translation Board
 <!-- <img src="ad-synchrona14-add-on-brd.jpg" width = "700"> -->
 ```{image} resources/ad-synchrona14-add-on-brd.jpg
@@ -117,7 +117,7 @@ From the RaspAP interface you can:
 
 
 
-More information about the GUI and its pages can be found {doc}`here </solutions/reference-designs/ad-synchrona14-ebz>`.
+More information about the GUI and its pages can be found {doc}`here </solutions/reference-designs/ad-synchrona14-ebz/index>`.
 
 
 

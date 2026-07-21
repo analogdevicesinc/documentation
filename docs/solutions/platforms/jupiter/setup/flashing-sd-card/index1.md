@@ -7,17 +7,17 @@ The AD-JUPITER-EBZ ships with an SD card, but this SD card MUST be updated with 
 
 
 ## Download Kuiper Linux
-A given use case will dictate which SD card image should be used. 
+A given use case will dictate which SD card image should be used.
 
 **If using a single Jupiter:** {git-kuiper}`Kuiper 2.0 build <main:+actions/workflows/kuiper2_0-build.yml?query=branch:main>`.
 
-On that page, you will see a number of “workflow run results”.  Click on the most recent one, at the top of the list, and download its “kuiper_full_64+_image”.  It will be a 2 to 3 GB file. 
+On that page, you will see a number of “workflow run results”.  Click on the most recent one, at the top of the list, and download its “kuiper_full_64+_image”.  It will be a 2 to 3 GB file.
 
 Unzip that file, and locate the image file.  This file cannot be directly copied to the SD card, it must be transferred with special image writing software. There are several ways to do this, but the following way is recommended.
 
-**If using MCS:** {wiki}`MCS documentation <resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter>`.
+**If using MCS:** {dokuwiki}`MCS documentation <resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter>`.
 
-On this page scroll down until you see "MCS prebuild files". There will be two .zip files, one for the Jupiter image and the other for Synchrona. Follow the instructions below to flash the SD card, but copy the files from the Jupiter MCS .zip folder instead of the ones in the zynqmp-common and zynqmp-jupiter-sdr folders. The Synchrona .zip contains a device tree overlay (.dtbo) and its source (.dts) for configuring the Synchrona clocks. For Synchrona SD card setup instructions see the {wiki}`MCS wiki page <resources/eval/user-guides/jupiter_sdr/mcs>`.
+On this page scroll down until you see "MCS prebuild files". There will be two .zip files, one for the Jupiter image and the other for Synchrona. Follow the instructions below to flash the SD card, but copy the files from the Jupiter MCS .zip folder instead of the ones in the zynqmp-common and zynqmp-jupiter-sdr folders. The Synchrona .zip contains a device tree overlay (.dtbo) and its source (.dts) for configuring the Synchrona clocks. For Synchrona SD card setup instructions see the {dokuwiki}`MCS wiki page <resources/eval/user-guides/jupiter_sdr/mcs>`.
 
 ## (Optional) Erase and Format the SD Card using SD Card Formatter
 Before the SD Card gets programmed it must be formatted and erased. This can be done with the SD Card Formatter application (https://www.sdcardformatter.com/). This step is recommended if the user is using a new SD card, or there may be something saved on the SD card that could interfere with the image being downloaded.
@@ -31,10 +31,10 @@ Before the SD Card gets programmed it must be formatted and erased. This can be 
 
 Several programs can be used to flash the downloaded Kuiper image to the SD Card. Popular options include Win32DiskImager and BalenaEtcher. Both are free, open-source utilities for flashing operating system images (.iso, .img, .zip) onto SD cards and USB drives to create bootable media. In this walkthrough BalenaEtcher will be used.
 
-Ensure you have the image downloaded and unzipped so you have a *.img file to program. 
+Ensure you have the image downloaded and unzipped so you have a *.img file to program.
 1. Select the *.img file to program to the SD Card
 2. Select the SD Card to program (double check that this is the correct drive)
-3. Press the Flash button, this may require admin privileges on your laptop. It takes about 10 mins 
+3. Press the Flash button, this may require admin privileges on your laptop. It takes about 10 mins
 
 ```{image} balena-etcher-error.png
 :alt: Put Text Here to Describe the Image
@@ -86,7 +86,7 @@ After copying those 4 files to the root directory, close the file explorer and s
 
 ## (Optional) Dealing with USB Encrypted Computers
 
-Some computers (and all Windows computers within Analog Devices!) encrypt writing to USB devices.  But unfortunately, this will make the SD card unreadable to Jupiter.  If another, non-encrypted, computer is available, it is best to use that one.  But if you must use the encrypted computer, then the following procedure may work: 
+Some computers (and all Windows computers within Analog Devices!) encrypt writing to USB devices.  But unfortunately, this will make the SD card unreadable to Jupiter.  If another, non-encrypted, computer is available, it is best to use that one.  But if you must use the encrypted computer, then the following procedure may work:
 
 1. Following programming, remove the SD Card and re-insert it into the PC/Laptop
 2. Open Windows Explorer, do not select the SD Card Drive, this may encrypt the SD Card prompting a restart
@@ -120,7 +120,7 @@ Some computers (and all Windows computers within Analog Devices!) encrypt writin
 
 8. Click apply and ok in the Permissions and Properties tabs, respectively
 9. Create a Map Network Drive to this, right click “This PC” and select Map Network Drive and enter the path copied
-10. A new drive will be created and when you use this drive, there is no encryption 
+10. A new drive will be created and when you use this drive, there is no encryption
     - This drive will pop up automatically
 11. Now go to the "Configure SD Card" section and follow the steps
 

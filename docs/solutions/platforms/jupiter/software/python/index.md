@@ -1,11 +1,11 @@
 # Using Python with Jupiter
 
-Programming with Python is a popular choice for working with Jupiter due to its simplicity and the availability of powerful libraries for signal processing and data analysis. Analog Devices' PyADI-IIO library (commonly called PyADI) provides a user-friendly way of controlling Jupiter and accessing its data in Python. The PyADI quick start guide, installation instructions, and examples are all found [here](https://analogdevicesinc.github.io/pyadi-iio/index.html).
+Programming with Python is a popular choice for working with Jupiter due to its simplicity and the availability of powerful libraries for signal processing and data analysis. Analog Devices' PyADI-IIO library (commonly called PyADI) provides a user-friendly way of controlling Jupiter and accessing its data in Python. The PyADI quick start guide, installation instructions, and examples are all found {external+pyadi-iio:doc}`here <index>`.
 
 The rest of this page will cover the installation and a working example that transmits tones and displays the received spectrum.
 
 ## Installation
-This documentation assumes the user either already has python installed, or is aware of how to install python. If not, [here](https://realpython.com/installing-python/) is a tutorial. 
+This documentation assumes the user either already has python installed, or is aware of how to install python. If not, [here](https://realpython.com/installing-python/) is a tutorial.
 
 PyADI-IIO can be installed using pip, but note that PyADI also requires the pyLIBIIO library.
     
@@ -158,7 +158,7 @@ Plot both channels on a single figure with markers at the expected tone frequenc
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-``` 
+```
 You should see two clear peaks at 0.5 MHz and 1.0 MHz:
 
 ```{image} resultant-tones.png

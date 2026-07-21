@@ -13,10 +13,10 @@ Before the SD Card gets programmed it must be formatted and erased. This can be 
 ## SD Card Flash
 Now BalenaEtcher is needed to flash the SD Card with an image. BalenaEtcher is a free, open-source utility for flashing operating system images (.iso, .img, .zip) onto SD cards and USB drives to create bootable media.
 
-Ensure you have the image downloaded and unzipped so you have a *.img file to program. 
+Ensure you have the image downloaded and unzipped so you have a *.img file to program.
 1. Select the *.img file to program to the SD Card
 2. Select the SD Card to program (double check that this is the correct drive)
-3. Press the Flash button, this may require admin privileges on your laptop. It takes about 10 mins 
+3. Press the Flash button, this may require admin privileges on your laptop. It takes about 10 mins
 
 
 ```{image} balena-etcher-error.png
@@ -26,7 +26,7 @@ Ensure you have the image downloaded and unzipped so you have a *.img file to pr
 ```
 
 ## Setup SD Card
-You need to move files to the root directory of the SD Card based on the FPGA platform in your system. *Within ADI, if this is done directly in Windows Explorer, the SD Card will get encrypted and it will fail to boot when 
+You need to move files to the root directory of the SD Card based on the FPGA platform in your system. *Within ADI, if this is done directly in Windows Explorer, the SD Card will get encrypted and it will fail to boot when
 you use it in the Jupiter platform, this is a work around for this issue.*
 
 1. Following programming, remove the SD Card and re-insert it into the PC/Laptop

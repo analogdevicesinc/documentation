@@ -4,7 +4,7 @@ Tasks left to be done:
     1. Make sure the features highlighted in the table are the most relevant
     2. When Jupiter MCS documentation is complete link that to the Jupiter MCS Pilot text
     3. Add links to table of contents as they come
-    3. General Formatting 
+    3. General Formatting
  -->
 
 
@@ -17,7 +17,7 @@ Tasks left to be done:
 
 
 
-AD-Jupiter-EBZ (Jupiter) is a software defined radio platform based on the **ADRV9002** Transceiver and **AMD Xilinx Zynq Ultrascale+ MPSoC XCZU3EG**. The ADRV9002 provides dual-channel Tx and dual-channel Rx with an LO frequency range spanning 30 MHz to 6 GHz and channel bandwidths from 12 kHz to 40 MHz, covering VHF, UHF, ISM, and cellular frequency bands in both narrowband and wideband operation. 
+AD-Jupiter-EBZ (Jupiter) is a software defined radio platform based on the **ADRV9002** Transceiver and **AMD Xilinx Zynq Ultrascale+ MPSoC XCZU3EG**. The ADRV9002 provides dual-channel Tx and dual-channel Rx with an LO frequency range spanning 30 MHz to 6 GHz and channel bandwidths from 12 kHz to 40 MHz, covering VHF, UHF, ISM, and cellular frequency bands in both narrowband and wideband operation.
 
 ```{image} ad-jupiter-ebz-angle-web.jpg
 :alt: Put Text Here to Describe the Image
@@ -46,11 +46,11 @@ AD-Jupiter-EBZ (Jupiter) is a software defined radio platform based on the **ADR
 - Multi-Chip Synchronization (MCS)  
 - Digital and Adaptive beamforming
 - Field‑deployable signal collection and monitoring  
-- MIMO 
+- MIMO
 
 
 
-<!-- Key transceiver capabilities include fast profile switching, fast frequency hopping, multi-chip synchronization (MCS), and integrated digital pre-distortion (DPD) for narrow and wideband waveforms. The device is designed with the RF performance vs. power consumption tradeoff in mind. The XCZU3EG processing device has a wide range of interfaces making the system capable of local processing or streaming to a remote host. 
+<!-- Key transceiver capabilities include fast profile switching, fast frequency hopping, multi-chip synchronization (MCS), and integrated digital pre-distortion (DPD) for narrow and wideband waveforms. The device is designed with the RF performance vs. power consumption tradeoff in mind. The XCZU3EG processing device has a wide range of interfaces making the system capable of local processing or streaming to a remote host.
 -->
 
 
@@ -61,7 +61,7 @@ AD-Jupiter-EBZ (Jupiter) is a software defined radio platform based on the **ADR
 - Embedded Linux‑based SDR application development  
 - Hardware‑in‑the‑loop algorithm validation -->
 
-<!-- Insert Jupiter block Diagram here 
+<!-- Insert Jupiter block Diagram here
 <p align="center">
 <img src="ad-jupiter-ebz-angle-web.jpg" width="400">
 </p>
@@ -74,8 +74,8 @@ This documentation serves as a straight-forward, but detailed start-up guide for
 
 <!-- After following this documentation a user will be able to:
 
-- Setup the hardware 
-- Configure Jupiter 
+- Setup the hardware
+- Configure Jupiter
 - Use Python, MATLAB, and Scopy with Jupiter
 - Use two Jupiters and a Synchrona for MCS and Beamforming -->
 

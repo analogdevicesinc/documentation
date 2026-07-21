@@ -47,7 +47,7 @@ There are two acceptable IP addresses here: 10.75.162.65 and analog-3.local.
 
 ```{clear-content}
 ```
-2. In command prompt type the iio_attr -u (-u allows specification of an IP address) followed by the IP address from the Jupiter and a -d (-d shows the devices) at the end. In this case it is ***iio_attr -u ip:analog-3.local -d*** or ***iio_attr -u ip:10.75.162.65 -d***. 
+2. In command prompt type the iio_attr -u (-u allows specification of an IP address) followed by the IP address from the Jupiter and a -d (-d shows the devices) at the end. In this case it is ***iio_attr -u ip:analog-3.local -d*** or ***iio_attr -u ip:10.75.162.65 -d***.
 
 ```{image} iio-info-u.png
 :alt: Put Text Here to Describe the Image

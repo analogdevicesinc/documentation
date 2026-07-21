@@ -39,7 +39,7 @@ and run **ADRV9002 Transceiver Evaluation Software setup** as administrator
 :align: center
 ```
 
-## Using TES 
+## Using TES
 This section will give a high-level overview of some of the configuration pages in TES. For a more in depth guide on TES see {ref}`here <ad-jupiter-ebz profile-generation>`.
 
 ### Connection
@@ -162,7 +162,7 @@ On the Clocks page, set the **Device Clock** frequency to **30.72 MHz**. Because
 
 ### 3. Advanced Features
 
-On the Advanced Features page, find the **Multi-Chip Sync** section and set the **MCS Mode** to **Enabled with RF PLL Phase**. 
+On the Advanced Features page, find the **Multi-Chip Sync** section and set the **MCS Mode** to **Enabled with RF PLL Phase**.
 
 ```{image} advanced-features.png
 :alt: TES Advanced Features page
