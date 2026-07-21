@@ -89,9 +89,17 @@ jobs:
           packages to help you review, test and debug
           You must check the appropriate datasheets for devices and
           evaluation boards, always convert pdfs before reading it, in
-          particular, camelot-py is great to get the register map. Tip, a
-          sitemap with all pdfs, including the datasheets, are available at
-          https://www.analog.com/media/en/en-pdf-sitemap.xml
+          particular, camelot-py is great to get the register map.
+          Pre-converted (with docling), may be available at the git tree:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling
+          for example:
+            https://www.analog.com/media/en/technical-documentation/data-sheets/max17335.pdf
+          can be fetched with:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling/media/en/technical-documentation/  data-sheets/max17335.md
+          A sitemap with all pdfs, including the datasheets, is available at:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling/en-pdf-sitemap.xml
+            (mirror of https://www.analog.com/media/en/en-pdf-sitemap.xml)
+
           **Must fetch and read**, full documentation guidelines are provided at
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/index.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/directives.rst
