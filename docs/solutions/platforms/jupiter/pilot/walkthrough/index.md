@@ -6,7 +6,7 @@ In order to run this code you must have 2 Jupiters, a Synchrona, a transmit ante
 
 
 ## Theory
- In this pilot beamforming will be used to steer our beam in software by applying the appropriate phase shift to the received signals from each antenna element. By adjusting the phase shift from each channel we create constructive interference in the desired direction or directional gain, and thus beamforming is achieved. {doc}`Here </solutions/platforms/pluto/pilots/beamforming/bf_theory>` is a link to beamforming fundamentals.
+ In this pilot beamforming will be used to steer our beam in software by applying the appropriate phase shift to the received signals from each antenna element. By adjusting the phase shift from each channel we create constructive interference in the desired direction or directional gain, and thus beamforming is achieved. {ref}`Here <adc pluto bf_theory)>` is a link to beamforming fundamentals.
 
 ## Booting the hardware
 This section will guide through steps up until running the software.

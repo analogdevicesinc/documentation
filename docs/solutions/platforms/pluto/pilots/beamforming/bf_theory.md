@@ -1,3 +1,4 @@
+(adc pluto bf_theory)=
 # Beamforming Theory
 
 Before implementing beamforming with the PlutoSDR, let’s briefly review the physical and mathematical principles that make it possible.
