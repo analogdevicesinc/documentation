@@ -180,7 +180,8 @@ The script uses `matplotlib.animation.FuncAnimation` to continuously update two 
 To proceed to the next plot, you must close the current plot.
 ```
 
-`````{grid} 3
+`````{grid}
+:columns: 3
 
 ````{grid-item}
 **Phase Adjustment**
