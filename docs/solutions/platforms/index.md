@@ -92,6 +92,16 @@ Low-cost SDR system based on the AD9361
 ```{image} x-band/xbdev-box.png
 ```
 ````
+
+````{card} Jupiter SDR
+:ref: adc jupiter
+
+Ruggedized, high-performance SDR platform
+
+```{image} jupiter/ad-jupiter-ebz-angle-web.jpg
+```
+````
+
 `````  
 
 ## Platform Pilots
@@ -153,9 +163,10 @@ We have a Catalyst centres in:
 :hidden:
 
 Phaser (CN0566)<phaser/index>
-Pluto SDR<pluto/index>
 Triton <triton/index>
 X-Band Development Platform <x-band/index>
+Jupiter SDR <jupiter/index>
+Pluto SDR<pluto/index>
 ```
 
 
