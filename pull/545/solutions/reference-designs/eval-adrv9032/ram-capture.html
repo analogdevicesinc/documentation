@@ -163,7 +163,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="ram-capture">
-<span id="adrv903x-ram-capture"></span><h1>RAM Capture<a class="headerlink" href="#ram-capture" title="Link to this heading"></a></h1>
+<span id="adrv9032-ram-capture"></span><h1>RAM Capture<a class="headerlink" href="#ram-capture" title="Link to this heading"></a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
 <p>The ADRV903x provides a RAM capture feature for capturing raw RX/ORX ADC
@@ -305,19 +305,19 @@ cat<span class="w"> </span>/sys/bus/iio/devices/iio:device3/sample_count
 <p class="admonition-title">Note</p>
 <p>The device number (<code class="docutils literal notranslate"><span class="pre">iio:device3</span></code>) may vary depending on the system
 configuration. Use <code class="docutils literal notranslate"><span class="pre">iio_info</span></code> or check <code class="docutils literal notranslate"><span class="pre">/sys/bus/iio/devices/*/name</span></code>
-to identify the correct device.</p>
+to identify the <code class="docutils literal notranslate"><span class="pre">adrv903x-ramc</span></code> device.</p>
 </div>
 </section>
 <section id="debugfs-interface">
 <h2>debugfs Interface<a class="headerlink" href="#debugfs-interface" title="Link to this heading"></a></h2>
 <p>A simplified debugfs interface is also available for quick single-shot
-captures without IIO buffer setup.</p>
+captures without IIO buffer setup under the <code class="docutils literal notranslate"><span class="pre">adrv903x-phy</span></code> device.</p>
 <p>Usage:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trigger capture: channel 0 (RX0), 256 samples</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0 256&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/iio/iio:device2/rx_data_capture
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;0 256&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/debug/iio/iio:device1/rx_data_capture
 
 <span class="c1"># Read captured data</span>
-cat<span class="w"> </span>/sys/kernel/debug/iio/iio:device2/rx_data_capture
+cat<span class="w"> </span>/sys/kernel/debug/iio/iio:device1/rx_data_capture
 </pre></div>
 </div>
 <p>Channel numbers for debugfs:</p>
