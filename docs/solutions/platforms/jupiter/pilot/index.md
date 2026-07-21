@@ -1,5 +1,5 @@
 # Jupiter MCS Pilot
-The Jupiter MCS pilot uses two Jupiters and a Synchrona to perform MCS and beamforming. The official MCS Pilot can be found [here]({wiki}`resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter`). This guide aims to be a comprehensive summary that provides a clear user experience. 
+The Jupiter MCS pilot uses two Jupiters and a Synchrona to perform MCS and beamforming. The official MCS Pilot can be found {ref}`here <ad-jupiter-ebz mcs-setup>`. This guide aims to be a comprehensive summary that provides a clear user experience. 
 
 This pilot will go over the following:
 
@@ -33,7 +33,7 @@ The code for this pilot exists in the PyADI-IIO library under the folder labeled
 ```
 ```{note}
 For questions or help with the Jupiter SDR, please visit:
-<br>
+
 {ez}`fpga`
 ```
 
