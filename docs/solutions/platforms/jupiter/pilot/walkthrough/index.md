@@ -181,7 +181,6 @@ To proceed to the next plot, you must close the current plot.
 ```
 
 `````{grid} 3
-:gutter: 2
 
 ````{grid-item}
 **Phase Adjustment**

@@ -117,7 +117,7 @@ From the RaspAP interface you can:
 
 
 
-More information about the GUI and its pages can be found {doc}`here </solutions/reference-designs/ad-synchrona14-ebz/index>`.
+More information about the GUI and its pages can be found {doc}`here </solutions/reference-designs/ad-synchrona14-ebz>`.
 
 
 

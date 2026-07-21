@@ -9,8 +9,11 @@ This page walks through how to connect to Jupiter and verify communication.
 ```{toctree}
 :maxdepth: 1
 
+Installing the Drivers <jupiter-driver-installation/index>
 Unboxing <unboxing/index>
-Flashing the SD Card <flashing-sd-card/index1>
+Transceiver Evaluation Software (TES) <tes/index>
+Flashing the SD Card (Detailed) <flashing-sd-card/index1>
+Flashing the SD Card (Quick Guide) <flashing-sd-card/index>
 ```
 
 <!-- ## Two ways to use Jupiter

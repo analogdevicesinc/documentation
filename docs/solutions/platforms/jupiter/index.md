@@ -87,7 +87,7 @@ This documentation serves as a straight-forward, but detailed start-up guide for
 
 Jupiter vs. Pluto <jup-v-plut/index>
 Hardware <hardware/index>
-Getting Started <setup/landing-page/index>
+Getting Started <setup/index>
 Software <software/index>
 Pilot <pilot/index>
 ```

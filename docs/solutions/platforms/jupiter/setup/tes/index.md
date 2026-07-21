@@ -96,6 +96,7 @@ File -> Generate Profile File
 :align: center
 ```
 
+(uploading-bin-and-json-files)=
 ### Uploading .bin and .json Files
 The .bin and .json files need to be put in the stream_config and the profile_config location, respectively. There are several ways to do this; the recommended method is to use Windows Powershell to copy the files into the directory, then cat them into the config locations. In order to do the MCS Pilot, MCS Mode drop-down must be set to 'Enabled' or 'Enabled with RF PLL Phase'.
 

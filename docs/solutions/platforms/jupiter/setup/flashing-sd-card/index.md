@@ -5,12 +5,12 @@ The AD-JUPITER-EBZ ships with an SD card, but this SD card MUST be updated with 
 
 Before the SD Card gets programmed it must be formatted and erased. This can be done with the SD Card Formatter application (https://www.sdcardformatter.com/).
 
-#### Using SD Card Formatter
+## Using SD Card Formatter
 1. Insert the SD Card and select it, choose Quick Format option and label the SD Card, e.g. jupiterTest
 2. Press the Format button and wait for the prompt to say it is successful
 3. The SD Formatter software can be closed
 
-#### SD Card Flash
+## SD Card Flash
 Now BalenaEtcher is needed to flash the SD Card with an image. BalenaEtcher is a free, open-source utility for flashing operating system images (.iso, .img, .zip) onto SD cards and USB drives to create bootable media.
 
 Ensure you have the image downloaded and unzipped so you have a *.img file to program. 
@@ -25,7 +25,7 @@ Ensure you have the image downloaded and unzipped so you have a *.img file to pr
 :align: center
 ```
 
-### Setup SD Card
+## Setup SD Card
 You need to move files to the root directory of the SD Card based on the FPGA platform in your system. *Within ADI, if this is done directly in Windows Explorer, the SD Card will get encrypted and it will fail to boot when 
 you use it in the Jupiter platform, this is a work around for this issue.*
 
@@ -65,7 +65,7 @@ you use it in the Jupiter platform, this is a work around for this issue.*
 9. Create a Map Network Drive to this, right click “This PC” and select Map Network Drive and enter the path copied
 10. A new drive will be created and when you use this drive, there is no encryption. This drive will pop up automatically
 
-### File Manipulation
+## File Manipulation
 Now that the new drive is up, all of the files needed are accessible without encrypting the device. For Jupiter, four files need to be moved to the root directory: Image.img, BOOT.BIN, system.dtb, and boot.scr.
 
 1. Scroll down until the zynqmp-common folder, open it
@@ -104,7 +104,7 @@ Now that the new drive is up, all of the files needed are accessible without enc
 5. Go up one level (to the root directory) and paste the files
 6. Everything is ready to go, close the file explorer and safely eject the SD Card
 
-### Testing the SD Card
+## Testing the SD Card
 - With a successfully programmed SD Card, power the Jupiter System down and remove the existing SD Card (if there is one) from the setup
 - Insert the newly flashed SD Card
 - Use a UART connection and connect to the Jupiter with a baud rate of 115200 (PuTTy is used here, but any one would work)

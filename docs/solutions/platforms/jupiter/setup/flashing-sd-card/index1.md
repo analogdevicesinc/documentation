@@ -6,7 +6,7 @@ The AD-JUPITER-EBZ ships with an SD card, but this SD card MUST be updated with 
 3. Install SD Card and Power Up
 
 
-### Download Kuiper Linux
+## Download Kuiper Linux
 A given use case will dictate which SD card image should be used. 
 
 **If using a single Jupiter:** {git-kuiper}`Kuiper 2.0 build <main:+actions/workflows/kuiper2_0-build.yml?query=branch:main>`.
@@ -19,7 +19,7 @@ Unzip that file, and locate the image file.  This file cannot be directly copied
 
 On this page scroll down until you see "MCS prebuild files". There will be two .zip files, one for the Jupiter image and the other for Synchrona. Follow the instructions below to flash the SD card, but copy the files from the Jupiter MCS .zip folder instead of the ones in the zynqmp-common and zynqmp-jupiter-sdr folders. The Synchrona .zip contains a device tree overlay (.dtbo) and its source (.dts) for configuring the Synchrona clocks. For Synchrona SD card setup instructions see the {wiki}`MCS wiki page <resources/eval/user-guides/jupiter_sdr/mcs>`.
 
-#### (Optional) Erase and Format the SD Card using SD Card Formatter
+## (Optional) Erase and Format the SD Card using SD Card Formatter
 Before the SD Card gets programmed it must be formatted and erased. This can be done with the SD Card Formatter application (https://www.sdcardformatter.com/). This step is recommended if the user is using a new SD card, or there may be something saved on the SD card that could interfere with the image being downloaded.
 
 1. Insert the SD Card and select it, choose Quick Format option and label the SD Card, e.g. jupiterTest
@@ -27,7 +27,7 @@ Before the SD Card gets programmed it must be formatted and erased. This can be 
 3. The SD Formatter software can be closed
 
 
-#### SD Card Flash
+## SD Card Flash
 
 Several programs can be used to flash the downloaded Kuiper image to the SD Card. Popular options include Win32DiskImager and BalenaEtcher. Both are free, open-source utilities for flashing operating system images (.iso, .img, .zip) onto SD cards and USB drives to create bootable media. In this walkthrough BalenaEtcher will be used.
 
@@ -42,7 +42,7 @@ Ensure you have the image downloaded and unzipped so you have a *.img file to pr
 :align: center
 ```
 
-### Configure the SD Card
+## Configure the SD Card
 At this point, you now have the Kuiper image installed on your SD card. However, you need to move files to the root directory of the SD Card based on the FPGA platform in your system. For most computers, this is a simple procedure. But if your computer uses a USB encryption, then follow the optional steps at the end of this page.  
 
 There are 4 files that need to be copied to the root of the SD Card: Image.img, BOOT.BIN, system.dtb, and boot.scr.
@@ -84,7 +84,7 @@ Go up one level (to the root directory) and paste the files
 After copying those 4 files to the root directory, close the file explorer and safely eject the SD Card.
 
 
-### (Optional) Dealing with USB Encrypted Computers
+## (Optional) Dealing with USB Encrypted Computers
 
 Some computers (and all Windows computers within Analog Devices!) encrypt writing to USB devices.  But unfortunately, this will make the SD card unreadable to Jupiter.  If another, non-encrypted, computer is available, it is best to use that one.  But if you must use the encrypted computer, then the following procedure may work: 
 
