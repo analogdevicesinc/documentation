@@ -1,4 +1,4 @@
-.. _adrv903x ram-capture:
+.. _adrv9032 ram-capture:
 
 RAM Capture
 ===============================================================================
@@ -137,23 +137,23 @@ The ``sample_count`` attribute controls how many samples are captured:
 
    The device number (``iio:device3``) may vary depending on the system
    configuration. Use ``iio_info`` or check ``/sys/bus/iio/devices/*/name``
-   to identify the correct device.
+   to identify the ``adrv903x-ramc`` device.
 
 debugfs Interface
 -------------------------------------------------------------------------------
 
 A simplified debugfs interface is also available for quick single-shot
-captures without IIO buffer setup.
+captures without IIO buffer setup under the ``adrv903x-phy`` device.
 
 Usage:
 
 .. code-block:: bash
 
    # Trigger capture: channel 0 (RX0), 256 samples
-   echo "0 256" > /sys/kernel/debug/iio/iio:device2/rx_data_capture
+   echo "0 256" > /sys/kernel/debug/iio/iio:device1/rx_data_capture
 
    # Read captured data
-   cat /sys/kernel/debug/iio/iio:device2/rx_data_capture
+   cat /sys/kernel/debug/iio/iio:device1/rx_data_capture
 
 Channel numbers for debugfs:
 

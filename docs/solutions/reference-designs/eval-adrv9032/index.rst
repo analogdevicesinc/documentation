@@ -91,7 +91,7 @@ Table of contents
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
-      #. :ref:`RAM Capture <adrv903x ram-capture>`
+      #. :ref:`RAM Capture <adrv9032 ram-capture>`
 
 #. Design with the ADRV9032/ADRV9032R
 
