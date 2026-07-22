@@ -15,9 +15,9 @@ On that page, you will see a number of “workflow run results”.  Click on the
 
 Unzip that file, and locate the image file.  This file cannot be directly copied to the SD card, it must be transferred with special image writing software. There are several ways to do this, but the following way is recommended.
 
-**If using MCS:** {dokuwiki}`MCS documentation <resources/eval/user-guides/jupiter_sdr/mcs?s%5b%5d=jupiter>`.
+**If using MCS:** {doc}`MCS documentation </solutions/reference-designs/ad-jupiter-ebz/mcs-setup>`.
 
-On this page scroll down until you see "MCS prebuild files". There will be two .zip files, one for the Jupiter image and the other for Synchrona. Follow the instructions below to flash the SD card, but copy the files from the Jupiter MCS .zip folder instead of the ones in the zynqmp-common and zynqmp-jupiter-sdr folders. The Synchrona .zip contains a device tree overlay (.dtbo) and its source (.dts) for configuring the Synchrona clocks. For Synchrona SD card setup instructions see the {dokuwiki}`MCS wiki page <resources/eval/user-guides/jupiter_sdr/mcs>`.
+On this page scroll down until you see "MCS prebuild files". There will be two .zip files, one for the Jupiter image and the other for Synchrona. Follow the instructions below to flash the SD card, but copy the files from the Jupiter MCS .zip folder instead of the ones in the zynqmp-common and zynqmp-jupiter-sdr folders. The Synchrona .zip contains a device tree overlay (.dtbo) and its source (.dts) for configuring the Synchrona clocks. For Synchrona SD card setup instructions see the {doc}`MCS setup page </solutions/reference-designs/ad-jupiter-ebz/mcs-setup>`.
 
 ## (Optional) Erase and Format the SD Card using SD Card Formatter
 Before the SD Card gets programmed it must be formatted and erased. This can be done with the SD Card Formatter application (https://www.sdcardformatter.com/). This step is recommended if the user is using a new SD card, or there may be something saved on the SD card that could interfere with the image being downloaded.
