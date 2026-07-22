@@ -121,7 +121,8 @@
 <li><a class="reference internal" href="#language-support-matlab">Language Support: MATLAB</a></li>
 <li><a class="reference internal" href="#iio-as-a-tool-for-migrating-to-an-embedded-implementation">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
 <li><a class="reference internal" href="#porting-to-a-fully-embedded-system">Porting to a Fully Embedded System</a></li>
-<li><a class="reference internal" href="#ecosystem-support-ros2-integration">Ecosystem Support: ROS2 Integration</a></li>
+<li><a class="reference internal" href="#rtos-support-zephyr">RTOS Support: Zephyr</a></li>
+<li><a class="reference internal" href="#ecosystem-framework-support-ros2-integration">Ecosystem / Framework Support: ROS2 Integration</a></li>
 <li><a class="reference internal" href="#next-steps-no-os-development-on-linux-you-bet">Next Steps: No-OS development on Linux? You bet!</a></li>
 <li><a class="reference internal" href="#more-just-enough-software-examples">More “Just Enough Software” examples</a></li>
 <li><a class="reference internal" href="#drawing-parallels-to-other-software-flows">Drawing parallels to other software flows</a></li>
@@ -165,6 +166,7 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="matlab_example/index.html">Language Support: MATLAB</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tinyiiod_example/index.html">IIO as a Tool for Migrating to an Embedded Implementation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="standalone_no-os_example/index.html">Porting to a Fully Embedded System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zephyr_example/index.html">RTOS Support: Zephyr</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ros2_integration/index.html">ROS2 Integration with IIO Devices</a></li>
 </ul>
 </li>
@@ -275,45 +277,43 @@ Instruments, Inc. develop their first products:</p>
 <p>The temperature sensor simply involves reading temperature, doing some math to
 convert units if necessary, and displaying the result. The curve tracer involves
 setting voltages and currents, reading voltages and currents, doing some basic
-math, and displaying a result. Each reading is considered independently, no
-correlation to previous or future readings. We will NOT be measuring AC Signal
-to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor measuring steps,
-wiggles, wavelets, or any other situation where precise timing is required. Rest
-assured, there are lots of very interesting applications in this category;
-consider a vector network analyzer (VNA) - set an excitation frequency, measure
-forward and reflected power and phase, do some math, step, repeat, and when
-done, display the results.</p>
-<p>We will start with a Linux-based workflow, leveraging Linux device drivers
+math, and displaying a result.</p>
+<p>We will start with a Linux-based workflow because it’s extremely convenient
+(trust us!) using the ubiquitious Raspberry Pi, leveraging Linux device drivers
 pre-built in ADI Kuiper Linux, Pyadi-iio. We’ll then show how to migrate to
-other languages (C, C#, MATLAB), other processing platforms (ARM-based
-MAX32xxx, Raspberry Pi Pico), ecosystems (no-OS / bare metal, Zephyr), and
-middleware layers (GNURadio, ROS). With ADI DataX, switching between these
-layers is cheap - there is little to no barrier to getting a proof of concept up
-and running in Linux, then switching to bare metal or Zephyr as development
-continues.</p>
+other languages (C, C#, MATLAB), other processing platforms (ARM-based MAX32xxx,
+Raspberry Pi Pico), ecosystems (no-OS / bare metal, Zephyr), and middleware
+layers (GNURadio, ROS). With ADI DataX, switching between these layers is cheap
+- there is little to no barrier to getting a proof of concept up and running in
+Linux, then switching to bare metal or Zephyr as development continues.</p>
 <p>Complete written instructions follow, as well as a video guide and a slide deck
 that can be used for delivering as a hands-on workshop.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>What exactly does “Low Speed” mean? In the context of this tutorial, it means
-that timing is not very critical. Signals are either completely static
-or moving slowly such that it doesn’t matter if the instant that an ADC samples
-the signal wiggles around a bit relative to the previous sampling. While clock
-jitter is one source of this uncertainty, software delays (such as the time
-between a timer interrupt and the assertion of a “convert” edge) will likely be
-dominant. Important parameters in low-speed applications are offset, gain error,
-linearity, and temperature drift. “Noise” in a low-speed application is
-typically synonymous with resolution, and can be roughly measured by applying a
-quiet input signal (like a short circuit) and taking a histogram of the output
-readings. AC performance metrics such as signal to noise ratio and total
-harmonic distortion extracted from a Fourier transform of the data will not be
-considered. In contrast - sample jitter is important in a “high speed”
-application. If you are measuring signal to noise ratio, the Signal to Noise
-ratio (SNR) can be no greater than:</p>
+that timing is not very critical. Signals are either completely static or
+moving slowly such that it doesn’t matter if the instant that an ADC samples
+the signal wiggles around a bit relative to the previous sampling. While
+clock jitter is one source of this uncertainty, software delays (such as the
+time between a timer interrupt and the assertion of a “convert” edge) will
+likely be dominant. AC performance metrics such as signal to noise ratio
+(SNR) and total harmonic distortion (THD) extracted from a Fourier transform
+of the data will not be considered. In contrast - sample jitter is important
+in a “high speed” application. If you are measuring signal to noise ratio,
+the SNR can be no greater than:</p>
 <p><span class="math notranslate nohighlight">\(SNR &lt;= -20 * log(2*\pi*f_{IN}*t_{j})\)</span></p>
 <p>Where:</p>
 <p><span class="math notranslate nohighlight">\(f_{IN}\)</span> is the analog input frequency in Hz</p>
 <p><span class="math notranslate nohighlight">\(t_{j}\)</span> is the RMS jitter in seconds RMS</p>
+<p>Important parameters in low-speed applications are typically offset, gain
+error, linearity, and temperature drift. Each reading is considered
+independently, no correlation to previous or future readings. We will NOT be
+measuring AC SNR, THD, nor measuring steps, wiggles, wavelets, or any other
+situation where precise timing is required. Rest assured, there are lots of
+very interesting applications in this category; consider a vector network
+analyzer (VNA) - set an excitation frequency, measure forward and reflected
+power and phase, do some math, step, repeat, and when done, display the
+results.</p>
 </div>
 </section>
 <section id="materials">
@@ -336,7 +336,8 @@ ratio (SNR) can be no greater than:</p>
 </li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html" target="_blank">ADALM2000</a>
 (Optional, for observing signals.)</p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/max32666fthr" target="_blank">MAX32666FTHR</a> development board (for no-OS examples)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/max32655fthr" target="_blank">MAX32655FTHR</a> development board (for no-OS and Zephyr
+examples)</p></li>
 <li><dl class="simple">
 <dt>Either:</dt><dd><ul>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/adalm-lsmspg" target="_blank">ADALM-LSMSPG</a> Low-Speed Mixed Signal Playground module</p></li>
@@ -435,11 +436,24 @@ possible so you can get to work.</p>
 </section>
 <section id="introducing-the-exciting-new-products-to-which-we-ll-apply-our-skills">
 <h2>Introducing the exciting new products to which we’ll apply our skills<a class="headerlink" href="#introducing-the-exciting-new-products-to-which-we-ll-apply-our-skills" title="Link to this heading"></a></h2>
-<p>The temperature sensor is intended as an “as simple as possible” application.
-The temperature sensor IC itself is the ADT75, which has cross-references from
-multiple manufacturers (all inferior to Analog Devices, of course!). The Linux
-device driver has been in the kernel since at least version 2 (1998), and you
-can buy a ten-pack of breakout boards for $15 USD.</p>
+<p>As mentioned above, we’re going to be building a prototype temperature sensor
+and transistor curve tracer. The temperature sensor is intended as an “as simple
+as possible” application. The temperature sensor IC itself is the ADT75, which
+has cross-references from multiple manufacturers (all inferior to Analog
+Devices, of course!). The Linux device driver has been in the kernel since at
+least version 2 (1998), and you can buy a ten-pack of breakout boards for $15
+USD.</p>
+<p>The curve tracer is “more advanced” - it involves setting the current into
+an NPN transistor’s base  (or out of a PNP’s base), sweeping the collector
+voltage, and measuring the resulting collector current. This example is intended
+as the simplest possible application that exercises the following operations:</p>
+<ul class="simple">
+<li><p>Set a couple of voltages and currents</p></li>
+<li><p>Measure a couple of voltages and currents</p></li>
+<li><p>Do some math</p></li>
+<li><p>Step and repeat</p></li>
+<li><p>Display results</p></li>
+</ul>
 </section>
 <section id="component-selection-based-on-software-support-vs-pure-analog-performance">
 <h2>Component selection based on software support (vs. pure analog performance)<a class="headerlink" href="#component-selection-based-on-software-support-vs-pure-analog-performance" title="Link to this heading"></a></h2>
@@ -561,6 +575,7 @@ screenshot of iio_info running on a Windows 11 machine:</p>
 <p>So now we can fire up our favorite bloated (oops - “full featured”) Python,
 MATLAB, C#, etc. development environment, and communicate with the target
 hardware over a network connection.</p>
+<p>&lt;&lt;Screenshot of Spyder or VSCode on remote machine&gt;&gt;</p>
 </section>
 <section id="language-support-c-c">
 <h2>Language Support: C, C++<a class="headerlink" href="#language-support-c-c" title="Link to this heading"></a></h2>
@@ -620,9 +635,25 @@ remote host into the embedded target, replacing the tinyiiod server entirely.</p
 <div class="toctree-wrapper compound">
 </div>
 </section>
-<section id="ecosystem-support-ros2-integration">
-<h2>Ecosystem Support: ROS2 Integration<a class="headerlink" href="#ecosystem-support-ros2-integration" title="Link to this heading"></a></h2>
-<p>While the previous exercises used Python and pyadi-iio, the IIO framework can
+<section id="rtos-support-zephyr">
+<h2>RTOS Support: Zephyr<a class="headerlink" href="#rtos-support-zephyr" title="Link to this heading"></a></h2>
+<p>Zephyr is an open-source, scalable real-time operating system (RTOS) for
+resource-constrained embedded devices, providing a small-footprint kernel along
+with integrated drivers, networking, security, and application services across a
+wide range of hardware architectures. Zephyr supports more than 1000 development
+boards, and hundreds of shields - including… the ADALM-LSMSPG!:</p>
+<p><a class="icon link reference external" href="https://docs.zephyrproject.org/latest/boards/shields/adi_lsmspg/doc/index.html" target="_blank">Zephyr Shields: Analog Devices Low-Speed Mixed Signal Playground</a></p>
+<p>And the MAX32655FTHR:</p>
+<p><a class="icon link reference external" href="https://docs.zephyrproject.org/latest/boards/adi/max32655fthr/doc/index.html" target="_blank">Zephyr Boards: Analog Devices MAX32655FTHR</a></p>
+<p>In the Zephyr section of this workshop, we will run the tinyiiod server, a
+few standalone examples, and the debug console.</p>
+<p><a class="reference internal" href="zephyr_example/index.html"><span class="doc">Continue to the Zephyr examples</span></a></p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="ecosystem-framework-support-ros2-integration">
+<h2>Ecosystem / Framework Support: ROS2 Integration<a class="headerlink" href="#ecosystem-framework-support-ros2-integration" title="Link to this heading"></a></h2>
+<p>While the previous exercises used Python and pyadi-iio, the IIO subsystem can
 also be integrated with <strong>ROS2</strong> (Robot Operating System 2) for robotics and
 automation applications. The <a class="icon link reference external" href="https://github.com/analogdevicesinc/adi_ros2" target="_blank">adi_iio</a>
 ROS2 package provides a bridge between IIO devices and the ROS2 ecosystem,
