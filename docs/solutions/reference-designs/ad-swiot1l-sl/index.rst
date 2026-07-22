@@ -110,6 +110,7 @@ User guides
    firmware-guide/index
    software-guide/index
    production-testing/index
+   sample_application/index
 
 
 Help and Support
