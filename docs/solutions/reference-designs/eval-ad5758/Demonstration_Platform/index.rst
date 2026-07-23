@@ -9,11 +9,11 @@ Overview
 .. figure:: ../images/demo-ad5758-ao87angle-web.gif
    :align: center
 
-
 The :adi:`DEMO-AD5758-AO8Z <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/demo-ad5758-ao8z.html#eb-overview>`
 board demonstrates a system-level concept where the
 :adi:`AD5758` and the :adi:`ADP1031` are used together to implement a compact,
-eight-channel, channel-to-channel isolated, analog output (AO) module. The module
+eight-channel, channel-to-channel isolated, analog output (AO) module. The
+module
 is designed to dissipate less than 2W worst-case power dissipation over a wide
 range of operating conditions.
 
@@ -25,11 +25,10 @@ range of operating conditions.
 
 .. important::
 
-    The purpose of this board is to demonstrate how a system-level approach 
-    allows a compact low power solution to be developed. For bench and 
-    performance evaluation, please use the :adi:`EVAL-AD5758` and the 
+    The purpose of this board is to demonstrate how a system-level approach
+    allows a compact low power solution to be developed. For bench and
+    performance evaluation, please use the :adi:`EVAL-AD5758` and the
     :adi:`ADP1031CP-EVALZ` evaluation kits.
-
 
 Table of Contents
 -------------------------------------------------------------------------------

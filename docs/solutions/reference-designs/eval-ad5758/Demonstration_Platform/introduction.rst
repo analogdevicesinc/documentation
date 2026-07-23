@@ -23,11 +23,11 @@ channel, channel-to-channel isolated, precision analog output (AO)
 module, while achieving less than 2 W worst case power dissipation over
 a wide range of operating conditions.
 
-The :adi:`ADP1031` solves the isolation and size challenges and the 
-:adi:`AD5758` provides a low power dissipation, precision, configurable current 
+The :adi:`ADP1031` solves the isolation and size challenges and the
+:adi:`AD5758` provides a low power dissipation, precision, configurable current
 or voltage output channel.
 
-This board uses the :adi:`ADUCM3029` as the system controller to control each 
+This board uses the :adi:`ADUCM3029` as the system controller to control each
 channel independently.
 
 .. figure:: ../images/block_diagram.png

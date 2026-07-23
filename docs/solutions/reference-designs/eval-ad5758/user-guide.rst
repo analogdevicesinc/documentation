@@ -162,4 +162,3 @@ To evaluate the board with the ZedBoard:
 
 For the step-by-step carrier setup, see the
 :ref:`ZedBoard quick start guide <eval_ad5758 quickstart zed>`.
-

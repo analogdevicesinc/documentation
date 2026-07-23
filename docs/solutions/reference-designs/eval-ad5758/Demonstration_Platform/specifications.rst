@@ -16,12 +16,11 @@ Absolute Max Ratings
 | VVIOUT              | V     | -33  | 33   |
 +---------------------+-------+------+------+
 
-
 Performance Specifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-VFIELD = 24 V, VSYSTEM = 24 V, voltage output: RLOAD = 1 kΩ, 
-current output: RLOAD = 750 Ω, TA = 25°C, Reference = Internal, 
+VFIELD = 24 V, VSYSTEM = 24 V, voltage output: RLOAD = 1 kΩ,
+current output: RLOAD = 750 Ω, TA = 25°C, Reference = Internal,
 RSET = 13.7 kΩ 0.1%, DPC = ON
 
 **Input Voltage**
@@ -33,7 +32,6 @@ RSET = 13.7 kΩ 0.1%, DPC = ON
 +---------------+------+-----+-----+------------+-------------------------------+
 | System Supply | V    | 4.5 | 32  | @ 10 mA    | For less than 2 W dissipation |
 +---------------+------+-----+-----+------------+-------------------------------+
-
 
 **Voltage Output Mode**
 
@@ -140,4 +138,3 @@ RSET = 13.7 kΩ 0.1%, DPC = ON
 +-------------------+-------+-----+----------------+
 
 ² Includes system side SPI and GPIO isolation power and MCU power
-

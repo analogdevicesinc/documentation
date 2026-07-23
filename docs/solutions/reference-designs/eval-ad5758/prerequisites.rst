@@ -104,7 +104,6 @@ Before starting, it's recommended to review:
 #. :external+no-OS:doc:`no-OS documentation <index>` - for no-OS driver and
    project structure
 
-
 .. note::
 
    :adi:`ADI <>` does not offer FPGA carrier boards or :adi:`SDP-K1` boards

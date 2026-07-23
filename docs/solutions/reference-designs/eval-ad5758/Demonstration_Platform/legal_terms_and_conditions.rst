@@ -29,8 +29,8 @@ Evaluation Board; and (ii) permit any Third Party to access the Demo
 Board. As used herein, the term "Third Party" includes any entity other
 than ADI, Customer, their employees, affiliates and in-house consultants.
 
-The Demo Board is NOT sold to Customer; all rights not expressly granted herein, 
-including ownership of the Demo Board, are reserved by ADI.
+The Demo Board is NOT sold to Customer; all rights not expressly granted
+herein, including ownership of the Demo Board, are reserved by ADI.
 
 Confidentiality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,7 +54,7 @@ with applicable law, including but not limited to the RoHS Directive.
 Termination
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-ADI may terminate this Agreement at any time upon giving written notice to 
+ADI may terminate this Agreement at any time upon giving written notice to
 Customer. Customer agrees to return to ADI the Demo Board at that time.
 
 Limitation of Liability

@@ -4,8 +4,8 @@ Using the Serial Peripheral Interface on the AD5758
 ===============================================================================
 
 .. important::
-    The AD5758/ADFS5758/AD5753/AD5413 contain the same serial peripheral interface
-    and follow the below guide.
+    The AD5758/ADFS5758/AD5753/AD5413 contain the same serial peripheral
+    interface and follow the below guide.
 
 The AD5758 is controlled over a 4-wire serial interface with an 8-bit cyclic
 redundancy check (CRC-8) enabled by default. The input shift register is 32
@@ -67,7 +67,6 @@ AD5758 generates an 8-bit frame check sequence using the following polynomial:
 
 .. figure:: images/img.png
    :align: center
-
 
 This sequence is added to the end of the 24 bit data-word, and 32 bits are sent
 to the AD5758 before taking SYNC high.
@@ -191,14 +190,14 @@ the CRC is enabled.
 
    Software Reset Key1 Write 0x8815FAA4
 
-
 .. figure:: images/2nd_rst_key.png
    :align: center
 
    Software Reset Key2 Write 0x88AF5131
 
 Figure 3 shows a readback of the default state of the digital diagnostic
-results register (Address 0x14) before the calibration memory has been refreshed.
+results register (Address 0x14) before the calibration memory has been
+refreshed.
 There are 2 SPI frames visible in the scope plot. Figures 4 and 5 show the
 first and second SPI frames respectively. The first being the readback command
 to read the digital diagnostic results register (Address 0x14) and the second
@@ -218,7 +217,8 @@ RESET_OCCURED = 1), CRC = 0x1A.
 
 .. figure:: images/rst_sdo_read.png
 
-   Two Stage Readback command - second frame write 0x8000000B (including SDO data 0x94A0001A)
+   Two Stage Readback command - second frame write 0x8000000B (including SDO
+   data 0x94A0001A)
 
 Calibration Memory Refresh
 -------------------------------------------------------------------------------

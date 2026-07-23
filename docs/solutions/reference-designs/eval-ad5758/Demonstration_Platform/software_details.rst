@@ -45,11 +45,10 @@ the latest version, please follow these steps:
 
    Placeholder - The CrossCore GUI
 
-8. Press the reset button (S1) on the demo board or unplug it from the USB 
+8. Press the reset button (S1) on the demo board or unplug it from the USB
    cable and reconnect.
 
 The demo board now has the latest version of the firmware.
-
 
 GUI Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,14 +73,16 @@ work for Windows-7 with minor differences.
 
    Welcome to DEMO AD5758 AO8Z 11.12 Setup
 
-5. Read carefully the License Agreement and click "I Agree" if you agree to its content.
+5. Read carefully the License Agreement and click "I Agree" if you agree to its
+   content.
 
 .. figure:: ../images/image2018-10-18_10-21-47.png
    :align: center
 
    The License Agreement
 
-6. Click Install to install the software in the default location or Browse… to a new location first.
+6. Click Install to install the software in the default location or Browse… to
+   a new location first.
 
 .. figure:: ../images/gui-installation-default_location.png
    :align: center

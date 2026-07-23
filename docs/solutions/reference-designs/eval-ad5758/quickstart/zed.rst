@@ -109,7 +109,8 @@ Follow the steps in this order, to avoid damaging the components:
 
 #. Configure the ZedBoard for SD card boot mode:
 
-   The BOOT mode jumpers (JP7-JP11) must be set for SD card boot mode as follows:
+   The BOOT mode jumpers (JP7-JP11) must be set for SD card boot mode as
+   follows:
 
    .. list-table:: Boot Mode Jumper Settings
       :header-rows: 1
@@ -187,12 +188,11 @@ Verifying the setup
 Once the No-OS application is running, the UART terminal displays the
 initialization output.
 
-
 .. note::
 
    A digital multimeter (DMM) can be used to measure the DAC output voltage
-   across the ``VI_OUT`` and ``RETURN`` pins on the P3 connector. Expected output
-   voltage is 5V based the No-OS project.
+   across the ``VI_OUT`` and ``RETURN`` pins on the P3 connector. Expected
+   output voltage is 5V based the No-OS project.
 
 .. figure:: ../images/ad5758_no-os_output.jpeg
    :width: 800

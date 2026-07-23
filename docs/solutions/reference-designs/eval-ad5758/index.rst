@@ -53,13 +53,11 @@ Applications:
 
    DEMO-AD5758-AO8Z
 
-
 Two evaluation boards are available for the AD5758 device: the
 :adi:`EVAL-AD5758SDZ` and the
 :adi:`DEMO-AD5758-AO8Z <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/demo-ad5758-ao8z.html#eb-overview>`.
 Each board is covered in
 its own dedicated section.
-
 
 .. toctree::
    :hidden:

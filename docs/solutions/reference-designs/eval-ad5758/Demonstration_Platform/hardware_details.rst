@@ -8,12 +8,10 @@ Hardware Description
 
    Top View
 
-
 .. figure:: ../images/35400_50034_bottom_view.jpg
    :align: right
 
    Bottom View
-
 
 Integrated Isolated Power and Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,7 +22,6 @@ factor of 7 mm X 9 mm. This high level of integration solves the PCB
 real estate challenges as it consolidates all channel isolation
 requirements into a very small area on the PCB. The :adi:`ADP1031` also
 integrates a Power Good signal.
-
 
 Low Power Dissipation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +42,6 @@ channel integrated into the :adi:`ADP1031` is also designed to reduce power
 dissipation when active and enters an ultra-low power state when
 inactive.
 
-
 Isolation Flyback Transformer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -56,12 +52,11 @@ smaller and still meet the efficiency and isolation requirements. The
 recommended transformer for the :adi:`ADP1031` has a footprint size of 8.6 mm X
 8.26 mm and is less than 9.7 mm tall.
 
-
 Solution Size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The high level of integration allows a 2 sided PCB design that will fit in an area of 400 mm2 per channel, including all passive components.
-
+The high level of integration allows a 2 sided PCB design that will fit in an
+area of 400 mm2 per channel, including all passive components.
 
 Flexible Precision Channel with Diagnostics and HART Connectivity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,8 +79,9 @@ of the key diagnostics available are:
 10. Internal supply error
 11. DPC error
 
-For a complete list of diagnostics, see the :adi:`AD5758` datasheet. The :adi:`AD5758`       
-also incorporates a 12-bit ADC to provide diagnostic measurements on
+For a complete list of diagnostics, see the :adi:`AD5758` datasheet. The
+:adi:`AD5758` also incorporates a 12-bit ADC to provide diagnostic measurements
+on
 user-selectable nodes, such as internal supplies and grounds, internal
 die temperature monitors, internal references among other signals. The
 :adi:`AD5758` has a CHART pin, onto which a HART signal can be capacitively
@@ -93,12 +89,10 @@ coupled. Once HART connectivity is enabled, the HART signal appears on
 the VIOUT pin. This functionality is only available when VIOUT is
 configured to output current.
 
-
 Schematic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :dokuwiki:`Schematic PDF <_media/resources/demo/reference-designs/demo-ad5758-ao8z/demo-ad5757-ao8z/02_047243c_top.pdf>`
-
 
 **Page 2 - Power Supplies**
 
@@ -119,7 +113,8 @@ together.
 
 **Page 3 - Controller**
 
-This page shows the connections to the :adi:`ADUCM3029` and connections to the "Fault" and "Power Good" LEDs.
+This page shows the connections to the :adi:`ADUCM3029` and connections to the
+"Fault" and "Power Good" LEDs.
 
 **Page 4 - USB UART**
 
@@ -130,7 +125,9 @@ to 3.3 V logic levels.
 
 **Page 5 - Output Channels**
 
-This sheet shows the connectivity of each channel. The system domain and field power domain are common to all eight channels, but each channel has its own isolated field domain.
+This sheet shows the connectivity of each channel. The system domain and field
+power domain are common to all eight channels, but each channel has its own
+isolated field domain.
 
 **Page 6 to 13 - Isolated Output Channel**
 
@@ -146,13 +143,10 @@ down to 5.15 V using an integrated buck converter. This 5.15 V supply is
 connected to AVDD2 on the :adi:`AD5758`. A -15 V supply is also generated from
 the +24V_ISO which is used by the :adi:`AD5758` in bipolar voltage output mode.
 
-
 Layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :dokuwiki:`Layout PDF <_media/resources/demo/reference-designs/demo-ad5758-ao8z/demo-ad5757-ao8z/02_047243c_top.pdf>`
-
-
 
 Bill of Materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
