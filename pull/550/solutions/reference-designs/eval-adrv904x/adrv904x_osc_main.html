@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Main receivers RX1 through RX8 are handled by the axi-adrv904x-rx-hpc IIO device." name="description" />
+
+    <title>IIO OSC ADRV904x Capture Window &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=d3f78147" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=5f9cb17c" />
+    <script async="async" src="../../../_static/app.umd.js?v=26d0298f"></script>
+    <link rel="icon" href="../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Prerequisites" href="prerequisites.html" />
+   
+  
+  
+  
+  <meta name="repository" content="documentation">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Docs</label>
+        
+        <a id="logo" href="../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">IIO OSC ADRV904x Capture Window</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#iio-oscilloscope-using-linux">IIO Oscilloscope using Linux</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope-using-no-os">IIO Oscilloscope using no-OS</a></li>
+<li><a class="reference internal" href="#about-the-iio-devices">About the IIO devices</a></li>
+<li><a class="reference internal" href="#nls-profile-with-observation-receiver">NLS profile (with observation receiver)</a><ul>
+<li><a class="reference internal" href="#scopy">Scopy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../index.html" class="current">System Level</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Apps &amp; Solutions</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Reference Designs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">EVAL-ADRV904x</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="user-guide.html">User guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IIO OSC ADRV904x Capture Window</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb"><ol><li><a href="../index.html">Reference Designs</a></li><li><a href="index.html">EVAL-ADRV904x</a></li></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="iio-osc-adrv904x-capture-window">
+<span id="adrv904x-iio-osc-capture-window"></span><h1>IIO OSC ADRV904x Capture Window<a class="headerlink" href="#iio-osc-adrv904x-capture-window" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Main receivers RX1 through RX8 are handled by the <code class="docutils literal notranslate"><span class="pre">axi-adrv904x-rx-hpc</span></code> IIO
+device.</p>
+<p>Channels:</p>
+<ul class="simple">
+<li><p>IIO device channel: <code class="docutils literal notranslate"><span class="pre">axi-adrv904x-rx-hpc</span></code></p></li>
+<li><p>Receiver inputs:</p>
+<ul>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage0_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage0_q</span></code>}: RX1</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage1_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage1_q</span></code>}: RX2</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage2_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage2_q</span></code>}: RX3</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage3_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage3_q</span></code>}: RX4</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage4_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage4_q</span></code>}: RX5</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage5_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage5_q</span></code>}: RX6</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage6_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage6_q</span></code>}: RX7</p></li>
+<li><p>{<code class="docutils literal notranslate"><span class="pre">voltage7_i</span></code>, <code class="docutils literal notranslate"><span class="pre">voltage7_q</span></code>}: RX8</p></li>
+</ul>
+</li>
+</ul>
+<p>Transmitters TX1 through TX8 are handled by the <code class="docutils literal notranslate"><span class="pre">axi-adrv904x-tx-hpc</span></code> IIO
+device.</p>
+<section id="iio-oscilloscope-using-linux">
+<h3>IIO Oscilloscope using Linux<a class="headerlink" href="#iio-oscilloscope-using-linux" title="Link to this heading"></a></h3>
+<p>Find the board IP address using <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> on the serial terminal — look for
+the <code class="docutils literal notranslate"><span class="pre">inet</span></code> address on the <code class="docutils literal notranslate"><span class="pre">eth0</span></code> interface.</p>
+<p>Enter the IP address in IIO Oscilloscope, then click <span class="guilabel">Refresh</span> and
+<span class="guilabel">Connect</span>:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-connect_edited.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-connect_edited.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-connect_edited.png" width="500" />
+</a>
+<p><strong>Signal visualization</strong></p>
+<p>From the <span class="guilabel">DAC Data Manager</span> you can configure TX signal parameters (TX
+channels are mapped 0–7 on-board, displayed as 1–8 in IIO Oscilloscope; RX
+channels are mapped 0–7 in both environments). Select the RX channels you want
+to verify in the left panel and press <span class="guilabel">Play</span>:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-dac-manager.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-dac-manager.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-dac-manager.png" width="500" />
+</a>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-signal.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-signal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-iio-osc-signal.png" width="500" />
+</a>
+</section>
+<section id="iio-oscilloscope-using-no-os">
+<h3>IIO Oscilloscope using no-OS<a class="headerlink" href="#iio-oscilloscope-using-no-os" title="Link to this heading"></a></h3>
+<p>When running the <strong>IIO example</strong>, connect IIO Oscilloscope using the serial
+backend (select <span class="guilabel">Serial</span> in the connection dialog and configure as
+shown in the boot log: 921600 baud, 8N1). Then click <span class="guilabel">Refresh</span> and
+<span class="guilabel">Connect</span>:</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-connect.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-connect.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-connect.png" width="500" />
+</a>
+<p>From the <span class="guilabel">DAC Data Manager</span> you can configure TX signal parameters (TX
+channels are mapped 0–7 on-board, displayed as 1–8 in IIO Oscilloscope; RX
+channels are mapped 0–7 in both environments, where RX0 corresponds to Voltage 0
+and 1, RX1 to Voltage 2 and 3, and so on):</p>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-dac-manager.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-dac-manager.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-dac-manager.png" width="500" />
+</a>
+<a class="reference internal image-reference" href="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-signal.png"><img alt="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-signal.png" src="https://media.githubusercontent.com/media/analogdevicesinc/documentation/staging/fix_bin_files_location/docs/solutions/reference-designs/eval-adrv904x/images/adrv904x-noos-iio-osc-signal.png" width="500" />
+</a>
+</section>
+<section id="about-the-iio-devices">
+<h3>About the IIO devices<a class="headerlink" href="#about-the-iio-devices" title="Link to this heading"></a></h3>
+</section>
+<section id="nls-profile-with-observation-receiver">
+<h3>NLS profile (with observation receiver)<a class="headerlink" href="#nls-profile-with-observation-receiver" title="Link to this heading"></a></h3>
+<p>When using the NLS device tree (<code class="docutils literal notranslate"><span class="pre">zynqmp-zcu102-rev10-adrv904x-nls.dts</span></code>), the
+observation receiver path is enabled. The observation receiver IIO device
+appears as an additional device:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>iio_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>iio:device
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>iio:device0: xilinx-ams
+iio:device1: adrv904x-phy
+iio:device2: axi-adrv904x-rx-hpc (buffer capable)
+iio:device3: axi-adrv904x-tx-hpc (buffer capable)
+iio:device4: axi-adrv904x-obs-hpc (buffer capable)
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>To use the NLS profile, copy <code class="docutils literal notranslate"><span class="pre">system.dtb</span></code> built from
+<code class="docutils literal notranslate"><span class="pre">zynqmp-zcu102-rev10-adrv904x-nls.dts</span></code> and <code class="docutils literal notranslate"><span class="pre">DeviceProfileTest_NLS.bin</span></code>
+renamed to <code class="docutils literal notranslate"><span class="pre">DeviceProfileTest.bin</span></code> to /lib/firmware on the board.</p>
+<section id="scopy">
+<h4>Scopy<a class="headerlink" href="#scopy" title="Link to this heading"></a></h4>
+<p><a class="icon link reference external" href="https://analogdevicesinc.github.io/scopy/index.html" target="_blank" title="(in Scopy main)"><span class="xref std std-doc">Scopy</span></a> is a cross-platform software toolbox for
+interfacing with ADI devices, enabling you to configure device parameters,
+visualize data, and perform advanced signal analysis.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="prerequisites.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Prerequisites</a>
+    <div></div>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2026, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
