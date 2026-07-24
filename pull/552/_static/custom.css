@@ -1,0 +1,15 @@
+.platform-card img {
+    height: 140px;
+    width: auto;
+    object-fit: contain;
+}
+
+.scrollable pre {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.scrollable {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+}
