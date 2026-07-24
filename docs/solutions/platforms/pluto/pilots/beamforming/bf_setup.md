@@ -18,7 +18,7 @@ To run this pilot you’ll need:
 ```
 ## Software
 - Python with **numpy**, **matplotlib**, and **pyadi-iio**.  
-- Make sure you've [installed the drivers](../../get-started/drivers.md) and followed the [Pluto Python](../../software/python_install.md) setup instructions.
+- Make sure you've {ref}`installed the drivers <adc pluto drivers>` and followed the {ref}`Pluto Python <adc pluto python>` setup instructions.
 
 ## Setup  
 
