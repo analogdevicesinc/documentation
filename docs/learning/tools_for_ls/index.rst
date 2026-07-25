@@ -563,7 +563,7 @@ In this section, we will run a servo motor control demo that uses the
 ADALM-LSMSPG to generate position commands and read feedback, demonstrating
 how IIO devices can be integrated into a ROS2-based control system.
 
-:doc:`Continue to ROS2 Integration Tutorial <ros2_integration/index>`
+:ref:`Continue to ROS2 Integration Tutorial <datax-ros2-integration>`
 
 .. toctree::
    :hidden:
