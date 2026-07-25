@@ -401,7 +401,7 @@ Both versions will:
 The resulting plot should be comparable to the one produced by the Python
 ``ad5592r_curve_tracer.py`` script run on the Raspberry Pi.
 
-.. figure:: AD5592r_NPN_Curve_Tracer.png
+.. figure:: ad5592r_npn_curve_tracer.png
    :width: 500px
 
    AD5592r NPN Curve Tracer output from MATLAB.
