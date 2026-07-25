@@ -542,7 +542,7 @@ And the MAX32655FTHR:
 In the Zephyr section of this workshop, we will run the tinyiiod server, a
 few standalone examples, and the debug console.
 
-:doc:`Continue to the Zephyr examples <zephyr_example/index>`
+:ref:`Continue to the Zephyr examples <datax-zephyr-example>`
 
 .. toctree::
    :hidden:
