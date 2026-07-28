@@ -3,7 +3,7 @@
 ADRD8012-01Z
 ============
 
-FPGA-based 8x GMSL to 10 Gb Ethernet Adapter.
+FPGA-based 8 x GMSL2 cameras to 10 Gb Ethernet Edge Compute Platform
 
 Overview
 ---------
@@ -11,27 +11,34 @@ Overview
 .. figure:: adrd8012-01z_angle-evaluation-board.jpg
    :width: 600 px
 
-   ADRD8012-01Z GMSL Board
+   ADRD8012-01Z board
 
-The **ADRD8012-01Z** is an edge compute platform enabling low latency data
-transfer from eight :adi:`Gigabit Multimedia Serial Link™ (GMSL) </product-category/gigabit-multimedia-serial-link.html>`
-interfaces on to a 10 Gb Ethernet link. The target applications include
-autonomous robots and vehicles where machine vision and real-time sensor fusion
+**ADRD8012-01Z** is an edge compute platform enabling low latency data
+transfer from two :adi:`Gigabit Multimedia Serial Link™ (GMSL) </product-category/gigabit-multimedia-serial-link.html>`
+deserializers (resulting in an example of up to 8 GMSL2-enabled camera modules) on to a 10 Gb Ethernet link.
+The target applications include autonomous robots and vehicles where machine vision and real-time sensor fusion
 is critical. Some of the main features and benefits include:
 
--  8x GMSL2 camera interfaces with up to 6 Gbps/channel
--  10 Gbps SFP+ Ethernet interface
--  Precision Time Protocol for synchronization with host systems and other edge devices
+-  2x GMSL2 deserializers with up to 6 Gbps/SerDes link
+-  10 GbE-capable SFP+ connector
+-  Precision Time Protocol (PTP) for synchronization with host systems and other edge devices
 -  Embedded processing capabilities using the on-board 
    `AMD Kria K26 System-on-Module <https://www.amd.com/en/products/system-on-modules/kria/k26/k26i-industrial.html>`__
--  ROS2 compliant
+-  ROS2 compliant video streaming design
 -  Open-source embedded Linux software and FPGA design
 -  Advanced camera triggering functions and control features
 
-.. figure:: adrd8012-01z_01-block-diagram.png
+The block design and the RTP networking stack made using the FPGA region are presented below:
+
+.. figure:: adrd8012-01z_bd.svg
    :width: 800 px
 
-   ADRD8012-01Z Simplified Block Diagram
+   ADRD8012-01Z Block Design
+
+.. figure:: rtp-networking-stack.svg
+   :width: 800 px
+
+   RTP networking stack
 
 Specifications
 --------------
@@ -48,7 +55,7 @@ Specifications
 | I/O                   | 16 general purpose I/O pins with software           |
 |                       | configurable functionality, 3.3V voltage level      |
 +-----------------------+-----------------------------------------------------+
-| GMSL                  | 2x Quad Fakra connectors supporting 8 x GMSL        |
+| GMSL                  | 2x Quad Fakra connectors supporting 8 x GMSL2       |
 |                       | camera interfaces                                   |
 +-----------------------+-----------------------------------------------------+
 | Processing            |                                                     |
@@ -65,9 +72,8 @@ Specifications
 +-----------------------+-----------------------------------------------------+
 | Operating System      | Linux OS                                            |
 +-----------------------+-----------------------------------------------------+
-| Network data protocol | RTP over UDP with software implementation and       |
-|                       | option for licensable FPGA accelerated RTP & UDP    |
-|                       | stack                                               |
+| Network data protocol | Open-sourced FPGA-accelerated Real-Time Transport   |
+|                       | for uncompressed video over UDP/IPv4 implementation |
 +-----------------------+-----------------------------------------------------+
 
 
@@ -78,19 +84,25 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~
 
 - 1 x :adi:`ADRD8012-01Z </resources/evaluation-hardware-and-software/evaluation-boards-kits/ADRD8012-01Z.html>`
-- 8 x `Tier IV C1 cameras <https://edge.auto/automotive-camera/#C1>`__
-- 8 x Fakra cables
+- Up to 8 x Fakra cables
 - 2 x Quad-based mini-Fakra cables
 - 1 x 16 GB SD card
-- 1 x PC with 10G ethernet card
+- 1 x PC with 10 GbE NIC
 - 1 x SFP+ Ethernet cable
 
-FPGA SD Card Image
+Example GMSL2 camera options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- up to 8 x `Tier IV C1 cameras <https://edge.auto/automotive-camera/#C1>`__
+- up to 4 x `Tier IV C2 cameras <https://edge.auto/automotive-camera/#C2>`__
+- `Intel RealSense D457 cameras <https://www.intel.com/content/www/us/en/products/sku/230571/intel-realsense-depth-camera-d457/specifications.html>`__
+
+SD Card Image
 ~~~~~~~~~~~~~~~~~~~
 
-.. admonition:: Download
+.. admonition:: SD card image that contains example setups using previously mentioned GMSL2-enabled cameras
 
-   `SD card image <https://swdownloads.analog.com/cse/gmsl/10G/gmsl-10g-fsync.tar.xz>`__
+   `Download <https://swdownloads.analog.com/cse/gmsl/10G/gmsl-10g-fsync.tar.xz>`__
 
 After downloading the file, extract the compressed image and write it to the SD
 card using `Balena Etcher <https://www.balena.io/etcher>`__ or
@@ -109,7 +121,7 @@ the corresponding position, as indicated in the following image:
 .. figure:: img_1242_1_.jpg
    :width: 400 px
 
-   Boot Mode Switches Position
+   Boot mode switches for SD card boot
 
 Connect the Quad-based mini-Fakra cables to the corresponding connectors on the
 board. These will connect the cameras to the corresponding deserializers.
@@ -117,18 +129,21 @@ board. These will connect the cameras to the corresponding deserializers.
 .. figure:: img_1247_1_.jpg
    :width: 400 px
 
-   Connecting the Fakra Cables
+   Quad mini-Fakra cabbles connection to board's deserializers
 
-Connect a SFP+ cable to the corresponding SFP port on the board.
+Connect an SFP+ cable to the corresponding SFP+ port on the board.
 
 .. figure:: img_1244_1_.jpg
    :width: 400 px
 
-   Connecting the SFP Cable
+   SFP+ cable connection to board's cage
 
 Finally, you will need to connect a USB/micro-USB cable to the micro-USB port
 located on the board. After that, you will be able to connect to the first USB
 COM port that appears on the serial terminal, with a baud rate of **115200**.
+Besides this wired connection, after the Linux system on the board is
+completely initialized, you will be able to use the network-related connection
+through the 10 GbE interface (eth0 on the board) and leveraging ssh SW support.
 
 .. note::
 
@@ -173,37 +188,89 @@ COM port that appears on the serial terminal, with a baud rate of **115200**.
 
 .. shell::
 
-   #Configure the video pipeline and the cameras
-   $cd /home/analog/Workspace/K26
+   #(Optional, if you don't know the destination MAC address of the remote side - the NIC of the PC
+   #which is locally connected to the board)
+   #Ping the PC's IPv4 address
+   $ping <board-ipv4-address>
+   #Check the ARP table of the board's NIC
+   $arp -a
+   #You will see the matches between IPv4 and MAC addresses
+   #IPv4  MAC
+   
+FPGA-accelerated RTP networking stack setup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. shell::
+
+   #Configure the instantiated RTP engines and RTP session mux logic
+   #using the files created by the sysfs implementation - which represent
+   #configurable fields of the implemented protocols
+   #RTP engines - devices present in /sys/devices/
+   #e.g. (L2) - MAC sublayer of Ethernet v2 standard
+   $echo 0xaabbccddeeff > dest_mac_address
+   $echo 0x010203040506 > src_mac_address
+   #e.g. (L3) - IPv4
+   $echo 0x0a2a0014 > dest_ipv4_address
+   $echo 0x0a2a0018 > src_ipv4_address
+   #e.g. (L4) - UDP
+   $echo 5004 > dest_udp_port
+   $echo 5004 > src_udp_port
+   #e.g. (L7) - RTP
+   $echo 1920 > num_pixels_per_line
+   $echo 1280 > num_lines
+   #In addition, the video format can be converted from YUYV to UYVY (as ordering methods
+   #in YUV422)
+   $echo 1 > convert_yuyv_to_uyvy
+
+   #Start the video transmission using the FPGA-accelerated RTP stack by setting the
+   #start_transfer bit of the RTP session mux driver
+   $echo 1 > start_transfer
+
+Video subsystem configuration and streaming startup
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. shell::
+
+   #Configure the video image format for GMSL SerDes/MIPI CSI-2 receiver subdevices and FPS of the camera
+   #module
+   $cd /home/analog/Workspace/config_streaming
    $./media_cfg_des1/2/12.sh
    #(depending on the desired deserializer or 12 for the case when there are two deserializers with 4 cameras)
 
-   #Start streaming to another host
-   $cd /home/analog/Workspace/gstreamer
+   #Start the transmission from the sensor devices
+   $cd /home/analog/Workspace/config_streaming
    #(depending on the number of cameras - 4 or 8 cameras - 1 or 2 deserializers)
-   $./stream_1des_4cams/2des_8cams.sh [HOST_IP_ADDRESS of the x86-based workstation can be modified/by default is set to 10.42.0.106 in this script]
+   $./stream_1des_4cams/2des_8cams.sh
 
 .. note::
 
-    In order to stop all this processes generated by the streaming-related
-    scripts, you can use the Linux pidof command to see what are the IDs of this
-    gstreamer-related instaces, and after that kill these ones by using Linux kill
+    The video streaming using the FPGA-accelerated RTP stack is started automatically when 
+    the RTP engines and session mux instances are configured as indicated before. On the other side,
+    the streaming from the sensors is realized  using the v4l2-ctl command executed on the corresponding
+    video devices. The v4l2-related commands depending on the hardware connectivity are present in this
+    SW configurations for video subsystem and streaming-related section. In order to stop all this 
+    processes generated by the streaming-related scripts, you can use the Linux pidof command to see
+    what are the IDs of this v4l2-ctl-related instaces, and after that kill these ones by using Linux kill
     command, in the following way:
 
 .. shell::
 
-   #That is the command to show the ID numbers of the opened processes and will show you 8 numbers - like in the following line
-   $pidof gst-launch-1.0
-   $800 799 798 797 796 795 794 793
-   $sudo kill 800 799 797 796 795 794 793
+   #Pidof output when having 2 video devices on which the streaming is started
+   $pidof v4l2-ctl
+   $800 799
+   $sudo kill 800 799
 
 
-Now the streams are running on ports 5004 to 5007, depending on the configured number of cameras.
+The video streaming is done using the previously configured UDP source/destination ports.
 
-Install Gstreamer on x86
-~~~~~~~~~~~~~~~~~~~~~~~~
+Remote target setup
+~~~~~~~~~~~~~~~~~~~
 
-Depending on the Linux distribution of your x86 workstation, you can install
+To decode the RTP-based video streaming from the ADRD8012-01z system, you can use various
+video streaming frameworks which supports the RFC-compliant RTP for uncompressed video standard
+(RFC4175). This section presents the example setup using the GStreamer framework running on an
+Linux distro.
+Depending on the Linux distribution of your x86/arm64 workstation, you can install
 Gstreamer by using the corresponding package manager. For example, on Ubuntu
 you can use the following command:
 
@@ -216,93 +283,88 @@ you can use the following command:
 More details about Gstreamer installation can be found
 `here <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__.
 
-Displaying the Video
---------------------
+The following examples serves as commands used to decode the RTP-based video streaming from the
+cameras from 1/2 deserializers [for a Tier IV C1 setup]
 
-On the receiving side, `Gstreamer <https://gstreamer.freedesktop.org/documentation/installing/index.html?gi-language=c>`__
-must be installed.
+Single Deserializer (4 C1 cameras)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+If destination UDP ports were set to 5004-5007, use the following commands for 4 Tier IV C1s
+[1920x1280]:
 
-Single Deserializer (4 cameras)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Now open 4 instances of Gstreamer for each port(5004-5007).
-
-**On x86 workstation**
+**On remote target**
 
 .. shell::
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5004" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5005" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1080” port="5006" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5007" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-.. figure:: img_1252_1_.jpg
 
-   Gstreamer Video Display for Single Deserializer (4 Cameras)
+Two Deserializers (8 C1 cameras)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2 x Deserializers (8 cameras)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+If destination UDP ports were set to 5004-5011, use the following commands for 8 Tier IV C1s
+[1920x1280]:
 
-Now open 8 instances of Gstreamer for each port(5004-5011).
-
-**On x86 workstation**
+**On remote target**
 
 .. shell::
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5004” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5004" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5005” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5005" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5006” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5006" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5007” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5007" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5008” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5008" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5009” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5009" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $ gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5010” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $ gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5010" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-   $gst-launch-1.0 udpsrc caps=“application/x-rtp, sampling=YCbCr-4:2:2,
-    depth=(string)8, width=(string)1920, height=(string )1080” port=“5011” !
-    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink
+   $gst-launch-1.0 udpsrc caps="application/x-rtp, sampling=YCbCr-4:2:2, \
+    depth=(string)8, width=(string)1920, height=(string )1280" port="5011" ! \
+    rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
 User Guides
