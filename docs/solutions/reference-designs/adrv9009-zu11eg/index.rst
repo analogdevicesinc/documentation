@@ -137,6 +137,7 @@ Table of Contents
          #. :dokuwiki:`ADRV9009/ADRV9008 No-OS System Level Design Setup <resources/eval/user-guides/adrv9009/no-os-setup>`
          #. :external+hdl:ref:`HDL Reference Design <adrv9009zu11eg>`
          #. :doc:`ADRV9009-ZU11EG Multi-SOM Synchronization </solutions/reference-designs/adrv9009-zu11eg/syncronization>`
+         #. :ref:`ADRV9009-ZU11EG Phase Synchronization <adrv9009-zu11eg phase-sync>`
 
 Reference Material
 ------------------
@@ -194,6 +195,7 @@ Engineer Zone.
    adrv2crr-fmc_carrier_board
    hardware
    performance
+   phase-sync
    pre-release
    syncronization
    testing
