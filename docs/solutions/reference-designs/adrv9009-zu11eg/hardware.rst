@@ -118,6 +118,22 @@ following tasks:
 -  Turns power off in any of the previous mentioned cases, deasserts PG_SOM and
    records the event in a non-volatile Blackbox.
 
+Power Tree
+~~~~~~~~~~
+
+The diagrams below show the full power rail distribution for the
+ADRV9009-ZU11EG RF-SOM.
+
+.. figure:: images/adrv9009-zu11eg-power-tree-1.png
+   :width: 800
+
+   ADRV9009-ZU11EG power tree (part 1)
+
+.. figure:: images/adrv9009-zu11eg-power-tree-2.png
+   :width: 800
+
+   ADRV9009-ZU11EG power tree (part 2)
+
 Power Fault Signals
 ~~~~~~~~~~~~~~~~~~~
 
