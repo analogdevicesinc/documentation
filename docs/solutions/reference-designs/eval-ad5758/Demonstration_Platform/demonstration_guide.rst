@@ -119,15 +119,20 @@ effect.
    the output buffer of the AD5758. This is a power saving of 404 mW per
    channel.
 
+   If VIOUT > 2.5 V, then the DPC buck tracks the output to maintain a
+   fixed 2.5 V headroom.
+
 9. IFIELD should now be around 72 mA ± 5 mA (~ 1.7 W). ISYSTEM should be
    unchanged.
 
 Related Resources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- AD5758: Single-Channel, 16-Bit Current and Voltage Output DAC with Dynamic
-  Power Control and HART Connectivity
-- ADP1031: Three-Channel, Isolated Micropower Management Unit with Seven
-  Digital Isolators
-- Video: ADI: Doubling Channel Density of Industrial Output Modules
-- Video: Analog Devices: AD5758 DAC for EMC/EMI Robustness
+- :adi:`AD5758`: Single-Channel, 16-Bit Current and Voltage Output DAC with
+  Dynamic Power Control and HART Connectivity
+- :adi:`ADP1031`: Three-Channel, Isolated Micropower Management Unit with
+  Seven Digital Isolators
+- Video: `ADI: Doubling Channel Density of Industrial Output Modules
+  <https://www.youtube.com/watch?v=3jvZrx5-yEY>`__
+- Video: `Analog Devices: AD5758 DAC for EMC/EMI Robustness
+  <https://www.youtube.com/watch?v=QbfdilQjfNY>`__

@@ -43,7 +43,7 @@ the latest version, please follow these steps:
 .. figure:: ../images/cross_core.png
    :align: center
 
-   Placeholder - The CrossCore GUI
+   The CrossCore GUI
 
 8. Press the reset button (S1) on the demo board or unplug it from the USB
    cable and reconnect.

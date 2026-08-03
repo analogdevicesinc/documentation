@@ -32,7 +32,11 @@ documentation.
      <projects/ad5758_sdz>` and Linux/no-OS software. **This is the platform
      covered here.**
    - With the EVAL-SDP-CS1Z (SDP-S) controller board and the ACE software on a
-     PC, as described in UG-1268. Refer to UG-1268 for that flow.
+     PC, as described in `UG-1268
+     <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad5758-ug-1268.pdf>`_.
+     Refer to `UG-1268
+     <https://www.analog.com/media/en/technical-documentation/user-guides/eval-ad5758-ug-1268.pdf>`_ 
+     for that flow.
 
 The FPGA carrier is programmed with the AD5758 HDL reference design. For the
 supported carrier (ZedBoard), the required jumper settings, the block diagram,

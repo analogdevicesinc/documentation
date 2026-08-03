@@ -108,7 +108,6 @@ Table of contents
      #. For no-OS software:
 
         - :git-no-OS:`AD5758 No-OS Driver <drivers/dac/ad5758>` and :git-no-OS:`AD5758 Project <projects/ad5758-sdz>`
-        - :dokuwiki:`AD5758 - No-OS driver Documentation<resources/tools-software/uc-drivers/ad5758>`
         - `AD5758 No-OS Project API Reference (ad5758_sdz.c) <https://analogdevicesinc.github.io/no-OS/doxygen/ad5758__sdz_8c.html>`_
 
      #. For Linux software:

@@ -146,7 +146,7 @@ the +24V_ISO which is used by the :adi:`AD5758` in bipolar voltage output mode.
 Layout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:dokuwiki:`Layout PDF <_media/resources/demo/reference-designs/demo-ad5758-ao8z/demo-ad5757-ao8z/02_047243c_top.pdf>`
+:dokuwiki:`Layout PDF <_media/resources/demo/reference-designs/demo-ad5758-ao8z/demo-ad5758-ao8z/08-047243-01-b.pdf>`
 
 Bill of Materials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
