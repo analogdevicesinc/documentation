@@ -63,6 +63,7 @@ for the the Commits link with the newest version and at least one Release.
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
       :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
       :git-u-boot:`Release 3 <releases/tag/v2025.10-3+>`
+      :git-u-boot:`Release 4 <releases/tag/v2025.10-4+>`
     - v2026.01:
       :git-u-boot:`Commits <commits/adi-u-boot-2026.01.y+>`
 - :git-buildroot:`+`
@@ -87,6 +88,7 @@ for the the Commits link with the newest version and at least one Release.
       :git-openocd:`0.12.0-1.2.0 <releases/tag/0.12.0-1.2.0+>`
       :git-openocd:`0.12.0-1.3.0 <releases/tag/0.12.0-1.3.0+>`
       :git-openocd:`0.12.0-1.3.1 <releases/tag/0.12.0-1.3.1+>`
+      :git-openocd:`0.12.0-1.4.0 <releases/tag/0.12.0-1.4.0+>`
 
 ADI repositories
 ^^^^^^^^^^^^^^^^
@@ -97,6 +99,7 @@ For Yocto support see ``lxndsp-adi-meta`` below.
     - :git-adsp-ldr:`v1.0.0 <releases/tag/v1.0.0+>`
       :git-adsp-ldr:`v1.0.1 <releases/tag/v1.0.1+>`
       :git-adsp-ldr:`v1.0.2 <releases/tag/v1.0.2+>`
+      :git-adsp-ldr:`v1.0.3 <releases/tag/v1.0.3+>`
 - :git-lnxdsp-adi-meta:`+`
     - Kirkstone:
       :git-lnxdsp-adi-meta:`Release v3.0.0 <releases/tag/3.0.0-rel+>`
