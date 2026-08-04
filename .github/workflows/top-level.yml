@@ -121,9 +121,8 @@ jobs:
       github.ref_type == 'tag'
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}${{ github.event_name == 'pull_request' && format('pull/{0}', github.event.number) || '' }}
 
     steps:
     - uses: actions/deploy-pages@v5
       id: deployment
-
