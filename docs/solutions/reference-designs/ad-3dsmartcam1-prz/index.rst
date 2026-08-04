@@ -1,24 +1,34 @@
 .. _ad_3dsmartcam1_prz eval:
 
-AD 3DSMARTCAM1 PRZ
+AD-3DSMARTCAM1-PRZ
 =============================================================================================================
 
-.. TODO: Add a picture of the chip/board
+.. important::
+
+   This system has reached its end of life and cannot be purchased anymore.
 
 Overview
 -------------------------------------------------------------------------------
 
-.. TODO: Describe in max 10 rows the main features and applications.
+The :adi:`AD-3DSMARTCAM1-PRZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/ad-3dsmartcam1-prz.html>`
+is a 2D & 3D machine vision solution with AI edge processing capabilities.
+It can be used for implementing advanced machine vision applications for different
+industry segments including logistics, robotics and people activity monitoring.
 
 Features:
 
-- feature 1
-- feature 2
+- 3D ToF sensor with 90x60 FoV, 3m range, 640x480 @ 30fps
+- RGB sensor with 128x68 FoV, 6m range, 1920x1080 @ 30fps
+- WiFi 802.11a/b/g/n/ac, Bluetooth 5.0, optional Gigabit Ethernet
+- NVIDIA Jetson Nano with Quad-core ARM A57 CPU, 128-core Maxwell GPU, 4GB LPDDR4
+- IP66 rated, operating temperature -25°C to 60°C
 
 Applications:
 
-- application 1
-- application 2
+- Box dimensioning for logistics
+- People detection and tracking
+- Robot navigation
+- Space mapping and 3D reconstruction
 
 .. toctree::
    :hidden:
