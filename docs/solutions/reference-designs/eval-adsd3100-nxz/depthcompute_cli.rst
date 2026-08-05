@@ -1,63 +1,82 @@
-Depth Compute Command Line Interface (CLI)
-==========================================
+.. _eval_adsd3100_nxz depthcompute:
+
+Depth Compute CLI
+===============================================================================
+
+The Depth Compute CLI processes data from the :doc:`Data Collect CLI <datacollect_cli>`
+to generate three types of output frames.
 
 .. important::
 
-   This tool has been removed from the host starting with Eval Kit version
-   5.0.0.
+   This tool has been removed from the host starting with Eval Kit version 5.0.0.
 
-Description
------------
+Output Folders
+-------------------------------------------------------------------------------
 
-The Depth Compute CLI can take data gathered from the `Data Collect CLI <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`_, and compute Depth, IR/Active Brightness, and XYZ frames.
+RadialDepth
+~~~~~~~~~~~
 
--  The ``RadialDepth`` folder contains depth images where the depth at each pixel is the distance to the corresponding point in the scene measured "radially" from the center of the lens
--  The ``AB`` folder contains Active Brightness images where the value at each pixel is the intensity of the return laser light from the corresponding point in the scene (IR frame)
--  The ``XYZ`` folder contains point cloud images where the values at each pixel are the real world cartesian coordinates (X,Y,Z) of the corresponding point in the scene. The Z image can be used standalone as an image where the value of each pixel is the distance to the corresponding point in the scene measured from the plane of the camera.
+Depth images where the depth at each pixel is the distance to the corresponding
+point in the scene measured 'radially' from the center of the lens.
 
-EVAL-ADSD3100-NXZ and EVAL-ADTF3175-NXZ Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AB (Active Brightness)
+~~~~~~~~~~~~~~~~~~~~~~
 
--  Run `Data Collect <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`_ first
--  In command prompt move to bin folder in GUI install location
--  Run the following command : ``tofi_compute_depth.exe --I=../data_output --CCB=../crXXX.ccb --MODE=10 --O=../proc_data --INI=../config/RawToDepth.ini``
+Active Brightness images showing laser return intensity from scene points
+(IR frame).
 
-.. image:: images/run_depthcompute.png
+XYZ
+~~~
+
+Point cloud data with real-world Cartesian coordinates (X, Y, Z) for each pixel.
+The Z image alone functions as a distance measurement from the camera plane.
+
+Usage
+-------------------------------------------------------------------------------
+
+EVAL-ADSD3100-NXZ and EVAL-ADTF3175-NXZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   tofi_compute_depth.exe --I=../data_output --CCB=../crXXX.ccb --MODE=10 --O=../proc_data --INI=../config/RawToDepth.ini
+
+EVAL-ADTF3175D-NXZ (MP mode)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   tofi_compute_depth.exe --I=data_output --CCB=../XXX.ccb --MODE=1 --O=proc_data_mp --INI=../config/RawToDepthAdsd3500_lr-native.ini --ISP_Enable=1
+
+.. figure:: images/run_depthcompute.png
+   :alt: Depth Compute CLI
    :align: center
    :width: 800
 
--  Processed Data is stored in proc_data folder - Please refer to python scripts
-   in depth_compute folder for visualization examples
+   Depth Compute CLI Output
 
-EVAL-ADTF3175D-NXZ Example
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Visualization
+-------------------------------------------------------------------------------
 
--  Run `Data Collect <https://wiki.analog.com/resources/eval/user-guides/eval-adsd3100-nxz-gui/datacollect_cli>`_ first
--  In command prompt move to bin folder in GUI install location
--  Run either one of the following commands, depending on mode of data collected - (**Please check correct mode number and ini file for your module here :** `mode_table <https://wiki.analog.com/resources/eval/user-guides/eval-adtf3175d-nxz/mode_table>`_)
-
-   -  MP mode : ``tofi_compute_depth.exe --I=data_output --CCB=../XXX.ccb --MODE=1 --O=proc_data_mp --INI=../config/RawToDepthAdsd3500_lr-native.ini --ISP_Enable=1``
-   -  QMP mode : ``tofi_compute_depth.exe --I=data_output_qmp --CCB=../XXX.ccb --MODE=1 --O=proc_data_qmp --INI=../config/RawToDepthAdsd3500_lr-native.ini --ISP_Enable=1``
-
--  Processed Data is stored in proc_data folder - Please refer to python scripts
-   in depth_compute folder for visualization examples
-
-Processing the outputs
-~~~~~~~~~~~~~~~~~~~~~~
-
-If you followed the above steps and are running this from the installer then the
-following commands should work.
-
--  ``cd path/of/tofi_compute_depth.exe``
+Use the provided Python scripts to visualize the output:
 
 Visualize Depth
+~~~~~~~~~~~~~~~
 
--  ``python tools\depth_compute\visualize_depth.py proc_data_mp\RadialDepth\data_output_0.bin 1024 1024``
+.. code-block:: bash
 
-Vizualize AB
+   python tools\depth_compute\visualize_depth.py proc_data_mp\RadialDepth\data_output_0.bin 1024 1024
 
--  ``python tools\depth_compute\visualize_ab.py proc_data_mp\AB\data_output_0.bin 1024 1024``
+Visualize Active Brightness
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Vizualize Pointcloud
+.. code-block:: bash
 
--  ``python tools\depth_compute\visualize_pointcloud.py 1024 1024 proc_data_mp\XYZ\data_output_0.bin``
+   python tools\depth_compute\visualize_ab.py proc_data_mp\AB\data_output_0.bin 1024 1024
+
+Visualize Point Cloud
+~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+   python tools\depth_compute\visualize_pointcloud.py 1024 1024 proc_data_mp\XYZ\data_output_0.bin

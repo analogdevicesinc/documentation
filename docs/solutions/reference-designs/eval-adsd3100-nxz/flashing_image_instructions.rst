@@ -1,54 +1,91 @@
-EVAL-ADSD3100-NXZ Software Package
-==================================
+.. _eval_adsd3100_nxz flashing:
 
-This user guide steps through flashing an image on a microSD card using
-balenaEtcher on Windows.
+Flashing Image Instructions
+===============================================================================
+
+This guide provides instructions for flashing a microSD card image using
+balenaEtcher on Windows systems.
 
 Install balenaEtcher
---------------------
+-------------------------------------------------------------------------------
 
-Install balenaEtcher from here : `External Link <https://www.balena.io/etcher/>`_
+Download and install balenaEtcher from the official website:
+https://www.balena.io/etcher/
 
-The SD card
------------
+The SD Card
+-------------------------------------------------------------------------------
 
-Insert microSD card into PC
+The NXP Platform requires a microSD card. You can connect it using:
 
--  The NXP Platform uses a micro-sd card this can read by your PC by :
+- An SD card adapter (if your PC has an SD card slot)
+- A USB hub with appropriate card reader capability
 
-   -  Using an sd card adaptor (If your PC has an sd card slot)
-   -  USB Hub with sd card or microSD card slot
+Flash Image onto SD Card
+-------------------------------------------------------------------------------
 
-Flash image onto SD card
-------------------------
+Follow these steps to flash the image:
 
--  Open balenaEtcher
--  Select "Flash from file"
+Step 1: Launch balenaEtcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: images/capture0.png
+Open the balenaEtcher application.
+
+.. figure:: images/capture0.png
+   :alt: balenaEtcher Launch
    :align: center
    :width: 600
 
--  Select provided .img file
+   balenaEtcher Application
 
-.. image:: images/capture1.png
+Step 2: Select Flash from File
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click "Flash from file" and select the provided .img file.
+
+.. figure:: images/capture1.png
+   :alt: Select Image File
    :align: center
    :width: 600
 
--  Select microSD card
+   Select Image File
 
-.. image:: images/capture.png
+Step 3: Select Target
+~~~~~~~~~~~~~~~~~~~~~
+
+Select the target microSD card.
+
+.. figure:: images/capture.png
+   :alt: Select Target
    :align: center
    :width: 600
 
--  Hit "Flash!"
+   Select Target SD Card
 
-.. image:: images/capture3.png
+Step 4: Flash
+~~~~~~~~~~~~~
+
+Click "Flash!" to initiate the process.
+
+.. figure:: images/capture3.png
+   :alt: Flash Process
    :align: center
    :width: 600
 
--  Confirm flash was successful
+   Flashing in Progress
 
-.. image:: images/capture4.png
+Step 5: Verify
+~~~~~~~~~~~~~~
+
+Wait for the flash and verification to complete successfully.
+
+.. figure:: images/capture4.png
+   :alt: Flash Complete
    :align: center
    :width: 600
+
+   Flash Complete
+
+.. note::
+
+   After flashing, safely eject the SD card and insert it into the
+   EVAL-ADSD3100-NXZ module.
