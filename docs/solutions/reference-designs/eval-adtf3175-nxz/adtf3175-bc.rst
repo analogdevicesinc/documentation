@@ -1,7 +1,7 @@
 EVAL-ADTF3175-NXZ Block Diagram
 ===============================
 
-This page provides a high level overview of the :doc:`EVAL-ADTF3175-NXZ </solutions/reference-designs/eval-adtf3175-nxz/eval-adtf3175-nxz>` evaluation platform. This system is showcases the ADTF3175 ToF module.
+This page provides a high level overview of the :ref:`EVAL-ADTF3175-NXZ <eval_adtf3175_nxz>` evaluation platform. This system showcases the ADTF3175 ToF module.
 
 .. image:: images/crosbyonly.png
    :align: center
