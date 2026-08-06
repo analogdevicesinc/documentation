@@ -1,6 +1,6 @@
-.. _eval-ad7490-ardz:
+.. _eval-ad7490ardz:
 
-EVAL-AD7490-ARDZ
+EVAL-AD7490ARDZ
 ================
 
 Arduino Compatible Evaluation Board for AD7490
@@ -8,15 +8,15 @@ Arduino Compatible Evaluation Board for AD7490
 Overview
 --------
 
-The :adi:`EVAL-AD7490-ARDZ` is an Arduino compatible evaluation board for evaluating
+The :adi:`EVAL-AD7490ARDZ` is an Arduino compatible evaluation board for evaluating
 all features of :adi:`AD7490`. The :adi:`AD7490` is a 12-bit, 16-channel, high speed, low
 power, successive approximation (SAR) ADC that operates from a single 2.7 V to
 5.25 V power supply and features throughput rates of up to 1 MSPS. The
 evaluation board can be controlled via the SDP-K1 (:adi:`EVAL-SDP-CK1Z`) board which
-enables control and data capture via the PC's USB port. The :adi:`EVAL-AD7490-ARDZ` can
+enables control and data capture via the PC's USB port. The :adi:`EVAL-AD7490ARDZ` can
 be powered directly from USB via the :adi:`SDP-K1` controller board, or via an external
 5 V supply. To facilitate the low noise voltage supply requirements and
-standalone operation, the :adi:`EVAL-AD7490-ARDZ` features the following components on
+standalone operation, the :adi:`EVAL-AD7490ARDZ` features the following components on
 board:
 
 - :adi:`MAX17291`: Low I:sub:`Q` Current DC-DC Boost Converter
@@ -30,15 +30,15 @@ board:
 .. grid::
    :widths: 50% 50%
 
-   .. figure:: images/EVAL-AD7490-ARDZ_top-evaluation-board.png
+   .. figure:: images/EVAL-AD7490ARDZ_top-evaluation-board.png
       :align: center
 
-      EVAL-AD7490-ARDZ Evaluation Board Top View
+      EVAL-AD7490ARDZ Evaluation Board Top View
 
-   .. figure:: images/EVAL-AD7490-ARDZ_top-angle-evaluation-board.png
+   .. figure:: images/EVAL-AD7490ARDZ_top-angle-evaluation-board.png
       :align: center
 
-      EVAL-AD7490-ARDZ Evaluation Board Angle View
+      EVAL-AD7490ARDZ Evaluation Board Angle View
 
 Features
 ++++++++
@@ -64,7 +64,7 @@ Applications
 Package Contents
 ++++++++++++++++
 
-- :adi:`EVAL-AD7490-ARDZ` Evaluation Board
+- :adi:`EVAL-AD7490ARDZ` Evaluation Board
 
 Additional Equipment Needed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,12 +80,12 @@ Block Diagram
 .. figure:: images/block-diagram.png
    :align: center
 
-   EVAL-AD7490-ARDZ Functional Block Diagram
+   EVAL-AD7490ARDZ Functional Block Diagram
 
 Hardware Description
 --------------------
 
-The :adi:`EVAL-AD7490-ARDZ` is an Arduino form factor evaluation board for
+The :adi:`EVAL-AD7490ARDZ` is an Arduino form factor evaluation board for
 :adi:`AD7490` featuring essential on-board circuitry to support both full feature
 and standalone operation. It can accept unipolar input signals between 0 V to 5 V
 on all channels (VIN0 to VIN15) and can also be configured to accept bipolar input
@@ -188,7 +188,7 @@ Test Points and Jumper Locations
 Table 2 and table 3 summarizes the test points and jumper locations on the
 board with detailed description for each.
 
-.. list-table:: EVAL-AD7490-ARDZ Test Points
+.. list-table:: EVAL-AD7490ARDZ Test Points
    :widths: 20 20 60
    :header-rows: 1
 
@@ -295,9 +295,9 @@ board with detailed description for each.
 .. figure:: images/test-points.png
    :align: center
 
-   EVAL-AD7490-ARDZ Test Points
+   EVAL-AD7490ARDZ Test Points
 
-.. list-table:: EVAL-AD7490-ARDZ Jumper Configurations and External SMB Connectors
+.. list-table:: EVAL-AD7490ARDZ Jumper Configurations and External SMB Connectors
    :widths: 10 10 80
    :header-rows: 1
 
@@ -341,7 +341,7 @@ board with detailed description for each.
 .. figure:: images/jumper-locations.png
    :align: center
 
-   EVAL-AD7490-ARDZ Jumper Locations
+   EVAL-AD7490ARDZ Jumper Locations
 
 Board Specifications
 --------------------
@@ -427,7 +427,7 @@ the type of input signals (unipolar or bipolar) being evaluated.
 Evaluating Unipolar Test Signals
 ++++++++++++++++++++++++++++++++
 
-By default, the EVAL-AD7490-ARDZ accepts unipolar signals on VIN0–VIN14. To
+By default, the EVAL-AD7490ARDZ accepts unipolar signals on VIN0–VIN14. To
 enable unipolar input on VIN15, short pins 1 and 2 of J9, then connect the input
 signal to the designated test point as shown below:
 
@@ -470,7 +470,7 @@ evaluation of unipolar signals on VIN0-VIN14 and assigning VIN15 as the
 dedicated input for bipolar signals. This setup requires the following equipment
 and/or materials:
 
-- 1x :adi:`EVAL-AD7490-ARDZ`
+- 1x :adi:`EVAL-AD7490ARDZ`
 - 1x :adi:`EVAL-SDP-CK1Z` (:adi:`SDP-K1` controller board)
 - 1x Signal Generator
 - 1x 2-channel isolated DC power supply
@@ -482,19 +482,19 @@ and/or materials:
 Setup Procedure
 ^^^^^^^^^^^^^^^
 
-#. Configure the EVAL-AD7490-ARDZ board to use the 5.0 V supply provided by the
+#. Configure the EVAL-AD7490ARDZ board to use the 5.0 V supply provided by the
    Arduino header by shorting pins 2 and 3 of J1.
-#. Configure the EVAL-AD7490-ARDZ board to accept bipolar signals on VIN15 by
+#. Configure the EVAL-AD7490ARDZ board to accept bipolar signals on VIN15 by
    shorting pins 2 and 3 of J9.
 #. Locate the P14 (VIO_ADJUST) jumper on the SDP-K1 controller board and set
    it to 3.3 V.
-#. Mount the EVAL-AD7490-ARDZ board to the SDP-K1 controller board.
+#. Mount the EVAL-AD7490ARDZ board to the SDP-K1 controller board.
 #. Set the output voltage of each channel of the 2-channel isolated DC supply
    to 5.25 V, and the OCP limit to at least 100 mA. Do not turn on the
    channels of the power supply at this point.
 #. Connect the 2 channels of the isolated DC supply in series. Connect their
    midpoint to GND, +5.25 V to VCC, and −5.25 V to VEE test point of the
-   EVAL-AD7490-ARDZ board.
+   EVAL-AD7490ARDZ board.
 #. Connect the USB-C port of the SDP-K1 controller board to the PC via USB
    cable. The two LEDs (DS1 and DS2) on the eval board should light up
    shortly after.
@@ -516,12 +516,12 @@ Setup Procedure
     Setup for Evaluating Unipolar and Bipolar Signals, Internal 5.0 V Supply
 
 Once configured, proceed to the Software Setup section to download and install
-the complementary evaluation software for EVAL-AD7490-ARDZ using ACE.
+the complementary evaluation software for EVAL-AD7490ARDZ using ACE.
 
 Software Setup
 --------------
 
-The EVAL-AD7490-ARDZ is supported by ADI's 
+The EVAL-AD7490ARDZ is supported by ADI's 
 :adi:`Analysis | Control | Evaluation (ACE) <resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
 software for control, data capture, and data analysis. This section provides the
 step-by-step procedure for the required prerequisites prior to evaluation using
@@ -553,7 +553,7 @@ Installing ACE Software
     .. image:: images/update-all.png
         :align: center
 
-Installing ACE Plugin Support for EVAL-AD7490-ARDZ
+Installing ACE Plugin Support for EVAL-AD7490ARDZ
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In order for ACE to properly detect and capture data from the hardware setup,
@@ -622,14 +622,14 @@ Recovery Tool will be utilized.
 #. Once ACE has detected the hardware setup, double click on the plugin icon in the
    Attached Hardware panel to open the board view and refer to the built-in plugin
    documentation for AD7490 for details on evaluating ADC test signals using the
-   EVAL-AD7490-ARDZ evaluation board.
+   EVAL-AD7490ARDZ evaluation board.
 
 Software Resources
 ------------------
 
 - :git-no-os:`AD7490 No-OS Device Driver <drivers/adc/ad7490>`
 - :git-pyadi-iio:`AD7490 PyADI-IIO Example Code <examples/ad7490_example.py>` (PyADI-IIO library support for Python development)
-- ACE plug-in support for :adi:`EVAL-AD7490-ARDZ` via 
+- ACE plug-in support for :adi:`EVAL-AD7490ARDZ` via 
   :adi:`Analysis | Control | Evaluation (ACE) <resources/evaluation-hardware-and-software/evaluation-development-platforms/ace-software.html>`
 
 Additional Resources
@@ -643,7 +643,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :adi:`EVAL-AD7490-ARDZ HW Design Files <media/en/reference-design-documentation/design-integration-files/eval-ad7490-ardz-designsupport.zip>`
+   :adi:`EVAL-AD7490ARDZ HW Design Files <media/en/reference-design-documentation/design-integration-files/EVAL-AD7490ARDZ-designsupport.zip>`
 
     - Schematic
     - PCB Layout
