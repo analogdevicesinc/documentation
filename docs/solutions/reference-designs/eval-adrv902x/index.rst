@@ -61,9 +61,10 @@ Applications:
 .. toctree::
    :hidden:
 
-   user-guide
+   adrv9026_osc_main
    prerequisites
    quickstart/index
+   user-guide
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -194,7 +195,7 @@ with the :adi:`ADRV9029`:
   - :dokuwiki:`Typical High Level DPD development flow with the ADRV9029 transceiver <resources/eval/user-guides/adrv9029/dpd_development_flow>`
 
 - :dokuwiki:`ADRV9029 DPD Prerequisites <resources/eval/user-guides/adrv9029/prerequisites>`
-- `Unboxing ADRV902x Transceiver Eval Platform - Video <https://www.youtube.com/watch?v=Oq_9bl5f8fM>`__
+- `Unboxing ADRV902x Transceiver Eval Platform - Video <https://www.youtube.com/watch?v=Oq_9bl5f8fM>`_
 - :dokuwiki:`Evaluating ADRV9029 through TES GUI <resources/eval/user-guides/adrv9029/evaluation_through_tes_gui>`
 - :dokuwiki:`Evaluating ADRV9029 DPD through TES GUI <resources/eval/user-guides/adrv9029/evaluating_dpd_through_tes_gui>`
 - :dokuwiki:`ADRV9029 DPD Error Troubleshooting <resources/eval/user-guides/adrv9029/dpd_error_troubleshooting>`
