@@ -47,6 +47,7 @@ for the the Commits link with the newest version and at least one Release.
     - v6.18.31:
       :git-linux:`Commits <commits/adsp-6.18.31-y+>`
       :git-linux:`Release 1 <releases/tag/6.18.31-1+>`
+      :git-linux:`Release 2 <releases/tag/6.18.31-2+>`
 
 ..
     - v6.12.38:
