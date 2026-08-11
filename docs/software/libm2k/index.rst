@@ -433,7 +433,7 @@ API reference
 ~~~~~~~~~~~~~
 
 An automatically generated documentation of the API can be found
-`here <https://analogdevicesinc.github.io/libm2k/annotated.html>`__.
+`here <https://analogdevicesinc.github.io/libm2k/>`__.
 
 calibration
 ~~~~~~~~~~~
