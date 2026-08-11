@@ -68,12 +68,6 @@ Applications:
 
       Bottom view
 
-.. toctree::
-   :hidden:
-
-   prerequisites
-   quickstart/index
-
 Recommendations
 -------------------------------------------------------------------------------
 
