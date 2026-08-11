@@ -372,18 +372,15 @@ If destination UDP ports were set to 5004-5011, use the following commands for 8
     rtpvrawdepay ! videoconvert ! fpsdisplaysink video-sink=xvimagesink \
     text-overlay=true sync=false
 
-..
-   Enable after adding new content
+User Guides
+-----------
 
-   User Guides
-   -----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :glob:
 
-   .. toctree::
-      :titlesonly:
-      :maxdepth: 1
-      :glob:
-
-      */index
+   */index
 
 Help and Support
 ----------------
