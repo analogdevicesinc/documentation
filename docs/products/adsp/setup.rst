@@ -172,15 +172,15 @@ Download Release
 ~~~~~~~~~~~~~~~~~~
 
 Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
-download both release archives that match your hardware (``images-bootstrap-*``
-and ``images-debug-*``), then extract them into the same directory:
+download the bringup archive (``images-bringup-*``). This single archive
+combines the bootstrap, debug, and Fedora rootfs artifacts.
+
+Extract the archive:
 
 .. code-block:: sh
 
-   $ tar -xf images-bootstrap-*.tar.xz
-   $ tar -xf images-debug-*.tar.xz
-
-Both archives extract to ``buildroot/output/images/``.
+   $ tar -xf images-bringup-*.tar.xz --one-top-level=images-bringup
+   $ cd images-bringup
 
 Boot U-Boot Proper
 ~~~~~~~~~~~~~~~~~~
@@ -221,14 +221,14 @@ Run GDB:
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd images-bringup
          $ gdb-multiarch -x u-boot.gdb
 
    .. tab-item:: Windows/Fedora/RHEL
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd images-bringup
          $ gdb -x u-boot.gdb
 
 Boot Linux
@@ -242,14 +242,14 @@ Start a file server in a new terminal on your PC in the release directory:
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd images-bringup
          $ python3 -m http.server
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd images-bringup
          $ python -m http.server
 
 Find your IP address:
