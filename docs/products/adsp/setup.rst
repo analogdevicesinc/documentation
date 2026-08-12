@@ -172,15 +172,27 @@ Download Release
 ~~~~~~~~~~~~~~~~~~
 
 Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
-download the bringup archive (``images-bringup-*``). This single archive
-combines the bootstrap, debug, and Fedora rootfs artifacts.
+download the bringup archive (``adi_sc598_ezkit_defconfig-*``). This single
+archive combines the bootstrap, debug, and Fedora rootfs artifacts.
 
 Extract the archive:
 
 .. code-block:: sh
 
-   $ tar -xf images-bringup-*.tar.xz --one-top-level=images-bringup
-   $ cd images-bringup
+   $ tar -xf adi_sc598_ezkit_defconfig-*.tar.xz
+   $ cd images
+
+.. note::
+   The archive contains symlinks at the root of ``images/`` pointing
+   into ``debug/`` and ``fedora/``. On Linux and macOS these are extracted
+   transparently. On Windows, symlink creation requires either Administrator
+   privileges or Developer Mode enabled. If neither is available, copy the
+   files manually after extraction:
+
+   .. code-block:: sh
+
+      $ cp debug/emmc.img.gz emmc.img.gz
+      $ cp fedora/adsp-sc598-rootfs.tar.zst adsp-sc598-rootfs.tar.zst
 
 Boot U-Boot Proper
 ~~~~~~~~~~~~~~~~~~
@@ -221,15 +233,13 @@ Run GDB:
 
       .. shell:: sh
 
-         $ cd images-bringup
-         $ gdb-multiarch -x u-boot.gdb
+         $ gdb-multiarch -x bootstrap/u-boot.gdb
 
    .. tab-item:: Windows/Fedora/RHEL
 
       .. shell:: sh
 
-         $ cd images-bringup
-         $ gdb -x u-boot.gdb
+         $ gdb -x bootstrap/u-boot.gdb
 
 Boot Linux
 ~~~~~~~~~~
@@ -242,14 +252,14 @@ Start a file server in a new terminal on your PC in the release directory:
 
       .. shell:: sh
 
-         $ cd images-bringup
+         $ cd images
          $ python3 -m http.server
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $ cd images-bringup
+         $ cd images
          $ python -m http.server
 
 Find your IP address:
@@ -273,8 +283,8 @@ In the U-Boot console, run the following (replace ``<your-pc-ip>`` with the IP y
 .. code-block:: console
 
    => dhcp
-   => wget ${kernel_addr_r} <your-pc-ip>:/Image
-   => wget ${fdt_addr_r} <your-pc-ip>:/sc598-som-ezkit.dtb
+   => wget ${kernel_addr_r} <your-pc-ip>:/debug/Image
+   => wget ${fdt_addr_r} <your-pc-ip>:/debug/sc598-som-ezkit.dtb
    => booti ${kernel_addr_r} - ${fdt_addr_r}
 
 Note: Make sure to use the ``.dtb`` file name that matches your board (e.g. ``sc598-som-ezkit.dtb``).
@@ -294,26 +304,39 @@ Serial console displays a prompt:
    This will erase and program SPI flash.
    Continue? [y/N]:
 
-Type ``y`` to erase the flash contents and install U-Boot. After programming completes,
-the installer proceeds to write the eMMC image.
+Type ``y`` to erase the flash contents and install U-Boot. After programming
+completes, the installer proceeds to the eMMC install step.
 
 Install eMMC Image
 ~~~~~~~~~~~~~~~~~~
 
-The serial console prompts for your PC's IP address:
+The serial console presents a menu to select what to install on eMMC:
 
 .. code-block:: console
 
-   ======== Install eMMC Image ========
+   ======== Install Image on eMMC ========
 
-   This will download emmc.img.gz from your PC and write it to /dev/mmcblk0.
+   Select what to install:
+     1) Buildroot kernel and root filesystem
+     2) Buildroot kernel and Fedora root filesystem
+     0) Skip
 
-   Enter your PC's IP address:
+   Choice [0/1/2]:
 
-The board configures its network interface, downloads
-``emmc.img.gz`` from your PC, decompresses it, and writes it directly to the
-eMMC. After the write completes, the console instructs you to move the S1 boot
-mode switch:
+After selecting, enter your PC's IP address when prompted:
+
+.. code-block:: console
+
+   To continue, enter your PC's IP address. Leave empty to abort.
+   PC IP address:
+
+The board configures its network interface, downloads ``emmc.img.gz`` from your
+PC, decompresses it, and writes it to the eMMC. If you selected option ``2``,
+the installer also downloads and extracts ``adsp-sc598-rootfs.tar.zst`` from your
+PC to the Fedora root partition.
+
+After the install completes, the console instructs you to move the S1 boot mode
+switch:
 
 .. code-block:: console
 
@@ -338,14 +361,24 @@ prompt, type:
 U-Boot loads the kernel and device tree from the eMMC boot partition and starts
 Linux with the root filesystem on eMMC.
 
-Login
-~~~~~
+First Boot Setup
+~~~~~~~~~~~~~~~~
 
-When the boot completes, a login prompt appears:
+On first boot, a setup service prompts you to create a user account:
 
 .. code-block:: console
 
-   Welcome to the ADI SC598 EZ-Kit
-   sc598-ezkit login:
+   ======== First Boot Setup ========
+   Create your user account.
 
-Log in as ``root`` with no password (press Enter).
+   Username:
+
+Enter a username and set a password when prompted. The user is created with
+``wheel`` group membership. After setup completes, the board displays its IP
+address for SSH access:
+
+.. code-block:: console
+
+   User '<username>' created.
+   Waiting for network....
+   SSH: ssh <username>@<board-ip>
