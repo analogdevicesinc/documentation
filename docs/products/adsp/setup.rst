@@ -69,7 +69,7 @@ that matches your JTAG connection.
 
    .. tab-item:: External Debugger (ICE-1000/ICE-2000)
 
-      For the EV-SC598-SOM with an ICE-1000, run:
+      For the EV-SC598-SOM or EV-SC846-SOM with an ICE-1000, run:
 
       .. shell:: sh
 
@@ -84,7 +84,7 @@ that matches your JTAG connection.
 
    .. tab-item:: Embedded JTAG Debugger (On Carrier Board)
 
-      For the EV-SC598-SOM with a carrier board, run:
+      For the EV-SC598-SOM or EV-SC846-SOM with a carrier board, run:
 
       .. shell:: sh
 
@@ -103,9 +103,10 @@ that matches your JTAG connection.
       ``ON``.
 
 * For the ADSP-SC594 (Cortex-A5) use ``adspsc59x.cfg``
-* For the ADSP-SC598 (Cortex-A55) use  ``adspsc59x_a55.cfg``
+* For the ADSP-SC598 and ADSP-SC846 (Cortex-A55) use  ``adspsc59x_a55.cfg``
 
-The ``*_single_SHARC.cfg`` variants are for devices with only one SHARC core enabled (e.g. SC592).
+The ``*_single_SHARC.cfg`` variants are for devices with only one SHARC core
+enabled (e.g. SC592).
 
 Serial Console Setup
 -----------------------------
@@ -114,7 +115,8 @@ A serial console is highly recommended for interacting with U-Boot and Linux.
 
 Connect a standard USB-C cable from your PC to the SoM.
 
-When connecting to SC598 evaluation boards, the console appears as a CP2102N USB-to-UART bridge with a unique serial number:
+When connecting to ADSP evaluation boards, the console appears as a CP2102N
+USB-to-UART bridge with a unique serial number:
 
 .. tab-set::
 
@@ -140,7 +142,8 @@ When connecting to SC598 evaluation boards, the console appears as a CP2102N USB
           Instance ID:    USB\VID_10C4&PID_EA60\8624FF6B1261ED11A8D3518009472825
           Device Name:    Silicon Labs CP210x USB to UART Bridge (COM7)
 
-Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop bit (8-N-1), and disable all flow control.
+Configure the serial terminal for 115200 baud, 8 data bits, no parity, 1 stop
+bit (8-N-1), and disable all flow control.
 
 .. tab-set::
 
@@ -172,15 +175,33 @@ Download Release
 ~~~~~~~~~~~~~~~~~~
 
 Navigate to the :git-br2-external:`br2-external releases page <releases+>` and
-download both release archives that match your hardware (``images-bootstrap-*``
-and ``images-debug-*``), then extract them into the same directory:
+download a release archive. The archives combine the bootstrap, debug, and
+Fedora root filesystem artifacts.
 
-.. code-block:: sh
+Extract the archive:
 
-   $ tar -xf images-bootstrap-*.tar.xz
-   $ tar -xf images-debug-*.tar.xz
+.. tab-set::
 
-Both archives extract to ``buildroot/output/images/``.
+   .. tab-item:: ADSP-SC598 EZKIT
+
+      .. code-block:: sh
+
+         $ tar -xf adi_sc598_ezkit_defconfig-*.tar.xz
+         $ cd adi_sc598_ezkit_defconfig-*/
+
+   .. tab-item:: ADSP-SC598 EZLITE
+
+      .. code-block:: sh
+
+         $ tar -xf adi_sc598_ezlite_defconfig-*.tar.xz
+         $ cd adi_sc598_ezlite_defconfig-*/
+
+   .. tab-item:: ADSP-SC846 EZKIT
+
+      .. code-block:: sh
+
+         $ tar -xf adi_sc846_ezkit_defconfig-*.tar.xz
+         $ cd adi_sc846_ezkit_defconfig-*/
 
 Boot U-Boot Proper
 ~~~~~~~~~~~~~~~~~~
@@ -221,14 +242,14 @@ Run GDB:
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd bootstrap
          $ gdb-multiarch -x u-boot.gdb
 
    .. tab-item:: Windows/Fedora/RHEL
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
+         $ cd bootstrap
          $ gdb -x u-boot.gdb
 
 Boot Linux
@@ -242,14 +263,12 @@ Start a file server in a new terminal on your PC in the release directory:
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
          $ python3 -m http.server
 
    .. tab-item:: Windows
 
       .. shell:: sh
 
-         $ cd buildroot/output/images
          $ python -m http.server
 
 Find your IP address:
@@ -268,16 +287,36 @@ Find your IP address:
 
          $ ipconfig
 
-In the U-Boot console, run the following (replace ``<your-pc-ip>`` with the IP you found above):
+In the U-Boot console, run the following after replacing ``<your-pc-ip>``:
 
-.. code-block:: console
+.. tab-set::
 
-   => dhcp
-   => wget ${kernel_addr_r} <your-pc-ip>:/Image
-   => wget ${fdt_addr_r} <your-pc-ip>:/sc598-som-ezkit.dtb
-   => booti ${kernel_addr_r} - ${fdt_addr_r}
+   .. tab-item:: ADSP-SC598 EZKIT
 
-Note: Make sure to use the ``.dtb`` file name that matches your board (e.g. ``sc598-som-ezkit.dtb``).
+      .. code-block:: console
+
+         => dhcp
+         => wget ${kernel_addr_r} <your-pc-ip>:/bootstrap/Image
+         => wget ${fdt_addr_r} <your-pc-ip>:/bootstrap/sc598-som-ezkit.dtb
+         => booti ${kernel_addr_r} - ${fdt_addr_r}
+
+   .. tab-item:: ADSP-SC598 EZLITE
+
+      .. code-block:: console
+
+         => dhcp
+         => wget ${kernel_addr_r} <your-pc-ip>:/bootstrap/Image
+         => wget ${fdt_addr_r} <your-pc-ip>:/bootstrap/sc598-som-ezlite.dtb
+         => booti ${kernel_addr_r} - ${fdt_addr_r}
+
+   .. tab-item:: ADSP-SC846 EZKIT
+
+      .. code-block:: console
+
+         => dhcp
+         => wget ${kernel_addr_r} <your-pc-ip>:/bootstrap/Image
+         => wget ${fdt_addr_r} <your-pc-ip>:/bootstrap/sc846-som-ezkit.dtb
+         => booti ${kernel_addr_r} - ${fdt_addr_r}
 
 Install U-Boot
 ~~~~~~~~~~~~~~
@@ -294,26 +333,39 @@ Serial console displays a prompt:
    This will erase and program SPI flash.
    Continue? [y/N]:
 
-Type ``y`` to erase the flash contents and install U-Boot. After programming completes,
-the installer proceeds to write the eMMC image.
+Type ``y`` to erase the flash contents and install U-Boot. After programming
+completes, the installer proceeds to the eMMC install step.
 
 Install eMMC Image
 ~~~~~~~~~~~~~~~~~~
 
-The serial console prompts for your PC's IP address:
+The serial console presents a menu to select what to install on eMMC:
 
 .. code-block:: console
 
-   ======== Install eMMC Image ========
+   ======== Install Image on eMMC ========
 
-   This will download emmc.img.gz from your PC and write it to /dev/mmcblk0.
+   Select what to install:
+     1) Buildroot kernel and root filesystem
+     2) Buildroot kernel and Fedora root filesystem
+     0) Skip
 
-   Enter your PC's IP address:
+   Choice [0/1/2]:
 
-The board configures its network interface, downloads
-``emmc.img.gz`` from your PC, decompresses it, and writes it directly to the
-eMMC. After the write completes, the console instructs you to move the S1 boot
-mode switch:
+After selecting, enter your PC's IP address when prompted:
+
+.. code-block:: console
+
+   To continue, enter your PC's IP address. Leave empty to abort.
+   PC IP address:
+
+The board configures its network interface, downloads ``emmc.img.gz`` from your
+PC, decompresses it, and writes it to the eMMC. If you selected option ``2``,
+the installer also downloads and extracts ``adsp-arm64-rootfs.tar.zst`` from your
+PC to the Fedora root partition.
+
+After the install completes, the console instructs you to move the S1 boot mode
+switch:
 
 .. code-block:: console
 
@@ -338,14 +390,24 @@ prompt, type:
 U-Boot loads the kernel and device tree from the eMMC boot partition and starts
 Linux with the root filesystem on eMMC.
 
-Login
-~~~~~
+First Boot Setup
+~~~~~~~~~~~~~~~~
 
-When the boot completes, a login prompt appears:
+On first boot, a setup service prompts you to create a user account:
 
 .. code-block:: console
 
-   Welcome to the ADI SC598 EZ-Kit
-   sc598-ezkit login:
+   ======== First Boot Setup ========
+   Create your user account.
 
-Log in as ``root`` with no password (press Enter).
+   Username:
+
+Enter a username and set a password when prompted. The user is created with
+``wheel`` group membership. After setup completes, the board displays its IP
+address for SSH access:
+
+.. code-block:: console
+
+   User '<username>' created.
+   Waiting for network....
+   SSH: ssh <username>@<board-ip>
