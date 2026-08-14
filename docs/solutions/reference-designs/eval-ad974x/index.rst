@@ -1,4 +1,4 @@
-.. _eval-ad974x fmc ebz:
+.. _eval-ad974x:
 
 EVAL-AD974X
 ===============================================================================
@@ -71,9 +71,8 @@ as it should be. If you have any questions, feel free to ask on our
 thoroughly.
 
 To better understand the :adi:`AD9740` / :adi:`AD9742` / :adi:`AD9744` /
-:adi:`AD9748`, we recommend using the :adi:`EVAL-AD9740 <EVAL-AD9740>` /
-:adi:`EVAL-AD9742 <EVAL-AD9742>` / :adi:`EVAL-AD9744 <EVAL-AD9744>` /
-:adi:`EVAL-AD9748 <EVAL-AD9748>` evaluation board together with the
+:adi:`AD9748`, we recommend using the :adi:`EVAL-AD9740` / :adi:`EVAL-AD9742` /
+:adi:`EVAL-AD9744` / :adi:`EVAL-AD9748` evaluation board together with the
 `Zedboard <https://www.avnet.com/wps/portal/us/products/avnet-boards/
 avnet-board-families/zedboard/>`_ FPGA development kit.
 
@@ -82,12 +81,12 @@ Table of contents
 
 #. Using the evaluation board/full stack reference design that we offer:
 
-   #. :ref:`Prerequisites <eval-ad974x fmc ebz prerequisites>` - what you
+   #. :ref:`Prerequisites <eval-ad974x prerequisites>` - what you
       need to get started
-   #. :ref:`Quick start guides <eval-ad974x fmc ebz quickstart>`:
+   #. :ref:`Quick start guides <eval-ad974x quickstart>`:
 
-      #. Using the :ref:`ZedBoard <eval-ad974x fmc ebz quickstart zed>`
-      #. Using the :ref:`SDP-H1 <eval-ad974x fmc ebz quickstart sdp-h1-ace>`
+      #. Using the :ref:`ZedBoard <eval-ad974x quickstart zed>`
+      #. Using the :ref:`SDP-H1 <eval-ad974x quickstart sdp-h1-ace>`
 
    #. Linux Applications
 
@@ -96,7 +95,7 @@ Table of contents
 
 #. Design with the AD9740 / AD9742 / AD9744 / AD9748
 
-   - :ref:`eval-ad974x fmc ebz block-diagram`
+   - :ref:`eval-ad974x block-diagram`
 
      - :adi:`AD9740` product page
      - :adi:`AD9742` product page
@@ -116,7 +115,7 @@ Table of contents
 
 #. :ref:`Help and Support <help-and-support>`
 
-.. _eval-ad974x fmc ebz block-diagram:
+.. _eval-ad974x block-diagram:
 
 Block diagram
 -------------------------------------------------------------------------------

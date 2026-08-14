@@ -1,4 +1,4 @@
-.. _eval-ad974x fmc ebz quickstart sdp-h1-ace:
+.. _eval-ad974x quickstart sdp-h1-ace:
 
 SDP-H1 quick start
 ===============================================================================

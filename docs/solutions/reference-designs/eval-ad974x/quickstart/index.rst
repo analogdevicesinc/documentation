@@ -1,4 +1,4 @@
-.. _eval-ad974x fmc ebz quickstart:
+.. _eval-ad974x quickstart:
 
 Quick start
 ===============================================================================
@@ -14,7 +14,7 @@ IIO client usage.
    On ZedBoard <zed>
    On SDP-H1 <sdp-h1-ace>
 
-.. _ad974x fmc ebz carriers:
+.. _ad974x carriers:
 
 Supported carriers
 -------------------------------------------------------------------------------
@@ -27,16 +27,16 @@ VADJ must be set to 3.3 V.
    :header-rows: 1
 
    * - FPGA board
-     - :adi:`EVAL-AD9740 <EVAL-AD9740>`
-     - :adi:`EVAL-AD9742 <EVAL-AD9742>`
-     - :adi:`EVAL-AD9744 <EVAL-AD9744>`
-     - :adi:`EVAL-AD9748 <EVAL-AD9748>`
+     - :adi:`EVAL-AD9740`
+     - :adi:`EVAL-AD9742`
+     - :adi:`EVAL-AD9744`
+     - :adi:`EVAL-AD9748`
    * - `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_
      - FMC LPC
      - FMC LPC
      - FMC LPC
      - FMC LPC
-   * - :adi:`SDP-H1 <EVAL-SDP-H1>`
+   * - :adi:`SDP-H1`
      - FMC LPC
      - FMC LPC
      - FMC LPC
@@ -56,7 +56,7 @@ Supported environments
      - Yes
      - Yes
      - No
-   * - :adi:`SDP-H1 <EVAL-SDP-H1>`
+   * - :adi:`SDP-H1`
      - No
      - No
      - No
@@ -84,7 +84,7 @@ ZedBoard + EVAL-AD974X
 
      ZedBoard with EVAL-AD974X hardware setup
 
-Go to :ref:`the quick start guide <eval-ad974x fmc ebz quickstart zed>`.
+Go to :ref:`the quick start guide <eval-ad974x quickstart zed>`.
 
 SDP-H1 + EVAL-AD974X + ACE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,4 +95,4 @@ SDP-H1 + EVAL-AD974X + ACE
 
      AD9744-FMC-EBZ Evaluation Board with SDP-H1.
 
-Go to :ref:`the quick start guide <eval-ad974x fmc ebz quickstart sdp-h1-ace>`.
+Go to :ref:`the quick start guide <eval-ad974x quickstart sdp-h1-ace>`.

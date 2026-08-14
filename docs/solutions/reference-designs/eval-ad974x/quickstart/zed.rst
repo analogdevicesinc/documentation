@@ -1,4 +1,4 @@
-.. _eval-ad974x fmc ebz quickstart zed:
+.. _eval-ad974x quickstart zed:
 
 ZedBoard quick start
 ===============================================================================
@@ -25,10 +25,10 @@ Required hardware
 
 - `ZedBoard <https://www.avnet.com/wps/portal/us/products/avnet-boards/avnet-board-families/zedboard/>`_
   Rev D or later
-- :adi:`EVAL-AD9740 <EVAL-AD9740>` evaluation board or
-- :adi:`EVAL-AD9742 <EVAL-AD9742>` evaluation board or
-- :adi:`EVAL-AD9744 <EVAL-AD9744>` evaluation board or
-- :adi:`EVAL-AD9748 <EVAL-AD9748>` evaluation board
+- :adi:`EVAL-AD9740` evaluation board or
+- :adi:`EVAL-AD9742` evaluation board or
+- :adi:`EVAL-AD9744` evaluation board or
+- :adi:`EVAL-AD9748` evaluation board
 - 16 GB (or larger) Class 10 micro-SD card
 - 12 V, 3 A power supply
 - Micro-USB cable (UART)

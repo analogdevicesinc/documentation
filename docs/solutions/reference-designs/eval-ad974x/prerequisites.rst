@@ -1,4 +1,4 @@
-.. _eval-ad974x fmc ebz prerequisites:
+.. _eval-ad974x prerequisites:
 
 Prerequisites
 ===============================================================================
