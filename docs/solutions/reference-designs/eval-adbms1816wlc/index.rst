@@ -40,7 +40,7 @@ Features
 
 **Wide Range BMS System**
 
- - can handle from 36V to 48V, can operate up to 100A
+ - can operate from 36V to 48V, can handle currents up to 100A
 
 **Battery Chemistry Compatibility**
 
@@ -53,7 +53,7 @@ Features
 
 **Monitoring Capabilities**
 
- - Cell voltage accuracy: ±3.0mV
+ - Cell voltage accuracy: ±3.6mV
  - Temperature monitoring: Up to 8 sensors
  - SOC/SOH Coulomb counting
  - High-side and low-side current sensing

@@ -40,7 +40,7 @@ Features
 
 **Wide Range BMS System**
 
- - can operate from 36V to 96V, can handle up to 100A
+ - can operate from 36V to 96V, can handle currents up to 100A
  - Simplified E2W/E3W AD-BMSE2E3WLC-SL baseboard + EVAL-ADBMS1816WLC 
    daughterboard configuration
 
@@ -58,7 +58,7 @@ Features
 
 **Monitoring Capabilities**
 
- - Cell voltage accuracy: ±3.0mV
+ - Cell voltage accuracy: ±3.6mV
  - Temperature monitoring: Up to 8 sensors
  - SoC/SoH Coulomb counting
  - High-side and low-side current sensing
