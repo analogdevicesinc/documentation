@@ -1,0 +1,143 @@
+.. _adrv9009 quickstart kcu105:
+
+KCU105 Quick Start Guide
+================================================================================
+
+This guide provides some quick instructions on how to setup the
+:adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>` on:
+
+- :xilinx:`KCU105`
+
+.. image:: ../../images/kcu105.png
+   :width: 800
+
+.. esd-warning::
+
+Using Linux as software
+--------------------------------------------------------------------------------
+
+Necessary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+  This carrier only has programming logic (PL) and, thus, a MicroBlaze soft core
+  is necessary to run Linux. As such, the files required for running Linux need
+  to be manually built.
+
+The following files are needed for the system to boot:
+
+- HDL bitstream file: ``system_top.bit``
+- Linux Kernel image: ``simpleImage.strip``
+
+Instructions on how to manually build the boot files from source can be found
+here:
+
+  - :ref:`linux-kernel microblaze`
+  - :dokuwiki:`ADRV9009 HDL Reference Design
+    <resources/eval/user-guides/adrv9009/reference_hdl>`.
+    More HDL build details at :external+hdl:ref:`build_hdl`
+
+.. important::
+
+  Some projects provide multiple devicetree files. Make sure you select the
+  devicetree that matches your specific use case when building the
+  **simpleImage**.
+
+Required Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado and Vitis (downloading Vitis from
+  :xilinx:`here <support/download/index.html/content/xilinx/en/downloadNav/vitis.html>`
+  will include Vivado as well)
+- A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :xilinx:`KCU105` FPGA board and its power supply
+- :adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>` FMC evaluation board
+- (Optional) 2x SMA cable for analog signal loopback
+- (Optional) External clock generator
+- 2x Micro-USB cable (UART and JTAG)
+- (Optional) Ethernet cable
+
+More details as to why you need these, can be found at
+:ref:`adrv9009 prerequisites`.
+
+Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creating the setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. caution::
+
+    This project was tested with **VADJ = 1.8 V**
+
+Follow the steps in this order, to avoid damaging the components:
+
+#. Connect the :adi:`ADRV9009-W/PCBZ <EVAL-ADRV9008-9009>` FMC board to the
+   :xilinx:`KCU105` FMC **HPC** socket
+#. Connect USB UART J4 (Micro-USB) to your host PC
+#. Connect USB JTAG J87 (Micro-USB) to your host PC
+#. (Optional) Connect the external clock generator and/or loopback cables
+#. (Optional) Plug-in an Ethernet cable from your router/switch to the Ethernet
+   port on the FPGA board
+#. Plug in the power supply and turn on the power switch on the FPGA board
+#. Program the FPGA using the steps shown
+   :ref:`here <linux-kernel microblaze boot>`.
+#. Observe console output messages on your terminal (use the first ttyUSB or
+   COM port registered)
+
+Booting the System
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. todo::
+
+   Boot log to be captured from a working setup.
+
+.. note::
+
+  When prompted for login, use the following credentials:
+
+    - username: **root**
+    - password: **analog**
+
+Useful commands for the serial terminal
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The below commands are to be run in the serial terminal connected to the FPGA.
+
+To find out the IP of the FPGA board, run the following command and take the IP
+specified at "eth0 inet":
+
+.. shell::
+
+   $ifconfig
+
+To see the IIO devices detected, run:
+
+.. shell::
+
+    # iio_info | grep :device
+    iio:device0: ad7291
+    iio:device1: ad9528-1
+    iio:device2: adrv9009-phy
+    iio:device3: axi-adrv9009-rx-obs-hpc (buffer capable)
+    iio:device4: axi-adrv9009-tx-hpc (buffer capable)
+    iio:device5: axi-adrv9009-rx-hpc (buffer capable)
+
+To use the :dokuwiki:`JESD204 status utility <resources/tools-software/linux-software/jesd_status>`,
+run:
+
+.. shell::
+
+   $jesd_status
+
+To power off the system, run the following command, and wait for the final
+message to be printed, then power off the FPGA board from the switch as well.
+
+.. shell::
+
+   $poweroff
