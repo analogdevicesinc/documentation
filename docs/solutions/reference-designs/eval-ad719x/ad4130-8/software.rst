@@ -197,7 +197,8 @@ the magnifying glass.
 
 The Result section shows the analysis of the channel selected
 
-|image1|
+.. image:: images/4170_ace_plugin_waveform_page_1.png
+   :width: 400
 
 3) Samples
 ^^^^^^^^^^
@@ -262,7 +263,8 @@ description of each bitfield, and access information. Show each individual
 bitfield by pressing the show bitfield button (label 4). Apply these changes
 using label 5. Search for specific registers using label 6.
 
-|image2|
+.. image:: images/4170_ace_plugin_memory_page_1.png
+   :width: 600
 
 AD4130-8 Demo Modes
 -------------------
@@ -288,9 +290,3 @@ Firmware Install Guide
 
 :dokuwiki:`AD4130-8 Firmware
 <resources/eval/user-guides/ad4130/mbed_iio_app>`
-
-.. |image1| image:: images/4170_ace_plugin_waveform_page_1.png
-   :width: 400
-
-.. |image2| image:: images/4170_ace_plugin_memory_page_1.png
-   :width: 600

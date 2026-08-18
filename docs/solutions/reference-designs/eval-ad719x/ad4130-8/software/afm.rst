@@ -193,15 +193,14 @@ model or in the datasheet to calculate our effective output data rate:
 
 .. note::
 
-   
    Example 1: All channels configured with the same configuration and no repeat
    conversions on any channel.
-   
+
    - *Filter Type = Sync 3*
    - *FS = 1*
    - *SETTLE_n = 1*
    - // Number of Channels Enabled = 3 or 5//
-   
+
 
 We calculate our output data rate based on the datasheet tables to be 2400/FS
 for a Sync 3 filter this makes our single channel output data rate to be.
@@ -219,14 +218,18 @@ into account and based on our SETTLE_n in this example SETTLE_n = 1 making
 number of MCLK cycles before the conversion begins after switching channels
 equal to:
 
-*t\ SETTLE (MCLKs) = 32*
+.. math::
+
+   t_{\text{SETTLE}}\ \text{(MCLKs)} = 32
 
 There is always a fixed digital post processing time of 28 MCLK cycles that
 impacts when the data can be read back on the first conversion which can be
 discounted when calculating our throughput rate due to the time overlap with
 the settling time as seen in the figure below:
 
-*DPP time (MCLKs) = 28*
+.. math::
+
+   \text{DPP time (MCLKs)} = 28
 
 The first conversion on each channel needs to take into account the filter
 latency. The number of MCLK cycles this takes depends on the filter type. For a
@@ -238,26 +241,36 @@ settling of the digital filter.
 
    Solving Example 1:
 
-   
-   t\ :sub:`1ST_CNV_IDEAL` + t\ :sub:`SETTLE` (MCLKS) = *((3 x 32 x 1) + 32) = 128*
-   
+
+   .. math::
+
+      _{\text{1ST\_CNV\_IDEAL}} + t_{\text{SETTLE}}\ \text{(MCLKs)} = ((3 \times 32 \times 1) + 32) = 128
+
    where MCLK(sec) = 1/76.8kHz
-   
-   *1/76800 x (128) = 600 SPS*
-   
+
+   .. math
+
+      \frac{1}{76800} \times 128 = 600\ \text{SPS}
+
    If we were converting on only one channel our 1st conversion ODR would be:
-   
-   *f\ 1CNV_ODR\ (SPS) = 600 SPS*
-   
+
+   .. math
+
+      f_{\text{1CNV\_ODR}}\ \text{(SPS)} = 600\ \text{SPS}
+
    In order to calculate our effective output data rate we divide our f\ :sub:`1CNV_ODR`\ 1conv_odr by the number of channels we are converting on to get our effective output data rate.
-   
+
    with 3 channels enabled:
-   
-   *Throughput rate = 600/3 = 200 SPS*
-   
+
+   .. math
+
+      \text{Throughput\ rate} = \frac{600}{3} = 200\ \text{SPS}
+
    with 5 channels enabled:
-   
-   *Throughput rate = 600/5 = 120 SPS*
+
+   .. math
+
+      \text{Throughput\ rate} = \frac{600}{5} = 120\ \text{SPS}
 
 How to Calculate the Throughput Rate using the Timing Tool
 
@@ -285,16 +298,21 @@ conversion on a per channel basis or the throughput rate.
 
    Solving Example 1:
 
-   
    Using the information displayed:
-   
-   t\ :sub:`1ST_CNV_IDEAL` + t\ :sub:`SETTLE` = 1.67ms
-   
-   1/1.67ms = 600ms
-   
-   We divide this by the number of channels we have: 600SPS/3 = 200SPS
-   
-   Throughput rate (SPS) = 200SPS
+
+   .. math
+
+      t_{\text{1ST\_CNV\_IDEAL}} + t_{\text{SETTLE}} = 1.67\ \text{ms}
+
+   .. math
+
+      \frac{1}{1.67\ \text{ms}} = 600\ \text{SPS}
+
+   We divide this by the number of channels we have: :math:`\frac{600\ \text{SPS}}{3} = 200\ \text{SPS}`
+
+   .. math
+
+      \text{Throughput\ rate (SPS)} = 200\ \text{SPS}
 
 **How to Calculate the Throughput Rate using the Timing Tool through multiple
 channels with different configurations**
@@ -316,14 +334,13 @@ visually.
    Example 2: 3 channels configured with independent configurations and no
    repeat conversions on any channel.
 
-   
    - Channel 0 - We want to gather a conversion as fast as possible.
    - Ain0 -Ain 1
    - *Filter Type = Sync 3*
    - *FS = 1*
    - *SETTLE_n = 1*
    - // Number of Channels Enabled = 3 or 5//
-   
+
    - Channel 1 - We want to achieve 50 Hz rejection. (Set the cut off freq.
      of our filter to FS=48)
    - Ain2- Ain3
@@ -331,7 +348,7 @@ visually.
    - *FS = 48*
    - *SETTLE_n = 1*
    - // Number of Channels Enabled = 3 or 5//
-   
+
    - Channel 2 - We want to achieve 50 Hz rejection(Set the cut off freq. of
      our filter to FS=48) and Lower Noise (Sync 4)
    - Ain 3 - Ain4
@@ -345,15 +362,15 @@ visually.
 
 .. note::
 
-   
    Solving Example 2:
-   
-   1/ (60.859ms + 80.417ms + 1.244ms) = 7 SPS
-   
-   Throughput Rate = 7SPS
-   
 
---------------
+   .. math
+
+      \frac{1}{60.859\ \text{ms} + 80.417\ \text{ms} + 1.244\ \text{ms}} = 7\ \text{SPS}
+
+   .. math
+
+      \text{Throughput\ Rate} = 7 \text{SPS}
 
 FIFO Timing Diagram
 -------------------

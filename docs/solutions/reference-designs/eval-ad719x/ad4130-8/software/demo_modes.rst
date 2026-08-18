@@ -246,7 +246,9 @@ If you have not set up/installed the ACE plugin before please go to
 4-wire RTD Demo mode
 --------------------
 
-|image1| Links that need to be adjusted for 4-wire RTD demo mode.
+.. image:: ../images/eval-ad4130-8wardz_block_diagram_with_4_wire_rtd_without_sdp_k1.png
+
+Links that need to be adjusted for 4-wire RTD demo mode.
 
 +--------------+--------+-------------------------------+---------------------------------------------------+---------------------------------------+
 | Link Numbers | Colour | 4-Wire RTD Demo mode Position | Description                                       | Rough Board Location                  |
@@ -357,4 +359,3 @@ the analyzed channel using the Results Tab. To save the data into an Excel
 file, select the Export button from the Results Tab. A Save dialog box is
 displayed, prompting you to save the data to an appropriate folder location.
 
-.. |image1| image:: ../images/eval-ad4130-8wardz_block_diagram_with_4_wire_rtd_without_sdp_k1.png

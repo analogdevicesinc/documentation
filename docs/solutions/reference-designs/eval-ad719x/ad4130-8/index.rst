@@ -110,7 +110,7 @@ Quick Start Demonstration
 To acquire data from the EVAL-AD4130-8WARDZ without using the FIFO the
 int_pin_sel bitfield in the io_control_1 register need to be set to “11”.
 
-|image1|
+.. image:: images/ad4130_8_int_pin_sel.png
 
 Configuring the AD4130-8 FIFO
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -121,23 +121,16 @@ Configuring the AD4130-8 FIFO
 - The default value for the watermark bitfield is “0x00” which equates to 256
   conversions.
 
-  -
-
-  |image2|
+  .. image:: images/ad4130_8_fifo_watermark_yoda_description.png
+     :width: 600
 
 - The fifo_mode bitfield sets which config the FIFO is setup for.
 
   -
 
-  |image3|
+  .. image:: images/ad4130_8_fifo_mode_yoda_description.png
+     :width: 600
 
 - The FIFO will start gathering conversions as soon as the Apply Changes button
   clicked in the AD4130-8 Memory Map Tab.
 - Go the Analysis tab and select the Run Continuous button.
-
-.. |image1| image:: images/ad4130_8_int_pin_sel.png
-.. |image2| image:: images/ad4130_8_fifo_watermark_yoda_description.png
-   :width: 600
-
-.. |image3| image:: images/ad4130_8_fifo_mode_yoda_description.png
-   :width: 600
