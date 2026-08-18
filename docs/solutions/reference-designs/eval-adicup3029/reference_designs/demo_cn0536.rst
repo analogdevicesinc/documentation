@@ -87,7 +87,7 @@ UART demo with precompiled program
       :align: center
 
    -  Start the serial terminal program.
-   -  Connect it to the desired port. Eg. COM4, check :doc:`step by step guide </solutions/reference-designs/eval-adxrs290-pmdz/uart_serial_terminal>` if needed.
+   -  Connect it to the desired port. Eg. COM4, check :ref:`step by step guide <eval_adxrs290_pmdz uart_serial_terminal>` if needed.
    -  Set the **BAUDRATE** to **115200**
    -  Watch the output. Data will be send every 10 seconds by default.
 
