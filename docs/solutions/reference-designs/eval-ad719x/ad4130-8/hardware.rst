@@ -1,4 +1,4 @@
-.. _ad4130_8_hardware:
+.. _ad4130-8 hardware:
 
 EVAL-AD4130-8WARDZ Hardware Guide
 =================================
@@ -6,9 +6,9 @@ EVAL-AD4130-8WARDZ Hardware Guide
 Set-up Procedures
 -----------------
 
-After following the instructions in the :doc:`Software Procedures
-</solutions/reference-designs/eval-ad719x/ad4130-8/software>` section, set up
-the evaluation and SDP-K1 board as detailed in this section.
+After following the instructions in the :ref:`Software Procedures
+<ad4130-8 software>` section, set up the evaluation and SDP-K1 board as
+detailed in this section.
 
 .. warning::
 
@@ -32,7 +32,7 @@ Hardware Link Options
 ---------------------
 
 +--------------+--------+------------------+--------------------------------------------------------------------------------------------------------------------------+---------------------------------------+
-| Link Numbers | Colour | Default Position | Descirption                                                                                                              | Rough Board Location                  |
+| Link Numbers | Colour | Default Position | Description                                                                                                              | Rough Board Location                  |
 +==============+========+==================+==========================================================================================================================+=======================================+
 | LK1-3        | White  | Inserted         | Ties AVSS and DGND together                                                                                              | N/A                                   |
 +--------------+--------+------------------+--------------------------------------------------------------------------------------------------------------------------+---------------------------------------+
@@ -403,6 +403,8 @@ Serial communication options
     then be used to fly-wire the signals to an alternative digital capture
     setup
 
+.. _ad4130-8 hardware reference-options:
+
 Reference Options
 -----------------
 
@@ -447,7 +449,7 @@ Hardware
 ^^^^^^^^
 
 +--------------+--------+------------------+---------------------------------------------------------------------------------------------+----------------------+
-| Link Numbers | Type   | Default Position | Descirption                                                                                 | Rough Board Location |
+| Link Numbers | Type   | Default Position | Description                                                                                 | Rough Board Location |
 +==============+========+==================+=============================================================================================+======================+
 | S3           | Switch | REF1+/-          | REFIN+/- connection:                                                                        |                      |
 |              |        |                  | Pos A: REFIN1+/-                                                                            |                      |

@@ -1,3 +1,5 @@
+.. _ad4130-8 software demo-modes:
+
 Demo Modes
 ==========
 
@@ -131,12 +133,10 @@ Noise test Demo
    of the PC to ensure the PC correctly recognizes the evaluation system.
 
 If you have not set up the EVAL-AD4130-8WARDZ and controller board previously
-please go to the :doc:`Quick Start Guide
-</solutions/reference-designs/eval-ad719x/ad4130-8/index>`
+please go to the :ref:`Quick Start Guide <ad4130-8>`
 
 If you have not set up/installed the ACE plugin before please go to
-:doc:`Install Guide
-</solutions/reference-designs/eval-ad719x/ad4130-8/software>`
+:ref:`Install Guide <ad4130-8 software>`
 
 - Double click the AD4130-8 Eval Board icon to open the AD4130-8 Eval Board
   view window. The demo wizard will be on the left, either as shown in the
@@ -176,8 +176,8 @@ If you have not set up/installed the ACE plugin before please go to
    :align: center
    :width: 600
 
-- For more information on the Waveform window go to the software section
-  :doc:`here </solutions/reference-designs/eval-ad719x/ad4130-8/software>`
+- For more information on the Waveform window go to the
+  :ref:`software section <ad4130-8 software waveform-window>`
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -191,8 +191,8 @@ The evaluation board is set up to use the external 2.5 V on-board reference
   updated accordingly. (The analysis results are based on the value set in this
   input field.)
 
-  - Information on the reference choice can be viewed in the :doc:`Reference
-    Options Tab </solutions/reference-designs/eval-ad719x/ad4130-8/hardware>`
+  - Information on the reference choice can be viewed in the :ref:`Reference
+    Options Tab <ad4130-8 hardware reference-options>`
 
 - When selecting Run Once, a batch of samples is read when clicking the button;
   the batch size is set by the value in the Samples field.
@@ -231,12 +231,10 @@ RTD Demo mode
    of the PC to ensure the PC correctly recognizes the evaluation system.
 
 If you have not set up the EVAL-AD4130-8WARDZ and controller board previously
-please go to the :doc:`Quick Start Guide
-</solutions/reference-designs/eval-ad719x/ad4130-8/index>`
+please go to the :ref:`Quick Start Guide <ad4130-8>`
 
 If you have not set up/installed the ACE plugin before please go to
-:doc:`Install Guide
-</solutions/reference-designs/eval-ad719x/ad4130-8/software>`
+:ref:`Install Guide <ad4130-8 software>`
 
 .. note::
 
@@ -313,8 +311,8 @@ If you have not set up/installed the ACE plugin before please go to
 
 - To display the waveform data in degrees Celsius pick DegC in y-axis units
   dropdown (Label 3)
-- For more information on the Waveform window go to the software section
-  :doc:`here </solutions/reference-designs/eval-ad719x/ad4130-8/software>`
+- For more information on the Waveform window go to the
+  :ref:`software section <ad4130-8 software waveform-window>`
 
 Reading Samples from the ADC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -331,8 +329,8 @@ To read samples from the ADC, do the following:
   set to 1.8 V). (The analysis results are based on the value set in this input
   field.)
 
-  - Information on the reference choice can be viewed in the :doc:`Reference
-    Options Tab </solutions/reference-designs/eval-ad719x/ad4130-8/hardware>`
+  - Information on the reference choice can be viewed in the :ref:`Reference
+    Options Tab <ad4130-8 hardware reference-options>`
 
 - When selecting Run Once, a batch of samples is read when clicking the button;
   the batch size is set by the value in the Samples field.

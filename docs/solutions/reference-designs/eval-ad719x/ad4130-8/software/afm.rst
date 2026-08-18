@@ -1,3 +1,5 @@
+.. _ad4130-8 software afm:
+
 Active Function Model (AFM)
 ===========================
 
@@ -15,14 +17,14 @@ There are a number of software tools and analysis windows available as part of
 the AD4130-8 ACE software window. These tools can be access via the System
 Explorer window:
 
-|image1|
+.. image:: ../images/accessing_ad4130_analysis_window_and_tools.png
 
 \*\* How to access different software tools and timing diagrams:\*\*
 
 The AD4130-8 Sequencer Timer is accessed via the ACE software package:
 
-a. Access the Ace AD4130 Software Plugin as detailed in the :doc:`AD4130-8 User
-   Guide </solutions/reference-designs/eval-ad719x/ad4130-8/index>`
+a. Access the Ace AD4130 Software Plugin as detailed in the :ref:`AD4130-8 User
+   Guide <ad4130-8>`
 
 a. Click on the "Tools" on the left hand side. An accordion menu will appear.
 
@@ -33,7 +35,8 @@ c. Click on "AD4130-8 Board" and a number of Models will appear.
 
 d. Select "AD4130-8 Sequencer Timing Diagram" for example.
 
-|image2|
+.. image:: ../images/system_explorer_pane.png
+   :width: 800
 
 --------------
 
@@ -62,6 +65,8 @@ info bottom to the left of the bitfield (3).
 
 --------------
 
+.. _ad4130-8 software afm sequencer-timing-diagram:
+
 Sequencer Timing Diagram
 ------------------------
 
@@ -80,8 +85,8 @@ based on the timing settings selected by the user.
 
 The AD4130 Sequencer Timer is accessed via the ACE software package:
 
-a. Access the Ace AD4130 Software Plugin as detailed in the :doc:`AD4130-8 User
-   Guide </solutions/reference-designs/eval-ad719x/ad4130-8/index>`
+a. Access the Ace AD4130 Software Plugin as detailed in the :ref:`AD4130-8 User
+   Guide <ad4130-8>`
 
 a. Click on the "Tools" on the left hand side. An accordion menu will appear.
 
@@ -92,7 +97,8 @@ c. Click on "AD4130 Board" and a number of Models will appear.
 
 d. Select "AD4130 Sequencer Timing Diagram"
 
-|image3|
+.. image:: ../images/system_explorer_pane.png
+   :width: 800
 
 **3. Why is a Sequencer Timing Diagram necessary?**
 
@@ -108,7 +114,7 @@ The ADC settings are located in the accordion menu on the left hand side within
 the "Sequencer Timing Diagram Tab" The user can modify the the settings on the
 AD4130 and update the diagram by clicking on the Run button.
 
-`timing_fsm.mp4 <../images/timing_fsm.mp4>`_
+:download:`timing_fsm.mp4 <../images/timing_fsm.mp4>`
 
 **5. What are the main settings that will impact the timing?**
 
@@ -175,7 +181,8 @@ The first conversion of a Sync 4 filter will take 4 conversion cycles until the
 digital equivalent of the analog input voltage is reached. There is also the
 user programable t_settle time that takes into account the mux switching.
 
-|image4|
+.. image:: ../images/first_conversion_on_a_new_channel_diagram.png
+   :width: 800
 
 **How to Calculate our Throughput Rate**
 
@@ -266,9 +273,13 @@ allows us to calculate our throughput rate.
 
 If we use the timing tool (two sequences shown each with 3 conversions per
 sequence shown) we see exactly what is happening. We can tell the rate of the
-conversion on a per channel basis or the throughput rate. |image5|
+conversion on a per channel basis or the throughput rate.
 
-|image6|
+.. image:: ../images/2_cycles_sync_3_same_setup_3_channels_enabled.png
+   :width: 1100
+
+.. image:: ../images/2_cycles_sync_3_same_setup_3_channels_enabled_zoomed.png
+   :width: 1100
 
 .. note::
 
@@ -329,7 +340,8 @@ visually.
    - *SETTLE_n = 1*
    - // Number of Channels Enabled = 3 or 5//
 
-   |image7|
+   .. image:: ../images/example_2d.png
+      :width: 1100
 
 .. note::
 
@@ -423,17 +435,18 @@ where the tool calculated the time it would take to drain the batter when
 operating the AD4130-8 using the register settings and configuration chosen by
 the user.
 
-|image8|
+.. image:: ../images/power.png
 
 The average power is based on the user settings chosen. The breakdown of this
-power is also displayed in the `Timing Diagram
-<https://wiki.analog.com/resources/eval/user-guides/ad4130/seq_timing_diagram>`_.
-This allows the user to enable duty cycling and observe the changes in Idd with
-respect to time.
+power is also displayed in the :ref:`Sequencer Timing Diagram
+<ad4130-8 software afm sequencer-timing-diagram>`. This allows the user to
+enable duty cycling and observe the changes in Idd with respect to time.
 
-|image9|
+.. image:: ../images/idd_timing_window.png
 
 --------------
+
+.. _ad4130-8 software afm analysis-window:
 
 Analysis Window
 ---------------
@@ -446,10 +459,10 @@ The **Histogram** or **Waveform** sections (3) display the results of the noise
 analysis or the waveform for the selected analysis channel, including both
 noise and resolution measurements.
 
-|screenshot_2021-04-09_122534.png|
+.. image:: ../images/screenshot_2021-04-09_122534.png
 
 - The data graph (1) shows each successive sample of the ADC output. Zoom in on
-  the data in the graphusing the scroll wheel on your mouse or by selecting the
+  the data in the graph using the scroll wheel on your mouse or by selecting the
   magnifying glass.
 - The **Result** section (2) shows the analysis of the channel selected.
 - The **Samples** numeric control sets the number of samples gathered per
@@ -474,8 +487,8 @@ Noise(Simulation Analysis) Window
 Labeled "AD4130 Noise" in the system explorer, this window behaves similar to
 the Analysis window but the results are simulated and not measured. This allows
 the user to compare simulated to measured results. The buttons used to control
-are detailed in: `Analysis Window
-<https://wiki.analog.com/resources/eval/user-guides/ad4130/analysiswindow>`_
+are detailed in: :ref:`Analysis Window
+<ad4130-8 software afm analysis-window>`
 
 .. image:: ../images/demo_noise.png
    :align: center
@@ -493,8 +506,8 @@ based on their filter register settings (including FS value).
 
 - Filter cut off calculated in the results section
 - The notch in is also displayed on the waveform screen.
-- There is to manually check the rejection at user defined rejection frequecies
-  F1 and F2.
+- There is to manually check the rejection at user defined rejection
+  frequencies F1 and F2.
 - The MCLK frequency can also be varied in also to observe the impact of
   oscillator error on rejection.
 
@@ -510,26 +523,3 @@ register settings selected.
 
 .. image:: ../images/step.png
    :align: center
-
-.. |image1| image:: ../images/accessing_ad4130_analysis_window_and_tools.png
-.. |image2| image:: ../images/system_explorer_pane.png
-   :width: 800
-
-.. |image3| image:: ../images/system_explorer_pane.png
-   :width: 800
-
-.. |image4| image:: ../images/first_conversion_on_a_new_channel_diagram.png
-   :width: 800
-
-.. |image5| image:: ../images/2_cycles_sync_3_same_setup_3_channels_enabled.png
-   :width: 1100
-
-.. |image6| image:: ../images/2_cycles_sync_3_same_setup_3_channels_enabled_zoomed.png
-   :width: 1100
-
-.. |image7| image:: ../images/example_2d.png
-   :width: 1100
-
-.. |image8| image:: ../images/power.png
-.. |image9| image:: ../images/idd_timing_window.png
-.. |screenshot_2021-04-09_122534.png| image:: ../images/screenshot_2021-04-09_122534.png

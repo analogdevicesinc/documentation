@@ -1,4 +1,4 @@
-.. _ad4130_8_index:
+.. _ad4130-8:
 
 AD4130-8 Evaluation Board User Guide
 ====================================

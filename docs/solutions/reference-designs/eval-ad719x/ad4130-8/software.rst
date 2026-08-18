@@ -1,4 +1,4 @@
-.. _ad4130_8_software:
+.. _ad4130-8 software:
 
 EVAL-AD4130-8WARDZ Software Guide
 =================================
@@ -163,11 +163,10 @@ PC, launch the ACE software by taking the following steps:
 Chip view window
 ~~~~~~~~~~~~~~~~
 
-After completing the steps in the :doc:`Software Installation Procedures
-</solutions/reference-designs/eval-ad719x/ad4130-8/software>` section and the
-:doc:`Evaluation Board Set-up Procedures
-</solutions/reference-designs/eval-ad719x/ad4130-8/hardware>` section, set up
-the system for data capture by taking the following steps:
+After completing the steps in the :ref:`Software Installation Procedures
+<ad4130-8 software>` section and the :ref:`Evaluation Board Set-up Procedures
+<ad4130-8 hardware>` section, set up the system for data capture by taking the
+following steps:
 
 - Block icons that are dark blue are programmable blocks. Click a dark blue
   block icon to open a configurable pop-up window to customize the data
@@ -177,6 +176,8 @@ the system for data capture by taking the following steps:
 - The “Proceed to Analysis” button brings the user to the Analysis tab. This
   allows the user to see the performance results of the AD4130-8 and displays
   the data.
+
+.. _ad4130-8 software waveform-window:
 
 Waveform Window
 ~~~~~~~~~~~~~~~
@@ -266,8 +267,8 @@ using label 5. Search for specific registers using label 6.
 AD4130-8 Demo Modes
 -------------------
 
-:doc:`Visit the demo mode section here
-</solutions/reference-designs/eval-ad719x/ad4130-8/software/demo_modes>`
+:ref:`Visit the demo mode section here
+<ad4130-8 software demo-modes>`
 
 Active Function Model Guide
 ---------------------------
@@ -279,14 +280,14 @@ sensor biasing/excitation, as well as device features like gain or FIFO.
 Performance characteristics include noise, histogram, resolution, power
 consumption, timing diagrams, response plots, and more.
 
-:doc:`Visit the Active Functional Model (AFM) section here
-</solutions/reference-designs/eval-ad719x/ad4130-8/software/afm>`
+:ref:`Visit the Active Functional Model (AFM) section here
+<ad4130-8 software afm>`
 
 Firmware Install Guide
 ----------------------
 
-`AD4130-8 Firmware
-<https://wiki.analog.com/resources/eval/user-guides/ad4130/mbed_iio_app>`_
+:dokuwiki:`AD4130-8 Firmware
+<resources/eval/user-guides/ad4130/mbed_iio_app>`
 
 .. |image1| image:: images/4170_ace_plugin_waveform_page_1.png
    :width: 400
