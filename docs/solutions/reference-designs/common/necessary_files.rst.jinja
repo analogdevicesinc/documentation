@@ -2,15 +2,7 @@ Necessary files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 {% set in_kuiper = in_kuiper | default(true) %}
 
-{% if not in_kuiper %}
-.. important::
-
-  This project is not part of the release and, as such, the
-  boot files need to be manually built
-  using :git+hdl:`this <{{ hdl_branch }}>` HDL branch
-  and :git+linux:`this <{{ linux_branch }}>` Linux branch.
-
-{% elif fpga_family == "microblaze" %}
+{% if fpga_family == "microblaze" %}
 .. note::
 
   This carrier only has programming logic (PL) and, thus, a Microblaze soft core
@@ -23,6 +15,14 @@ Necessary files
    Intel {{ "Agilex 7" if fpga_family == "agilex7soc" else "Stratix 10" }}
    SoC is not supported on the Kuiper Linux image, so all
    boot files must be manually built.
+
+{% elif not in_kuiper %}
+.. important::
+
+  This project is not part of the release and, as such, the
+  boot files need to be manually built
+  using :git+hdl:`this <{{ hdl_branch }}>` HDL branch
+  and :git+linux:`this <{{ linux_branch }}>` Linux branch.
 
 {% elif fpga_family in ["a10soc", "cyclone5"] %}
 .. note::
