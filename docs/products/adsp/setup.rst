@@ -333,7 +333,7 @@ prompt, type:
 
 .. code-block:: console
 
-   => run emmcboot
+   => run mmcboot
 
 U-Boot loads the kernel and device tree from the eMMC boot partition and starts
 Linux with the root filesystem on eMMC.
