@@ -288,5 +288,4 @@ consumption, timing diagrams, response plots, and more.
 Firmware Install Guide
 ----------------------
 
-:dokuwiki:`AD4130-8 Firmware
-<resources/eval/user-guides/ad4130/mbed_iio_app>`
+:ref:`AD4130-8 IIO Application <ad4130-8 mbed-iio-application>`

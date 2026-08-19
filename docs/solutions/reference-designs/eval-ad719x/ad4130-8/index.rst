@@ -8,6 +8,7 @@ AD4130-8 Evaluation Board User Guide
 
    hardware
    software
+   ad4130_8_mbed_iio_application
 
 The :adi:`EVAL-AD4130-8WARDZ
 <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD4130-8.html#eb-overview>`
