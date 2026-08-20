@@ -119,3 +119,6 @@ For Yocto support see ``lxndsp-adi-meta`` below.
       :git-br2-external:`Release 0.1.0 <releases/tag/2026.02-0.1.0+>`
       :git-br2-external:`Release 0.2.0 <releases/tag/2026.02-0.2.0+>`
 - :git-rpmsg-examples:`+`
+    - :git-rpmsg-examples:`v1.0.0 <releases/tag/v1.0.0+>`
+- :git-rpmsg-utils:`+`
+    - :git-rpmsg-utils:`v1.0.0 <releases/tag/v1.0.0+>`
