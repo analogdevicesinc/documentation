@@ -1006,6 +1006,11 @@ behave on hardware. The following is a capture of the Correlators scope:
 
 .. figure:: images/extresult.png
 
+.. toctree::
+   :hidden:
+
+   libiio_client
+
 Reference
 ---------
 
