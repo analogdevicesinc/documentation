@@ -1,22 +1,46 @@
 4 – Wire Electrochemical Dual Toxic Gas Measurement using the Arduino Uno
 =========================================================================
 
-The **CN0396_example** is a dual toxic gas detector demo project, for the Arduino Uno base board with additional EVAL-CN0396-ARDZ shield, created using the Arduino IDE.
+The **CN0396_example** is a dual toxic gas detector demo project, for
+the Arduino Uno base board with additional EVAL-CN0396-ARDZ shield,
+created using the Arduino IDE.
 
 General Description/Overview
 ----------------------------
 
-The **CN0396_example** project uses the :adi:`EVAL-CN0396-ARDZ shield <CN0396>` which is a single-supply, low noise, portable gas detector, using a **4-electrode electrochemical** sensor, for simultaneous detection of two distinct gases - for this example is used the Alphasense COH-A2 sensor, which detects carbon monoxide(**CO**) and hydrogen sulfide(**H2S**).
+The **CN0396_example** project uses the
+:adi:`EVAL-CN0396-ARDZ shield <CN0396>` which is a single-supply, low
+noise, portable gas detector, using a **4-electrode electrochemical**
+sensor, for simultaneous detection of two distinct gases - for this
+example is used the Alphasense COH-A2 sensor, which detects carbon
+monoxide(**CO**) and hydrogen sulfide(**H2S**).
 
-The **EVAL-CN0396-ARDZ** board provides a potentiostatic circuit for biasing the electrochemical sensor, along with dual programmable TIA's and 16-bit Sigma-Delta ADC. The TIA's convert the small currents passing in the sensor to a voltage that can be read by the :adi:`ad7798` a 3-channel, low noise, low power 16-bit ADC that converts the analog voltage into digital data. The **16-bit** ADC outputs are received via SPI interface of the EVAL-ADICUP360 board. An :adi:`ADT7310` digital **temperature sensor** is also included to measure ambient temperature in order for correction of temperature effects.
+The **EVAL-CN0396-ARDZ** board provides a potentiostatic circuit for
+biasing the electrochemical sensor, along with dual programmable TIA's
+and 16-bit Sigma-Delta ADC. The TIA's convert the small currents passing
+in the sensor to a voltage that can be read by the :adi:`ad7798` a
+3-channel, low noise, low power 16-bit ADC that converts the analog
+voltage into digital data. The **16-bit** ADC outputs are received via
+SPI interface of the EVAL-ADICUP360 board. An :adi:`ADT7310` digital
+**temperature sensor** is also included to measure ambient temperature
+in order for correction of temperature effects.
 
 .. image:: ../images/img_20180123_170715.jpg
    :align: left
    :width: 500
 
-The **CN0396_example** application reads temperature value from ADT7310 and ADC values for each gas channel (CO and H2S), processes the values and make all necessary conversions in order to provide the gas concentrations. A **UART** interface (**9600** baud rate and **8-bits** data length) is used to send the results to terminal window. The output data will be displayed continuously considering a data refresh parameter (see *DISPLAY_REFRESH*).
+The **CN0396_example** application reads temperature value from ADT7310
+and ADC values for each gas channel (CO and H2S), processes the values
+and make all necessary conversions in order to provide the gas
+concentrations. A **UART** interface (**9600** baud rate and **8-bits**
+data length) is used to send the results to terminal window. The output
+data will be displayed continuously considering a data refresh parameter
+(see *DISPLAY_REFRESH*).
 
-Based on the **maximum sensor sensitivity** for each gas the system should be configured before using it. The application will calculate the gas concentration using sensor **gas sensitivity** and then compensate these values using measured temperature value.
+Based on the **maximum sensor sensitivity** for each gas the system
+should be configured before using it. The application will calculate the
+gas concentration using sensor **gas sensitivity** and then compensate
+these values using measured temperature value.
 
 .. note::
 
@@ -48,7 +72,9 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Plug the **EVAL-CN0396-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
+-  Plug the **EVAL-CN0396-ARDZ** shield on top of the **Arduino Uno**
+   development board by matching up the **POWER, ANALOG, DIGI0, DIGI1**
+   connectors.
 
    -  Note, the boards should only plug together one way, preventing reverse
       connections.
@@ -71,9 +97,9 @@ The source code and include files of the **CN0396_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   :git-arduino:`CN0396_example at Github <Arduino%20Uno%20R3/examples/CN0396_example>`
-   
+
+   :git-arduino:`CN0396_example at Github <gui+master:Arduino%20Uno%20R3/examples/CN0396_example>`
+
 
 Project Structure
 -----------------
@@ -105,7 +131,8 @@ Configure the ADC samples/second value in the *CN0396.h* file.
 
    #define ADC_SPS        0x05  //50SPS
 
-Set the refres time in the *CN0396.h* file. This is how often to display output values on terminal.(in ms)
+Set the refres time in the *CN0396.h* file. This is how often to display
+output values on terminal.(in ms)
 
 ::
 
@@ -130,8 +157,13 @@ Set H2S range for the sensor in the *CN0396.h* file.
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -173,11 +205,13 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*

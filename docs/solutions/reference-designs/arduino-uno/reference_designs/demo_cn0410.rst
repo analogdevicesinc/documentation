@@ -1,7 +1,10 @@
 EVAL-CN0410-ARDZ Shield Demo
 ============================
 
-:adi:`CN0410` is an Arduino compatible shield that is optimized for smart agriculture to control current passing through LED's. The :adi:`CN0410` is used along the the CFTL-LED Bar that has LED's with specific wavelengths that plants utilize.
+:adi:`CN0410` is an Arduino compatible shield that is optimized for
+smart agriculture to control current passing through LED's. The
+:adi:`CN0410` is used along the the CFTL-LED Bar that has LED's with
+specific wavelengths that plants utilize.
 
 The circuit shown below is a complete 3-channel single-supply, 16-bit unbuffered
 voltage output DAC that maintains ±2 LSB integral and differential nonlinearity
@@ -60,7 +63,10 @@ Pins 5 & Pin 6    GPIO 10
 Configuring the Software
 ------------------------
 
-The software for EVAL-CN0410 does not require any particular configurations in order to setup the application. The only setting that the user could make would be the selection of the CS pin. This can be done by modifying the **SYNC_PIN** inside **adi_cn0410.h**.
+The software for EVAL-CN0410 does not require any particular
+configurations in order to setup the application. The only setting that
+the user could make would be the selection of the CS pin. This can be
+done by modifying the **SYNC_PIN** inside **adi_cn0410.h**.
 
 ::
 
@@ -105,9 +111,9 @@ The source code and include files of the **CN0410_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   :git-arduino:`CN0410_example at Github <Arduino%20Uno%20R3/examples/CN0410_example>`
-   
+
+   :git-arduino:`CN0410_example at Github <gui+master:Arduino%20Uno%20R3/examples/CN0410_example>`
+
 
 Project Structure
 ~~~~~~~~~~~~~~~~~
@@ -115,7 +121,9 @@ Project Structure
 The CN0410_example is a C++ Arduino sketch.
 
 All files are in the same folder as the .ino file and include the source and
-header files related to CN0411 software application that implement the CLI
+All files are in the same folder as the .ino file and include the source
+and header files related to CN0411 software application that implement
+the CLI interface and functionality.
 interface and functionality.
 
 *End of Document*

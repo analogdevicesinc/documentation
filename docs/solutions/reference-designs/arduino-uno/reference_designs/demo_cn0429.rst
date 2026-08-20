@@ -4,15 +4,31 @@ Electrochemical Gas Sensor Demo
 General Description/Overview
 ----------------------------
 
-The **CN0429_example** is a demo using the **EVAL-CN0429-EBZ**, the **EVAL-M355-ARDZ-INT** and the **Arduino Uno** board as a solution for detecting toxic gases. By utilizing built-in diagnostics features (such as impedance spectroscopy or bias voltage pulsing and ramping) it is possible to inspect sensor health, compensate for accuracy drift due to aging or temperature, and estimate the remaining lifetime of the sensor right at the edge of the sensor network without user intervention. This functionality allows smart, accurate sensor replacement at the individual edge nodes. An integrated, ultra low power microcontroller directly biases the electrochemical gas sensor and runs onboard diagnostic algorithms.
+The **CN0429_example** is a demo using the **EVAL-CN0429-EBZ**, the
+**EVAL-M355-ARDZ-INT** and the **Arduino Uno** board as a solution for
+detecting toxic gases. By utilizing built-in diagnostics features (such
+as impedance spectroscopy or bias voltage pulsing and ramping) it is
+possible to inspect sensor health, compensate for accuracy drift due to
+aging or temperature, and estimate the remaining lifetime of the sensor
+right at the edge of the sensor network without user intervention. This
+functionality allows smart, accurate sensor replacement at the individual
+edge nodes. An integrated, ultra low power microcontroller directly
+biases the electrochemical gas sensor and runs onboard diagnostic
+algorithms.
 
-The :adi:`CN0429` circuit shows how an electrochemical gas sensor is connected to the potentiostat circuit and how it is biased and measured. Common 2-lead, 3-lead, and 4-lead electrochemical gas sensors can be used interchangeably. The integration of this signal chain dramatically reduces cost, size, complexity, and power consumption at the sensor node.
+The :adi:`CN0429` circuit shows how an electrochemical gas sensor is
+connected to the potentiostat circuit and how it is biased and measured.
+Common 2-lead, 3-lead, and 4-lead electrochemical gas sensors can be
+used interchangeably. The integration of this signal chain dramatically
+reduces cost, size, complexity, and power consumption at the sensor
+node.
 
 This example uses three types of boards:
 
 .. container:: centeralign
 
    ..
+
 
 |image1|
 
@@ -60,7 +76,11 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Plug in the **EVAL-CN0429-EBZ** (:adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>` Shield board) to the :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>` interposer board
+-  Plug in the **EVAL-CN0429-EBZ**
+   (:adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>`
+   Shield board) to the
+   :adi:`EVAL-M355-ARDZ-INT <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-M355-ARDZ-INT.html>`
+   interposer board
 -  Connect the system to the Arduino connectors DIGITAL (PWM~), POWER, ANALOG IN
    and ICSP of the Arduino Uno board.
 
@@ -68,7 +88,12 @@ Setting up the Hardware
       connections.
 
 -  Connect the system to the PC using USB cable
--  Connect the sensors to the dedicated connectors on the **EVAL-CN0429-EBZ**. The :adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>` is compatible with electrochemical gas sensors in “4-series” form factor. 2-, 3- and 4-electrode sensors are supported. See the drawing below for form factor dimensions.
+-  Connect the sensors to the dedicated connectors on the
+   **EVAL-CN0429-EBZ**. The
+   :adi:`CN0429 <en/design-center/reference-designs/hardware-reference-design/circuits-from-the-lab/CN0429.html>`
+   is compatible with electrochemical gas sensors in "4-series" form
+   factor. 2-, 3- and 4-electrode sensors are supported. See the drawing
+   below for form factor dimensions.
 
 .. image:: ../images/cn0429_gas_sensor_dimensions.png
    :align: center
@@ -85,9 +110,9 @@ The source code and include files of the **CN0429_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   `CN0429_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0429/Arduino%20Uno%20R3/examples/CN0429_example>`_
-   
+
+   :git-arduino:`CN0429_example at Github <gui+cn0429:Arduino%20Uno%20R3/examples/CN0429_example>`
+
 
 Project Structure
 -----------------
@@ -98,8 +123,13 @@ the .ino file and include the source and header files.
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -141,12 +171,14 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*
 

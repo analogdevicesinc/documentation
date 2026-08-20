@@ -4,9 +4,18 @@ Electrochemical Water Quality Measurement Demo
 General Description/Overview
 ----------------------------
 
-The **CN0428_example** is a demo using the **EVAL-CN0428-EBZ**, the **EVAL-M355-ARDZ-INT** and the **Arduino Uno** board as a system to detect several important parameters that affect water quality, including chemical indicators, biological and bacteriological indicators and even some low level contaminants like heavy metals.
+The **CN0428_example** is a demo using the **EVAL-CN0428-EBZ**, the
+**EVAL-M355-ARDZ-INT** and the **Arduino Uno** board as a system to
+detect several important parameters that affect water quality, including
+chemical indicators, biological and bacteriological indicators and even
+some low level contaminants like heavy metals.
 
-The :adi:`CN0428` circuit shown is a modular sensing platform that allows the user to design a flexible electrochemical water quality measurement solution. Its high level of integration enables an electrochemical measurement platform applicable to a variety of water quality probes including pH, oxidation reduction potential (ORP), and conductivity cells.
+The :adi:`CN0428` circuit shown is a modular sensing platform that
+allows the user to design a flexible electrochemical water quality
+measurement solution. Its high level of integration enables an
+electrochemical measurement platform applicable to a variety of water
+quality probes including pH, oxidation reduction potential (ORP), and
+conductivity cells.
 
 This example uses three types of boards:
 
@@ -56,8 +65,15 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Before plugging all boards together, user should ensure the switch S2 is set to “I2C” on the EVAL-M355-ARDZ-INT shield board.
--  Connect up to 4 **EVAL-CN0428-EBZ** to the **EVAL-M355-ARDZ-INT** and secure them with the included hardware as shown in the pictures. This mounting should include two bolts, two standoffs and two nuts for each of the :adi:`EVAL-CN0428-EBZ <cn0428>` board. Use of the hardware mount for the :adi:`EVAL-CN0428-EBZ <cn0428>` board is strongly recommended to ensure mechanical stability and to protect the Samtec connector on the bottom of the board.
+-  Before plugging all boards together, user should ensure the switch S2
+   is set to "I2C" on the EVAL-M355-ARDZ-INT shield board.
+-  Connect up to 4 **EVAL-CN0428-EBZ** to the **EVAL-M355-ARDZ-INT**
+   and secure them with the included hardware as shown in the pictures.
+   This mounting should include two bolts, two standoffs and two nuts for
+   each of the :adi:`EVAL-CN0428-EBZ <cn0428>` board. Use of the
+   hardware mount for the :adi:`EVAL-CN0428-EBZ <cn0428>` board is
+   strongly recommended to ensure mechanical stability and to protect
+   the Samtec connector on the bottom of the board.
 
 .. container:: centeralign
 
@@ -77,7 +93,8 @@ Setting up the Hardware
    -  Note, the boards should only plug together one way, preventing reverse
       connections.
 
--  Choose the desired measurement probes and connect them to the :adi:`EVAL-CN0428-EBZ <cn0428>` boards.
+-  Choose the desired measurement probes and connect them to the
+   :adi:`EVAL-CN0428-EBZ <cn0428>` boards.
 -  Plug in the Type B USB cable into the USB port on the Arduino Uno, and the
    other end into the PC or laptop.
 
@@ -92,9 +109,9 @@ The source code and include files of the **CN0428_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   `CN0428_example at Github <https://github.com/analogdevicesinc/arduino/tree/cn0428/Arduino%20Uno%20R3/examples/CN0428_example>`_
-   
+
+   :git-arduino:`CN0428_example at Github <gui+cn0428:Arduino%20Uno%20R3/examples/CN0428_example>`
+
 
 Project Structure
 -----------------
@@ -105,8 +122,13 @@ the .ino file and include the source and header files.
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -148,12 +170,14 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*
 

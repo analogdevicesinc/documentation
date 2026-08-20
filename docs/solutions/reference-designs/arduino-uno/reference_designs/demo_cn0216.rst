@@ -1,12 +1,19 @@
 Weigh Scale Measurement Demo using Arduino Uno
 ==============================================
 
-The **CN0216_example** is a weigh scale measurement demo project for the Arduino Uno base board with additional :adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>`, created using the Arduino IDE.
+The **CN0216_example** is a weigh scale measurement demo project for the
+Arduino Uno base board with additional
+:adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>`,
+created using the Arduino IDE.
 
 General Description/Overview
 ----------------------------
 
-The **CN0216_example** project uses the :adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>` which is a precision weigh scale system using a **24-bits** sigma-delta converter, and auto-zero amplifiers providing high gain for the bridge sensor input
+The **CN0216_example** project uses the
+:adi:`EVAL-CN0216-ARDZ shield <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0216-ARDZ.html>`
+which is a precision weigh scale system using a **24-bits** sigma-delta
+converter, and auto-zero amplifiers providing high gain for the bridge
+sensor input
 
 .. image:: ../images/cn0216_hw_stacked.jpg
    :align: left
@@ -23,9 +30,25 @@ value is received via SPI interface of the EVAL-ADICUP360 board.
    :align: right
    :width: 550
 
-The **CN0216_example** application processes ADC output value and make all necessary conversions in order to provide the weight results. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: ADC Data Register **codes**, ADC Input Voltage **volts**, and Sensor Input Weight **grams** are the outputs provided in the terminal window.
+The **CN0216_example** application processes ADC output value and make
+all necessary conversions in order to provide the weight results. A UART
+interface (9600 baud rate and 8-bits data length) is used to send the
+results to terminal window: ADC Data Register **codes**, ADC Input
+Voltage **volts**, and Sensor Input Weight **grams** are the outputs
+provided in the terminal window.
 
-At the start of the project, a calibration of the upper and lower input range of the weigh scale is taken to remove both offset and gain errors in the circuit, providing the most accurate weigh scale measurements possible. Make sure you open up the serial terminal to your PC in order to do the calibration. Once the program is running, it will ask you to make the zero scale calibration, you **MUST** press <ENTER> to begin the zero scale calibration(takes about 5 seconds). Once that calibration has taken place, the serial terminal will prompt you to add the calibration weight to the scale and then press <ENTER> to make the full scale calibration(again takes about 5 seconds). Those measurements are averaged over 100 samples and then stored into memory as the upper and lower calibration coefficients.
+At the start of the project, a calibration of the upper and lower input
+range of the weigh scale is taken to remove both offset and gain errors in
+the circuit, providing the most accurate weigh scale measurements possible.
+Make sure you open up the serial terminal to your PC in order to do the
+calibration. Once the program is running, it will ask you to make the zero
+scale calibration, you **MUST** press <ENTER> to begin the zero scale
+calibration(takes about 5 seconds). Once that calibration has taken place,
+the serial terminal will prompt you to add the calibration weight to the
+scale and then press <ENTER> to make the full scale calibration(again
+takes about 5 seconds). Those measurements are averaged over 100 samples
+and then stored into memory as the upper and lower calibration
+coefficients.
 
 Once calibration is complete, measurements of the output values (weights and
 conversion information) are displayed every time you press <ENTER> key from the
@@ -53,12 +76,16 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Plug the **EVAL-CN0216-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
+-  Plug the **EVAL-CN0216-ARDZ** shield on top of the **Arduino Uno**
+   development board by matching up the **POWER, ANALOG, DIGI0, DIGI1**
+   connectors.
 
    -  Note, the boards should only plug together one way, preventing reverse
       connections.
 
--  Connect your weigh scale to the EVAL-CN0216-ARDZ via **()**, make sure you pay attention to the pinout which can be found on the `CN0216 hardware page <https://wiki.analog.com/resources/eval/user-guides/eval-adicup360/hardware/cn0216>`_.
+-  Connect your weigh scale to the EVAL-CN0216-ARDZ via **()**, make
+   sure you pay attention to the pinout which can be found on the
+   :dokuwiki:`CN0216 hardware page <resources/eval/user-guides/eval-adicup360/hardware/cn0216>`.
 -  Connect an acceptable 7V-12V power supply into the power jack of the Arduino
    Uno
 
@@ -79,9 +106,9 @@ The source code and include files of the **CN0216_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   :git-arduino:`CN0216_example at Github <Arduino%20Uno%20R3/examples/CN0216_example>`
-   
+
+   :git-arduino:`CN0216_example at Github <gui+master:Arduino%20Uno%20R3/examples/CN0216_example>`
+
 
 Project Structure
 -----------------
@@ -104,8 +131,13 @@ There are no software configurations for this particular project.
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -147,11 +179,13 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*

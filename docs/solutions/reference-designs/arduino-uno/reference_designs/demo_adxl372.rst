@@ -1,14 +1,21 @@
 Impact Measurement Demo using the Arduino Uno
 =============================================
 
-This demo will use **EVAL-ADXL372-ARDZ** shield along with **Arduino Uno** base board to create a impact measurement application, using the Arduino IDE.
+This demo will use **EVAL-ADXL372-ARDZ** shield along with **Arduino
+Uno** base board to create a impact measurement application, using the
+Arduino IDE.
 
 |image1|
 
 General Description/Overview
 ----------------------------
 
-The **ADXL372_example** project uses the **EVAL-ADXL372-ARDZ** shield which has an ADXL372 accelerometer. The ADXL372 is configured to operate in "Instant On" mode which means that the device is powered down, until the sensor records an impact event that triggers a threshold. Once that level is surpassed, the ADXL372 automatically goes into measurement mode to capture the rest of the impact event.
+The **ADXL372_example** project uses the **EVAL-ADXL372-ARDZ** shield
+which has an ADXL372 accelerometer. The ADXL372 is configured to operate
+in "Instant On" mode which means that the device is powered down, until
+the sensor records an impact event that triggers a threshold. Once that
+level is surpassed, the ADXL372 automatically goes into measurement mode
+to capture the rest of the impact event.
 
 The **ADXL372** is an ultralow power, 3-axis, **±200 g** MEMS accelerometer.
 
@@ -36,12 +43,15 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Plug the **EVAL-ADXL372-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
+-  Plug the **EVAL-ADXL372-ARDZ** shield on top of the **Arduino Uno**
+   development board by matching up the **POWER, ANALOG, DIGI0, DIGI1**
+   connectors.
 
    -  Note, the boards should only plug together one way, preventing reverse
       connections.
 
--  Make sure the jumpers **P10, P11, P12** are configured exactly as the picture below.
+-  Make sure the jumpers **P10, P11, P12** are configured exactly as the
+   picture below.
 
    -  P10 -> Pin 1-2
    -  P11 -> Pin 1-2
@@ -62,9 +72,9 @@ The source code and include files of the **ADXL372_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   :git-arduino:`ADXL372_example at Github <Arduino%20Uno%20R3/examples/ADXL372_example>`
-   
+
+   :git-arduino:`ADXL372_example at Github <gui+master:Arduino%20Uno%20R3/examples/ADXL372_example>`
+
 
 Project Structure
 -----------------
@@ -124,8 +134,13 @@ pin 5 for INT2_A and pin 4 for INT2_B)
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -167,12 +182,14 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*
 

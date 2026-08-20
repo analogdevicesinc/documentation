@@ -1,22 +1,45 @@
 Toxic Gas Detector using the Arduino Uno
 ========================================
 
-The **CN0357_example** is a toxic gas(CO) detector demo project for the Arduino Uno base board with additional :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield, created using the Arduino IDE.
+The **CN0357_example** is a toxic gas(CO) detector demo project for the
+Arduino Uno base board with additional
+:adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>`
+shield, created using the Arduino IDE.
 
 General Description/Overview
 ----------------------------
 
-This user guide gives a detailed explanation about **CN0357_example** toxic gas (CO) detection project for Arduino base board and :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` gas sensor shield. The gas sensor shield consists of portable gas detector circuit.
+This user guide gives a detailed explanation about **CN0357_example**
+toxic gas (CO) detection project for Arduino base board and
+:adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>`
+gas sensor shield. The gas sensor shield consists of portable gas
+detector circuit.
 
 .. image:: ../images/img_20180118_154523.jpg
    :align: center
    :width: 600
 
-The :adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>` shield circuit provides a potentiostatic circuit for biasing the electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents passing in the sensor is being converted to a voltage that can be read by the ADC. The 16-bit ADC value is received via SPI interface of the EVAL-ADICUP3029 board, where the gas concentration is computed.
+The
+:adi:`EVAL-CN0357-ARDZ <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-CN0357-ARDZ.html>`
+shield circuit provides a potentiostatic circuit for biasing the
+electrochemical sensor and 16-bit Sigma-Delta ADC. The small currents
+passing in the sensor is being converted to a voltage that can be read
+by the ADC. The 16-bit ADC value is received via SPI interface of the
+EVAL-ADICUP3029 board, where the gas concentration is computed.
 
-The **CN0357_example** application configures the necessary components, processes ADC output value and make all necessary conversions in order to provide the gas concentration. A UART interface (9600 baud rate and 8-bits data length) is used to send the results to terminal window: CO Concentration in **Parts Per Million(PPM)** are the outputs provided in the terminal window.
+The **CN0357_example** application configures the necessary components,
+processes ADC output value and make all necessary conversions in order to
+provide the gas concentration. A UART interface (9600 baud rate and
+8-bits data length) is used to send the results to terminal window: CO
+Concentration in **Parts Per Million(PPM)** are the outputs provided in
+the terminal window.
 
-At the start of the project, the software computes the necessary parameters and configure the digital rheostat(AD5270) . The required parameters are the sensor sensitivity and feedback resistor range. These can be modified by changing the values of the constants **ui16sensorRange** and **ui16sensitivity** found in the **CN0357_example.ino** file of the project.
+At the start of the project, the software computes the necessary
+parameters and configure the digital rheostat(AD5270) . The required
+parameters are the sensor sensitivity and feedback resistor range. These
+can be modified by changing the values of the constants
+**ui16sensorRange** and **ui16sensitivity** found in the
+**CN0357_example.ino** file of the project.
 
 Demo Requirements
 -----------------
@@ -38,7 +61,9 @@ The following is a list of items needed in order to replicate this demo.
 Setting up the Hardware
 -----------------------
 
--  Plug the **EVAL-CN0357-ARDZ** shield on top of the **Arduino Uno** development board by matching up the **POWER, ANALOG, DIGI0, DIGI1** connectors.
+-  Plug the **EVAL-CN0357-ARDZ** shield on top of the **Arduino Uno**
+   development board by matching up the **POWER, ANALOG, DIGI0, DIGI1**
+   connectors.
 
    -  Note, the boards should only plug together one way, preventing reverse
       connections.
@@ -58,7 +83,7 @@ Setting up the Hardware
    the DC barrel jack of the Arduino Uno. If not supplied, the board WILL NOT
    WORK PROPERLY.
 
-   
+
    Rev C Eval-CN0357-ARDZ boards do not require this extra power supply.
 
 Obtaining the Source Code
@@ -69,9 +94,9 @@ The source code and include files of the **CN0357_example** can be found here:
 .. admonition:: Download
    :class: download
 
-   
-   :git-arduino:`CN0357_example at Github <Arduino%20Uno%20R3/examples/CN0357_example>`
-   
+
+   :git-arduino:`CN0357_example at Github <gui+master:Arduino%20Uno%20R3/examples/CN0357_example>`
+
 
 Project Structure
 -----------------
@@ -96,13 +121,15 @@ range within the software.
 
 In *CN0357_example.ino* file the user can configure parameters:
 
--  **ui16sensorRange** -This is the range of the sensor and it is used to calculate the feedback resistor value.
+-  **ui16sensorRange** -This is the range of the sensor and it is used
+   to calculate the feedback resistor value.
 
 ::
 
        uint16_t ui16sensorRange = 2000;            //value is in units (PPM)
 
--  **ui16sensitivity** - sensitivity (nA/ppm) of the electrochemical sensor being used.
+-  **ui16sensitivity** - sensitivity (nA/ppm) of the electrochemical
+   sensor being used.
 
 ::
 
@@ -111,8 +138,13 @@ In *CN0357_example.ino* file the user can configure parameters:
 Compiling, Verifying, and Programming
 -------------------------------------
 
--  Once the project has been imported and the software parameters have been appropriately configured, you must Compile/Verify the project within the Arduino IDE. You can do this by clicking on the Sketch menu, and then on the *Compile/Verify* option.
--  Once the project is compiled and free of errors, you can now upload the project to the Arduino Uno. Click on the Sketch menu item, and then click *Upload*.
+-  Once the project has been imported and the software parameters have
+   been appropriately configured, you must Compile/Verify the project
+   within the Arduino IDE. You can do this by clicking on the Sketch
+   menu, and then on the *Compile/Verify* option.
+-  Once the project is compiled and free of errors, you can now upload
+   the project to the Arduino Uno. Click on the Sketch menu item, and
+   then click *Upload*.
 
 These two steps can also be done using the quick buttons on the Arduino sketch.
 Check out the image below for locations of the quick buttons.
@@ -154,11 +186,13 @@ Tools Download and Help
 The Arduino tools are easy to use, and there are many tutorials and users guides
 to help learn how to use the Arduino IDE.
 
-For more information on how to use the tool basics, please check out the `Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
+For more information on how to use the tool basics, please check out the
+`Arduino tutorials page. <https://www.arduino.cc/en/Tutorial/HomePage>`_
 
 .. admonition:: Download
    :class: download
 
-   To download the Arduino tools, check out the `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
+   To download the Arduino tools, check out the
+   `Arduino software page. <https://www.arduino.cc/en/Main/Software>`_
 
 *End of Document*
