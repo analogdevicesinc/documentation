@@ -1,10 +1,6 @@
 IIO OSC ADRV9026/ADRV9029 Capture Window
 ========================================
 
-.. important::
-
-   We are in the process of migrating our documentation to GitHubIO. This page is outdated and the new one can be found at https://analogdevicesinc.github.io/documentation/eval/user-guide/transceiver/adrv9026/quickstart/index.html\
-
 Introduction
 ------------
 
