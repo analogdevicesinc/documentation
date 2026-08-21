@@ -58,12 +58,13 @@ Pin 8      Not Used
 REF SEL / Bridge Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| These set of jumpers allow the circuit to be configured for use with 4-wire or 6-wire load cells.
+These set of jumpers allow the circuit to be configured for use with 4-wire or
+6-wire load cells.
 
 .. note::
 
-   | NOTE - Any 4 or 6 wire load cells can be used with the EVAL-CN0216-ARDZ.
-   | The Tedeah Huntleigh Model 1042 load cell was used during testing.
+   Any 4 or 6 wire load cells can be used with the EVAL-CN0216-ARDZ.
+   The Tedeah Huntleigh Model 1042 load cell was used during testing.
 
 |image1| Place jumpers/shunts as shown above for 6-wire resistive bridge configuration
 
@@ -145,8 +146,6 @@ Software
 
 -  :doc:`ADICUP360 + CN0216 Demo </solutions/reference-designs/eval-adicup360/reference_designs/demo_cn0216>`
 -  `Arduino Uno + CN0216 Demo <https://wiki.analog.com/resources/eval/user-guides/arduino-uno/reference_designs/demo_cn0216>`_
-
-*End of Document*
 
 .. |image1| image:: ../images/cn0216_ref_sel_-_2.png
    :width: 100
