@@ -1,3 +1,5 @@
+.. _eval-aducm360-user-guide installing-software-pack:
+
 Installing ADuCM36x Software Pack
 =================================
 
@@ -46,18 +48,18 @@ Installation Through Keil μVision5
 
    Figure 2. Opening Pack Installer
 
-   |Installing the ADuCM36x Software Pack Trough the Pack Installer|
+.. image:: images/packinstaller.png
 
 .. container:: centeralign
 
-   Figure 3. Installing the ADuCM36x Software Pack Trough the Pack Installer
+   Figure 3. Installing the ADuCM36x Software Pack Through the Pack Installer
 
 Installation for IAR Embedded Workbench
 ---------------------------------------
 
 -  Open IAR Embedded Workbench. This will open IAR Embedded Workbench CMSIS Manager.
 -  In **Devices** -> **Search Device** Search for **aducm** and select **ADuCM36x Series** (Figure 4)
--  With the device selected, go to **Packs** -> Device Specific*\* and install the pack **AnalogDevices.ADuCM36x_DFP** (Figure 5).
+-  With the device selected, go to **Packs** -> **Device Specific** and install the pack **AnalogDevices.ADuCM36x_DFP** (Figure 5).
 -  Accept the license agreement.
 
 .. image:: images/iar_cmsis.png
@@ -67,11 +69,8 @@ Installation for IAR Embedded Workbench
 
    Figure 4. IAR CMSIS Manager. Selecting the ADuCM36x Series Device
 
-   |image1|
+.. image:: images/install_iar_cmsis.png
 
 .. container:: centeralign
 
-   Figure 3. Installing the ADuCM36x Software Pack
-
-.. |Installing the ADuCM36x Software Pack Trough the Pack Installer| image:: images/packinstaller.png
-.. |image1| image:: images/install_iar_cmsis.png
+   Figure 5. Installing the ADuCM36x Software Pack
