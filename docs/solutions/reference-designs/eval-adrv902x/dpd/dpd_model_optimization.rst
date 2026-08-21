@@ -10,7 +10,7 @@ GMP polynomial (memory terms and polynomial degree) for modeling a power
 amplifier in the baseband. Good modeling of the PA is critical for achieving
 good DPD performance. An example DPD model descriptor is shown below.
 
-.. image:: ../images/adrv9029_dpdmodel.png
+.. figure:: ../images/adrv9029_dpdmodel.png
    :align: center
 
 DPD model generation
@@ -33,15 +33,17 @@ following procedure is recommended:
    :ref:`ADRV9029 DPD evaluation through TES GUI <adrv902x dpd evaluating-dpd-tes>`
    page.
 #. After verifying that DPD bring up is successful on the ADRV9029 platform,
-   browse to the location
-   ``C:\Program Files\Analog Devices\ADRV902x Transceiver Evaluation Software_x64_FULL\Resources\DpdModels``
-   on your PC and ensure that the DPD model library is available. In case the
-   DPD model library is not installed in the above mentioned location, the user
-   can download the DPD model library at this
+   browse to the following location on your PC and ensure that the DPD model
+   library is available:
+
+   .. code-block:: text
+
+      C:\Program Files\Analog Devices\ADRV902x Transceiver Evaluation Software_x64_FULL\Resources\DpdModels
+
+   In case the DPD model library is not installed in the above mentioned
+   location, the user can download the DPD model library at this
    :dokuwiki:`link <_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`
-   and manually install the DPD library at the location
-   ``C:\Program Files\Analog Devices\ADRV902x Transceiver Evaluation Software_x64_FULL\Resources\DpdModels``
-   on your PC.
+   and manually install the DPD library at the same location on your PC.
 #. At this stage the user can download the DPD model sweep script provided by
    ADI at
    :dokuwiki:`this link <_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip>`.
@@ -54,14 +56,17 @@ following procedure is recommended:
    of the ADRV9029 GUI as shown in the figure below and browsing to the
    location where you have stored the script on your PC.
 
-   .. image:: ../images/adrv9029_loadingscript.png
+   .. figure:: ../images/adrv9029_loadingscript.png
       :align: center
 
 #. After loading the script, execute the script by clicking **Build -> Run** in
    the Iron Python tab of the ADRV9029 TES GUI.
 #. At the end of execution of this script, the DPD model producing the least
-   amount of error will be logged as
-   ``C:\Program Files\Analog Devices\ADRV9025 Transceiver Evaluation Software_x64_FULL\Resources\DpdModels\DpdModelOptimized.txt``.
+   amount of error will be logged as:
+
+   .. code-block:: text
+
+      C:\Program Files\Analog Devices\ADRV9025 Transceiver Evaluation Software_x64_FULL\Resources\DpdModels\DpdModelOptimized.txt
 
 .. note::
 

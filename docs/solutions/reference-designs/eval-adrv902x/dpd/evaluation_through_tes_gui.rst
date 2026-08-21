@@ -30,7 +30,7 @@ supports an IronPython tab that can be used for scripting purposes.
     mapping selection is correct. Typically, a one to one Tx-ORx mapping is
     used as shown in the figure below.
 
-    .. image:: ../images/adrv9029_initializationwindow.png
+    .. figure:: ../images/adrv9029_initializationwindow.png
        :align: center
        :width: 600
 
@@ -41,14 +41,14 @@ supports an IronPython tab that can be used for scripting purposes.
   attenuation and decrementing the gain index by 1 increases the attenuation by
   0.5 dB.
 
-.. image:: ../images/adrv9029_orx_setup.png
+.. figure:: ../images/adrv9029_orx_setup.png
    :align: center
    :width: 400
 
 - Bring the power amplifier to its rated power by adjusting the ADRV9029 Tx
   front end attenuation on the transmit tab highlighted in the figure below.
 
-.. image:: ../images/adrv9029_txattenadjust.png
+.. figure:: ../images/adrv9029_txattenadjust.png
    :align: center
    :width: 400
 
@@ -63,14 +63,14 @@ supports an IronPython tab that can be used for scripting purposes.
   model for a particular PA, follow the instructions on the
   :ref:`DPD model generation <adrv902x dpd model-optimization>` page.
 
-.. image:: ../images/adrv9029_dpd_modelload.png
+.. figure:: ../images/adrv9029_dpd_modelload.png
    :align: center
    :width: 800
 
 - Configure 'DPD Tracking Config' parameters (default values provide a good
   starting point).
 
-.. image:: ../images/adrv9029_dpdtrackingconfig.png
+.. figure:: ../images/adrv9029_dpdtrackingconfig.png
    :align: center
    :width: 400
 
@@ -87,7 +87,7 @@ supports an IronPython tab that can be used for scripting purposes.
       button.
     - Click 'Enable DPD on selected channels (only)' to enable DPD tracking.
 
-    .. image:: ../images/adrv9029_dpdtrackingcal_enable.png
+    .. figure:: ../images/adrv9029_dpdtrackingcal_enable.png
        :align: center
        :width: 400
 
@@ -96,6 +96,6 @@ supports an IronPython tab that can be used for scripting purposes.
   Statistics" button. Ensure that the error status returns "No Error" and the
   "Iteration Count" and "Update Count" fields are incrementing.
 
-.. image:: ../images/adrv9029_dpdstatus.png
+.. figure:: ../images/adrv9029_dpdstatus.png
    :align: center
    :width: 300

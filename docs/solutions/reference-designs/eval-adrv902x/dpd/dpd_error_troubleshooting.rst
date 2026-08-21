@@ -280,9 +280,6 @@ programmed via DpdModelConfigSet() command to reduce the number of Sum of
 Product terms in the GMP polynomial used to model the PA (DPD Model) assigned
 to a LUT.
 
-ADI_ADRV9025_DPD_RPC_FAILED_ERROR
--------------------------------------------------------------------------------
-
 ADI_ADRV9025_DPD_MESSAGE_WAIT_TIMEOUT_ERROR
 -------------------------------------------------------------------------------
 
@@ -326,9 +323,6 @@ ADI_ADRV9025_DPD_DATA_CAPTURE_TIMEOUT_ERROR
 - Ensure that there are no peaks in the last 4096 samples of the test vector
   before Tx EN goes low in TDD mode.
 
-ADI_ADRV9025_DPD_LDL_SOLVER_ERROR
--------------------------------------------------------------------------------
-
 ADI_ADRV9025_DPD_CHOL_SOLVER_ERROR
 -------------------------------------------------------------------------------
 
@@ -358,7 +352,7 @@ assigned to LUT numbers 28, 29 or 30, this error is flagged.
 - The DPD model entry LUT assignment can be found under the encircled column in
   a DPD model file as shown below.
 
-.. image:: ../images/madurdpdmodel.jpg
+.. figure:: ../images/madurdpdmodel.jpg
    :width: 400
 
 ADI_ADRV9025_DPD_UNKNOWN_RPC_ERROR

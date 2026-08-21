@@ -19,7 +19,7 @@ below. The pre-distorter then applies an inverse of the PA model function to
 input samples before passing them to the transmitter output. The cascade of the
 pre-distorter response and the PA response becomes a nearly-linear system.
 
-.. image:: ../images/adrv9029_dpd_principleofoperation.png
+.. figure:: ../images/adrv9029_dpd_principleofoperation.png
    :align: center
    :width: 400
 
@@ -33,6 +33,6 @@ below. These plots illustrate how the out of band non-linearities due to
 intermodulation products of an LTE 20 MHz signal are reduced by 15-20 dB after
 the application of DPD.
 
-.. image:: ../images/adrv9029_dpd_prepostdpd_comparisonlte20.png
+.. figure:: ../images/adrv9029_dpd_prepostdpd_comparisonlte20.png
    :align: center
    :width: 400

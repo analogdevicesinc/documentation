@@ -19,7 +19,7 @@ Configuring the ADRV9029 transceiver
   "51_nonLinkSharing" as shown in the figure below. The profile defines the
   data rates of the transceiver.
 
-.. image:: ../images/adrv9029_profileselection.png
+.. figure:: ../images/adrv9029_profileselection.png
    :align: center
    :width: 600
 
@@ -28,7 +28,7 @@ Configuring the ADRV9029 transceiver
   51_nonLinkSharing. Each half band provides an interpolation of 2x. The
   cascaded interpolation rate is 4x for this profile.
 
-.. image:: ../images/uc51_txpath.png
+.. figure:: ../images/uc51_txpath.png
    :align: center
    :width: 600
 
@@ -37,7 +37,7 @@ Configuring the ADRV9029 transceiver
   test. Also ensure the ORx LO is connected to the same LO as Tx and the Tx to
   ORx mapping matches the physical Tx to ORx connection.
 
-.. image:: ../images/adrv9029_initializationwindow.png
+.. figure:: ../images/adrv9029_initializationwindow.png
    :align: center
    :width: 600
 
@@ -45,7 +45,7 @@ Configuring the ADRV9029 transceiver
   "Initialization" window, so that the PA is not over-driven and ORx ADC does
   not saturate.
 
-.. image:: ../images/adrv9029_inittxattenandorxgain.png
+.. figure:: ../images/adrv9029_inittxattenandorxgain.png
    :align: center
    :width: 600
 
@@ -60,7 +60,7 @@ After configuring the ADRV9029 transceiver settings as shown in the previous
 section, click the "Program" button in the ADRV9029 TES GUI to program the
 ADRV9029 transceiver.
 
-.. image:: ../images/adrv9029_program.png
+.. figure:: ../images/adrv9029_program.png
    :align: center
    :width: 600
 
@@ -68,7 +68,7 @@ On successful completion of ADRV9029 transceiver programming, the TES GUI will
 display a "**Programmed Successfully**" message on the bottom right hand corner
 of the ADRV9029 TES GUI as shown below.
 
-.. image:: ../images/adrv9029_programmingsuccessful.png
+.. figure:: ../images/adrv9029_programmingsuccessful.png
    :align: center
    :width: 600
 
@@ -85,7 +85,7 @@ Adjust the digital scaling if required and hit the "Submit" button to load the
 waveform to the eval platform. Finally, click on the play button next to
 "Tones" to start transmitting the waveform on the ADRV9029 transceiver.
 
-.. image:: ../images/adrv9029_loadingtxwaveform.png
+.. figure:: ../images/adrv9029_loadingtxwaveform.png
    :align: center
    :width: 600
 
@@ -93,14 +93,14 @@ waveform to the eval platform. Finally, click on the play button next to
   end attenuation on the ADRV9029 transceiver through the "Tx Attenuation"
   setting under the Transmitter tab of the ADRV9029 TES GUI.
 
-.. image:: ../images/adrv9029_txattenadjust.png
+.. figure:: ../images/adrv9029_txattenadjust.png
    :align: center
    :width: 400
 
 - Adjust the ORx gain under the "Obs Rx" tab of the ADRV9029 GUI to ensure that
   the observation channel is not saturating.
 
-.. image:: ../images/adrv9029_orx_setup.png
+.. figure:: ../images/adrv9029_orx_setup.png
    :align: center
    :width: 400
 
@@ -115,14 +115,14 @@ waveform to the eval platform. Finally, click on the play button next to
   model for a particular PA, follow the instructions on the
   :ref:`DPD model generation <adrv902x dpd model-optimization>` page.
 
-.. image:: ../images/adrv9029_dpd_modelload.png
+.. figure:: ../images/adrv9029_dpd_modelload.png
    :align: center
    :width: 800
 
 - Configure 'DPD Tracking Config' parameters (default values provide a good
   starting point).
 
-.. image:: ../images/adrv9029_dpdtrackingconfig.png
+.. figure:: ../images/adrv9029_dpdtrackingconfig.png
    :align: center
    :width: 400
 
@@ -140,7 +140,7 @@ waveform to the eval platform. Finally, click on the play button next to
       button.
     - Click 'Enable DPD on selected channels (only)' to enable DPD tracking.
 
-    .. image:: ../images/adrv9029_dpdtrackingcal_enable.png
+    .. figure:: ../images/adrv9029_dpdtrackingcal_enable.png
        :align: center
        :width: 400
 
@@ -149,6 +149,6 @@ waveform to the eval platform. Finally, click on the play button next to
   Statistics" button. Ensure that the error status returns "No Error" and the
   "Iteration Count" and "Update Count" fields are incrementing.
 
-.. image:: ../images/adrv9029_dpdstatus.png
+.. figure:: ../images/adrv9029_dpdstatus.png
    :align: center
    :width: 300

@@ -22,7 +22,7 @@ Equipment needed
   figure below. Please note that the Observation Receiver (ORx) is on the
   bottom side of the ADRV9029 evaluation board.
 
-.. image:: ../images/adrv9029_hw_setup.png
+.. figure:: ../images/adrv9029_hw_setup.png
    :width: 800
 
 Software requirements

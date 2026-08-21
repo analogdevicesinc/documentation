@@ -8,5 +8,5 @@ Typical high level DPD development flow
 A typical development flow for designing a radio system with the ADRV9029
 integrated DPD transceiver is described in the flowchart below.
 
-.. image:: ../images/adrv9029_dpd_developmentflow.png
+.. figure:: ../images/adrv9029_dpd_developmentflow.png
    :align: center

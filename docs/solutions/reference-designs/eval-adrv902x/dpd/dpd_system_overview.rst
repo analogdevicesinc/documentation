@@ -47,6 +47,6 @@ processing blocks:
   the master and the second core is a dedicated ARM core for DPD processing
   (ARM-D).
 
-.. image:: ../images/adrv9029_dfe_systemleveloverview.png
+.. figure:: ../images/adrv9029_dfe_systemleveloverview.png
    :align: center
    :width: 800

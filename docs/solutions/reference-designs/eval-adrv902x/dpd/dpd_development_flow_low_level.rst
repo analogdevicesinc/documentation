@@ -10,5 +10,5 @@ in the figure below. The user has access to a number of resources including
 user guides, example scripts, application notes and ADI support to help through
 the DPD development process.
 
-.. image:: ../images/adrv9029_typicaldpddevelopmentflow.png
+.. figure:: ../images/adrv9029_typicaldpddevelopmentflow.png
    :align: center

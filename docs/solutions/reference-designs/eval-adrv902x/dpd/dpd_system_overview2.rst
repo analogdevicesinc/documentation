@@ -8,7 +8,7 @@ ADRV9029 DPD system overview
 A simplified block diagram of the ADRV9029 transceiver DPD system is shown in
 the figure below.
 
-.. image:: ../images/adrv9029_dpd_simplifiedblockdiagram.png
+.. figure:: ../images/adrv9029_dpd_simplifiedblockdiagram.png
    :align: center
    :width: 800
 
