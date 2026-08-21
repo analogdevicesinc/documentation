@@ -75,5 +75,3 @@ Schematics, PCB Layout, Bill of Materials
    -  `Layout Gerbers <../resources/eval-cn0326-pmdz-gbr-reva.zip>`_ (ZIP)
    -  `Assembly Drawing <../resources/eval-cn0326-pmdz-assemblydrawing.pdf>`_ (PDF)
    
-
-*End of Document*

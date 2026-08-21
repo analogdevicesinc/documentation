@@ -15,7 +15,7 @@ which USB port you have plugged into your laptop or PC.
    that the drivers are being installed in the task bar, open it up and wait
    till everything finished before progressing.
 
-| |image1|
+|image1|
 
 Mass Storage Drives
 -------------------
@@ -68,8 +68,6 @@ applications as well) This will allow you to output data to a PC or even send
 UART commands to the ADICUP360.
 
 The PC will start searching for and install the following drivers:|image6|
-
-*End of Document*
 
 .. |image1| image:: ../images/device_drivers_install_notification.png
    :width: 400

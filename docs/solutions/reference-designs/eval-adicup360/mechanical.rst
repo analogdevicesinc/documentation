@@ -18,8 +18,7 @@ it to the list.
    the easiest to use, you can simply drag and drop the STL files into the
    browser.
 
-   
-   ` <http://www.viewstl.com/>`__
+   `ViewSTL <http://www.viewstl.com/>`__
 
 .. important::
 
@@ -35,9 +34,6 @@ it to the list.
 | `ADICUP360 Case 1 <resources/adicup360_mma_case_1.zip>`_                                                                          | EVAL-ADICUP360           | \* Base plate used for ADICUP360 board and add on boards. | |image2| |
 |                                                                                                                                   |                          | \* Screw holes lined up for secure installation           |          |
 +-----------------------------------------------------------------------------------------------------------------------------------+--------------------------+-----------------------------------------------------------+----------+
-
-.. |image1| image:: images/adicup360_mma_case1.png
-   :width: 100
 
 .. |image2| image:: images/adicup360_mma_case1.png
    :width: 100

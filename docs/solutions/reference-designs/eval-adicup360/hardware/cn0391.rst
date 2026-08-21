@@ -127,5 +127,3 @@ Registration
 .. tip::
 
    Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. `Register <https://form.analog.com/Form_Pages/FeedBack/EVAL-CN0391-ARDZ?&v=RevA>`_ to receive all these great benefits and more!
-
-*End of Document*
