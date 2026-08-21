@@ -49,7 +49,7 @@ Connectivity and Cables
 * 1x DisplayPort-to-HDMI cable (DUT P2 video output)
 * 1x USB-C OTG cable (USB host mode testing)
 
-.. figure:: images/i2c-rpi-adrv9009-conn.png
+.. figure:: ../images/i2c-rpi-adrv9009-conn.png
 
    I2C connection between Raspberry Pi and ADRV2CRR-FMC
 
@@ -73,11 +73,11 @@ Test Equipment and Loopbacks
 * 1x Audio loopback (P6 and P5 connectors)
 * 4x U.FL loopback cables (RF testing: U.FL-2LPHF6-068N1T-A-100)
 
-.. figure:: images/ufl-loopback.png
+.. figure:: ../images/ufl-loopback.png
 
    U.FL loopback cable connections
 
-.. figure:: images/fmc_loopback_connection_closeup.jpg
+.. figure:: ../images/fmc_loopback_connection_closeup.jpg
 
    FMC loopback connection closeup
 
@@ -111,7 +111,7 @@ Latest release (15 December 2022):
 Required Setup
 ^^^^^^^^^^^^^^
 
-.. figure:: images/zu11eg-prod-test-setup.jpg
+.. figure:: ../images/zu11eg-prod-test-setup.jpg
 
    Complete test setup
 
@@ -165,7 +165,7 @@ Initialization
 #. Verify boot screen appears on monitor
 #. Label RF shielding top cover with serial number and MAC address
 
-.. figure:: images/adrv9009-rf-shielding.png
+.. figure:: ../images/adrv9009-rf-shielding.png
 
    RF shielding label
 
@@ -178,7 +178,7 @@ Running the Test Software
 
 After the Raspberry Pi boots up, the test menu will appear on the monitor.
 
-.. figure:: images/boot-pi-screen.png
+.. figure:: ../images/boot-pi-screen.png
 
    Raspberry Pi boot screen
 
@@ -190,7 +190,7 @@ Execute the following tests in order:
 #. Test 5
 #. Test 6
 
-.. figure:: images/adrv9009-seq-pll.png
+.. figure:: ../images/adrv9009-seq-pll.png
 
    Test sequence execution
 
@@ -204,7 +204,7 @@ Execute the following tests in order:
    * SD card is inserted correctly
    * Boot mode switches (S13-S16) are configured for SD boot
 
-.. figure:: images/boot-pi-eth-conn.png
+.. figure:: ../images/boot-pi-eth-conn.png
 
    Ethernet connection error message
 
@@ -213,7 +213,7 @@ Test 1
 
 Wait 30 seconds after PS_DONE LED illuminates before proceeding.
 
-.. figure:: images/talise_t1_led_on.jpg
+.. figure:: ../images/talise_t1_led_on.jpg
 
    PS_DONE LED illuminated
 
@@ -222,7 +222,7 @@ Test 2
 
 Power cycle is required after PS_DONE LED turns off.
 
-.. figure:: images/talise_t1_led_off.jpg
+.. figure:: ../images/talise_t1_led_off.jpg
 
    PS_DONE LED off
 
@@ -247,7 +247,7 @@ Pass Criteria
 A green "PASSED" message displayed indicates that the DUT passed all assigned
 tests.
 
-.. figure:: images/test_passed_screen.jpg
+.. figure:: ../images/test_passed_screen.jpg
 
    Test passed screen
 
@@ -263,7 +263,7 @@ whether to repeat the test immediately.
    * You can bypass a failed test (not recommended) by responding "NO" to
      "Do you want to close the test?" question
 
-.. figure:: images/test_failed_screen.jpg
+.. figure:: ../images/test_failed_screen.jpg
 
    Test failed screen
 

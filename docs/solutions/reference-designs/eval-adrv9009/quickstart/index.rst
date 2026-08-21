@@ -13,6 +13,11 @@ boot a Linux distribution.
 .. toctree::
 
    ZCU102 <zynqmp>
+   ZC706 <zc706>
+   KCU105 <kcu105>
+   Arria 10 GX <a10gx>
+   Arria 10 SoC <a10soc>
+   Stratix 10 SoC <s10soc>
 
 .. _adrv9009 carriers:
 
@@ -45,7 +50,7 @@ The carriers we support are:
      -
      -
    - - :xilinx:`KCU105`
-     -
+     - Yes
      -
      -
    - - :xilinx:`ZC706`
@@ -56,6 +61,10 @@ The carriers we support are:
      - Yes
      - WIP
      - WIP
+   - - :intel:`Stratix 10 SoC <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
+     - Yes
+     -
+     -
 
 Supported Environments
 ----------------------
@@ -72,7 +81,7 @@ The supported OS are:
    - - :xilinx:`ZCU102`
      - Yes
      - Yes
-     - WIP
+     - Yes
    - - :xilinx:`KC705`
      -
      -
@@ -82,14 +91,18 @@ The supported OS are:
      -
      -
    - - :xilinx:`KCU105`
-     -
-     -
+     - Yes
+     - Yes
      -
    - - :xilinx:`ZC706`
      - Yes
      - Yes
-     -
+     - Yes
    - - :intel:`Arria 10 SoC <content/www/us/en/products/details/fpga/arria/10.html>`
+     - Yes
+     - Yes
+     -
+   - - :intel:`Stratix 10 SoC <content/www/us/en/products/details/fpga/development-kits/stratix/10-sx.html>`
      - Yes
      - Yes
      -
@@ -107,7 +120,7 @@ A few typical setups are shown below.
 ZCU102 + ADRV9009/PCBZ
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: adrv9009_zcu102_quickstart.png
+.. image:: ../images/adrv9009_zcu102_quickstart.png
 
 Unboxing guide
 ~~~~~~~~~~~~~~

@@ -3,7 +3,7 @@
 ZCU102 Quickstart
 =================
 
-.. image:: adrv9009_zcu102_quickstart.png
+.. image:: ../images/adrv9009_zcu102_quickstart.png
    :width: 600px
 
 This guide provides some quick instructions on how to setup the ADRV9009-W/PCBZ
@@ -38,7 +38,7 @@ Required Hardware
 Testing
 -------
 
-.. image:: zcu102.jpg
+.. image:: ../images/zcu102.jpg
    :width: 900px
 
 -  Connect the ADRV9009-W/PCBZ FMC board to the FPGA carrier **HPC1** FMC1
@@ -56,7 +56,7 @@ Testing
 -  Observe kernel and serial console messages on your terminal. (use the first
    ttyUSB or COM port registered)
 
-.. image:: zcu102_1p0_bootmode.jpg
+.. image:: ../images/zcu102_1p0_bootmode.jpg
    :width: 400px
 
 .. esd-warning::

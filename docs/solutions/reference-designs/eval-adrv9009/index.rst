@@ -7,7 +7,7 @@ ADRV9009 & ADRV9008
 
 Integrated Dual RF Tx, Rx, and Observation Rx.
 
-.. image:: adrv9009-bc.jpg
+.. image:: images/adrv9009-bc.jpg
    :align: left
    :width: 150
 
@@ -19,15 +19,20 @@ While the complete chip level design package can be found on
 information on the card and how to use it, the design package that surrounds it,
 and the software which can make it work can be found here.
 
-.. image:: adrv9009-PCB.jpg
+.. image:: images/adrv9009-PCB.jpg
    :align: center
 
 .. toctree::
    :hidden:
 
+   adrv9009
+   adrv9009-customization
+   adrv9009_advanced_plugin
+   adrv9009_osc_main
+   adrv9009_plugin
+   basic-iq-datafiles
    prerequisites
    quickstart/index
-   basic-iq-datafiles
    production-testing/production-testing
 
 Table of Contents
@@ -116,7 +121,7 @@ If you have any questions, feel free to :ref:`ask <help-and-support>`.
 Block diagram
 -------------
 
-.. image:: blockdiagram.png
+.. image:: images/blockdiagram.png
 
 Videos
 -------------------------------------------------------------------------------

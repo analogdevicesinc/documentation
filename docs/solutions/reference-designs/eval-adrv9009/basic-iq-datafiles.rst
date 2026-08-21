@@ -6,7 +6,7 @@ Basic IQ Datafiles
 DDS Mode - DAC Buffer Output allows loading of Matlab MAT, Binary and ASCII TEXT
 sample files.
 
-.. image:: adrv9009_dac_data.png
+.. image:: images/adrv9009_dac_data.png
    :width: 600px
 
 Example files
@@ -105,7 +105,7 @@ MATLAB format
 -------------
 
 The ``./osc`` application uses the
-`MAT File I/O Library <http://sourceforge.net/projects/matio/>`__
+`MAT File I/O Library <http://sourceforge.net/projects/matio/>`_
 to be able to read
 :mw:`MATLAB <products/matlab>` files into the system.
 
