@@ -65,6 +65,7 @@ Applications:
    prerequisites
    quickstart/index
    user-guide
+   dpd/index
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -102,6 +103,8 @@ Table of contents
      - :adi:`ADRV9026 product page <ADRV9026>`
      - :adi:`ADRV9029 product page <ADRV9029>`
      - :adi:`Full data sheet and chip design package <en/design-center/landing-pages/001/integrated-rf-agile-transceiver-design-resources.html>`
+
+   - :ref:`Digital Pre-Distortion (DPD) user guide <adrv902x dpd>`
 
    - Hardware in the Loop / How to design your own custom BaseBand
 
@@ -184,23 +187,23 @@ MathWorks webinars
 Additional information
 -------------------------------------------------------------------------------
 
-:dokuwiki:`Digital Pre-Distortion (DPD) User Guide <resources/eval/user-guides/adrv9029>`
+:ref:`Digital Pre-Distortion (DPD) user guide <adrv902x dpd>`
 with the :adi:`ADRV9029`:
 
-- :dokuwiki:`ADRV9029 DPD Introduction <resources/eval/user-guides/adrv9029/dpd_principle_of_operation>`
+- :ref:`ADRV9029 DPD introduction <adrv902x dpd introduction>`
 
-  - :dokuwiki:`ADRV9029 Digital Front End System Overview <resources/eval/user-guides/adrv9029/dpd_system_overview>`
-  - :dokuwiki:`ADRV9029 DPD System Overview <resources/eval/user-guides/adrv9029/dpd_system_overview2>`
-  - :dokuwiki:`ADRV9029 DPD Specifications <resources/eval/user-guides/adrv9029/adrv9029_dpd_capabilities>`
-  - :dokuwiki:`Typical High Level DPD development flow with the ADRV9029 transceiver <resources/eval/user-guides/adrv9029/dpd_development_flow>`
+  - :ref:`ADRV9029 Digital Front End system overview <adrv902x dpd dfe-overview>`
+  - :ref:`ADRV9029 DPD system overview <adrv902x dpd system-overview>`
+  - :ref:`ADRV9029 DPD specifications <adrv902x dpd capabilities>`
+  - :ref:`Typical high level DPD development flow with the ADRV9029 transceiver <adrv902x dpd development-flow>`
 
-- :dokuwiki:`ADRV9029 DPD Prerequisites <resources/eval/user-guides/adrv9029/prerequisites>`
+- :ref:`ADRV9029 DPD prerequisites <adrv902x dpd prerequisites>`
 - `Unboxing ADRV902x Transceiver Eval Platform - Video <https://www.youtube.com/watch?v=Oq_9bl5f8fM>`_
-- :dokuwiki:`Evaluating ADRV9029 through TES GUI <resources/eval/user-guides/adrv9029/evaluation_through_tes_gui>`
-- :dokuwiki:`Evaluating ADRV9029 DPD through TES GUI <resources/eval/user-guides/adrv9029/evaluating_dpd_through_tes_gui>`
-- :dokuwiki:`ADRV9029 DPD Error Troubleshooting <resources/eval/user-guides/adrv9029/dpd_error_troubleshooting>`
-- :dokuwiki:`ADRV9029 Based DPD Development Flow <resources/eval/user-guides/adrv9029/dpd_development_flow_low_level>`
-- :dokuwiki:`ADRV9029 DPD Model Generation <resources/eval/user-guides/adrv9029/dpd_model_optimization>`
+- :ref:`Evaluating ADRV9029 through TES GUI <adrv902x dpd evaluation-tes>`
+- :ref:`Evaluating ADRV9029 DPD through TES GUI <adrv902x dpd evaluating-dpd-tes>`
+- :ref:`ADRV9029 DPD error troubleshooting <adrv902x dpd error-troubleshooting>`
+- :ref:`ADRV9029 based DPD development flow <adrv902x dpd development-flow-low-level>`
+- :ref:`ADRV9029 DPD model generation <adrv902x dpd model-optimization>`
 
 Warning
 -------------------------------------------------------------------------------
