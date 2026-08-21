@@ -19,9 +19,9 @@ DPD model generation
 ADI provides a library of 140 pre-defined DPD models that are optimized for
 good performance on the ADRV9029 with various types of power amplifiers that
 can be downloaded at this
-`link <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`_.
+:dokuwiki:`link <_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`.
 For 190 coefficient model files,
-`download from here <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodels_190coeffs.zip>`_.
+:dokuwiki:`download from here <_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodels_190coeffs.zip>`.
 
 In order to identify a DPD model that is optimum for a power amplifier, the
 following procedure is recommended:
@@ -38,13 +38,13 @@ following procedure is recommended:
    on your PC and ensure that the DPD model library is available. In case the
    DPD model library is not installed in the above mentioned location, the user
    can download the DPD model library at this
-   `link <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`_
+   :dokuwiki:`link <_media/resources/eval/user-guides/adrv9029/dpdmodels.zip>`
    and manually install the DPD library at the location
    ``C:\Program Files\Analog Devices\ADRV902x Transceiver Evaluation Software_x64_FULL\Resources\DpdModels``
    on your PC.
 #. At this stage the user can download the DPD model sweep script provided by
    ADI at
-   `this link <https://wiki.analog.com/_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip>`_.
+   :dokuwiki:`this link <_media/resources/eval/user-guides/adrv9029/adrv9029_dpdmodelsweep_sw6p0.zip>`.
    The model sweep script automates the process of picking the most suitable
    model for the PA by iterating through the DPD model library and picking the
    DPD model that produces the least amount of error between pre-DPD actuator
