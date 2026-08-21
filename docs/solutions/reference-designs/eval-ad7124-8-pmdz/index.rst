@@ -228,3 +228,12 @@ Reference Demos & Software
    :glob:
 
    */index
+
+
+.. toctree::
+   :hidden:
+
+   ad7124
+   ad7124-stm32
+   ad7124_mbed_support
+   ad7124_temperature_measurement_demo
