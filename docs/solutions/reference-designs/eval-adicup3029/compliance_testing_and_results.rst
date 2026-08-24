@@ -15,7 +15,7 @@ Reports
 
 The ADICUP3029 passes all requirements of the `CE <https://en.wikipedia.org/wiki/CE_marking>`_ tests.
 
--  `EVAL-ADICUP3029 Emissions and Immunity Results <resources/analog_devices_eval-adicup3029_-_emc_emissions_and_immunity_-_ce_mark_test_report_rev_1.pdf>`_
+-  :download:`EVAL-ADICUP3029 Emissions and Immunity Results <resources/analog_devices_eval-adicup3029_-_emc_emissions_and_immunity_-_ce_mark_test_report_rev_1.pdf>`
 
 What are all these logos?
 -------------------------
