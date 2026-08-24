@@ -81,6 +81,7 @@ for the the Commits link with the newest version and at least one Release.
       :git-buildroot:`Release 1 <releases/tag/2026.02-1+>`
       :git-buildroot:`Release 2 <releases/tag/2026.02-2+>`
       :git-buildroot:`Release 3 <releases/tag/2026.02-3+>`
+      :git-buildroot:`Release 4 <releases/tag/2026.02-4+>`
     - v2027.02 (LTS):
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
@@ -120,6 +121,7 @@ For Yocto support see ``lxndsp-adi-meta`` below.
     - v2026.02:
       :git-br2-external:`Release 0.1.0 <releases/tag/2026.02-0.1.0+>`
       :git-br2-external:`Release 0.2.0 <releases/tag/2026.02-0.2.0+>`
+      :git-br2-external:`Release 0.2.0 <releases/tag/2026.02-1.0.0+>`
 - :git-rpmsg-examples:`+`
     - :git-rpmsg-examples:`v1.0.0 <releases/tag/v1.0.0+>`
 - :git-rpmsg-utils:`+`
