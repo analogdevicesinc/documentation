@@ -22,6 +22,7 @@ Cortex-A5 and Cortex-A55 can also run 32-bit or 64-bit Linux respectively.
    * - :adi:`ADSP-SC835 <en/products/ADSP-SC835.html>`
      - :adi:`ADSP-SC571 <en/products/ADSP-SC571.html>`
      - :adi:`ADSP-SC598 <en/products/ADSP-SC598.html>`
+     - :adi:`ADSP-SC846 <en/products/ADSP-SC846.html>`
    * -
      - :adi:`ADSP-SC572 <en/products/ADSP-SC572.html>`
      -
