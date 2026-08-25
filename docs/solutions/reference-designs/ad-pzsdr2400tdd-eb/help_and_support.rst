@@ -1,7 +1,7 @@
-Help and Support for the AD-PZSDR2400TDD-EB
-===========================================
+.. _help-and-support:
 
-.. note::
+Help and Support
+================
 
-   For questions and support, visit the `EngineerZone Support Community
-   <https://ez.analog.com/>`_.
+For questions and support, please visit the :ez:`fpga` community on
+EngineerZone.

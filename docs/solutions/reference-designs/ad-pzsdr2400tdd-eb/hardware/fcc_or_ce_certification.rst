@@ -1,12 +1,14 @@
-AD-PZSDR2400TDD-EB Certification
-================================
+FCC or CE Certification
+=======================
 
-Both `CE <https://en.wikipedia.org/wiki/CE_marking>`_ and `FCC <https://en.wikipedia.org/wiki/FCC_Declaration_of_Conformity>`_ are necessary for system level products.
+Both `CE <https://en.wikipedia.org/wiki/CE_marking>`_ and
+`FCC <https://en.wikipedia.org/wiki/FCC_Declaration_of_Conformity>`_ are
+necessary for system level products.
 
 Because ADI boards are custom built evaluation kits destined for professionals
-(you) to be used solely at research and development facilities for such
-purposes, they are considered exempt from the EU product directives and normally
-are not tested for CE or FCC compliance.
+to be used solely at research and development facilities for such purposes,
+they are considered exempt from the EU product directives and normally are not
+tested for CE or FCC compliance.
 
 If you choose to use your board to transmit using an antenna, it is your
 responsibility to make sure that you are in compliance with all laws for the
