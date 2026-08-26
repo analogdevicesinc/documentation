@@ -1,104 +1,111 @@
+.. _pzsdr-packrf-testing:
+
 ADRV-PACKRF Production Testing
-==============================
+===============================================================================
 
 Overview
---------
+-------------------------------------------------------------------------------
 
-Production tests for ADRV-PACKRF BOX are composed of a series of Bash scripts
-that run both on Raspberry Pi and DUT (Device under test). The tester only
-interacts with the Raspberry Pi through a keyboard and monitor. Connected to the
-Raspberry PI should be an HDMI display where information about tests, required
-tester actions and results are displayed.
+Production tests for the ADRV-PACKRF BOX are composed of a series of Bash
+scripts that run on both the Raspberry Pi and the Device Under Test (DUT). The
+tester interacts only with the Raspberry Pi through a keyboard and monitor. An
+HDMI display connected to the Raspberry Pi shows information about tests,
+required tester actions, and results.
 
-Assembling of the box is split in two phases (Partial Assembly and Full
-Assembly). After each assembly phase the corresponding testing batch must be
-run.
+Assembly is split into two phases (Partial Assembly and Full Assembly). After
+each assembly phase, the corresponding testing batch must be run.
 
-If one of the test fails the testing sequence will stop and "FAILED" message
-will be printed. Tester can get information related to what component failed.
-After that he can either try to test again or mark the tested device as
-defective.
+If a test fails, the testing sequence stops and a **FAILED** message is
+printed. The tester can identify which component failed and then either repeat
+the test or mark the device as defective.
 
-A set of log files is created and stored on Raspberry PI SD card. These logs can
-be used to supervise the testing process.
+A set of log files is created and stored on the Raspberry Pi SD card for
+supervising the testing process.
 
-The complete test jig should look like:
+.. figure:: ../../images/packrf_test_jig.jpg
+   :width: 600
 
-|image1|
+   Complete test jig
 
-Required Hardware
------------------
+Required hardware
+-------------------------------------------------------------------------------
 
--  1 PACKRF box
-
-   -  1 MicroSD card prepared for PACKRF
-
--  1 Raspberry PI
-
-   -  1 MicroSD card prepared for Raspberry PI
-
--  1 5V-Micro USB power supply for Raspberry PI
--  1 DC Wallwart (12V, 3A)
+-  1 PACKRF box with microSD card prepared for PACKRF
+-  1 Raspberry Pi with microSD card prepared for Raspberry Pi
+-  1 5V micro USB power supply for Raspberry Pi
+-  1 DC wall wart (12V, 3A)
 -  1 POE Injector BOX
--  2 Ethernet cables
-
-   -  One connected Raspberry PI <-> POE Injector Data IN
-   -  One connected POE Injector Data OUT <-> PACKRF
-
+-  2 Ethernet cables (one Raspberry Pi ↔ POE Injector Data IN, one POE
+   Injector Data OUT ↔ PACKRF)
 -  1 USB media drive with type A to micro OTG adapter
--  1 SMA <-> SMA loopback cable
--  1 pair of headphones CTIA standard with media buttons
+-  1 SMA ↔ SMA loopback cable
+-  1 pair of CTIA standard headphones with media buttons
 -  1 loopback TRRS jack
--  1 ADALM PLUTO used for GPS spoofing
+-  1 ADALM PLUTO (for GPS spoofing)
 -  1 SMA DC blocker
 
-Test Setup
-----------
+Test setup
+-------------------------------------------------------------------------------
 
--  Complete :doc:`Partial Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>` of the radio.
--  Connect an HDMI monitor to the Raspberry Pi.
--  Connect a USB keyboard to the Raspberry PI.
--  Connect an Ethernet cable to the Raspberry Pi and Radio.
+#. Complete the
+   :doc:`Partial Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`
+   of the radio.
+#. Connect an HDMI monitor to the Raspberry Pi.
+#. Connect a USB keyboard to the Raspberry Pi.
+#. Connect an Ethernet cable between the Raspberry Pi and the radio.
 
-   -  The Ethernet port of the Raspberry PI is configured with static IP and a
-      DHCP server is running on it. So is not recommended to connect anything
-      other than the POE-Injector or the RFSOM-BOX.
+   .. note::
 
--  Connect a 5V Power Supply to the "PWR IN" port of the Raspberry PI.
--  Turn on the Raspberry Pi. After it powers on it should boot up Linux and the testing screen should be visible on the monitor.
--  Connect DC Wall wart adapter and POE Injector to SOM-BOX PCB.
+      The Ethernet port of the Raspberry Pi is configured with a static IP and
+      a DHCP server is running on it. Do not connect anything other than the
+      POE Injector or the RFSOM-BOX.
+
+#. Connect a 5V power supply to the "PWR IN" port of the Raspberry Pi.
+#. Power on the Raspberry Pi. Once booted, the testing screen should be
+   visible on the monitor.
+#. Connect the DC wall wart adapter and POE Injector to the SOM-BOX PCB.
 
 PACKRF SD card
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SD card image used for production testing has no differences compared to the one prepared for shipping of the PackRF. To create it please follow the instructions presented here: `Zynq & Altera SoC Quick Start Guide <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_ and here: `SD card update <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_ sub-section "User Space Tools"
+The SD card image used for production testing is the same as the one prepared
+for shipping. To create it, follow the
+`Zynq & Altera SoC Quick Start Guide <https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux>`_
+and the "User Space Tools" sub-section on the same page.
 
-Raspberry PI SD card
-~~~~~~~~~~~~~~~~~~~~
+Raspberry Pi SD card
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The SD image used is based on Raspbian Stretch with desktop. On top of that the
-"setup_env.sh" script should be run to prepare the testing framework.
+The SD image is based on Raspbian Stretch with desktop. The ``setup_env.sh``
+script must be run to prepare the testing framework.
 
-To set the PI SD card please follow the steps:
+#. Write a clean Raspbian Stretch with desktop image to a minimum 8GB SD card:
 
--  Write a clean Raspbian Stretch with desktop image to a minimum 8GB SD card.
+   -  Download: `Raspbian latest <https://downloads.raspberrypi.org/raspbian_latest>`_
+   -  Write it following: `Installing Pi images <https://www.raspberrypi.org/documentation/installation/installing-images/>`_
 
-   -  Download the following zip file: `Raspbian latest <https://downloads.raspberrypi.org/raspbian_latest>`_.
-   -  Write it to the SD card following the instructions presented here: `Installing PI images <https://www.raspberrypi.org/documentation/installation/installing-images/>`_.
+#. Boot the Raspberry Pi with the newly created card and establish an internet
+   connection via Ethernet or WiFi.
+#. Download the test framework repository from git and save the folder in
+   ``/home/pi/``.
+#. Open a terminal, change directory to ``/home/pi/rfsom-box-production-test``,
+   and run:
 
--  Boot Raspberry PI with newly created card and establish internet connection on PI through Ethernet or WiFi
--  Download the test frame repository from git: "placeholder_path" and save the whole folder in /home/pi/
--  open a terminal on Raspberry, change directory to /home/pi/rfsom-box-production-test
--  run the setup_env.sh script "./setup_env.sh rfsom-box jig"
--  after script execution ended, disconnect Ethernet cable from PI and reboot it
--  The PI should display after boot the test screen
+   .. code-block:: bash
 
-Step 1 - Partial Assembly Test
-==============================
+      ./setup_env.sh rfsom-box jig
 
-This test sequence can only be started once :doc:`Partial Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>` is complete.
+#. After the script finishes, disconnect the Ethernet cable from the Pi and
+   reboot. The Pi should display the test screen on boot.
 
-The following items will be tested:
+Step 1 — Partial Assembly Test
+===============================================================================
+
+This test sequence can only be started once
+:doc:`Partial Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`
+is complete.
+
+The following items are tested:
 
 -  Power supply voltage output
 -  Charging, Battery
@@ -108,88 +115,84 @@ The following items will be tested:
 -  UART communication with GPS module
 -  Audio CODEC and Audio Connector
 
-Test Procedure
---------------
+Test procedure
+-------------------------------------------------------------------------------
 
--  Insert the PACK-RF SD card in the carrier card slot
--  Connect the DC adapter barrel power connector
--  Connect the Ethernet cable that exit POE injector
--  Press and release the power button.
--  Wait for the system to boot up.
--  On test station display the following image should be visible:
--
+#. Insert the PACK-RF SD card in the carrier card slot.
+#. Connect the DC adapter barrel power connector.
+#. Connect the Ethernet cable from the POE injector.
+#. Press and release the power button.
+#. Wait for the system to boot up. The following screen should be visible on
+   the test station display.
 
-|guides-pzsdr-carriers-packrf-start_screen.jpg|
+   .. image:: ../../images/start_screen.png
+      :width: 600
 
--  Select option 1 to begin "Pre Assembly Test"
--  Communication with device under test is established and test should start.
--  If connection can't be established "Check Ethernet connection to DUT" warning will be displayed
--  While test is running a log is printed on display.
--  In picture bellow is presented a case where POE supply testing failed.
--
+#. Select option **1** to begin "Pre Assembly Test".
+#. Communication with the DUT is established and the test starts. If
+   connection cannot be established, a "Check Ethernet connection to DUT"
+   warning is displayed.
+#. A log is printed on the display while the test runs. The image below shows
+   a case where POE supply testing failed.
 
-|image2|
+   .. image:: ../../images/pre_assemb_fail.jpg
+      :width: 600
 
--  If all required tests are passed the following message should be visible:
--
+#. If all required tests pass, the following message is displayed.
 
-|image3|
+   .. image:: ../../images/partial_assemb_pass.jpg
+      :width: 600
 
--  Either previous test set passed or failed the selection menu will be printed on screen
--  Now RFSOM-BOX should be powered off by entering "4" in the selection menu
--  Continue with :doc:`Full Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`
+#. Whether the test passed or failed, the selection menu is displayed. Power
+   off the RFSOM-BOX by entering **4** in the selection menu.
+#. Continue with
+   :doc:`Full Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`.
 
-Step 2 - Full Assembly Test
-===========================
+Step 2 — Full Assembly Test
+===============================================================================
 
-This test sequence can only be started once :doc:`Full Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>` is complete.
+This test sequence can only be started once
+:doc:`Full Assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`
+is complete.
 
-The following items will be tested:
+The following items are tested:
 
 -  RF front-end (Transmit and Receive with SMA connectors)
 -  Inertial Measurement Unit
--  GPS Satelite Locking (PLUTO GPS spoofer required)
+-  GPS Satellite Locking (PLUTO GPS spoofer required)
 -  Display
 -  Navigation Switch / Rotary Encoder
 
-Test Procedure
---------------
+Test procedure
+-------------------------------------------------------------------------------
 
--  Press and release the BOX power button.
--  Wait for the system to boot up. "Analog Devices" screen should be visible on box screen.
--  From the test selection screen now select option “2”
--  Full assembly testing should start
--  RF testing requires making connections between different SMA connectors using SMA <-> SMA loop-back cable
--
+#. Press and release the BOX power button.
+#. Wait for the system to boot up. The "Analog Devices" screen should be
+   visible on the box screen.
+#. From the test selection screen select option **2**. Full assembly testing
+   starts.
+#. RF testing requires making connections between different SMA connectors
+   using the SMA ↔ SMA loopback cable.
 
-|image4|
+   .. image:: ../../images/sma_loopback.jpg
+      :width: 400
 
--  Image below shows how the result of RF testing should look after all nine connections were tested
--
+#. After all nine connections have been tested, the RF test result should look
+   as shown below.
 
-|image5|
+   .. image:: ../../images/rf_test.png
+      :width: 600
 
--  If one of the pairs failed it can be because cables are bad, connections are bad or cables are swapped between them
--  IMU testing requires physical movement of the RFSOM-BOX
--  GPS module testing requires an ADALM PLUTO connected through a DC BLOCK and SMA <-> SMA cable to the GPS port of DUT. The PLUTO board will generate GPS signals and DUT should acquire location, speed and time. Locking has a timeout of 120 seconds. If no locking is acquired in this time interval the test is failed.
--  After testing is finished and PASSED/FAIL state displayed the RFSOM-BOX should be turned off selecting option "4"
--  :doc:`PackRF assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>` and testing is complete.
+   If any pair failed, check whether cables are bad, connections are bad, or
+   cables are swapped.
 
-.. |image1| image:: ../../images/packrf_test_jig.jpg
-   :width: 600
+#. IMU testing requires physically moving the RFSOM-BOX.
+#. GPS module testing requires an ADALM PLUTO connected through a DC block and
+   SMA ↔ SMA cable to the GPS port of the DUT. The PLUTO generates GPS signals
+   and the DUT must acquire location, speed, and time. Locking has a 120 second
+   timeout — if no lock is acquired, the test fails.
+#. After testing finishes and the PASSED/FAILED state is displayed, power off
+   the RFSOM-BOX by selecting option **4**.
 
-.. |guides-pzsdr-carriers-packrf-start_screen.jpg| image:: ../../images/start_screen.png
-   :width: 600
-
-.. |image2| image:: ../../images/pre_assemb_fail.jpg
-   :width: 600
-
-.. |image3| image:: ../../images/partial_assemb_pass.jpg
-   :width: 600
-
-.. |image4| image:: ../../images/sma_loopback.jpg
-   :width: 400
-
-.. |image5| image:: ../../images/rf_test.png
-   :width: 600
-
+:doc:`PackRF assembly </solutions/reference-designs/pzsdr/carriers/portable-radio-reference-design/assembly-instructions>`
+and testing is now complete.
