@@ -14,9 +14,9 @@ Radios: pictures of the copper, board dimensions, PCB stackup, and 3D models.
 
    .. -  `Carrier Card Schematic PDF <../../resources/02_042967e_top.pdf>`_
    .. -  `Portable Radio Carrier Card Board File <../../resources/08_042967e.zip>`_
+   .. -  `Portable Radio Bill of Materials <../../images/pack_rf_bill_of_materials.xlsx>`_
 
    -  `PackRF Carrier Card Bill of Materials <https://wiki.analog.com/_media/resources/eval/user-guides/pzsdr/carriers/packrf/BOM_PackRF_carrier_board.xlsx>`_
-   .. -  `Portable Radio Bill of Materials <../../images/pack_rf_bill_of_materials.xlsx>`_
 
 Kit Contents
 -------------------------------------------------------------------------------
