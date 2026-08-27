@@ -1,4 +1,4 @@
-.. _pzsdr-carrier-brk:
+.. _pzsdr carriers brk:
 
 ADRV1CRR-BOB Breakout Carrier
 ===============================================================================

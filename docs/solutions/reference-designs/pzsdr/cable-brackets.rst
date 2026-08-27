@@ -1,4 +1,4 @@
-.. _pzsdr-cable-brackets:
+.. _pzsdr cable-brackets:
 
 ADRV936x Cable Brackets
 ===============================================================================

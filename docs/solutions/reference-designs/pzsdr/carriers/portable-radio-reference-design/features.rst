@@ -1,3 +1,5 @@
+.. _pzsdr carriers portable-radio-reference-design features:
+
 Portable Radio Reference Design - Features
 ==========================================
 

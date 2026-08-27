@@ -1,4 +1,4 @@
-.. _pzsdr-packrf-hardware:
+.. _pzsdr carriers packrf hardware:
 
 ADRV-PackRF Hardware
 ===============================================================================

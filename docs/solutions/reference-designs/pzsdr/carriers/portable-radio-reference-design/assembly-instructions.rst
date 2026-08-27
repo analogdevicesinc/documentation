@@ -1,4 +1,4 @@
-.. _pzsdr-packrf-assembly:
+.. _pzsdr carriers portable-radio-reference-design assembly-instructions:
 
 Portable Radio Reference Design — Assembly Instructions
 ===============================================================================

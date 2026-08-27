@@ -1,3 +1,5 @@
+.. _pzsdr carriers packrf example-use-case:
+
 ADRV-PackRF Example Use Case
 ============================
 

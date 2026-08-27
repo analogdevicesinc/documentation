@@ -1,3 +1,5 @@
+.. _pzsdr carriers packrf:
+
 ADRV-PackRF
 ===========
 

@@ -1,4 +1,4 @@
-.. _pzsdr-power-and-sequencing:
+.. _pzsdr power-and-sequencing:
 
 PicoZed Power and Sequencing
 ===============================================================================

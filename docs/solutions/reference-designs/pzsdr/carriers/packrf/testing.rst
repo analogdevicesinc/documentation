@@ -1,4 +1,4 @@
-.. _pzsdr-packrf-testing:
+.. _pzsdr carriers packrf testing:
 
 ADRV-PACKRF Production Testing
 ===============================================================================

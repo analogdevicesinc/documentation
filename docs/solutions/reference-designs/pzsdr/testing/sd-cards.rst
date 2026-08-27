@@ -1,4 +1,4 @@
-.. _pzsdr-testing-sd-cards:
+.. _pzsdr testing sd-cards:
 
 Creating ADRV9361 RF SOM production testing SD cards
 ===============================================================================

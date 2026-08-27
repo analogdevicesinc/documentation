@@ -1,3 +1,5 @@
+.. _pzsdr carriers portable-radio-reference-design:
+
 Portable Radio Reference Design
 ===============================
 
