@@ -42,7 +42,9 @@ on:
         required: false
         type: string
         description: "Model size"
-
+    secrets:
+      PORTKEY_API_KEY:
+        required: true
 
 jobs:
   pr-check-pending:
