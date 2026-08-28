@@ -25,6 +25,23 @@ on:
         - small
         - medium
         - large
+  workflow_call:
+    inputs:
+      ref:
+        required: false
+        type: string
+      prompt:
+        required: false
+        type: string
+        default: ""
+      prompt-extra:
+        required: false
+        type: string
+        default: ""
+      model:
+        required: false
+        type: string
+        description: "Model size"
 
 
 jobs:
