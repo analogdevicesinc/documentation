@@ -130,9 +130,13 @@ fail with:
 To allow these deployments, open your fork's
 ``https://github.com/<USER>/documentation/settings/environments`` page and
 select the ``github-pages`` environment. Under **Deployment branches and
-tags**, keep the existing ``main`` rule, click ``Add deployment branch or tag
-rule``, and add ``refs/pull/*/merge``, allowing GitHub Pages deployments from
-pull request runs in your fork.
+tags**, ensure the list includes:
+
+* ``main``
+* ``refs/pull/*/merge``
+
+By clicking ``Add deployment branch or tag rule`` and adding each,
+allowing GitHub Pages deployments from pull request runs in your fork.
 
 .. _forking-publishing copy:
 
