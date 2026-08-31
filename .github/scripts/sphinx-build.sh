@@ -49,8 +49,8 @@ sphinx_build() {
 	fi
 
 	pushd ./docs
-	sphinx-build -b dirhtml $j_ -w "$warnfile" . _build/dirhtml --keep-going || err=$?
-	rm -rf _build/dirhtml/_sources
+	sphinx-build -b dirhtml $j_ -w "$warnfile" . _build/html --keep-going || err=$?
+	rm -rf _build/html/_sources
 	popd
 
 	# Filter false positives due to https://github.com/sphinx-doc/sphinx/pull/14325
