@@ -3,7 +3,7 @@
    :image: images/colorimeter_photo.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:

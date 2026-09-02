@@ -3,7 +3,7 @@
    :image: ../images/ad9084.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:

@@ -3,7 +3,7 @@
    :image: images/eval_ad9434_fmc.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:

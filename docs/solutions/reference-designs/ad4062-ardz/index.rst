@@ -3,7 +3,7 @@
    :image: eval-angle.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:

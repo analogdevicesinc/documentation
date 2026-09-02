@@ -3,7 +3,7 @@
    :image: images/10_lead_pulsar_revc.jpg
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:
