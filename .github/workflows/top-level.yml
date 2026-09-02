@@ -38,7 +38,7 @@ jobs:
       with:
         new_tag: ${{ github.ref_type == 'tag' }}
         tag: ${{ github.ref_name }}
-        path: docs/_build/html
+        path: docs/_build/dirhtml
 
   check-doc:
     runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
