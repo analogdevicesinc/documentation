@@ -86,7 +86,7 @@ jobs:
         lfs_error="
         At least one file should have been an LFS pointer, but is not.
         Please ensure that binary data was committed to git lfs, a tutorial is provided at:
-        https://analogdevicesinc.github.io/documentation/contributing/creating_new_pages.html#adding-images-and-other-binary-files"
+        https://analogdevicesinc.github.io/system-level/contributing/creating_new_pages/#adding-images-and-other-binary-files"
 
         git ls-files \
           | parallel -j "$(nproc)" --halt never '

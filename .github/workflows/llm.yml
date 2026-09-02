@@ -297,9 +297,9 @@ jobs:
           However, little to no Linux page have been imported yet.
           `adoc search` will show you the external reference format for each
           search match, sometimes a page documents multiple parts like adrv9002
-          and adrv9001. Of course, if you are in the documentation repository
+          and adrv9001. Of course, if you are in the 'system-level' repository
           already, the reference is just :ref:`label` and not
-          :external+documentation:ref:`label`. In general, you can also drop
+          :external+system-level:ref:`label`. In general, you can also drop
           custom titles, like "AXI_ADRV9002 Interface Core".
 
           ## Task 4: Sanity check
@@ -324,7 +324,7 @@ jobs:
           echo "py_venv=$py_venv" >> "$GITHUB_ENV"
 
           curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -o requirements.txt \
-               https://raw.githubusercontent.com/analogdevicesinc/documentation/main/docs/requirements.txt
+               https://raw.githubusercontent.com/analogdevicesinc/system-level/main/docs/requirements.txt
 
           python3 -m venv $py_venv
           source $py_venv/bin/activate
