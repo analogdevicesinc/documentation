@@ -4,7 +4,7 @@ from os import path
 
 # -- Project information -----------------------------------------------------
 
-repository = 'documentation'
+repository = 'system-level'
 project = 'System Level Documentation'
 copyright = '2026, Analog Devices, Inc.'
 author = 'Analog Devices, Inc.'

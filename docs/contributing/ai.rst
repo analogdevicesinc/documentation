@@ -67,7 +67,7 @@ have access to it just like users have.
 
 Besides using the :external+doctools:ref:`doctools MCP <mcp>`, public
 documentation sources can be fetched directly, for example, the source for this
-page is :git+documentation:`raw+docs/contributing/ai.rst`. Each rendered page
+page is :git+system-level:`raw+docs/contributing/ai.rst`. Each rendered page
 also provides a ``Copy content`` button that copies the page as Markdown, which
 uses :git+doctools:`adi_doctools/theme/harmonic/scripts/html2md.js`; the MCP
 uses :git+doctools:`adi_doctools/cli/aux_html2md.py` to convert with Python.
@@ -165,7 +165,7 @@ The workflow is included in each repository.
 
 Go to
 ``github.com/analogdevicesinc/<repository>/actions/workflows/llm.yml``
-(for example, :git+documentation:`actions/workflows/llm.yml <actions/workflows/llm.yml+>`
+(for example, :git+system-level:`actions/workflows/llm.yml <actions/workflows/llm.yml+>`
 for this repository), click ``Run workflow``, and enter the pull request number,
 branch, or Git SHA to review.
 
@@ -175,13 +175,13 @@ branch, or Git SHA to review.
 
 Optional inputs include additional prompt instructions and model size selection.
 The default prompt is defined in ``.github/workflows/llm.yml`` of each
-repository, for example :git+documentation:`.github/workflows/llm.yml`.
+repository, for example :git+system-level:`.github/workflows/llm.yml`.
 The LLM front-end used is `pi.dev <https://pi.dev/>`__.
 
 Once finished, the GitHub Summary contains the review, and the run artifacts
 include git patches with suggested changes and a session file to continue
 locally. An example run is available
-:git+documentation:`here <actions/runs/24085972371+>`.
+:git+system-level:`here <actions/runs/24085972371+>`.
 
 You can download and apply all patches in one go with
 :git+doctools:`apply-patches.sh <ci/scripts/apply-patches.sh>`:
