@@ -6,7 +6,7 @@
 ```  
 
 ## C
-If you prefer to work with C, you can use the `libiio` library to interface with PlutoSDR. The `libiio` library provides a low-level API for controlling Pluto and accessing its data. You can install `libiio` from the Analog Devices website or using your package manager if it is available. Once you have `libiio` installed, you can use the following code to read samples from [PlutoSDR in C](https://analogdevicesinc.github.io/documentation/tools/pluto/transceiver_transferring_data.html#pluto-transceiver-transferring-data):
+If you prefer to work with C, you can use the `libiio` library to interface with PlutoSDR. The `libiio` library provides a low-level API for controlling Pluto and accessing its data. You can install `libiio` from the Analog Devices website or using your package manager if it is available. Once you have `libiio` installed, you can use the following code to read samples from {ref}`PlutoSDR in C <pluto transceiver_transferring_data>`:
 
 ```{clear-content}
 ```

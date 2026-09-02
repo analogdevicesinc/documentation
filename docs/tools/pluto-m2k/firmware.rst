@@ -193,6 +193,8 @@ Windows/OSX
    device.
 #. Now you can unplug it, and use it as normal.
 
+.. _pluto-m2k firmware linux:
+
 Linux
 ~~~~~
 
@@ -214,6 +216,8 @@ power cycle it. It's a little more tricky since ``eject`` needs the base device
     /dev/sdb1
    $sudo eject /dev/sdb
    #WAIT 4 minutes for firmware to update! Do not unplug the device.
+
+.. _pluto-m2k firmware network-update:
 
 Network Update
 --------------
