@@ -103,7 +103,7 @@ jobs:
           reST syntax in the Markdown summary and put whole code snippets in
           Markdown code blocks.
 
-          The documentation must build cleanly with `cd docs; make html`, a
+          The documentation must build cleanly with `cd docs; make dirhtml`, a
           python virtual environment is already active. You shall install pip
           packages to help you review, test and debug
           You must check the appropriate datasheets for devices and
