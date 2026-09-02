@@ -1,3 +1,5 @@
+.. _ad-swiot1l-sl software-guide:
+
 Software User Guide
 ===================
 

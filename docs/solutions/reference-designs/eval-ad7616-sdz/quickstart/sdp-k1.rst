@@ -33,8 +33,8 @@ Required software
 - AMD Xilinx Vitis or STM32CubeIDE — see the :external+no-OS:doc:`build_guide`
   for the supported toolchain
 - A UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 230400 (8N1)
-- (Optional) `IIO Oscilloscope <https://analogdevicesinc.github.io/documentation/software/iio-oscilloscope/>`__
-  to visualize the captured data over the IIO serial backend
+- (Optional) :ref:`IIO Oscilloscope <iio-oscilloscope>` to visualize the
+  captured data over the IIO serial backend
 
 Required hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

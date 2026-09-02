@@ -14,7 +14,7 @@ Within the AD9363's Rx circuitry is an LNA, followed by a quadrature down-conver
 
 The AD9363's transmit circuitry is largely the inverse of the Rx circuitry.  I and Q samples are sent from the Zynq FPGA to the AD9363's 61.44 MSPS 12 bit DACs.  These DAC outputs are then passed through programmable low pass filters and transmit VGAs.  Using the same LO synthesizer structure as the receiver, these baseband I/Q signals are then upconverted to the desired RF frequency.
 
-More information, and a complete overview of the Pluto hardware, please explore this [site](https://analogdevicesinc.github.io/documentation/tools/pluto/hacking/hardware.html#pluto-hacking-hardware).
+More information and a complete overview of the Pluto hardware are available in the {ref}`Pluto hardware documentation <pluto hacking hardware>`.
 
 
 

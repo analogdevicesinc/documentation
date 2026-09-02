@@ -88,8 +88,8 @@ Depending on your specific use case for the AD-SWIOT1L-SL platform, these guicks
 
 #. `Interact with AD-SWIOT1L-SL using Scopy
    <https://analogdevicesinc.github.io/scopy/plugins/swiot1l/index.html>`_
-#. `Program and debug AD-SWIOT1L-SL application code
-   <https://analogdevicesinc.github.io/documentation/solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html>`_
+#. :ref:`Program and debug AD-SWIOT1L-SL application code
+   <ad-swiot1l-sl software-guide>`
 
    - A step-by-step guide to properly setup and configure your AD-SWIOT1L-SL
      system

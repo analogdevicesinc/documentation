@@ -49,9 +49,8 @@ Prerequisites
 ~~~~~~~~~~~~~
 
 - Three Raspberry Pi computers with :adi:`kuiper-linux` image installed.
-  Follow the instructions in the `Kuiper 2 User Guide
-  <https://analogdevicesinc.github.io/documentation/linux/kuiper/index.html>`_
-  to prepare the Raspberry Pi.
+  Follow the instructions in the :ref:`Kuiper 2 User Guide <kuiper>` to
+  prepare the Raspberry Pi.
 
 - ADI Kuiper Linux includes Python and pyadi-iio, but the versions may lag behind
   that required for this demo. This demo was tested with Python 3.8-3.11, and the
