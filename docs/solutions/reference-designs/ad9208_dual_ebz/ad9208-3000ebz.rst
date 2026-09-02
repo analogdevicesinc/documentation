@@ -1,0 +1,711 @@
+.. imported from: https://wiki.analog.com/resources/eval/ad9208-3000ebz
+
+.. _ad9208-3000ebz:
+
+Evaluating the AD9208 / AD9689 / AD9699 Analog-to-Digital Converter
+===============================================================================
+
+Overview
+-------------------------------------------------------------------------------
+
+The evaluation board design is shared between the following device variants:
+:adi:`AD9208` / :adi:`AD9689` / :adi:`AD9699`.
+
+This user guide describes the :adi:`AD9208-3000EBZ <AD9208>`,
+:adi:`AD9689-2600EBZ <AD9689>` and :adi:`AD9689-2000EBZ <AD9689>` evaluation
+boards which provide all of the support circuitry required to operate the ADC
+in its various modes and configurations. This guide entails both the hardware
+and software setup needed to acquire data capture from the evaluation board.
+
+.. note::
+
+   For evaluating :adi:`AD9699`, use only :adi:`ADS8-V1EBZ` and
+   :adi:`AD9208-3000EBZ <AD9208>` channel A input.
+
+There are two FPGA-based data capture boards that can be used to capture data
+from the :adi:`AD9208-3000EBZ <AD9208>`, :adi:`AD9689-2600EBZ <AD9689>` and
+:adi:`AD9689-2000EBZ <AD9689>` evaluation boards. The available FPGA boards are
+:adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+and :adi:`ADS8-V1EBZ`. The selection of the FPGA board is based on the maximum
+line rate required in the evaluation. If the line rate needed in the evaluation
+is <=12.5 Gbps/lane, the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+can be used for data capture. All applications where the line rate required
+exceeds 12.5 Gbps/lane but is <=16 Gbps/lane will require the :adi:`ADS8-V1EBZ`
+as the data capture board.
+
+Documents and software tools, where available, can be found at the
+:adi:`HS-ADC Eval Board homepage <hsadcevalboard>`.
+
+For additional information or questions, post a question on
+:ez:`EngineerZone <community/data_converters>`, or send an email to
+**highspeed.converters@analog.com**.
+
+FPGA board selection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The selection table for the FPGA evaluation board is shown below. Only Full BW
+modes are shown here. However, this table provides a blueprint for FPGA board
+selection based on the end application's JESD204B line rate.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Evaluation Board Part Number
+     - Sample Rate
+     - L.M.F Configuration
+     - JESD204B Line Rate (Gbps/lane)
+     - Recommended FPGA Data Capture Board
+   * - AD9208-3000EBZ
+     - 3.0 GSPS
+     - 8.2.1
+     - 15
+     - :adi:`ADS8-V1EBZ`
+   * - AD9208-3000EBZ
+     - 3.0 GSPS
+     - 8.1.1
+     - 7.5
+     - :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>` / :adi:`ADS8-V1EBZ`
+   * - AD9689-2600EBZ
+     - 2.6 GSPS
+     - 8.2.1
+     - 13
+     - :adi:`ADS8-V1EBZ`
+   * - AD9689-2600EBZ
+     - 2.5 GSPS
+     - 8.2.1
+     - 12.5
+     - :adi:`ADS8-V1EBZ` / :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+   * - AD9689-2000EBZ
+     - 2.0 GSPS
+     - 8.2.1
+     - 10
+     - :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+
+This user guide applies to the following evaluation boards:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Evaluation Board Part Number
+     - Description
+     - Board Revision
+   * - AD9208-3000EBZ
+     - Evaluation board for AD9208-3000 / AD9699-3000
+     - 9689CE02C
+   * - AD9689-2600EBZ
+     - Evaluation board for AD9689-2600
+     - 9689CE02C
+   * - AD9689-2000EBZ
+     - Evaluation board for AD9689-2000
+     - 9689CE02C
+
+.. note::
+
+   The FPGA image in :adi:`ADS8-V1EBZ` does not support lane rates below 2 Gbps. Hence,
+   the following modes will not give a valid FFT. All modes listed below use a
+   3 GHz sample clock.
+
+   ::
+
+      LMF=411 and LMF=412 for a decimation ratio of 8
+      LMF=811 and LMF=812 for a decimation ratio of 4
+      LMF=421 and LMF=422 for a decimation ratio of 16
+      LMF=821 and LMF=822 for a decimation ratio of 8
+      LMF=442 and LMF=444 for a decimation ratio of 30
+      LMF=841 and LMF=842 for decimation ratios of 15 and 16
+
+Features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Full featured evaluation board for the :adi:`AD9208` / :adi:`AD9689` /
+  :adi:`AD9699`
+- JESD204B coded serial digital outputs with support for lane rates up to
+  16 Gbps/lane
+- Wide full power bandwidth supports IF sampling of signals up to 9 GHz
+  (-3 dB point)
+- Four integrated wide-band decimation filter and NCO blocks supporting
+  multi-band receivers
+- Fast NCO switching enabled through GPIO pins
+- Flexible SPI interface controls various product features and functions
+- Programmable fast over range detection and signal monitoring
+- On-chip temperature diode for system thermal management
+
+Helpful documents
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :adi:`AD9208 Datasheet <AD9208>`
+- :adi:`AD9689 Datasheet <AD9689>`
+- :adi:`AD9699 Datasheet <AD9699>`
+- :adi:`AN-905 Application Note <an-905>`, *VisualAnalog Converter
+  Evaluation Tool Version 1.0 User Manual*
+- :adi:`AN-835 Application Note <an-835>`, *Understanding ADC Testing
+  and Evaluation*
+
+Software needed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- :dokuwiki:`ACE <resources/tools-software/ace>` (Analysis\| Control\| Evaluation)
+
+Design and integration files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   The AD9208-3000EBZ, AD9689-2600EBZ and the AD9689-2000EBZ use the same
+   design files. The only difference is in the ADC choice.
+
+Equipment needed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- PC running Windows
+- USB 2.0 port and USB 2.0 High-speed A to B Cable
+- :adi:`AD9208-3000EBZ <AD9208>` / :adi:`AD9689-2600EBZ <AD9689>` /
+  :adi:`AD9689-2000EBZ <AD9689>` evaluation board
+- :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  or :adi:`ADS8-V1EBZ` FPGA-based data capture kit
+- 12V, 6.5A switching power supply (such as the SL POWER CENB1080A1251F01
+  supplied with :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`)
+- Low phase noise analog input source and antialiasing filter
+- Low phase noise sample clock source
+- Reference clock source
+
+Typical setup
+-------------------------------------------------------------------------------
+
+.. figure:: images/ce02b_fpga_connnections.png
+   :align: center
+   :width: 620
+
+   a. AD9208-3000EBZ / AD9689-2600EBZ / AD9689-2000EBZ (Left) and
+   ADS7-V2EBZ (Right)
+
+.. image:: images/ads8-v1ebz-ad9208_typ_setup.png
+   :align: center
+   :width: 620
+
+Figure 1b. AD9208-3000EBZ / AD9689-2600EBZ / AD9689-2000EBZ (Left) and
+ADS8-V1EBZ (Right)
+
+.. figure:: images/topofboard.png
+   :align: center
+   :width: 500
+
+   Top-side of AD9208-3000EBZ / AD9689-2600EBZ / AD9689-2000EBZ Board
+
+.. figure:: images/bottomofboard.png
+   :align: center
+   :width: 500
+
+   Bottom-side of AD9208-3000EBZ / AD9689-2600EBZ / AD9689-2000EBZ Board
+
+Getting started
+-------------------------------------------------------------------------------
+
+Connector layout
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/fpgapinlabeling.png
+   :align: center
+   :width: 300
+
+   ADS7-V2EBZ Connector Layout
+
+.. figure:: images/pinlabeling.png
+   :align: center
+   :width: 600
+
+   AD9208-3000EBZ / AD9689-2600EBZ Connector Layout
+
+.. tip::
+
+   For more information on SYSREF and Global Clock (J3, J4, J200, J202), see
+   the :adi:`JESD204B Survival Guide <media/en/technical-documentation/technical-articles/JESD204B-Survival-Guide.pdf>`.
+
+.. warning::
+
+   The AD9208-3000EBZ/AD9689-2600EBZ is electrostatic discharge (ESD)
+   sensitive. Handle the device with care, and employ conducting wrist straps
+   or antistatic bags when handling the board.
+
+Configuring the board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. figure:: images/topofboardjumpers.png
+   :align: center
+   :width: 600
+
+   Jumper connections on AD9208-3000EBZ / AD9689-2600EBZ
+
+Before using the software for testing, configure the evaluation boards as
+follows:
+
+- Before connecting the AD9208/AD9689 evaluation board to the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`,
+  jump the following pins: **P304, P305, P307, P308, P309, P311,** and **P312.**
+  Do not jump **P7** (Temperature Sensor Enable) or **P100** (Power Down /
+  Standby). Jump **P401** towards the inside of the board, to power the board
+  via FMC. See Figure 6 for all jumper connections.
+- Ensure that the data capture board is switched to "OFF" (**S1** on the
+  data capture board). Connect the evaluation board to the data capture board
+  via the FMC connector found on the underside of the board, as shown in
+  Figure 1. Connect the power supply and USB cable to the data capture board.
+- Turn on the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`.
+- The :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  should appear in the Device Manager as shown in Figure 7.
+
+.. figure:: images/0.png
+   :align: center
+   :width: 300
+
+   Device Manager showing ADS7-V2EBZ
+
+- If the Device Manager does not show the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  listed as shown in Figure 7, unplug all USB devices from the PC, uninstall and
+  re-install ACE and restart the hardware setup from step 1.
+- On the AD9208 evaluation board, provide a clean, low jitter clock source to
+  connector **J201** (preferably via a shielded RG-58 50 Ohm coaxial cable)
+  and set the amplitude to 10 dBm. This is the ADC Sample Clock. Set the
+  sample clock frequency to the rated value of 3 GHz for the AD9208 and
+  2.6 GHz for the AD9689.
+- On the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`,
+  provide a clean, low jitter clock source to connector **J3** and set the
+  amplitude to 10 dBm. This is the Reference Clock for the gigabit transceivers
+  in the FPGA. The REFCLK frequency can be calculated using the following
+  formulae:
+
+  .. math::
+
+     LaneLineRate = \frac{M \times N' \times \frac{10}{8} \times f_{out}}{L} \times DataPackingRatio \text{ bps/lane}
+
+  where:
+
+  .. math::
+
+     f_{out} = \frac{f_{ADC\_SAMPLE\_CLOCK}}{DecimationRatio}
+
+  .. math::
+
+     N' = 8 \text{ or } 16
+
+  .. math::
+
+     REFCLK = \frac{LaneLineRate}{20}
+
+  .. math::
+
+     DataPackingRatio = 1 \text{ (default) or } \frac{4}{5} \text{ (for Fsx4 mode)}
+
+  Default N' = 16; DCM = Chip Decimation Ratio (DCM = 1 for Full Bandwidth
+  Mode); M = Virtual Converters; L = Lanes.
+
+- On the AD9208/AD9689 evaluation board, connect a clean signal generator with
+  low phase noise to **J101** or **J104** via coaxial cable for channels A and
+  B respectively. It is recommended to use a narrow-band, band-pass filter
+  with 50 Ohm terminations and an appropriate center frequency.
+
+ACE setup
+-------------------------------------------------------------------------------
+
+- Download and install :dokuwiki:`ACE <resources/tools-software/ace>` if it is
+  not already installed.
+- The AD9208 / AD9689 ACE plug-in can be found under the
+  :adi:`AD9208 Evaluation Board Software Section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9208.html#eb-relatedsoftware>`,
+  :adi:`AD9689 Evaluation Board Software Section <en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-AD9689.html#eb-relatedsoftware>`
+  or through ACE's Plug-In Manager (Tools -> Manage Plug-Ins).
+
+.. tip::
+
+   Some browsers (such as Internet Explorer) may save the file as a .zip
+   file instead of an .acezip file. If this happens, simply download and
+   rename the file with an .acezip file extension.
+
+- Once the .acezip file has been downloaded from the Analog Devices website,
+  right click on it and install the plug-in, or double click to install.
+- Click Start -> All Programs -> Analog Devices -> ACE -> ACE
+- The AD9208/AD9689 plug-in should appear as in Figure 8 if installed properly.
+
+.. note::
+
+   The AD9699 evaluation board shares the same plugin with AD9208.
+
+- If the AD9208/AD9689 plug-in does not appear, or no board is detected, make
+  sure the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  is powered on and the evaluation board is properly connected. Make sure that
+  ACE has been updated to the most recent version and the necessary plug-ins
+  have been installed.
+
+.. image:: images/1.png
+   :align: center
+   :width: 200
+
+.. figure:: images/ace_ad9689-2600_start.png
+   :align: center
+   :width: 200
+
+   ACE's AD9208 / AD9689 Plug-in
+
+.. note::
+
+   Differences may occur between ACE plug-in versions, including the
+   version number seen in Figure 8 above or components in any of the other
+   images below. However, these will not affect the performance of the part
+   nor the fundamental features described in this user guide.
+
+- Click on the plug-in to open it. This will open the AD9208/AD9689 Board View.
+  Click the "**Program FPGA Image**" button to program the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  FPGA for communicating with the AD9208-3000EBZ/AD9689-2600EBZ. Once it is done
+  programming, double click on the blue AD9208 / AD9689 chip (in the middle of
+  the board) to open up the Chip View.
+
+.. warning::
+
+   Programming the FPGA will power the AD9208 evaluation board via the FMC
+   connector. Removing any of the board's power jumpers (as seen in Figure 6)
+   while the board is on or in operation may cause damage to the board, board
+   components, and/or the chip. Removing the board while it is being powered
+   via the FMC connector may also cause damage to the board.
+
+.. image:: images/a1.png
+   :align: center
+   :width: 300
+
+.. figure:: images/ace_ad9689-2600_board_view.png
+   :align: center
+   :width: 200
+
+   ACE's AD9208 / AD9689 Board View
+
+.. note::
+
+   The plugin might display some warnings/errors. These can be ignored for now.
+
+.. figure:: images/fig_10.jpg
+   :align: center
+   :width: 600
+
+   AD9208 Chip View (the AD9689 Chip view is similar)
+
+Obtaining a full bandwidth capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Under Initial Configuration, change the number of Virtual Converters to 1.
+  Click Apply to apply the chip settings. Set the reference clock to the
+  appropriate frequency as recommended by the ACE plugin.
+
+.. image:: images/fig_12.jpg
+   :align: center
+   :width: 400
+
+.. figure:: images/ace_ad9689-2600_summary.png
+   :align: center
+   :width: 400
+
+   Chip Settings, AD9208-3000 on top, AD9689-2600 on bottom
+
+.. figure:: images/figure_12.jpg
+   :align: center
+   :width: 400
+
+   Apply Settings
+
+- The chip view will update to reflect the changes made to the board. If any
+  changes are made, the chip can be read by clicking the Read All button.
+
+.. figure:: images/5.png
+   :align: center
+   :width: 100
+
+   Read All
+
+- Issue a data path reset to the AD9208 by clicking its checkbox and clicking
+  Apply Changes. The data path reset bit will automatically self clear.
+
+.. figure:: images/6.png
+   :align: center
+   :width: 250
+
+   Data path reset
+
+.. figure:: images/7.png
+   :align: center
+   :width: 100
+
+   Apply Changes
+
+- If the PLL Lock Lost indicator lights up, you can reset it by powering down
+  the JESD link using the Link Control dropdown box, and clicking Apply
+  Changes.
+
+.. figure:: images/8.png
+   :align: center
+   :width: 100
+
+   PLL Lock Lost
+
+.. figure:: images/9.png
+   :align: center
+   :width: 500
+
+   Link Power Down
+
+- Enable the link again and Apply Changes.
+
+.. figure:: images/11.png
+   :align: center
+   :width: 500
+
+   Link Enable
+
+- Click Proceed to Analysis. This is ACE's Analysis tool for data from the
+  ADC, displaying both sample plots and FFTs. Click on FFT and run one
+  capture.
+
+.. figure:: images/screen_shot_01-04-18_at_04.37_pm.png
+   :align: center
+   :width: 500
+
+   Analysis Tool
+
+.. figure:: images/screen_shot_01-04-18_at_04.36_pm.png
+   :align: center
+   :width: 200
+
+   Display FFTs
+
+.. figure:: images/14.png
+   :align: center
+   :width: 150
+
+   Run one capture
+
+.. important::
+
+   Capturing data using another program (e.g. VisualAnalog, proprietary
+   code, etc.) while using ACE concurrently may cause errors in ACE's data
+   capture. If this occurs, the best solution is to restart the evaluation
+   boards and work solely via ACE, or to setup the part in ACE then capture
+   solely in the other program.
+
+- A successful capture is shown below, with a filtered 255 MHz signal input
+  to Channel A.
+
+.. figure:: images/15.png
+   :align: center
+   :width: 500
+
+   AD9208-3000 FFT at 255 MHz Analog Input to Channel A
+
+- In order to get a capture from Channel B, use the Register Debugger within
+  ACE and write 0x01 to register 0x0564. Click the **Read All** button.
+  Repeat Step 6.
+
+.. image:: images/15p0.png
+   :align: center
+   :width: 200
+
+.. figure:: images/5.png
+   :align: center
+   :width: 100
+
+   ACE Register Debugger
+
+Obtaining a DDC capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The procedure to obtain a FFT using DDC is the same between AD9208 and AD9689.
+The steps below use the AD9208 as the example, but the same can be done to the
+AD9689 plugin with the sample rate set to 2.6 GSPS.
+
+- This section explains the steps needed to setup the AD9208-3000EBZ in a DDC
+  (Digital Down Converter) setup as shown in Figure 24.
+
+.. figure:: images/lmfs_4421_generic.png
+   :align: center
+
+   AD9208 DDC setup block diagram
+
+- Under Initial Configuration, set the Chip Operating Mode for two DDCs.
+  **For AD9699, set the DDC inputs to Channel A only.** The DDC settings will
+  become available, and automatically set up for Decimate-by-4 mode. For the
+  decimation, select "HB1_HB2_HB3 Complex" - three half-band filters, i.e.
+  Decimate-by-8. Set the number of lanes to 4, the number of converters to 4,
+  and the number of Octets per Frame to 2. Apply the settings.
+
+.. figure:: images/fig_25.jpg
+   :align: center
+   :width: 600
+
+   DDC Chip Settings
+
+- The chip view will update to reflect the changes. Click on the NCO block to
+  change the Numerically Controlled Oscillator's frequency to 1300 MHz.
+  Enable the 6 dB gain for the DDC from the dropdown menu. Click Apply
+  Changes to apply both.
+
+.. figure:: images/17.png
+   :align: center
+   :width: 200
+
+   NCO Frequency Setting
+
+.. figure:: images/18.png
+   :align: center
+   :width: 200
+
+   DDC Gain
+
+- Navigate to the second DDC (DDC1) and make the same changes.
+
+.. figure:: images/19.png
+   :align: center
+   :width: 200
+
+   DDC Selection
+
+- In Analysis, run a capture. DDC0 can be selected from Channel A and DDC1
+  can be selected from Channel B.
+
+.. figure:: images/23.png
+   :align: center
+   :width: 200
+
+   DDC Selection
+
+- A successful capture is shown below, with a filtered 1305 MHz signal input
+  to Channel A / DDC0.
+
+.. figure:: images/22.png
+   :align: center
+   :width: 600
+
+   AD9208-3000 DDC FFT at 1305 MHz Analog Input to Channel A;
+   NCO tuning frequency = 1300 MHz
+
+Setting up AD9208/AD9699 Fsx4 mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fsx4 mode on AD9208/AD9699 is only supported using :adi:`ADS8-V1EBZ`. The
+procedure below shows how to use Fsx4 mode with ADC sampling frequency of 3 GHz
+and a Reference clock of 600 MHz.
+
+- On the Chip Application Mode tab, click on the Fsx4 Operation dropdown menu
+  and select "L/M = 4/1" for AD9699, "L/M = 8/2" for AD9208.
+
+.. figure:: images/fsx4_mode.jpg
+   :align: center
+   :width: 600
+
+   AD9699 Fsx4 mode setting
+
+- Source the required REFCLK to the :adi:`ADS8-V1EBZ`.
+- Click Proceed to Analysis. This is ACE's Analysis tool for data from the
+  ADC, displaying both sample plots and FFTs. Click on FFT and run one
+  capture.
+- A successful capture is shown below, with a filtered 255 MHz signal input
+  to Channel A.
+
+.. figure:: images/15.png
+   :align: center
+   :width: 500
+
+   AD9208-3000 Fsx4 FFT at 255 MHz Analog Input to Channel A
+
+Troubleshooting
+-------------------------------------------------------------------------------
+
+Evaluation board isn't functioning properly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- It is possible that a board component has been rendered inoperable by ESD,
+  removing a jumper during powered operation, accidental shorting while
+  probing, etc. Try checking the supply domain voltages of the board while it
+  is powered. They should be as follows:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Domain
+     - Jumper
+     - Test Point
+     - Approx. Voltage
+   * - AVDD_1
+     - P307
+     - TP303
+     - 0.975 V
+   * - AVDD_2
+     - P308
+     - TP304
+     - 1.90 V
+   * - AVDD_3
+     - P309
+     - TP305
+     - 2.50 V
+   * - DRVDD_1
+     - P304
+     - TP301
+     - 0.975 V
+   * - DRVDD_2
+     - P311
+     - TP306
+     - 1.90 V
+   * - DVDD
+     - P305
+     - TP302
+     - 0.975 V
+   * - SPI_VDD
+     - P312
+     - TP307
+     - 1.90 V
+
+- If a short is detected between any of the supply domains and ground, or an
+  open is detected across fuse chip F401 (next to P401), a component may have
+  been damaged. This may have occurred from jumper or board removal while
+  being actively powered. See the Design and Integration Files section for
+  the schematic and/or bill of materials for the relevant components to test
+  and/or replace.
+
+Evaluation board is not communicating with the ADS7-V2EBZ
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Make sure that the FPGA on the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  has been programmed - a lit LED DS15 (FPGA_DONE) on the top of the
+  :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  and a powered fan are good indicators of the FPGA being programmed.
+- Check the common mode voltage on the JESD204B traces. On the evaluation board,
+  the common mode voltage should be roughly two-thirds of DRVDD_1. On the
+  :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`,
+  the common mode voltage should be around 1.2 volts.
+- Check Test Point 307 - test point for the SPI_VDD supply domain, jumper
+  P312 - and make sure it is around 1.9 volts.
+- To test SPI operation, attempt to both read and write to register 0x000A
+  using ACE's Register Debugger (see Figure 23). This register is an open
+  register available for testing memory reads and writes. If the register
+  reads back the same value written to it, SPI is operational.
+- All registers reading back as either all ones or all zeros (i.e., 0xFF or
+  0x00) may indicate no SPI communication.
+- Register 0x0000 (SPI Configuration A) reading back 0x81 in ACE may indicate no
+  SPI communication as a result of the FPGA on the :adi:`ADS7-V2EBZ <en/resources/evaluation-hardware-and-software/evaluation-boards-kits/EVAL-ADS7-V2>`
+  not being programmed.
+
+Evaluation board fails to capture data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Ensure that the board is functioning properly and that SPI communication is
+  successful - see previous troubleshooting tips.
+- Check the Clock Detect register 0x011B to see if the sample clock is being
+  detected. 0x01 indicates detection, 0x00 indicates no clock detected. Check
+  the signal generator input on connector J201. Try checking the common mode
+  voltage on the clock pins, which should be roughly two-thirds of AVDD_1.
+  Try placing a differential oscilloscope probe on the clock pins to see if
+  the clock signal is reaching the chip.
+- Check the PLL Locked indicator (see Figure 16) or register 0x056F (PLL
+  Status). If the light in the plugin chip view is green / if the register
+  reads back 0x80, the PLL is locked. If it is not locked:
+
+  - Check the clock being input to connector J201 (in this guide, 3 GHz or
+    2.6 GHz depending on the part).
+  - Check the JESD204B settings under the Initial Configuration. Reference
+    the :adi:`AD9208` / :adi:`AD9689` / :adi:`AD9699` datasheet for
+    supported lane options.
+  - Check the reference clock and make sure it matches your JESD settings.
+  - Make sure P100 (Power Down / Standby Jumper, see Figure 6) is not
+    jumped.

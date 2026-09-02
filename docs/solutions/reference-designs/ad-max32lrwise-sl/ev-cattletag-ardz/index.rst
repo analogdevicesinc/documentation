@@ -195,7 +195,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`EV-CATTLETAG-ARDZ Design Support Package Rev. C <ev-cattletag-ardz-designsupport.zip>`
+   :dokuwiki:`EV-CATTLETAG-ARDZ Design Support Package Rev. C <_media/resources/eval/user-guides/lora-reference-design/ev-cattletag-ardz-designsupport.zip>`
 
    - Schematic
    - Bill of Materials

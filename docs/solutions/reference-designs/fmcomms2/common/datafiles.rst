@@ -59,7 +59,7 @@ Model
 
    You can download the Simulink model from below:
 
-   - :download:`qpsknofilt_model.zip <../resources/qpsknofilt_model.zip>`
+   - :dokuwiki:`qpsknofilt_model.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsknofilt_model.zip>`
 
 In order to observe the transmitted spectrum, we use a "Spectrum Analyzer"
 block. Since there is no pulse shaping on the Tx path, observe how
@@ -93,7 +93,7 @@ Data
 
    You can download the generated data from below:
 
-   - :download:`qpsknofilt_data.zip <../resources/qpsknofilt_data.zip>`
+   - :dokuwiki:`qpsknofilt_data.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsknofilt_data.zip>`
 
 .. tip::
 
@@ -131,7 +131,7 @@ transmitter and receiver, we use the filter shape of 'Square root' [1]_.
 
    You can download the Simulink model from below:
 
-   - :download:`qpskwithfilt_model.zip <../resources/qpskwithfilt_model.zip>`
+   - :dokuwiki:`qpskwithfilt_model.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_model.zip>`
 
    The data rate is defined in the parameter ``Fs``.
 
@@ -169,7 +169,7 @@ Data
 
    You can download the generated data from below:
 
-   - :download:`qpskwithfilt_txt.zip <../resources/qpskwithfilt_txt.zip>`
+   - :dokuwiki:`qpskwithfilt_txt.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_txt.zip>`
 
    The data rate is 30.72 MSPS.
 
@@ -234,11 +234,11 @@ Tx/Rx chain gets verified.
 
    You can download the saved mat data file from below:
 
-   - :download:`qpskwithfilt_mat.zip <../resources/qpskwithfilt_mat.zip>`
+   - :dokuwiki:`qpskwithfilt_mat.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpskwithfilt_mat.zip>`
 
    You can download the receiver model from below:
 
-   - :download:`qpsk_receiver_new.zip <../resources/qpsk_receiver_new.zip>`
+   - :dokuwiki:`qpsk_receiver_new.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qpsk_receiver_new.zip>`
 
    Make sure you load the mat data file in the workspace first. Otherwise, the
    model will not run.
@@ -279,7 +279,7 @@ shaping filters, we use a "Spectrum Analyzer" block, as well as several
 
    You can download the Simulink model from below:
 
-   - :download:`qam16_model.zip <../resources/qam16_model.zip>`
+   - :dokuwiki:`qam16_model.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_model.zip>`
 
    The data rate is defined in the parameter ``Fs``.
 
@@ -291,7 +291,7 @@ Data
 
    You can download the generated 16-QAM data from below:
 
-   - :download:`qam16_20mdata.zip <../resources/qam16_20mdata.zip>`
+   - :dokuwiki:`qam16_20mdata.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_20mdata.zip>`
 
    It is in the same format as the data in previous sections and the data rate
    is 20 M.
@@ -321,7 +321,7 @@ and DAC is set properly. In this example, we set the sample rate of ADC and DAC
 
    You can download the saved mat data file from below:
 
-   - :download:`qam16_20.zip <../resources/qam16_20.zip>`
+   - :dokuwiki:`qam16_20.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_20.zip>`
 
 Given the received data, we can now proceed to the Simulink receiver model to
 verify the data. After you launch MATLAB and the receiver model
@@ -343,7 +343,7 @@ chain gets verified.
 
    You can download the receiver model from below:
 
-   - :download:`qam16_receiver.zip <../resources/qam16_receiver.zip>`
+   - :dokuwiki:`qam16_receiver.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/qam16_receiver.zip>`
 
    The data rate is defined in the parameter ``Fs`` and the phase offset is
    defined in the parameter ``PhaseOffset``.
@@ -372,7 +372,7 @@ shaping filters, we use a "Spectrum Analyzer" block, as well as several
 
    You can download the Simulink model from below:
 
-   - :download:`msk_model.zip <../resources/msk_model.zip>`
+   - :dokuwiki:`msk_model.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_model.zip>`
 
    The data rate is defined in the parameter ``Fs``.
 
@@ -384,7 +384,7 @@ Data
 
    You can download the generated MSK data from below:
 
-   - :download:`msk_20mdata.zip <../resources/msk_20mdata.zip>`
+   - :dokuwiki:`msk_20mdata.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_20mdata.zip>`
 
    It is in the same format as the data in previous sections and the data rate
    is 20 M.
@@ -413,7 +413,7 @@ the generated data rate (20 MSPS), which is 100 MSPS.
 
    You can download the saved mat data file from below:
 
-   - :download:`msk_20.zip <../resources/msk_20.zip>`
+   - :dokuwiki:`msk_20.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_20.zip>`
 
 Given the received data, we can now proceed to the Simulink receiver model to
 verify the data. After you launch MATLAB and the receiver model
@@ -432,7 +432,7 @@ AD9361 Tx/Rx chain gets verified.
 
    You can download the receiver model from below:
 
-   - :download:`msk_receiver.zip <../resources/msk_receiver.zip>`
+   - :dokuwiki:`msk_receiver.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/msk_receiver.zip>`
 
    The data rate is defined in the parameter ``Fs`` and the phase offset is
    defined in the parameter ``PhaseOffset``. In this example, there is no
@@ -480,7 +480,7 @@ to make the data format compatible with AD9361 transmission.
    You can download the Simulink model and the post-processing m-file from
    below:
 
-   - :download:`lte_model.zip <../resources/lte_model.zip>`
+   - :dokuwiki:`lte_model.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/lte_model.zip>`
 
 When the data is transmitted and received by real-world hardware, like AD9361,
 it is difficult to observe the clear constellation without proper
@@ -502,7 +502,7 @@ Data
 
    You can download the generated LTE data from below:
 
-   - :download:`lte_data.zip <../resources/lte_data.zip>`
+   - :dokuwiki:`lte_data.zip <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/lte_data.zip>`
 
    It is in the same format as the data in previous sections.
 

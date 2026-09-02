@@ -26,8 +26,8 @@ Requirements
   * 1920 by 1080 or greater screen resolution, recommended
   * with downloaded:
 
-    * :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
-    * :download:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <wireless_sensor_hub.zip>`
+    * :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
+    * :dokuwiki:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`
     * `UART serial monitor <http://sourceforge.net/project/showfiles.php?group_id=67297>`__
     * `Balena Etcher image writing tool <https://etcher.balena.io>`__
     * `ChirpStack Gateway OS <https://www.chirpstack.io/docs/chirpstack-gateway-os/install/raspberry-pi.html>`__
@@ -62,7 +62,7 @@ before proceeding with the steps listed below.
       properly. Make sure to install this requirement before using this serial
       terminal: `.NET Framework 4.6.2 <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net462-web-installer>`__
 
-#. Download the :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
+#. Download the :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
    and extract the file to a known location.
 #. Double-click on the ``AD-MAX32WISE-SLZ-Rel1.0.0.exe.``
    and follow the installation prompts.
@@ -316,7 +316,7 @@ Requirements
 
 - Raspberry Pi 4 with ChirpStack version 4.1.1 IO booted
 - Host PC with Admin Access
-- :download:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <wireless_sensor_hub.zip>`
+- :dokuwiki:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`
 - LAN cable
 
 Configuring Host PC for the Gateway

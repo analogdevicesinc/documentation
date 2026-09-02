@@ -243,7 +243,7 @@ Sample C code Application
 Compiling the Sample Application
 -------------------------------------------------------------------------------
 
-:download:`C Source code do_iq.c <../resources/do_iq.zip>`
+:dokuwiki:`C Source code do_iq.c <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/do_iq.zip>`
 
 .. container:: box bggreen
 

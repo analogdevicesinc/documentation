@@ -99,13 +99,13 @@ Board Design and Integration Files
    * - Description
      - Download
    * - AD9213-10GEBZ-B Schematics
-     - :download:`02-064617-01-d_pub_25july2022.pdf <../files/02-064617-01-d_pub_25july2022.pdf>`
+     - :dokuwiki:`02-064617-01-d_pub_25july2022.pdf <_media/eval/02-064617-01-d_pub_25july2022.pdf>`
    * - AD9213 Evaluation Board BOM and Layout Files
-     - :download:`20-064617-01d_layout_bom.zip <../files/20-064617-01d_layout_bom.zip>`
+     - :dokuwiki:`20-064617-01d_layout_bom.zip <_media/eval/20-064617-01d_layout_bom.zip>`
    * - Bill of Materials for on-board clocking AD9213
-     - :download:`ad9213_onboard_clocking_bom.xlsx <../files/ad9213_onboard_clocking_bom.xlsx>`
+     - :dokuwiki:`ad9213_onboard_clocking_bom.xlsx <_media/ad9213_onboard_clocking_bom.xlsx>`
    * - Gerber Layout files for on-board clocking AD9213
-     - :download:`gerber_layout_files_for_ad9213.zip <../files/gerber_layout_files_for_ad9213.zip>`
+     - :dokuwiki:`gerber_layout_files_for_ad9213.zip <_media/gerber_layout_files_for_ad9213.zip>`
 
 Testing
 -------

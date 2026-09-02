@@ -1,9 +1,12 @@
+.. _university:
+
 Engineering University Program
 ===============================================================================
 
 .. toctree::
    :maxdepth: 4
 
+   courses/index
 
 Mission
 -------------------------------------------------------------------------------
@@ -115,11 +118,11 @@ Tutorials, Glossary, Terminology, eBooks and Other Helpful Resources
 
 
 * :dokuwiki:`Test And Measurement Tutorials <university/courses/tutorials/test-measurment-tutorials>`
-* :dokuwiki:`Mini Tutorials <university/courses/tutorials:index>`
+* :ref:`Mini Tutorials <university-tutorials>`
 
-  * //Amplifiers, Converters, References, Regulators, and many other topics//
+  * Amplifiers, Converters, References, Regulators, and many other topics
 
-* :dokuwiki:`Analog Devices Electronics Handbooks <university/courses/tutorials/index#ebooks_in_pdf>`
+* :ref:`Analog Devices Electronics Handbooks <electronics-ebooks>`
 * :dokuwiki:`Electronics Glossary <university/courses/electronics/text/glossary>`
 * :dokuwiki:`Oscilloscope Terminology <university/courses/alm1k/intro/oscilloscope-terminology>`
 * :adi:`Glossary of Electrical Engineering Terms <en/design-center/glossary.html>`

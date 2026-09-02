@@ -9,7 +9,7 @@ Long Range Wireless Radio Development Kit based on MAX32670 MCU and SX1261 RF Tr
 
 .. admonition:: Download
 
-   :download:`Ultra-low Power Wireless IoT Sensor (Brochure) <lora-brochure.pdf>`
+   :dokuwiki:`Ultra-low Power Wireless IoT Sensor (Brochure) <_media/resources/eval/user-guides/ad-max32sxwise-sl/ultra-low_power_wireless_iot_sensor_brochure_.pdf>`
 
 Overview
 --------

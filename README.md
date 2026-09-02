@@ -5,10 +5,15 @@ it also has the ability to aggregate every other documentation into a single mon
 
 See the deployed docs output at the [System Level Documentation](https://analogdevicesinc.github.io/documentation/) index.
 
+> [!WARNING]
+> This repository contains a massive amount of data!
+> Don't clone or build before reading the instructions below, or will make your local builds painfully slow and trigger unnecessary bandwidth costs.
+> Always use ``--skip-smudge`` and ``adoc serve --sparse``
+
 ## Getting started
 
 The repository uses Git LFS to host large files.
-To not download all large files at the HEAD commit, we recommend `--skip-smudge` and letting [adoc serve](https://analogdevicesinc.github.io/doctools/cli.html#serve) to fetch them as you navigate the live server and touches files:
+To not download all large files at the HEAD commit, use `--skip-smudge` and let [adoc serve](https://analogdevicesinc.github.io/doctools/cli.html#serve) fetch them as you navigate the live server and touches files:
 
 ```
 sudo apt install git-lfs -y
@@ -28,14 +33,11 @@ python3 -m ensurepip
 pip install pip --upgrade
 (cd docs ; pip install -r requirements.txt --upgrade)
 ```
-Launch the live server.
+Launch the live server, building only `docs/contributing`.
 ```
-adoc serve
+adoc serve --sparse docs/contributing
 ```
-Or build the documentation with Sphinx.
-```
-(cd docs ; make html)
-```
+You can pass multiple paths as ``--sparse`` arguments, or remove it to build the whole documentation.
 The generated documentation will be available at `docs/_build/html`.
 
 ### VSCode/VSCodium support

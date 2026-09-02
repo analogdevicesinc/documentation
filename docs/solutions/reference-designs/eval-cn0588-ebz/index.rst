@@ -203,7 +203,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0588-EBZ Design & Integration Files <cn0588-designsupport.zip>`
+   :adi:`EVAL-CN0588-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0588-designsupport.zip>`
 
    - Schematics
    - PCB Layout

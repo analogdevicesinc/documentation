@@ -502,7 +502,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`MAX32670-SX-ARDZ Design Support Package Rev. C <max32670-sx-ardz-designsupport.zip>`
+   :dokuwiki:`MAX32670-SX-ARDZ Design Support Package Rev. C <_media/resources/eval/user-guides/lora-reference-design/max32670-sx-ardz-designsupport.zip>`
 
    - Schematic
    - Bill of Materials

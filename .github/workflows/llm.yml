@@ -25,11 +25,45 @@ on:
         - small
         - medium
         - large
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  workflow_call:
+    inputs:
+      ref:
+        required: false
+        type: string
+      prompt:
+        required: false
+        type: string
+        default: ""
+      prompt-extra:
+        required: false
+        type: string
+        default: ""
+      model:
+        required: false
+        type: string
+        description: "Model size"
+    secrets:
+      PORTKEY_API_KEY:
+        required: true
 
 jobs:
+  pr-check-pending:
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
+    permissions:
+      checks: write
+      pull-requests: read
+
+    outputs:
+      pr: ${{ steps.check.outputs.pr }}
+      check_run_id: ${{ steps.check.outputs.check_run_id }}
+
+    steps:
+      - uses: analogdevicesinc/doctools/gh-pr-checks@action
+        id: check
+        with:
+          ref: ${{ inputs.ref }}
+          name: llm-agent
+
   llm:
     runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-latest' }}
     permissions:
@@ -69,14 +103,24 @@ jobs:
           reST syntax in the Markdown summary and put whole code snippets in
           Markdown code blocks.
 
-          The documentation must build cleanly with `cd docs; make html`, a
+          The documentation must build cleanly with `cd docs; make dirhtml`, a
           python virtual environment is already active. You shall install pip
           packages to help you review, test and debug
           You must check the appropriate datasheets for devices and
           evaluation boards, always convert pdfs before reading it, in
-          particular, camelot-py is great to get the register map. Tip, a
-          sitemap with all pdfs, including the datasheets, are available at
-          https://www.analog.com/media/en/en-pdf-sitemap.xml
+          particular, camelot-py is great to get the register map.
+          A sitemap with all pdfs, including the datasheets, is available at:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling/en-pdf-sitemap.xml
+            (mirror of https://www.analog.com/media/en/en-pdf-sitemap.xml)
+          Pre-converted (with docling), are available at the git tree:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling
+          for example:
+            https://www.analog.com/media/en/technical-documentation/data-sheets/max17335.pdf
+          can be fetched with:
+            https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/docling/media/en/technical-documentation/data-sheets/max17335.md
+          Do not try to fetch the from analog.com domain directly, due to bot protection
+          guards in place.
+
           **Must fetch and read**, full documentation guidelines are provided at
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/index.rst
           https://raw.githubusercontent.com/analogdevicesinc/doctools/refs/heads/main/docs/docs_guidelines/directives.rst
@@ -101,7 +145,10 @@ jobs:
           And use adoc-search to search all repository documentations.
           To build just one part of the doc, you can use `adoc serve --sparse`, for example:
           ```
-          adoc serve --once --sparse docs/learning docs/solutions/reference-designs/ad4052-ardz
+          # From the repository root
+          $ adoc serve --once --sparse docs/learning docs/solutions/reference-designs/ad4052-ardz
+          # From the docs folder
+          $ cd docs ; adoc serve --once --sparse learning solutions/reference-designs/ad4052-ardz
           ```
           It is more efficient than calling sphinx-build and building all pages.
           Always use `--once` to build once and exit, without `--once` will
@@ -132,6 +179,44 @@ jobs:
 
           .. rest of the content
           ```
+
+          If the pages are Markdown (.md), myst-parser is used and the roles and directives
+          are slightly different:
+
+          RestructuredText role:
+          ```
+          :download:`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>`
+          ```
+          Markdown role:
+          ```
+          {download}`Pluto firmware 0.30version <plutosdr-fw-v0.30.zip>`
+          ```
+
+          RestructuredText directive:
+          ```
+          .. figure:: ../resources/pluto.png
+             :alt: PlutoSDR Picture
+             :width: 400px
+             :align: right
+          ```
+          Markdown directive:
+          ````
+          ```{figure} ../resources/pluto.png
+          :alt: PlutoSDR Picture
+          :width: 400px
+          :align: right
+          ```
+          ````
+
+          For the vale grammar check the usage is
+          ```
+          vale sync --config=.github/styles/vale-spelling.ini
+          vale --config=.github/styles/vale-spelling.ini docs/index.rst
+          ```
+          Consider vale checks as **mostly noise**, unless they show obvious mispellings
+          of dictionary words (not casing of products, software, etc).
+          It is **not** you task to update vale rules (e.g., **don't** update
+          .github/styles/config/vocabularies/Base/accept.txt).
 
           ## Task 1: Content check
           At this task, you will focus on the content, fixing content logical
@@ -182,21 +267,16 @@ jobs:
           should be kept as tables.
           You should ensure no trailing whitespace.
           For downloads, ensure the download role is used for local files, for example,
-          a common mistake is:
-          ```
-          .. admonition:: Download
-              :adi:`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>`
-          ```
-          Because creates a https://analog.com/CN0417-DesignSupport.zip link that is not
-          automatically checked.
-          While the correct to download the local file is:
-          ```
-          .. admonition:: Download
-             :download:`EVAL-CN0417-EBZ Design & Integration Files <CN0417-DesignSupport.zip>`
-          ```
-          - Not using the :download: role for download artifacts, for example:
-            :adi:`data.zip` -> :download:`data.zip`,
-            `data.zip`__ -> :download:`data.zip`
+          a common mistake not using the :download: role for download artifacts, for example:
+            :adi:`data.xls` -> :download:`data.xls`,
+            `data.xls`__ -> :download:`data.xls`
+
+          Zip files, specially '*-designsupport.zip' must not be added to git,
+          instead, they should be linked through an :adi: role or even the
+          :dokuwiki:, the reason is that even if today we are allowed to commit the binary,
+          the permission may be revoked at a later date, and there is no effective way of
+          removing it from the git history; there is also little the reviewer can do once
+          it is committed and pushed.
 
           ## Task 3: Cross reference check
           After doing the content check, you will check if the author used dokuwiki roles
@@ -217,9 +297,9 @@ jobs:
           However, little to no Linux page have been imported yet.
           `adoc search` will show you the external reference format for each
           search match, sometimes a page documents multiple parts like adrv9002
-          and adrv9001. Of course, if you are in the documentation repository
+          and adrv9001. Of course, if you are in the 'system-level' repository
           already, the reference is just :ref:`label` and not
-          :external+documentation:ref:`label`. In general, you can also drop
+          :external+system-level:ref:`label`. In general, you can also drop
           custom titles, like "AXI_ADRV9002 Interface Core".
 
           ## Task 4: Sanity check
@@ -244,14 +324,14 @@ jobs:
           echo "py_venv=$py_venv" >> "$GITHUB_ENV"
 
           curl -sL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -o requirements.txt \
-               https://raw.githubusercontent.com/analogdevicesinc/documentation/main/docs/requirements.txt
+               https://raw.githubusercontent.com/analogdevicesinc/system-level/main/docs/requirements.txt
 
           python3 -m venv $py_venv
           source $py_venv/bin/activate
           python3 -m ensurepip --upgrade
 
           pip install -r requirements.txt
-          pip install camelot-py
+          pip install camelot-py vale rst2html
 
       - uses: analogdevicesinc/doctools/llm@action
         id: llm
@@ -268,8 +348,26 @@ jobs:
           rm -f "$prompt_file"
           rm -rf "$py_venv"
 
+  pr-check-conclusion:
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
+    needs:
+      - pr-check-pending
+      - llm
+    if: always()
+    permissions:
+      checks: write
+      pull-requests: read
+
+    steps:
+      - uses: analogdevicesinc/doctools/gh-pr-checks@action
+        with:
+          ref: ${{ needs.pr-check-pending.outputs.pr }}
+          name: llm-agent
+          conclusion: ${{ needs.llm.result }}
+          check-run-id: ${{ needs.pr-check-pending.outputs.check_run_id }}
+
   pr-comment:
-    runs-on: ubuntu-slim
+    runs-on: ${{ vars.RUNNER != '' && fromJSON(vars.RUNNER) || 'ubuntu-slim' }}
     needs: llm
     permissions:
       pull-requests: write

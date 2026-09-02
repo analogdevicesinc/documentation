@@ -585,7 +585,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-AD5592R-PMDZ Design & Integration Files <eval-ad5592r-pmdz-designsupport.zip>`
+   :adi:`EVAL-AD5592R-PMDZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/eval-ad5592r-pmdz-designsupport.zip>`
 
    - Schematics
    - PCB Layout

@@ -86,7 +86,7 @@ Materials
 
 .. ADMONITION:: Download
 
-   :download:`rpi-ad5592r-with_gpios-overlay source and compiled overlay <rpi-ad5592r-with_gpios-overlay.zip>`
+   :dokuwiki:`rpi-ad5592r-with_gpios-overlay source and compiled overlay <_media/university/labs/software/tools_for_low_speed_mix-sig_systems/rpi-ad5592r-with_gpios-overlay.zip>`
 
 Background
 ~~~~~~~~~~

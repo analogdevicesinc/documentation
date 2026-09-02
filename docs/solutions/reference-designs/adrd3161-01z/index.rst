@@ -51,7 +51,7 @@ Required Hardware
 
 * :adi:`ADRD3161-01Z`
 * Stepper / BLDC / DC motor. Documented output represents the :adi:`QSH5718-51-28-101-10k <qsh5718>` Stepper.
-* DC power supply (9 .. 70 VDC)
+* DC power supply (9 .. 70 Vdc)
 * CAN, encoder cables, described in the :doc:`hardware-guide`
 
 To debug / reprogram the device, you will need a MAXDAP compatible debug probe, such as the :adi:`MAX32625PICO`.
@@ -64,6 +64,7 @@ User Guides
    hardware-guide
    quick-start-guide
    production-guide
+   production-testing
 
 Help and Support
 ----------------

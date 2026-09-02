@@ -217,7 +217,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-GMSL716MIPI-EVK Design Support Package <ad-gmsl716mipi-evk-designsupport.zip>`
+   :dokuwiki:`AD-GMSL716MIPI-EVK Design Support Package <_media/resources/eval/user-guides/ad-gmsl716mipi-evk/ad-gmsl716mipi-evk-designsupport.zip>`
 
    - Schematic
    - PCB Layout

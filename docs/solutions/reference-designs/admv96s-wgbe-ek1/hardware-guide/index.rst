@@ -201,6 +201,6 @@ Design and Integration Files
 
    ADMV96S-WGBE-EK1 Design & Integration Files
 
-   - :download:`Schematics <02_073235b_top.pdf>`
-   - :download:`PCB Layout <pcb_layout_gerber_files.zip>`
-   - :download:`Bill of Materials <bom.zip>`
+   - :dokuwiki:`Schematics <_media/resources/eval/user-guides/admv96s-wgbe-ek/02_073235b_top.pdf>`
+   - :dokuwiki:`PCB Layout <_media/resources/eval/user-guides/admv96s-wgbe-ek1/pcb_layout_gerber_files.zip>`
+   - :dokuwiki:`Bill of Materials <_media/resources/eval/user-guides/admv96s-wgbe-ek1/bom.zip>`

@@ -11,7 +11,7 @@ files are available here:
 
 .. admonition:: Download
 
-   :download:`AD-PAARRAY3552R-SL Software Files<ad-paarray3552r-sl-rel1.0.1.exe.zip>`
+   :dokuwiki:`AD-PAARRAY3552R-SL Software Files <_media/resources/eval/user-guides/ad-paarray3552r-sl/ad-paarray3552r-sl-rel1.0.1.exe.zip>`
 
    The installer contains the following:
 
@@ -50,7 +50,7 @@ on the MAX32625PICO. Follow below procedure:
 
 #. Download the firmware image:
 
-   :download:`MAX32625PICO Firmware <max32625_max32666fthr_if_crc_swd_v1.0.5.bin.zip>`
+   :dokuwiki:`MAX32625PICO Firmware <_media/resources/eval/user-guides/pa_array/max32625_max32666fthr_if_crc_swd_v1.0.5.bin.zip>`
 
 #. Do not connect the MAX32625PICO from the PC and the AD-PAARRAY3552R-SL
    board.

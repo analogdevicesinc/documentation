@@ -28,7 +28,7 @@ Common USB OTG peripherals that are used with Pluto include:
 * USB Ethernet adapters
 * USB hubs
 
-More information on Pluto's USB OTG can be found [here](https://analogdevicesinc.github.io/documentation/tools/pluto-m2k/usb_otg_host.html).  
+More information on Pluto's USB OTG can be found {ref}`here <pluto-m2k usb_otg_host>`.  
 
 
 

@@ -171,7 +171,7 @@ safety.
    :width: 900 px
    :alt: Zener Diode combination with LT8440
 
-   Zener Diode combination with LT8440
+   Zener Diode Combination with LT8440
 
 General Purpose Diodes
 ~~~~~~~~~~~~~~~~~~~~~~

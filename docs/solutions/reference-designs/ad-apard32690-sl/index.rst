@@ -40,9 +40,9 @@ industrial field devices. Some of the main features and benefits include:
 
 **Hardware design files:**
 
-- :download:`Schematics <02-073637-01-c.pdf>`
-- :download:`Layout <08_073637c.zip>`
-- :download:`Bill of Materials <05-073637-01-c.zip>`
+- :dokuwiki:`Schematics <_media/resources/eval/user-guides/02-073637-01-c.pdf>`
+- :dokuwiki:`Layout <_media/resources/eval/user-guides/08_073637c.zip>`
+- :dokuwiki:`Bill of Materials <_media/resources/eval/user-guides/05-073637-01-c.zip>`
 
 Package Contents
 ----------------

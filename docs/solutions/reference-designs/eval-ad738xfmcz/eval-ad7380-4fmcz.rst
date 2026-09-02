@@ -682,5 +682,4 @@ Evaluation Board Design Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Board schematic, layout and BOM files:
-:download:`eval-ad7380-4fmcz_design_files.zip
-<files/eval-ad7380-4fmcz_design_files.zip>`
+:dokuwiki:`eval-ad7380-4fmcz_design_files.zip <_media/resources/eval/user-guides/eval-ad7380-4fmcz_design_files.zip>`

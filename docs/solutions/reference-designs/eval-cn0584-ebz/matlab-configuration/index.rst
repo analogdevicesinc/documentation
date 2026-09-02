@@ -233,7 +233,7 @@ located in:
 
 Tab 4.4 in the HDL Workflow Advisor is incompatible with The ADI SD card flow.
 Instead, choose one of the following methods to update the BOOT.BIN file on the
-SD card (BOOT.BIN with register access found in :download:`SD Card Configuration Files<sd_card_config_files_revb.zip>`).
+SD card (BOOT.BIN with register access found in :dokuwiki:`SD Card Configuration Files <_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/sd_card_config_files_revb.zip>`).
 After the BOOT.BIN file is generated, you have 2 options:
 
     #. Copy the BOOT.BIN file on the SD Card directly.

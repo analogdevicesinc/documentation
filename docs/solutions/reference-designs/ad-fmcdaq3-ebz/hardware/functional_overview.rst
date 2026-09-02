@@ -74,7 +74,7 @@ Power
 
 The system-level power tree .ltp3 file simulated in
 :adi:`LTpowerPlanner <ltpowercad>` is given below.
-:download:`220309_fmcdaq3_power.zip <../resources/220309_fmcdaq3_power.zip>`
+:dokuwiki:`220309_fmcdaq3_power.zip <_media/resources/eval/user-guides/ad-fmcdaq3-ebz/hardware/220309_fmcdaq3_power.zip>`
 
 Key components in the power tree:
 

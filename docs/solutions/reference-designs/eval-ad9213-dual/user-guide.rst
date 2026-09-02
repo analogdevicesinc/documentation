@@ -57,11 +57,11 @@ Downloads
    * - Description
      - Download
    * - Schematic
-     - :download:`02_049155d_top.pdf <./files/02_049155d_top.pdf>`
+     - :dokuwiki:`02_049155d_top.pdf <_media/resources/eval/02_049155d_top.pdf>`
    * - Layout
-     - :download:`08_049155c.zip <./files/08_049155c.zip>`
+     - :dokuwiki:`08_049155c.zip <_media/resources/eval/08_049155c.zip>`
    * - BOM
-     - :download:`05-049155-01-d.zip <./files/05-049155-01-d.zip>`
+     - :dokuwiki:`05-049155-01-d.zip <_media/resources/eval/05-049155-01-d.zip>`
 
 Software guide
 -------------------------------------------------------------------------------

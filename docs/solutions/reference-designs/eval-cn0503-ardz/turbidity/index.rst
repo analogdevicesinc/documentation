@@ -120,7 +120,7 @@ Initial Connection and Setup
 
    .. image:: tr_selectcom.png
 
-#. Load the configuration file for pH Measurement: :download:`cn0503_defaults_turbidity.zip`
+#. Load the configuration file for pH Measurement: :dokuwiki:`cn0503_defaults_turbidity.zip <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_turbidity.zip>`
 
 #. Configure the settings for path 4 with the desired name, set wavelength to
    940nm, and select measurement type: turbidity.
@@ -170,7 +170,7 @@ routine allows for high precision turbidity measurements.
 
    .. image:: tr_eqtn.png
 
-#. You can also use this Excel file :download:`turbidity_calibration.xlsx` which plots
+#. You can also use this Excel file :dokuwiki:`turbidity_calibration.xlsx <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/turbidity_calibration.xlsx>` which plots
    the calibration points and generates a linear equation from a trendline.
 
    .. image:: tr_calplot.png

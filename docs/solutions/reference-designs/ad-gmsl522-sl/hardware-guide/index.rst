@@ -407,4 +407,4 @@ System signals such as POWER_BTN*, FORCE_RECOVERY*, SYS_RESET*, are brought to a
 
 .. admonition:: Download
 
-   - :download:`AD-GMSL522-SL schematics <02_074767b_top_public.pdf>`
+   - :dokuwiki:`AD-GMSL522-SL schematics <_media/resources/eval/user-guides/ad-viper-sl/02_074767b_top_public.pdf>`

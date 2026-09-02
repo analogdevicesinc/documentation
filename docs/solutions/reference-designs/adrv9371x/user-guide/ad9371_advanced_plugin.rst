@@ -1,4 +1,4 @@
-.. _adrv9371x advanced plugin:
+.. _adrv9371x advanced-plugin:
 
 AD9371/AD9375 Advanced Plugin
 ================================================================================

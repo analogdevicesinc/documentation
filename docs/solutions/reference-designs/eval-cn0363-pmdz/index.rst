@@ -1,3 +1,20 @@
+.. collection:: EVAL-CN0363-PMDZ
+   :subtitle: Evaluating the EVAL-CN0363-PMDZ, Dual-Channel Colorimeter with Programmable Gain Transimpedance Amplifiers and Digital Synchronous Detection
+   :image: images/colorimeter_photo.png
+   :label: eval user-guide
+
+   system-level:
+     - User guide <.>
+
+   hdl:
+     - HDL Project (cn0363) <projects/cn0363/index>
+
+   linux:
+     - Linux driver (ad7173) <drivers/iio-adc/ad7173>
+
+   no-OS:
+     - no-OS driver (ad717x) <drivers/adc/ad717x>
+
 .. _eval-cn0363-pmdz:
 
 EVAL-CN0363-PMDZ

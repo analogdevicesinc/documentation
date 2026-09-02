@@ -9,7 +9,7 @@ A concise version of this document is available in portable document format. Cli
 
 .. admonition:: Download
 
-   :download:`AD-CELLPACKBM-SL QuickStart Guide <quick_start_guide.pdf>`
+   :dokuwiki:`AD-CELLPACKBM-SL QuickStart Guide <_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_quick_start_guide.pdf>`
 
 Overview
 --------
@@ -223,7 +223,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-CELLPACKBM-SL Design Support Package <design_support_package.zip>`
+   :dokuwiki:`AD-CELLPACKBM-SL Design Support Package <_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_design_support_package.zip>`
 
     * Schematic
     * PCB Layout

@@ -133,7 +133,7 @@ Hardware
 Firmware
 ^^^^^^^^
 
-- :git-plutosdr-fw:`Pluto firmware 0.30 version <releases/download/v0.30/plutosdr-fw-v0.30.zip+>`
+- :git-plutosdr-fw:`releases/latest+`
 
 ADALM-PLUTO Preparation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -141,7 +141,7 @@ ADALM-PLUTO Preparation
 Firmware Loading
 ^^^^^^^^^^^^^^^^
 
-#.  Download :git-plutosdr-fw:`Pluto firmware 0.30 version <releases/download/v0.30/plutosdr-fw-v0.30.zip+>`
+#.  Download :git-plutosdr-fw:`releases/latest+`
 
 #.  Unzip the downloaded file.
 
@@ -303,7 +303,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0555-EBZ Design & Integration Files <cn0555-designsupport.zip>`
+   :adi:`EVAL-CN0555-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0555-designsupport.zip>`
 
    - Schematics
    - PCB Layout

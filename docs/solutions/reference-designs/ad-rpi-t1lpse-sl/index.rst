@@ -461,7 +461,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-RPI-T1LPSE-SL Design & Integration Files <ad-rpi-t1lpse-sl-designsupport.zip>`
+  :adi:`AD-RPI-T1LPSE-SL Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-rpi-t1lpse-sl-designsupport.zip>`
 
   - Schematics
   - PCB Layout

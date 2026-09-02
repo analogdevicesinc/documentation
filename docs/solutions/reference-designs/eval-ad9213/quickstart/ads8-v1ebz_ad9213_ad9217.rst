@@ -62,15 +62,15 @@ Board Design and Integration Files
    * - Description
      - Download
    * - Schematics for ADC board and regulator board
-     - :download:`ad9213_evalbrd_regboard_schems.zip <../files/ad9213_evalbrd_regboard_schems.zip>`
+     - :dokuwiki:`ad9213_evalbrd_regboard_schems.zip <_media/resources/eval/ad9213_evalbrd_regboard_schems.zip>`
    * - Gerber Layout files for ADC board
-     - :download:`ad9213_evalbrd_revc_gerbers.zip <../files/ad9213_evalbrd_revc_gerbers.zip>`
+     - :dokuwiki:`ad9213_evalbrd_revc_gerbers.zip <_media/resources/eval/ad9213_evalbrd_revc_gerbers.zip>`
    * - Gerber Layout files for regulator board
-     - :download:`ad9213_regboard_reva_gerbers.zip <../files/ad9213_regboard_reva_gerbers.zip>`
+     - :dokuwiki:`ad9213_regboard_reva_gerbers.zip <_media/resources/eval/ad9213_regboard_reva_gerbers.zip>`
    * - Bill of materials for ADC board
      - :download:`2020-05-15_ad9213_evalbrd_revc_bom_w_dut.xlsx <../files/2020-05-15_ad9213_evalbrd_revc_bom_w_dut.xlsx>`
    * - Bill of Materials for regulator board
-     - :download:`ad9213_regulator_board_bom.xlsx <../files/ad9213_regulator_board_bom.xlsx>`
+     - :dokuwiki:`ad9213_regulator_board_bom.xlsx <_media/resources/eval/ad9213_regulator_board_bom.xlsx>`
 
 Testing
 ~~~~~~~

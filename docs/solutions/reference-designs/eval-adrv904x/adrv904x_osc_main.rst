@@ -93,6 +93,6 @@ appears as an additional device:
 
 To use the NLS profile, copy ``system.dtb`` built from
 ``zynqmp-zcu102-rev10-adrv904x-nls.dts`` and ``DeviceProfileTest_NLS.bin``
-renamed to ``DeviceProfileTest.bin`` to the SD card boot partition.
+renamed to ``DeviceProfileTest.bin`` to /lib/firmware on the board.
 
 .. include-template:: ../common/using-scopy.rst.jinja

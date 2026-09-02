@@ -46,11 +46,11 @@ Schematic, PCB Layout, and BOM
 Design files for each board variant are available in the respective evaluation
 board pages:
 
-- :doc:`AD9136 & AD9135 Evaluation Boards <AD9136/eval-ad9136>`
-- :doc:`AD9144 Evaluation Boards <AD9144/eval-ad9144>`
-- :doc:`AD9152 Evaluation Board <AD9152/eval-ad9152>`
-- :doc:`AD9154 Evaluation Boards <AD9154/eval-ad9154>`
-- :doc:`AD917x Evaluation Board <AD917x/eval-ad917x>`
+- :ref:`eval-ad9136`
+- :ref:`eval-ad9144`
+- :ref:`eval-ad9152`
+- :ref:`eval-ad9154`
+- :ref:`eval-ad917x`
 
 Software Guide
 -------------------------------------------------------------------------------

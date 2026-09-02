@@ -309,7 +309,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0534-SDPZ Design & Integration Files <cn0534_design_support_package.zip>`
+   :dokuwiki:`EVAL-CN0534-SDPZ Design & Integration Files <_media/resources/eval/user-guides/circuits-from-the-lab/cn0534/cn0534_design_support_package.zip>`
 
    - Schematics
    - PCB Layout

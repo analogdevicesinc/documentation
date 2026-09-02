@@ -19,10 +19,7 @@ The [ADALM‑PLUTO](https://www.analog.com/en/resources/evaluation-hardware-and-
 - **Platforms:** Compatible with Windows, Linux, and macOS
 - **Full Duplex Operation** (can simultaneously send and receive)
 
-Complete documentation, user manuals, and examples for the Pluto are found here:
-[https://analogdevicesinc.github.io/documentation/tools/pluto/index.html
-](https://analogdevicesinc.github.io/documentation/tools/pluto/index.html
-)
+Complete documentation, user manuals, and examples for the Pluto are available in the {ref}`Pluto documentation <pluto>`.
 
 The below guide is meant to highlight important aspects of Pluto and guide the user through a couple of complete system level examples.  
 

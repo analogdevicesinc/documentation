@@ -10,7 +10,7 @@ Click on the file below to download:
 
 .. admonition:: Download
 
-   :download:`AD-BMSE2E3W-SL QuickStart Guide (pdf) <ad-bmse2e3w-sl-ug-2245.pdf>`
+   :dokuwiki:`AD-BMSE2E3W-SL QuickStart Guide (pdf) <_media/resources/eval/user-guides/ad-bmse2e3w-sl-ug-2245.pdf>`
 
 Overview
 --------
@@ -231,7 +231,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-BMSE2E3W-SL Design Support Package <ad-bmse2e3w-sl-designsupport.zip>`
+   :dokuwiki:`AD-BMSE2E3W-SL Design Support Package <_media/resources/eval/user-guides/ad-bmse2e3w-sl/ad-bmse2e3w-sl-designsupport.zip>`
 
    * Schematic
    * PCB Layout

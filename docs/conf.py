@@ -4,7 +4,7 @@ from os import path
 
 # -- Project information -----------------------------------------------------
 
-repository = 'documentation'
+repository = 'system-level'
 project = 'System Level Documentation'
 copyright = '2026, Analog Devices, Inc.'
 author = 'Analog Devices, Inc.'
@@ -46,12 +46,16 @@ interref_repos = [
     'doctools',
     'hdl',
     'pyadi-iio',
+    'pyadi-dt',
+    'pyadi-jif',
+    'genalyzer/master',
     'kuiper',
     'scopy',
     'linux',
     'no-OS',
     'precision-converters-firmware',
     'PrecisionToolbox',
+    'testbenches',
     'adi_ros2/humble/adi_meta',
 ]
 

@@ -5,7 +5,7 @@ You can attach a micro USB SD card reader (included in the ADALM-PLUTO box) to P
 
 ## Basic Examples
 
-[Example BASH Control](https://analogdevicesinc.github.io/documentation/tools/pluto/hacking/power_amp.html)
+{ref}`Example BASH Control <pluto hacking power_amp>`
 
 [Pluto USB OTG](https://wiki.analog.com/university/tools/pluto/devs/usb_otg)
 

@@ -602,7 +602,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-  :download:`AD-PAARRAY3552R-SL Design & Integration Files <ad-paarray3552r-sl-design-support.zip>`
+  :adi:`AD-PAARRAY3552R-SL Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-paarray3552r-sl-design-support.zip>`
 
    - Schematic
    - PCB Layout

@@ -3,11 +3,11 @@
    :image: ../images/ad9084.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:
-     - HDL Project (ad9084_ardz) <projects/ad9084_ebz>
+     - HDL Project (ad9084_ardz) <projects/ad9084_ebz/index>
 
    linux:
      - Linux driver (ad9084) <drivers/iio-trx-rf/ad9088>

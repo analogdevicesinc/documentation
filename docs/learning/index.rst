@@ -5,6 +5,8 @@ Learning! Tutorials, Workshops, Etc
    :maxdepth: 4
 
    demo_hp_analog_meets_ai/index
+   an_industrial_story/index
+   ADS-B_airplane_tracking_tutorial/index
 
 Mixed Signal Basics
 -------------------------------------------------------------------------------

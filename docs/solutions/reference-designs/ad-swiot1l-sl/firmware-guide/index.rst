@@ -40,10 +40,12 @@ the way to production firmware and applications development.
 .. important::
 
    The system comes pre-programmed with a standard firmware. To work with
-   **Scopy**, you need to flash the specific static ip firmware version.
+   **Scopy**, you need to flash the specific static IP firmware version.
 
    **Scopy** will work only with the official
    `AD-SWIOT1L-SL firmware releases <https://github.com/analogdevicesinc/no-OS/releases/tag/swiot1l-v1.1.0>`_
+
+.. _updating-the-ad-swiot1l-sl-firmware:
 
 Updating the AD-SWIOT1L-SL Firmware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

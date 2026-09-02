@@ -33,11 +33,11 @@ Supported devices:
    user-guide
    prerequisites
    quickstart/index
-   AD9136/index
-   AD9144/index
-   AD9152/index
-   AD9154/index
-   AD917x/index
+   ad9136/index
+   ad9144/index
+   ad9152/index
+   ad9154/index
+   ad917x/index
 
 Table of contents
 -------------------------------------------------------------------------------
@@ -62,12 +62,12 @@ Table of contents
 
       #. About the device driver:
 
-         - :external+linux:doc:`JESD204B Transmit Linux driver <drivers/jesd204/axi_jesd204_tx>`
-         - :external+linux:doc:`JESD204B Receive Linux driver <drivers/jesd204/axi_jesd204_rx>`
-         - :external+linux:doc:`JESD204B/C AXI_ADXCVR High-speed transceivers Linux driver <drivers/jesd204/axi_adxcvr>`
-         - :external+linux:doc:`AXI DAC HDL Linux driver <drivers/iio-dds/axi-dac-dds-hdl>`
-         - :external+linux:doc:`AXI-DMAC DMA Controller Linux driver <drivers/dma/axi-dmac>`
-         - :external+linux:doc:`AD9172 Linux device driver <drivers/iio-dds/ad9172>`
+         - :external+linux:ref:`axi_jesd204_tx`
+         - :external+linux:ref:`axi_jesd204_rx`
+         - :external+linux:ref:`axi_adxcvr`
+         - :external+linux:ref:`axi-dac-dds-hdl`
+         - :external+linux:ref:`axi-dmac`
+         - :external+linux:ref:`ad9172`
 
       #. About the device tree:
 
@@ -90,44 +90,40 @@ Table of contents
 
 #. AD9135 / AD9136
 
-   #. :doc:`AD9136 & AD9135 Evaluation Boards <AD9136/eval-ad9136>` -- overview,
-      schematics, BOM, and design files
-   #. :doc:`AD9136/AD9135-EBZ Quick Start Guide (ACE) <AD9136/ace_ad9136-ebz>`
-   #. :doc:`AD9136/AD9135-EBZ Quick Start Guide (SPIPro) <AD9136/ad9136-ebz>`
-   #. :doc:`AD9136-FMC-EBZ Quick Start Guide (ACE) <AD9136/ad9136-fmc-ebz>`
+   #. :ref:`eval-ad9136` -- overview, schematics, BOM, and design files
+   #. :ref:`ace-ad9136-ebz`
+   #. :ref:`ad9136-ebz`
+   #. :ref:`ad9136-fmc-ebz`
 
 #. AD9144
 
-   #. :doc:`AD9144 Evaluation Boards <AD9144/eval-ad9144>` -- overview,
-      schematics, BOM, and design files
-   #. :doc:`AD9144-EBZ Quick Start Guide (ACE) <AD9144/ace_ad9144-ebz>`
-   #. :doc:`AD9144-FMC-EBZ Quick Start Guide (ACE) <AD9144/ace_ad9144-fmc-ebz>`
-   #. :doc:`AD9144-ADRF6720-EBZ Quick Start Guide <AD9144/ad9144-adrf6720-ebz>`
-   #. :doc:`AD9144-EBZ Quick Start Guide (SPIPro) <AD9144/ad9144-ebz>`
-   #. :doc:`AD9144-FMC-EBZ Quick Start Guide (SPIPro) <AD9144/ad9144-fmc-ebz>`
+   #. :ref:`eval-ad9144` -- overview, schematics, BOM, and design files
+   #. :ref:`ace-ad9144-ebz`
+   #. :ref:`ace-ad9144-fmc-ebz`
+   #. :ref:`ad9144-adrf6720-ebz`
+   #. :ref:`ad9144-ebz`
+   #. :ref:`ad9144-fmc-ebz`
 
 #. AD9152
 
-   #. :doc:`AD9152 Evaluation Board <AD9152/eval-ad9152>` -- overview,
-      schematics, BOM, and design files
-   #. :doc:`AD9152-ADRF6720-EBZ Quick Start Guide <AD9152/ad9152-adrf6720-ebz>`
-   #. :doc:`AD9152-EBZ Quick Start Guide <AD9152/ad9152-ebz>`
-   #. :doc:`AD9152-FMC-EBZ Quick Start Guide (ACE) <AD9152/ad9152-fmc-ebz>`
+   #. :ref:`eval-ad9152` -- overview, schematics, BOM, and design files
+   #. :ref:`ad9152-adrf6720-ebz`
+   #. :ref:`ad9152-ebz`
+   #. :ref:`ad9152-fmc-ebz`
 
 #. AD9154
 
-   #. :doc:`AD9154 Evaluation Boards <AD9154/eval-ad9154>` -- overview,
-      schematics, BOM, and design files
-   #. :doc:`AD9154-EBZ Quick Start Guide (ACE) <AD9154/ad9154-ace-ebz>`
-   #. :doc:`AD9154-FMC-EBZ Quick Start Guide (ACE) <AD9154/ad9154-ace-fmc-ebz>`
-   #. :doc:`AD9154-ADRF6720-EBZ Quick Start Guide <AD9154/ad9154-adrf6720-ebz>`
-   #. :doc:`AD9154-EBZ Quick Start Guide (SPIPro) <AD9154/ad9154-ebz>`
-   #. :doc:`AD9154-FMC-EBZ Quick Start Guide (SPIPro) <AD9154/ad9154-fmc-ebz>`
-   #. :doc:`AD9154-ADRF6720-EBZ Quick Start Guide (M6720) <AD9154/ad9154-m6720-ebz>`
+   #. :ref:`eval-ad9154` -- overview, schematics, BOM, and design files
+   #. :ref:`ad9154-ace-ebz`
+   #. :ref:`ad9154-ace-fmc-ebz`
+   #. :ref:`ad9154-adrf6720-ebz`
+   #. :ref:`ad9154-ebz`
+   #. :ref:`ad9154-fmc-ebz`
+   #. :ref:`ad9154-m6720-ebz`
 
 #. AD917x
 
-   #. :doc:`AD9171/AD9172/AD9173/AD9174/AD9175/AD9176 Evaluation Board <AD917x/eval-ad917x>`
+   #. :ref:`eval-ad917x`
 
 #. :ref:`Help and Support <help-and-support>`
 

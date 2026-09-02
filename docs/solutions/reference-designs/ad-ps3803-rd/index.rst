@@ -745,7 +745,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-PS3803-RD Design & Integration Files <ad-ps3803-rd-designsupport.zip>`
+   :dokuwiki:`AD-PS3803-RD Design & Integration Files <_media/resources/eval/user-guides/ad-ps3803-rd/ad-ps3803-rd-designsupport.zip>`
 
    - Schematic
    - PCB Layout

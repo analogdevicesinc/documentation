@@ -111,7 +111,7 @@ Performing a Fluorescence Measurement
    .. image:: ph_clickconnect.png
 
 #. Load the configuration file for Fluorescence Measurement:
-   :download:`CN0503 Configuration File <cn0503_defaults_fluorescence.zip>`
+   :dokuwiki:`CN0503 Configuration File <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_fluorescence.zip>`
 
 #. Configure the settings for path 1 with the desired name (e.g., Quinine), set
    wavelength to 365.0, and select measurement type: Fluorescence.
@@ -167,7 +167,7 @@ known values.
 
 .. important::
 
-   The configuration file in :download:`cn0503_defaults_fluorescence.zip`
+   The configuration file in :dokuwiki:`cn0503_defaults_fluorescence.zip <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_fluorescence.zip>`
    has already been set up to include everything in this section to calculate the
    concentration of quinine. There is no need to perform the steps below unless
    to make changes in the calculation.

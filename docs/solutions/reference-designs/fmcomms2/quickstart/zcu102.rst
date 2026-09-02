@@ -892,8 +892,7 @@ To see the IIO devices detected, run:
      iio:device3: cf-ad9361-lpc (buffer capable)
      iio:device4: cf-ad9361-dds-core-lpc (buffer capable)
 
-You can also verify the FMC EEPROM using
-:doc:`fru-dump </software/fru_dump>`:
+You can also verify the FMC EEPROM using :ref:`software fru-dump`:
 
 ::
 

@@ -139,7 +139,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-    :download:`AD-PQMON-SL Design Support Package <ad-pqmon-sl-designsupport.zip>`
+    :dokuwiki:`AD-PQMON-SL Design Support Package <_media/resources/eval/user-guides/ad-pqmon-sl/ad-pqmon-sl-designsupport.zip>`
 
     - Schematic
     - PCB Layout

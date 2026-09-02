@@ -181,7 +181,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`FTHR-PMD-INTZ Design & Integration Files <fthr-pmdz-intz-designsupport.zip>`
+   :adi:`FTHR-PMD-INTZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/fthr-pmdz-intz-designsupport.zip>`
 
    - Schematics
    - PCB Layout

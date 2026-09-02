@@ -94,7 +94,7 @@ Initial Connection and Setup
 
    .. image:: ph_clickconnect.png
 
-#. Load the configuration file for pH Measurement: :download:`CN0503 Configuration File<cn0503_defaults_ph.zip>`
+#. Load the configuration file for pH Measurement: :dokuwiki:`CN0503 Configuration File <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_ph.zip>`
 
 #. Configure the settings for path 2 and 3 with the desired name, set
    wavelengths to 430 and 615, respectively, and select measurement type:

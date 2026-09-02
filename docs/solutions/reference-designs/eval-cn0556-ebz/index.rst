@@ -402,7 +402,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0556-EBZ Design & Integration Files <cn0556-designsupport.zip>`
+   :adi:`EVAL-CN0556-EBZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0556-designsupport.zip>`
 
    - Schematics
    - PCB Layout

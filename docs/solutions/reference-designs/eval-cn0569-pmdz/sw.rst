@@ -230,7 +230,7 @@ The software for the **ADuCM3029_demo_cn0569** can be found here:
       The name of the file is currently **iio_adpd1080.zip**
 
       GitHub release is in progress. Please use this
-      :download:`pre-generated HEX file <resources/cn0569.zip>` 
+      :dokuwiki:`pre-generated HEX file <_media/resources/eval/user-guides/circuits-from-the-lab/cn0569/cn0569.zip>` 
       (To be removed after release).
 
    -   CN0569 Firmware Source Files

@@ -250,7 +250,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-APARDSPOE-SL Design & Integration Files <ad-apardspoe-sl-designsupport.zip>`
+  :adi:`AD-APARDSPOE-SL Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-apardspoe-sl-design-support.zip>`
 
   - Schematics
   - PCB Layout

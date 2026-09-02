@@ -386,7 +386,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0585-FMCZ Design & Integration Files <files/cn0585-designsupport.zip>`
+   :adi:`EVAL-CN0585-FMCZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0585-designsupport.zip>`
 
    - Schematics
    - PCB Layout

@@ -152,7 +152,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-    :download:`AD-ACEVSECRDSET-SL Design & Integration Files (Rev E) <ad-acevsecrdset-sl_design_support_package_rev._e.zip>`
+    :dokuwiki:`AD-ACEVSECRDSET-SL Design & Integration Files (Rev E) <_media/resources/eval/user-guides/ad-acevsecrdset-sl/ad-acevsecrdset-sl_design_support_package_rev._e.zip>`
 
     - Schematics
     - PCB Layout

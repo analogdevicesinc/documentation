@@ -294,7 +294,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`AD-APARDPFW-SL Design & Integration Files<ad-apardpfw-sl-designsupport.zip>`
+  :adi:`AD-APARDPFW-SL Design & Integration Files <media/en/reference-design-documentation/design-integration-files/ad-apard32690-sl-design-support.zip>`
 
   - Schematics
   - PCB Layout

@@ -7,7 +7,7 @@
    and real-world scenarios. Participants will learn about various control
    systems, their design and implementation.
 
-   documentation:
+   system-level:
      - .
      - solutions/reference-designs/ad-swiot1l-sl/index
 

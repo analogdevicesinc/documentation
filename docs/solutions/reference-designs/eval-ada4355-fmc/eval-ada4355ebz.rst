@@ -361,10 +361,10 @@ Downloads
 .. admonition:: Download
    :class: download
 
-   :download:`ADA4355 Evaluation Board Design Files <files/ada4355_evaluation_board.zip>`
+   :dokuwiki:`ADA4355 Evaluation Board Design Files <_media/resources/eval/ada4355_evaluation_board.zip>`
 
-   :download:`ADA4355 Evaluation Board Schematics <files/ada4355_evaluation_board_schematics.pdf>`
+   :dokuwiki:`ADA4355 Evaluation Board Schematics <_media/resources/eval/ada4355_evaluation_board_schematics.pdf>`
 
-   :download:`ADA4355 KC705 Bitfile <files/ada4355_kc705_bitfile.zip>`
+   :dokuwiki:`ADA4355 KC705 Bitfile <_media/resources/eval/ada4355_kc705_bitfile.zip>`
 
-   :download:`ADA4355-EBZ Test Software <files/ada4355-ebz_test_software.zip>`
+   :dokuwiki:`ADA4355-EBZ Test Software <_media/resources/eval/ada4355_evaluation_board/ada4355-ebz_test_software.zip>`

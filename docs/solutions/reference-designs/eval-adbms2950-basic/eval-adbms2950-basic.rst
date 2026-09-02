@@ -509,7 +509,7 @@ Design & Integration Files
 .. admonition:: Download
    :class: download
 
-   :download:`EVAL-ADBMS2950-BASIC Design & Integration Files <resources/eval-adbms2950-basic-designsupport.zip>`
+   :dokuwiki:`EVAL-ADBMS2950-BASIC Design & Integration Files <_media/resources/eval/user-guides/eval-adbms2950-basic/eval-adbms2950-basic-designsupport.zip>`
 
 
    -  Schematic

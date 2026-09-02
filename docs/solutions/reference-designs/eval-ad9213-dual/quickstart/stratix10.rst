@@ -58,12 +58,12 @@ Required software
 
   - VisualAnalog Canvas for AD9213-DUAL-EBZ (supplied by ADI)
   - :git-libiio:`/` (for IIO Client block in provided VisualAnalog Canvas)
-  - :download:`IIO Plugin for VisualAnalog <../files/va_iiopluginsetup.zip>`
+  - :dokuwiki:`IIO Plugin for VisualAnalog <_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`
 
 ADI software deliverables
 -------------------------------------------------------------------------------
 
-- :download:`Dual-AD9213-EBZ <../files/dual_ad9213_ebz.zip>`
+- :dokuwiki:`Dual-AD9213-EBZ <_media/resources/eval/dual_ad9213_ebz.zip>`
 
 The link above contains the following:
 
@@ -383,7 +383,7 @@ One-time IIO installations before running VisualAnalog (only needed if the
 ADI-provided VisualAnalog Canvas will be used):
 
 #. Install :git-libiio:`/` (needed to use the IIO Client block in VisualAnalog)
-#. Install the :download:`IIO Plugin for VisualAnalog <../files/va_iiopluginsetup.zip>`
+#. Install the :dokuwiki:`IIO Plugin for VisualAnalog <_media/resources/tools-software/linux-software/libiio/clients/va_iiopluginsetup.zip>`
 
 **Synchronized 10G Mode**
 

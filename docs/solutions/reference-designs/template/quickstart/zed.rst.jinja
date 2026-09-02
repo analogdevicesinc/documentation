@@ -1,22 +1,19 @@
 .. _{{ quickstart_ref }}:
 
-ZedBoard Quick Start
+ZedBoard Quick Start Guide
 ================================================================================
 
+This guide provides step by step instructions on how to set up the
+:adi:`{{ eval_board }}` on:
+
+   - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
+      The supported revision is C or higher.
 
 .. image:: ../../images/ZedBoard.png
    :align: center
    :width: 600
 
-
 .. esd-warning::
-
-
-This guide provides step by step instructions on how to set up the
-:adi:`{{ eval_board }}` on:
-
-- `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-  The supported revision is C or higher.
 
 {% if has_lvds_support %}
 LVDS Support
@@ -81,7 +78,7 @@ Required Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-  Rev C or later
+  Rev C or later and its power supply
 - :adi:`{{ eval_board }}` FMC board
 - SD card with at least 16GB of memory
 - Micro-USB cable
@@ -143,11 +140,6 @@ board lifetime and potentially causing permanent damage to the IC.
 .. include:: {{ linux_setup_steps_file }}
 {% endif %}
 
-.. note::
-
-   *USB-OTG* feature: To use USB peripheral devices with ZedBoard, install
-   jumpers JP2 and JP3.
-
 .. seealso::
    For more detailed information on ZedBoard jumper settings, check the
    *ZedBoard Hardware User Guide* (chapter "Configuration modes")
@@ -158,6 +150,13 @@ Boot messages
 
 The following is what is printed in the serial console, after you have
 connected to the proper ttyUSB or COM port:
+
+{% if has_local_display is defined and has_local_display %}
+.. note::
+
+   If you are using a local connection (keyboard, mouse, monitor), you can
+   view the boot log by opening a terminal and running the ``dmesg`` command.
+{% endif %}
 
 {% if boot_log_file is defined and boot_log_file %}
 .. collapsible:: Complete boot log
@@ -213,11 +212,17 @@ To reboot the system, run:
 
 .. important::
 
-   Even thought this is Linux, this is a persistent file systems. Care should
-   be taken not to corrupt the file system -- please shut down things, don't
-   just turn off the power switch. Depending on your monitor, the standard
-   power off could be hiding. You can do this from the terminal as well with
-   :code:`sudo shutdown -h now` or the above-mentioned command for powering off.
+   Even though this is Linux, this is a persistent file system. Care should
+   be taken not to corrupt the file system -- always shut down properly, don't
+   just turn off the power switch. You can do this from the terminal with
+   :code:`sudo shutdown -h now` or the above-mentioned :code:`poweroff` command.
+{% if has_local_display is defined and has_local_display %}
+   If you are using a local display connection, you can also use the GUI
+   power off button:
+
+   .. image:: ../../images/shutdown.png
+      :width: 300
+{% endif %}
 
 {% endif %}
 
@@ -253,7 +258,7 @@ Required hardware
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - `ZedBoard <https://digilent.com/reference/programmable-logic/zedboard/start>`__
-  Rev C or later
+  Rev C or later and its power supply
 - :adi:`{{ eval_board }}` FMC evaluation board
 - 2x Micro-USB cables, one for UART and one for JTAG
 {% if no_os_additional_hardware is defined and no_os_additional_hardware %}

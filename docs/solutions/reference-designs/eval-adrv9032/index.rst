@@ -62,6 +62,7 @@ Applications:
    user-guide
    prerequisites
    quickstart/index
+   ram-capture
 
 Recommendations
 -------------------------------------------------------------------------------
@@ -90,6 +91,7 @@ Table of contents
    #. Linux Applications
 
       #. :ref:`iio-oscilloscope`
+      #. :ref:`RAM Capture <adrv9032 ram-capture>`
 
 #. Design with the ADRV9032/ADRV9032R
 
@@ -100,7 +102,7 @@ Table of contents
 
    - Hardware in the Loop / How to design your own custom BaseBand
 
-     - :dokuwiki:`GNU Radio <resources/tools-software/linux-software/gnuradio>`
+     - :ref:`GNU Radio <software gnuradio>`
      - :dokuwiki:`Transceiver Toolbox <resources/tools-software/transceiver-toolbox>`
 
    - Resources for designing a custom ADRV9032/ADRV9032R-based platform software

@@ -123,7 +123,7 @@ Schematic, PCB Layout, Bill of Materials
 
 Design support files for the :adi:`EVAL-CN0579-ARDZ`,
 including schematics, PCB layout, bill of materials, and Allegro project
-files, are available for download: :download:`EVAL-CN0579-ARDZ Design and Integration Files <./files/cn0579-designsupport.zip>`
+files, are available for download: :adi:`EVAL-CN0579-ARDZ Design and Integration Files <media/en/reference-design-documentation/design-integration-files/cn0579-designsupport.zip>`
 
 .. _eval-cn0579-ardz demos:
 

@@ -25,6 +25,13 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+echo Use "adoc serve --sparse <path>" for faster build time.
+set /p yn="Continue? (yes/no) "
+if /i "%yn%" == "y" goto build
+if /i "%yn%" == "yes" goto build
+exit /b 1
+
+:build
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 

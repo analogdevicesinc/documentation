@@ -313,7 +313,7 @@ Sample C code Application
 Compiling the Sample Application
 --------------------------------------------------------------------------------
 
-C Source code: :download:`do_iq.c <../files/do_iq.zip>`
+C Source code: :dokuwiki:`do_iq.c <_media/resources/eval/user-guides/ad-fmcomms2-ebz/software/do_iq.zip>`
 
 This specifies any shell prompt running on the target:
 

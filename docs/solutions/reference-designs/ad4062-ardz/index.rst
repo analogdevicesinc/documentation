@@ -3,11 +3,11 @@
    :image: eval-angle.png
    :label: eval user-guide
 
-   documentation:
+   system-level:
      - User guide <.>
 
    hdl:
-     - HDL Project (ad4062_ardz) <projects/ad4062_ardz>
+     - HDL Project (ad4062_ardz) <projects/ad4062_ardz/index>
 
    no-OS:
      - no-OS driver (ad405x) <drivers/adc/ad405x>
@@ -21,8 +21,9 @@ EVAL-AD4060/AD4062-ARDZ
 
 Compact, Low Power, 12-Bit/16-Bit, 2 MSPS Easy Drive SAR ADCs.
 
-.. image:: eval-angle.png
+.. figure:: eval-angle.png
    :align: right
+   :width: 300
 
 The :adi:`EVAL-AD4060-ARDZ` and :adi:`EVAL-AD4062-ARDZ` evaluation boards enable
 quick and easy evaluation of the performance and features of the

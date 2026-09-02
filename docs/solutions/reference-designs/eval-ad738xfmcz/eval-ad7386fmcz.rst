@@ -791,5 +791,4 @@ Evaluation Board Design Files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Board schematic, layout and BOM files:
-:download:`ad7386_eval_board_design_files.zip
-<files/ad7386_eval_board_design_files.zip>`
+:dokuwiki:`ad7386_eval_board_design_files.zip <_media/resources/eval/user-guides/ad7386_eval_board_design_files.zip>`

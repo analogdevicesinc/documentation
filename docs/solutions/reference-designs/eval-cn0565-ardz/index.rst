@@ -92,7 +92,7 @@ Demo Requirements
 
 **Software**
 
-  - :download:`CN0565 Embedded Firmware <cn0565_hex.zip>`
+  - :dokuwiki:`CN0565 Embedded Firmware <_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/cn0565_hex.zip>`
   - :git-libiio:`Libiio <releases+>` (necessary library)
   - `Python 3 <https://www.python.org/downloads>`__ (to run the example scripts)
 
@@ -185,7 +185,7 @@ the CN0565 HEX file. The procedure is as follows:
 
    .. admonition:: Download
 
-      :download:`CN0565 Embedded Firmware <cn0565_hex.zip>`
+      :dokuwiki:`CN0565 Embedded Firmware <_media/resources/eval/user-guides/circuits-from-the-lab/cn0565/cn0565_hex.zip>`
 
 #. Launch another file explorer, and then open the DAPLINK folder.
 #. Drag and drop the CN0565.HEX file into the DAPLINK folder. The window will
@@ -396,7 +396,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`EVAL-CN0565-ARDZ Design & Integration Files <cn0565-designsupport.zip>`
+   :adi:`EVAL-CN0565-ARDZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0565-designsupport.zip>`
 
    - Schematic
    - PCB Layout

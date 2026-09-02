@@ -1,0 +1,621 @@
+.. _pulsar-adc eval-ad7944-ad7985-ad7986:
+
+User Guide for the AD7944/AD7985/AD7986
+===============================================================================
+
+14-/16-/18-Bit PulSAR ADCs
+
+Features
+-------------------------------------------------------------------------------
+
+- Full-featured evaluation board for the :adi:`AD7944`/:adi:`AD7985`/:adi:`AD7986`
+- PC control with :adi:`EVAL-CED1Z` converter board
+- Software for time and frequency domain analysis
+- Versatile analog signal conditioning circuitry
+- On-board reference, clock oscillator, and buffers
+- Standalone capability
+
+.. figure:: images/10387-001.jpg
+   :align: center
+   :width: 400
+
+   EVAL-AD7944/AD7985/AD7986 evaluation board
+
+**System Requirements:**
+
+- Windows XP SP2, Vista, or Windows 7
+- USB 2.0 port
+
+**Software Needed:**
+
+- Enclosed CD or website download
+
+**Evaluation Kit Contents:**
+
+- Evaluation board (EVAL-AD7944EDZ, EVAL-AD7985EDZ, or EVAL-AD7986EDZ)
+- Software CD
+
+**Documents Required:**
+
+- :adi:`AD7944`, :adi:`AD7985`, :adi:`AD7986` data sheets
+
+**Equipment Required:**
+
+- Precision DC and AC signal sources
+- Band-pass filter (16-/18-bit rated)
+- SMB cable
+- :adi:`EVAL-CED1Z` board
+- 7V DC supply adapter
+
+General Description
+-------------------------------------------------------------------------------
+
+The EVAL-AD79XXEDZ evaluation board targets 20-lead PulSAR ADCs. On-board
+components include a high precision, buffered band gap 5.0V reference
+(:adi:`ADR435`), reference buffers (:adi:`AD8032`), a signal conditioning
+circuit with two op-amps (:adi:`AD8021`), and an FPGA for deserializing the
+serial conversion results. This evaluation board interfaces to the
+:adi:`EVAL-CED1Z` capture board via a 96-pin DIN connector. SMB connectors
+are provided for the low-noise analog signal source.
+
+.. figure:: images/ad7944_85_86.jpg
+   :align: center
+   :width: 500
+
+   EVAL-AD7944/AD7985/AD7986 evaluation board block diagram
+
+The :adi:`AD7944` is a 14-bit, 2.5 MSPS SAR ADC, the :adi:`AD7985` is a
+16-bit, 2.5 MSPS SAR ADC, and the :adi:`AD7986` is an 18-bit, 2.0 MSPS SAR
+ADC. Each device features an internal conversion clock, an internal reference
+(and buffer), error correction circuits, and a versatile serial interface
+port.
+
+Quickstart
+-------------------------------------------------------------------------------
+
+#. Install the software from the CD or website download. Disconnect the
+   evaluation board during installation.
+
+#. Connect the :adi:`EVAL-CED1Z` to the evaluation board.
+
+#. Connect the 7V power supply adapter to the :adi:`EVAL-CED1Z` connector J4.
+
+#. Connect the :adi:`EVAL-CED1Z` via USB to the PC (drivers auto-detect).
+
+#. Launch the evaluation software from the Programs menu.
+
+#. Select the device from the dropdown (:adi:`AD7944`, :adi:`AD7985`, or
+   :adi:`AD7986`).
+
+#. Apply the signal source to the AIN+/AIN- SMB inputs.
+
+#. Configure the signal source appropriately.
+
+#. Initiate single capture (F3) or continuous capture (F4).
+
+#. Configure the software per the `Software Operation`_ section.
+
+.. note::
+
+   The measurements made by Analog Devices use the Audio Precision SYS-2522.
+
+Evaluation Board Hardware
+-------------------------------------------------------------------------------
+
+Power Supplies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Each supply is decoupled where it enters the board and again at each device. A
+single ground plane is used on this board to minimize the effect of high
+frequency noise interference.
+
+Standalone Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The evaluation board can operate without the :adi:`EVAL-CED1Z` controller. It
+requires ±5V, +12V, +7V, or +2.5V power supplies (see the design support
+package for detailed connection information).
+
+Grounding
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The evaluation board ground plane is separated into two sections: a plane for
+the digital interface circuitry and an analog plane for the analog input and
+external reference circuitry. These planes are connected directly beneath the
+ADC converter to minimize noise coupling.
+
+Conversion Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The on-board FPGA performs a number of digital functions, one of them being the
+deserialization of the serial conversion results as the :adi:`EVAL-CED1Z` data
+capture board uses a 16-bit parallel interface.
+
+Analog Inputs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The analog inputs J1 and J2 are SMB (push-on) connectors, buffered with
+dedicated amplifier circuitry (A2, A3) and discrete components as shown in the
+schematic. The circuit allows for different configurations:
+
+- Gain adjustment
+- Input range scaling
+- Filtering
+- Addition of a DC component
+- Use of different op-amps and supplies
+
+The analog input amplifiers are set as unity-gain buffers at the factory, with
+supplies set for +7V to -5V ranges. Both A2 and A3 are set at midscale
+generated from a buffered reference voltage divider or internal ADC reference.
+
+The :adi:`AD7986` uses differential inputs; the :adi:`AD7944` and
+:adi:`AD7985` use a single-ended path.
+
+For FFT testing, a very low distortion AC source is required. For
+low-frequency testing, an audio precision source can be used directly because
+the outputs on these are isolated.
+
+Serial Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The 3-wire serial interface SDI, SCK, and SDO together with CNV are present on
+the digital interface test points, and FPGA-buffered versions are on the
+96-pin connector, P1.
+
+Jumpers, Solder Pads and Test Points
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. list-table:: 3-Pin Jumper Descriptions
+   :header-rows: 1
+   :widths: 15 25 60
+
+   * - Jumper
+     - Default Position
+     - Function
+   * - P2
+     - REF to middle
+     - ADC REF/REFIN select
+   * - P9
+     - REFS to VREF
+     - On-board/external reference selection
+   * - P10
+     - BUF to middle
+     - Selection of Amplifier U2 or bypass
+   * - P11
+     - REFIN to GND
+     - Internal reference/buffer selection (with P12, P9)
+   * - P12
+     - PDREF to VIO
+     - Internal/external reference selection
+
+.. list-table:: Solder Pad Descriptions
+   :header-rows: 1
+   :widths: 15 25 60
+
+   * - Solder Pad
+     - Default Position
+     - Function
+   * - JP1, JP2
+     - A2, A3 (bottom to middle)
+     - ADC inputs; top pad to middle bypasses A2/A3
+   * - JP3
+     - ADC specific
+     - Single/differential input selection
+   * - JP9, JP10
+     - Left pads
+     - 10-lead/20-lead amplifier selection
+   * - VDRV-
+     - -5 VA
+     - Buffer amp negative supply: GND or -5 VA
+   * - VDRV+
+     - +7V
+     - Buffer amp positive supply: 12V, 7V, or 5V
+   * - VCC REF
+     - +7V
+     - Reference circuit supply: 12V or 7V
+   * - AVDD
+     - +2.5V
+     - ADC analog core supply: 2.5V or 5V (max 2.5V)
+   * - DVDD
+     - +2.5V
+     - ADC digital core supply: 2.5V or 5V (max 2.5V)
+   * - BVDD
+     - +5V
+     - ADC 5V supply: 5V on-board or externally
+   * - VIO
+     - +2.5V
+     - ADC digital I/O supply voltage
+
+Reference Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+External Reference (Factory Configuration)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The board includes an :adi:`ADR435` 5V precision reference. The best
+attainable SNR is achieved by using the maximum reference voltage of 5V.
+
+.. list-table:: Factory Reference Jumper Configuration
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Jumper
+     - Setting
+   * - P2
+     - REF and middle
+   * - P9
+     - REFS to VREF
+   * - P10
+     - BUF to middle
+   * - P11
+     - REFIN to GND
+   * - P12
+     - PDREF to VIO
+   * - BVDD
+     - 5V (factory default)
+
+Two external reference methods are available:
+
+#. **Unbuffered:** Leave P10-P12 as factory settings, open P2, connect source
+   to REF test point.
+#. **Buffered:** Replace P2, open P9, apply source to VREF test point.
+
+**ADC Reference Supply, BVDD**
+
+The board includes a 5V source at solder pads (5V or EXT_B) and test point
+EXT_B. For the best performance, derive this supply from the external
+reference.
+
+Internal 4.096V Reference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ADC has an internal 4.096V precision reference and can be used on most
+applications. Connecting PDREF to GND enables the internal reference.
+
+.. list-table:: Internal Reference Jumper Configuration
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Jumper
+     - Setting
+   * - P2
+     - Open
+   * - P9
+     - REFS to VREF
+   * - P10
+     - Don't care
+   * - P11
+     - Open
+   * - P12
+     - PDREF to GND
+   * - BVDD
+     - 5V (factory)
+
+Internal Reference Buffer
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The internal reference buffer is useful when using an external 1.2V reference.
+Applying 1.2V to REFIN produces 4.096V at the ADC REF pin.
+
+**Method 1: REFIN Test Point**
+
+.. list-table:: External Reference Buffer Configuration (REFIN Test Point)
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Jumper
+     - Setting
+   * - P2
+     - Open
+   * - P9
+     - Don't care
+   * - P10
+     - Don't care
+   * - P11
+     - Open
+   * - P12
+     - PDREF to VIO
+   * - BVDD
+     - 5V (factory default)
+
+**Method 2: Divide Down**
+
+Uses U2 op-amp to divide 5V :adi:`ADR435` output to 1.2V via
+R2/R4 = 1 kOhm/316 Ohm.
+
+.. list-table:: External Reference Buffer Configuration (Divide Down)
+   :header-rows: 1
+   :widths: 30 70
+
+   * - Jumper
+     - Setting
+   * - P2
+     - REFIN to middle
+   * - P9
+     - REFS to VREF
+   * - P10
+     - BUF to middle
+   * - P11
+     - REFIN to Pin 1
+   * - P12
+     - PDREF to VIO
+   * - BVDD
+     - 5V (factory default)
+
+Evaluation Board Software
+-------------------------------------------------------------------------------
+
+Pre-Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+   The :adi:`EVAL-CED1Z` board must **not** be connected to the USB port of
+   the PC until after the software is installed. The green LED on the board
+   confirms power; connecting the 7V DC supply is acceptable before
+   installation.
+
+Software Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Close all Windows applications before installation. The CD is included; latest
+versions are also available on :adi:`analog.com <AD7944>`. The user must accept
+the license agreement during the installation process.
+
+#. Extract the software using WinZip (rather than running setup.exe directly).
+#. Run setup.exe from the extracted folder.
+#. Follow the on-screen instructions.
+#. Remove prior versions via Control Panel > Add or Remove Programs if needed.
+
+.. figure:: images/10387-003.jpg
+   :width: 400
+
+   License agreement acceptance
+
+.. figure:: images/10387-004.jpg
+   :width: 400
+
+   Setup.exe initiation
+
+.. figure:: images/10387-005.jpg
+   :width: 400
+
+   Default installation directory selection
+
+.. figure:: images/10387-006.jpg
+   :width: 400
+
+   Software installation progress
+
+.. figure:: images/10387-007.jpg
+   :width: 400
+
+   Installation completion confirmation
+
+USB Drivers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The USB drivers install separately after the main software installation. Click
+**Install** when the driver installation wizard appears.
+
+.. figure:: images/10387-008.jpg
+   :width: 400
+
+   Driver installation wizard
+
+.. figure:: images/10387-009.jpg
+   :width: 400
+
+   Driver installation completion
+
+After connecting the :adi:`EVAL-CED1Z` via USB, the Found New Hardware Wizard
+initiates. When properly installed, the wizard confirms the evaluation board
+software is ready.
+
+.. figure:: images/10387-010.jpg
+   :width: 400
+
+   Found New Hardware Wizard notification
+
+.. figure:: images/10387-011.jpg
+   :width: 400
+
+   Evaluation board setup confirmation
+
+Verify the board appears in Device Manager under ADI Development Tools.
+
+.. figure:: images/10387-012.jpg
+   :width: 400
+
+   Device Manager verification
+
+**Troubleshooting the Installation**
+
+If the driver installation failed, Windows shows a question mark for
+"Other devices" in Device Manager. This is usually caused by non-administrator
+installation. Re-install as administrator with full privileges.
+
+.. figure:: images/10387-013.jpg
+   :width: 400
+
+   Unrecognized device in Device Manager
+
+.. figure:: images/10387-014.jpg
+   :width: 400
+
+   Uninstalled USB device properties
+
+Running the Evaluation Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The evaluation software performs:
+
+- Histogram for code transition noise (DC)
+- FFT for SNR, SINAD, THD, and SFDR
+- Decimation (digital filtering)
+
+The software is located at:
+``C:\Program Files\Analog Devices\PulSAR ADC Evaluation Software\Eval PulSAR CED.exe``
+
+It is also available in the Start menu under Analog Devices PulSAR Evaluation
+Software.
+
+Software Operation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting the software opens the Raw Data Capture window.
+
+.. figure:: images/10387-015.jpg
+   :align: center
+   :width: 500
+
+   Raw Data Capture setup screen
+
+#. Click the arrow in the upper left corner to start.
+#. Select the device (:adi:`AD7944`, :adi:`AD7985`, or :adi:`AD7986`).
+#. Set the controls:
+
+   - **Sample Frequency:** Enter rate in kHz (supports notation like "10k"
+     for 10,000,000 Hz or "10 MSPS").
+   - **Input Range:** Select 4.096V or 5V for correct LSB display.
+   - **Interface Mode:** Select Busy mode options.
+   - **Turbo CTRL:** Select Turbo mode or normal mode.
+   - **CNV Mode:** Select Continuous or burst conversion.
+   - **Coding:** :adi:`AD7986` uses "2 compl" (twos complement);
+     :adi:`AD7944`/:adi:`AD7985` use binary.
+
+#. Control functions (top menu):
+
+   - **Save (F5):** LV Config, HTML, or Spreadsheet options.
+   - **Stop (F10):** Halt software.
+   - **RESET:** Reset the CED capture board.
+
+Context Help
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select **Help > Show Context Help** or press **F1**. Hovering over screen items
+displays context information.
+
+.. figure:: images/10387-016.jpg
+   :align: center
+   :width: 500
+
+   On-screen help and histogram controls
+
+Histogram and Oscilloscope Charts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the buttons to select single or continuous data capture. Enter the sample
+count in the "# of Samples (k)" field. Statistics display in the Histogram
+Data section; graphics display in the chart area. Results can be viewed as
+histogram or oscilloscope via tab selection. The "Summary" tab shows both
+charts together.
+
+.. figure:: images/10387-017.jpg
+   :align: center
+   :width: 500
+
+   Histogram data window
+
+.. figure:: images/10387-018.jpg
+   :align: center
+   :width: 500
+
+   Histogram chart display
+
+.. figure:: images/10387-019.jpg
+   :align: center
+   :width: 500
+
+   Oscilloscope time-domain chart
+
+.. figure:: images/10387-020.jpg
+   :align: center
+   :width: 500
+
+   Oscilloscope display tabs
+
+.. figure:: images/10387-021.jpg
+   :align: center
+   :width: 500
+
+   Summary tab view
+
+FFT Spectrum Data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the "Spectrum" tab in the Raw Data Capture window. The Spectrum Data
+section shows x-axis (frequency) and y-axis (magnitude) data.
+
+.. figure:: images/10387-022.jpg
+   :align: center
+   :width: 500
+
+   FFT spectrum analysis window
+
+Troubleshooting
+-------------------------------------------------------------------------------
+
+Software Tips
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Install the software from the CD or website before connecting the hardware.
+- Allow the full installation (two-part: software + drivers); a PC restart may
+  be required.
+- Let the Found New Hardware Wizard complete when first plugging in the USB.
+- Verify board connection to the :adi:`EVAL-CED1Z`, daughter card connection,
+  and Device Manager recognition.
+
+Hardware Tips
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the software reads no data:
+
+#. Verify the :adi:`EVAL-CED1Z` power and voltages on the P connectors.
+#. Confirm signal source operation and expected signal output.
+#. Probe the signal path points (driver amplifier inputs, ADC inputs).
+
+For SNR performance issues:
+
+- Some sources require filtering; the board was tested with the AP-2322
+  analyzer/source.
+- Ensure the signal amplitude covers the full-scale ADC range.
+- Monitor the max/min amplitude or fundamental in the Spectrum tab.
+- Adjust the source for full-scale swing.
+
+Design Resources
+-------------------------------------------------------------------------------
+
+Complete design support files (schematics, Gerber files, bill of materials)
+and evaluation software are available for download from the respective
+evaluation board product pages on analog.com.
+
+Related Links
+-------------------------------------------------------------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
+
+   * - Resource
+     - Description
+   * - :adi:`AD7944`
+     - 14-bit, 2.5 MSPS ADC with internal reference
+   * - :adi:`AD7985`
+     - 16-bit, 2.5 MSPS ADC with internal reference
+   * - :adi:`AD7986`
+     - 18-bit, 2 MSPS differential input ADC with internal reference
+   * - :adi:`AD8021`
+     - Low noise, high speed amplifier
+   * - :adi:`AD8032`
+     - Low power, low noise amplifier
+   * - :adi:`ADA4899-1`
+     - Low noise, high speed amplifier
+   * - :adi:`ADR435`
+     - Ultralow noise XFET voltage reference
+   * - :adi:`ADP1715`
+     - High accuracy low IQ 500 mA adjustable LDO regulator
+   * - :adi:`ADP3334`
+     - 500 mA low dropout CMOS linear regulator
+   * - :adi:`EVAL-CED1Z`
+     - Converter evaluation and development board

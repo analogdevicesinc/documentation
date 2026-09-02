@@ -124,7 +124,7 @@ Sweeping DPD Models
 ADI provides two methods of model selection: existing model sweep/search or a
 model pruning optimization. A DPD model library as part of the ADRV904x Software
 Package is provided in the default model sweep directory shown below. Also,
-attached :download:`here <../resources/dpd_models.zip>`
+attached :dokuwiki:`here <_media/resources/eval/user-guides/adrv904x/dpd/dpd_models.zip>`
 
 .. image:: ../images/adidpdanalysistool_modelsweep.png
    :align: center

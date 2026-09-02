@@ -143,6 +143,6 @@ Schematics and CAD Files
 
 .. admonition:: Download
 
-    - :download:`Rev B Schematics <02-064107-01-b.pdf>`
-    - :download:`Rev B Gerbers <09-064107-01b.zip>`
-    - :download:`Rev B Cadence Project <20-064107-01b.zip>`
+    - :dokuwiki:`Rev B Schematics <_media/university/tools/m2k/accessories/02-064107-01-b.pdf>`
+    - :dokuwiki:`Rev B Gerbers <_media/university/tools/m2k/accessories/09-064107-01b.zip>`
+    - :dokuwiki:`Rev B Cadence Project <_media/university/tools/m2k/accessories/20-064107-01b.zip>`

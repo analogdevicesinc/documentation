@@ -249,7 +249,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-GMSL-D-E-ADP# Design Support Files <ad-gmsl-d-e-adp_design_support.zip>`
+   :dokuwiki:`AD-GMSL-D-E-ADP# Design Support Files <_media/resources/eval/user-guides/ad-gmsl-d-e-adp/ad-gmsl-d-e-adp_design_support.zip>`
 
    - Schematic
    - PCB Layout

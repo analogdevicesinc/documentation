@@ -133,6 +133,8 @@ If you look close, the revision of the PCB is etched in metal on the side
 .. image:: pluto_c_zoom.png
    :width: 195px
 
+.. _pluto hacking hardware revision-d:
+
 Revision D
 ----------
 

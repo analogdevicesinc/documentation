@@ -55,9 +55,9 @@ Specifications
 
 **Hardware Design Files**
 
-- :download:`Schematics <02_075922a_top.pdf>`
-- :download:`Layout <08_075922a.zip>`
-- :download:`High level BOM <05-075922-01-a.zip>`
+- :dokuwiki:`Schematics <_media/resources/eval/user-guides/02_075922a_top.pdf>`
+- :dokuwiki:`Layout <_media/resources/eval/user-guides/08_075922a.zip>`
+- :dokuwiki:`High level BOM <_media/resources/eval/user-guides/05-075922-01-a.zip>`
 
 GMSL EV Kit Compatibility
 -------------------------

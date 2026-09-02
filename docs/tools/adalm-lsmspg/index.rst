@@ -296,7 +296,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`ADALM-LSMSPG Design & Integration Files <ADALM-LSMSPG-designsupport.zip>`
+   :adi:`ADALM-LSMSPG Design & Integration Files <media/en/reference-design-documentation/design-integration-files/adalm-mmsc-designsupport.zip>`
 
     - Schematic
     - PCB Layout

@@ -43,16 +43,16 @@ Files
 ~~~~~
 
 The simulink model files can be downloaded from this zip file
-:download:`Simulink models <digital_template_simulink_models.zip>` and placed in the
+:dokuwiki:`Simulink models <_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/digital_template_simulink_models.zip>` and placed in the
 HighSpeedConverterToolbox/test folder. The PID and DDS are submodels within the
 top level testModel_template_top.slx file, and the path pointing to the
 submodels should be updated to reflect the new correct path on the user's
 machine. See the Build section at the bottom of tutorial for instructions on
-implementing the model. Additionally, the bootfile is provided here :download:`Boot file<boot.zip>`
+implementing the model. Additionally, the bootfile is provided here :dokuwiki:`Boot file <_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/boot.zip>`
 and can be copied directly into the boot directory of the SD card.
 
 The Python example scripts can be downloaded from this zip file
-:download:`Python Examples <digital_template_python_example_scripts.zip>`, and placed in the
+:dokuwiki:`Python Examples <_media/resources/eval/user-guides/circuits-from-the-lab/cn0584/digital_template_python_example_scripts.zip>`, and placed in the
 pyadi-iio/examples folder while in the cn0585_v1 branch.
 
 The following sections describe the model and scripts in more detail.

@@ -51,15 +51,15 @@ Schematic, PCB layout, and bill of materials
    * - Description
      - Download
    * - EVAL-AD3552RFMC1Z Schematic
-     - :download:`PDF <./files/ad35xxr/eval-ad3552rfmc1z.pdf>`
+     - :dokuwiki:`PDF <_media/resources/eval/eval-ad3552rfmc1z.pdf>`
    * - EVAL-AD3552RFMC2Z Schematic
-     - :download:`PDF <./files/ad35xxr/eval-ad3552rfmc2z.pdf>`
+     - :dokuwiki:`PDF <_media/resources/eval/eval-ad3552rfmc2z.pdf>`
    * - EVAL-AD3552RFMCxZ Gerber Files
-     - :download:`ZIP <./files/ad35xxr/eval_ad3552rfmcxz_gerber_files.zip>`
+     - :dokuwiki:`ZIP <_media/resources/eval/eval_ad3552rfmcxz_gerber_files.zip>`
    * - EVAL-AD3552RFMC1Z Bill of Materials
-     - :download:`XLSX <./files/ad35xxr/eval-ad3552rfmc1z.xlsx>`
+     - :dokuwiki:`XLSX <_media/resources/eval/eval-ad3552rfmc1z.xlsx>`
    * - EVAL-AD3552RFMC2Z Bill of Materials
-     - :download:`XLSX <./files/ad35xxr/eval-ad3552rfmc2z.xlsx>`
+     - :dokuwiki:`XLSX <_media/resources/eval/eval-ad3552rfmc2z.xlsx>`
 
 Software guide
 -------------------------------------------------------------------------------
@@ -719,8 +719,8 @@ before powering on.
    * - Description
      - Download
    * - EVAL-AD3542RFMCZ Schematic
-     - :download:`PDF <./files/ad35xxr/02_050892d_top.pdf>`
+     - :dokuwiki:`PDF <_media/resources/eval/user-guides/dac/eval-ad3542r/02_050892d_top.pdf>`
    * - EVAL-AD3542RFMCZ Gerber Files
-     - :download:`ZIP <./files/ad35xxr/09-050892-01c.zip>`
+     - :dokuwiki:`ZIP <_media/resources/eval/user-guides/dac/eval-ad3542r/09-050892-01c.zip>`
    * - EVAL-AD3542RFMCZ Bill of Materials
-     - :download:`XLSX <./files/ad35xxr/05-050892-01-d.xlsx>`
+     - :dokuwiki:`XLSX <_media/resources/eval/user-guides/dac/eval-ad3542r/05-050892-01-d.xlsx>`

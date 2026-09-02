@@ -46,20 +46,20 @@ Downloads
       * - Type
         - Rev 1D
       * - Schematic
-        - :download:`Rev1D Schematic <resources/fmcomms6_radx1d.pdf>`
+        - :dokuwiki:`Rev1D Schematic <_media/resources/fpga/xilinx/fmc/fmcomms6/fmcomms6_radx1d.pdf>`
       * - Assembly Files
-        - :download:`Rev1D Assembly Files <resources/cn-0331_rev1d_mfg.zip>`
+        - :dokuwiki:`Rev1D Assembly Files <_media/resources/fpga/xilinx/fmc/fmcomms6/cn-0331_rev1d_mfg.zip>`
       * - Build Files
-        - :download:`Rev1D Build Files <resources/radx1d_archive.zip>`
+        - :dokuwiki:`Rev1D Build Files <_media/resources/fpga/xilinx/fmc/fmcomms6/radx1d_archive.zip>`
       * - Allegro Board File
-        - :download:`Rev1D Allegro Board File <resources/fmcomms6_radx1d_board_file.zip>`
+        - :dokuwiki:`Rev1D Allegro Board File <_media/resources/fpga/xilinx/fmc/fmcomms6/fmcomms6_radx1d_board_file.zip>`
       * - Block Diagram
-        - :download:`Block Diagram <resources/radx_rev1b_block_diagram020814.pdf>`
+        - :dokuwiki:`Block Diagram <_media/resources/fpga/xilinx/fmc/fmcomms6/radx_rev1b_block_diagram020814.pdf>`
       * - Power Budget
-        - :download:`Power Budget <resources/power_budget_021714.pdf>`
+        - :dokuwiki:`Power Budget <_media/resources/fpga/xilinx/fmc/fmcomms6/power_budget_021714.pdf>`
       * - Noise Analysis
-        - :download:`Noise Analysis <images/noiseanalysis_adl5380_adl5566-ad9652.xls>`
+        - :dokuwiki:`Noise Analysis <_media/resources/fpga/xilinx/fmc/fmcomms6/noiseanalysis_adl5380_adl5566-ad9652.xls>`
       * - Bill of Material
-        - :download:`radx_1d_bom.xlsx <images/radx_1d_bom.xlsx>`
+        - :dokuwiki:`radx_1d_bom.xlsx <_media/resources/eval/user-guides/ad-fmcomms6-ebz/radx_1d_bom.xlsx>`
 
    -  Get the `Allegro FREE Physical Viewer <https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html>`_ (You need 16.5 or higher).

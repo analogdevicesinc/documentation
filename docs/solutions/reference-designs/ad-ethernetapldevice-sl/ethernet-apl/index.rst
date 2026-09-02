@@ -105,7 +105,7 @@ hot-plug scenario.
 .. figure:: hot_input2.png
    :width: 700 px
 
-   Hot Input LINE_P Current Capture w/ REG_3V5, LINE_P, LOAD_P Voltages
+   Hot Input LINE_P Current Capture with REG_3V5, LINE_P, LOAD_P Voltages
 
 Zooming in the beginning of the power-up sequence the following are
 measured: The inrush only has a 2.4μC of charge despite the high peak
@@ -156,6 +156,6 @@ also following the correct sequence for shutdown being 1V1 first,
 
 .. figure:: shutdown.png
    :width: 700 px
-   :alt: Shut-down Sequence for 3V3, 1V8 and 1V1
+   :alt: Shutdown Sequence for 3V3, 1V8 and 1V1
 
-   Shut-down Sequence for 3V3, 1V8 and 1V1
+   Shutdown Sequence for 3V3, 1V8 and 1V1

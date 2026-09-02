@@ -47,6 +47,8 @@ for the the Commits link with the newest version and at least one Release.
     - v6.18.31:
       :git-linux:`Commits <commits/adsp-6.18.31-y+>`
       :git-linux:`Release 1 <releases/tag/6.18.31-1+>`
+      :git-linux:`Release 2 <releases/tag/6.18.31-2+>`
+      :git-linux:`Release 3 <releases/tag/6.18.31-3+>`
 
 ..
     - v6.12.38:
@@ -63,6 +65,8 @@ for the the Commits link with the newest version and at least one Release.
       :git-u-boot:`Release 1 <releases/tag/v2025.10-1+>`
       :git-u-boot:`Release 2 <releases/tag/v2025.10-2+>`
       :git-u-boot:`Release 3 <releases/tag/v2025.10-3+>`
+      :git-u-boot:`Release 4 <releases/tag/v2025.10-4+>`
+      :git-u-boot:`Release 5 <releases/tag/v2025.10-5+>`
     - v2026.01:
       :git-u-boot:`Commits <commits/adi-u-boot-2026.01.y+>`
 - :git-buildroot:`+`
@@ -76,6 +80,8 @@ for the the Commits link with the newest version and at least one Release.
       :git-buildroot:`Commits <commits/adi-2026.02-y+>`
       :git-buildroot:`Release 1 <releases/tag/2026.02-1+>`
       :git-buildroot:`Release 2 <releases/tag/2026.02-2+>`
+      :git-buildroot:`Release 3 <releases/tag/2026.02-3+>`
+      :git-buildroot:`Release 4 <releases/tag/2026.02-4+>`
     - v2027.02 (LTS):
 - :git-trusted-firmware-a:`+`
 - :git-optee_os:`+`
@@ -86,6 +92,7 @@ for the the Commits link with the newest version and at least one Release.
       :git-openocd:`0.12.0-1.2.0 <releases/tag/0.12.0-1.2.0+>`
       :git-openocd:`0.12.0-1.3.0 <releases/tag/0.12.0-1.3.0+>`
       :git-openocd:`0.12.0-1.3.1 <releases/tag/0.12.0-1.3.1+>`
+      :git-openocd:`0.12.0-1.4.0 <releases/tag/0.12.0-1.4.0+>`
 
 ADI repositories
 ^^^^^^^^^^^^^^^^
@@ -96,6 +103,7 @@ For Yocto support see ``lxndsp-adi-meta`` below.
     - :git-adsp-ldr:`v1.0.0 <releases/tag/v1.0.0+>`
       :git-adsp-ldr:`v1.0.1 <releases/tag/v1.0.1+>`
       :git-adsp-ldr:`v1.0.2 <releases/tag/v1.0.2+>`
+      :git-adsp-ldr:`v1.0.3 <releases/tag/v1.0.3+>`
 - :git-lnxdsp-adi-meta:`+`
     - Kirkstone:
       :git-lnxdsp-adi-meta:`Release v3.0.0 <releases/tag/3.0.0-rel+>`
@@ -105,8 +113,17 @@ For Yocto support see ``lxndsp-adi-meta`` below.
     - Scarthgap:
       :git-lnxdsp-adi-meta:`Release v5.0.0 <releases/tag/5.0.0-rel+>`
       :git-lnxdsp-adi-meta:`Release v5.0.1 <releases/tag/5.0.1-rel+>`
+      :git-lnxdsp-adi-meta:`Release v5.1.0 <releases/tag/5.1.0-rel+>`
 - :git-lnxdsp-repo-manifest:`+`
 - :git-br2-external:`+`
     - v2025.05:
       :git-br2-external:`Release 0.1.0 <releases/tag/2025.05-0.1.0+>`
       :git-br2-external:`Release 0.2.0 <releases/tag/2025.05-0.2.0+>`
+    - v2026.02:
+      :git-br2-external:`Release 0.1.0 <releases/tag/2026.02-0.1.0+>`
+      :git-br2-external:`Release 0.2.0 <releases/tag/2026.02-0.2.0+>`
+      :git-br2-external:`Release 0.2.0 <releases/tag/2026.02-1.0.0+>`
+- :git-rpmsg-examples:`+`
+    - :git-rpmsg-examples:`v1.0.0 <releases/tag/v1.0.0+>`
+- :git-rpmsg-utils:`+`
+    - :git-rpmsg-utils:`v1.0.0 <releases/tag/v1.0.0+>`

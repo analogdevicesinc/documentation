@@ -55,7 +55,7 @@ For more information on each of ADC Platforms, please click on the links below:
 
 
 `````{grid}
-:columns: 3
+:columns: 2
 
 ````{card} Phaser (CN0566)
 :ref: adc adalm-phaser
@@ -75,7 +75,6 @@ Low-cost SDR system based on the AD9361
 ```
 ````
 
-
 ````{card} Triton
 :ref: adc triton
 
@@ -84,6 +83,25 @@ Low-cost SDR system based on the AD9361
 ```{image} triton/images/adxband16ebz-top-angle-evaluation-board.png
 ```
 ````
+
+````{card} X-Band Development Platform
+:ref: adc x-band-dev-kit
+
+32T/32R Hybrid Beamforming Phased Array Platform
+
+```{image} x-band/xbdev-box.png
+```
+````
+
+````{card} Jupiter SDR
+:ref: adc jupiter
+
+Ruggedized, high-performance SDR platform
+
+```{image} jupiter/ad-jupiter-ebz-angle-web.jpg
+```
+````
+
 `````  
 
 ## Platform Pilots
@@ -145,8 +163,10 @@ We have a Catalyst centres in:
 :hidden:
 
 Phaser (CN0566)<phaser/index>
-Pluto SDR<pluto/index>
 Triton <triton/index>
+X-Band Development Platform <x-band/index>
+Jupiter SDR <jupiter/index>
+Pluto SDR<pluto/index>
 ```
 
 

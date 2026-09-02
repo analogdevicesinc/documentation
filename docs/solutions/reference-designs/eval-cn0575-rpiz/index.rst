@@ -453,7 +453,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-  :download:`EVAL-CN0575-RPIZ Design & Integration Files <cn0575-designsupport.zip>`
+  :adi:`EVAL-CN0575-RPIZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/cn0575-designsupport.zip>`
 
   - Schematics
   - PCB Layout

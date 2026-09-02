@@ -209,7 +209,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`EV-FLOWMETER-ARDZ Design Support Package Rev. A <ev-flowmeter_ardz-designsupport.zip>`
+   :dokuwiki:`EV-FLOWMETER-ARDZ Design Support Package Rev. A <_media/resources/eval/user-guides/ev-flowmeter_ardz-designsupport.zip>`
 
    - Schematic
    - Bill of Materials

@@ -128,7 +128,7 @@ that all the averaging operations are implemented by FIR filter.
 
    You can download the Simulink model from below:
 
-   - :download:`iqcorrection.zip <../resources/iqcorrection.zip>`
+   - :dokuwiki:`iqcorrection.zip <_media/resources/eval/user-guides/ad-fmcomms1-ebz/iqcorrection.zip>`
 
    Pay attention to the output data type of each block. It should be defined
    according to the range of the data value of your system. Otherwise, you will

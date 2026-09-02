@@ -157,7 +157,7 @@ demo.
 - **Software**
 
   - PuTTY or other similar software
-  - :download:`ADuCM3029_demo_AD5593R.hex <aducm3029_demo_ad5592r_ad5593r.zip>`
+  - :git-eval-adicup3029:`ADuCM3029_demo_AD5593R.hex <main:projects/ADuCM3029_demo_ad5592r_ad5593r>`
 
 .. important::
 
@@ -183,13 +183,9 @@ demo.
 
    The software for the **ADICUP3029_AD5593R** demo can be found here:
 
-   Prebuilt AD5593R Hex File
+   AD5593R Source Files
 
-     - :download:`ADuCM3029_demo_AD5593R.hex <aducm3029_demo_ad5592r_ad5593r.zip>`
-
-   Complete AD5593R Source Files
-
-     - :git-eval-adicup3029:`ADuCM3029_demo_AD5593R Source Code <projects/ADuCM3029_demo_ad5592r_ad5593r>`
+     - :git-eval-adicup3029:`ADuCM3029_demo_AD5593R Source Code <main:projects/ADuCM3029_demo_ad5592r_ad5593r>`
 
 Setting up the Hardware
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -499,7 +495,7 @@ Schematic, PCB Layout, Bill of Materials
 
 .. admonition:: Download
 
-   :download:`EVAL-AD5593R-PMDZ Design & Integration Files <eval-ad5593r-pmdz-designsupport.zip>`
+   :adi:`EVAL-AD5593R-PMDZ Design & Integration Files <media/en/reference-design-documentation/design-integration-files/eval-ad5593r-pmdz-designsupport.zip>`
 
    - Schematics
    - PCB Layout

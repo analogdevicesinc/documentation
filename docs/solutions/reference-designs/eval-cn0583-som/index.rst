@@ -421,13 +421,13 @@ The programming may be done over DAPLINK, as following:
    .. admonition:: Download
 
       -  **Algorithm for UL 217 8th Edition Standard:**
-         :download:`UL 217 hex with CLI stream <cn0583_cli_ul217.zip>`
+         :dokuwiki:`UL 217 hex with CLI stream <_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/cn0583_cli_ul217.zip>`
 
       -  **Algorithm for EN14604:2005 Standard:**
-         :download:`EN14604 hex with CLI stream <cn0583_cli_en14604.zip>`
+         :dokuwiki:`EN14604 hex with CLI stream <_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/cn0583_cli_en14604.zip>`
 
       -  **No Algorithm:**
-         :download:`no-alarm CLI hex <cn0583_no_alarm.zip>`
+         :dokuwiki:`no-alarm CLI hex <_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/cn0583_no_alarm.zip>`
 
 #. Connect the EVAL-CN0583-CRR1 carrier board to your PC using an USB cable.
 #. Wait for the DAPLINK directory to appear on your PC’s filesystem.
@@ -662,12 +662,12 @@ setup was tested at a certified testing facility (Intertek) and passed all the
 smoke sensor aspects of the UL-217 8th Edition Standards. You can view the
 entire report below:
 
--  :download:`Test Report for UL-217 8th Edition using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <ul-217_8th_edition_test_report.pdf>`
+-  :dokuwiki:`Test Report for UL-217 8th Edition using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/ul-217_8th_edition_test_report.pdf>`
 
 The hardware and algorithm were also verified using the EN54-7/EN14604
 Standard and the results are available here:
 
-- :download:`Test Report for EN54-7/EN-14604 Standard using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <ul-217_8th_edition_test_report.pdf>`
+- :dokuwiki:`Test Report for EN54-7/EN-14604 Standard using the ADSW-SMOKEALGO-PRODLIC algorithm with the CN0583 Hardware <_media/resources/eval/user-guides/circuits-from-the-lab/cn-0583/ul-217_8th_edition_test_report.pdf>`
 
 Device Driver Support
 ---------------------

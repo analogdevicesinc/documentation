@@ -228,7 +228,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-CELLPACKBM-SL Design Support Package <design_support_package.zip>`
+   :dokuwiki:`AD-CELLPACKBM-SL Design Support Package <_media/resources/eval/user-guides/ad-cellpackbm-sl/ad-cellpackbm-sl_design_support_package.zip>`
 
    * Schematic
    * PCB Layout

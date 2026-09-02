@@ -210,12 +210,21 @@ Design & Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-GMSL793MIPI-EVK Design Support Package <AD-GMSL793MIPI-EVK-designsupport.zip>`
+   :adi:`AD-GMSL793MIPI-EVK Design Support Package <media/en/reference-design-documentation/design-integration-files/ad-gmsl793mipi-evk-designsupport.zip>`
 
    - Schematic
    - PCB Layout
    - Bill of Materials
    - Allegro Project
+
+User Guides
+~~~~~~~~~~~
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   production_testing/index
 
 Help and Support
 ~~~~~~~~~~~~~~~~

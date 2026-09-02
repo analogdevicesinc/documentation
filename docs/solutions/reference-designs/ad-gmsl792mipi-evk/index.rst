@@ -235,7 +235,7 @@ Design & Integration Files
 
 .. admonition:: Download
 
-     :download:`AD-GMSL792MIPI-EVK Design Support Package <files/design-support.zip>`
+     :adi:`AD-GMSL792MIPI-EVK Design Support Package <media/en/reference-design-documentation/design-integration-files/ad-gmsl792mipi-evk-designsupport.zip>`
 
      - Schematic
      - PCB Layout
@@ -251,3 +251,9 @@ reference design with Analog Devices components via the
 
 It should be noted that the older the tools' versions and release branches are,
 the lower the chances to receive support from ADI engineers.
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   production_testing/index

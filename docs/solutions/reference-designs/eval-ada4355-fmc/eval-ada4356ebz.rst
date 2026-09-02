@@ -655,16 +655,16 @@ Downloads
 
    Boot Files:
 
-   :download:`4356 Boot Files (Aug 13, 2025) <files/4356_boot_2025-08-13.zip>`
+   :dokuwiki:`4356 Boot Files (Aug 13, 2025) <_media/resources/eval/4356_boot_2025-08-13.zip>`
    --- Based on July 14 version, but fixes Trig In - Trig Out
    loopback.
 
-   :download:`4356 Boot Files (July 14, 2025) <files/4356_boot_2025-07-14.zip>`
+   :dokuwiki:`4356 Boot Files (July 14, 2025) <_media/resources/eval/4356_boot_2025-07-14.zip>`
    --- First version to support EVAL-ADA4356 with corrected FMC
    connection for frame clock. Includes support for onboard
    self-debug ADC. Has bug in Trig In - Trig Out loopback.
 
-   :download:`ADA4355 Boot Files for ADA4356 on EVAL-ADA4355 Board (March 12) <files/ada4355_eval_board_on_zed_boot_files_march12.zip>`
+   :dokuwiki:`ADA4355 Boot Files for ADA4356 on EVAL-ADA4355 Board (March 12) <_media/resources/eval/ada4355_eval_board_on_zed_boot_files_march12.zip>`
 
 .. warning::
 

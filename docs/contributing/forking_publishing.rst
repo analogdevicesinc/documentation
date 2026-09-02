@@ -116,6 +116,28 @@ to your copy the large files binaries (and vice versa):
 If you don't have write permission to *analogdevicesinc*, you won't be able
 to push to it, but a reviewer can do in your behalf during review.
 
+Pull requests against your own fork
++++++++++++++++++++++++++++++++++++
+
+GitHub Pages deployments from pull request runs are not allowed by default in
+forks. When opening a pull request against your fork, the deployment step will
+fail with:
+
+  .. error::
+
+     The deployment was rejected or didn't satisfy other protection rules.
+
+To allow these deployments, open your fork's
+``https://github.com/<USER>/documentation/settings/environments`` page and
+select the ``github-pages`` environment. Under **Deployment branches and
+tags**, ensure the list includes:
+
+* ``main``
+* ``refs/pull/*/merge``
+
+By clicking ``Add deployment branch or tag rule`` and adding each,
+allowing GitHub Pages deployments from pull request runs in your fork.
+
 .. _forking-publishing copy:
 
 Copy

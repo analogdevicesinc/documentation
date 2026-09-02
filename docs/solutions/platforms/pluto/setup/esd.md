@@ -1,6 +1,6 @@
 # PlutoSDR ESD Diode Issue
 
-As of this writing, we are currently on "Rev D" of PlutoSDR.  You can find more information about this rev, and past revs, [here](https://analogdevicesinc.github.io/documentation/tools/pluto/hacking/hardware.html#revision-d). For Rev D, RF ESD diodes were added to all the Rx and Tx ports.  This was done in an abundance of caution to protect the RF ports from ESD damage--even though such damage has been rarely, if ever, reported.  
+As of this writing, we are currently on "Rev D" of PlutoSDR.  You can find more information about this rev, and past revs, {ref}`here <pluto hacking hardware revision-d>`. For Rev D, RF ESD diodes were added to all the Rx and Tx ports.  This was done in an abundance of caution to protect the RF ports from ESD damage--even though such damage has been rarely, if ever, reported.  
 
 ```{image} resources/esd2.svg
 :width: 400px

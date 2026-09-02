@@ -467,7 +467,7 @@ Running the Example
 
       Below is a copy of the python script:
 
-      :download:`adxrs290.py <resources/adxrs290.zip>`
+      :dokuwiki:`adxrs290.py <_media/resources/eval/user-guides/circuits-from-the-lab/eval-adxrs290-pmdz/adxrs290.zip>`
 
      It will return these lines of data on the terminal:
 

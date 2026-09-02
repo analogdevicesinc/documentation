@@ -1,0 +1,149 @@
+.. _adv7511 quickstart ac701:
+
+AC701 Quick start
+===============================================================================
+
+.. warning::
+
+   The AC701 carrier is last supported in the
+   :git-hdl:`hdl_2017_r1 <hdl_2017_r1:projects/adv7511/ac701>` release.
+
+This guide provides quick instructions on how to setup the ADV7511 HDMI
+transmitter on:
+
+- :xilinx:`AC701` (Artix-7 FPGA)
+
+.. image:: ../../images/ac701.png
+   :width: 900
+
+.. esd-warning::
+
+Using no-OS as software
+-------------------------------------------------------------------------------
+
+Necessary files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following files are needed for the system to work:
+
+- HDL project files: :git-hdl:`projects/adv7511/ac701 <hdl_2017_r1:projects/adv7511/ac701>`
+- no-OS project: :git-no-OS:`projects/adv7511`
+- ADV7511 Transmitter Library: :adi:`ADV7511 HDMI Transmitter Library <media/en/dsp-hardware-software/software-modules/ADV7511_API_Library.exe>`
+
+Instructions on how to build the files from source can be found here:
+
+- More HDL build details at :external+hdl:ref:`build_hdl`
+- no-OS build guide: :external+no-OS:doc:`build_guide`
+
+Required Software
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx Vivado (the supported version can be found in the
+  :git-hdl:`HDL repository <tree/master>`)
+- UART terminal (Putty/Tera Term/Minicom, etc.) with baud rate 115200 (8N1)
+- ADV7511 Transmitter Library (requires Wine on Linux)
+
+Required Hardware
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- AMD Xilinx :xilinx:`AC701` FPGA board and its power supply
+- HDMI Monitor
+- HDMI cable
+- Mini-USB cable (UART)
+- JTAG cable (for programming)
+
+More details as to why you need these, can be found at
+:ref:`adv7511 prerequisites`.
+
+Testing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Creating the setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the steps in this order, to avoid damaging the components:
+
+#. Connect an HDMI cable between the AC701 HDMI output port and the HDMI monitor
+#. Connect the Mini-USB cable to the UART port on the AC701
+#. Connect the JTAG cable to the JTAG port on the AC701
+#. Connect the power supply to the AC701
+#. Turn on the HDMI monitor
+#. Turn on the power switch on the AC701 board
+
+Building and Running the Software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow these steps to build and run the ADV7511 demo:
+
+#. Download and install the :adi:`ADV7511 HDMI Transmitter Library <media/en/dsp-hardware-software/software-modules/ADV7511_API_Library.exe>`
+
+   - On Linux: Use Wine to install the library
+
+#. Extract the TX folder from the installation directory to the no-OS project:
+
+   - From: ``<installation folder>/Src/TX/``
+   - To: ``<no-OS repo>/projects/adv7511/TX/``
+
+#. Build the HDL project for AC701:
+
+   - Follow the instructions at :external+hdl:ref:`build_hdl`
+   - Generate the .xsa file
+
+#. Copy the .xsa file to the no-OS project directory:
+
+   - ``<no-OS repo>/projects/adv7511/``
+
+#. In the no-OS project, edit ``src/app_config.h``:
+
+   - Uncomment ``#define PLATFORM_AC701``
+
+#. Build the no-OS project following the :external+no-OS:doc:`build_guide`
+
+#. Program the FPGA and run the application through your IDE (Vitis)
+
+#. Open your UART terminal and connect to the AC701 serial port (115200 baud)
+
+Console output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If programming was successful, you should see messages appear on the terminal
+similar to this:
+
+.. image:: ../images/adv7511_lib_test.png
+   :alt: Terminal
+   :width: 400
+
+The reference design demonstrates:
+
+- Initializing the ADV7511 HDMI transmitter
+- Checking the current AVR operating mode
+- Setting the AV mute state
+- Displaying a test image on the HDMI monitor
+- Playing audio (if configured)
+
+Changing Video Resolution
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/adv7511_uart.png
+   :alt: UART Menu
+   :align: center
+   :width: 400
+
+You can change the video resolution by typing a number from 0 to 6 in the
+terminal:
+
+- 0: 640x480 @ 60Hz
+- 1: 800x600 @ 60Hz
+- 2: 1024x768 @ 60Hz
+- 3: 1280x720 @ 60Hz
+- 4: 1360x768 @ 60Hz
+- 5: 1600x900 @ 60Hz
+- 6: 1920x1080 @ 60Hz
+
+Support
+-------------------------------------------------------------------------------
+
+For additional support, please visit:
+
+- :ref:`Help and Support <help-and-support>`
+- :ez:`FPGA Reference Designs EngineerZone <community/fpga>`

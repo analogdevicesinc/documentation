@@ -71,8 +71,8 @@ Software Requirements
    - 1920 by 1080 or greater screen resolution (recommended)
 - Downloaded and installed:
    - :git-max32625pico-firmware-images:`MAX32625PICO Firmware Image for MAX32670 <raw+master:bin/max32625_max32670evkit_if_crc_swd_v1.0.3.bin>`
-   - :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
-   - :download:`ADI Wireless Sensor Hub Standalone Software for Flowmeter Application <wisehub_flowmeterversion.zip>`
+   - :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
+   - :dokuwiki:`ADI Wireless Sensor Hub Standalone Software for Flowmeter Application <_media/resources/eval/user-guides/ad-max32sxwise-sl/demo/wisehub_flowmeterversion.zip>`
    - `UART serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`__
       - This demo uses Real Term serial monitor, but other UART serial terminals may also be used.
    - `Balena Etcher <https://etcher.balena.io>`__ image writing tool
@@ -272,10 +272,10 @@ Configuring the Sensor Board
 
    This phase will require
    `Real Term serial monitor <https://sourceforge.net/project/showfiles.php?group_id=67297>`__
-   and :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
+   and :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
    installed.
 
-#. If :download:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <ad-max32wise-slz_firmware.zip>`
+#. If :dokuwiki:`AD-MAX32WISE-SLZ Firmware (Rel1.0.0) <_media/resources/eval/user-guides/longrangewirelessradio/ad-max32wise-slz_firmware.zip>`
    is already downloaded, extracted, and installed, go to
    :file:`C:\\Analog Devices\\AD-MAX32WISE-SLZ-Rel1.0.0\\Software\\ad_max32wise_src\\bin\\flow`.
 
@@ -431,7 +431,7 @@ Setting up a Self-Hosted Application Server
    through the LAN cable.
 
    This phase will require
-   :download:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <wireless_sensor_hub.zip>`
+   :dokuwiki:`ADI Wireless Sensor Hub Standalone Software (Rev 1.0.3) <_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`
    downloaded and extracted.
 
 **Configuring the Host PC for the Gateway**
@@ -471,7 +471,7 @@ Setting up a Self-Hosted Application Server
 
 **Installing the GUI and Accessing the Gateway**
 
-#. Run the :download:`ADI Wireless Sensor Hub Standalone Software <wireless_sensor_hub.zip>`
+#. Run the :dokuwiki:`ADI Wireless Sensor Hub Standalone Software <_media/resources/eval/user-guides/longrangewirelessradio/wireless_sensor_hub.zip>`
    with administrator privileges. This will start the initialization process
    and run the process on your PC.
 #. Check and **save the IP address assigned to the Raspberry Pi gateway**.
@@ -665,7 +665,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`AD-MAX32SXWISE-SL Design Support Package <ad-max32sxwise-sl-designsupport.zip>`
+   :dokuwiki:`AD-MAX32SXWISE-SL Design Support Package <_media/resources/eval/user-guides/lora-reference-design/ad-max32sxwise-sl-designsupport.zip>`
 
    - Schematic
    - Bill of Materials

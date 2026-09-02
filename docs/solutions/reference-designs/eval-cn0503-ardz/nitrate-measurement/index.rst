@@ -95,7 +95,7 @@ Initial Connection and Setup
 
      .. image:: nitrate_click_connect.png
 
-#. Load the configuration file for Nitrate Measurement: :download:`cn0503_defaults_nitrate.zip`
+#. Load the configuration file for Nitrate Measurement: :dokuwiki:`cn0503_defaults_nitrate.zip <_media/resources/eval/user-guides/circuits-from-the-lab/cn0503/cn0503_defaults_nitrate.zip>`
 
 #. Configure the settings for path 3 with the desired name, set wavelength to
    530nm and select measurement type: Absorption.

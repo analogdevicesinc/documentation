@@ -186,7 +186,7 @@ Design and Integration Files
 
 .. admonition:: Download
 
-   :download:`EV-STRUCTURAL-ARDZ Design Support Package Rev. B <ev-structural-ardz-designsupport.zip>`
+   :dokuwiki:`EV-STRUCTURAL-ARDZ Design Support Package Rev. B <_media/resources/eval/user-guides/lora-reference-design/ev-structural-ardz-designsupport.zip>`
 
    - Schematic
    - Bill of Materials
