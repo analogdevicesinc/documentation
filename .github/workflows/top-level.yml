@@ -48,34 +48,56 @@ jobs:
 
     steps:
     - uses: analogdevicesinc/doctools/checkout@action
-    - name: Check writing
+
+    - name: Resolve changed doc sources
+      id: changed
+      run: |
+        git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha \
+          -- 'docs/*.rst' 'docs/**/*.rst' > "$RUNNER_TEMP/changed-rst.txt"
+        cat "$RUNNER_TEMP/changed-rst.txt"
+
+        # Cache key component, the venv is only valid for one interpreter
+        echo "py=$(python3 -VV | sha256sum | cut -c1-16)" >> "$GITHUB_OUTPUT"
+
+    - name: Cache vale venv
+      id: venv-cache
+      uses: actions/cache@v4
+      with:
+        path: venv
+        key: check-doc-venv-${{ runner.os }}-${{ runner.arch }}-${{ steps.changed.outputs.py }}-docutils-vale
+
+    - name: Install pip packages
+      if: ${{ steps.venv-cache.outputs.cache-hit != 'true' }}
       run: |
         python3 -m venv venv
         source ./venv/bin/activate
         python3 -m ensurepip
         pip3 install docutils vale
 
+    - name: Check writing
+      run: |
+        source ./venv/bin/activate
+        mapfile -t files < "$RUNNER_TEMP/changed-rst.txt"
+
         check_vale() {
-          files=$(git diff --diff-filter=ACM --no-renames --name-only $base_sha..$head_sha -- 'docs/*.rst' 'docs/**/*.rst')
+          local config=".github/styles/$1"
 
           echo "$1"
-          vale sync --config=.github/styles/$1
-          [[ -z "$files" ]] && return
-          while read file; do
-            echo "$file"
-            vale --config=.github/styles/$1 --output=JSON  $file |  \
-              jq -r 'to_entries[] | .key as $file | .value[] |
-              "\($file):\(.Line):\(.Span[0])\n::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\(.Span[0]) \(.Message)"'
-          done <<< "$files"
+          if grep -q '^\s*Packages\s*=' "$config"; then
+            vale sync --config="$config"
+          fi
+
+          vale --config="$config" --output=JSON "${files[@]}" | \
+            jq -r 'to_entries[] | .key as $file | .value[] |
+            "\($file):\(.Line):\(.Span[0])\n::\(.Severity) file=\($file),line=\(.Line),col=\(.Span[0])::vale:\(.Check):\(.Span[0]) \(.Message)"'
         }
 
         check_vale vale-spelling.ini
         check_vale vale-enforcement.ini
 
     - name: Check git lfs
+      if: ${{ !cancelled() }}
       run: |
-        git lfs install --skip-smudge --force
-
         _emit_fmt() {
           msg=$(echo "$1" | tr -d '\t')
           msg=$(printf "$msg" | sed ':a;N;$!ba;s/\n/'%0A'/g')
@@ -88,22 +110,35 @@ jobs:
         Please ensure that binary data was committed to git lfs, a tutorial is provided at:
         https://analogdevicesinc.github.io/system-level/contributing/creating_new_pages/#adding-images-and-other-binary-files"
 
-        git ls-files \
-          | parallel -j "$(nproc)" --halt never '
-            if git check-attr filter -- {} | grep -q "lfs$"; then
-              line=$(git show :{} | head -n 1)
-              if [ "$line" != "version https://git-lfs.github.com/spec/v1" ]; then
-                echo "::error file={}::File should have been an LFS pointer, but is not"
-                exit 1
-              fi
-            fi
-          ' || _emit_fmt "::warning ::check_lfs: $lfs_error"
+        if ! git ls-files -z -- ':(attr:filter=lfs)' > "$RUNNER_TEMP/lfs-tracked.raw"; then
+          echo "::error ::check_lfs: git ls-files failed, git 2.30 or newer is required"
+          exit 1
+        fi
+        tr '\0' '\n' < "$RUNNER_TEMP/lfs-tracked.raw" | sed '/^$/d' \
+          | sort > "$RUNNER_TEMP/lfs-tracked.txt"
+        [[ ! -s "$RUNNER_TEMP/lfs-tracked.txt" ]] && exit 0
+
+        mapfile -t lfs_files < "$RUNNER_TEMP/lfs-tracked.txt"
+        git grep -I --cached -l -z \
+          -e '^version https://git-lfs\.github\.com/spec/v1' \
+          -- "${lfs_files[@]}" | tr '\0' '\n' | sed '/^$/d' \
+          | sort > "$RUNNER_TEMP/lfs-pointers.txt" || true
+
+        not_pointers=$(comm -23 "$RUNNER_TEMP/lfs-tracked.txt" "$RUNNER_TEMP/lfs-pointers.txt")
+        [[ -z "$not_pointers" ]] && exit 0
+
+        while read -r file; do
+          echo "::error file=$file::File should have been an LFS pointer, but is not"
+        done <<< "$not_pointers"
+        _emit_fmt "::warning ::check_lfs: $lfs_error"
 
     - name: Check casing
+      if: ${{ !cancelled() }}
       run: |
         python3 .github/scripts/case.py
 
     - name: Check dangling files
+      if: ${{ !cancelled() }}
       run: |
         python3 .github/scripts/dangling.py || true
 
