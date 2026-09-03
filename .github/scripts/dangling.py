@@ -7,6 +7,7 @@ import os
 import re
 import argparse
 import subprocess
+from collections import defaultdict
 from pathlib import Path
 
 GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", "false") == "true"
@@ -116,28 +117,76 @@ def is_valid_reference(content, rel_path, patterns):
     return False
 
 
-def is_file_referenced(file_path, doc_contents):
-    """Check if a file is referenced via valid Sphinx directives.
-    
-    Only directives that actually copy/include files in the build count:
-    - RST: .. image::, .. figure::, :download:, .. literalinclude::, etc.
-    - MyST: {image}, {figure}, {download}, {literalinclude}, etc.
-    
-    Plain links like [text](path) or `path` don't copy files to the build.
-    """
-    for doc_file, content in doc_contents.items():
-        rel_path = os.path.relpath(file_path, doc_file.parent)
+def _scan_docs(docs, doc_indexes, file_dir, name, relpath_cache):
+    """Look for a valid reference to file_dir/name in the given documents."""
+    for i in doc_indexes:
+        doc_dir, content, patterns = docs[i]
+
+        if name not in content:
+            continue
+
+        key = (file_dir, doc_dir)
+        rel_dir = relpath_cache.get(key)
+        if rel_dir is None:
+            rel_dir = os.path.relpath(file_dir, doc_dir)
+            relpath_cache[key] = rel_dir
+        rel_path = name if rel_dir == '.' else os.path.join(rel_dir, name)
+
         if rel_path not in content:
             continue
 
-        if doc_file.suffix == '.md':
-            if is_valid_reference(content, rel_path, VALID_MD_PATTERNS):
-                return True
-        else:  # .rst
-            if is_valid_reference(content, rel_path, VALID_RST_PATTERNS):
-                return True
+        if is_valid_reference(content, rel_path, patterns):
+            return True
 
     return False
+
+
+def is_file_referenced(file_path, docs, name_index=None, relpath_cache=None):
+    """Check if a file is referenced via valid Sphinx directives.
+
+    Only directives that actually copy/include files in the build count:
+    - RST: .. image::, .. figure::, :download:, .. literalinclude::, etc.
+    - MyST: {image}, {figure}, {download}, {literalinclude}, etc.
+
+    Plain links like [text](path) or `path` don't copy files to the build.
+    """
+    if relpath_cache is None:
+        relpath_cache = {}
+
+    file_dir, name = os.path.split(str(file_path))
+
+    # Fast path: only the documents that mention the file name as a word.
+    if name_index is not None:
+        candidates = name_index.get(name)
+        if candidates and _scan_docs(docs, candidates, file_dir, name,
+                                     relpath_cache):
+            return True
+
+    # Exhaustive pass, so the result never depends on the index.
+    return _scan_docs(docs, range(len(docs)), file_dir, name, relpath_cache)
+
+
+def prepare_docs(doc_contents):
+    """Flatten the documents into (dir, content, patterns) tuples."""
+    docs = []
+    for doc_file, content in doc_contents.items():
+        patterns = VALID_MD_PATTERNS if doc_file.suffix == '.md' else VALID_RST_PATTERNS
+        docs.append((str(doc_file.parent), content, patterns))
+    return docs
+
+
+# Runs of characters that can make up a path component, used to index which
+# document mentions which file name.
+NAME_TOKEN_RE = re.compile(r'[^\s/\\`\'"<>|(){}\[\],;:*?=]+')
+
+
+def build_name_index(docs):
+    """Map every path component found in the documents to the documents using it."""
+    index = defaultdict(list)
+    for i, (_, content, _) in enumerate(docs):
+        for token in set(NAME_TOKEN_RE.findall(content)):
+            index[token].append(i)
+    return index
 
 
 def find_dangling_files(root_dir):
@@ -145,10 +194,13 @@ def find_dangling_files(root_dir):
     all_files = find_all_files(root_dir)
     doc_files = find_doc_files(root_dir)
     doc_contents = load_doc_contents(doc_files)
+    docs = prepare_docs(doc_contents)
+    name_index = build_name_index(docs)
 
+    relpath_cache = {}
     dangling = []
     for file_path in all_files:
-        if not is_file_referenced(file_path, doc_contents):
+        if not is_file_referenced(file_path, docs, name_index, relpath_cache):
             dangling.append(file_path)
 
     return dangling
