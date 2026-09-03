@@ -11,7 +11,7 @@ AD-FMCMOTCON1-EBZ ISE Project with Chipscope
 This guide provides some quick instructions on how to setup the
 AD-FMCMOTCON1-EBZ on either:
 
--  `ZED Board <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`_
+-  `ZedBoard <https://digilent.com/shop/zedboard-zynq-7000-arm-fpga-soc-development-board>`_
 
 Software Tools
 -------------------------------------------------------------------------------

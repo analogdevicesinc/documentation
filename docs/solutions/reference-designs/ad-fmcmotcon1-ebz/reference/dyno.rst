@@ -20,7 +20,7 @@ Features
 
 -  Two BLDC motors connected in a dyno setup (BLY171S-24V-4000 and
    BLY171D-24V-4000)
--  Electronically adjustable load — the load value is set using the onboard
+-  Electronically adjustable load - the load value is set using the onboard
    buttons and LCD
 -  Programmable step and ramp load changes
 -  Measurement and display of load motor phase currents
