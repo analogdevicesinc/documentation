@@ -126,8 +126,6 @@ ADI/Avnet/MathWorks/Xilinx design seminar:
 From ADI's 2013 Design Conference:
 `YouTube: AD-FMCMOTCON1-EBZ Demo <https://www.youtube.com/watch?v=-7CscB5sUIw>`_
 
-.. _help-and-support:
-
 Help and Support
 -------------------------------------------------------------------------------
 
